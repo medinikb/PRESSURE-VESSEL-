@@ -1,0 +1,65 @@
+{
+  "rules": [
+    {
+      "id": "VIS_001",
+      "target": "head_depth",
+      "show_when": {
+        "head_type": [
+          "ellipsoidal_generic"
+        ]
+      }
+    },
+    {
+      "id": "VIS_002",
+      "target": "crown_radius",
+      "show_when": {
+        "head_type": [
+          "torispherical_generic",
+          "torispherical_100_6"
+        ]
+      }
+    },
+    {
+      "id": "VIS_003",
+      "target": "knuckle_radius",
+      "show_when": {
+        "head_type": [
+          "torispherical_generic",
+          "torispherical_100_6"
+        ]
+      }
+    },
+    {
+      "id": "VIS_004",
+      "target": "cone_half_apex_angle",
+      "show_when": {
+        "component_type": [
+          "cone"
+        ]
+      }
+    },
+    {
+      "id": "VIS_005",
+      "target": "cladding_credit_fields",
+      "show_when": {
+        "cladding_credit_mode": [
+          "credit_taken"
+        ]
+      }
+    },
+    {
+      "id": "VIS_006",
+      "target": "override_fields",
+      "show_when": {
+        "user_override_enabled": [
+          true
+        ]
+      }
+    },
+    {
+      "id": "VIS_007",
+      "target": "preliminary_design_screen",
+      "show_when_feature_flag": "preliminary_pressure_design"
+    }
+  ]
+}

@@ -1,0 +1,868 @@
+{
+  "specifications": [
+    {
+      "id": "SA-105",
+      "display_text": "SA-105",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-106-B",
+      "display_text": "SA-106-B",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-181-60",
+      "display_text": "SA-181-60",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-181-70",
+      "display_text": "SA-181-70",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-182-304",
+      "display_text": "SA-182-304",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-182-304L",
+      "display_text": "SA-182-304L",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-182-316",
+      "display_text": "SA-182-316",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-182-316L",
+      "display_text": "SA-182-316L",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-182-347",
+      "display_text": "SA-182-347",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-182-347H",
+      "display_text": "SA-182-347H",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_014"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-182-F1",
+      "display_text": "SA-182-F1",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_010"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-182-F11",
+      "display_text": "SA-182-F11",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_012"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-182-F12",
+      "display_text": "SA-182-F12",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_011"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-182-F22",
+      "display_text": "SA-182-F22",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_013"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-203-A",
+      "display_text": "SA-203-A",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_004"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-203-D",
+      "display_text": "SA-203-D",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_003"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-204-B",
+      "display_text": "SA-204-B",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_010"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-234-WP1",
+      "display_text": "SA-234-WP1",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_010"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-234-WP11",
+      "display_text": "SA-234-WP11",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_012"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-234-WP12",
+      "display_text": "SA-234-WP12",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_011"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-234-WP22",
+      "display_text": "SA-234-WP22",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_013"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-234-WPB",
+      "display_text": "SA-234-WPB",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-240-304",
+      "display_text": "SA-240-304",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-240-304L",
+      "display_text": "SA-240-304L",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-240-316",
+      "display_text": "SA-240-316",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-240-316L",
+      "display_text": "SA-240-316L",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-240-347",
+      "display_text": "SA-240-347",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-240-347H",
+      "display_text": "SA-240-347H",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_014"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-285-C",
+      "display_text": "SA-285-C",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_007"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-312-304",
+      "display_text": "SA-312-304",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-312-304L",
+      "display_text": "SA-312-304L",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-312-316",
+      "display_text": "SA-312-316",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-312-316L",
+      "display_text": "SA-312-316L",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-312-347",
+      "display_text": "SA-312-347",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-312-347H",
+      "display_text": "SA-312-347H",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_014"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-333-1",
+      "display_text": "SA-333-1",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_006"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-333-3",
+      "display_text": "SA-333-3",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_003",
+        "MSR_004"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-333-6",
+      "display_text": "SA-333-6",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_005",
+        "MSR_006"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-333-8",
+      "display_text": "SA-333-8",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_002"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-335-P1",
+      "display_text": "SA-335-P1",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_010"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-335-P11",
+      "display_text": "SA-335-P11",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_012"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-335-P12",
+      "display_text": "SA-335-P12",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_011"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-335-P22",
+      "display_text": "SA-335-P22",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_013"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-350-LF2",
+      "display_text": "SA-350-LF2",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_005",
+        "MSR_006"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-350-LF63",
+      "display_text": "SA-350-LF63",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_003",
+        "MSR_004"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-353",
+      "display_text": "SA-353",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_002"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-387-11-2",
+      "display_text": "SA-387-11-2",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_012"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-387-12-1",
+      "display_text": "SA-387-12-1",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_011"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-387-22-1",
+      "display_text": "SA-387-22-1",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_013"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-403-304",
+      "display_text": "SA-403-304",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-403-304L",
+      "display_text": "SA-403-304L",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-403-316",
+      "display_text": "SA-403-316",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-403-316L",
+      "display_text": "SA-403-316L",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-403-347",
+      "display_text": "SA-403-347",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_001"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-403-347H",
+      "display_text": "SA-403-347H",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_014"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-420-WPL3",
+      "display_text": "SA-420-WPL3",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_003",
+        "MSR_004"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-420-WPL6",
+      "display_text": "SA-420-WPL6",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_005",
+        "MSR_006"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-420-WPL8",
+      "display_text": "SA-420-WPL8",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_002"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-455-II",
+      "display_text": "SA-455-II",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_008",
+        "MSR_009"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-515-All",
+      "display_text": "SA-515-All",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_008",
+        "MSR_009"
+      ],
+      "record_type": "group_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-516-All",
+      "display_text": "SA-516-All",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_006",
+        "MSR_008",
+        "MSR_009"
+      ],
+      "record_type": "group_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-522-1",
+      "display_text": "SA-522-1",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_002"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SA-53-B",
+      "display_text": "SA-53-B",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SB-366",
+      "display_text": "SB-366",
+      "component_types": [
+        "fittings"
+      ],
+      "source_ids": [
+        "MSR_015",
+        "MSR_016"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SB-423",
+      "display_text": "SB-423",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_015"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SB-424",
+      "display_text": "SB-424",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_015"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SB-425",
+      "display_text": "SB-425",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_015"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SB-443",
+      "display_text": "SB-443",
+      "component_types": [
+        "plate"
+      ],
+      "source_ids": [
+        "MSR_016"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SB-444",
+      "display_text": "SB-444",
+      "component_types": [
+        "pipe"
+      ],
+      "source_ids": [
+        "MSR_016"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    },
+    {
+      "id": "SB-446",
+      "display_text": "SB-446",
+      "component_types": [
+        "forgings"
+      ],
+      "source_ids": [
+        "MSR_016"
+      ],
+      "record_type": "specification_or_grade_expression",
+      "verification_status": "requires_current_code_and_specification_verification"
+    }
+  ],
+  "interpretation_note": "Identifiers reproduce the guide's printed designation style. They are not independently validated against current ASME material specifications."
+}

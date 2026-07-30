@@ -1,0 +1,21 @@
+{
+  "evaluation_order": [
+    "blocking_input_errors",
+    "outside_source_range",
+    "ambiguous_source_text",
+    "missing_component_source_value",
+    "temperature_envelope_conflict",
+    "multiple_source_options",
+    "service_specific_review",
+    "historical_source_review",
+    "user_override_review",
+    "provisional_guide_match"
+  ],
+  "highest_severity_wins": true,
+  "severity_order": [
+    "blocking",
+    "review",
+    "information"
+  ],
+  "message_deduplication_key": "code+component_id+source_record_id"
+}

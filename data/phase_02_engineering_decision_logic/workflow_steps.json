@@ -1,0 +1,77 @@
+{
+  "workflow_id": "WF_MATERIAL_SELECTION_V1",
+  "steps": [
+    {
+      "sequence": 10,
+      "id": "validate_identity",
+      "action": "validate_required_identity_fields",
+      "on_fail": "blocked"
+    },
+    {
+      "sequence": 20,
+      "id": "normalize_units",
+      "action": "convert_temperature_inputs_to_degF",
+      "on_fail": "blocked"
+    },
+    {
+      "sequence": 30,
+      "id": "validate_envelope",
+      "action": "verify_min_temperature_not_above_max_temperature",
+      "on_fail": "blocked"
+    },
+    {
+      "sequence": 40,
+      "id": "find_min_range",
+      "action": "lookup_phase1_material_ranges_for_minimum_temperature",
+      "on_no_match": "outside_guide"
+    },
+    {
+      "sequence": 50,
+      "id": "find_max_range",
+      "action": "lookup_phase1_material_ranges_for_maximum_temperature",
+      "on_no_match": "outside_guide"
+    },
+    {
+      "sequence": 60,
+      "id": "resolve_envelope",
+      "action": "compare_material_families_and_alternative_groups_across_temperature_envelope"
+    },
+    {
+      "sequence": 70,
+      "id": "build_component_matrix",
+      "action": "collect_plate_pipe_forging_fitting_and_bolting_options"
+    },
+    {
+      "sequence": 80,
+      "id": "evaluate_data_quality",
+      "action": "apply_source_blank_ambiguity_and_merged_cell_rules"
+    },
+    {
+      "sequence": 90,
+      "id": "evaluate_service_flags",
+      "action": "attach_warning_only_service_reviews"
+    },
+    {
+      "sequence": 100,
+      "id": "evaluate_override",
+      "action": "validate_any_user_override_and_preserve_original_system_result"
+    },
+    {
+      "sequence": 110,
+      "id": "classify_result",
+      "action": "assign_result_status_using_priority_rules"
+    },
+    {
+      "sequence": 120,
+      "id": "create_audit_record",
+      "action": "record_inputs_source_records_rules_messages_override_and_versions"
+    }
+  ],
+  "source": {
+    "source_type": "product_configuration",
+    "source_ids": [
+      "PVMD_3E_APPENDIX_H",
+      "VESSELM_PHASE1_V0_1_0"
+    ]
+  }
+}

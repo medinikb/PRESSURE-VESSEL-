@@ -1,0 +1,46 @@
+{
+  "override_policy": "preserve_system_result_and_record_user_decision_separately",
+  "required_fields": [
+    "override_reason_code",
+    "override_comment",
+    "responsible_person",
+    "responsible_role",
+    "override_date"
+  ],
+  "optional_fields": [
+    "supporting_document_reference",
+    "approver",
+    "approval_date"
+  ],
+  "rules": [
+    {
+      "id": "OVR_001",
+      "condition": "override_changes_material_family",
+      "minimum_approval_role": "materials_engineer"
+    },
+    {
+      "id": "OVR_002",
+      "condition": "override_changes_component_specification_only",
+      "minimum_approval_role": "pressure_vessel_or_materials_engineer"
+    },
+    {
+      "id": "OVR_003",
+      "condition": "blocking_source_ambiguity_exists",
+      "override_allowed": false
+    },
+    {
+      "id": "OVR_004",
+      "condition": "outside_guide",
+      "override_label": "engineered_selection_outside_guide",
+      "automatic_approval": false
+    },
+    {
+      "id": "OVR_005",
+      "condition": "override_saved",
+      "audit_events": [
+        "system_result_preserved",
+        "override_created"
+      ]
+    }
+  ]
+}

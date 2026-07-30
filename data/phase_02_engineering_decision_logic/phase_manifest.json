@@ -1,0 +1,62 @@
+{
+  "phase": 2,
+  "name": "Engineering Decision Logic",
+  "version": "0.2.0",
+  "status": "configuration_draft",
+  "objective": "Convert Phase 1 material tables into a deterministic, auditable and governable selection workflow.",
+  "dependencies": [
+    "VESSELM_PHASE1_V0_1_0"
+  ],
+  "files": [
+    {
+      "path": "audit_event_types.json",
+      "sha256": "cdcb044a60a753401a49b0c99b5d1c4630c14f461fa6be8c126744008fa00ebd",
+      "replaceable_independently": true
+    },
+    {
+      "path": "component_resolution_rules.json",
+      "sha256": "a7b22ed728607898fa5059fec55099865e6c144fa6e7a1ff23520834a34ae868",
+      "replaceable_independently": true
+    },
+    {
+      "path": "input_eligibility_rules.json",
+      "sha256": "69d2763def0ef908c8db732d926bc90572c143a4f3efdbf9c26b167f79f9d47a",
+      "replaceable_independently": true
+    },
+    {
+      "path": "override_workflow.json",
+      "sha256": "bc2b6e32386a62756211434fe2241209739cf8a10711d1b72c5da35ff16b63c1",
+      "replaceable_independently": true
+    },
+    {
+      "path": "phase2_test_cases.json",
+      "sha256": "0025f4c416b79e54d082044b1156671aac4be5c4ee6a8d3bce4eb6341ab52ba6",
+      "replaceable_independently": true
+    },
+    {
+      "path": "result_status_catalog.json",
+      "sha256": "41ca66d20ba8bbbe6fe33638d728bdbeb5628f1652fed4b590bb926d98b68237",
+      "replaceable_independently": true
+    },
+    {
+      "path": "rule_priority.json",
+      "sha256": "44de2f1e34e8e81702c5a40ebf78323b778fe19d8e940d5483806060a6b5b24c",
+      "replaceable_independently": true
+    },
+    {
+      "path": "service_review_rules.json",
+      "sha256": "3ed4b2269c32f2b10b472f8a84453654a73a81d85ba7b4688fdb914fc2326eee",
+      "replaceable_independently": true
+    },
+    {
+      "path": "temperature_envelope_rules.json",
+      "sha256": "28cd2be489275b967daf08b04144a068e1da3736ef0f5794b605142a3995ffab",
+      "replaceable_independently": true
+    },
+    {
+      "path": "workflow_steps.json",
+      "sha256": "98d3fa9a0b2390c6b140dbfc1434a11e2c915fa2b43175fd47a02b34471ee5e2",
+      "replaceable_independently": true
+    }
+  ]
+}

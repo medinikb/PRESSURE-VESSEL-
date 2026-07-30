@@ -1,0 +1,49 @@
+{
+  "cards": [
+    {
+      "id": "overall_status",
+      "title": "Engineering Status",
+      "primary_field": "result_status",
+      "secondary_fields": [
+        "blocking_count",
+        "review_count"
+      ]
+    },
+    {
+      "id": "material_family",
+      "title": "Material Family",
+      "primary_field": "selected_material_family",
+      "secondary_fields": [
+        "temperature_range",
+        "source_record_ids"
+      ]
+    },
+    {
+      "id": "plate_result",
+      "title": "Shell and Head Plate",
+      "primary_field": "plate_specifications",
+      "show_when_component_selected": "plate"
+    },
+    {
+      "id": "required_thickness",
+      "title": "Required Thickness",
+      "primary_field": "required_nominal_thickness",
+      "secondary_fields": [
+        "pressure_thickness",
+        "corrosion_allowance",
+        "other_allowances"
+      ],
+      "feature_flag": "preliminary_pressure_design"
+    },
+    {
+      "id": "governing_component",
+      "title": "Governing Component",
+      "primary_field": "governing_component_id",
+      "secondary_fields": [
+        "governing_required_thickness",
+        "governing_mawp"
+      ],
+      "feature_flag": "preliminary_pressure_design"
+    }
+  ]
+}

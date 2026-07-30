@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "id": "nav_home",
+      "label": "Overview",
+      "route": "#overview",
+      "order": 10
+    },
+    {
+      "id": "nav_material",
+      "label": "Material Selection",
+      "route": "#material-selection",
+      "order": 20
+    },
+    {
+      "id": "nav_design",
+      "label": "Preliminary Design",
+      "route": "#preliminary-design",
+      "order": 30,
+      "feature_flag": "preliminary_pressure_design"
+    },
+    {
+      "id": "nav_results",
+      "label": "Results",
+      "route": "#results",
+      "order": 40
+    },
+    {
+      "id": "nav_whatif",
+      "label": "Scenario Lab",
+      "route": "#scenario-lab",
+      "order": 50
+    },
+    {
+      "id": "nav_report",
+      "label": "Audit Report",
+      "route": "#report",
+      "order": 60
+    },
+    {
+      "id": "nav_data",
+      "label": "Data Libraries",
+      "route": "#data-libraries",
+      "order": 70
+    },
+    {
+      "id": "nav_governance",
+      "label": "Basis and Limitations",
+      "route": "#governance",
+      "order": 80
+    }
+  ]
+}

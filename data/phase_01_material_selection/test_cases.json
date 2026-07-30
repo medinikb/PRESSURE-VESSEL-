@@ -1,0 +1,305 @@
+{
+  "test_cases": [
+    {
+      "id": "TC_MSR_001_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": -425,
+      "expected_record_included": "MSR_001",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_001_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": -321,
+      "expected_record_included": "MSR_001",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_002_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": -320,
+      "expected_record_included": "MSR_002",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_002_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": -151,
+      "expected_record_included": "MSR_002",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_003_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": -150,
+      "expected_record_included": "MSR_003",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_003_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": -76,
+      "expected_record_included": "MSR_003",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_004_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": -75,
+      "expected_record_included": "MSR_004",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_004_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": -51,
+      "expected_record_included": "MSR_004",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_005_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": -50,
+      "expected_record_included": "MSR_005",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_005_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": -21,
+      "expected_record_included": "MSR_005",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_006_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": -20,
+      "expected_record_included": "MSR_006",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_006_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": 4,
+      "expected_record_included": "MSR_006",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_007_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": 5,
+      "expected_record_included": "MSR_007",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_007_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": 32,
+      "expected_record_included": "MSR_007",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_008_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": 33,
+      "expected_record_included": "MSR_008",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_008_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": 60,
+      "expected_record_included": "MSR_008",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_009_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": 61,
+      "expected_record_included": "MSR_009",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_009_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": 775,
+      "expected_record_included": "MSR_009",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_010_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": 776,
+      "expected_record_included": "MSR_010",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_010_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": 875,
+      "expected_record_included": "MSR_010",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_011_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": 876,
+      "expected_record_included": "MSR_011",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_011_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": 1000,
+      "expected_record_included": "MSR_011",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_012_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": 876,
+      "expected_record_included": "MSR_012",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_012_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": 1000,
+      "expected_record_included": "MSR_012",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_013_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": 1001,
+      "expected_record_included": "MSR_013",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_013_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": 1100,
+      "expected_record_included": "MSR_013",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_014_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": 1101,
+      "expected_record_included": "MSR_014",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_014_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": 1500,
+      "expected_record_included": "MSR_014",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_015_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": 1101,
+      "expected_record_included": "MSR_015",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_015_MAX",
+      "description": "Maximum boundary",
+      "temperature_f": 1500,
+      "expected_record_included": "MSR_015",
+      "expected_match": true
+    },
+    {
+      "id": "TC_MSR_016_MIN",
+      "description": "Minimum boundary",
+      "temperature_f": 1500,
+      "expected_record_included": "MSR_016",
+      "expected_match": false
+    },
+    {
+      "id": "TC_BOUNDARY_NEG321_NEG320",
+      "description": "Adjacent cryogenic ranges do not overlap",
+      "inputs": [
+        -321,
+        -320
+      ],
+      "expected_record_ids": [
+        [
+          "MSR_001"
+        ],
+        [
+          "MSR_002"
+        ]
+      ]
+    },
+    {
+      "id": "TC_BOUNDARY_1000_1001",
+      "description": "Alternative range ends before P22 range",
+      "inputs": [
+        1000,
+        1001
+      ],
+      "expected_record_ids": [
+        [
+          "MSR_011",
+          "MSR_012"
+        ],
+        [
+          "MSR_013"
+        ]
+      ]
+    },
+    {
+      "id": "TC_ABOVE_1500_EXCLUSIVE",
+      "description": "1500°F remains in 1101–1500 alternatives; Inconel begins above 1500°F",
+      "inputs": [
+        1500,
+        1500.1
+      ],
+      "expected_record_ids": [
+        [
+          "MSR_014",
+          "MSR_015"
+        ],
+        [
+          "MSR_016"
+        ]
+      ]
+    },
+    {
+      "id": "TC_UNIT_EQUIVALENCE",
+      "description": "°C and °F inputs produce the same match",
+      "inputs": [
+        {
+          "value": 482,
+          "unit": "degC"
+        },
+        {
+          "value": 899.6,
+          "unit": "degF"
+        }
+      ],
+      "expected_record_ids": [
+        [
+          "MSR_011",
+          "MSR_012"
+        ],
+        [
+          "MSR_011",
+          "MSR_012"
+        ]
+      ]
+    },
+    {
+      "id": "TC_ENVELOPE_CONFLICT",
+      "description": "Minimum and maximum temperatures produce different material families",
+      "input": {
+        "minimum_design_temperature": -100,
+        "maximum_design_temperature": 900,
+        "temperature_unit": "degF"
+      },
+      "expected_status": "temperature_envelope_conflict"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "tokens": {
+    "font_family": "system-ui, Segoe UI, Arial, sans-serif",
+    "spacing_scale_px": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48
+    ],
+    "border_radius_px": {
+      "small": 6,
+      "medium": 10,
+      "large": 16
+    },
+    "light": {
+      "surface": "#FFFFFF",
+      "surface_alt": "#F4F7FA",
+      "text": "#17202A",
+      "muted_text": "#5B6673",
+      "accent": "#0B5FA5"
+    },
+    "dark": {
+      "surface": "#101820",
+      "surface_alt": "#18232D",
+      "text": "#F1F5F8",
+      "muted_text": "#B8C3CC",
+      "accent": "#66B5F1"
+    },
+    "semantic": {
+      "success": "#2E7D32",
+      "warning": "#B26A00",
+      "danger": "#B3261E",
+      "information": "#1565C0"
+    }
+  },
+  "note": "Color values are UI configuration only and may be replaced without changing engineering logic."
+}

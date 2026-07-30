@@ -1,0 +1,83 @@
+{
+  "test_cases": [
+    {
+      "id": "P2_TC_001",
+      "input": {
+        "equipment_tag": "V-101",
+        "maximum_design_temperature": 500,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate"
+        ]
+      },
+      "expected_status": "provisional_guide_match"
+    },
+    {
+      "id": "P2_TC_002",
+      "input": {
+        "equipment_tag": "",
+        "maximum_design_temperature": 500,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate"
+        ]
+      },
+      "expected_message": "E_TAG_REQUIRED"
+    },
+    {
+      "id": "P2_TC_003",
+      "input": {
+        "equipment_tag": "V-102",
+        "minimum_design_temperature": 100,
+        "maximum_design_temperature": 50,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate"
+        ]
+      },
+      "expected_message": "E_TEMP_ENVELOPE_INVALID"
+    },
+    {
+      "id": "P2_TC_004",
+      "input": {
+        "equipment_tag": "V-103",
+        "maximum_design_temperature": 900,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate",
+          "pipe"
+        ]
+      },
+      "expected_status": "multiple_options_review"
+    },
+    {
+      "id": "P2_TC_005",
+      "input": {
+        "equipment_tag": "V-104",
+        "minimum_design_temperature": -100,
+        "maximum_design_temperature": 500,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate"
+        ]
+      },
+      "expected_status": "temperature_envelope_review"
+    },
+    {
+      "id": "P2_TC_006",
+      "input": {
+        "equipment_tag": "V-105",
+        "maximum_design_temperature": 500,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate"
+        ],
+        "service_flags": [
+          "wet_h2s_sour"
+        ]
+      },
+      "expected_status": "service_review_required",
+      "expected_message": "W_SERVICE_SOUR"
+    }
+  ]
+}

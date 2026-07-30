@@ -1,0 +1,43 @@
+{
+  "component_order": [
+    "plate",
+    "pipe",
+    "forgings",
+    "fittings",
+    "bolting"
+  ],
+  "rules": [
+    {
+      "id": "COMP_001",
+      "condition": "source_status_is_specified",
+      "action": "return_all_source_specification_ids"
+    },
+    {
+      "id": "COMP_002",
+      "condition": "source_status_is_blank_or_not_specified",
+      "action": "return_null_and_warning",
+      "warning": "W_SOURCE_BLANK"
+    },
+    {
+      "id": "COMP_003",
+      "condition": "multiple_specifications_in_source_cell",
+      "action": "preserve_as_options_not_ranked"
+    },
+    {
+      "id": "COMP_004",
+      "condition": "multiple_material_routes_for_same_temperature",
+      "action": "preserve_routes_separately_by_alternative_group_id"
+    },
+    {
+      "id": "COMP_005",
+      "condition": "user_filters_component",
+      "action": "filter_display_only_without_changing_source_result"
+    },
+    {
+      "id": "COMP_006",
+      "condition": "plate_missing",
+      "action": "block_preliminary_pressure_design",
+      "warning": "E_PLATE_MATERIAL_REQUIRED_FOR_DESIGN"
+    }
+  ]
+}

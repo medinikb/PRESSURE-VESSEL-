@@ -1,0 +1,54 @@
+{
+  "statuses": [
+    {
+      "id": "blocked_input",
+      "severity": "blocking",
+      "engineering_meaning": "Inputs are incomplete or invalid; no selection result is valid."
+    },
+    {
+      "id": "outside_guide",
+      "severity": "blocking",
+      "engineering_meaning": "The source guide does not cover the complete temperature basis."
+    },
+    {
+      "id": "guide_candidates_review",
+      "severity": "review",
+      "engineering_meaning": "The primary guide has no full-envelope route; cross-reference-guide candidates are available for controlled engineering review."
+    },
+    {
+      "id": "source_verification_required",
+      "severity": "blocking",
+      "engineering_meaning": "A source entry is ambiguous or unverified."
+    },
+    {
+      "id": "component_data_incomplete",
+      "severity": "review",
+      "engineering_meaning": "One or more selected component values are not stated in the source."
+    },
+    {
+      "id": "multiple_options_review",
+      "severity": "review",
+      "engineering_meaning": "The source provides multiple alternatives without a selection rule."
+    },
+    {
+      "id": "temperature_envelope_review",
+      "severity": "review",
+      "engineering_meaning": "The minimum and maximum temperature bases do not resolve to one consistent route."
+    },
+    {
+      "id": "service_review_required",
+      "severity": "review",
+      "engineering_meaning": "Temperature screening does not address selected damage mechanisms or service conditions."
+    },
+    {
+      "id": "provisional_guide_match",
+      "severity": "information",
+      "engineering_meaning": "A source match exists, subject to controlled code, project and materials review."
+    },
+    {
+      "id": "user_override_pending_approval",
+      "severity": "review",
+      "engineering_meaning": "A user override is recorded but is not an engineering approval."
+    }
+  ]
+}

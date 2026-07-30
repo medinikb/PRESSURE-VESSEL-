@@ -1,0 +1,84 @@
+{
+  "screens": [
+    {
+      "id": "overview",
+      "title": "VesselM",
+      "purpose": "Explain product boundary, workflow and current data status.",
+      "sections": [
+        "product_summary",
+        "capability_cards",
+        "governance_banner"
+      ]
+    },
+    {
+      "id": "material_selection",
+      "title": "Material Selection Screening",
+      "sections": [
+        "calculation_context",
+        "temperature_basis",
+        "service_flags",
+        "component_scope"
+      ]
+    },
+    {
+      "id": "preliminary_design",
+      "title": "Preliminary Pressure Design",
+      "sections": [
+        "code_basis",
+        "design_conditions",
+        "geometry",
+        "material_strength",
+        "fabrication_basis",
+        "corrosion_and_additions"
+      ]
+    },
+    {
+      "id": "results",
+      "title": "Engineering Results",
+      "sections": [
+        "executive_status",
+        "material_route",
+        "component_matrix",
+        "thickness_results",
+        "checks_and_warnings",
+        "decision_explanation"
+      ]
+    },
+    {
+      "id": "scenario_lab",
+      "title": "Scenario Lab",
+      "sections": [
+        "scenario_controls",
+        "comparison_table",
+        "sensitivity_summary"
+      ]
+    },
+    {
+      "id": "report",
+      "title": "Audit Report",
+      "sections": [
+        "report_preview",
+        "export_controls"
+      ]
+    },
+    {
+      "id": "data_libraries",
+      "title": "Data Libraries",
+      "sections": [
+        "library_status",
+        "version_register",
+        "replace_library_help"
+      ]
+    },
+    {
+      "id": "governance",
+      "title": "Basis and Limitations",
+      "sections": [
+        "source_register",
+        "disclaimers",
+        "approval_requirements",
+        "known_exclusions"
+      ]
+    }
+  ]
+}

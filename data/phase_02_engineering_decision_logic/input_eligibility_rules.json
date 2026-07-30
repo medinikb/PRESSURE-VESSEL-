@@ -1,0 +1,51 @@
+{
+  "rules": [
+    {
+      "id": "ELG_001",
+      "field": "equipment_tag",
+      "operator": "not_blank",
+      "on_fail": "E_TAG_REQUIRED"
+    },
+    {
+      "id": "ELG_002",
+      "fields": [
+        "minimum_design_temperature",
+        "maximum_design_temperature"
+      ],
+      "operator": "at_least_one_present",
+      "on_fail": "E_TEMP_REQUIRED"
+    },
+    {
+      "id": "ELG_003",
+      "field": "temperature_unit",
+      "operator": "in",
+      "values": [
+        "degC",
+        "degF"
+      ],
+      "on_fail": "E_UNIT_INVALID"
+    },
+    {
+      "id": "ELG_004",
+      "fields": [
+        "minimum_design_temperature",
+        "maximum_design_temperature"
+      ],
+      "operator": "min_lte_max_when_both_present",
+      "on_fail": "E_TEMP_ENVELOPE_INVALID"
+    },
+    {
+      "id": "ELG_005",
+      "field": "selected_components",
+      "operator": "array_min_items",
+      "value": 1,
+      "on_fail": "E_COMPONENT_REQUIRED"
+    },
+    {
+      "id": "ELG_006",
+      "field": "service_flags",
+      "operator": "array_unique",
+      "on_fail": "E_DUPLICATE_SERVICE_FLAG"
+    }
+  ]
+}

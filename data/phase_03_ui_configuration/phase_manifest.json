@@ -1,0 +1,82 @@
+{
+  "phase": 3,
+  "name": "UI Configuration",
+  "version": "0.2.0",
+  "status": "design_configuration_draft",
+  "objective": "Make the interface data-driven, auditable and replaceable without changing calculation logic.",
+  "dependencies": [
+    "phase_02_engineering_decision_logic"
+  ],
+  "files": [
+    {
+      "path": "accessibility_rules.json",
+      "sha256": "93a400826c0f58e5c679cec28000aa3d3137698deb7000fd375cd121aa2d0ff3",
+      "replaceable_independently": true
+    },
+    {
+      "path": "action_buttons.json",
+      "sha256": "4d4c0a75cb4dd03be12e7ca72f390168aca6b6e3976a18415af4f0f37d57a980",
+      "replaceable_independently": true
+    },
+    {
+      "path": "component_matrix_config.json",
+      "sha256": "ff349c317ea06917445d54a4809a2198de103eced3ca6dbbc1ecb781b8027354",
+      "replaceable_independently": true
+    },
+    {
+      "path": "field_groups.json",
+      "sha256": "351fcd84c2a83e6923097f40b7db8847becf1c2e7a8ef19ccafec1ba9e06b944",
+      "replaceable_independently": true
+    },
+    {
+      "path": "input_control_catalog.json",
+      "sha256": "baacbe1e82da9e502d7b3b8545561ee8eb415e61815bdaebd7d9eaf95de33ff6",
+      "replaceable_independently": true
+    },
+    {
+      "path": "navigation.json",
+      "sha256": "a0e909d36f05c2517799bb89ea02912eb6bf4f6af9e00f6928ae02bc6ee0f0f8",
+      "replaceable_independently": true
+    },
+    {
+      "path": "print_layout.json",
+      "sha256": "f5655428ad65f28f023d1747ef095d305e659b0a1a3f97e819a4846a78cfb096",
+      "replaceable_independently": true
+    },
+    {
+      "path": "responsive_layout.json",
+      "sha256": "fbbd91a6b01655959ce02546874af475fc4fe2d203c9361c91646a2829d3b215",
+      "replaceable_independently": true
+    },
+    {
+      "path": "result_cards.json",
+      "sha256": "0031ca3aded1d2a3550a4fc7aa0f286a33dea3ac4012c7b69426571544f0ed19",
+      "replaceable_independently": true
+    },
+    {
+      "path": "screen_definitions.json",
+      "sha256": "ec0cf64b02ee8a7cb751ee9bf7d2cf74bf7c6e5ff0c5a1fc137ca4208f128d3f",
+      "replaceable_independently": true
+    },
+    {
+      "path": "status_display.json",
+      "sha256": "67009d9d04a00bb6ed92ca4664cfceef4144e31bae8ff19c3d50819746fd254c",
+      "replaceable_independently": true
+    },
+    {
+      "path": "temperature_scale_config.json",
+      "sha256": "74e089a8dfb3fc2bd4cf4c9005d4387deff753cc14444f223725ed5900c26bcb",
+      "replaceable_independently": true
+    },
+    {
+      "path": "theme_tokens.json",
+      "sha256": "b7348ed32dc7149f838a0633e542627ed8d079397c5cb4822d7869fae55147d0",
+      "replaceable_independently": true
+    },
+    {
+      "path": "visibility_rules.json",
+      "sha256": "d2f27cf5b5dd8104d1d4ddf7a11f8ffd7de3b0063939149dd0c7d7a5dfbb97e3",
+      "replaceable_independently": true
+    }
+  ]
+}

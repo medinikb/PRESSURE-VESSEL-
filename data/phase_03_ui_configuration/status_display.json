@@ -1,0 +1,41 @@
+{
+  "statuses": [
+    {
+      "status_id": "blocked_input",
+      "badge_label": "Blocked",
+      "semantic_style": "danger",
+      "icon": "stop"
+    },
+    {
+      "status_id": "outside_guide",
+      "badge_label": "Outside Guide",
+      "semantic_style": "danger",
+      "icon": "out_of_range"
+    },
+    {
+      "status_id": "source_verification_required",
+      "badge_label": "Verify Source",
+      "semantic_style": "danger",
+      "icon": "document_alert"
+    },
+    {
+      "status_id": "multiple_options_review",
+      "badge_label": "Engineering Choice",
+      "semantic_style": "warning",
+      "icon": "branch"
+    },
+    {
+      "status_id": "service_review_required",
+      "badge_label": "Service Review",
+      "semantic_style": "warning",
+      "icon": "shield_alert"
+    },
+    {
+      "status_id": "provisional_guide_match",
+      "badge_label": "Guide Match",
+      "semantic_style": "success",
+      "icon": "check"
+    }
+  ],
+  "do_not_use_color_alone": true
+}

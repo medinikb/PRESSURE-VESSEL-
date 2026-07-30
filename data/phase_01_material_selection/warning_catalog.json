@@ -1,0 +1,148 @@
+{
+  "messages": [
+    {
+      "code": "E_TEMP_REQUIRED",
+      "severity": "blocking",
+      "title": "Design temperature required",
+      "message": "Enter both minimum and maximum design temperatures."
+    },
+    {
+      "code": "E_UNIT_INVALID",
+      "severity": "blocking",
+      "title": "Invalid temperature unit",
+      "message": "Select a supported temperature unit."
+    },
+    {
+      "code": "E_TAG_REQUIRED",
+      "severity": "blocking",
+      "title": "Equipment tag required",
+      "message": "Enter a vessel or equipment tag for traceability."
+    },
+    {
+      "code": "E_COMPONENT_REQUIRED",
+      "severity": "blocking",
+      "title": "Component scope required",
+      "message": "Select at least one component type."
+    },
+    {
+      "code": "E_TEMP_ENVELOPE_INVALID",
+      "severity": "blocking",
+      "title": "Invalid temperature envelope",
+      "message": "Minimum design temperature cannot exceed maximum design temperature."
+    },
+    {
+      "code": "E_OVERRIDE_INCOMPLETE",
+      "severity": "blocking",
+      "title": "Override record incomplete",
+      "message": "Provide the override reason, comment, responsible person and date."
+    },
+    {
+      "code": "W_OUTSIDE_GUIDE",
+      "severity": "blocking",
+      "title": "Outside guide range",
+      "message": "No matching record was found in the source guide. Refer the case for engineering selection."
+    },
+    {
+      "code": "W_NO_FULL_ENVELOPE_MATCH",
+      "severity": "blocking",
+      "title": "No full-envelope material match",
+      "message": "No single source material route covers the complete minimum-to-maximum design-temperature range. Do not recommend a material; refer the case to the senior or materials engineer."
+    },
+    {
+      "code": "W_GUIDE_CANDIDATES_REVIEW",
+      "severity": "review",
+      "title": "Guide-based material candidates require review",
+      "message": "The primary Appendix H guide has no full-envelope route. Candidate materials from the ASTM/ASME cross-reference guide cover the stated temperature range, but require controlled-code, plate-form, allowable-stress and service verification before selection."
+    },
+    {
+      "code": "W_SOURCE_AMBIGUOUS",
+      "severity": "blocking",
+      "title": "Source text requires verification",
+      "message": "The source entry is ambiguous and must be verified before use."
+    },
+    {
+      "code": "W_SOURCE_BLANK",
+      "severity": "review",
+      "title": "Component not specified in source",
+      "message": "The source guide does not state a value for this component. Do not interpret this as not required."
+    },
+    {
+      "code": "W_MULTIPLE_OPTIONS",
+      "severity": "review",
+      "title": "Multiple source-listed options",
+      "message": "The source provides more than one option for this temperature range. Engineering selection is required."
+    },
+    {
+      "code": "W_TEMP_ENVELOPE_CONFLICT",
+      "severity": "review",
+      "title": "Temperature envelope gives different families",
+      "message": "Minimum and maximum design temperatures map to different material families or options. Resolve the complete design envelope with materials engineering."
+    },
+    {
+      "code": "W_HISTORICAL_REFERENCE",
+      "severity": "review",
+      "title": "Historical guide",
+      "message": "Verify all material specifications and suitability against the current controlled code edition and project requirements."
+    },
+    {
+      "code": "W_SERVICE_SOUR",
+      "severity": "review",
+      "title": "Sour-service review required",
+      "message": "Temperature-only selection does not establish suitability for wet H₂S or sour service."
+    },
+    {
+      "code": "W_SERVICE_HYDROGEN",
+      "severity": "review",
+      "title": "Hydrogen-service review required",
+      "message": "Check hydrogen damage mechanisms, applicable curves and project requirements separately."
+    },
+    {
+      "code": "W_SERVICE_CHLORIDE",
+      "severity": "review",
+      "title": "Chloride-service review required",
+      "message": "Check chloride-related corrosion and stress-corrosion cracking separately."
+    },
+    {
+      "code": "W_SERVICE_CAUSTIC",
+      "severity": "review",
+      "title": "Caustic-service review required",
+      "message": "Check caustic cracking and concentration-temperature effects separately."
+    },
+    {
+      "code": "W_SERVICE_AMINE",
+      "severity": "review",
+      "title": "Amine-service review required",
+      "message": "Check amine corrosion and cracking requirements separately."
+    },
+    {
+      "code": "W_SERVICE_AMMONIA",
+      "severity": "review",
+      "title": "Ammonia-service review required",
+      "message": "Check ammonia-specific material and cracking requirements separately."
+    },
+    {
+      "code": "W_SERVICE_CYCLIC",
+      "severity": "review",
+      "title": "Cyclic-service review required",
+      "message": "Material selection alone does not address fatigue, cyclic loading or local stress concentration."
+    },
+    {
+      "code": "W_SERVICE_HIGH_TEMP_HC",
+      "severity": "review",
+      "title": "High-temperature degradation review required",
+      "message": "Check creep, oxidation, sulfidation and other process-specific mechanisms separately."
+    },
+    {
+      "code": "W_SERVICE_CRYOGENIC",
+      "severity": "review",
+      "title": "Cryogenic design review required",
+      "message": "Check toughness, impact testing, fabrication, welding and thermal contraction separately."
+    },
+    {
+      "code": "W_CLADDING_SCOPE",
+      "severity": "review",
+      "title": "Cladding or lining review required",
+      "message": "Base material, cladding or lining, weld overlay and attachment details require a separate engineered selection."
+    }
+  ]
+}

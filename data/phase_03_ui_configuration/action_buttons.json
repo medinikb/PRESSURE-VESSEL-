@@ -1,0 +1,48 @@
+{
+  "actions": [
+    {
+      "id": "load_example",
+      "label": "Load Example",
+      "order": 10
+    },
+    {
+      "id": "reset",
+      "label": "Reset",
+      "order": 20,
+      "requires_confirmation_when_dirty": true
+    },
+    {
+      "id": "run_selection",
+      "label": "Screen Materials",
+      "order": 30,
+      "primary": true
+    },
+    {
+      "id": "run_design",
+      "label": "Calculate Preliminary Thickness",
+      "order": 40,
+      "primary": true,
+      "feature_flag": "preliminary_pressure_design"
+    },
+    {
+      "id": "open_scenario_lab",
+      "label": "Compare Scenarios",
+      "order": 50
+    },
+    {
+      "id": "show_report",
+      "label": "Show Audit Report",
+      "order": 60
+    },
+    {
+      "id": "export_json",
+      "label": "Export JSON",
+      "order": 70
+    },
+    {
+      "id": "print_pdf",
+      "label": "Print / PDF",
+      "order": 80
+    }
+  ]
+}

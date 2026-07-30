@@ -1,0 +1,46 @@
+{
+  "base_unit": "degF",
+  "rules": [
+    {
+      "id": "TEMP_ENV_001",
+      "condition": "only_maximum_temperature_present",
+      "selection_basis": "maximum_temperature_only",
+      "message": "I_SINGLE_TEMPERATURE_BASIS"
+    },
+    {
+      "id": "TEMP_ENV_002",
+      "condition": "only_minimum_temperature_present",
+      "selection_basis": "minimum_temperature_only",
+      "message": "I_SINGLE_TEMPERATURE_BASIS"
+    },
+    {
+      "id": "TEMP_ENV_003",
+      "condition": "min_and_max_match_same_range_and_same_option",
+      "result": "single_guide_option"
+    },
+    {
+      "id": "TEMP_ENV_004",
+      "condition": "min_and_max_match_same_family_but_different_ranges",
+      "result": "same_family_multiple_component_sets",
+      "message": "W_COMPONENT_SPEC_CHANGES_WITH_TEMPERATURE"
+    },
+    {
+      "id": "TEMP_ENV_005",
+      "condition": "min_and_max_match_different_material_families",
+      "result": "family_conflict",
+      "message": "W_TEMP_ENVELOPE_CONFLICT"
+    },
+    {
+      "id": "TEMP_ENV_006",
+      "condition": "either_endpoint_has_multiple_alternatives",
+      "result": "multiple_options",
+      "message": "W_MULTIPLE_OPTIONS"
+    },
+    {
+      "id": "TEMP_ENV_007",
+      "condition": "endpoint_outside_guide",
+      "result": "outside_guide",
+      "message": "W_OUTSIDE_GUIDE"
+    }
+  ]
+}

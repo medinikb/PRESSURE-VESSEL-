@@ -1,0 +1,101 @@
+{
+  "groups": [
+    {
+      "id": "calculation_context",
+      "title": "Calculation Context",
+      "fields": [
+        "selection_objective",
+        "project_number",
+        "equipment_tag",
+        "vessel_description",
+        "unit_name",
+        "prepared_by"
+      ]
+    },
+    {
+      "id": "temperature_basis",
+      "title": "Temperature Basis",
+      "fields": [
+        "operating_temperature",
+        "maximum_design_temperature",
+        "minimum_design_temperature",
+        "temperature_unit"
+      ]
+    },
+    {
+      "id": "service_flags",
+      "title": "Service Screening",
+      "fields": [
+        "service_condition_flags",
+        "service_notes"
+      ]
+    },
+    {
+      "id": "component_scope",
+      "title": "Component Scope",
+      "fields": [
+        "selected_components",
+        "cladding_or_lining_required"
+      ]
+    },
+    {
+      "id": "design_conditions",
+      "title": "Design Conditions",
+      "fields": [
+        "design_pressure",
+        "pressure_unit",
+        "static_head_pressure",
+        "design_temperature",
+        "external_pressure_applicable"
+      ]
+    },
+    {
+      "id": "geometry",
+      "title": "Vessel Geometry",
+      "fields": [
+        "component_type",
+        "diameter_basis",
+        "inside_diameter",
+        "outside_diameter",
+        "inside_radius",
+        "outside_radius",
+        "head_type",
+        "head_depth",
+        "crown_radius",
+        "knuckle_radius",
+        "cone_half_apex_angle"
+      ]
+    },
+    {
+      "id": "material_strength",
+      "title": "Material Strength Basis",
+      "fields": [
+        "material_specification_id",
+        "allowable_stress_design",
+        "allowable_stress_ambient",
+        "stress_unit",
+        "stress_source_reference"
+      ]
+    },
+    {
+      "id": "fabrication_basis",
+      "title": "Fabrication Basis",
+      "fields": [
+        "joint_type_id",
+        "radiography_extent",
+        "joint_efficiency",
+        "joint_efficiency_source"
+      ]
+    },
+    {
+      "id": "corrosion_and_additions",
+      "title": "Thickness Additions",
+      "fields": [
+        "corrosion_allowance",
+        "forming_allowance",
+        "other_allowance",
+        "nominal_thickness_rounding_mode"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "columns": [
+    {
+      "id": "component",
+      "label": "Component",
+      "order": 10
+    },
+    {
+      "id": "material_family",
+      "label": "Material Family",
+      "order": 20
+    },
+    {
+      "id": "source_specifications",
+      "label": "Source-Listed Specifications",
+      "order": 30
+    },
+    {
+      "id": "selected_specification",
+      "label": "Selected Specification",
+      "order": 40
+    },
+    {
+      "id": "data_quality",
+      "label": "Data Quality",
+      "order": 50
+    },
+    {
+      "id": "engineering_status",
+      "label": "Status",
+      "order": 60
+    },
+    {
+      "id": "remarks",
+      "label": "Engineering Remarks",
+      "order": 70
+    }
+  ],
+  "locked_columns": [
+    "component",
+    "source_specifications",
+    "engineering_status"
+  ]
+}

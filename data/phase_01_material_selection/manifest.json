@@ -1,0 +1,162 @@
+{
+  "product_id": "VesselM_Material_Selection",
+  "package_version": "0.1.0",
+  "package_status": "engineering_transcription_draft",
+  "created_date": "2026-07-24",
+  "source_id": "PVMD_3E_APPENDIX_H_PAGE_464",
+  "controlled_code_edition": null,
+  "architecture_principle": "Each data concern is isolated in a separate JSON file so it can be reviewed, versioned, replaced or extended independently.",
+  "files": [
+    {
+      "path": "source_metadata.json",
+      "purpose": "Source identity, scope, limitations and verification status.",
+      "replaceable_independently": true,
+      "sha256": "09423214aa721819ff3292a8de101a1b5beffabe283fff6f8166773909569192"
+    },
+    {
+      "path": "temperature_units.json",
+      "purpose": "Temperature conversion parameters and rounding rules.",
+      "replaceable_independently": true,
+      "sha256": "40e207e81b0adaa1e15ac0799b5df758ee800d70623ec2c85fd86931f731018c"
+    },
+    {
+      "path": "temperature_categories.json",
+      "purpose": "Cryogenic, low, intermediate and elevated source categories.",
+      "replaceable_independently": true,
+      "sha256": "1baa924929e85427597bf9775ee97bfa3f29ddd5131a39d5bbd3e6005bf8ebba"
+    },
+    {
+      "path": "component_types.json",
+      "purpose": "Maintainable list of plate, pipe, forgings, fittings and bolting components.",
+      "replaceable_independently": true,
+      "sha256": "b3e83d2feeaf44cd7e349bb76572c2320a5ccf967c4160d39f9b838578759a26"
+    },
+    {
+      "path": "material_families.json",
+      "purpose": "Source and normalized material-family names.",
+      "replaceable_independently": true,
+      "sha256": "363f4242a98adb07259fe2dbdb062704c389a53772a46b0eb2a27e3c1e022414"
+    },
+    {
+      "path": "material_specifications.json",
+      "purpose": "Unique material specification identifiers referenced by the source records.",
+      "replaceable_independently": true,
+      "sha256": "e2c597eb65c4faa9fd53c9b40c3ff8d50af8fc9e480d703b49d612db6c2a6af4"
+    },
+    {
+      "path": "bolting_sets.json",
+      "purpose": "Independent bolt-and-nut pair library.",
+      "replaceable_independently": true,
+      "sha256": "53faabebc9b0759db2d4d881ef9069dd5cbaec9beb2efcc011e68b141ec1f473"
+    },
+    {
+      "path": "material_selection_ranges.json",
+      "purpose": "Core temperature-band selection records transcribed from Appendix H.",
+      "replaceable_independently": true,
+      "sha256": "a4be450df12348556832dbd8eac53b722e12e4c9969e26401486af97c715376b"
+    },
+    {
+      "path": "data_quality_flags.json",
+      "purpose": "Flags for merged cells, grouped expressions, blanks and ambiguous source text.",
+      "replaceable_independently": true,
+      "sha256": "8e1fd97e855082cefe3a8c2aed62222a7d1c6d9096593216341e95405da7fca0"
+    },
+    {
+      "path": "input_fields.json",
+      "purpose": "Configurable product input model.",
+      "replaceable_independently": true,
+      "sha256": "8545adf00395cd455eeb29eb489baebdba900b8cc31a3a79aab36e8d7bd28133"
+    },
+    {
+      "path": "service_condition_flags.json",
+      "purpose": "Warning-only service flags not derived from the source guide.",
+      "replaceable_independently": true,
+      "sha256": "7d8905e008838e538d45562d10c64af4b9a0283083a228ae9515275881ef9910"
+    },
+    {
+      "path": "selection_rules.json",
+      "purpose": "Data-driven selection workflow and governance rules.",
+      "replaceable_independently": true,
+      "sha256": "66d48d7bc0689400aad2a05e373f90ca33798bc647ce31e152ecf5cf90383dee"
+    },
+    {
+      "path": "validation_rules.json",
+      "purpose": "Input and override validation rules.",
+      "replaceable_independently": true,
+      "sha256": "d84bc349d696eff44da40b6524fd82e860a166d8c2836bdb5d27eb308ab8eb8f"
+    },
+    {
+      "path": "warning_catalog.json",
+      "purpose": "Central warning and error message library.",
+      "replaceable_independently": true,
+      "sha256": "2c87751804e206230625ccff7aca99ad5628472870b1a4613f880ab7c10e41a8"
+    },
+    {
+      "path": "result_statuses.json",
+      "purpose": "Result state definitions and approval meaning.",
+      "replaceable_independently": true,
+      "sha256": "cf9345c2c75260e1b78358f533b29f2de386944979ec54bb3080897fecb2193c"
+    },
+    {
+      "path": "override_reasons.json",
+      "purpose": "Controlled user-override reasons.",
+      "replaceable_independently": true,
+      "sha256": "eed57d74361ad80491780c1c228948be3759e67063990b2e5c1ed35f2afb6280"
+    },
+    {
+      "path": "report_sections.json",
+      "purpose": "Configurable audit-report section order and conditional inclusion.",
+      "replaceable_independently": true,
+      "sha256": "3600abdab418e241f3ba11fb0972eb2c9d1c9661fed00d2a8ec0690faf4e6633"
+    },
+    {
+      "path": "disclaimers.json",
+      "purpose": "Reusable application and report disclaimers.",
+      "replaceable_independently": true,
+      "sha256": "f5a4ea8106404f1839323ed78d5a6cb1c21d5b451c97e0c0cf04406f21d7fc8a"
+    },
+    {
+      "path": "ui_options.json",
+      "purpose": "Display and user-interface options.",
+      "replaceable_independently": true,
+      "sha256": "45d0d3a21dfea9aa65b9bf378e97c2eaa14ae866ae7350be42a6526c0030f1cf"
+    },
+    {
+      "path": "sample_cases.json",
+      "purpose": "Demonstration cases for the app.",
+      "replaceable_independently": true,
+      "sha256": "facaf41bb38c5519dc37419a0407a8e2a02046c54e8238097ba981e4b2008637"
+    },
+    {
+      "path": "test_cases.json",
+      "purpose": "Boundary, alternative, unit and temperature-envelope tests.",
+      "replaceable_independently": true,
+      "sha256": "6c892dc657938e2dcf40531a111605ba06451f9d6054096d73c5c1f00ef381b8"
+    },
+    {
+      "path": "schemas/manifest.schema.json",
+      "purpose": "JSON Schema for the package manifest.",
+      "replaceable_independently": true,
+      "sha256": "5fc7669f5a88bcc73621e20e32c28e93559200bd8edf9b5988066a20b222ed2c"
+    },
+    {
+      "path": "schemas/material_selection_ranges.schema.json",
+      "purpose": "JSON Schema for the core selection range file.",
+      "replaceable_independently": true,
+      "sha256": "d3f103354e01fd3e66c54abf708d826ba477fe81c27f6971863e1ce260d6e921"
+    },
+    {
+      "path": "schemas/warning_catalog.schema.json",
+      "purpose": "JSON Schema for warning messages.",
+      "replaceable_independently": true,
+      "sha256": "058c847f8a73cd8af3ddb2ff6afbeee8f186053c8facc185f1bd0d42a14351a3"
+    },
+    {
+      "path": "schemas/test_cases.schema.json",
+      "purpose": "JSON Schema for test cases.",
+      "replaceable_independently": true,
+      "sha256": "e1c8b3bc82fbc1a411b3fc7a319384f6d174846952b6b921725f3452f2896f17"
+    }
+  ],
+  "release_gate": "Independent transcription verification and approval by a competent pressure-vessel/materials engineer are required before engineering use."
+}

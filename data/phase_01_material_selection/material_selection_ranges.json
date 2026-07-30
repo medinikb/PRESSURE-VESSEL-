@@ -1,0 +1,852 @@
+{
+  "source_id": "PVMD_3E_APPENDIX_H_PAGE_464",
+  "base_temperature_unit": "degF",
+  "boundary_policy": "All printed closed ranges are treated as inclusive. 'Above 1500' is treated as greater than 1500°F.",
+  "records": [
+    {
+      "id": "MSR_001",
+      "category_id": "cryogenic",
+      "min_f": -425,
+      "max_f": -321,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "stainless_steel",
+      "alternative_group_id": null,
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-240-304, 304L, 347, 316, 316L",
+          "specification_ids": [
+            "SA-240-304",
+            "SA-240-304L",
+            "SA-240-347",
+            "SA-240-316",
+            "SA-240-316L"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-312-304, 304L, 347, 316, 316L",
+          "specification_ids": [
+            "SA-312-304",
+            "SA-312-304L",
+            "SA-312-347",
+            "SA-312-316",
+            "SA-312-316L"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-182-304, 304L, 347, 316, 316L",
+          "specification_ids": [
+            "SA-182-304",
+            "SA-182-304L",
+            "SA-182-347",
+            "SA-182-316",
+            "SA-182-316L"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-403-304, 304L, 347, 316, 316L",
+          "specification_ids": [
+            "SA-403-304",
+            "SA-403-304L",
+            "SA-403-347",
+            "SA-403-316",
+            "SA-403-316L"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_B8_8",
+          "source_text": "SA-320-B8 with SA-194-8",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_002",
+      "category_id": "cryogenic",
+      "min_f": -320,
+      "max_f": -151,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "nickel_9",
+      "alternative_group_id": null,
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-353",
+          "specification_ids": [
+            "SA-353"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-333-8",
+          "specification_ids": [
+            "SA-333-8"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-522-1",
+          "specification_ids": [
+            "SA-522-1"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-420-WPL8",
+          "specification_ids": [
+            "SA-420-WPL8"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_B8_8",
+          "source_text": "SA-320-B8 with SA-194-8",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_003",
+      "category_id": "low_temperature",
+      "min_f": -150,
+      "max_f": -76,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "nickel_3_5",
+      "alternative_group_id": null,
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-203-D",
+          "specification_ids": [
+            "SA-203-D"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-333-3",
+          "specification_ids": [
+            "SA-333-3"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-350-LF63",
+          "specification_ids": [
+            "SA-350-LF63"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-420-WPL3",
+          "specification_ids": [
+            "SA-420-WPL3"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_L7_4",
+          "source_text": "SA-320-L7 with SA-194-4",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_004",
+      "category_id": "low_temperature",
+      "min_f": -75,
+      "max_f": -51,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "nickel_2_5",
+      "alternative_group_id": null,
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-203-A",
+          "specification_ids": [
+            "SA-203-A"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-333-3",
+          "specification_ids": [
+            "SA-333-3"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-350-LF63",
+          "specification_ids": [
+            "SA-350-LF63"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-420-WPL3",
+          "specification_ids": [
+            "SA-420-WPL3"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_L7_4",
+          "source_text": "SA-320-L7 with SA-194-4",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_005",
+      "category_id": "low_temperature",
+      "min_f": -50,
+      "max_f": -21,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "carbon_steel",
+      "alternative_group_id": null,
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-516-55, 60 to SA-20",
+          "specification_ids": [],
+          "data_quality": "ambiguous_source_text",
+          "note": "The source text is reproduced exactly as visible and requires verification before engineering use."
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-333-6",
+          "specification_ids": [
+            "SA-333-6"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-350-LF2",
+          "specification_ids": [
+            "SA-350-LF2"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-420-WPL6",
+          "specification_ids": [
+            "SA-420-WPL6"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_L7_4",
+          "source_text": "SA-320-L7 with SA-194-4",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_006",
+      "category_id": "low_temperature",
+      "min_f": -20,
+      "max_f": 4,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "carbon_steel",
+      "alternative_group_id": null,
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-516-All",
+          "specification_ids": [
+            "SA-516-All"
+          ],
+          "data_quality": "group_expression"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-333-1 or 6",
+          "specification_ids": [
+            "SA-333-1",
+            "SA-333-6"
+          ],
+          "data_quality": "group_expression"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-350-LF2",
+          "specification_ids": [
+            "SA-350-LF2"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-420-WPL6",
+          "specification_ids": [
+            "SA-420-WPL6"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_L7_4",
+          "source_text": "SA-320-L7 with SA-194-4",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_007",
+      "category_id": "low_temperature",
+      "min_f": 5,
+      "max_f": 32,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "carbon_steel",
+      "alternative_group_id": null,
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-285-C",
+          "specification_ids": [
+            "SA-285-C"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-53-B; SA-106-B",
+          "specification_ids": [
+            "SA-53-B",
+            "SA-106-B"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-105; SA-181-60,70",
+          "specification_ids": [
+            "SA-105",
+            "SA-181-60",
+            "SA-181-70"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-234-WPB",
+          "specification_ids": [
+            "SA-234-WPB"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_B7_2H",
+          "source_text": "SA-193-B7 with SA-194-2H",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_008",
+      "category_id": "intermediate",
+      "min_f": 33,
+      "max_f": 60,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "carbon_steel",
+      "alternative_group_id": null,
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-516-All; SA-515-All; SA-455-II",
+          "specification_ids": [
+            "SA-516-All",
+            "SA-515-All",
+            "SA-455-II"
+          ],
+          "data_quality": "group_expression"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-53-B; SA-106-B",
+          "specification_ids": [
+            "SA-53-B",
+            "SA-106-B"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-105; SA-181-60,70",
+          "specification_ids": [
+            "SA-105",
+            "SA-181-60",
+            "SA-181-70"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-234-WPB",
+          "specification_ids": [
+            "SA-234-WPB"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_B7_2H",
+          "source_text": "SA-193-B7 with SA-194-2H",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_009",
+      "category_id": "intermediate",
+      "min_f": 61,
+      "max_f": 775,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "carbon_steel",
+      "alternative_group_id": null,
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-516-All; SA-515-All; SA-455-II",
+          "specification_ids": [
+            "SA-516-All",
+            "SA-515-All",
+            "SA-455-II"
+          ],
+          "data_quality": "group_expression"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-53-B; SA-106-B",
+          "specification_ids": [
+            "SA-53-B",
+            "SA-106-B"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-105; SA-181-60,70",
+          "specification_ids": [
+            "SA-105",
+            "SA-181-60",
+            "SA-181-70"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-234-WPB",
+          "specification_ids": [
+            "SA-234-WPB"
+          ],
+          "data_quality": "merged_cell_interpreted"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_B7_2H",
+          "source_text": "SA-193-B7 with SA-194-2H",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_010",
+      "category_id": "elevated_temperature",
+      "min_f": 776,
+      "max_f": 875,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "carbon_half_moly",
+      "alternative_group_id": null,
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-204-B",
+          "specification_ids": [
+            "SA-204-B"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-335-P1",
+          "specification_ids": [
+            "SA-335-P1"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-182-F1",
+          "specification_ids": [
+            "SA-182-F1"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-234-WP1",
+          "specification_ids": [
+            "SA-234-WP1"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_B7_2H",
+          "source_text": "SA-193-B7 with SA-194-2H",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_011",
+      "category_id": "elevated_temperature",
+      "min_f": 876,
+      "max_f": 1000,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "one_chrome_half_moly",
+      "alternative_group_id": "ALT_876_1000",
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-387-12-1",
+          "specification_ids": [
+            "SA-387-12-1"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-335-P12",
+          "specification_ids": [
+            "SA-335-P12"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-182-F12",
+          "specification_ids": [
+            "SA-182-F12"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-234-WP12",
+          "specification_ids": [
+            "SA-234-WP12"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_B7_2H",
+          "source_text": "SA-193-B7 with SA-194-2H",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_012",
+      "category_id": "elevated_temperature",
+      "min_f": 876,
+      "max_f": 1000,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "one_chrome_half_moly",
+      "alternative_group_id": "ALT_876_1000",
+      "option_rank": 2,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-387-11-2",
+          "specification_ids": [
+            "SA-387-11-2"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-335-P11",
+          "specification_ids": [
+            "SA-335-P11"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-182-F11",
+          "specification_ids": [
+            "SA-182-F11"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-234-WP11",
+          "specification_ids": [
+            "SA-234-WP11"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_B7_2H",
+          "source_text": "SA-193-B7 with SA-194-2H",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_013",
+      "category_id": "elevated_temperature",
+      "min_f": 1001,
+      "max_f": 1100,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "two_quarter_chrome_one_moly",
+      "alternative_group_id": null,
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-387-22-1",
+          "specification_ids": [
+            "SA-387-22-1"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-335-P22",
+          "specification_ids": [
+            "SA-335-P22"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-182-F22",
+          "specification_ids": [
+            "SA-182-F22"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-234-WP22",
+          "specification_ids": [
+            "SA-234-WP22"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_B5_3",
+          "source_text": "SA-193-B5 with SA-194-3",
+          "data_quality": "verified_transcription"
+        }
+      }
+    },
+    {
+      "id": "MSR_014",
+      "category_id": "elevated_temperature",
+      "min_f": 1101,
+      "max_f": 1500,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "stainless_steel",
+      "alternative_group_id": "ALT_1101_1500",
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SA-240-347H",
+          "specification_ids": [
+            "SA-240-347H"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SA-312-347H",
+          "specification_ids": [
+            "SA-312-347H"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SA-182-347H",
+          "specification_ids": [
+            "SA-182-347H"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SA-403-347H",
+          "specification_ids": [
+            "SA-403-347H"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_BB_B",
+          "source_text": "SA-193-BB with SA-194-B",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_015",
+      "category_id": "elevated_temperature",
+      "min_f": 1101,
+      "max_f": 1500,
+      "min_inclusive": true,
+      "max_inclusive": true,
+      "material_family_id": "incoloy",
+      "alternative_group_id": "ALT_1101_1500",
+      "option_rank": 2,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SB-424",
+          "specification_ids": [
+            "SB-424"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SB-423",
+          "specification_ids": [
+            "SB-423"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SB-425",
+          "specification_ids": [
+            "SB-425"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SB-366",
+          "specification_ids": [
+            "SB-366"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_BB_B",
+          "source_text": "SA-193-BB with SA-194-B",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    },
+    {
+      "id": "MSR_016",
+      "category_id": "elevated_temperature",
+      "min_f": 1500,
+      "max_f": null,
+      "min_inclusive": false,
+      "max_inclusive": false,
+      "material_family_id": "inconel",
+      "alternative_group_id": null,
+      "option_rank": 1,
+      "components": {
+        "plate": {
+          "status": "specified",
+          "source_text": "SB-443",
+          "specification_ids": [
+            "SB-443"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "pipe": {
+          "status": "specified",
+          "source_text": "SB-444",
+          "specification_ids": [
+            "SB-444"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "forgings": {
+          "status": "specified",
+          "source_text": "SB-446",
+          "specification_ids": [
+            "SB-446"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "fittings": {
+          "status": "specified",
+          "source_text": "SB-366",
+          "specification_ids": [
+            "SB-366"
+          ],
+          "data_quality": "verified_transcription"
+        },
+        "bolting": {
+          "status": "specified",
+          "bolting_set_id": "BOLTSET_BB_B",
+          "source_text": "SA-193-BB with SA-194-B",
+          "data_quality": "merged_cell_interpreted"
+        }
+      }
+    }
+  ]
+}

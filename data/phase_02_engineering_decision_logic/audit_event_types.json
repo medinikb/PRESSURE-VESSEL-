@@ -1,0 +1,66 @@
+{
+  "events": [
+    {
+      "id": "calculation_created",
+      "required_payload": [
+        "calculation_id",
+        "timestamp",
+        "app_version"
+      ]
+    },
+    {
+      "id": "input_changed",
+      "required_payload": [
+        "field_id",
+        "old_value",
+        "new_value",
+        "actor"
+      ]
+    },
+    {
+      "id": "data_library_loaded",
+      "required_payload": [
+        "library_id",
+        "version",
+        "checksum"
+      ]
+    },
+    {
+      "id": "rule_evaluated",
+      "required_payload": [
+        "rule_id",
+        "outcome"
+      ]
+    },
+    {
+      "id": "system_result_generated",
+      "required_payload": [
+        "matched_record_ids",
+        "status_id"
+      ]
+    },
+    {
+      "id": "override_created",
+      "required_payload": [
+        "reason_code",
+        "comment",
+        "actor"
+      ]
+    },
+    {
+      "id": "report_exported",
+      "required_payload": [
+        "format",
+        "timestamp"
+      ]
+    },
+    {
+      "id": "review_status_changed",
+      "required_payload": [
+        "old_status",
+        "new_status",
+        "actor"
+      ]
+    }
+  ]
+}

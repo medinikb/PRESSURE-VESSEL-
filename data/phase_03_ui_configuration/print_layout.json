@@ -1,0 +1,37 @@
+{
+  "page_size": "A4",
+  "orientation": "portrait",
+  "margins_mm": {
+    "top": 15,
+    "right": 12,
+    "bottom": 15,
+    "left": 12
+  },
+  "first_page_sections": [
+    "executive_status",
+    "calculation_identity",
+    "material_summary",
+    "preliminary_design_summary",
+    "critical_warnings"
+  ],
+  "subsequent_sections": [
+    "design_input_basis",
+    "component_matrix",
+    "calculation_flow",
+    "checks",
+    "notes",
+    "approval_fields",
+    "version_register"
+  ],
+  "keep_together": [
+    "result_card",
+    "component_result_row",
+    "formula_step"
+  ],
+  "footer_fields": [
+    "calculation_id",
+    "app_version",
+    "data_library_versions",
+    "page_number"
+  ]
+}

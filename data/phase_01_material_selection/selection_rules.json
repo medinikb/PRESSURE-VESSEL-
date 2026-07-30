@@ -1,0 +1,76 @@
+{
+  "rules": [
+    {
+      "id": "SEL_001",
+      "priority": 10,
+      "description": "Convert each entered temperature to °F using temperature_units.json before comparison.",
+      "expression": "temperature_f = convert(input_temperature, input_unit, 'degF')"
+    },
+    {
+      "id": "SEL_002",
+      "priority": 20,
+      "description": "Evaluate minimum design temperature and maximum design temperature independently when both are supplied.",
+      "expression": "evaluate(minimum_design_temperature); evaluate(maximum_design_temperature)"
+    },
+    {
+      "id": "SEL_003",
+      "priority": 30,
+      "description": "Match all records whose inclusive/exclusive boundaries contain the converted temperature.",
+      "expression": "(min_f is null or temperature_f > min_f or (min_inclusive and temperature_f == min_f)) and (max_f is null or temperature_f < max_f or (max_inclusive and temperature_f == max_f))"
+    },
+    {
+      "id": "SEL_004",
+      "priority": 40,
+      "description": "When multiple records share an alternative_group_id, return every alternative. Do not rank one as technically preferred.",
+      "expression": "return_all(matches grouped by alternative_group_id)"
+    },
+    {
+      "id": "SEL_005",
+      "priority": 50,
+      "description": "Return only requested component types, while retaining the full source record for audit traceability.",
+      "expression": "display_components = intersection(required_component_types, record.components)"
+    },
+    {
+      "id": "SEL_006",
+      "priority": 60,
+      "description": "If a requested component is not specified in the source, return incomplete_source_data and a blocking engineering-review message.",
+      "expression": "if component.status == 'not_specified_in_source' then add_status('incomplete_source_data')"
+    },
+    {
+      "id": "SEL_007",
+      "priority": 70,
+      "description": "Any ambiguous source text blocks automatic recommendation.",
+      "expression": "if data_quality == 'ambiguous_source_text' then add_status('source_verification_required')"
+    },
+    {
+      "id": "SEL_008",
+      "priority": 80,
+      "description": "Service-condition flags generate warnings only and cannot select or reject a material in Release 1.",
+      "expression": "for each service_flag: emit(flag.warning_code)"
+    },
+    {
+      "id": "SEL_009",
+      "priority": 90,
+      "description": "If minimum and maximum temperatures lead to different families, display both results and require materials engineering resolution.",
+      "expression": "if family(min_result) != family(max_result) then add_status('temperature_envelope_conflict')"
+    },
+    {
+      "id": "SEL_010",
+      "priority": 100,
+      "description": "No source match results in outside_guide_range.",
+      "expression": "if matches.count == 0 then add_status('outside_guide_range')"
+    },
+    {
+      "id": "SEL_011",
+      "priority": 110,
+      "description": "The app must never issue an approved or final material decision automatically.",
+      "expression": "final_approval = false"
+    },
+    {
+      "id": "SEL_012",
+      "priority": 120,
+      "description": "A user override requires a reason, comment, name and date.",
+      "expression": "if override then require(override_reason, override_comment, overridden_by, override_date)"
+    }
+  ]
+}

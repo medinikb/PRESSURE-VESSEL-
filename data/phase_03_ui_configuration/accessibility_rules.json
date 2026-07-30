@@ -1,0 +1,32 @@
+{
+  "requirements": [
+    {
+      "id": "A11Y_001",
+      "rule": "Every input has a visible label and programmatic description."
+    },
+    {
+      "id": "A11Y_002",
+      "rule": "Warnings use icon, text and severity, not color alone."
+    },
+    {
+      "id": "A11Y_003",
+      "rule": "All functions are keyboard accessible."
+    },
+    {
+      "id": "A11Y_004",
+      "rule": "Focus order follows workflow sequence."
+    },
+    {
+      "id": "A11Y_005",
+      "rule": "Numeric results include units in visible text."
+    },
+    {
+      "id": "A11Y_006",
+      "rule": "Tables provide column headers and accessible captions."
+    },
+    {
+      "id": "A11Y_007",
+      "rule": "Print output preserves status text without relying on background colors."
+    }
+  ]
+}

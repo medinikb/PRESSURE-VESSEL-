@@ -1,0 +1,26 @@
+{
+  "base_unit": "degF",
+  "display_units": [
+    "degC",
+    "degF"
+  ],
+  "show": [
+    "source_range_boundaries",
+    "minimum_design_temperature_marker",
+    "maximum_design_temperature_marker",
+    "operating_temperature_marker",
+    "adjacent_ranges"
+  ],
+  "range_style_by_category": {
+    "cryogenic": "semantic_cold",
+    "low_temperature": "semantic_low",
+    "intermediate": "semantic_normal",
+    "elevated_temperature": "semantic_hot"
+  },
+  "boundary_tooltip_fields": [
+    "range_id",
+    "material_family",
+    "inclusive_boundary",
+    "source_quality"
+  ]
+}

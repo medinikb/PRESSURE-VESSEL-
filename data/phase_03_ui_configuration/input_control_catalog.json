@@ -1,0 +1,72 @@
+{
+  "controls": [
+    {
+      "type": "text",
+      "supports": [
+        "equipment_tag",
+        "project_number",
+        "source_reference"
+      ]
+    },
+    {
+      "type": "number",
+      "supports": [
+        "temperature",
+        "pressure",
+        "stress",
+        "diameter",
+        "radius",
+        "thickness",
+        "angle"
+      ]
+    },
+    {
+      "type": "select",
+      "supports": [
+        "unit",
+        "component_type",
+        "head_type",
+        "joint_type",
+        "radiography_extent"
+      ]
+    },
+    {
+      "type": "multiselect",
+      "supports": [
+        "selected_components",
+        "service_condition_flags"
+      ]
+    },
+    {
+      "type": "toggle",
+      "supports": [
+        "cladding_or_lining_required",
+        "external_pressure_applicable",
+        "user_override_enabled"
+      ]
+    },
+    {
+      "type": "textarea",
+      "supports": [
+        "objective",
+        "notes",
+        "override_comment"
+      ]
+    },
+    {
+      "type": "readonly_calculated",
+      "supports": [
+        "converted_temperature",
+        "geometry_factor",
+        "required_thickness",
+        "mawp"
+      ]
+    }
+  ],
+  "numeric_control_defaults": {
+    "allow_scientific_notation": false,
+    "show_unit_suffix": true,
+    "show_valid_range": true,
+    "preserve_raw_user_input": true
+  }
+}

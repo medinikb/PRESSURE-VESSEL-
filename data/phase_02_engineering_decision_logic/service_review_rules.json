@@ -1,0 +1,56 @@
+{
+  "logic_type": "warning_only",
+  "automatic_material_selection_allowed": false,
+  "rules": [
+    {
+      "service_flag": "wet_h2s_sour",
+      "warning_code": "W_SERVICE_SOUR",
+      "required_reviewer_role": "materials_corrosion_engineer"
+    },
+    {
+      "service_flag": "hydrogen",
+      "warning_code": "W_SERVICE_HYDROGEN",
+      "required_reviewer_role": "materials_corrosion_engineer"
+    },
+    {
+      "service_flag": "chlorides",
+      "warning_code": "W_SERVICE_CHLORIDE",
+      "required_reviewer_role": "materials_corrosion_engineer"
+    },
+    {
+      "service_flag": "caustic",
+      "warning_code": "W_SERVICE_CAUSTIC",
+      "required_reviewer_role": "materials_corrosion_engineer"
+    },
+    {
+      "service_flag": "amine",
+      "warning_code": "W_SERVICE_AMINE",
+      "required_reviewer_role": "materials_corrosion_engineer"
+    },
+    {
+      "service_flag": "ammonia",
+      "warning_code": "W_SERVICE_AMMONIA",
+      "required_reviewer_role": "materials_corrosion_engineer"
+    },
+    {
+      "service_flag": "cyclic_service",
+      "warning_code": "W_SERVICE_CYCLIC",
+      "required_reviewer_role": "pressure_vessel_engineer"
+    },
+    {
+      "service_flag": "cryogenic",
+      "warning_code": "W_SERVICE_CRYOGENIC",
+      "required_reviewer_role": "materials_and_welding_engineer"
+    },
+    {
+      "service_flag": "high_temperature_hydrocarbon",
+      "warning_code": "W_SERVICE_HIGH_TEMP_HC",
+      "required_reviewer_role": "materials_corrosion_engineer"
+    },
+    {
+      "service_flag": "cladding_or_lining",
+      "warning_code": "W_CLADDING_SCOPE",
+      "required_reviewer_role": "materials_and_pressure_vessel_engineer"
+    }
+  ]
+}
