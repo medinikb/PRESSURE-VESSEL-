@@ -1,0 +1,45 @@
+{
+  "product": "VesselM",
+  "version": "1.0.0",
+  "validation_date": "2026-07-24",
+  "checks": [
+    {
+      "check": "JSON parsing",
+      "status": "passed",
+      "items_checked": 96,
+      "errors": []
+    },
+    {
+      "check": "JavaScript syntax",
+      "status": "passed",
+      "files_checked": [
+        "app.js",
+        "js/utils.js",
+        "js/material-engine.js",
+        "js/design-engine.js",
+        "js/test-engine.js",
+        "js/report-engine.js",
+        "data/vesselm-data.js"
+      ]
+    },
+    {
+      "check": "Engine test register",
+      "status": "passed",
+      "tests_total": 23,
+      "tests_passed": 23,
+      "tests_failed": 0
+    },
+    {
+      "check": "HTML-to-JavaScript element bindings",
+      "status": "passed",
+      "ids_checked": 99,
+      "missing_ids": []
+    },
+    {
+      "check": "Automated full browser UI launch",
+      "status": "not_executed",
+      "reason": "The execution environment blocked local and file URL navigation. The package is designed for direct local browser use and GitHub Pages."
+    }
+  ],
+  "engineering_note": "Software validation does not replace controlled-code verification or independent engineering calculation review."
+}

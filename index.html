@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="VesselM Phase 1 to Phase 6 pressure vessel material screening and preliminary internal-pressure design app.">
+  <title>VesselM | Phase 1 to Phase 6</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <div id="appShell" class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <rect x="17" y="8" width="30" height="48" rx="15"></rect>
+            <path d="M12 22h5M47 22h5M12 42h5M47 42h5"></path>
+            <path d="M25 18h14M25 46h14"></path>
+          </svg>
+        </div>
+        <div>
+          <strong>VesselM</strong>
+          <span>Preliminary vessel assessment</span>
+        </div>
+        <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-label="Collapse navigation sidebar" aria-expanded="true" title="Collapse sidebar">‹</button>
+      </div>
+
+      <nav class="side-nav" aria-label="Application navigation">
+        <button class="nav-item active" type="button" data-screen="overview" data-sidebar-label="Start here">
+          <span class="nav-icon">00</span>
+          <span><b>Start here</b><small>Guided assessment workflow</small></span>
+        </button>
+        <button class="nav-item" type="button" data-screen="material" data-sidebar-label="Screen size &amp; materials">
+          <span class="nav-icon">01</span>
+          <span><b>1. Screen size &amp; materials</b><small>Automated preliminary concept</small></span>
+        </button>
+        <button class="nav-item" type="button" data-screen="design" data-sidebar-label="Check preliminary thickness">
+          <span class="nav-icon">02</span>
+          <span><b>2. Check thickness</b><small>Internal-pressure screening</small></span>
+        </button>
+        <button class="nav-item" type="button" data-screen="scenario" data-sidebar-label="Compare options">
+          <span class="nav-icon">03</span>
+          <span><b>3. Compare options</b><small>Save and compare cases</small></span>
+        </button>
+        <button class="nav-item" type="button" data-screen="verification" data-sidebar-label="Quality checks">
+          <span class="nav-icon">04</span>
+          <span><b>Quality checks</b><small>Software test register</small></span>
+        </button>
+        <button class="nav-item" type="button" data-screen="library" data-sidebar-label="Reference data">
+          <span class="nav-icon">05</span>
+          <span><b>Reference data</b><small>View source libraries</small></span>
+        </button>
+        <button class="nav-item" type="button" data-screen="basis" data-sidebar-label="Safety and limits">
+          <span class="nav-icon">06</span>
+          <span><b>Safety and limits</b><small>Read before using results</small></span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="release-chip"><i></i> v1.0.0</span>
+        <p>Screening tool — engineer review required</p>
+      </div>
+    </aside>
+
+    <div class="page">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">PRESSURE VESSEL ENGINEERING</p>
+          <h1 id="pageTitle">VesselM Assessment Workspace</h1>
+        </div>
+        <div class="topbar-actions">
+          <span id="globalStatus" class="global-status">No active calculation</span>
+          <button id="themeButton" class="icon-button" type="button" aria-label="Toggle light and dark mode">◐</button>
+        </div>
+      </header>
+
+      <main id="mainContent">
+        <section class="screen active" data-screen-panel="overview">
+          <div class="hero panel">
+            <div>
+              <span class="phase-pill">Junior engineer guided workflow</span>
+              <h2>Start a preliminary vessel assessment with confidence.</h2>
+              <p>
+                Follow the practical sequence used in an early engineering review: capture the design basis,
+                screen vessel size and material options, check preliminary thickness, then prepare an auditable handover for a senior engineer.
+              </p>
+              <div class="hero-actions">
+                <button class="button primary" type="button" data-go="material">Start sizing &amp; material screening <span>→</span></button>
+                <button class="button secondary" type="button" data-go="basis">Read safety limits first</button>
+              </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+              <svg viewBox="0 0 420 280">
+                <defs>
+                  <linearGradient id="vesselGradient" x1="0" x2="1">
+                    <stop offset="0" stop-color="#e97036"/>
+                    <stop offset="1" stop-color="#ffad72"/>
+                  </linearGradient>
+                </defs>
+                <rect x="144" y="32" width="132" height="214" rx="66" fill="none" stroke="url(#vesselGradient)" stroke-width="12"/>
+                <path d="M117 86h27M276 86h27M117 190h27M276 190h27" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+                <path d="M174 79h72M174 199h72" fill="none" stroke="currentColor" stroke-width="6" opacity=".25"/>
+                <circle cx="210" cy="139" r="27" fill="#fff1e9" stroke="#e97036" stroke-width="5"/>
+                <path d="M210 112v54M183 139h54" stroke="#e97036" stroke-width="4" opacity=".7"/>
+              </svg>
+            </div>
+          </div>
+
+          <section class="workflow-panel panel" aria-labelledby="workflowTitle">
+            <div class="workflow-heading">
+              <div><span class="section-number">WORKFLOW</span><h3 id="workflowTitle">Your assessment path</h3></div>
+              <p>Complete each step in order. VesselM keeps the calculation record in this browser.</p>
+            </div>
+            <div class="workflow-grid">
+              <button class="workflow-step active" type="button" data-go="material" data-workflow-step="material">
+                <span>01</span><div><b>Define the vessel basis</b><small>Tag, design temperature, required components and service flags.</small></div><i>Start</i>
+              </button>
+              <button class="workflow-step" type="button" data-go="design" data-workflow-step="design">
+                <span>02</span><div><b>Screen material and thickness</b><small>Use verified project inputs for an internal-pressure check.</small></div><i>Next</i>
+              </button>
+              <button class="workflow-step" type="button" data-go="scenario" data-workflow-step="scenario">
+                <span>03</span><div><b>Compare and hand over</b><small>Save options, export the record and route it for review.</small></div><i>Review</i>
+              </button>
+            </div>
+          </section>
+
+          <div class="overview-grid">
+            <article class="panel overview-card">
+              <div class="card-heading"><span class="section-number">USE</span><h3>What you can use it for</h3></div>
+              <p>
+                Prepare a consistent initial material and thickness assessment, then give the senior engineer a complete,
+                traceable starting point instead of disconnected spreadsheet checks.
+              </p>
+            </article>
+            <article class="panel overview-card">
+              <div class="card-heading"><span class="section-number">STOP</span><h3>When to stop and ask</h3></div>
+              <p>
+                Stop if you do not have the approved code edition, allowable-stress source, or a clear design basis.
+                Do not use a green result as a construction or approval decision.
+              </p>
+            </article>
+            <article class="panel overview-card">
+              <div class="card-heading"><span class="section-number">HANDOVER</span><h3>What to give your reviewer</h3></div>
+              <p>
+                Provide the chosen scenario, controlled-code reference, stress source, warnings, assumptions and exported
+                audit record. The reviewer remains responsible for the final engineering decision.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="screen" data-screen-panel="material">
+          <div class="screen-heading">
+            <div>
+              <p class="eyebrow">STEP 1 OF 3 — START WITH THE DESIGN BASIS</p>
+              <h2>Screen size &amp; material options</h2>
+              <p>Enter the minimum process and temperature basis. The tool recommends a preliminary vessel size, internals and material shortlist for engineering review.</p>
+              <p class="field-note">Fields marked with <b>*</b> are required for the relevant calculation or recommendation.</p>
+            </div>
+            <div class="screen-actions">
+              <button id="materialExampleButton" class="button ghost" type="button">Load example</button>
+              <button id="materialResetButton" class="button ghost" type="button">Reset</button>
+              <details class="help-menu">
+                <summary class="button ghost">Help: Before you start</summary>
+                <div class="help-menu-content">
+                  <div class="card-heading"><span class="section-number">HELP</span><h3>Before you start</h3></div>
+                  <ol class="process-list">
+                    <li><span>1</span><div><b>Use degrees Celsius</b><small>Enter the approved design temperatures in °C.</small></div></li>
+                    <li><span>2</span><div><b>Resolve source ranges</b><small>Retain all alternatives and merged-cell interpretations.</small></div></li>
+                    <li><span>3</span><div><b>Build component matrix</b><small>Plate, pipe, forgings, fittings and bolting.</small></div></li>
+                    <li><span>4</span><div><b>Route engineering review</b><small>Service, ambiguity, project and code controls.</small></div></li>
+                  </ol>
+                  <div class="alert review"><b>Temperature is only one selection variable.</b><p>Corrosion, toughness, weldability, creep, fabrication and statutory requirements remain outside Phase 1.</p></div>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div class="workspace-grid">
+            <form id="materialForm" class="panel form-panel" novalidate>
+              <div id="materialErrors" class="form-errors" hidden></div>
+
+              <fieldset>
+                <legend>1. Identify this vessel</legend>
+                <div class="field-grid two-col">
+                  <label class="field">
+                    <span>Equipment tag *</span>
+                    <input id="materialTag" type="text" placeholder="e.g. 21-V-101">
+                  </label>
+                  <label class="field">
+                    <span>Project number</span>
+                    <input id="materialProject" type="text" placeholder="e.g. NRL/PROJECT/001">
+                  </label>
+                  <label class="field full">
+                    <span>Vessel description</span>
+                    <input id="materialDescription" type="text" placeholder="e.g. HP Separator Vessel">
+                  </label>
+                </div>
+              </fieldset>
+
+              <details class="details-panel">
+                <summary><span><b>API RP 12J process data</b><small>Optional. Open only when you need the detailed API 9th Edition comparison.</small></span><i>＋</i></summary>
+                <div class="details-content">
+                  <label class="switch-row"><input id="apiRp12jEnabled" type="checkbox"><span class="switch"></span><span>Use detailed API RP 12J process-data checks</span></label>
+                  <div id="apiRp12jFields" hidden>
+                    <div class="form-actions"><button id="apiExampleButton" class="button ghost small" type="button">Load API example</button></div>
+                    <p class="field-note">Enter approved process data for design, normal and minimum cases. The API logic will remain fail-closed if a required value is missing.</p>
+                    <div class="field-grid two-col">
+                      <label class="field"><span>API service type *</span><select id="apiServiceType"><option value="">Select service</option><option value="gas_liquid_scrubber">Gas-liquid scrubber</option><option value="gas_liquid_separator">Gas-liquid separator</option><option value="gas_oil_water_separator">Gas-oil-water separator</option><option value="liquid_liquid_separator">Liquid-liquid separator</option><option value="separator_with_solids">Separator with solids</option></select></label>
+                      <label class="switch-row"><input id="apiCompressorSuction" type="checkbox"><span class="switch"></span><span>Compressor suction service</span></label>
+                      <label class="switch-row"><input id="apiPlotRestricted" type="checkbox"><span class="switch"></span><span>Plot area restricted</span></label>
+                      <label class="field"><span>Foaming tendency *</span><select id="apiFoaming"><option value="none">None</option><option value="low">Low</option><option value="moderate">Moderate</option><option value="high">High</option><option value="severe">Severe</option></select></label>
+                      <label class="switch-row"><input id="apiWaxPresent" type="checkbox"><span class="switch"></span><span>Wax / asphaltenes present</span></label>
+                      <label class="switch-row"><input id="apiHighViscosity" type="checkbox"><span class="switch"></span><span>High-viscosity liquid</span></label>
+                      <label class="switch-row"><input id="apiLowIft" type="checkbox"><span class="switch"></span><span>Low interfacial tension</span></label>
+                      <label class="switch-row"><input id="apiHighTurndown" type="checkbox"><span class="switch"></span><span>High turndown required</span></label>
+                      <label class="switch-row"><input id="apiHighLiquidLoading" type="checkbox"><span class="switch"></span><span>High liquid loading</span></label>
+                      <label class="field"><span>Required droplet-removal target</span><div class="input-with-unit"><input id="apiDropletTarget" type="number" min="0" step="any" placeholder="e.g. 100"><span class="linked-unit">µm</span></div></label>
+                      <label class="field"><span>Required liquid retention time</span><div class="input-with-unit"><input id="apiRetentionTime" type="number" min="0" step="any" placeholder="e.g. 180"><span class="linked-unit">s</span></div></label>
+                      <label class="field"><span>Required slug / surge volume</span><div class="input-with-unit"><input id="apiSlugVolume" type="number" min="0" step="any" placeholder="e.g. 5"><span class="linked-unit">m³</span></div></label>
+                      <label class="field"><span>Company standard vessel IDs (m) *</span><input id="apiStandardIds" type="text" placeholder="e.g. 1.2, 1.5, 1.8, 2.4"></label>
+                      <label class="field"><span>Company standard tangent lengths (m) *</span><input id="apiStandardLengths" type="text" placeholder="e.g. 3, 4.5, 6, 9"></label>
+                    </div>
+                    <div class="table-scroll engineering-review-table"><table class="check-table api-input-table"><thead><tr><th>Required operating-case input</th><th>Design</th><th>Normal</th><th>Minimum</th></tr></thead><tbody>
+                      <tr><td>Pressure, bar(a)</td><td><input data-api-case-field="pressure_bara" data-api-case="design" type="number" min="0" step="any"></td><td><input data-api-case-field="pressure_bara" data-api-case="normal" type="number" min="0" step="any"></td><td><input data-api-case-field="pressure_bara" data-api-case="minimum" type="number" min="0" step="any"></td></tr>
+                      <tr><td>Temperature, °C</td><td><input data-api-case-field="temperature_c" data-api-case="design" type="number" step="any"></td><td><input data-api-case-field="temperature_c" data-api-case="normal" type="number" step="any"></td><td><input data-api-case-field="temperature_c" data-api-case="minimum" type="number" step="any"></td></tr>
+                      <tr><td>Gas mass flow, kg/h</td><td><input data-api-case-field="gas_mass_flow_kg_h" data-api-case="design" type="number" min="0" step="any"></td><td><input data-api-case-field="gas_mass_flow_kg_h" data-api-case="normal" type="number" min="0" step="any"></td><td><input data-api-case-field="gas_mass_flow_kg_h" data-api-case="minimum" type="number" min="0" step="any"></td></tr>
+                      <tr><td>Oil mass flow, kg/h</td><td><input data-api-case-field="oil_mass_flow_kg_h" data-api-case="design" type="number" min="0" step="any"></td><td><input data-api-case-field="oil_mass_flow_kg_h" data-api-case="normal" type="number" min="0" step="any"></td><td><input data-api-case-field="oil_mass_flow_kg_h" data-api-case="minimum" type="number" min="0" step="any"></td></tr>
+                      <tr><td>Water mass flow, kg/h</td><td><input data-api-case-field="water_mass_flow_kg_h" data-api-case="design" type="number" min="0" step="any"></td><td><input data-api-case-field="water_mass_flow_kg_h" data-api-case="normal" type="number" min="0" step="any"></td><td><input data-api-case-field="water_mass_flow_kg_h" data-api-case="minimum" type="number" min="0" step="any"></td></tr>
+                      <tr><td>Gas density, kg/m³</td><td><input data-api-case-field="gas_density_kg_m3" data-api-case="design" type="number" min="0" step="any"></td><td><input data-api-case-field="gas_density_kg_m3" data-api-case="normal" type="number" min="0" step="any"></td><td><input data-api-case-field="gas_density_kg_m3" data-api-case="minimum" type="number" min="0" step="any"></td></tr>
+                      <tr><td>Oil density, kg/m³</td><td><input data-api-case-field="oil_density_kg_m3" data-api-case="design" type="number" min="0" step="any"></td><td><input data-api-case-field="oil_density_kg_m3" data-api-case="normal" type="number" min="0" step="any"></td><td><input data-api-case-field="oil_density_kg_m3" data-api-case="minimum" type="number" min="0" step="any"></td></tr>
+                      <tr><td>Water density, kg/m³</td><td><input data-api-case-field="water_density_kg_m3" data-api-case="design" type="number" min="0" step="any"></td><td><input data-api-case-field="water_density_kg_m3" data-api-case="normal" type="number" min="0" step="any"></td><td><input data-api-case-field="water_density_kg_m3" data-api-case="minimum" type="number" min="0" step="any"></td></tr>
+                      <tr><td>Gas viscosity, Pa·s</td><td><input data-api-case-field="gas_viscosity_pa_s" data-api-case="design" type="number" min="0" step="any"></td><td><input data-api-case-field="gas_viscosity_pa_s" data-api-case="normal" type="number" min="0" step="any"></td><td><input data-api-case-field="gas_viscosity_pa_s" data-api-case="minimum" type="number" min="0" step="any"></td></tr>
+                      <tr><td>Oil viscosity, Pa·s</td><td><input data-api-case-field="oil_viscosity_pa_s" data-api-case="design" type="number" min="0" step="any"></td><td><input data-api-case-field="oil_viscosity_pa_s" data-api-case="normal" type="number" min="0" step="any"></td><td><input data-api-case-field="oil_viscosity_pa_s" data-api-case="minimum" type="number" min="0" step="any"></td></tr>
+                      <tr><td>Water viscosity, Pa·s</td><td><input data-api-case-field="water_viscosity_pa_s" data-api-case="design" type="number" min="0" step="any"></td><td><input data-api-case-field="water_viscosity_pa_s" data-api-case="normal" type="number" min="0" step="any"></td><td><input data-api-case-field="water_viscosity_pa_s" data-api-case="minimum" type="number" min="0" step="any"></td></tr>
+                      <tr><td>Oil-water interfacial tension, N/m</td><td><input data-api-case-field="oil_water_interfacial_tension_n_m" data-api-case="design" type="number" min="0" step="any"></td><td><input data-api-case-field="oil_water_interfacial_tension_n_m" data-api-case="normal" type="number" min="0" step="any"></td><td><input data-api-case-field="oil_water_interfacial_tension_n_m" data-api-case="minimum" type="number" min="0" step="any"></td></tr>
+                    </tbody></table></div>
+                  </div>
+                </div>
+              </details>
+
+              <fieldset>
+                <legend>2. Give the minimum process sizing basis</legend>
+                <p class="field-note">The app estimates a preliminary size and internals. Use a known working capacity where available; otherwise liquid flow and holdup are enough to start.</p>
+                <div class="field-grid two-col">
+                  <label class="field"><span>Primary vessel duty *</span><select id="sizingService"><option value="">Select duty</option><option value="gas_liquid">Gas and liquid separation</option><option value="three_phase">Gas and two-liquid separation</option><option value="liquid_surge">Liquid surge / holdup</option><option value="flash">Flash drum</option><option value="compressor_protection">Compressor protection scrubber</option><option value="flare">Flare / vent liquid knockout</option></select></label>
+                  <label class="field"><span>Preliminary working capacity</span><div class="input-with-unit"><input id="sizingVolume" type="number" min="0" step="any" placeholder="e.g. 20"><span class="linked-unit">m³</span></div></label>
+                  <label class="field full"><span>Phases expected *</span><div class="choice-grid two"><label class="choice"><input type="checkbox" name="sizingPhase" value="gas"><span>Gas</span></label><label class="choice"><input type="checkbox" name="sizingPhase" value="light_liquid"><span>Hydrocarbon / light liquid</span></label><label class="choice"><input type="checkbox" name="sizingPhase" value="heavy_liquid"><span>Water / heavy liquid</span></label><label class="choice"><input type="checkbox" name="sizingPhase" value="solids"><span>Solids</span></label></div></label>
+                  <label class="field"><span>Liquid flow (if capacity is unknown)</span><div class="input-with-unit"><input id="sizingLiquidFlow" type="number" min="0" step="any" placeholder="e.g. 30"><span class="linked-unit">m³/h</span></div></label>
+                  <label class="field"><span>Liquid holdup time</span><div class="input-with-unit"><input id="sizingHoldup" type="number" min="0" step="any" value="5"><span class="linked-unit">min</span></div></label>
+                  <label class="field"><span>Gas flow (if known)</span><div class="input-with-unit"><input id="sizingGasFlow" type="number" min="0" step="any" placeholder="e.g. 1000"><span class="linked-unit">m³/h</span></div></label>
+                  <label class="field"><span>Separation quality</span><select id="sizingQuality"><option value="normal">Normal</option><option value="bulk">Bulk removal only</option><option value="high">High</option></select></label>
+                  <label class="field"><span>Fouling tendency</span><select id="sizingFouling"><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option><option value="severe">Severe</option></select></label>
+                  <label class="field"><span>Solids loading</span><select id="sizingSolids"><option value="none">None</option><option value="low">Low</option><option value="medium">Medium</option><option value="high">High</option></select></label>
+                  <label class="switch-row"><input id="sizingSlugging" type="checkbox"><span class="switch"></span><span>Slugging expected</span></label>
+                  <label class="switch-row"><input id="sizingPumpSuction" type="checkbox"><span class="switch"></span><span>Pump takes suction from vessel</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>3. Enter the full design-temperature range</legend>
+                <div class="field-grid two-col">
+                  <label class="field">
+                    <span>Minimum design temperature</span>
+                    <div class="input-with-unit">
+                      <input id="materialMinTemp" type="number" step="any" placeholder="-20">
+                      <select id="materialMinUnit">
+                        <option value="degC">°C</option>
+                      </select>
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Maximum design temperature</span>
+                    <div class="input-with-unit">
+                      <input id="materialMaxTemp" type="number" step="any" placeholder="400">
+                      <select id="materialMaxUnit">
+                        <option value="degC">°C</option>
+                      </select>
+                    </div>
+                  </label>
+                </div>
+                <small class="field-note">Both limits are required. VesselM recommends a material only when one source route covers the complete temperature envelope.</small>
+              </fieldset>
+
+              <fieldset>
+                <legend>4. Select the components in scope *</legend>
+                <div id="materialComponentChoices" class="choice-grid"></div>
+              </fieldset>
+
+              <fieldset>
+                <legend>5. Add known service concerns</legend>
+                <p class="field-note">Warnings only. These flags do not automatically select or reject a material.</p>
+                <div id="materialServiceChoices" class="choice-grid two"></div>
+              </fieldset>
+
+              <details class="details-panel">
+                <summary><span><b>Engineering override record</b><small>Optional and never replaces the system result.</small></span><i>＋</i></summary>
+                <div class="details-content">
+                  <label class="switch-row">
+                    <input id="materialOverrideEnabled" type="checkbox">
+                    <span class="switch"></span>
+                    <span>Record an override</span>
+                  </label>
+                  <div id="materialOverrideFields" class="field-grid two-col" hidden>
+                    <label class="field">
+                      <span>Override material family *</span>
+                      <input id="materialOverrideFamily" type="text">
+                    </label>
+                    <label class="field">
+                      <span>Reason *</span>
+                      <select id="materialOverrideReason">
+                        <option value="">Select reason</option>
+                        <option value="PROJECT_SPECIFICATION">Project material specification</option>
+                        <option value="CORROSION_STUDY">Corrosion study</option>
+                        <option value="LICENSOR_REQUIREMENT">Licensor requirement</option>
+                        <option value="AVAILABILITY">Availability or fabrication constraint</option>
+                        <option value="MATERIALS_ENGINEERING">Materials engineering decision</option>
+                      </select>
+                    </label>
+                    <label class="field full">
+                      <span>Justification *</span>
+                      <textarea id="materialOverrideComment" rows="3"></textarea>
+                    </label>
+                    <label class="field">
+                      <span>Responsible person *</span>
+                      <input id="materialOverrideBy" type="text">
+                    </label>
+                    <label class="field">
+                      <span>Override date *</span>
+                      <input id="materialOverrideDate" type="date">
+                    </label>
+                  </div>
+                </div>
+              </details>
+
+              <div class="form-actions">
+                <button class="button primary" type="submit">Screen size &amp; material options <span>→</span></button>
+              </div>
+            </form>
+
+            <aside class="panel context-panel" hidden>
+              <div class="card-heading"><span class="section-number">HELP</span><h3>Before you start</h3></div>
+              <ol class="process-list">
+                <li><span>1</span><div><b>Use degrees Celsius</b><small>Enter the approved design temperatures in °C.</small></div></li>
+                <li><span>2</span><div><b>Resolve source ranges</b><small>Retain all alternatives and merged-cell interpretations.</small></div></li>
+                <li><span>3</span><div><b>Build component matrix</b><small>Plate, pipe, forgings, fittings and bolting.</small></div></li>
+                <li><span>4</span><div><b>Route engineering review</b><small>Service, ambiguity, project and code controls.</small></div></li>
+              </ol>
+              <div class="alert review">
+                <b>Temperature is only one selection variable.</b>
+                <p>Corrosion, toughness, weldability, creep, fabrication and statutory requirements remain outside Phase 1.</p>
+              </div>
+            </aside>
+          </div>
+
+          <div id="materialEmpty" class="empty-state panel">
+            <div class="empty-icon">M</div>
+            <h3>Awaiting material screening</h3>
+            <p>Complete the sizing and material basis, then select <b>Screen size &amp; material options</b>.</p>
+          </div>
+
+          <div id="materialResults" class="result-stack" hidden>
+            <article id="vesselSizingRecommendation" class="panel result-panel"></article>
+            <article id="materialStatusCard" class="status-card panel"></article>
+            <div id="materialEndpointCards" class="result-grid two"></div>
+            <article id="materialPipingFilter" class="panel result-panel" hidden></article>
+            <article id="materialCrossReference" class="panel result-panel" hidden></article>
+            <div id="materialOptionGroups"></div>
+            <article id="materialAuditVerification" class="panel result-panel" hidden></article>
+            <article id="materialWarnings" class="panel result-panel"></article>
+            <article id="materialOverrideResult" class="panel result-panel" hidden></article>
+            <div class="result-toolbar">
+              <button id="copyMaterialButton" class="button ghost" type="button">Copy summary</button>
+              <button class="button secondary" type="button" data-go="design">Continue to pressure design</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen-panel="design">
+          <div class="screen-heading">
+            <div>
+              <p class="eyebrow">STEP 2 OF 3 — PRELIMINARY THICKNESS CHECK</p>
+              <h2>Check shell or head thickness</h2>
+              <p>Use only verified, project-controlled inputs. This is a screening calculation for senior-engineer review, not a final design.</p>
+            </div>
+            <div class="screen-actions">
+              <button id="designExampleButton" class="button ghost" type="button">Load example</button>
+              <button id="designResetButton" class="button ghost" type="button">Reset</button>
+            </div>
+          </div>
+
+          <div class="design-gate panel">
+            <div>
+              <span class="gate-icon">!</span>
+              <div>
+                <b>Controlled engineering basis required</b>
+                <p>Thickness calculation is enabled only for an exact plate record with a published allowable-stress value in the included limited library.</p>
+              </div>
+            </div>
+          </div>
+
+          <form id="designForm" class="panel form-panel wide" novalidate>
+            <div id="designErrors" class="form-errors" hidden></div>
+
+            <div class="input-data-header">
+              <div><span class="section-number">INPUT</span><h3>Input data</h3><span class="input-data-chip">Auto suggestions on</span></div>
+              <p>Enter approved project data. VesselM fills the selected plate-library stress values automatically.</p>
+            </div>
+
+            <div class="input-data-grid">
+              <fieldset class="input-section manual-input-section">
+                <legend><span>1</span> Confirm the controlled design basis <b>User controlled</b></legend>
+                <div class="field-grid two-col">
+                  <label class="field">
+                    <span>Equipment tag *</span>
+                    <input id="designTag" type="text" placeholder="e.g. 21-V-101">
+                  </label>
+                  <label class="field">
+                    <span>Controlled code edition *</span>
+                    <input id="designCodeEdition" type="text" placeholder="Enter approved edition and addenda">
+                  </label>
+                  <p class="field-note full">The allowable-stress source is filled automatically after you select a supported plate record in Step 4.</p>
+                </div>
+              </fieldset>
+
+              <fieldset class="input-section manual-input-section">
+                <legend><span>2</span> Enter design conditions <b>User controlled</b></legend>
+                <div class="field-grid two-col">
+                  <label class="field">
+                    <span>Design pressure *</span>
+                    <div class="input-with-unit">
+                      <input id="designPressure" type="number" step="any" placeholder="1.5">
+                      <select id="designPressureUnit">
+                        <option value="MPa">MPa</option>
+                        <option value="bar">bar</option>
+                        <option value="kgf_per_cm2">kgf/cm²</option>
+                        <option value="psi">psi</option>
+                      </select>
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Static-head pressure</span>
+                    <div class="input-with-unit">
+                      <input id="designStaticHead" type="number" step="any" value="0">
+                      <span class="linked-unit" id="staticHeadUnitLabel">MPa</span>
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Design temperature *</span>
+                    <div class="input-with-unit">
+                      <input id="designTemperature" type="number" step="any" placeholder="250">
+                      <select id="designTemperatureUnit">
+                        <option value="degC">°C</option>
+                      </select>
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Material basis</span>
+                    <input id="designMaterialBasis" type="text" placeholder="From material screening or manual entry">
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="input-section manual-input-section">
+                <legend><span>3</span> Describe the component geometry <b>User controlled</b></legend>
+                <div class="field-grid two-col">
+                  <label class="check-card field full">
+                    <input id="designCheckNonShell" type="checkbox">
+                    <span><b>Also check a head or cone</b><small>The cylindrical vessel shell is always calculated. Select this to calculate one additional head or cone section at the same time.</small></span>
+                  </label>
+                  <div id="designAlternateComponent" class="field full" hidden>
+                    <div class="field-grid two-col">
+                      <label class="field">
+                        <span>Head type or cone section *</span>
+                        <select id="designComponentType"></select>
+                      </label>
+                      <label class="field">
+                        <span>Selected nominal thickness for head / cone</span>
+                        <input id="designSecondaryNominalThickness" type="number" step="any" placeholder="Calculated automatically" readonly>
+                      </label>
+                    </div>
+                    <label id="designHeadFormingThinningField" class="field" hidden>
+                      <span>Head forming thinning (%)</span>
+                      <input id="designHeadFormingThinning" type="number" min="0" max="99" step="any" value="10">
+                      <small>Use the verified expected thinning after forming. Example: 10% means the app divides the pressure-plus-corrosion requirement by 0.90, matching the conservative formed-head method.</small>
+                    </label>
+                  </div>
+                  <label class="field">
+                    <span>Diameter basis *</span>
+                    <select id="designDiameterBasis">
+                      <option value="inside">Inside diameter</option>
+                      <option value="outside">Outside diameter</option>
+                    </select>
+                  </label>
+                  <label class="field">
+                    <span id="diameterLabel">Inside diameter *</span>
+                    <div class="input-with-unit">
+                      <input id="designDiameter" type="number" step="any" placeholder="2000">
+                      <select id="designLengthUnit">
+                        <option value="mm">mm</option>
+                        <option value="in">in</option>
+                      </select>
+                    </div>
+                  </label>
+                  <label class="field conditional" data-design-field="head_depth">
+                    <span>Inside head depth, h *</span>
+                    <input id="designHeadDepth" type="number" step="any">
+                  </label>
+                  <label class="field conditional" data-design-field="crown_radius">
+                    <span>Crown radius, L *</span>
+                    <input id="designCrownRadius" type="number" step="any">
+                  </label>
+                  <label class="field conditional" data-design-field="knuckle_radius">
+                    <span>Knuckle radius, r *</span>
+                    <input id="designKnuckleRadius" type="number" step="any">
+                  </label>
+                  <label class="field conditional" data-design-field="cone_half_apex_angle">
+                    <span>Cone half-apex angle, α *</span>
+                    <div class="input-with-unit">
+                      <input id="designConeAngle" type="number" step="any">
+                      <span class="linked-unit">degrees</span>
+                    </div>
+                  </label>
+                  <div class="field full">
+                    <span>Vessel configuration and process features</span>
+                    <div class="field-grid two-col">
+                      <label class="field"><span>Vessel length between tangent lines</span><div class="input-with-unit"><input id="designTangentLength" type="number" step="any" placeholder="Enter tangent-line length"><span class="linked-unit">mm</span></div></label>
+                      <label class="field"><span>Vessel capacity</span><div class="input-with-unit"><input id="designVesselCapacity" type="number" step="any" placeholder="Enter process capacity"><span class="linked-unit">m³</span></div></label>
+                      <label class="field"><span>Installation location</span><select id="designInstallationLocation"><option value="aboveground">Aboveground</option><option value="underground">Underground</option></select></label>
+                      <label class="field"><span>Vessel orientation</span><select id="designVesselOrientation"><option value="horizontal">Horizontal</option><option value="vertical">Vertical</option></select></label>
+                      <label class="field"><span>Number of nozzles</span><input id="designNozzleCount" type="number" min="0" step="1" value="0"></label>
+                    </div>
+                  </div>
+                  <div class="field full"><label class="check-card"><input id="designRequiresLadderPlatform" type="checkbox"><span><b>Ladder and platform required</b><small>For preliminary estimating, the app adds a fixed 5% allowance to the calculated bare vessel metal weight. It does not affect the pressure-thickness calculation.</small></span></label></div>
+                  <div class="field full">
+                    <span>Agitation / mixing requirement</span>
+                    <label class="check-card"><input id="designAgitatorRequired" type="checkbox"><span><b>Agitator or mixer required</b><small>Select this when the vessel requires powered mixing. It triggers mechanical and vendor review; it does not change the preliminary pressure-thickness formula.</small></span></label>
+                    <div id="designAgitatorFields" class="field-grid two-col conditional-fields" hidden>
+                      <label class="field"><span>Mixer type</span><select id="designMixerType"><option value="to_be_confirmed">To be confirmed</option><option value="top_entry">Top-entry</option><option value="side_entry">Side-entry</option><option value="bottom_entry">Bottom-entry</option></select></label>
+                      <label class="field"><span>Mixing duty</span><select id="designMixingDuty"><option value="normal_blending">Normal blending</option><option value="light_circulation">Light circulation</option><option value="prevent_stratification">Prevent stratification</option><option value="liquid_liquid_dispersion">Liquid-liquid dispersion</option><option value="solids_suspension">Solids suspension</option><option value="high_viscosity_high_torque">High-viscosity / high-torque</option></select></label>
+                      <label class="field"><span>Preliminary mixer power (kW)</span><input id="designMixerPowerKw" type="number" min="0" step="any" placeholder="Enter if known"></label>
+                    </div>
+                  </div>
+                  <div id="designAbovegroundOptions" class="field full"><label class="check-card"><input id="designRequiresBoot" type="checkbox"><span><b>Liquid boot required</b><small>For an aboveground horizontal vessel, the app adds a FEED-only boot metal-weight allowance using the vessel-ID rule. Process and mechanical verification remain required.</small></span></label></div>
+                  <div id="designUndergroundOptions" class="field full" hidden><label class="check-card"><input id="designRequiresSubmersiblePumpNozzle" type="checkbox"><span><b>Submersible pump nozzle required</b><small>Adds a FEED allowance for a 24 in NB × 14 mm, 2.0 m minimum riser and 150 lb top flange.</small></span></label></div>
+                  <div class="field full">
+                    <span>Process internals / separation requirements</span>
+                    <div class="check-grid">
+                      <label class="check-card"><input id="designHasDemisterPad" type="checkbox"><span><b>Demister pad</b><small>Required for vapour-liquid disengagement.</small></span></label>
+                      <label class="check-card"><input id="designHasBafflePlate" type="checkbox"><span><b>Weir plate</b><small>Required for liquid-level control or phase separation.</small></span></label>
+                      <label class="check-card"><input id="designHasVortexBreaker" type="checkbox"><span><b>Vortex breaker</b><small>Required at liquid outlets where vortex formation must be prevented.</small></span></label>
+                    </div>
+                    <article id="designApiInternalsRecommendation" class="api-internals-summary" hidden></article>
+                  </div>
+                </div>
+                <small class="field-note">These fields document vessel layout and process requirements. Detailed nozzle reinforcement, boot design, internals, supports and submersible-pump design are outside this preliminary thickness calculation.</small>
+              </fieldset>
+
+              <fieldset class="input-section auto-input-section">
+                <legend><span>4</span> Auto-filled plate stress data <b>Library controlled</b></legend>
+                <div class="field-grid two-col">
+                  <label class="field">
+                    <span>Basic material group</span>
+                    <select id="designMaterialGroup"></select>
+                  </label>
+                  <label class="field">
+                    <span>Material specification / grade *</span>
+                    <select id="designStressLibraryRecord"></select>
+                  </label>
+                  <label class="field">
+                    <span>Allowable stress at design temperature, S *</span>
+                    <div class="input-with-unit">
+                      <input id="designStress" type="number" step="any" readonly placeholder="Selected automatically from library">
+                      <select id="designStressUnit" disabled>
+                        <option value="MPa">MPa</option>
+                        <option value="ksi">ksi</option>
+                        <option value="psi">psi</option>
+                        <option value="bar">bar</option>
+                        <option value="kgf_per_cm2">kgf/cm²</option>
+                      </select>
+                    </div>
+                  </label>
+                  <label class="field">
+                    <span>Ambient allowable stress, Sa</span>
+                    <input id="designAmbientStress" type="number" step="any" readonly placeholder="Selected automatically from library">
+                  </label>
+                  <label class="field">
+                    <span>Joint efficiency, E *</span>
+                    <input id="designJointEfficiency" type="number" step="0.01" min="0.01" max="1" value="0.85">
+                  </label>
+                  <label class="field">
+                    <span>Joint-efficiency basis</span>
+                    <input id="designJointBasis" type="text" placeholder="Controlled weld category and examination basis">
+                  </label>
+                  <label class="field full">
+                    <span>Allowable-stress source reference</span>
+                    <input id="designStressSource" type="text" readonly placeholder="Generated after selecting an available plate record">
+                  </label>
+                  <div id="designStressLibraryStatus" class="library-stress-status full" role="status"></div>
+                </div>
+                <small class="field-note">The app automatically narrows the source records by the screened material and design temperature. Select a record only when more than one exact grade or condition remains.</small>
+              </fieldset>
+
+              <fieldset class="input-section manual-input-section">
+                <legend><span>5</span> Add allowances and available thickness <b>User controlled</b></legend>
+                <div class="field-grid two-col">
+                  <label class="field">
+                    <span>Corrosion allowance (mm)</span>
+                    <div class="input-with-unit"><input id="designCA" type="number" step="any" value="3"><span class="linked-unit">mm</span></div>
+                  </label>
+                  <label class="field">
+                    <span>Fixed forming allowance (mm)</span>
+                    <div class="input-with-unit"><input id="designFormingAllowance" type="number" step="any" value="0"><span class="linked-unit">mm</span></div>
+                  </label>
+                  <label class="field">
+                    <span>Other allowance (mm)</span>
+                    <div class="input-with-unit"><input id="designOtherAllowance" type="number" step="any" value="0"><span class="linked-unit">mm</span></div>
+                  </label>
+                  <label class="field">
+                    <span>Selected nominal plate thickness (mm)</span>
+                    <div class="input-with-unit"><input id="designNominalThickness" type="number" step="any" placeholder="Calculated automatically" readonly><span class="linked-unit">mm</span></div>
+                  </label>
+                </div>
+                <div class="field full">
+                  <span>Cladding / lining construction requirement</span>
+                  <label class="check-card"><input id="designCladdingEnabled" type="checkbox"><span><b>Add metallic cladding, overlay or lining</b><small>The carbon-steel base vessel keeps the pressure-strength credit. This selection adds FEED cladding weight and cost only.</small></span></label>
+                  <div id="designCladdingFields" class="field-grid two-col conditional-fields" hidden>
+                    <label class="field"><span>Construction route</span><select id="designCladdingOption"></select></label>
+                    <label class="field"><span>Cladding material</span><select id="designCladdingMaterial"></select></label>
+                    <label class="field"><span>Finished cladding thickness (mm)</span><input id="designCladdingThickness" type="number" min="0" step="any" value="3"></label>
+                    <label class="field"><span>Coverage (%)</span><input id="designCladdingCoverage" type="number" min="0" max="100" step="any" value="100"></label>
+                    <label class="field"><span>Number of clad heads</span><select id="designCladdingHeadCount"><option value="0">No heads</option><option value="1" selected>One head</option><option value="2">Two heads</option></select></label>
+                    <label class="field"><span>Verified area for one head (m²)</span><input id="designCladdingHeadArea" type="number" min="0" step="any" placeholder="Needed for torispherical / special head"></label>
+                    <label class="field full"><span>Additional local clad area (m²)</span><input id="designCladdingAdditionalArea" type="number" min="0" step="any" value="0"></label>
+                  </div>
+                </div>
+                <small class="field-note">All allowances and available thickness in this section are entered in mm. For a head, use the separate head-forming-thinning percentage when the forming loss is known; use fixed forming allowance only for an additional verified mm allowance. Cladding strength is not credited.</small>
+              </fieldset>
+
+              <fieldset class="input-section manual-input-section">
+                <legend><span>6</span> Optional screening outputs <b>User controlled</b></legend>
+                <div class="option-switches">
+                  <label class="check-card">
+                    <input id="enableMapMawp" type="checkbox">
+                    <span><b>MAP and MAWP</b><small>Requires nominal thickness and ambient allowable stress.</small></span>
+                  </label>
+                  <label class="check-card">
+                    <input id="enableHydrotest" type="checkbox">
+                    <span><b>Preliminary hydrotest pressure — ASME VIII-1 UG-99(b)</b><small>Calculates one FEED hydrostatic test-pressure reference from MAWP and the allowable-stress ratio.</small></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset class="input-section manual-input-section">
+                <legend><span>7</span> External pressure / vacuum check <b>FEED screening only</b></legend>
+                <label class="check-card"><input id="designExternalPressureEnabled" type="checkbox"><span><b>Check external pressure or vacuum</b><small>Use this for vacuum, steam-out or other pressure acting outside the vessel. The check stays blocked until matching controlled ASME chart data are loaded.</small></span></label>
+                <div id="designExternalPressureFields" class="field-grid two-col conditional-fields" hidden>
+                  <label class="field"><span>External design pressure difference (MPa)</span><input id="designExternalPressure" type="number" min="0" step="any" value="0.101325"></label>
+                  <label class="field"><span>Unsupported length between lines of support (mm)</span><input id="designExternalUnsupportedLength" type="number" min="0" step="any" placeholder="Enter code-defined unsupported length"></label>
+                </div>
+                <small class="field-note">Full vacuum is commonly 0.101325 MPa, but confirm site altitude, steam-out, jacket pressure and the project design basis.</small>
+              </fieldset>
+            </div>
+
+            <div class="form-actions">
+              <button class="button primary" type="submit">Calculate preliminary design <span>→</span></button>
+            </div>
+          </form>
+
+          <div id="designEmpty" class="empty-state panel">
+            <div class="empty-icon">D</div>
+            <h3>Awaiting preliminary design</h3>
+            <p>Enter the controlled basis, geometry and verified allowable stress.</p>
+          </div>
+
+          <div id="designResults" class="result-stack" hidden>
+            <article id="designStatusCard" class="status-card panel"></article>
+            <article id="designComponentComparison" class="panel result-panel" hidden></article>
+            <article id="designConfigurationCard" class="panel result-panel" hidden></article>
+            <article id="designExternalPressureCard" class="panel result-panel" hidden></article>
+            <div class="result-grid two">
+              <article id="designFormulaCard" class="panel result-panel"></article>
+              <article id="designFlowCard" class="panel result-panel"></article>
+            </div>
+            <div id="designSecondaryCalculation" class="result-grid two" hidden>
+              <article id="designSecondaryFormulaCard" class="panel result-panel"></article>
+              <article id="designSecondaryFlowCard" class="panel result-panel"></article>
+            </div>
+            <article id="designChecksCard" class="panel result-panel"></article>
+            <article id="designWarningsCard" class="panel result-panel"></article>
+            <article id="designCapacityCard" class="panel result-panel" hidden></article>
+            <article id="designHydrotestCard" class="panel result-panel" hidden></article>
+            <section id="designCostEstimateSection" class="result-stack" hidden>
+              <div class="card-heading"><span class="section-number">COST</span><h3>Cost Estimate for Vessel (Supply to Installation)</h3></div>
+              <p class="field-note">Preliminary FEED estimating basis. Engineering results above remain the governing design record.</p>
+              <article id="designWeightEstimateCard" class="panel result-panel" hidden></article>
+              <article id="designSupportEstimateCard" class="panel result-panel" hidden></article>
+              <article id="designCladdingEstimateCard" class="panel result-panel" hidden></article>
+              <div class="result-grid two">
+                <article class="panel result-panel"><div class="card-heading"><span class="section-number">IN</span><h3>Vessel Quick Estimate inputs</h3></div><div class="field-grid two-col">
+                  <label class="field"><span>Material price family</span><select id="designCostMaterialFamily"></select></label>
+                  <label class="field"><span>Steel-price year</span><select id="designCostSteelYear"><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026" selected>2026</option></select></label>
+                  <label class="field"><span>Supply / erection arrangement</span><select id="designCostErectionType"><option value="single">Single-piece vessel</option><option value="multi">Multi-piece vessel / column</option></select></label>
+                  <label class="field full"><span>Vessel weight for quick estimate (MT)</span><input id="designCostOperatingWeight" type="number" min="0" step="any" placeholder="Automatic preliminary metal weight is used if blank"></label>
+                </div><div class="form-actions"><button id="designQuickCostButton" class="button primary" type="button">Calculate quick estimate <span>→</span></button></div><p class="field-note">An entered vessel weight is used for both material supply and erection. Leave it blank to use the automatic preliminary metal weight.</p></article>
+                <article id="designCostEstimateCard" class="panel result-panel" hidden></article>
+              </div>
+            </section>
+            <article id="designCostAuditCard" class="panel result-panel">
+              <div class="card-heading"><span class="section-number">AUDIT</span><h3>Calculation Methodology &amp; Audit Trail</h3></div>
+              <p class="field-note">Permanent reference for the preliminary design, vessel sizing, metal-weight and cost-estimating methods used by this app. It does not change with the calculated price.</p>
+              <button id="designCostAuditToggle" class="button ghost small" type="button" aria-expanded="false">Show Calculation Methodology &amp; Audit Trail</button>
+              <div id="designCostAuditContent" hidden>
+                <div class="result-grid two">
+                  <article class="panel result-panel"><h4>1. Cylindrical Shell Thickness</h4><p>The app evaluates both shell stress directions for the selected diameter basis and uses the greater calculated thickness.</p><ul><li><b>Inside diameter:</b> longitudinal t = P × R<sub>i</sub> / (2 × S × E + 0.4 × P); circumferential t = P × R<sub>i</sub> / (S × E − 0.6 × P).</li><li><b>Outside diameter:</b> longitudinal t = P × R<sub>o</sub> / (2 × S × E + 1.4 × P); circumferential t = P × R<sub>o</sub> / (S × E + 0.4 × P).</li><li>Required nominal thickness = governing pressure thickness + corrosion allowance + forming allowance + other selected allowance.</li><li><b>Automatic FEED plate selection:</b> the app selects the next higher value from the VesselM preferred nominal series. For example, 20.6 mm becomes 22 mm. The selection is then used for thickness comparison, weight and cost.</li><li class="audit-example"><b>Example:</b> if governing pressure thickness is 12 mm, corrosion allowance is 3 mm and forming allowance is 1 mm, preliminary nominal thickness is 16 mm before selection of the next available plate thickness.</li></ul></article>
+                  <article class="panel result-panel"><h4>2. Vessel Sizing &amp; Internals</h4><p>Preliminary vessel size is derived from the selected process duty, phases, working capacity, separation needs and applicable API RP 12J process data.</p><ul><li>For a selected L/D ratio: D = cube root of [4 × V / (π × L/D)].</li><li>Tangent-line length: L = (L/D) × D.</li><li>Orientation and internals are screening recommendations only; process retention time, fluid properties, slugging, nozzle sizing and vendor design must be confirmed.</li><li class="audit-example"><b>Example:</b> V = 20 m³ and L/D = 3 gives D ≈ 2.04 m and tangent-line length ≈ 6.12 m.</li></ul></article>
+                  <article class="panel result-panel" style="grid-column: 1 / -1;"><h4>3. Head &amp; Cone Thickness Formula Library</h4><p>These are the fixed pressure-thickness equations implemented for every head and cone option. Use consistent units: P and S in MPa; diameters and radii in mm; resulting thickness t in mm. <b>In every case, add corrosion, forming and other allowances after the pressure thickness.</b></p><div class="result-grid two"><article class="panel result-panel"><h4>2:1 Ellipsoidal Head</h4><ul><li><b>Inside basis:</b> t = P × D<sub>i</sub> / (2 × S × E − 0.2 × P).</li><li><b>Outside basis:</b> t = P × D<sub>o</sub> / (2 × S × E + 1.8 × P).</li><li class="audit-example"><b>Example:</b> P = 1 MPa, D<sub>i</sub> = 2,000 mm, S = 120 MPa, E = 1.00: t = 1 × 2,000 / (240 − 0.2) = <b>8.34 mm</b>.</li></ul></article><article class="panel result-panel"><h4>General Ellipsoidal Head</h4><ul><li>K = 0.167 × [2 + (D<sub>i</sub> / 2h)²].</li><li><b>Inside basis:</b> t = P × D<sub>i</sub> × K / (2 × S × E − 0.2 × P).</li><li><b>Outside basis:</b> t = P × D<sub>o</sub> × K / [2 × S × E + 2 × P × (K − 0.1)].</li><li class="audit-example"><b>Example:</b> P = 1 MPa, D<sub>i</sub> = 2,000 mm, h = 500 mm, S = 120 MPa, E = 1.00; K ≈ 1.002, therefore t ≈ <b>8.36 mm</b>.</li></ul></article><article class="panel result-panel"><h4>Hemispherical Head</h4><ul><li><b>Inside basis:</b> t = P × R<sub>i</sub> / (2 × S × E − 0.2 × P).</li><li><b>Outside basis:</b> t = P × R<sub>o</sub> / (2 × S × E + 0.8 × P).</li><li class="audit-example"><b>Example:</b> P = 1 MPa, R<sub>i</sub> = 1,000 mm, S = 120 MPa, E = 1.00: t = 1,000 / (240 − 0.2) = <b>4.17 mm</b>.</li></ul></article><article class="panel result-panel"><h4>Torispherical Head, 100-6</h4><ul><li>The app uses L = D and knuckle radius r = 0.06 × D.</li><li><b>Inside basis:</b> t = 0.885 × P × L<sub>i</sub> / (S × E − 0.1 × P).</li><li><b>Outside basis:</b> t = 0.885 × P × L<sub>o</sub> / (S × E + 0.8 × P).</li><li class="audit-example"><b>Example:</b> P = 1 MPa, L<sub>i</sub> = 2,000 mm, S = 120 MPa, E = 1.00: t = 0.885 × 2,000 / 119.9 = <b>14.76 mm</b>.</li></ul></article><article class="panel result-panel"><h4>General Torispherical Head</h4><ul><li>M = 0.25 × [3 + √(L / r)].</li><li><b>Inside basis:</b> t = P × L<sub>i</sub> × M / (2 × S × E − 0.2 × P).</li><li><b>Outside basis:</b> t = P × L<sub>o</sub> × M / [2 × S × E + P × (M − 0.2)].</li><li class="audit-example"><b>Example:</b> P = 1 MPa, L = 2,000 mm, r = 120 mm, S = 120 MPa, E = 1.00; M ≈ 1.771, therefore t ≈ <b>14.77 mm</b>.</li></ul></article><article class="panel result-panel"><h4>Conical Section</h4><ul><li>α is the cone half-apex angle. The app calculates both longitudinal and circumferential cases, then uses the greater value.</li><li><b>Inside basis:</b> longitudinal t = P × D<sub>i</sub> / [4 × cos α × (S × E + 0.4 × P)]; circumferential t = P × D<sub>i</sub> / [2 × cos α × (S × E − 0.6 × P)].</li><li><b>Outside basis:</b> longitudinal t = P × D<sub>o</sub> / [4 × cos α × (S × E + 1.4 × P)]; circumferential t = P × D<sub>o</sub> / [2 × cos α × (S × E + 0.4 × P)].</li><li class="audit-example"><b>Example:</b> P = 1 MPa, D<sub>i</sub> = 2,000 mm, α = 30°, S = 120 MPa, E = 1.00: longitudinal t ≈ 4.80 mm and circumferential t ≈ <b>9.68 mm governing</b>.</li></ul></article></div></article>
+                  <article class="panel result-panel"><h4>4. Preliminary Metal Weight</h4><p><b>Shell weight:</b> W<sub>shell</sub> = π × D × L × t × ρ.</p><ul><li>D = vessel diameter in m; L = tangent-line length in m; t = nominal shell thickness in m.</li><li>ρ = selected steel density, normally 7,850 kg/m³ for preliminary steel weight.</li><li>The selected head or cone is included using its geometry-area approximation and nominal thickness.</li><li><b>Liquid-boot applicability:</b> this FEED allowance is applied only when installation is aboveground, orientation is horizontal, and <i>Liquid boot required</i> is selected.</li><li><b>Boot dimensions:</b> vessel ID below 900 mm → 300 mm boot ID; 900–1,400 mm → 400 mm boot ID; above 1,400 mm → 500 mm boot ID. Boot straight length = max(1,000 mm, 3 × boot ID), rounded up to the next 100 mm. This length ends at the bottom-head tangent line; it excludes the bottom-head depth.</li><li><b>Boot metal-weight build-up:</b> W<sub>boot basic</sub> = (π × D<sub>boot</sub> × L<sub>boot</sub> × t × ρ) + (A<sub>2:1 ellipsoidal bottom head</sub> × t × ρ). The app uses the vessel shell nominal thickness for the boot shell and bottom head.</li><li><b>Underground submersible-pump nozzle:</b> when selected, use a 24 in NB vessel nozzle/riser with 14 mm wall and 2.0 m minimum projection from vessel shell to end point. Add 20% of riser weight for the 150 lb top flange and attachment allowance.</li><li><b>Attachment allowance:</b> W<sub>boot total</sub> = W<sub>boot basic</sub> × 1.15, which includes 15% for attachment details.</li><li>Ladder and platform allowance, when selected: W<sub>L&amp;P</sub> = 5% × bare vessel weight, including the boot allowance when present.</li><li class="audit-example"><b>Example:</b> for a 2,000 mm vessel ID and 16 mm shell, the app selects a 500 mm ID × 1,500 mm straight boot. Including its 2:1 ellipsoidal bottom head and 15% attachments, the boot allowance is approximately <b>0.38 MT</b>.</li></ul><div class="alert review"><b>FEED estimate control</b><p>Boot process volume, interface control, drainage, final wall thickness, reinforcement, support/attachment details and mechanical design require process and mechanical verification. This allowance is not permitted for construction use.</p></div></article>
+                  <article class="panel result-panel"><h4>4A. Installed Mixer Weight</h4><p>For a selected agitation / mixing requirement, the app uses motor power first; vessel capacity is only a fallback.</p><ul><li><b>Power basis:</b> 0–7.5 kW = 450 kg; &gt;7.5–15 = 700 kg; &gt;15–30 = 1,100 kg; &gt;30–55 = 1,800 kg; &gt;55–90 = 2,800 kg; &gt;90–130 = 4,000 kg.</li><li><b>Volume fallback:</b> up to 5 m³ = 450 kg; &gt;5–15 = 700 kg; &gt;15–40 = 1,100 kg; &gt;40–80 = 1,800 kg; &gt;80–150 = 2,800 kg; above 150 m³ = 4,000 kg and manual review.</li><li><b>Adjustment:</b> base installed weight × selected duty factor. For a top-entry mixer, use the greater of ×1.10 or +200 kg. Apply a 400 kg minimum and round up to the next 50 kg.</li><li>For a horizontal vessel, side-entry is the default arrangement. The allowance includes package and mounting weight only; it excludes maintenance platform, cabling, piping, pump, liquid, dynamic loads and nozzle-load verification.</li></ul><div class="alert review"><b>FEED estimate control</b><p>Vendor confirmation and mechanical review are required. This allowance is not for construction use.</p></div></article>
+                  <article class="panel result-panel"><h4>4B. Automatic Skirt / Saddle Allowance</h4><p>The app selects a preliminary support from vessel orientation: one skirt for a vertical vessel, or two saddles (one fixed and one sliding) for a horizontal vessel.</p><ul><li><b>Horizontal saddle locations:</b> each saddle is placed from the nearest tangent line by the lesser of 20% of tangent-line length or 0.5 × vessel diameter, rounded to 50 mm.</li><li><b>4 m check:</b> a calculated saddle spacing above 4 m is shown as a FEED review message. It is not a final-design failure and does not automatically create extra saddles.</li><li><b>Weight:</b> the estimate includes preliminary plates, wear plate, web/base details and an attachments allowance. This weight is added to the total metal weight and cost estimate.</li><li>Final support location, foundation, anchor bolts, wind, seismic, local shell stress, lifting and transport checks remain for detailed engineering.</li></ul><div class="alert review"><b>FEED estimate control</b><p>This automatic allowance is for budget estimating only. It is not permitted for site installation or fabrication use.</p></div></article>
+                  <article class="panel result-panel"><h4>4. Material Rate &amp; Supply Price</h4><p><b>Material rate:</b> R<sub>material</sub> = R<sub>CS,year</sub> × F<sub>material</sub>.</p><ul><li>R<sub>CS,year</sub> is the selected raw carbon-steel rate for the chosen year.</li><li>F<sub>material</sub> is the selected material-family factor relative to carbon steel.</li><li><b>Supply P50:</b> raw material value × 1.80. <b>Supply P90:</b> raw material value × 2.70.</li><li class="audit-example"><b>Example:</b> 10,000 kg × ₹56.50/kg = ₹5.65 lakh raw material value; P50 supply = ₹10.17 lakh and P90 supply = ₹15.26 lakh.</li></ul></article>
+                  <article class="panel result-panel"><h4>5. Site Erection &amp; Total Cost</h4><p><b>P50 erection cost:</b> vessel operating weight (MT) × applicable P50 erection rate (₹/MT). <b>P90 erection cost:</b> P50 erection cost × 1.50.</p><ul><li>The app selects the single-piece P50 benchmark band by vessel weight, or the multi-piece P50 benchmark when selected.</li><li><b>P90 management provision:</b> 50% above the calculated P50 erection cost (P90 = P50 × 1.50).</li><li><b>Total P50:</b> P50 supply price + P50 erection cost.</li><li><b>Total P90:</b> P90 supply price + P90 erection cost.</li><li class="audit-example"><b>Example:</b> 20 MT × ₹35,450/MT = ₹7.09 lakh P50 erection cost; P90 erection = ₹7.09 lakh × 1.50 = ₹10.64 lakh.</li></ul></article>
+                  <article class="panel result-panel"><h4>6. Audit Limits &amp; Engineering Controls</h4><ul><li>All calculations are preliminary engineering and FEED estimating tools, not final code design or vendor fabrication calculations.</li><li>Allowable stress, code edition, material compatibility, corrosion, weld efficiency, nozzle loads, wind, seismic, lifting and fatigue require project verification.</li><li>Automatic weight includes a FEED-only skirt or saddle allowance based on vessel orientation. It excludes detailed support design, foundation, anchors, nozzles, internals, insulation, paint and fabrication wastage unless separately allowed.</li><li>Total cost excludes civil foundation, utilities, E&amp;I hook-up, commissioning, taxes, escalation and project-specific site constraints.</li><li>User-entered vessel weight is used for the quick cost estimate in place of automatic weight.</li></ul></article>
+                </div>
+              </div>
+            </article>
+            <div class="result-toolbar">
+              <button id="saveScenarioButton" class="button ghost" type="button">Save as scenario</button>
+              <button id="copyDesignButton" class="button ghost" type="button">Copy summary</button>
+              <button id="exportJsonButton" class="button ghost" type="button">Export audit JSON</button>
+              <button id="exportCsvButton" class="button ghost" type="button">Export CSV</button>
+              <button id="printButton" class="button secondary" type="button">Print / PDF</button>
+            </div>
+            <div id="designScenarioSaved" class="scenario-save-confirm" role="status" aria-live="polite" hidden>
+              <div><b>Scenario saved</b><p>Your calculation has been added to Scenario Comparison Lab.</p></div>
+              <button class="button small secondary" type="button" data-go="scenario">Open Scenario Comparison Lab</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen-panel="scenario">
+          <div class="screen-heading">
+            <div>
+              <p class="eyebrow">PHASE 4</p>
+              <h2>Scenario Comparison Lab</h2>
+              <p>Compare saved design alternatives without changing the source data or calculation history.</p>
+            </div>
+            <button id="clearScenariosButton" class="button ghost" type="button">Clear scenarios</button>
+          </div>
+          <div id="scenarioEmpty" class="empty-state panel">
+            <div class="empty-icon">S</div>
+            <h3>No saved scenarios</h3>
+            <p>Calculate a pressure-design case and select <b>Save as scenario</b>.</p>
+          </div>
+          <div id="scenarioContent" hidden>
+            <div id="scenarioCards" class="scenario-grid"></div>
+            <article class="panel table-panel">
+              <div class="table-scroll">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Scenario</th><th>Component</th><th>Pressure</th><th>Stress</th>
+                      <th>Required new thickness</th><th>Nominal thickness</th><th>Margin</th><th>MAWP</th>
+                    </tr>
+                  </thead>
+                  <tbody id="scenarioTableBody"></tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="screen" data-screen-panel="verification">
+          <div class="screen-heading">
+            <div>
+              <p class="eyebrow">PHASE 5</p>
+              <h2>Verification Centre</h2>
+              <p>Run the modular unit-conversion, decision-logic and formula test register in the browser.</p>
+            </div>
+            <button id="runTestsButton" class="button primary" type="button">Run all tests</button>
+          </div>
+          <div class="verification-summary">
+            <article class="panel metric-card"><span>Total tests</span><strong id="testTotal">0</strong></article>
+            <article class="panel metric-card"><span>Passed</span><strong id="testPassed">0</strong></article>
+            <article class="panel metric-card"><span>Failed</span><strong id="testFailed">0</strong></article>
+            <article class="panel metric-card"><span>Release state</span><strong id="testState">Not run</strong></article>
+          </div>
+          <article class="panel table-panel">
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th>Test ID</th><th>Group</th><th>Expected</th><th>Actual</th><th>Result</th></tr></thead>
+                <tbody id="testTableBody">
+                  <tr><td colspan="5" class="table-empty">Run the verification register to see evidence.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+          <div class="alert review">
+            <b>Passing software tests is not engineering approval.</b>
+            <p>Formula verification against the controlled current code edition and independent engineering calculations remains mandatory.</p>
+          </div>
+        </section>
+
+        <section class="screen" data-screen-panel="library">
+          <div class="screen-heading">
+            <div>
+              <p class="eyebrow">PHASES 1 TO 6</p>
+              <h2>Modular Data Libraries</h2>
+              <p>Search source-derived records, product rules, test cases and formula definitions.</p>
+            </div>
+            <input id="librarySearch" class="search-input" type="search" placeholder="Search JSON path or content">
+          </div>
+          <div class="library-layout">
+            <article class="panel library-index">
+              <div class="card-heading"><span class="section-number">FILES</span><h3>Databank index</h3></div>
+              <div id="libraryFileList" class="library-file-list"></div>
+            </article>
+            <article class="panel library-viewer">
+              <div class="library-viewer-header">
+                <div><small>SELECTED DATABANK</small><h3 id="librarySelectedTitle">Select a file</h3></div>
+                <button id="copyLibraryButton" class="button ghost small" type="button" disabled>Copy JSON</button>
+              </div>
+              <pre id="libraryJsonViewer">Choose a JSON file from the index.</pre>
+            </article>
+          </div>
+        </section>
+
+        <section class="screen" data-screen-panel="basis">
+          <div class="screen-heading">
+            <div>
+              <p class="eyebrow">ENGINEERING GOVERNANCE</p>
+              <h2>Basis, Controls and Limitations</h2>
+              <p>Use the app as a transparent preliminary workflow, not as an autonomous design authority.</p>
+            </div>
+          </div>
+
+          <div class="basis-grid">
+            <article class="panel basis-card">
+              <span class="basis-letter">A</span>
+              <h3>Source-derived</h3>
+              <p>Material ranges and component specifications follow Appendix H. Internal-pressure formulas follow the historical manual’s procedures.</p>
+            </article>
+            <article class="panel basis-card">
+              <span class="basis-letter">B</span>
+              <h3>User-controlled</h3>
+              <p>Code edition, joint efficiency, geometry and thickness additions are entered by the user. The app selects the FEED nominal plate thickness from the controlled VesselM library. Allowable stress comes only from the included limited plate library.</p>
+            </article>
+            <article class="panel basis-card">
+              <span class="basis-letter">C</span>
+              <h3>Not included</h3>
+              <p>External pressure, MDMT, PWHT, nozzles, fatigue, local loads, final support/foundation design, lifting, transportation and detailed integrity assessment.</p>
+            </article>
+          </div>
+
+          <article class="panel governance-panel">
+            <h3>Phase 6 activation conditions</h3>
+            <ol>
+              <li>Approve the controlled code edition and addenda.</li>
+              <li>Verify each enabled formula and applicability limit.</li>
+              <li>Select an exact supported plate record with a published library value, or add a controlled verified record before calculation.</li>
+              <li>Approve joint-efficiency and hydrotest logic.</li>
+              <li>Complete independent calculations and retain test evidence.</li>
+            </ol>
+          </article>
+
+          <article class="panel disclaimer-panel">
+            <strong>Important engineering disclaimer</strong>
+            <p>
+              VesselM Phases 1 to 6 provide preliminary engineering support. Final material selection and mechanical design
+              shall be verified against the controlled current code edition, project specifications, statutory requirements,
+              process and corrosion studies, fabrication requirements and competent engineering judgement.
+            </p>
+          </article>
+        </section>
+      </main>
+
+      <footer class="page-footer">
+        <span>VesselM Phase 1 to Phase 6 · Static GitHub Pages application</span>
+        <span id="dataStatus">Loading modular JSON databanks...</span>
+      </footer>
+    </div>
+  </div>
+
+  <div id="sidebarHoverLabel" class="sidebar-hover-label" role="tooltip" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/vesselm-data.js"></script>
+  <script src="data/astm_piping_material_specification_webapp.js"></script>
+  <script src="data/VesselM_Nominal_Plate_Thickness_Library_v1.0.0/VesselM_nominal_plate_thickness_library_v1.0.0.js"></script>
+  <script src="data/vesselm-asme-viii1-test-pressure-library.js"></script>
+  <!-- Controlled ASME II-D 2021 reference-preview lookup tables for vacuum screening. -->
+  <script src="data/VesselM_External_Pressure_Data_ASME2021_v0.1.0/VesselM_external_pressure_embedded_bundle_2021.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/allowable-stress-engine.js"></script>
+  <script src="js/material-cross-reference-engine.js"></script>
+  <script src="js/material-audit-engine.js"></script>
+  <script src="js/piping-compatibility-engine.js"></script>
+  <script src="js/material-engine.js"></script>
+  <script src="js/vessel-sizing-engine.js"></script>
+  <script src="js/design-engine.js"></script>
+  <script src="js/nominal-plate-engine.js"></script>
+  <script src="js/asme-test-pressure-engine.js"></script>
+  <script src="js/external-pressure-engine.js"></script>
+  <script src="js/cladding-engine.js"></script>
+  <script src="js/support-engine.js"></script>
+  <script src="js/pump-nozzle-engine.js"></script>
+  <script src="js/test-engine.js"></script>
+  <script src="js/report-engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

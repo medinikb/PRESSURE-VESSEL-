@@ -1,0 +1,564 @@
+{
+  "product": "VesselM",
+  "version": "1.0.0",
+  "scope": "Phase 1 to Phase 6 static browser application",
+  "created_date": "2026-07-24",
+  "file_count_excluding_manifest": 111,
+  "files": [
+    {
+      "path": "README.md",
+      "size_bytes": 3047,
+      "sha256": "4daee1238a7d104d175e31928a0de4fd815011b5d8859b78f1e2b06f5432eba0"
+    },
+    {
+      "path": "VALIDATION_REPORT.json",
+      "size_bytes": 1204,
+      "sha256": "9da88bd3481cee77fbe62e157044efb7c4f794c4e993244b215142059650dd84"
+    },
+    {
+      "path": "app.js",
+      "size_bytes": 38489,
+      "sha256": "071c9420c060bcdd06ca817155498914f56858d2ca6bb730c623b7ca404e40bc"
+    },
+    {
+      "path": "data/phase_01_material_selection/manifest.json",
+      "size_bytes": 6790,
+      "sha256": "e60a38959d4246e52585c7f59f6c9a03d6fc820054bf6a72f68a718562b67888"
+    },
+    {
+      "path": "data/phase_01_material_selection/material_selection_ranges.json",
+      "size_bytes": 24015,
+      "sha256": "a4be450df12348556832dbd8eac53b722e12e4c9969e26401486af97c715376b"
+    },
+    {
+      "path": "data/phase_01_material_selection/material_specifications.json",
+      "size_bytes": 22861,
+      "sha256": "e2c597eb65c4faa9fd53c9b40c3ff8d50af8fc9e480d703b49d612db6c2a6af4"
+    },
+    {
+      "path": "data/phase_01_material_selection/selection_rules.json",
+      "size_bytes": 3326,
+      "sha256": "66d48d7bc0689400aad2a05e373f90ca33798bc647ce31e152ecf5cf90383dee"
+    },
+    {
+      "path": "data/phase_01_material_selection/test_cases.json",
+      "size_bytes": 7538,
+      "sha256": "6c892dc657938e2dcf40531a111605ba06451f9d6054096d73c5c1f00ef381b8"
+    },
+    {
+      "path": "data/phase_01_material_selection/warning_catalog.json",
+      "size_bytes": 5002,
+      "sha256": "2c87751804e206230625ccff7aca99ad5628472870b1a4613f880ab7c10e41a8"
+    },
+    {
+      "path": "data/phase_02_engineering_decision_logic/audit_event_types.json",
+      "size_bytes": 1131,
+      "sha256": "cdcb044a60a753401a49b0c99b5d1c4630c14f461fa6be8c126744008fa00ebd"
+    },
+    {
+      "path": "data/phase_02_engineering_decision_logic/component_resolution_rules.json",
+      "size_bytes": 1089,
+      "sha256": "a7b22ed728607898fa5059fec55099865e6c144fa6e7a1ff23520834a34ae868"
+    },
+    {
+      "path": "data/phase_02_engineering_decision_logic/input_eligibility_rules.json",
+      "size_bytes": 1102,
+      "sha256": "69d2763def0ef908c8db732d926bc90572c143a4f3efdbf9c26b167f79f9d47a"
+    },
+    {
+      "path": "data/phase_02_engineering_decision_logic/override_workflow.json",
+      "size_bytes": 1130,
+      "sha256": "bc2b6e32386a62756211434fe2241209739cf8a10711d1b72c5da35ff16b63c1"
+    },
+    {
+      "path": "data/phase_02_engineering_decision_logic/phase2_test_cases.json",
+      "size_bytes": 1962,
+      "sha256": "0025f4c416b79e54d082044b1156671aac4be5c4ee6a8d3bce4eb6341ab52ba6"
+    },
+    {
+      "path": "data/phase_02_engineering_decision_logic/phase_manifest.json",
+      "size_bytes": 2095,
+      "sha256": "9b12e9f850a16a605f0f014bae704fde6f52ea22d1554b72536fd3b2c958106d"
+    },
+    {
+      "path": "data/phase_02_engineering_decision_logic/result_status_catalog.json",
+      "size_bytes": 1654,
+      "sha256": "41ca66d20ba8bbbe6fe33638d728bdbeb5628f1652fed4b590bb926d98b68237"
+    },
+    {
+      "path": "data/phase_02_engineering_decision_logic/rule_priority.json",
+      "size_bytes": 522,
+      "sha256": "44de2f1e34e8e81702c5a40ebf78323b778fe19d8e940d5483806060a6b5b24c"
+    },
+    {
+      "path": "data/phase_02_engineering_decision_logic/service_review_rules.json",
+      "size_bytes": 1678,
+      "sha256": "3ed4b2269c32f2b10b472f8a84453654a73a81d85ba7b4688fdb914fc2326eee"
+    },
+    {
+      "path": "data/phase_02_engineering_decision_logic/temperature_envelope_rules.json",
+      "size_bytes": 1330,
+      "sha256": "28cd2be489275b967daf08b04144a068e1da3736ef0f5794b605142a3995ffab"
+    },
+    {
+      "path": "data/phase_02_engineering_decision_logic/workflow_steps.json",
+      "size_bytes": 2028,
+      "sha256": "98d3fa9a0b2390c6b140dbfc1434a11e2c915fa2b43175fd47a02b34471ee5e2"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/accessibility_rules.json",
+      "size_bytes": 768,
+      "sha256": "93a400826c0f58e5c679cec28000aa3d3137698deb7000fd375cd121aa2d0ff3"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/action_buttons.json",
+      "size_bytes": 905,
+      "sha256": "4d4c0a75cb4dd03be12e7ca72f390168aca6b6e3976a18415af4f0f37d57a980"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/component_matrix_config.json",
+      "size_bytes": 797,
+      "sha256": "ff349c317ea06917445d54a4809a2198de103eced3ca6dbbc1ecb781b8027354"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/field_groups.json",
+      "size_bytes": 2257,
+      "sha256": "351fcd84c2a83e6923097f40b7db8847becf1c2e7a8ef19ccafec1ba9e06b944"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/input_control_catalog.json",
+      "size_bytes": 1343,
+      "sha256": "baacbe1e82da9e502d7b3b8545561ee8eb415e61815bdaebd7d9eaf95de33ff6"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/navigation.json",
+      "size_bytes": 1047,
+      "sha256": "a0e909d36f05c2517799bb89ea02912eb6bf4f6af9e00f6928ae02bc6ee0f0f8"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/phase_manifest.json",
+      "size_bytes": 2771,
+      "sha256": "05362cc1bccfe3dac2ddc7197ef71a5fa1a8a0b61edc11724061bd702a3ec4f0"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/print_layout.json",
+      "size_bytes": 692,
+      "sha256": "f5655428ad65f28f023d1747ef095d305e659b0a1a3f97e819a4846a78cfb096"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/responsive_layout.json",
+      "size_bytes": 487,
+      "sha256": "fbbd91a6b01655959ce02546874af475fc4fe2d203c9361c91646a2829d3b215"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/result_cards.json",
+      "size_bytes": 1223,
+      "sha256": "0031ca3aded1d2a3550a4fc7aa0f286a33dea3ac4012c7b69426571544f0ed19"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/screen_definitions.json",
+      "size_bytes": 1807,
+      "sha256": "ec0cf64b02ee8a7cb751ee9bf7d2cf74bf7c6e5ff0c5a1fc137ca4208f128d3f"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/status_display.json",
+      "size_bytes": 984,
+      "sha256": "67009d9d04a00bb6ed92ca4664cfceef4144e31bae8ff19c3d50819746fd254c"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/temperature_scale_config.json",
+      "size_bytes": 576,
+      "sha256": "74e089a8dfb3fc2bd4cf4c9005d4387deff753cc14444f223725ed5900c26bcb"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/theme_tokens.json",
+      "size_bytes": 845,
+      "sha256": "b7348ed32dc7149f838a0633e542627ed8d079397c5cb4822d7869fae55147d0"
+    },
+    {
+      "path": "data/phase_03_ui_configuration/visibility_rules.json",
+      "size_bytes": 1215,
+      "sha256": "d2f27cf5b5dd8104d1d4ddf7a11f8ffd7de3b0063939149dd0c7d7a5dfbb97e3"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/application_config.json",
+      "size_bytes": 542,
+      "sha256": "ac017c6bcdd18608872b08bc24626e07a4c521152fa6e11a856f494e219497b7"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/calculation_record_schema.json",
+      "size_bytes": 1107,
+      "sha256": "f8e73f9236d30edef601b7838709ae59d4444c78f10856e9ad18a88b6976c729"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/error_handling.json",
+      "size_bytes": 883,
+      "sha256": "9217c750e00ce9f43e47b768f7fd1936ecad6edad2ce501c80380d7548b3ecd4"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/example_cases.json",
+      "size_bytes": 1464,
+      "sha256": "e538466118af5325bc456f89e9940686df1f6506f255797bcc3edb2f3a46339d"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/export_field_sets.json",
+      "size_bytes": 1175,
+      "sha256": "18fbc3c3dbfbd4451a17ab73208728f5311a07662349826d3e886a91b79fda3d"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/feature_flags.json",
+      "size_bytes": 1236,
+      "sha256": "ce5aa3a09ead7f49724697e925e0f71f3699c81e24553591a53c4d0a9904a0d9"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/library_load_order.json",
+      "size_bytes": 1209,
+      "sha256": "5b89c48868db0d16e986be895688f7f7a58572a8bc62b874ce5c58cc1a604125"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/local_storage_policy.json",
+      "size_bytes": 544,
+      "sha256": "ace2e110472a89e2ee72d4458c16ce26cc2b868f0504e95da0d8fea629bd8cd1"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/phase_manifest.json",
+      "size_bytes": 2399,
+      "sha256": "b5b7c0af28a0e8255a6d90e517e0abbba10c2c551c48d28fc5ac3fb15f00ac44"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/product_scope.json",
+      "size_bytes": 895,
+      "sha256": "250a97183e0b3b4d023a17f2cd6a57e8aed48426089a803b8f8d0145933bfeaf"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/release_checklist.json",
+      "size_bytes": 1261,
+      "sha256": "e723ddb5820a4f3938552bf9b23db2490515c851fe84964a06cabccca2b9202a"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/report_configuration.json",
+      "size_bytes": 1408,
+      "sha256": "3c41318093ca840f79884eeb5045cd0c383624dcb6d5cf08ec8067ccf292352d"
+    },
+    {
+      "path": "data/phase_04_mvp_product_configuration/workflow_states.json",
+      "size_bytes": 1069,
+      "sha256": "75020ada7acd227249677010bcd55fab61661ba69689ff4aa73d1c2171af14a0"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/decision_logic_test_cases.json",
+      "size_bytes": 2463,
+      "sha256": "cb0d021bf4e807baecb114bb173e08214e3c172847df71e4d75598786487f588"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/defect_severity_catalog.json",
+      "size_bytes": 839,
+      "sha256": "ba3e4395a7a71fb2d32204181b0cec62ed9a8e213df5d7593723d50cb650b821"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/known_limitations.json",
+      "size_bytes": 1157,
+      "sha256": "8c742155ca0e045657ddd7ccc5c14ed3e502ee6b0476fbaa739fd6d2b73ae249"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/negative_test_cases.json",
+      "size_bytes": 1493,
+      "sha256": "f1f4f15276796bfd819dbaef022d0baacdc182a9032c5983167b9b7413cf22d6"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/phase_manifest.json",
+      "size_bytes": 2419,
+      "sha256": "c2987000560f75b89743b7a56e9d6a74fa2919c4e07ba3371afcd13a99fa610a"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/release_gates.json",
+      "size_bytes": 908,
+      "sha256": "50563640e9573595c0dfbb49edd41959abf0f595080bc84cd3eec9cb1d64d231"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/report_export_test_cases.json",
+      "size_bytes": 990,
+      "sha256": "71477f7a9f1e7125ab867575f7a6caff2669b4f2ada93c35dcc070aa6985cd03"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/temperature_boundary_test_cases.json",
+      "size_bytes": 11841,
+      "sha256": "a70bd8fb45cc84dc87ace7ce57837fe8e5f99f2b0fc97c71f81773090f759881"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/test_evidence_schema.json",
+      "size_bytes": 959,
+      "sha256": "395900d53e2fab56f7c53968eda248840f814b1c039040f6bae9d9cb5ede752c"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/test_strategy.json",
+      "size_bytes": 953,
+      "sha256": "52040ad24608ced3bbb4baf054a79673f04e4885034e3e6b072d6255e628808d"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/traceability_matrix.json",
+      "size_bytes": 1197,
+      "sha256": "3f07828c61b7188f9443b0aea72d2368a3e602428cbf9ade656806b1772f4a7b"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/unit_conversion_test_cases.json",
+      "size_bytes": 1113,
+      "sha256": "5e05f896f1399a8feccab5516f084da4e38671afbfb006f8d91930a41e453451"
+    },
+    {
+      "path": "data/phase_05_verification_and_testing/user_acceptance_scenarios.json",
+      "size_bytes": 1564,
+      "sha256": "cca4e5d8e0821fa46e1b62e090b65d250067caa7ea2a99bc209155a0ff7f4fe3"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/allowable_stress_library_template.json",
+      "size_bytes": 26504,
+      "sha256": "ecdd86b91b6de03ec48aacb2075d4f4cb174e5ef3498d4d563e365c626033d98"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/calculation_sequence.json",
+      "size_bytes": 2179,
+      "sha256": "3b22860adbf65d7881529c15bd5ab264d9a5ac058ac8bd6ddeaca0d2b7e20288"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/cladding_credit_formulas_historical.json",
+      "size_bytes": 671,
+      "sha256": "9844958a73c5b49a48dca7394588e161d676b0b13307c5034994e26577bb59ec"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/component_governing_rules.json",
+      "size_bytes": 944,
+      "sha256": "6c1c0a5c318b57c0861d55f68dcd0f1ad66f41d53edcda70cd0c03ff1489908c"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/conical_section_formulas.json",
+      "size_bytes": 2249,
+      "sha256": "590752ac7132f2f2936209891cbf30cf722211dc7580e9b79e47bba97afd6d24"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/corrosion_and_thickness_addition_rules.json",
+      "size_bytes": 1250,
+      "sha256": "5d0193fb3a46347d664a5c6678539cf7662ed9e36990f6e436696fa1aa5b5981"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/design_basis.json",
+      "size_bytes": 1003,
+      "sha256": "db968d3974cdacfbe2f095378f7e52b138104c7d7041be5d29089a22eb7a3282"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/design_input_fields.json",
+      "size_bytes": 2497,
+      "sha256": "08212b123c9c1bee919988ce8748f59db81e9cee906d86580d68117e3b5b5664"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/design_validation_rules.json",
+      "size_bytes": 1274,
+      "sha256": "3d9154962a75ffae6040e4759e16d24a69d1fc8b3ba884c34d3f467f7150b328"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/design_warning_catalog.json",
+      "size_bytes": 2237,
+      "sha256": "c301fec0712869c49a6d2ee7a2c9665e9e0d0d425d93df3b1308a2d24fad6b72"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/ellipsoidal_head_formulas.json",
+      "size_bytes": 1971,
+      "sha256": "b813dc753f486dcd828195cbf3886271b9b6fc5500d5db636a5bcc0a592564b1"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/excluded_modules_register.json",
+      "size_bytes": 906,
+      "sha256": "f192c52d0a539ee1c6f9e85d6f82699aca2acaf4fe555fe23db82ba3d0916882"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/formula_applicability_rules.json",
+      "size_bytes": 1389,
+      "sha256": "d48338137fe8d97198af4765782a418b5bde2c5d0ef504b0ec4fdd6f6142bb89"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/formula_index.json",
+      "size_bytes": 1209,
+      "sha256": "a3f3992bdf871661c2d5d2ccda8463d5e76454a0f0a4e8898ab1078d87f30eba"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/formula_test_cases.json",
+      "size_bytes": 2924,
+      "sha256": "744b563fd01b8ea5dfbabbae064f34f37a7795343ef3e46bcc58a13718a382fb"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/geometry_factor_formulas.json",
+      "size_bytes": 626,
+      "sha256": "8d1332a17d0baa6a9a5f55d02f035caff66279ef91b490bd095f1b6c50a7b636"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/head_geometry_reference.json",
+      "size_bytes": 1085,
+      "sha256": "053552265f24311f59bae1a17ada60c9d92f73366b11bcaf844d2ba8ba249bde"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/head_type_catalog.json",
+      "size_bytes": 1347,
+      "sha256": "20f3a1a1e7dc0a5cb6fb975ecb7a4074e56874f304add8308ba6df96a4bf9fba"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/hemispherical_head_formulas.json",
+      "size_bytes": 1258,
+      "sha256": "309415133bf91351e33ca55b5815d17b9da903636e9a9d54a058ddefb971e371"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/joint_efficiency_selection_rules.json",
+      "size_bytes": 757,
+      "sha256": "36cbabf9d09ebcbecf3ebe12cfcdbc55959ddfe0e187ac7d11746f67c77f7f2a"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/joint_type_efficiencies_historical.json",
+      "size_bytes": 1392,
+      "sha256": "2d8e1b3ee8ae4f90d57e82f420a3090b693a8eaa93a4147a85a09c6d8e2fd18e"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/map_mawp_formulas.json",
+      "size_bytes": 1763,
+      "sha256": "2f49d9394d4b76e80b14d2df7f73342f8a133a563db9ffa264cf25c82964b39e"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/material_stress_lookup_rules.json",
+      "size_bytes": 1029,
+      "sha256": "2b51a3d284d0220a3fb1b928af1a35d80391dec430fce4694d51c67f626ca0b7"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/nominal_plate_thickness_library_template.json",
+      "size_bytes": 502,
+      "sha256": "87c4a69e7209461ced84e8bd4dc59d9651ddc9818b5cda43df73f4b4072811ef"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/phase_manifest.json",
+      "size_bytes": 6988,
+      "sha256": "2910a8760725ace37630700d799ac23d917cf372cb8fb627cb201ced128e385e"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/preliminary_design_report_sections.json",
+      "size_bytes": 1392,
+      "sha256": "0e39d16677b7016b66507689733ec242e7cfd7b1fce606fb1287b69c13609937"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/radiography_application_matrix_historical.json",
+      "size_bytes": 2672,
+      "sha256": "92896db283993a375ee1f8f66f77149b7998ec12e0da98e8ffa5b18f682251c4"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/schemas/allowable_stress_library.schema.json",
+      "size_bytes": 581,
+      "sha256": "f9dd1e01fa1a5f8daad3bc92e6654799fdd4ab9d971612e63c8d5bc9bec1884b"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/schemas/formula_module.schema.json",
+      "size_bytes": 861,
+      "sha256": "901dbb1be791e87608a37aa1530c90c7a9a4036e30660f85319e05054a04fb7f"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/schemas/formula_test_cases.schema.json",
+      "size_bytes": 399,
+      "sha256": "bd912caa18583c69a22abd6edc76bb045a07815f55b16bc5b11159ab3b72877f"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/shell_internal_pressure_formulas.json",
+      "size_bytes": 2664,
+      "sha256": "a6a4adc69cd7fb8d2496cf4a28e42a0ef9aeaddedef175120c8a0fdfe5722fd0"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/static_head_rules.json",
+      "size_bytes": 968,
+      "sha256": "4282f16c1348af0019c2d350b6019a7c0b9f1a706928c96b5e9cbeb3ce8bb645"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/test_pressure_formulas_historical.json",
+      "size_bytes": 753,
+      "sha256": "89574936e7dfe5e3f0da467989502cd00424b9a3f105cf44bbf0dcec40038daf"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/torispherical_head_formulas.json",
+      "size_bytes": 2049,
+      "sha256": "2d13b1bb0a45708ff341d35eceef480d283a29c189e2b25498be5e3c8108e3af"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/unit_systems.json",
+      "size_bytes": 1086,
+      "sha256": "d4678cc325af352af6a7a2eee6328a6113f81d5f270dbd030d117e62881f7746"
+    },
+    {
+      "path": "data/phase_06_preliminary_pressure_design/variable_catalog.json",
+      "size_bytes": 2318,
+      "sha256": "3987c20925f22eb1cb24db3e6ca6594b5e1e72e454ef752d54a4121597bde741"
+    },
+    {
+      "path": "data/phase_dependency_map.json",
+      "size_bytes": 1530,
+      "sha256": "99993107bfe0767788d67288733c46afe144063e8e17d14e019bd59a216bd343"
+    },
+    {
+      "path": "data/source_register.json",
+      "size_bytes": 3314,
+      "sha256": "5f02ab3b6544713d6fe02086cf349d3c2cd24d028c61327d4829052fe2f99f44"
+    },
+    {
+      "path": "data/vesselm-data.js",
+      "size_bytes": 256713,
+      "sha256": "42b5880c4cb6a0accfd88a6c741f011e04c6aafd0df700842bf55da534dfc778"
+    },
+    {
+      "path": "index.html",
+      "size_bytes": 35546,
+      "sha256": "ee0b48bc7a86d75932ed37ddd0c7ee31e2cbf077ec49d6f2c15aaf837b5e1e5b"
+    },
+    {
+      "path": "js/design-engine.js",
+      "size_bytes": 27776,
+      "sha256": "bd6e18ada82a12db1ed20d482743fef25b80570bf251bae9aae238b6ed16ece4"
+    },
+    {
+      "path": "js/material-engine.js",
+      "size_bytes": 9566,
+      "sha256": "b5e6a307af06ff5c383cc4949c0acafea54362753786dc211ec9b58f88092172"
+    },
+    {
+      "path": "js/report-engine.js",
+      "size_bytes": 7878,
+      "sha256": "647cefaa430f799caba7b0ec21f19526cda2ab230a74264f1bbdde1adba96104"
+    },
+    {
+      "path": "js/test-engine.js",
+      "size_bytes": 4120,
+      "sha256": "c2f0466b19b130ef64e20f60ec632e6d01dbf4373890e2e80f4564830e7b71b0"
+    },
+    {
+      "path": "js/utils.js",
+      "size_bytes": 4297,
+      "sha256": "6b5824886de74d04df8b66f2b336faf5360fc750d77ce0813a33e56f454c1761"
+    },
+    {
+      "path": "run_local_server.bat",
+      "size_bytes": 287,
+      "sha256": "14e4ce71fda10b5bef67961ebcec1666059881c7be7eacc07eeaf20369f70688"
+    },
+    {
+      "path": "samples/demo_input.json",
+      "size_bytes": 1094,
+      "sha256": "e3083ec9dd4fe0b9bac98292fb575db2537224b402ae952512f17b479a55816f"
+    },
+    {
+      "path": "style.css",
+      "size_bytes": 33791,
+      "sha256": "57abc93a59f4dec2933e151b6936e3ec3ce3cb01fbccc108081af90d139494df"
+    },
+    {
+      "path": "tools/update_data_bundle.py",
+      "size_bytes": 639,
+      "sha256": "85e078a6e437a68068729adf39c5c293f8694c12880e8b8b8b37893c7aa3ed6e"
+    },
+    {
+      "path": "update_data_bundle.bat",
+      "size_bytes": 257,
+      "sha256": "964ca148c54921e4850be8b665dd8f42aac0c74d0c763867e615206b27c31e2a"
+    }
+  ]
+}
