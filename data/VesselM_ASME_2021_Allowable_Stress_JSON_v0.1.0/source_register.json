@@ -1,0 +1,35 @@
+{
+  "package_id": "VesselM_ASME_2021_Allowable_Stress_JSON_v0.1.0",
+  "package_version": "0.1.0",
+  "sources": [
+    {
+      "source_id": "ASME_BPVC_II_D_M_2021",
+      "title": "ASME Boiler and Pressure Vessel Code, Section II, Part D, Properties (Metric)",
+      "edition": "2021",
+      "date_of_issue": "2021-07-01",
+      "filename": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "pdf_page_count": 1478,
+      "sha256": "1453dd6b5af34c19fa5d1c3371937952ff906c93fa96be2d048e7ae0942317f7",
+      "tables_used": [
+        {
+          "table": "1A",
+          "scope": "Section VIII Division 1 maximum allowable stress values for ferrous materials"
+        },
+        {
+          "table": "1B",
+          "scope": "Section VIII Division 1 maximum allowable stress values for nonferrous materials"
+        },
+        {
+          "table": "3",
+          "scope": "Section VIII Divisions 1 and 2 maximum allowable stress values for bolting materials"
+        }
+      ]
+    },
+    {
+      "source_id": "PVMD_3E_APPENDIX_H_PAGE_464",
+      "title": "VesselM Temperature Material Library source list",
+      "filename": "Vessel_material selection guide.pdf",
+      "use": "Master list of material specifications and product forms requiring extraction"
+    }
+  ]
+}

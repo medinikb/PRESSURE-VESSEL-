@@ -1,0 +1,12 @@
+{
+  "record_id": "Stable unique identifier for one ASME table source row.",
+  "vesselm_specification_ids": "VesselM guide designation linked to the source row.",
+  "source_product_form": "Product-form wording transcribed from the ASME table.",
+  "source_type_grade": "Type or grade exactly represented in the source metadata row.",
+  "section_viii_division_1_applicability": "Maximum-temperature and permission field from the Table 1A, 1B or 3 applicability page.",
+  "temperature_stress_points": "All published temperature columns, including unavailable cells as null.",
+  "cell_status": "value_published or source_ellipsis.",
+  "source_note_ids": "ASME note identifiers that must be reviewed in the controlled source.",
+  "match_status": "How the VesselM guide designation was associated with the ASME row.",
+  "approval_status": "Engineering data governance state. Draft values are not approved for final design."
+}

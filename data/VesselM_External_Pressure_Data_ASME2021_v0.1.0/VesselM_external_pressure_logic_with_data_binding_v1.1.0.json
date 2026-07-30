@@ -1,0 +1,858 @@
+{
+  "metadata": {
+    "library_id": "VESSELM_EXTERNAL_PRESSURE_CALCULATION_LOGIC",
+    "library_version": "1.1.0",
+    "product": "VesselM",
+    "purpose": "Preliminary external-pressure thickness screening for cylindrical shells and formed heads in a pressure-vessel web application.",
+    "intended_use": "FEED_and_preliminary_engineering_screening",
+    "construction_use_allowed": false,
+    "final_design_use_allowed": false,
+    "engineering_review_required": true,
+    "generated_utc": "2026-07-30T03:56:56.404700+00:00",
+    "unit_system": "SI",
+    "canonical_units": {
+      "length": "mm",
+      "pressure": "MPa",
+      "stress_or_modulus": "MPa",
+      "temperature": "degC",
+      "angle": "deg"
+    }
+  },
+  "code_basis": {
+    "design_rules": {
+      "document": "ASME BPVC Section VIII Division 1",
+      "edition": "2023",
+      "references": [
+        "UG-20",
+        "UG-21",
+        "UG-22",
+        "UG-28",
+        "UG-29",
+        "UG-30",
+        "UG-33",
+        "UG-80",
+        "UG-81"
+      ]
+    },
+    "external_pressure_chart_source": {
+      "document": "ASME BPVC Section II Part D, Subpart 3",
+      "required_edition": "same_as_controlled_design_code_edition",
+      "currently_uploaded_edition": "2021",
+      "currently_uploaded_unit_system": "Metric",
+      "current_status": "edition_mismatch",
+      "automatic_production_use_allowed": false,
+      "blocking_result": "code_edition_mismatch_requires_engineering_review",
+      "embedded_reference_dataset_edition": "2021",
+      "embedded_reference_dataset_status": "available_for_reference_preview",
+      "engineering_production_status": "blocked_due_to_edition_mismatch"
+    },
+    "source_control_rule": "The external-pressure chart edition, material chart assignment, modulus values and Section VIII design-rule edition shall be part of one approved controlled design basis."
+  },
+  "scope": {
+    "supported_components": [
+      "cylindrical_shell",
+      "spherical_shell",
+      "hemispherical_head",
+      "ellipsoidal_head",
+      "torispherical_head"
+    ],
+    "conditionally_supported_components": [
+      {
+        "component": "conical_or_toriconical_section",
+        "status": "manual_module_not_enabled",
+        "reason": "Requires equivalent length, effective thickness, multiple diameter checks and cone-to-cylinder junction evaluation under the complete UG-33 procedure."
+      }
+    ],
+    "excluded_checks": [
+      "stiffening_ring_required_moment_of_inertia",
+      "stiffening_ring_attachment_design",
+      "UG-80_shell_out_of_roundness_acceptance",
+      "UG-81_formed_head_tolerance_acceptance",
+      "nozzle_and_opening_local_stress",
+      "wind_seismic_and_transport_loads",
+      "combined_axial_compression",
+      "fatigue",
+      "creep_damage",
+      "MDMT_and_impact_testing",
+      "fabrication_feasibility",
+      "hydrotest_or_pneumatic_test_design"
+    ]
+  },
+  "assumptions": {
+    "calculation_philosophy": "External-pressure design is treated as a buckling-stability check. The application calculates allowable external pressure Pa for a trial thickness and iterates until Pa is not less than the design external pressure P.",
+    "joint_efficiency": {
+      "used_in_external_pressure_formulas": false,
+      "note": "Do not reuse the internal-pressure weld joint-efficiency input as modulus E. In this module E means modulus of elasticity."
+    },
+    "full_vacuum_FEED_default": {
+      "enabled_by_default": false,
+      "external_pressure_difference_mpa": 0.101325,
+      "basis": "standard_atmospheric_pressure_at_sea_level",
+      "mandatory_user_confirmation": true,
+      "warning": "Site altitude, steam-out, jacket pressure and project design basis may require a different external design pressure."
+    },
+    "shell_effective_thickness_basis": {
+      "default_rule": "t_effective = t_nominal - corrosion_allowance",
+      "app_expression": "t_effective_mm = t_nominal_mm - corrosion_allowance_mm",
+      "additional_project_deductions": "Apply only when explicitly required by the project-controlled basis. Do not silently subtract mill tolerance."
+    },
+    "head_effective_thickness_basis": {
+      "preferred_input": "minimum_available_thickness_after_forming",
+      "fallback_FEED_rule": "t_after_forming_available = t_blank_nominal - forming_thinning_allowance - corrosion_allowance",
+      "app_expression": "t_effective_mm = t_blank_nominal_mm - forming_thinning_allowance_mm - corrosion_allowance_mm"
+    },
+    "unsupported_length": {
+      "must_be_defined_from_code_lines_of_support": true,
+      "stiffening_ring_counts_as_support_only_after_UG_29_and_UG_30_check": true,
+      "incidental_attachment_counts_as_support": false
+    },
+    "chart_interpolation": {
+      "figure_G": "interpolation_between_published_curves_only",
+      "material_chart_temperature": "interpolation_between_published_temperature_lines_only_when permitted by the controlled source",
+      "extrapolation_allowed": false
+    }
+  },
+  "input_contract": {
+    "required_common_inputs": [
+      {
+        "field": "component_type",
+        "type": "enum",
+        "allowed_values": [
+          "cylindrical_shell",
+          "spherical_shell",
+          "hemispherical_head",
+          "ellipsoidal_head",
+          "torispherical_head"
+        ]
+      },
+      {
+        "field": "external_design_pressure",
+        "type": "number",
+        "unit": "MPa",
+        "minimum_exclusive": 0
+      },
+      {
+        "field": "design_temperature",
+        "type": "number",
+        "unit": "degC"
+      },
+      {
+        "field": "nominal_thickness",
+        "type": "number",
+        "unit": "mm",
+        "minimum_exclusive": 0
+      },
+      {
+        "field": "corrosion_allowance",
+        "type": "number",
+        "unit": "mm",
+        "minimum": 0
+      },
+      {
+        "field": "material_record_id",
+        "type": "string"
+      },
+      {
+        "field": "external_pressure_chart_id",
+        "type": "string"
+      },
+      {
+        "field": "controlled_code_edition",
+        "type": "string"
+      },
+      {
+        "field": "external_pressure_chart_edition",
+        "type": "string"
+      }
+    ],
+    "component_specific_inputs": {
+      "cylindrical_shell": [
+        {
+          "field": "outside_diameter",
+          "type": "number",
+          "unit": "mm",
+          "minimum_exclusive": 0
+        },
+        {
+          "field": "unsupported_length",
+          "type": "number",
+          "unit": "mm",
+          "minimum_exclusive": 0
+        }
+      ],
+      "spherical_shell": [
+        {
+          "field": "outside_radius",
+          "type": "number",
+          "unit": "mm",
+          "minimum_exclusive": 0
+        }
+      ],
+      "hemispherical_head": [
+        {
+          "field": "outside_radius",
+          "type": "number",
+          "unit": "mm",
+          "minimum_exclusive": 0
+        },
+        {
+          "field": "minimum_after_forming_thickness",
+          "type": "number",
+          "unit": "mm",
+          "minimum_exclusive": 0
+        }
+      ],
+      "ellipsoidal_head": [
+        {
+          "field": "outside_diameter",
+          "type": "number",
+          "unit": "mm",
+          "minimum_exclusive": 0
+        },
+        {
+          "field": "outside_head_depth",
+          "type": "number",
+          "unit": "mm",
+          "minimum_exclusive": 0
+        },
+        {
+          "field": "minimum_after_forming_thickness",
+          "type": "number",
+          "unit": "mm",
+          "minimum_exclusive": 0
+        }
+      ],
+      "torispherical_head": [
+        {
+          "field": "outside_crown_radius",
+          "type": "number",
+          "unit": "mm",
+          "minimum_exclusive": 0
+        },
+        {
+          "field": "minimum_after_forming_thickness",
+          "type": "number",
+          "unit": "mm",
+          "minimum_exclusive": 0
+        }
+      ]
+    },
+    "conditionally_required_inputs": [
+      {
+        "field": "modulus_of_elasticity",
+        "type": "number",
+        "unit": "MPa",
+        "condition": "Required when factor A falls to the left of the applicable material-temperature curve."
+      },
+      {
+        "field": "maximum_allowable_tensile_stress",
+        "type": "number",
+        "unit": "MPa",
+        "condition": "Required for cylindrical shell when Do_over_t < 10."
+      },
+      {
+        "field": "yield_strength_at_temperature",
+        "type": "number",
+        "unit": "MPa",
+        "condition": "Required for cylindrical shell when Do_over_t < 10."
+      }
+    ]
+  },
+  "derived_variables": {
+    "external_design_pressure": {
+      "symbol": "P",
+      "formula": "P = max(0, outside_absolute_pressure - inside_absolute_pressure)",
+      "direct_input_allowed": true
+    },
+    "effective_shell_thickness": {
+      "symbol": "t",
+      "formula": "t = nominal_thickness - corrosion_allowance"
+    },
+    "effective_head_thickness": {
+      "symbol": "t",
+      "formula": "t = minimum_available_thickness_after_forming - corrosion_allowance_already_not_included",
+      "implementation_note": "Do not subtract corrosion allowance twice. Store whether the after-forming input is gross or net."
+    },
+    "cylindrical_ratios": {
+      "L_over_Do": "unsupported_length / outside_diameter",
+      "Do_over_t": "outside_diameter / effective_thickness"
+    },
+    "spherical_ratio": {
+      "Ro_over_t": "outside_radius / effective_thickness"
+    }
+  },
+  "data_tables": {
+    "ellipsoidal_head_Ko_table_UG_33_1": {
+      "input_ratio": "outside_diameter / (2 * outside_head_depth)",
+      "interpolation": "linear_interpolation_between_adjacent_rows",
+      "extrapolation_allowed": false,
+      "rows": [
+        {
+          "Do_over_2ho": 1.0,
+          "Ko": 0.5
+        },
+        {
+          "Do_over_2ho": 1.2,
+          "Ko": 0.57
+        },
+        {
+          "Do_over_2ho": 1.4,
+          "Ko": 0.65
+        },
+        {
+          "Do_over_2ho": 1.6,
+          "Ko": 0.73
+        },
+        {
+          "Do_over_2ho": 1.8,
+          "Ko": 0.81
+        },
+        {
+          "Do_over_2ho": 2.0,
+          "Ko": 0.9
+        },
+        {
+          "Do_over_2ho": 2.2,
+          "Ko": 0.99
+        },
+        {
+          "Do_over_2ho": 2.4,
+          "Ko": 1.08
+        },
+        {
+          "Do_over_2ho": 2.6,
+          "Ko": 1.18
+        },
+        {
+          "Do_over_2ho": 2.8,
+          "Ko": 1.27
+        },
+        {
+          "Do_over_2ho": 3.0,
+          "Ko": 1.36
+        }
+      ],
+      "standard_2_to_1_head": {
+        "Do_over_2ho": 2.0,
+        "Ko": 0.9
+      }
+    },
+    "figure_G_lookup_contract": {
+      "dataset_required": true,
+      "dataset_status": "not_included_in_this_logic_file",
+      "required_fields": [
+        "dataset_id",
+        "code_edition",
+        "unit_system",
+        "L_over_Do",
+        "Do_over_t",
+        "factor_A",
+        "source_page",
+        "verification_status",
+        "approval_status",
+        "checksum"
+      ],
+      "L_over_Do_boundary_rules": {
+        "minimum_chart_value": 0.05,
+        "maximum_chart_value": 50.0,
+        "below_minimum_action": "use_0.05",
+        "above_maximum_action": "use_50.0"
+      },
+      "Do_over_t_interpolation": "interpolate_between_adjacent_published_curves",
+      "extrapolation": "prohibited"
+    },
+    "material_external_pressure_chart_contract": {
+      "dataset_required": true,
+      "dataset_status": "not_included_in_this_logic_file",
+      "chart_assignment_source": "Applicable Section II Part D material record, including exact specification, grade, class, condition and product form.",
+      "required_fields": [
+        "chart_id",
+        "code_edition",
+        "material_record_id",
+        "temperature_curve",
+        "factor_A",
+        "factor_B",
+        "modulus_of_elasticity",
+        "source_page",
+        "temperature_limit",
+        "verification_status",
+        "approval_status",
+        "checksum"
+      ],
+      "lookup_behavior": [
+        "Use factor A to enter the assigned material chart.",
+        "Interpolate between permitted temperature lines when required.",
+        "If A is inside the plotted material-temperature curve, read factor B.",
+        "If A is to the right of the end of the curve, use B at the end of the curve.",
+        "If A is to the left of the curve, use the elastic-region formula with modulus E.",
+        "Do not extrapolate factor B beyond the controlled chart."
+      ]
+    }
+  },
+  "calculation_modules": {
+    "cylindrical_shell_Do_over_t_greater_or_equal_10": {
+      "applicability": "Do_over_t >= 10",
+      "steps": [
+        {
+          "step": 1,
+          "calculate": [
+            "L_over_Do = L / Do",
+            "Do_over_t = Do / t"
+          ]
+        },
+        {
+          "step": 2,
+          "calculate": "A = lookup_Figure_G(L_over_Do, Do_over_t) using the controlled chart dataset and chart boundary rules."
+        },
+        {
+          "step": 3,
+          "calculate": "B_or_elastic_region = lookup_material_chart(chart_id, A, design_temperature)"
+        },
+        {
+          "step": 4,
+          "condition": "factor_B_resolved",
+          "formula_id": "UG28_CYLINDER_INELASTIC",
+          "formula": "Pa = 4 * B / (3 * (Do / t))",
+          "javascript_expression": "Pa = (4 * B) / (3 * (Do / t))"
+        },
+        {
+          "step": 5,
+          "condition": "A_left_of_material_temperature_curve",
+          "formula_id": "UG28_CYLINDER_ELASTIC",
+          "formula": "Pa = 2 * A * E / (3 * (Do / t))",
+          "javascript_expression": "Pa = (2 * A * E) / (3 * (Do / t))"
+        },
+        {
+          "step": 6,
+          "acceptance": "pass when Pa >= P"
+        }
+      ]
+    },
+    "cylindrical_shell_Do_over_t_less_than_10": {
+      "applicability": "Do_over_t < 10",
+      "steps": [
+        {
+          "step": 1,
+          "condition": "Do_over_t < 4",
+          "formula_id": "UG28_THICK_CYLINDER_A",
+          "formula": "A = 1.1 / (Do / t)^2",
+          "cap": "A <= 0.10",
+          "javascript_expression": "A = Math.min(0.10, 1.1 / Math.pow(Do / t, 2))"
+        },
+        {
+          "step": 2,
+          "calculate": "Resolve factor B from the assigned material chart using factor A and design temperature."
+        },
+        {
+          "step": 3,
+          "formula_id": "UG28_THICK_CYLINDER_PA1",
+          "formula": "Pa1 = ((2.167 / (Do / t)) - 0.0833) * B",
+          "javascript_expression": "Pa1 = ((2.167 / (Do / t)) - 0.0833) * B"
+        },
+        {
+          "step": 4,
+          "formula_id": "UG28_THICK_CYLINDER_S",
+          "formula": "S = min(2 * allowable_tensile_stress, 0.9 * yield_strength_at_temperature)",
+          "javascript_expression": "S = Math.min(2 * allowableTensileStress, 0.9 * yieldStrengthAtTemperature)"
+        },
+        {
+          "step": 5,
+          "formula_id": "UG28_THICK_CYLINDER_PA2",
+          "formula": "Pa2 = (2 * S / (Do / t)) * (1 - 1 / (Do / t))",
+          "javascript_expression": "Pa2 = (2 * S / (Do / t)) * (1 - 1 / (Do / t))"
+        },
+        {
+          "step": 6,
+          "formula_id": "UG28_THICK_CYLINDER_GOVERNING",
+          "formula": "Pa = min(Pa1, Pa2)",
+          "javascript_expression": "Pa = Math.min(Pa1, Pa2)"
+        },
+        {
+          "step": 7,
+          "acceptance": "pass when Pa >= P"
+        }
+      ]
+    },
+    "spherical_shell_and_hemispherical_head": {
+      "geometry": "Ro = outside spherical radius",
+      "steps": [
+        {
+          "step": 1,
+          "formula_id": "UG28_SPHERE_A",
+          "formula": "A = 0.125 / (Ro / t)^2",
+          "javascript_expression": "A = 0.125 / Math.pow(Ro / t, 2)"
+        },
+        {
+          "step": 2,
+          "calculate": "Resolve factor B or elastic-region status from the assigned material chart using A and design temperature."
+        },
+        {
+          "step": 3,
+          "condition": "factor_B_resolved",
+          "formula_id": "UG28_SPHERE_INELASTIC",
+          "formula": "Pa = B / (Ro / t)",
+          "javascript_expression": "Pa = B / (Ro / t)"
+        },
+        {
+          "step": 4,
+          "condition": "A_left_of_material_temperature_curve",
+          "formula_id": "UG28_SPHERE_ELASTIC",
+          "formula": "Pa = 0.0625 * E / (Ro / t)^2",
+          "javascript_expression": "Pa = (0.0625 * E) / Math.pow(Ro / t, 2)"
+        },
+        {
+          "step": 5,
+          "acceptance": "pass when Pa >= P"
+        }
+      ]
+    },
+    "ellipsoidal_head": {
+      "geometry_steps": [
+        {
+          "step": 1,
+          "formula": "shape_ratio = Do / (2 * ho)"
+        },
+        {
+          "step": 2,
+          "formula": "Ko = interpolate_UG_33_1(shape_ratio)"
+        },
+        {
+          "step": 3,
+          "formula_id": "UG33_ELLIPSOIDAL_EQUIVALENT_RADIUS",
+          "formula": "Ro = Ko * Do",
+          "javascript_expression": "Ro = Ko * Do"
+        }
+      ],
+      "buckling_steps": "Use the spherical-shell and hemispherical-head module with the equivalent outside spherical radius Ro = Ko * Do.",
+      "special_rule": "For a standard 2:1 ellipsoidal head, Do/(2ho) = 2.0 and Ko = 0.90."
+    },
+    "torispherical_head": {
+      "geometry": "Ro = outside crown radius",
+      "buckling_steps": "Use the spherical-shell and hemispherical-head module with Ro equal to the outside crown radius.",
+      "additional_review": [
+        "Verify knuckle geometry.",
+        "Verify minimum thickness after forming.",
+        "Verify formed-head tolerances."
+      ]
+    }
+  },
+  "thickness_selection_algorithm": {
+    "preferred_method": "commercial_candidate_thickness_iteration",
+    "reason": "External-pressure capacity depends on chart lookups and thickness-dependent geometry; direct algebraic inversion is not reliable.",
+    "candidate_iteration": {
+      "inputs": [
+        "sorted_nominal_thickness_candidates_mm",
+        "corrosion_allowance_mm",
+        "forming_thinning_allowance_mm_if_head"
+      ],
+      "procedure": [
+        "For each candidate nominal thickness in ascending order, calculate effective thickness.",
+        "Recalculate outside geometry if inside diameter is the fixed design dimension.",
+        "Calculate the applicable ratios and factor A.",
+        "Resolve factor B or modulus E from controlled chart data.",
+        "Calculate allowable external pressure Pa.",
+        "Reject candidate when Pa < P.",
+        "Select the first candidate for which Pa >= P.",
+        "Recalculate the selected candidate as the final verification pass."
+      ],
+      "no_passing_candidate_result": "external_pressure_thickness_not_resolved"
+    },
+    "numeric_fallback": {
+      "enabled": true,
+      "method": "incremental_search_then_round_up",
+      "default_start_thickness_mm": 3.0,
+      "default_increment_mm": 0.5,
+      "default_maximum_thickness_mm": 200.0,
+      "maximum_iterations": 1000,
+      "final_action": "Round upward to the next approved commercial thickness and repeat the full calculation."
+    },
+    "stiffening_ring_option": {
+      "trigger": "No practical shell thickness passes, or shell thickness is economically excessive.",
+      "action": "Reduce unsupported length using a proposed qualified stiffening ring arrangement, then recalculate the shell.",
+      "automatic_ring_design_included": false,
+      "blocking_note": "The ring section and attachment must be separately checked under UG-29 and UG-30 before the ring is accepted as a line of support."
+    }
+  },
+  "validation_rules": [
+    {
+      "rule_id": "EXT_001",
+      "rule": "External design pressure shall be greater than zero.",
+      "failure_code": "invalid_external_design_pressure"
+    },
+    {
+      "rule_id": "EXT_002",
+      "rule": "Effective thickness shall be greater than zero.",
+      "failure_code": "nonpositive_effective_thickness"
+    },
+    {
+      "rule_id": "EXT_003",
+      "rule": "Unsupported length and outside diameter shall be greater than zero.",
+      "failure_code": "invalid_geometry"
+    },
+    {
+      "rule_id": "EXT_004",
+      "rule": "The exact material chart assignment shall be resolved from an approved Section II Part D material record.",
+      "failure_code": "external_pressure_chart_not_resolved"
+    },
+    {
+      "rule_id": "EXT_005",
+      "rule": "Design-rule and chart-data editions shall match in production mode.",
+      "failure_code": "code_edition_mismatch_requires_engineering_review"
+    },
+    {
+      "rule_id": "EXT_006",
+      "rule": "Figure G and material-chart extrapolation are prohibited.",
+      "failure_code": "chart_extrapolation_prohibited"
+    },
+    {
+      "rule_id": "EXT_007",
+      "rule": "Ellipsoidal-head shape ratio shall remain within the published UG-33.1 Ko table range unless separately resolved.",
+      "failure_code": "ellipsoidal_shape_ratio_outside_table"
+    },
+    {
+      "rule_id": "EXT_008",
+      "rule": "Head thickness shall represent minimum available thickness after forming.",
+      "failure_code": "after_forming_thickness_not_resolved"
+    },
+    {
+      "rule_id": "EXT_009",
+      "rule": "A successful thickness screen does not approve vessel construction.",
+      "failure_code": "engineering_review_required"
+    }
+  ],
+  "error_catalog": {
+    "invalid_external_design_pressure": {
+      "severity": "blocking",
+      "message": "Enter a positive external design pressure difference."
+    },
+    "nonpositive_effective_thickness": {
+      "severity": "blocking",
+      "message": "Nominal thickness is not greater than the applicable deductions."
+    },
+    "invalid_geometry": {
+      "severity": "blocking",
+      "message": "Required component geometry is missing or nonpositive."
+    },
+    "external_pressure_chart_not_resolved": {
+      "severity": "blocking",
+      "message": "The exact Section II Part D external-pressure chart assignment has not been resolved for this material record."
+    },
+    "factor_A_not_resolved": {
+      "severity": "blocking",
+      "message": "Factor A was not resolved from the controlled Figure G dataset."
+    },
+    "factor_B_not_resolved": {
+      "severity": "blocking",
+      "message": "Factor B was not resolved and the elastic-region modulus route is not available."
+    },
+    "modulus_not_resolved": {
+      "severity": "blocking",
+      "message": "Modulus of elasticity at design temperature is required."
+    },
+    "code_edition_mismatch_requires_engineering_review": {
+      "severity": "blocking",
+      "message": "The ASME Section VIII design-rule edition and Section II Part D external-pressure chart edition do not match."
+    },
+    "chart_extrapolation_prohibited": {
+      "severity": "blocking",
+      "message": "The requested chart point would require prohibited extrapolation."
+    },
+    "ellipsoidal_shape_ratio_outside_table": {
+      "severity": "blocking",
+      "message": "The ellipsoidal-head proportion is outside the embedded Ko table range."
+    },
+    "after_forming_thickness_not_resolved": {
+      "severity": "blocking",
+      "message": "Minimum available head thickness after forming has not been resolved."
+    },
+    "external_pressure_thickness_not_resolved": {
+      "severity": "blocking",
+      "message": "No candidate thickness passed within the configured search range."
+    },
+    "engineering_review_required": {
+      "severity": "review",
+      "message": "Preliminary calculation completed. Independent pressure-vessel engineering review remains mandatory."
+    }
+  },
+  "output_contract": {
+    "required_fields": [
+      "calculation_id",
+      "component_type",
+      "input_snapshot",
+      "code_basis",
+      "effective_thickness_mm",
+      "geometry_ratios",
+      "factor_A",
+      "factor_B",
+      "modulus_of_elasticity_mpa",
+      "allowable_external_pressure_mpa",
+      "design_external_pressure_mpa",
+      "pressure_margin_ratio",
+      "result_status",
+      "governing_formula_id",
+      "chart_source_reference",
+      "verification_status",
+      "engineering_review_status",
+      "warnings"
+    ],
+    "result_status_logic": [
+      {
+        "condition": "Any blocking validation failure exists.",
+        "status": "blocked"
+      },
+      {
+        "condition": "Pa < P.",
+        "status": "candidate_thickness_inadequate"
+      },
+      {
+        "condition": "Pa >= P and execution mode is demonstration_preview.",
+        "status": "preliminary_pass_demonstration_only"
+      },
+      {
+        "condition": "Pa >= P, editions match, chart data are verified and approved, and all validation rules pass.",
+        "status": "calculation_pass_engineering_review_required"
+      }
+    ],
+    "derived_outputs": {
+      "pressure_margin_ratio": "Pa / P",
+      "pressure_margin_mpa": "Pa - P",
+      "utilization_ratio": "P / Pa"
+    }
+  },
+  "audit_requirements": {
+    "retain": [
+      "input_snapshot",
+      "trial_thickness_history",
+      "effective_thickness_for_each_trial",
+      "Figure_G_lookup_inputs_and_result",
+      "material_chart_lookup_inputs_and_result",
+      "factor_A",
+      "factor_B_or_elastic_region_decision",
+      "modulus_of_elasticity",
+      "formula_id",
+      "allowable_external_pressure",
+      "source_document_editions",
+      "source_pages_or_chart_ids",
+      "dataset_versions_and_checksums",
+      "warnings",
+      "reviewer_and_approval_fields"
+    ],
+    "minimum_approval_workflow": [
+      "prepared",
+      "independently_checked",
+      "materials_data_verified",
+      "pressure_vessel_engineer_approved"
+    ]
+  },
+  "synthetic_formula_tests": [
+    {
+      "test_id": "TEST_CYLINDER_FACTOR_B_ROUTE",
+      "purpose": "Verify cylindrical-shell inelastic formula only.",
+      "inputs": {
+        "Do_over_t": 200.0,
+        "factor_B_mpa": 100.0
+      },
+      "formula": "Pa = 4 * B / (3 * Do_over_t)",
+      "expected_Pa_mpa": 0.666666667,
+      "chart_lookup_tested": false
+    },
+    {
+      "test_id": "TEST_CYLINDER_ELASTIC_ROUTE",
+      "purpose": "Verify cylindrical-shell elastic formula only.",
+      "inputs": {
+        "Do_over_t": 200.0,
+        "factor_A": 0.0001,
+        "modulus_of_elasticity_mpa": 200000.0
+      },
+      "formula": "Pa = 2 * A * E / (3 * Do_over_t)",
+      "expected_Pa_mpa": 0.066666667,
+      "chart_lookup_tested": false
+    },
+    {
+      "test_id": "TEST_SPHERE_FACTOR_B_ROUTE",
+      "purpose": "Verify spherical-shell or head inelastic formula only.",
+      "inputs": {
+        "Ro_over_t": 100.0,
+        "factor_B_mpa": 100.0
+      },
+      "formula": "Pa = B / Ro_over_t",
+      "expected_Pa_mpa": 1.0,
+      "chart_lookup_tested": false
+    },
+    {
+      "test_id": "TEST_ELLIPSOIDAL_2_TO_1_GEOMETRY",
+      "purpose": "Verify 2:1 ellipsoidal-head equivalent spherical radius.",
+      "inputs": {
+        "outside_diameter_mm": 2000.0,
+        "outside_head_depth_mm": 500.0
+      },
+      "expected": {
+        "Do_over_2ho": 2.0,
+        "Ko": 0.9,
+        "equivalent_outside_spherical_radius_mm": 1800.0
+      },
+      "chart_lookup_tested": false
+    },
+    {
+      "test_id": "TEST_FAIL_CLOSED_EDITION_MISMATCH",
+      "purpose": "Verify production blocking when editions do not match.",
+      "inputs": {
+        "design_rule_edition": "2023",
+        "external_pressure_chart_edition": "2021",
+        "execution_mode": "engineering_production"
+      },
+      "expected_result": "code_edition_mismatch_requires_engineering_review"
+    }
+  ],
+  "implementation_notes": {
+    "recommended_files_to_add_next": [
+      "external_pressure_figure_G_dataset.json",
+      "external_pressure_material_chart_assignments.json",
+      "external_pressure_material_curves.json",
+      "modulus_of_elasticity_curves.json",
+      "commercial_plate_thicknesses.json",
+      "external_pressure_formula_test_cases.json"
+    ],
+    "critical_note": "This logic file contains equations, validation, workflow and the UG-33.1 Ko data. It intentionally does not digitize Figure G or the material external-pressure charts. The app shall fail closed until controlled, verified chart datasets are connected."
+  },
+  "data_bindings": {
+    "embedded_bundle_file": "VesselM_external_pressure_embedded_bundle_2021.json",
+    "browser_bundle_file": "VesselM_external_pressure_embedded_bundle_2021.js",
+    "figure_G_dataset": "external_pressure_figure_G_2021.json",
+    "material_curve_dataset": "external_pressure_material_curves_2021.json",
+    "modulus_dataset": "modulus_of_elasticity_TM_2021.json",
+    "material_assignment_dataset": "external_pressure_material_assignments_2021.json",
+    "binding_status": "complete_for_current_2021_reference_preview_scope"
+  },
+  "execution_modes": {
+    "asme_2021_reference_preview": {
+      "enabled": true,
+      "may_return_factor_A": true,
+      "may_return_factor_B": true,
+      "may_return_modulus_E": true,
+      "may_calculate_allowable_external_pressure": true,
+      "may_select_preliminary_FEED_thickness": true,
+      "construction_use_allowed": false,
+      "mandatory_banner": "Reference preview using ASME Section II Part D 2021 data. Not edition-matched to the ASME VIII-1 2023 design basis."
+    },
+    "asme_2023_engineering_production": {
+      "enabled": false,
+      "blocking_code": "code_edition_mismatch_requires_engineering_review",
+      "release_requirement": "Supply independently verified ASME Section II Part D 2023 Figure G, chart curves, chart assignments and Table TM data."
+    }
+  },
+  "known_remaining_data_gap": {
+    "dataset": "Table Y-1 temperature-dependent yield strength",
+    "affected_routes": [
+      "CS-3 curve selection where temperature-dependent yield strength is required",
+      "cylindrical_shell_Do_over_t_less_than_10"
+    ],
+    "current_action": "Require manually entered independently verified yield strength at design temperature or block the affected route.",
+    "unaffected_common_route": "Most FEED shell checks with Do/t >= 10 and charts other than CS-3 can use the embedded reference-preview data."
+  },
+  "file_integrity": {
+    "algorithm": "SHA-256",
+    "canonicalization": "UTF-8 JSON, sorted keys, compact separators, file_integrity excluded",
+    "sha256": "d31c281b1799ba8e9267922392f311bf37bb4b966c8501d80648ab79f3f9a665"
+  }
+}

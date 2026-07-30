@@ -1,0 +1,1055 @@
+{
+  "records": [
+    {
+      "timestamp": "2026-07-24T10:35:09.010627+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        72
+      ],
+      "material_searched": "SA-105",
+      "search_expression": "SA-105 / no grade suffix / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.011010+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        68
+      ],
+      "material_searched": "SA-106-B",
+      "search_expression": "SA-106 / B / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.011356+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        64
+      ],
+      "material_searched": "SA-181-60",
+      "search_expression": "SA-181 / 60 / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.011711+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        72
+      ],
+      "material_searched": "SA-181-70",
+      "search_expression": "SA-181 / 70 / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.012293+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        140,
+        144
+      ],
+      "material_searched": "SA-182-304",
+      "search_expression": "SA-182 / 304 / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "VesselM type was normalized to the ASME forging prefix F.",
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.012844+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        140
+      ],
+      "material_searched": "SA-182-304L",
+      "search_expression": "SA-182 / 304L / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "VesselM type was normalized to the ASME forging prefix F.",
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.013413+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        128
+      ],
+      "material_searched": "SA-182-316",
+      "search_expression": "SA-182 / 316 / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "VesselM type was normalized to the ASME forging prefix F.",
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.013967+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        124
+      ],
+      "material_searched": "SA-182-316L",
+      "search_expression": "SA-182 / 316L / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "VesselM type was normalized to the ASME forging prefix F.",
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.014542+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        152,
+        156
+      ],
+      "material_searched": "SA-182-347",
+      "search_expression": "SA-182 / 347 / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "VesselM type was normalized to the ASME forging prefix F.",
+      "issue_found": null,
+      "action_taken": "Created 3 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.015134+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        152,
+        156
+      ],
+      "material_searched": "SA-182-347H",
+      "search_expression": "SA-182 / 347H / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "VesselM type was normalized to the ASME forging prefix F.",
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.015529+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        84
+      ],
+      "material_searched": "SA-182-F1",
+      "search_expression": "SA-182 / F1 / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.016010+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        92
+      ],
+      "material_searched": "SA-182-F11",
+      "search_expression": "SA-182 / F11 / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.016466+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        88,
+        92
+      ],
+      "material_searched": "SA-182-F12",
+      "search_expression": "SA-182 / F12 / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.016914+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        92,
+        96
+      ],
+      "material_searched": "SA-182-F22",
+      "search_expression": "SA-182 / F22 / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.017251+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        116
+      ],
+      "material_searched": "SA-203-A",
+      "search_expression": "SA-203 / A / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.017784+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        116
+      ],
+      "material_searched": "SA-203-D",
+      "search_expression": "SA-203 / D / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.018166+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        84
+      ],
+      "material_searched": "SA-204-B",
+      "search_expression": "SA-204 / B / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.018528+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        84
+      ],
+      "material_searched": "SA-234-WP1",
+      "search_expression": "SA-234 / WP1 / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.018870+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        92
+      ],
+      "material_searched": "SA-234-WP11",
+      "search_expression": "SA-234 / WP11 / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.019430+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        88
+      ],
+      "material_searched": "SA-234-WP12",
+      "search_expression": "SA-234 / WP12 / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.019821+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        92
+      ],
+      "material_searched": "SA-234-WP22",
+      "search_expression": "SA-234 / WP22 / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.020169+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        68
+      ],
+      "material_searched": "SA-234-WPB",
+      "search_expression": "SA-234 / WPB / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.020649+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        144
+      ],
+      "material_searched": "SA-240-304",
+      "search_expression": "SA-240 / 304 / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.021110+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        140
+      ],
+      "material_searched": "SA-240-304L",
+      "search_expression": "SA-240 / 304L / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.021581+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        128
+      ],
+      "material_searched": "SA-240-316",
+      "search_expression": "SA-240 / 316 / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.022040+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        124
+      ],
+      "material_searched": "SA-240-316L",
+      "search_expression": "SA-240 / 316L / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.022545+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        156
+      ],
+      "material_searched": "SA-240-347",
+      "search_expression": "SA-240 / 347 / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.023102+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        156
+      ],
+      "material_searched": "SA-240-347H",
+      "search_expression": "SA-240 / 347H / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.023448+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        64
+      ],
+      "material_searched": "SA-285-C",
+      "search_expression": "SA-285 / C / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.024104+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        144
+      ],
+      "material_searched": "SA-312-304",
+      "search_expression": "SA-312 / 304 / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "VesselM type was normalized to the ASME pipe prefix TP.",
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.024706+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        140
+      ],
+      "material_searched": "SA-312-304L",
+      "search_expression": "SA-312 / 304L / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "VesselM type was normalized to the ASME pipe prefix TP.",
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.025989+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        128
+      ],
+      "material_searched": "SA-312-316",
+      "search_expression": "SA-312 / 316 / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "VesselM type was normalized to the ASME pipe prefix TP.",
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.027051+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        124
+      ],
+      "material_searched": "SA-312-316L",
+      "search_expression": "SA-312 / 316L / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "VesselM type was normalized to the ASME pipe prefix TP.",
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.027716+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        156
+      ],
+      "material_searched": "SA-312-347",
+      "search_expression": "SA-312 / 347 / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "VesselM type was normalized to the ASME pipe prefix TP.",
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.028347+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        156
+      ],
+      "material_searched": "SA-312-347H",
+      "search_expression": "SA-312 / 347H / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "VesselM type was normalized to the ASME pipe prefix TP.",
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.028707+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        64
+      ],
+      "material_searched": "SA-333-1",
+      "search_expression": "SA-333 / 1 / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.030049+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        116
+      ],
+      "material_searched": "SA-333-3",
+      "search_expression": "SA-333 / 3 / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.030521+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        68
+      ],
+      "material_searched": "SA-333-6",
+      "search_expression": "SA-333 / 6 / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.031101+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        120
+      ],
+      "material_searched": "SA-333-8",
+      "search_expression": "SA-333 / 8 / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 5 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.031456+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        84
+      ],
+      "material_searched": "SA-335-P1",
+      "search_expression": "SA-335 / P1 / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.031847+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        92
+      ],
+      "material_searched": "SA-335-P11",
+      "search_expression": "SA-335 / P11 / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.032201+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        88
+      ],
+      "material_searched": "SA-335-P12",
+      "search_expression": "SA-335 / P12 / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.032557+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        92
+      ],
+      "material_searched": "SA-335-P22",
+      "search_expression": "SA-335 / P22 / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.032967+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        72
+      ],
+      "material_searched": "SA-350-LF2",
+      "search_expression": "SA-350 / LF2 / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.033250+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [],
+      "material_searched": "SA-350-LF63",
+      "search_expression": "SA-350 / LF63 / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "incorrect_source_designation_suspected",
+      "normalization_applied": "No SA-350 LF63 row was found. SA-350 LF3 Class 1 and Class 2 rows exist, but they were not substituted.",
+      "issue_found": "No SA-350 LF63 row was found. SA-350 LF3 Class 1 and Class 2 rows exist, but they were not substituted.",
+      "action_taken": "Added to unresolved register",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.033696+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        120
+      ],
+      "material_searched": "SA-353",
+      "search_expression": "SA-353 / no grade suffix / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 3 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.034136+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        92
+      ],
+      "material_searched": "SA-387-11-2",
+      "search_expression": "SA-387 / 11-2 / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.034494+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        88
+      ],
+      "material_searched": "SA-387-12-1",
+      "search_expression": "SA-387 / 12-1 / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.034851+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        92
+      ],
+      "material_searched": "SA-387-22-1",
+      "search_expression": "SA-387 / 22-1 / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.035218+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        144
+      ],
+      "material_searched": "SA-403-304",
+      "search_expression": "SA-403 / 304 / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.035613+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        140
+      ],
+      "material_searched": "SA-403-304L",
+      "search_expression": "SA-403 / 304L / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.035983+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        128
+      ],
+      "material_searched": "SA-403-316",
+      "search_expression": "SA-403 / 316 / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.036336+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        124
+      ],
+      "material_searched": "SA-403-316L",
+      "search_expression": "SA-403 / 316L / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.036872+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        156
+      ],
+      "material_searched": "SA-403-347",
+      "search_expression": "SA-403 / 347 / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.037240+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        156
+      ],
+      "material_searched": "SA-403-347H",
+      "search_expression": "SA-403 / 347H / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.037577+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        116
+      ],
+      "material_searched": "SA-420-WPL3",
+      "search_expression": "SA-420 / WPL3 / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.037985+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        68
+      ],
+      "material_searched": "SA-420-WPL6",
+      "search_expression": "SA-420 / WPL6 / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 1 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.038412+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        120
+      ],
+      "material_searched": "SA-420-WPL8",
+      "search_expression": "SA-420 / WPL8 / fittings",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.038684+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [],
+      "material_searched": "SA-455-II",
+      "search_expression": "SA-455 / II / plate",
+      "table_located": "Table 1A",
+      "match_decision": "incorrect_source_designation_suspected",
+      "normalization_applied": "ASME Table 1A lists SA-455 rows without a Grade II or Class II designation. No substitution was made.",
+      "issue_found": "ASME Table 1A lists SA-455 rows without a Grade II or Class II designation. No substitution was made.",
+      "action_taken": "Added to unresolved register",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.039165+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        68,
+        72
+      ],
+      "material_searched": "SA-515-All",
+      "search_expression": "SA-515 / All / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 3 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.039805+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        64,
+        68,
+        72
+      ],
+      "material_searched": "SA-516-All",
+      "search_expression": "SA-516 / All / plate",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.040295+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        120
+      ],
+      "material_searched": "SA-522-1",
+      "search_expression": "SA-522 / 1 / forgings",
+      "table_located": "Table 1A",
+      "match_decision": "normalized_match_multiple_rows",
+      "normalization_applied": "Numeric grade 1 was normalized to the source Roman numeral I.",
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.040821+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        68
+      ],
+      "material_searched": "SA-53-B",
+      "search_expression": "SA-53 / B / pipe",
+      "table_located": "Table 1A",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 4 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.041404+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        292,
+        312
+      ],
+      "material_searched": "SB-366",
+      "search_expression": "SB-366 / no grade suffix / fittings",
+      "table_located": "Table 1B",
+      "match_decision": "context_filtered_multiple_rows",
+      "normalization_applied": "Filtered to N08825 and N06625 because the VesselM guide uses SB-366 for the Incoloy and Inconel material families.",
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.041931+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        312
+      ],
+      "material_searched": "SB-423",
+      "search_expression": "SB-423 / no grade suffix / pipe",
+      "table_located": "Table 1B",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.042397+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        312
+      ],
+      "material_searched": "SB-424",
+      "search_expression": "SB-424 / no grade suffix / plate",
+      "table_located": "Table 1B",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 2 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.042683+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [],
+      "material_searched": "SB-425",
+      "search_expression": "SB-425 / no grade suffix / forgings",
+      "table_located": "Table 1B",
+      "match_decision": "manual_review_required",
+      "normalization_applied": "ASME Table 1B lists SB-425 as bar or rod rather than forgings as stated in the VesselM guide.",
+      "issue_found": "ASME Table 1B lists SB-425 as bar or rod rather than forgings as stated in the VesselM guide.",
+      "action_taken": "Added to unresolved register",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.043339+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        292
+      ],
+      "material_searched": "SB-443",
+      "search_expression": "SB-443 / no grade suffix / plate",
+      "table_located": "Table 1B",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 5 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.043859+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [
+        292
+      ],
+      "material_searched": "SB-444",
+      "search_expression": "SB-444 / no grade suffix / pipe",
+      "table_located": "Table 1B",
+      "match_decision": "exact_match_multiple_rows",
+      "normalization_applied": null,
+      "issue_found": null,
+      "action_taken": "Created 3 source-row records",
+      "reviewer_required": true
+    },
+    {
+      "timestamp": "2026-07-24T10:35:09.044144+00:00",
+      "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+      "source_page": [],
+      "material_searched": "SB-446",
+      "search_expression": "SB-446 / no grade suffix / forgings",
+      "table_located": "Table 1B",
+      "match_decision": "manual_review_required",
+      "normalization_applied": "ASME Table 1B lists SB-446 as bar or rod rather than forgings as stated in the VesselM guide.",
+      "issue_found": "ASME Table 1B lists SB-446 as bar or rod rather than forgings as stated in the VesselM guide.",
+      "action_taken": "Added to unresolved register",
+      "reviewer_required": true
+    }
+  ]
+}

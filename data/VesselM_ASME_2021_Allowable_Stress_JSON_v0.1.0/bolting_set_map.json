@@ -1,0 +1,129 @@
+{
+  "records": [
+    {
+      "bolting_set_id": "BOLTSET_B8_8",
+      "source_text": "SA-320-B8 with SA-194-8",
+      "bolt": {
+        "specification": "SA-320",
+        "grade": "B8",
+        "matched_record_ids": [
+          "BOLTING_SA_320_B8_P0470_L05",
+          "BOLTING_SA_320_B8_P0470_L08",
+          "BOLTING_SA_320_B8_P0470_L10",
+          "BOLTING_SA_320_B8_P0470_L12",
+          "BOLTING_SA_320_B8_P0470_L14"
+        ],
+        "match_status": "exact_match_multiple_rows"
+      },
+      "nut": {
+        "specification": "SA-194",
+        "grade": "8",
+        "matched_record_ids": [],
+        "match_status": "not_listed_in_table_3",
+        "engineering_note": "Table 3 is a bolting allowable-stress table. No SA-194 nut rows were located in the supplied Part D source."
+      },
+      "vesselm_material_range_ids": [
+        "MSR_001",
+        "MSR_002"
+      ]
+    },
+    {
+      "bolting_set_id": "BOLTSET_L7_4",
+      "source_text": "SA-320-L7 with SA-194-4",
+      "bolt": {
+        "specification": "SA-320",
+        "grade": "L7",
+        "matched_record_ids": [
+          "BOLTING_SA_320_L7_P0462_L33"
+        ],
+        "match_status": "exact_match"
+      },
+      "nut": {
+        "specification": "SA-194",
+        "grade": "4",
+        "matched_record_ids": [],
+        "match_status": "not_listed_in_table_3",
+        "engineering_note": "Table 3 is a bolting allowable-stress table. No SA-194 nut rows were located in the supplied Part D source."
+      },
+      "vesselm_material_range_ids": [
+        "MSR_003",
+        "MSR_004",
+        "MSR_005",
+        "MSR_006"
+      ]
+    },
+    {
+      "bolting_set_id": "BOLTSET_B7_2H",
+      "source_text": "SA-193-B7 with SA-194-2H",
+      "bolt": {
+        "specification": "SA-193",
+        "grade": "B7",
+        "matched_record_ids": [
+          "BOLTING_SA_193_B7_P0462_L28",
+          "BOLTING_SA_193_B7_P0462_L31",
+          "BOLTING_SA_193_B7_P0462_L32"
+        ],
+        "match_status": "exact_match_multiple_rows"
+      },
+      "nut": {
+        "specification": "SA-194",
+        "grade": "2H",
+        "matched_record_ids": [],
+        "match_status": "not_listed_in_table_3",
+        "engineering_note": "Table 3 is a bolting allowable-stress table. No SA-194 nut rows were located in the supplied Part D source."
+      },
+      "vesselm_material_range_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009",
+        "MSR_010",
+        "MSR_011",
+        "MSR_012"
+      ]
+    },
+    {
+      "bolting_set_id": "BOLTSET_B5_3",
+      "source_text": "SA-193-B5 with SA-194-3",
+      "bolt": {
+        "specification": "SA-193",
+        "grade": "B5",
+        "matched_record_ids": [
+          "BOLTING_SA_193_B5_P0466_L06"
+        ],
+        "match_status": "exact_match"
+      },
+      "nut": {
+        "specification": "SA-194",
+        "grade": "3",
+        "matched_record_ids": [],
+        "match_status": "not_listed_in_table_3",
+        "engineering_note": "Table 3 is a bolting allowable-stress table. No SA-194 nut rows were located in the supplied Part D source."
+      },
+      "vesselm_material_range_ids": [
+        "MSR_013"
+      ]
+    },
+    {
+      "bolting_set_id": "BOLTSET_BB_B",
+      "source_text": "SA-193-BB with SA-194-B",
+      "bolt": {
+        "specification": "SA-193",
+        "grade": "BB",
+        "matched_record_ids": [],
+        "match_status": "no_match"
+      },
+      "nut": {
+        "specification": "SA-194",
+        "grade": "B",
+        "matched_record_ids": [],
+        "match_status": "not_listed_in_table_3",
+        "engineering_note": "Table 3 is a bolting allowable-stress table. No SA-194 nut rows were located in the supplied Part D source."
+      },
+      "vesselm_material_range_ids": [
+        "MSR_014",
+        "MSR_015",
+        "MSR_016"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "code_name": "ASME Boiler and Pressure Vessel Code",
+  "section": "II",
+  "part": "D",
+  "properties_unit_system": "Metric",
+  "edition_year": 2021,
+  "addenda": null,
+  "publication_language": "English",
+  "source_file": "ASME BPVC 2021 Section II part D (metric).pdf",
+  "source_pdf_page_count": 1478,
+  "source_sha256": "1453dd6b5af34c19fa5d1c3371937952ff906c93fa96be2d048e7ae0942317f7",
+  "edition_status": "verified_from_title_and_edition_pages",
+  "allowed_design_scope": "ASME Section VIII Division 1 table lookup",
+  "prohibited_mixing": "Do not mix these values with another edition or unit-volume source."
+}

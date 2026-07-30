@@ -1,0 +1,70 @@
+{
+  "package_id": "VesselM_External_Pressure_Data_ASME2021_v0.1.0",
+  "version": "0.1.0",
+  "created_utc": "2026-07-30T03:56:56.406268+00:00",
+  "source_edition": "2021",
+  "production_use_allowed": false,
+  "validation_status": "passed_with_review_flags",
+  "files": [
+    {
+      "filename": "README.md",
+      "size_bytes": 1144,
+      "sha256": "969b3b74813928d2375a1be2e49a42eccbb9a89f1e113e376ea95cb49f1d1b0f"
+    },
+    {
+      "filename": "VesselM_external_pressure_embedded_bundle_2021.js",
+      "size_bytes": 214504,
+      "sha256": "487575af19f90feffc39db77f61b5422f815592e617302a3d501bf28e2c2fedf"
+    },
+    {
+      "filename": "VesselM_external_pressure_embedded_bundle_2021.json",
+      "size_bytes": 409159,
+      "sha256": "66fd186663a5f2efd4b052b2781b5d87bb06850431c0e5b9243d5705a98c65d1"
+    },
+    {
+      "filename": "VesselM_external_pressure_logic_with_data_binding_v1.1.0.json",
+      "size_bytes": 30085,
+      "sha256": "a56917e518794b1bd4ca62bef50899aac0d5977995c7929da6d4b61a267c7362"
+    },
+    {
+      "filename": "execution_policy.json",
+      "size_bytes": 1332,
+      "sha256": "996be3395b20cc81ba63e5d0701facf0f931d4b180ed6e0ac0fb05b322e4152d"
+    },
+    {
+      "filename": "external_pressure_figure_G_2021.json",
+      "size_bytes": 48889,
+      "sha256": "ae59f3fc200cb9f5d4ea35a174146f145b078a11747d797fe1436b122de918a9"
+    },
+    {
+      "filename": "external_pressure_material_assignments_2021.json",
+      "size_bytes": 107162,
+      "sha256": "5505a0b60d15a784b05f8145de541b9d67171e7749fb7709af141cf4457221cb"
+    },
+    {
+      "filename": "external_pressure_material_curves_2021.json",
+      "size_bytes": 52847,
+      "sha256": "20d8078f31675282c80bb05ebc4bcad0b1c21525f12822692cdb4e335a15fd7c"
+    },
+    {
+      "filename": "modulus_of_elasticity_TM_2021.json",
+      "size_bytes": 180177,
+      "sha256": "dc8b4c9f791c56e0914ad552398eeb643d4174fda32e356dc5a8bfd065b4bc15"
+    },
+    {
+      "filename": "source_register.json",
+      "size_bytes": 1011,
+      "sha256": "13d84f74fbf7c90d32065118aa7cece17380ac1c525d1bce843a9bb08b1ecb2e"
+    },
+    {
+      "filename": "unresolved_items.json",
+      "size_bytes": 20,
+      "sha256": "6c1db664439054b14cf5baade95beb5c1b194266ecf60003a2aab24c85fd8359"
+    },
+    {
+      "filename": "validation_report.json",
+      "size_bytes": 393,
+      "sha256": "47d1875aedb26f0cb71e46522b2c849e2e729e036af4104b06c955ae388b3542"
+    }
+  ]
+}

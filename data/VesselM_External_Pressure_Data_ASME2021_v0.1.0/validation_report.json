@@ -1,0 +1,14 @@
+{
+  "status": "passed_with_review_flags",
+  "figure_G_curve_count": 24,
+  "figure_G_point_count": 393,
+  "material_chart_count": 9,
+  "material_curve_count": 48,
+  "material_chart_point_count": 396,
+  "modulus_table_count": 5,
+  "modulus_curve_count": 129,
+  "assignment_count": 138,
+  "unresolved_modulus_assignment_count": 0,
+  "issues": [],
+  "independent_verification_status": "pending"
+}

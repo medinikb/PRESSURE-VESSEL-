@@ -1,0 +1,703 @@
+{
+  "file_name": "allowable_stress_lookup_rules.json",
+  "schema_version": "1.1.0",
+  "library_version": "1.1.0",
+  "purpose": "Fail-closed lookup rules for resolving one ASME Section II Part D material source row and a permitted Section VIII Division 1 maximum allowable stress value.",
+  "governance": {
+    "lookup_mode": "fail_closed",
+    "automatic_material_substitution_allowed": false,
+    "automatic_first_row_selection_allowed": false,
+    "automatic_highest_allowable_stress_selection_allowed": false,
+    "automatic_lowest_allowable_stress_selection_allowed": false,
+    "automatic_nearest_temperature_selection_allowed": false,
+    "automatic_extrapolation_allowed": false,
+    "automatic_interpolation_allowed": false,
+    "generic_family_curve_allowed": false,
+    "cross_product_form_matching_allowed": false,
+    "cross_code_edition_matching_allowed": false,
+    "unverified_record_use_allowed": false,
+    "unapproved_record_use_allowed": false,
+    "unresolved_note_use_allowed": false,
+    "public_distribution_status": "review_required",
+    "automatic_published_not_exceeding_ceiling_selection_allowed": true,
+    "code_permitted_interpolation_supported": true
+  },
+  "required_source_record_fields": [
+    "record_id",
+    "product_form",
+    "specification.full_designation",
+    "grade",
+    "type",
+    "class",
+    "heat_treatment",
+    "strength_level",
+    "thickness_range",
+    "size_range",
+    "seam_condition",
+    "governing_table.table_number",
+    "governing_table.row_identifier",
+    "governance.controlled_code_edition",
+    "temperature_stress_points",
+    "source_note_ids",
+    "data_quality.independent_verification_status",
+    "governance.approval_status"
+  ],
+  "lookup_input_contract": {
+    "required": [
+      "product_form",
+      "specification",
+      "design_temperature",
+      "design_temperature_unit",
+      "applicable_code_section",
+      "code_edition"
+    ],
+    "conditionally_required": {
+      "grade": "Required when grade differentiates source records.",
+      "type": "Required when type differentiates source records.",
+      "class": "Required when class differentiates source records.",
+      "heat_treatment": "Required when heat treatment or material condition differentiates source records or controls applicability.",
+      "material_condition": "Required when a condition other than heat treatment differentiates source records.",
+      "thickness": "Required when any candidate source row has a thickness restriction.",
+      "thickness_unit": "Required whenever thickness is supplied.",
+      "size": "Required when any candidate source row has a size restriction.",
+      "size_unit": "Required whenever size is supplied.",
+      "seam_condition": "Required when seamless, welded, or another manufacturing condition differentiates source records.",
+      "code_edition": "Required when the loaded library contains more than one controlled edition."
+    },
+    "optional": [
+      "strength_level",
+      "manufacturing_route",
+      "applicable_code_section",
+      "requested_stress_unit",
+      "approved_interpolation_configuration_id"
+    ],
+    "null_handling": {
+      "missing_input_is_not_a_wildcard": true,
+      "null_source_value_matches_only_when_attribute_is_not_applicable": true,
+      "blank_string_is_invalid": true,
+      "unknown_is_invalid": true,
+      "all_grades_is_not_an_exact_grade": true,
+      "all_types_is_not_an_exact_type": true,
+      "all_classes_is_not_an_exact_class": true
+    }
+  },
+  "normalization_policy": {
+    "normalization_may_support_comparison_only": true,
+    "normalization_must_not_change_engineering_identity": true,
+    "permitted_operations": [
+      "trim_leading_and_trailing_whitespace",
+      "collapse_repeated_internal_whitespace",
+      "case_insensitive_comparison",
+      "normalize_hyphen_spacing",
+      "use_independently_approved_material_alias_map"
+    ],
+    "prohibited_operations": [
+      "infer_missing_grade",
+      "infer_missing_type",
+      "infer_missing_class",
+      "replace_specification_with_similar_specification",
+      "treat_astm_and_asme_designations_as_equivalent_unless_explicitly_mapped",
+      "merge_separate_source_rows",
+      "ignore_product_form",
+      "ignore_heat_treatment",
+      "ignore_thickness_or_size_restriction",
+      "ignore_seam_condition",
+      "ignore_source_notes"
+    ],
+    "alias_requirement": {
+      "alias_map_file": "material_alias_map.json",
+      "disallowed_match_statuses_for_automatic_lookup": [
+        "exact_match_multiple_rows",
+        "ambiguous_match",
+        "no_match",
+        "obsolete_or_superseded",
+        "incorrect_source_designation_suspected",
+        "manual_review_required"
+      ],
+      "allowed_match_statuses_for_candidate_generation": [
+        "exact_match",
+        "normalized_match",
+        "exact_match_multiple_rows",
+        "normalized_match_multiple_rows",
+        "context_filtered_multiple_rows"
+      ],
+      "allowed_match_statuses_for_final_selection": [
+        "exact_match",
+        "normalized_match",
+        "exact_match_multiple_rows",
+        "normalized_match_multiple_rows",
+        "context_filtered_multiple_rows"
+      ],
+      "final_selection_condition": "Exactly one eligible source record must remain after every applicable identity, condition, range, applicability and note filter."
+    }
+  },
+  "lookup_sequence": [
+    {
+      "sequence": 1,
+      "name": "product_form",
+      "source_fields": [
+        "product_form"
+      ],
+      "input_fields": [
+        "product_form"
+      ],
+      "match_rule": "exact_normalized_match",
+      "failure_if_zero_records": "allowable_stress_not_resolved",
+      "notes": "Never use a stress row from another product form."
+    },
+    {
+      "sequence": 2,
+      "name": "specification",
+      "source_fields": [
+        "specification.prefix",
+        "specification.number",
+        "specification.full_designation"
+      ],
+      "input_fields": [
+        "specification"
+      ],
+      "match_rule": "exact_or_independently_approved_alias_match",
+      "failure_if_zero_records": "allowable_stress_not_resolved",
+      "notes": "Do not silently substitute a similar SA, SB, ASTM, or UNS designation."
+    },
+    {
+      "sequence": 3,
+      "name": "grade_or_type",
+      "source_fields": [
+        "grade",
+        "type"
+      ],
+      "input_fields": [
+        "grade",
+        "type"
+      ],
+      "match_rule": "Apply every identity field that is applicable to the source row. A missing differentiating grade or type is not a wildcard.",
+      "failure_if_zero_records": "allowable_stress_not_resolved",
+      "notes": "Where both grade and type are populated in the source, both must match. Where only one is applicable, that applicable field must match."
+    },
+    {
+      "sequence": 4,
+      "name": "class",
+      "source_fields": [
+        "class"
+      ],
+      "input_fields": [
+        "class"
+      ],
+      "match_rule": "exact_match_when_applicable",
+      "failure_if_zero_records": "allowable_stress_not_resolved",
+      "notes": "A missing class cannot be inferred when class differentiates source rows."
+    },
+    {
+      "sequence": 5,
+      "name": "heat_treatment_or_material_condition",
+      "source_fields": [
+        "heat_treatment",
+        "strength_level",
+        "manufacturing_route"
+      ],
+      "input_fields": [
+        "heat_treatment",
+        "material_condition",
+        "strength_level",
+        "manufacturing_route"
+      ],
+      "match_rule": "All applicable condition fields must be satisfied exactly or through an independently approved controlled vocabulary mapping.",
+      "failure_if_zero_records": "allowable_stress_not_resolved",
+      "notes": "Do not treat annealed, normalized, normalized-and-tempered, quenched-and-tempered, solution-treated, or cold-worked conditions as interchangeable."
+    },
+    {
+      "sequence": 6,
+      "name": "thickness_or_size_range",
+      "source_fields": [
+        "thickness_range",
+        "size_range"
+      ],
+      "input_fields": [
+        "thickness",
+        "thickness_unit",
+        "size",
+        "size_unit"
+      ],
+      "match_rule": "Convert the input to the source range unit using an approved exact unit conversion, then enforce inclusive and exclusive range boundaries.",
+      "failure_if_zero_records": "allowable_stress_not_resolved",
+      "notes": "If a candidate row has a restriction and the required input dimension is missing, the row is not automatically eligible."
+    },
+    {
+      "sequence": 7,
+      "name": "seamless_or_welded_condition",
+      "source_fields": [
+        "seam_condition",
+        "manufacturing_route"
+      ],
+      "input_fields": [
+        "seam_condition",
+        "manufacturing_route"
+      ],
+      "match_rule": "exact_match_when_applicable",
+      "failure_if_zero_records": "allowable_stress_not_resolved",
+      "notes": "Apply seamless, welded, electric-resistance-welded, fusion-welded, and other published distinctions where applicable."
+    },
+    {
+      "sequence": 8,
+      "name": "code_section_edition_and_applicability",
+      "source_fields": [
+        "applicable_code_sections",
+        "section_viii_division_1_applicability",
+        "governance.controlled_code_edition"
+      ],
+      "input_fields": [
+        "applicable_code_section",
+        "code_edition",
+        "design_temperature",
+        "design_temperature_unit"
+      ],
+      "match_rule": "The requested Code section and edition must match the approved library basis. Confirm that the source row is permitted for Section VIII Division 1 at the design temperature.",
+      "failure_if_zero_records": "allowable_stress_not_resolved",
+      "failure_if_edition_mismatch": "code_edition_mismatch_requires_engineering_review",
+      "notes": "The maximum published stress temperature is not a substitute for the Section VIII Division 1 applicability limit."
+    },
+    {
+      "sequence": 9,
+      "name": "design_temperature",
+      "source_fields": [
+        "temperature_stress_points.source_temperature",
+        "temperature_stress_points.source_temperature_unit",
+        "maximum_published_temperature"
+      ],
+      "input_fields": [
+        "design_temperature",
+        "design_temperature_unit"
+      ],
+      "match_rule": "Convert design temperature using approved exact conversion rules. Reject temperatures outside the published usable points or restricted by an applicable note.",
+      "failure_if_zero_records": "allowable_stress_not_resolved",
+      "notes": "The highest published temperature is not automatically an approved operating limit."
+    },
+    {
+      "sequence": 10,
+      "name": "published_not_exceeding_value_or_approved_interpolation",
+      "source_fields": [
+        "temperature_stress_points"
+      ],
+      "input_fields": [
+        "design_temperature",
+        "design_temperature_unit",
+        "approved_interpolation_configuration_id"
+      ],
+      "match_rule": "Default: select the lowest published temperature column that is greater than or equal to the design temperature because the table heading states metal temperature not exceeding. Exact published points are retained as exact. Interpolation may be used only when a separately approved configuration is enabled and the governing table note expressly permits it.",
+      "failure_if_zero_records": "allowable_stress_not_resolved",
+      "notes": "Do not select the numerically nearest temperature. Do not extrapolate. A conservative published ceiling-column lookup is not interpolation."
+    },
+    {
+      "sequence": 11,
+      "name": "applicable_source_note",
+      "source_fields": [
+        "source_note_ids",
+        "temperature_stress_points.note_ids"
+      ],
+      "input_fields": [
+        "design_temperature",
+        "thickness",
+        "size",
+        "heat_treatment",
+        "material_condition",
+        "seam_condition",
+        "applicable_code_section"
+      ],
+      "match_rule": "Resolve every referenced note and confirm that all restrictions are satisfied. Any unresolved, illegible, contradictory, or review-required note blocks automatic lookup.",
+      "failure_if_zero_records": "allowable_stress_not_resolved",
+      "notes": "Source-note applicability is part of record eligibility, not advisory metadata."
+    }
+  ],
+  "candidate_resolution": {
+    "evaluate_all_candidates_through_all_applicable_filters": true,
+    "intermediate_multiple_candidates_allowed": true,
+    "final_candidate_count_rules": {
+      "0": "allowable_stress_not_resolved",
+      "1": "continue_to_temperature_value_resolution",
+      "more_than_1": "multiple_material_records_require_engineering_selection"
+    },
+    "tie_breakers": [],
+    "sorting_must_not_affect_selection": true,
+    "database_row_order_must_not_affect_selection": true,
+    "allowable_stress_magnitude_must_not_affect_selection": true
+  },
+  "temperature_resolution": {
+    "default_method": "published_not_exceeding_ceiling",
+    "published_not_exceeding_ceiling": {
+      "enabled": true,
+      "selection_rule": "After exactly one eligible material row remains, select the smallest published temperature point greater than or equal to the design temperature.",
+      "exact_point_behavior": "When design temperature equals a published temperature, use that published point.",
+      "comparison_basis": "Compare temperatures after exact unit conversion without rounding that changes ordering or equality.",
+      "allowable_cell_statuses": [
+        "value_published"
+      ],
+      "disallowed_cell_statuses": [
+        "not_listed",
+        "not_permitted",
+        "value_not_available",
+        "source_blank",
+        "source_dash",
+        "source_ellipsis",
+        "source_note_reference",
+        "illegible_source",
+        "outside_published_temperature_range",
+        "requires_manual_review"
+      ],
+      "below_first_published_temperature_rule": "Use the first published column only when the governing Code rule and source-row applicability permit that temperature.",
+      "above_last_usable_temperature_result": "allowable_stress_not_resolved",
+      "interpolation_used": false
+    },
+    "interpolation": {
+      "default_enabled": false,
+      "requires_separate_configuration": true,
+      "configuration_file": "allowable_stress_interpolation_config.json",
+      "source_authorization_required": true,
+      "verified_source_permissions": {
+        "Table 1A": {
+          "permitted": true,
+          "source_basis": "General Note (b)",
+          "rounding_rule_source": "General Note (b)"
+        },
+        "Table 1B": {
+          "permitted": true,
+          "source_basis": "General Note (b)",
+          "rounding_rule_source": "General Note (b)"
+        },
+        "Table 3": {
+          "permitted": false,
+          "status": "pending_independent_source_note_verification"
+        }
+      },
+      "configuration_requirements": [
+        "configuration_id",
+        "enabled",
+        "approval_status",
+        "approved_by",
+        "approval_reference",
+        "approved_code_edition",
+        "permitted_product_forms",
+        "permitted_tables",
+        "method",
+        "source_note_reference",
+        "rounding_rule",
+        "effective_date",
+        "checksum"
+      ],
+      "minimum_approval_status": "approved",
+      "permitted_only_between_adjacent_published_points": true,
+      "extrapolation_allowed": false,
+      "cross_note_boundary_interpolation_allowed": false,
+      "cross_material_record_interpolation_allowed": false,
+      "cross_code_edition_interpolation_allowed": false,
+      "failure_when_disabled_or_unapproved": "Use published_not_exceeding_ceiling instead of failing solely because interpolation is disabled."
+    }
+  },
+  "source_record_eligibility": {
+    "required_independent_verification_statuses": [
+      "verified"
+    ],
+    "required_approval_statuses": [
+      "approved"
+    ],
+    "required_source_legibility_statuses": [
+      "clear"
+    ],
+    "blocked_completeness_statuses": [
+      "incomplete",
+      "requires_manual_review"
+    ],
+    "blocked_open_issue_behavior": "allowable_stress_not_resolved",
+    "required_code_edition_match": true,
+    "required_source_traceability": [
+      "governing_table.table_number",
+      "governing_table.row_identifier",
+      "governing_table.pdf_page",
+      "governance.controlled_code_edition"
+    ],
+    "development_preview_handling": "The current v0.1.0 extracted databank is machine-extracted and pending independent verification. It is blocked in engineering_production mode and may only be displayed in demonstration_preview mode.",
+    "accepted_machine_source_status_for_preview_only": [
+      "digital_text_layer"
+    ]
+  },
+  "error_codes": {
+    "multiple_material_records_require_engineering_selection": {
+      "meaning": "More than one eligible material source record remains after all applicable filtering.",
+      "automatic_lookup_blocked": true,
+      "engineering_review_status": "required"
+    },
+    "allowable_stress_not_resolved": {
+      "meaning": "No exact eligible material record or permitted temperature-stress value could be resolved.",
+      "automatic_lookup_blocked": true,
+      "engineering_review_status": "required"
+    },
+    "code_edition_mismatch_requires_engineering_review": {
+      "meaning": "The design Code edition and allowable-stress library edition do not match, and no approved cross-edition mapping is available.",
+      "automatic_lookup_blocked": true,
+      "engineering_review_status": "required"
+    },
+    "source_record_not_engineering_approved": {
+      "meaning": "A matching record exists but its independent verification or approval status does not permit production use.",
+      "automatic_lookup_blocked": true,
+      "engineering_review_status": "required"
+    }
+  },
+  "response_contract": {
+    "required_for_every_lookup": [
+      "lookup_status",
+      "error_code",
+      "selected_record_id",
+      "source_table",
+      "source_row",
+      "code_edition",
+      "source_temperature_points",
+      "interpolation_used",
+      "allowable_stress",
+      "stress_unit",
+      "note_ids",
+      "library_version",
+      "checksum",
+      "verification_status",
+      "engineering_review_status",
+      "selected_source_temperature",
+      "selected_source_temperature_unit",
+      "temperature_resolution_method",
+      "design_engineering_review_status"
+    ],
+    "success_response": {
+      "lookup_status": "resolved",
+      "error_code": null,
+      "selected_record_id": "string",
+      "source_table": "string",
+      "source_row": "string",
+      "code_edition": "string",
+      "source_temperature_points": [
+        {
+          "temperature": "number",
+          "temperature_unit": "string",
+          "allowable_stress": "number",
+          "stress_unit": "string",
+          "source_column_heading": "string",
+          "source_pdf_page": "integer_or_null",
+          "source_printed_page": "integer_or_null"
+        }
+      ],
+      "interpolation_used": "boolean",
+      "allowable_stress": "number",
+      "stress_unit": "string",
+      "note_ids": [
+        "string"
+      ],
+      "library_version": "string",
+      "checksum": "selected_record_checksum",
+      "verification_status": "verified",
+      "engineering_review_status": "lookup_review_not_required",
+      "selected_source_temperature": "number",
+      "selected_source_temperature_unit": "string",
+      "temperature_resolution_method": "exact_published_point_or_published_not_exceeding_ceiling_or_approved_interpolation",
+      "design_engineering_review_status": "required"
+    },
+    "failure_response_defaults": {
+      "lookup_status": "not_resolved",
+      "error_code": "allowable_stress_not_resolved_or_multiple_material_records_require_engineering_selection",
+      "selected_record_id": null,
+      "source_table": null,
+      "source_row": null,
+      "code_edition": null,
+      "source_temperature_points": [],
+      "interpolation_used": false,
+      "allowable_stress": null,
+      "stress_unit": null,
+      "note_ids": [],
+      "library_version": "loaded_library_version",
+      "checksum": "loaded_library_or_package_checksum",
+      "verification_status": "not_verified",
+      "engineering_review_status": "required",
+      "selected_source_temperature": null,
+      "selected_source_temperature_unit": null,
+      "temperature_resolution_method": null,
+      "design_engineering_review_status": "required"
+    },
+    "checksum_rule": {
+      "success": "Return the SHA-256 checksum of the exact selected source record in canonical UTF-8 JSON form, or a controlled record checksum stored in the approved source library.",
+      "failure": "Return the SHA-256 checksum of the loaded approved library or package manifest so the failed lookup remains audit-traceable."
+    }
+  },
+  "audit_log_requirements": {
+    "log_every_lookup": true,
+    "required_fields": [
+      "lookup_timestamp_utc",
+      "request_id",
+      "input_snapshot",
+      "library_version",
+      "library_checksum",
+      "filters_applied_in_sequence",
+      "candidate_record_ids_after_each_filter",
+      "rejected_record_ids_and_reasons",
+      "selected_record_id",
+      "temperature_resolution_method",
+      "interpolation_configuration_id",
+      "result",
+      "error_code",
+      "verification_status",
+      "engineering_review_status"
+    ],
+    "prohibited_log_behavior": [
+      "omit_failed_search",
+      "overwrite_prior_lookup_result",
+      "hide_ambiguous_candidates"
+    ]
+  },
+  "validation_rules": [
+    {
+      "rule_id": "VAL_LOOKUP_001",
+      "rule": "Exactly one material record must remain before resolving stress.",
+      "failure_code": "multiple_material_records_require_engineering_selection"
+    },
+    {
+      "rule_id": "VAL_LOOKUP_002",
+      "rule": "Zero eligible records must fail closed.",
+      "failure_code": "allowable_stress_not_resolved"
+    },
+    {
+      "rule_id": "VAL_LOOKUP_003",
+      "rule": "A blank, dash, ellipsis, note-only, or unavailable cell is never zero.",
+      "failure_code": "allowable_stress_not_resolved"
+    },
+    {
+      "rule_id": "VAL_LOOKUP_004",
+      "rule": "No first-row, last-row, maximum-stress, or minimum-stress tie-breaker is allowed.",
+      "failure_code": "multiple_material_records_require_engineering_selection"
+    },
+    {
+      "rule_id": "VAL_LOOKUP_005",
+      "rule": "Default intermediate-temperature resolution shall use the published not-exceeding ceiling column. Interpolation requires explicit source authorization and an approved configuration.",
+      "failure_code": "allowable_stress_not_resolved"
+    },
+    {
+      "rule_id": "VAL_LOOKUP_006",
+      "rule": "Every source note affecting applicability must be resolved and satisfied.",
+      "failure_code": "allowable_stress_not_resolved"
+    },
+    {
+      "rule_id": "VAL_LOOKUP_007",
+      "rule": "Selected record, table, row, edition, value, unit, notes, version, and checksum must be traceable.",
+      "failure_code": "allowable_stress_not_resolved"
+    },
+    {
+      "rule_id": "VAL_LOOKUP_008",
+      "rule": "Records from different code editions must never be combined.",
+      "failure_code": "code_edition_mismatch_requires_engineering_review"
+    },
+    {
+      "rule_id": "VAL_LOOKUP_009",
+      "rule": "An unverified or unapproved source record cannot support automatic lookup.",
+      "failure_code": "allowable_stress_not_resolved"
+    },
+    {
+      "rule_id": "VAL_LOOKUP_010",
+      "rule": "The returned stress unit must be the published unit or an explicitly requested verified conversion.",
+      "failure_code": "allowable_stress_not_resolved"
+    },
+    {
+      "rule_id": "VAL_LOOKUP_011",
+      "rule": "A multiple-row alias may enter the candidate pool, but exactly one eligible source row must remain after all applicable filters.",
+      "failure_code": "multiple_material_records_require_engineering_selection"
+    },
+    {
+      "rule_id": "VAL_LOOKUP_012",
+      "rule": "A successful allowable-stress lookup does not remove the need for pressure-vessel engineering review.",
+      "failure_code": "allowable_stress_not_resolved"
+    },
+    {
+      "rule_id": "VAL_LOOKUP_013",
+      "rule": "Section VIII Division 1 applicability limits and notes shall be checked separately from the highest published stress temperature.",
+      "failure_code": "allowable_stress_not_resolved"
+    }
+  ],
+  "implementation_decision_table": [
+    {
+      "condition": "Design Code edition and stress-library edition do not match.",
+      "result": "code_edition_mismatch_requires_engineering_review"
+    },
+    {
+      "condition": "No candidate remains at any mandatory filtering stage.",
+      "result": "allowable_stress_not_resolved"
+    },
+    {
+      "condition": "More than one candidate remains after all identity, condition, range, applicability and note checks.",
+      "result": "multiple_material_records_require_engineering_selection"
+    },
+    {
+      "condition": "One candidate remains and the design temperature equals a published permitted stress point.",
+      "result": "resolved_exact_published_point"
+    },
+    {
+      "condition": "One candidate remains and the design temperature falls between published points while interpolation is disabled.",
+      "result": "resolved_using_published_not_exceeding_ceiling"
+    },
+    {
+      "condition": "One candidate remains and approved source-authorized interpolation is enabled.",
+      "result": "resolved_with_approved_interpolation"
+    },
+    {
+      "condition": "The selected record is unverified or unapproved in production mode.",
+      "result": "source_record_not_engineering_approved"
+    },
+    {
+      "condition": "A note, range boundary, source cell, edition or applicability condition is uncertain.",
+      "result": "allowable_stress_not_resolved"
+    }
+  ],
+  "file_integrity": {
+    "algorithm": "SHA-256",
+    "canonicalization": "UTF-8 JSON, sorted keys, compact separators, checksum field excluded",
+    "generated_utc": "2026-07-24T10:43:54.376475+00:00",
+    "sha256": "f48817e83b6e3cb77562a3a24980a522610dc6161f438e964c3155612be5a82c"
+  },
+  "scope_boundary": {
+    "allowable_stress_lookup_only": true,
+    "temperature_material_library_may_generate_candidates": true,
+    "temperature_material_library_may_make_final_material_selection": false,
+    "automatic_material_family_to_grade_selection_allowed": false,
+    "final_material_selection_requires_engineering_review": true,
+    "design_code_compliance_not_established_by_successful_lookup": true
+  },
+  "code_basis_control": {
+    "stress_library_code": "ASME BPVC Section II Part D Metric",
+    "stress_library_edition": "2021",
+    "intended_design_code": "ASME BPVC Section VIII Division 1",
+    "same_code_edition_required_for_production": true,
+    "current_known_design_code_edition": "2023",
+    "current_known_status": "edition_mismatch",
+    "edition_mismatch_result": "code_edition_mismatch_requires_engineering_review",
+    "automatic_cross_edition_use_allowed": false,
+    "approved_cross_edition_mapping_file": null,
+    "production_action_required": "Use ASME BPVC Section II Part D 2023 with Section VIII Division 1 2023, or change the complete controlled design basis to the 2021 edition."
+  },
+  "execution_modes": {
+    "engineering_production": {
+      "automatic_lookup_enabled": true,
+      "required_independent_verification_statuses": [
+        "verified"
+      ],
+      "required_approval_statuses": [
+        "approved"
+      ],
+      "edition_match_required": true,
+      "result_may_feed_design_calculation": true
+    },
+    "demonstration_preview": {
+      "automatic_lookup_enabled": true,
+      "permitted_verification_statuses": [
+        "machine_extracted_pending_independent_verification"
+      ],
+      "permitted_approval_statuses": [
+        "draft_pending_independent_verification"
+      ],
+      "result_may_feed_design_calculation": false,
+      "mandatory_output_banner": "DEMONSTRATION ONLY. ALLOWABLE STRESS NOT ENGINEERING APPROVED.",
+      "engineering_review_status": "required"
+    }
+  }
+}

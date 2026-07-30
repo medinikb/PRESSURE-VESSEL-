@@ -1,0 +1,765 @@
+{
+  "source": "ASME BPVC.II.D.M-2021",
+  "status": "note_references_only",
+  "notice": "The extraction retains note identifiers affecting the rows. Full note text is not reproduced in this release and must be reviewed in the controlled source.",
+  "records": [
+    {
+      "note_id": "G10",
+      "source_note_number": "G10",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_234_WPB_P0068_L18",
+        "FITTING_SA_420_WPL6_P0068_L26",
+        "FORGING_FLANGE_SA_105_NA_P0072_L31",
+        "FORGING_FLANGE_SA_181_60_P0064_L38",
+        "FORGING_FLANGE_SA_181_70_P0072_L32",
+        "FORGING_FLANGE_SA_350_LF2_P0072_L36",
+        "FORGING_FLANGE_SA_350_LF2_P0072_L37",
+        "PIPE_TUBE_SA_106_B_P0068_L16",
+        "PIPE_TUBE_SA_333_6_P0068_L19",
+        "PIPE_TUBE_SA_53_E_B_P0068_L12",
+        "PIPE_TUBE_SA_53_E_B_P0068_L13",
+        "PIPE_TUBE_SA_53_S_B_P0068_L14",
+        "PIPE_TUBE_SA_53_S_B_P0068_L15",
+        "PLATE_SA_285_C_P0064_L04",
+        "PLATE_SA_515_60_P0068_L02",
+        "PLATE_SA_515_65_P0072_L02",
+        "PLATE_SA_515_70_P0072_L44",
+        "PLATE_SA_516_55_P0064_L08",
+        "PLATE_SA_516_60_P0068_L03",
+        "PLATE_SA_516_65_P0072_L03",
+        "PLATE_SA_516_70_P0072_L45"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "G11",
+      "source_note_number": "G11",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_234_WP1_P0084_L10",
+        "FORGING_FLANGE_SA_182_F1_P0084_L29",
+        "PIPE_TUBE_SA_335_P1_P0084_L17",
+        "PLATE_SA_204_B_P0084_L30"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "G12",
+      "source_note_number": "G12",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_403_304_P0144_L45",
+        "FITTING_SA_403_316_P0128_L39",
+        "FITTING_SA_403_347_P0156_L18",
+        "FORGING_FLANGE_SA_182_F304_P0140_L34",
+        "FORGING_FLANGE_SA_182_F304_P0140_L35",
+        "FORGING_FLANGE_SA_182_F304_P0144_L08",
+        "FORGING_FLANGE_SA_182_F304_P0144_L09",
+        "FORGING_FLANGE_SA_182_F316_P0128_L14",
+        "FORGING_FLANGE_SA_182_F316_P0128_L15",
+        "FORGING_FLANGE_SA_182_F316_P0128_L22",
+        "FORGING_FLANGE_SA_182_F316_P0128_L23",
+        "FORGING_FLANGE_SA_182_F347_P0152_L33",
+        "FORGING_FLANGE_SA_182_F347_P0156_L01",
+        "FORGING_FLANGE_SA_182_F347_P0156_L02",
+        "PIPE_TUBE_SA_312_TP304_P0144_L30",
+        "PIPE_TUBE_SA_312_TP304_P0144_L31",
+        "PIPE_TUBE_SA_312_TP304_P0144_L32",
+        "PIPE_TUBE_SA_312_TP304_P0144_L33",
+        "PIPE_TUBE_SA_312_TP316_P0128_L32",
+        "PIPE_TUBE_SA_312_TP316_P0128_L33",
+        "PIPE_TUBE_SA_312_TP316_P0128_L34",
+        "PIPE_TUBE_SA_312_TP316_P0128_L35",
+        "PIPE_TUBE_SA_312_TP347_P0156_L11",
+        "PIPE_TUBE_SA_312_TP347_P0156_L12",
+        "PIPE_TUBE_SA_312_TP347_P0156_L13",
+        "PIPE_TUBE_SA_312_TP347_P0156_L14",
+        "PLATE_SA_240_304_P0144_L18",
+        "PLATE_SA_240_304_P0144_L19",
+        "PLATE_SA_240_316_P0128_L26",
+        "PLATE_SA_240_316_P0128_L27",
+        "PLATE_SA_240_347_P0156_L05",
+        "PLATE_SA_240_347_P0156_L06"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "G20",
+      "source_note_number": "G20",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_420_WPL8_P0120_L39",
+        "FITTING_SA_420_WPL8_P0120_L40",
+        "FORGING_FLANGE_SA_522_I_P0120_L41",
+        "FORGING_FLANGE_SA_522_I_P0120_L42",
+        "PIPE_TUBE_SA_333_8_P0120_L26",
+        "PIPE_TUBE_SA_333_8_P0120_L27",
+        "PIPE_TUBE_SA_333_8_P0120_L28",
+        "PIPE_TUBE_SA_333_8_P0120_L29",
+        "PIPE_TUBE_SA_333_8_P0120_L30",
+        "PLATE_SA_353_NA_P0120_L36",
+        "PLATE_SA_353_NA_P0120_L37",
+        "PLATE_SA_353_NA_P0120_L38"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "G21",
+      "source_note_number": "G21",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FORGING_FLANGE_SA_182_F304L_P0140_L06",
+        "FORGING_FLANGE_SA_182_F304L_P0140_L07",
+        "FORGING_FLANGE_SA_182_F304L_P0140_L11",
+        "FORGING_FLANGE_SA_182_F304L_P0140_L12",
+        "FORGING_FLANGE_SA_182_F316L_P0124_L26",
+        "FORGING_FLANGE_SA_182_F316L_P0124_L31",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L20",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L21",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L22",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L23",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L39",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L40",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L41",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L42",
+        "PLATE_SA_240_304L_P0140_L15",
+        "PLATE_SA_240_304L_P0140_L16",
+        "PLATE_SA_240_316L_P0124_L35"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "G22",
+      "source_note_number": "G22",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "PIPE_TUBE_SB_444_1_P0292_L18",
+        "PLATE_SB_443_1_P0292_L17"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "G23",
+      "source_note_number": "G23",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SB_366_NA_P0292_L12",
+        "PIPE_TUBE_SB_444_1_P0292_L18",
+        "PIPE_TUBE_SB_444_2_P0292_L08",
+        "PIPE_TUBE_SB_444_2_P0292_L09",
+        "PLATE_SB_443_1_P0292_L15",
+        "PLATE_SB_443_1_P0292_L16",
+        "PLATE_SB_443_1_P0292_L17",
+        "PLATE_SB_443_2_P0292_L06",
+        "PLATE_SB_443_2_P0292_L07"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "G24",
+      "source_note_number": "G24",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "PIPE_TUBE_SA_312_TP304L_P0140_L22",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L23",
+        "PIPE_TUBE_SA_312_TP304_P0144_L32",
+        "PIPE_TUBE_SA_312_TP304_P0144_L33",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L41",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L42",
+        "PIPE_TUBE_SA_312_TP316_P0128_L34",
+        "PIPE_TUBE_SA_312_TP316_P0128_L35",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L35",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L36",
+        "PIPE_TUBE_SA_312_TP347_P0156_L13",
+        "PIPE_TUBE_SA_312_TP347_P0156_L14",
+        "PIPE_TUBE_SA_333_3_P0116_L38",
+        "PIPE_TUBE_SA_333_8_P0120_L30",
+        "PIPE_TUBE_SA_53_E_B_P0068_L13"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "G3",
+      "source_note_number": "G3",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "PIPE_TUBE_SA_312_TP304_P0144_L32",
+        "PIPE_TUBE_SA_312_TP304_P0144_L33",
+        "PIPE_TUBE_SA_312_TP316_P0128_L34",
+        "PIPE_TUBE_SA_312_TP316_P0128_L35",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L35",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L36",
+        "PIPE_TUBE_SA_312_TP347_P0156_L13",
+        "PIPE_TUBE_SA_312_TP347_P0156_L14",
+        "PIPE_TUBE_SA_53_E_B_P0068_L13"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "G4",
+      "source_note_number": "G4",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "PIPE_TUBE_SB_444_2_P0292_L08",
+        "PIPE_TUBE_SB_444_2_P0292_L09",
+        "PLATE_SB_443_2_P0292_L06",
+        "PLATE_SB_443_2_P0292_L07"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "G5",
+      "source_note_number": "G5",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_403_304L_P0140_L25",
+        "FITTING_SA_403_304_P0144_L45",
+        "FITTING_SA_403_316L_P0124_L44",
+        "FITTING_SA_403_316_P0128_L39",
+        "FITTING_SA_403_347H_P0156_L39",
+        "FITTING_SA_403_347_P0156_L18",
+        "FITTING_SB_366_NA_P0312_L17",
+        "FORGING_FLANGE_SA_182_F304L_P0140_L06",
+        "FORGING_FLANGE_SA_182_F304L_P0140_L11",
+        "FORGING_FLANGE_SA_182_F304_P0140_L34",
+        "FORGING_FLANGE_SA_182_F304_P0144_L09",
+        "FORGING_FLANGE_SA_182_F316L_P0124_L25",
+        "FORGING_FLANGE_SA_182_F316L_P0124_L30",
+        "FORGING_FLANGE_SA_182_F316_P0128_L14",
+        "FORGING_FLANGE_SA_182_F316_P0128_L22",
+        "FORGING_FLANGE_SA_182_F347H_P0152_L37",
+        "FORGING_FLANGE_SA_182_F347H_P0156_L23",
+        "FORGING_FLANGE_SA_182_F347_P0152_L33",
+        "FORGING_FLANGE_SA_182_F347_P0156_L01",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L20",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L22",
+        "PIPE_TUBE_SA_312_TP304_P0144_L30",
+        "PIPE_TUBE_SA_312_TP304_P0144_L32",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L39",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L41",
+        "PIPE_TUBE_SA_312_TP316_P0128_L32",
+        "PIPE_TUBE_SA_312_TP316_P0128_L34",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L33",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L35",
+        "PIPE_TUBE_SA_312_TP347_P0156_L11",
+        "PIPE_TUBE_SA_312_TP347_P0156_L13",
+        "PIPE_TUBE_SB_423_NA_P0312_L19",
+        "PIPE_TUBE_SB_444_2_P0292_L08",
+        "PLATE_SA_240_304L_P0140_L15",
+        "PLATE_SA_240_304_P0144_L19",
+        "PLATE_SA_240_316L_P0124_L34",
+        "PLATE_SA_240_316_P0128_L26",
+        "PLATE_SA_240_347H_P0156_L27",
+        "PLATE_SA_240_347_P0156_L05",
+        "PLATE_SB_424_NA_P0312_L21",
+        "PLATE_SB_443_2_P0292_L06"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "G8",
+      "source_note_number": "G8",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "BOLTING_SA_320_B8_P0470_L08",
+        "BOLTING_SA_320_B8_P0470_L10",
+        "BOLTING_SA_320_B8_P0470_L12",
+        "BOLTING_SA_320_B8_P0470_L14"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "H1",
+      "source_note_number": "H1",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FORGING_FLANGE_SA_182_F347_P0156_L01",
+        "FORGING_FLANGE_SA_182_F347_P0156_L02",
+        "PLATE_SA_240_304_P0144_L19"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "H2",
+      "source_note_number": "H2",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_403_347H_P0156_L39",
+        "FORGING_FLANGE_SA_182_F347H_P0152_L36",
+        "FORGING_FLANGE_SA_182_F347H_P0152_L37",
+        "FORGING_FLANGE_SA_182_F347H_P0156_L23",
+        "FORGING_FLANGE_SA_182_F347H_P0156_L24",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L33",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L34",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L35",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L36",
+        "PLATE_SA_240_347H_P0156_L27",
+        "PLATE_SA_240_347H_P0156_L28"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "S1",
+      "source_note_number": "S1",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_234_WPB_P0068_L18",
+        "FORGING_FLANGE_SA_105_NA_P0072_L31",
+        "FORGING_FLANGE_SA_181_60_P0064_L38",
+        "FORGING_FLANGE_SA_181_70_P0072_L32",
+        "PIPE_TUBE_SA_106_B_P0068_L16",
+        "PIPE_TUBE_SA_53_E_B_P0068_L12",
+        "PIPE_TUBE_SA_53_E_B_P0068_L13",
+        "PIPE_TUBE_SA_53_S_B_P0068_L14",
+        "PLATE_SA_285_C_P0064_L04",
+        "PLATE_SA_515_60_P0068_L02",
+        "PLATE_SA_515_65_P0072_L02",
+        "PLATE_SA_515_70_P0072_L44",
+        "PLATE_SA_516_55_P0064_L08",
+        "PLATE_SA_516_60_P0068_L03",
+        "PLATE_SA_516_65_P0072_L03",
+        "PLATE_SA_516_70_P0072_L45"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "S2",
+      "source_note_number": "S2",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FORGING_FLANGE_SA_182_F1_P0084_L29",
+        "PIPE_TUBE_SA_335_P1_P0084_L17",
+        "PLATE_SA_204_B_P0084_L30"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "S4",
+      "source_note_number": "S4",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_234_WP11_P0092_L18",
+        "FITTING_SA_234_WP12_P0088_L33",
+        "FITTING_SA_234_WP22_P0092_L38",
+        "FORGING_FLANGE_SA_182_F11_P0092_L16",
+        "FORGING_FLANGE_SA_182_F11_P0092_L27",
+        "FORGING_FLANGE_SA_182_F12_P0092_L10",
+        "FORGING_FLANGE_SA_182_F22_P0092_L36",
+        "FORGING_FLANGE_SA_182_F22_P0096_L10",
+        "PIPE_TUBE_SA_335_P11_P0092_L21",
+        "PIPE_TUBE_SA_335_P12_P0088_L36",
+        "PIPE_TUBE_SA_335_P22_P0092_L41",
+        "PLATE_SA_387_11_P0092_L30",
+        "PLATE_SA_387_12_P0088_L28",
+        "PLATE_SA_387_22_P0092_L44"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "S8",
+      "source_note_number": "S8",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FORGING_FLANGE_SA_522_I_P0120_L41",
+        "FORGING_FLANGE_SA_522_I_P0120_L42"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "T1",
+      "source_note_number": "T1",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_234_WPB_P0068_L18",
+        "FITTING_SA_420_WPL6_P0068_L26",
+        "PIPE_TUBE_SA_106_B_P0068_L16",
+        "PIPE_TUBE_SA_333_6_P0068_L19",
+        "PIPE_TUBE_SA_333_6_P0068_L20",
+        "PIPE_TUBE_SA_53_E_B_P0068_L12",
+        "PIPE_TUBE_SA_53_E_B_P0068_L13",
+        "PIPE_TUBE_SA_53_S_B_P0068_L14",
+        "PIPE_TUBE_SA_53_S_B_P0068_L15"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "T16",
+      "source_note_number": "T16",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SB_366_NA_P0292_L12",
+        "PIPE_TUBE_SB_444_1_P0292_L18",
+        "PLATE_SB_443_1_P0292_L15",
+        "PLATE_SB_443_1_P0292_L16",
+        "PLATE_SB_443_1_P0292_L17"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "T17",
+      "source_note_number": "T17",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "PIPE_TUBE_SB_444_2_P0292_L08",
+        "PLATE_SB_443_2_P0292_L06"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "T18",
+      "source_note_number": "T18",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "PIPE_TUBE_SB_444_2_P0292_L09",
+        "PLATE_SB_443_2_P0292_L07"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "T2",
+      "source_note_number": "T2",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FORGING_FLANGE_SA_105_NA_P0072_L31",
+        "FORGING_FLANGE_SA_181_60_P0064_L38",
+        "FORGING_FLANGE_SA_181_70_P0072_L32",
+        "FORGING_FLANGE_SA_350_LF2_P0072_L36",
+        "FORGING_FLANGE_SA_350_LF2_P0072_L37",
+        "PLATE_SA_203_A_P0116_L21",
+        "PLATE_SA_203_D_P0116_L42",
+        "PLATE_SA_285_C_P0064_L04",
+        "PLATE_SA_515_60_P0068_L02",
+        "PLATE_SA_515_65_P0072_L02",
+        "PLATE_SA_515_70_P0072_L44",
+        "PLATE_SA_516_55_P0064_L08",
+        "PLATE_SA_516_60_P0068_L03",
+        "PLATE_SA_516_65_P0072_L03",
+        "PLATE_SA_516_70_P0072_L45"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "T3",
+      "source_note_number": "T3",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "PLATE_SA_387_11_P0092_L30"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "T4",
+      "source_note_number": "T4",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_234_WP1_P0084_L10",
+        "FITTING_SA_234_WP22_P0092_L38",
+        "FITTING_SA_403_304L_P0140_L25",
+        "FORGING_FLANGE_SA_182_F11_P0092_L27",
+        "FORGING_FLANGE_SA_182_F12_P0092_L10",
+        "FORGING_FLANGE_SA_182_F1_P0084_L29",
+        "FORGING_FLANGE_SA_182_F22_P0092_L36",
+        "FORGING_FLANGE_SA_182_F22_P0096_L10",
+        "FORGING_FLANGE_SA_182_F304L_P0140_L06",
+        "FORGING_FLANGE_SA_182_F304L_P0140_L11",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L20",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L22",
+        "PIPE_TUBE_SA_335_P1_P0084_L17",
+        "PIPE_TUBE_SA_335_P22_P0092_L41",
+        "PLATE_SA_204_B_P0084_L30",
+        "PLATE_SA_240_304L_P0140_L15",
+        "PLATE_SA_387_22_P0092_L44"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "T5",
+      "source_note_number": "T5",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "BOLTING_SA_193_B5_P0466_L06",
+        "BOLTING_SA_193_B7_P0462_L28",
+        "BOLTING_SA_193_B7_P0462_L31",
+        "BOLTING_SA_193_B7_P0462_L32",
+        "FITTING_SA_234_WP11_P0092_L18",
+        "FITTING_SA_234_WP12_P0088_L33",
+        "FORGING_FLANGE_SA_182_F11_P0092_L16",
+        "FORGING_FLANGE_SA_182_F12_P0088_L31",
+        "FORGING_FLANGE_SA_182_F304L_P0140_L07",
+        "FORGING_FLANGE_SA_182_F304L_P0140_L12",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L21",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L23",
+        "PIPE_TUBE_SA_335_P11_P0092_L21",
+        "PIPE_TUBE_SA_335_P12_P0088_L36",
+        "PLATE_SA_240_304L_P0140_L16",
+        "PLATE_SA_387_12_P0088_L28"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "T6",
+      "source_note_number": "T6",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_403_347_P0156_L18",
+        "FORGING_FLANGE_SA_182_F347_P0156_L01",
+        "PIPE_TUBE_SA_312_TP347_P0156_L11",
+        "PIPE_TUBE_SA_312_TP347_P0156_L13",
+        "PLATE_SA_240_347_P0156_L05"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "T7",
+      "source_note_number": "T7",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_403_304_P0144_L45",
+        "FORGING_FLANGE_SA_182_F304_P0140_L34",
+        "FORGING_FLANGE_SA_182_F304_P0144_L09",
+        "FORGING_FLANGE_SA_182_F347_P0152_L33",
+        "FORGING_FLANGE_SA_182_F347_P0156_L02",
+        "PIPE_TUBE_SA_312_TP304_P0144_L30",
+        "PIPE_TUBE_SA_312_TP304_P0144_L32",
+        "PIPE_TUBE_SA_312_TP316_P0128_L34",
+        "PIPE_TUBE_SA_312_TP347_P0156_L12",
+        "PIPE_TUBE_SA_312_TP347_P0156_L14",
+        "PLATE_SA_240_304_P0144_L19",
+        "PLATE_SA_240_347_P0156_L06"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "T8",
+      "source_note_number": "T8",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_403_316_P0128_L39",
+        "FITTING_SA_403_347H_P0156_L39",
+        "FORGING_FLANGE_SA_182_F304_P0140_L35",
+        "FORGING_FLANGE_SA_182_F304_P0144_L08",
+        "FORGING_FLANGE_SA_182_F316_P0128_L14",
+        "FORGING_FLANGE_SA_182_F316_P0128_L22",
+        "FORGING_FLANGE_SA_182_F347H_P0152_L37",
+        "FORGING_FLANGE_SA_182_F347H_P0156_L23",
+        "PIPE_TUBE_SA_312_TP304_P0144_L31",
+        "PIPE_TUBE_SA_312_TP304_P0144_L33",
+        "PIPE_TUBE_SA_312_TP316_P0128_L32",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L33",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L35",
+        "PLATE_SA_240_304_P0144_L18",
+        "PLATE_SA_240_316_P0128_L26",
+        "PLATE_SA_240_347H_P0156_L27"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "T9",
+      "source_note_number": "T9",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FORGING_FLANGE_SA_182_F316_P0128_L15",
+        "FORGING_FLANGE_SA_182_F316_P0128_L23",
+        "FORGING_FLANGE_SA_182_F347H_P0152_L36",
+        "FORGING_FLANGE_SA_182_F347H_P0156_L24",
+        "PIPE_TUBE_SA_312_TP316_P0128_L33",
+        "PIPE_TUBE_SA_312_TP316_P0128_L35",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L34",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L36",
+        "PLATE_SA_240_316_P0128_L27",
+        "PLATE_SA_240_347H_P0156_L28"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "W12",
+      "source_note_number": "W12",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_403_304L_P0140_L25",
+        "FITTING_SA_403_304_P0144_L45",
+        "FITTING_SA_403_316L_P0124_L44",
+        "FITTING_SA_403_316_P0128_L39",
+        "FITTING_SA_403_347H_P0156_L39",
+        "FITTING_SA_403_347_P0156_L18",
+        "FITTING_SB_366_NA_P0292_L12",
+        "FITTING_SB_366_NA_P0312_L17",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L20",
+        "PIPE_TUBE_SA_312_TP304_P0144_L30",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L39",
+        "PIPE_TUBE_SA_312_TP316_P0128_L32",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L33",
+        "PIPE_TUBE_SA_312_TP347_P0156_L11",
+        "PIPE_TUBE_SA_333_1_P0064_L05",
+        "PIPE_TUBE_SA_333_6_P0068_L19",
+        "PIPE_TUBE_SA_333_8_P0120_L26",
+        "PIPE_TUBE_SA_333_8_P0120_L27",
+        "PIPE_TUBE_SA_53_E_B_P0068_L12"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "W13",
+      "source_note_number": "W13",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "PIPE_TUBE_SA_312_TP304_P0144_L30",
+        "PIPE_TUBE_SA_312_TP304_P0144_L31",
+        "PIPE_TUBE_SA_312_TP316_P0128_L32",
+        "PIPE_TUBE_SA_312_TP316_P0128_L33",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L33",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L34",
+        "PIPE_TUBE_SA_312_TP347_P0156_L11",
+        "PIPE_TUBE_SA_312_TP347_P0156_L12",
+        "PIPE_TUBE_SA_333_6_P0068_L19",
+        "PIPE_TUBE_SA_53_E_B_P0068_L12",
+        "PIPE_TUBE_SB_444_2_P0292_L08",
+        "PIPE_TUBE_SB_444_2_P0292_L09",
+        "PLATE_SB_443_2_P0292_L06",
+        "PLATE_SB_443_2_P0292_L07"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "W14",
+      "source_note_number": "W14",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_234_WP11_P0092_L18",
+        "FITTING_SA_234_WP12_P0088_L33",
+        "FITTING_SA_234_WP1_P0084_L10",
+        "FITTING_SA_234_WP22_P0092_L38",
+        "FITTING_SA_403_304L_P0140_L25",
+        "FITTING_SA_403_304_P0144_L45",
+        "FITTING_SA_403_316L_P0124_L44",
+        "FITTING_SA_403_316_P0128_L39",
+        "FITTING_SA_403_347H_P0156_L39",
+        "FITTING_SA_403_347_P0156_L18",
+        "FITTING_SA_420_WPL6_P0068_L26",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L20",
+        "PIPE_TUBE_SA_312_TP304_P0144_L30",
+        "PIPE_TUBE_SA_312_TP304_P0144_L31",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L39",
+        "PIPE_TUBE_SA_312_TP316_P0128_L32",
+        "PIPE_TUBE_SA_312_TP316_P0128_L33",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L33",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L34",
+        "PIPE_TUBE_SA_312_TP347_P0156_L11",
+        "PIPE_TUBE_SA_312_TP347_P0156_L12",
+        "PIPE_TUBE_SA_333_1_P0064_L05",
+        "PIPE_TUBE_SA_333_6_P0068_L19"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "W3",
+      "source_note_number": "W3",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_420_WPL8_P0120_L40",
+        "PIPE_TUBE_SA_333_8_P0120_L30"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "W4",
+      "source_note_number": "W4",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_420_WPL8_P0120_L39",
+        "FORGING_FLANGE_SA_522_I_P0120_L41",
+        "PIPE_TUBE_SA_333_8_P0120_L28",
+        "PLATE_SA_353_NA_P0120_L36"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "W5",
+      "source_note_number": "W5",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FORGING_FLANGE_SA_522_I_P0120_L42",
+        "PIPE_TUBE_SA_333_8_P0120_L27",
+        "PIPE_TUBE_SA_333_8_P0120_L29",
+        "PLATE_SA_353_NA_P0120_L37",
+        "PLATE_SA_353_NA_P0120_L38"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "W6",
+      "source_note_number": "W6",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "PIPE_TUBE_SA_53_E_B_P0068_L13"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "W7",
+      "source_note_number": "W7",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_234_WP22_P0092_L38",
+        "FORGING_FLANGE_SA_182_F22_P0092_L36",
+        "FORGING_FLANGE_SA_182_F22_P0096_L10",
+        "PIPE_TUBE_SA_335_P22_P0092_L41",
+        "PLATE_SA_387_22_P0092_L44"
+      ],
+      "review_required": true
+    },
+    {
+      "note_id": "W9",
+      "source_note_number": "W9",
+      "source_text": null,
+      "interpreted_effect": "Consult the controlled ASME Section II Part D note before using any linked stress value.",
+      "affected_material_record_ids": [
+        "FITTING_SA_234_WP22_P0092_L38",
+        "FORGING_FLANGE_SA_182_F22_P0092_L36",
+        "FORGING_FLANGE_SA_182_F22_P0096_L10",
+        "PIPE_TUBE_SA_335_P22_P0092_L41",
+        "PLATE_SA_387_22_P0092_L44"
+      ],
+      "review_required": true
+    }
+  ]
+}

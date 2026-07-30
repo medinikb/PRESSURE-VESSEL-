@@ -1,0 +1,12 @@
+{
+  "product_id": "VesselM",
+  "library_id": "VESSELM_ASME_2021_ALLOWABLE_STRESS",
+  "library_version": "0.1.0",
+  "created_at": "2026-07-24T10:35:09.050121+00:00",
+  "source_edition": "ASME BPVC.II.D.M-2021",
+  "design_scope": "ASME Section VIII Division 1 allowable-stress lookup",
+  "record_count": 148,
+  "verification_status": "machine_extracted_pending_independent_verification",
+  "engineering_review_status": "required",
+  "public_distribution_status": "review_required"
+}

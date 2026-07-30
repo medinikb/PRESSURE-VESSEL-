@@ -1,0 +1,41 @@
+{
+  "package_version": "0.1.0",
+  "vesselm_material_specification_entries_reviewed": 70,
+  "vesselm_bolting_sets_reviewed": 5,
+  "match_status_counts": {
+    "context_filtered_multiple_rows": 1,
+    "exact_match": 32,
+    "exact_match_multiple_rows": 24,
+    "incorrect_source_designation_suspected": 2,
+    "manual_review_required": 2,
+    "no_match": 1,
+    "normalized_match_multiple_rows": 13
+  },
+  "total_asme_source_rows_extracted": 148,
+  "total_temperature_stress_cells_extracted": 4808,
+  "total_published_stress_values": 3126,
+  "total_blank_or_unavailable_cells": 1682,
+  "total_note_identifiers": 39,
+  "total_unresolved_items": 10,
+  "records_by_product_form": {
+    "plate": 36,
+    "pipe_tube": 48,
+    "forgings_flanges": 37,
+    "fittings": 17,
+    "bolting": 10,
+    "nuts": 0
+  },
+  "independent_verification_percentage": 0,
+  "not_fully_covered": [
+    "SA-350-LF63",
+    "SA-455-II",
+    "SB-425",
+    "SB-446",
+    "SA-194-8",
+    "SA-194-4",
+    "SA-194-2H",
+    "SA-194-3",
+    "SA-193-BB",
+    "SA-194-B"
+  ]
+}

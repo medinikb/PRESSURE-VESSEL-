@@ -1,0 +1,52 @@
+{
+  "verification_status": "machine_regression_tests_not_independent_code_verification",
+  "tests": [
+    {
+      "test_id": "TC_SA516_GR70_40C",
+      "objective": "Verify ferrous plate extraction.",
+      "lookup": {
+        "specification": "SA-516",
+        "grade": "70",
+        "temperature_c": 40
+      },
+      "expected_allowable_stress_mpa": 138.0
+    },
+    {
+      "test_id": "TC_SA516_GR70_400C",
+      "objective": "Verify elevated-temperature plate extraction.",
+      "lookup": {
+        "specification": "SA-516",
+        "grade": "70",
+        "temperature_c": 400
+      },
+      "expected_allowable_stress_mpa": 101.0
+    },
+    {
+      "test_id": "TC_B7_MULTIPLE_SIZE_ROWS",
+      "objective": "Verify fail-closed behavior for B7 without bolt diameter.",
+      "lookup": {
+        "specification": "SA-193",
+        "grade": "B7",
+        "size_range": null
+      },
+      "expected_result": "multiple_material_records_require_engineering_selection"
+    },
+    {
+      "test_id": "TC_BELOW_40C_COLUMN_RULE",
+      "objective": "Verify not-exceeding temperature-column semantics.",
+      "lookup": {
+        "design_temperature_c": 20
+      },
+      "expected_source_temperature_column_c": 40,
+      "interpolation_used": false
+    },
+    {
+      "test_id": "TC_UNRESOLVED_LF63",
+      "objective": "Verify unresolved designation remains blocked.",
+      "lookup": {
+        "vesselm_designation": "SA-350-LF63"
+      },
+      "expected_result": "allowable_stress_not_resolved"
+    }
+  ]
+}

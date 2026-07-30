@@ -1,0 +1,2149 @@
+{
+  "dataset_id": "ASME_II_D_2021_SELECTED_EXTERNAL_PRESSURE_CHARTS",
+  "charts": [
+    {
+      "chart_id": "CS-2",
+      "curve_parameter": "temperature_c",
+      "source_pdf_page": 1271,
+      "source_printed_page": 1219,
+      "curves": [
+        {
+          "key": {
+            "raw": "150",
+            "value": 150.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 1.0
+            },
+            {
+              "factor_A": 0.00016,
+              "factor_B_mpa": 16.0
+            },
+            {
+              "factor_A": 0.0007830000000000001,
+              "factor_B_mpa": 77.9
+            },
+            {
+              "factor_A": 0.0008,
+              "factor_B_mpa": 78.60000000000001
+            },
+            {
+              "factor_A": 0.0009000000000000001,
+              "factor_B_mpa": 81.4
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 84.80000000000001
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 103.0
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 112.00000000000001
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 115.99999999999999
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 119.0
+            },
+            {
+              "factor_A": 0.025,
+              "factor_B_mpa": 121.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 121.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "260",
+            "value": 260.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 0.9300000000000002
+            },
+            {
+              "factor_A": 0.000172,
+              "factor_B_mpa": 16.0
+            },
+            {
+              "factor_A": 0.000675,
+              "factor_B_mpa": 62.1
+            },
+            {
+              "factor_A": 0.0009000000000000001,
+              "factor_B_mpa": 66.5
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 68.89999999999999
+            },
+            {
+              "factor_A": 0.0025,
+              "factor_B_mpa": 82.69999999999999
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 85.5
+            },
+            {
+              "factor_A": 0.008,
+              "factor_B_mpa": 97.89999999999999
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 101.0
+            },
+            {
+              "factor_A": 0.015,
+              "factor_B_mpa": 107.0
+            },
+            {
+              "factor_A": 0.02,
+              "factor_B_mpa": 111.00000000000001
+            },
+            {
+              "factor_A": 0.027999999999999997,
+              "factor_B_mpa": 117.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 117.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "370",
+            "value": 370.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 0.845
+            },
+            {
+              "factor_A": 0.00018899999999999999,
+              "factor_B_mpa": 16.0
+            },
+            {
+              "factor_A": 0.000564,
+              "factor_B_mpa": 46.900000000000006
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 55.199999999999996
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 69.6
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 83.4
+            },
+            {
+              "factor_A": 0.026400000000000003,
+              "factor_B_mpa": 95.1
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 95.1
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "425",
+            "value": 425.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 0.785
+            },
+            {
+              "factor_A": 0.00020400000000000003,
+              "factor_B_mpa": 16.0
+            },
+            {
+              "factor_A": 0.000505,
+              "factor_B_mpa": 39.4
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 49.0
+            },
+            {
+              "factor_A": 0.0015,
+              "factor_B_mpa": 54.800000000000004
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 57.9
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 61.4
+            },
+            {
+              "factor_A": 0.0319,
+              "factor_B_mpa": 85.5
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 85.5
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "480",
+            "value": 480.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 0.7150000000000001
+            },
+            {
+              "factor_A": 0.00022400000000000002,
+              "factor_B_mpa": 16.0
+            },
+            {
+              "factor_A": 0.00042800000000000005,
+              "factor_B_mpa": 31.0
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 41.4
+            },
+            {
+              "factor_A": 0.0015,
+              "factor_B_mpa": 46.900000000000006
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 50.7
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 54.5
+            },
+            {
+              "factor_A": 0.008,
+              "factor_B_mpa": 63.4
+            },
+            {
+              "factor_A": 0.03,
+              "factor_B_mpa": 76.5
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 76.5
+            }
+          ]
+        }
+      ],
+      "interpolation": {
+        "factor_A": "log_linear_between_adjacent_points",
+        "curve_parameter": "linear_between_adjacent_curves_when_permitted"
+      },
+      "extrapolation_allowed": false,
+      "verification_status": "machine_extracted_visual_spot_check_pending_independent_verification"
+    },
+    {
+      "chart_id": "CS-3",
+      "curve_parameter": "yield_strength_mpa",
+      "source_pdf_page": 1272,
+      "source_printed_page": 1220,
+      "curves": [
+        {
+          "key": {
+            "raw": "414",
+            "value": 414.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 1.0
+            },
+            {
+              "factor_A": 0.00030000000000000003,
+              "factor_B_mpa": 30.0
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 100.0
+            },
+            {
+              "factor_A": 0.00166,
+              "factor_B_mpa": 165.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 206.99999999999997
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "379",
+            "value": 379.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 1.0
+            },
+            {
+              "factor_A": 0.00030000000000000003,
+              "factor_B_mpa": 30.0
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 100.0
+            },
+            {
+              "factor_A": 0.00152,
+              "factor_B_mpa": 152.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 186.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "345",
+            "value": 345.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 1.0
+            },
+            {
+              "factor_A": 0.00030000000000000003,
+              "factor_B_mpa": 30.0
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 100.0
+            },
+            {
+              "factor_A": 0.00138,
+              "factor_B_mpa": 138.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 172.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "310",
+            "value": 310.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 1.0
+            },
+            {
+              "factor_A": 0.00030000000000000003,
+              "factor_B_mpa": 30.0
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 100.0
+            },
+            {
+              "factor_A": 0.00124,
+              "factor_B_mpa": 124.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 155.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "262 to 276",
+            "minimum": 262.0,
+            "maximum": 276.0,
+            "type": "range"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 1.0
+            },
+            {
+              "factor_A": 0.00030000000000000003,
+              "factor_B_mpa": 30.0
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 100.0
+            },
+            {
+              "factor_A": 0.0011,
+              "factor_B_mpa": 110.00000000000001
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 138.0
+            }
+          ]
+        }
+      ],
+      "interpolation": {
+        "factor_A": "log_linear_between_adjacent_points",
+        "curve_parameter": "linear_between_adjacent_curves_when_permitted"
+      },
+      "extrapolation_allowed": false,
+      "verification_status": "machine_extracted_visual_spot_check_pending_independent_verification"
+    },
+    {
+      "chart_id": "HA-1",
+      "curve_parameter": "temperature_c",
+      "source_pdf_page": 1275,
+      "source_printed_page": 1223,
+      "curves": [
+        {
+          "key": {
+            "raw": "40",
+            "value": 40.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.4200000000000001e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.00046300000000000003,
+              "factor_B_mpa": 44.800000000000004
+            },
+            {
+              "factor_A": 0.0015,
+              "factor_B_mpa": 73.1
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 79.3
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 86.19999999999999
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 96.5
+            },
+            {
+              "factor_A": 0.0631,
+              "factor_B_mpa": 109.00000000000001
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 109.00000000000001
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "205",
+            "value": 205.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.5900000000000004e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.000391,
+              "factor_B_mpa": 34.5
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 56.5
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 62.699999999999996
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 66.8
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 68.89999999999999
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 73.1
+            },
+            {
+              "factor_A": 0.0538,
+              "factor_B_mpa": 80.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 80.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "370",
+            "value": 370.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.7e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.00033800000000000003,
+              "factor_B_mpa": 27.599999999999998
+            },
+            {
+              "factor_A": 0.0004,
+              "factor_B_mpa": 29.900000000000002
+            },
+            {
+              "factor_A": 0.0005,
+              "factor_B_mpa": 32.5
+            },
+            {
+              "factor_A": 0.0006000000000000001,
+              "factor_B_mpa": 34.5
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 39.7
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 46.0
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 52.699999999999996
+            },
+            {
+              "factor_A": 0.006,
+              "factor_B_mpa": 53.8
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 55.8
+            },
+            {
+              "factor_A": 0.0542,
+              "factor_B_mpa": 62.1
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 62.1
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "480",
+            "value": 480.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.8100000000000003e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.000315,
+              "factor_B_mpa": 24.1
+            },
+            {
+              "factor_A": 0.0004,
+              "factor_B_mpa": 26.6
+            },
+            {
+              "factor_A": 0.0005,
+              "factor_B_mpa": 28.700000000000003
+            },
+            {
+              "factor_A": 0.0015,
+              "factor_B_mpa": 37.8
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 42.199999999999996
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 48.7
+            },
+            {
+              "factor_A": 0.02,
+              "factor_B_mpa": 51.2
+            },
+            {
+              "factor_A": 0.0784,
+              "factor_B_mpa": 54.699999999999996
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 54.699999999999996
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "650",
+            "value": 650.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 2e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.000283,
+              "factor_B_mpa": 19.6
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 28.700000000000003
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 33.3
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 38.199999999999996
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 41.0
+            },
+            {
+              "factor_A": 0.02,
+              "factor_B_mpa": 43.8
+            },
+            {
+              "factor_A": 0.0488,
+              "factor_B_mpa": 46.2
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 46.2
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "815",
+            "value": 815.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.0001,
+              "factor_B_mpa": 6.2
+            },
+            {
+              "factor_A": 0.00016,
+              "factor_B_mpa": 10.0
+            },
+            {
+              "factor_A": 0.00031200000000000005,
+              "factor_B_mpa": 19.5
+            },
+            {
+              "factor_A": 0.0004,
+              "factor_B_mpa": 20.7
+            },
+            {
+              "factor_A": 0.00127,
+              "factor_B_mpa": 24.1
+            },
+            {
+              "factor_A": 0.005059999999999999,
+              "factor_B_mpa": 27.6
+            },
+            {
+              "factor_A": 0.04,
+              "factor_B_mpa": 32.1
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 32.1
+            }
+          ]
+        }
+      ],
+      "interpolation": {
+        "factor_A": "log_linear_between_adjacent_points",
+        "curve_parameter": "linear_between_adjacent_curves_when_permitted"
+      },
+      "extrapolation_allowed": false,
+      "verification_status": "machine_extracted_visual_spot_check_pending_independent_verification"
+    },
+    {
+      "chart_id": "HA-2",
+      "curve_parameter": "temperature_c",
+      "source_pdf_page": 1276,
+      "source_printed_page": 1224,
+      "curves": [
+        {
+          "key": {
+            "raw": "40",
+            "value": 40.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.8400000000000003e-05,
+              "factor_B_mpa": 1.72
+            },
+            {
+              "factor_A": 0.000605,
+              "factor_B_mpa": 57.9
+            },
+            {
+              "factor_A": 0.0015,
+              "factor_B_mpa": 76.5
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 80.7
+            },
+            {
+              "factor_A": 0.0025,
+              "factor_B_mpa": 84.1
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 86.89999999999999
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 89.60000000000001
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 91.7
+            },
+            {
+              "factor_A": 0.007,
+              "factor_B_mpa": 93.80000000000001
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 96.5
+            },
+            {
+              "factor_A": 0.02,
+              "factor_B_mpa": 101.0
+            },
+            {
+              "factor_A": 0.0726,
+              "factor_B_mpa": 108.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 108.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "205",
+            "value": 205.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.9900000000000003e-05,
+              "factor_B_mpa": 1.72
+            },
+            {
+              "factor_A": 0.000585,
+              "factor_B_mpa": 51.7
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 60.0
+            },
+            {
+              "factor_A": 0.0015,
+              "factor_B_mpa": 66.9
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 71.7
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 77.2
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 80.7
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 82.69999999999999
+            },
+            {
+              "factor_A": 0.006,
+              "factor_B_mpa": 84.1
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 87.6
+            },
+            {
+              "factor_A": 0.05740000000000001,
+              "factor_B_mpa": 98.6
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 98.6
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "370",
+            "value": 370.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 2.1800000000000005e-05,
+              "factor_B_mpa": 1.72
+            },
+            {
+              "factor_A": 0.000533,
+              "factor_B_mpa": 43.099999999999994
+            },
+            {
+              "factor_A": 0.0007,
+              "factor_B_mpa": 48.3
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 53.8
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 68.89999999999999
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 72.4
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 78.60000000000001
+            },
+            {
+              "factor_A": 0.05,
+              "factor_B_mpa": 87.6
+            },
+            {
+              "factor_A": 0.0592,
+              "factor_B_mpa": 88.9
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 88.9
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "480",
+            "value": 480.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 2.28e-05,
+              "factor_B_mpa": 1.72
+            },
+            {
+              "factor_A": 0.00051,
+              "factor_B_mpa": 39.0
+            },
+            {
+              "factor_A": 0.0006000000000000001,
+              "factor_B_mpa": 42.1
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 49.6
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 62.400000000000006
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 64.80000000000001
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 71.0
+            },
+            {
+              "factor_A": 0.052199999999999996,
+              "factor_B_mpa": 80.7
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 80.7
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "650",
+            "value": 650.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 2.4700000000000004e-05,
+              "factor_B_mpa": 1.72
+            },
+            {
+              "factor_A": 0.00045999999999999996,
+              "factor_B_mpa": 32.1
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 41.4
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 49.6
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 53.8
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 56.5
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 57.9
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 61.7
+            },
+            {
+              "factor_A": 0.07,
+              "factor_B_mpa": 68.89999999999999
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 68.89999999999999
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "815",
+            "value": 815.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.00145,
+              "factor_B_mpa": 29.3
+            },
+            {
+              "factor_A": 0.00254,
+              "factor_B_mpa": 31.0
+            },
+            {
+              "factor_A": 0.00562,
+              "factor_B_mpa": 33.2
+            },
+            {
+              "factor_A": 0.035,
+              "factor_B_mpa": 37.6
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 37.6
+            },
+            {
+              "factor_A": 1.0,
+              "factor_B_mpa": 6.2
+            },
+            {
+              "factor_A": 1.6,
+              "factor_B_mpa": 10.0
+            },
+            {
+              "factor_A": 3.95,
+              "factor_B_mpa": 24.6
+            }
+          ]
+        }
+      ],
+      "interpolation": {
+        "factor_A": "log_linear_between_adjacent_points",
+        "curve_parameter": "linear_between_adjacent_curves_when_permitted"
+      },
+      "extrapolation_allowed": false,
+      "verification_status": "machine_extracted_visual_spot_check_pending_independent_verification"
+    },
+    {
+      "chart_id": "HA-3",
+      "curve_parameter": "temperature_c",
+      "source_pdf_page": 1276,
+      "source_printed_page": 1224,
+      "curves": [
+        {
+          "key": {
+            "raw": "40",
+            "value": 40.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.39e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.000535,
+              "factor_B_mpa": 52.1
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 69.6
+            },
+            {
+              "factor_A": 0.006,
+              "factor_B_mpa": 85.5
+            },
+            {
+              "factor_A": 0.04,
+              "factor_B_mpa": 103.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 103.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "205",
+            "value": 205.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.58e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.000361,
+              "factor_B_mpa": 31.9
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 37.9
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 56.2
+            },
+            {
+              "factor_A": 0.028300000000000002,
+              "factor_B_mpa": 67.2
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 67.2
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "315",
+            "value": 315.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.65e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.000319,
+              "factor_B_mpa": 26.8
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 32.8
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 49.0
+            },
+            {
+              "factor_A": 0.0281,
+              "factor_B_mpa": 58.3
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 58.3
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "425",
+            "value": 425.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.7400000000000003e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.000275,
+              "factor_B_mpa": 21.9
+            },
+            {
+              "factor_A": 0.0015,
+              "factor_B_mpa": 29.4
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 40.7
+            },
+            {
+              "factor_A": 0.03,
+              "factor_B_mpa": 49.6
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 49.6
+            }
+          ]
+        }
+      ],
+      "interpolation": {
+        "factor_A": "log_linear_between_adjacent_points",
+        "curve_parameter": "linear_between_adjacent_curves_when_permitted"
+      },
+      "extrapolation_allowed": false,
+      "verification_status": "machine_extracted_visual_spot_check_pending_independent_verification"
+    },
+    {
+      "chart_id": "HA-4",
+      "curve_parameter": "temperature_c",
+      "source_pdf_page": 1277,
+      "source_printed_page": 1225,
+      "curves": [
+        {
+          "key": {
+            "raw": "40",
+            "value": 40.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.43e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.0006000000000000001,
+              "factor_B_mpa": 57.9
+            },
+            {
+              "factor_A": 0.007,
+              "factor_B_mpa": 91.7
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 96.5
+            },
+            {
+              "factor_A": 0.02,
+              "factor_B_mpa": 105.0
+            },
+            {
+              "factor_A": 0.05,
+              "factor_B_mpa": 112.00000000000001
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 112.00000000000001
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "150",
+            "value": 150.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.5300000000000003e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.000475,
+              "factor_B_mpa": 43.099999999999994
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 68.60000000000001
+            },
+            {
+              "factor_A": 0.006,
+              "factor_B_mpa": 70.3
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 75.8
+            },
+            {
+              "factor_A": 0.0458,
+              "factor_B_mpa": 86.89999999999999
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 86.89999999999999
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "205",
+            "value": 205.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.54e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.00041,
+              "factor_B_mpa": 37.1
+            },
+            {
+              "factor_A": 0.007,
+              "factor_B_mpa": 61.7
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 64.80000000000001
+            },
+            {
+              "factor_A": 0.0429,
+              "factor_B_mpa": 73.1
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 73.1
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "315",
+            "value": 315.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.69e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.000363,
+              "factor_B_mpa": 30.2
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 49.6
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 54.5
+            },
+            {
+              "factor_A": 0.045599999999999995,
+              "factor_B_mpa": 62.1
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 62.1
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "425",
+            "value": 425.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1.76e-05,
+              "factor_B_mpa": 1.38
+            },
+            {
+              "factor_A": 0.000317,
+              "factor_B_mpa": 25.0
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 41.0
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 45.5
+            },
+            {
+              "factor_A": 0.0468,
+              "factor_B_mpa": 53.099999999999994
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 53.099999999999994
+            }
+          ]
+        }
+      ],
+      "interpolation": {
+        "factor_A": "log_linear_between_adjacent_points",
+        "curve_parameter": "linear_between_adjacent_curves_when_permitted"
+      },
+      "extrapolation_allowed": false,
+      "verification_status": "machine_extracted_visual_spot_check_pending_independent_verification"
+    },
+    {
+      "chart_id": "NFN-7",
+      "curve_parameter": "temperature_c",
+      "source_pdf_page": 1297,
+      "source_printed_page": 1245,
+      "curves": [
+        {
+          "key": {
+            "raw": "40",
+            "value": 40.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 0.9650000000000001
+            },
+            {
+              "factor_A": 0.000825,
+              "factor_B_mpa": 83.4
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 85.5
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 91.7
+            },
+            {
+              "factor_A": 0.006,
+              "factor_B_mpa": 104.0
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 110.00000000000001
+            },
+            {
+              "factor_A": 0.02,
+              "factor_B_mpa": 119.0
+            },
+            {
+              "factor_A": 0.025,
+              "factor_B_mpa": 123.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "95",
+            "value": 95.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 0.986
+            },
+            {
+              "factor_A": 0.000777,
+              "factor_B_mpa": 77.9
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 80.0
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 91.7
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 99.3
+            },
+            {
+              "factor_A": 0.04,
+              "factor_B_mpa": 108.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "205",
+            "value": 205.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 0.91
+            },
+            {
+              "factor_A": 0.000745,
+              "factor_B_mpa": 71.7
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 73.1
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 80.0
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 84.80000000000001
+            },
+            {
+              "factor_A": 0.04,
+              "factor_B_mpa": 92.4
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "370",
+            "value": 370.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 1e-05,
+              "factor_B_mpa": 0.862
+            },
+            {
+              "factor_A": 0.000722,
+              "factor_B_mpa": 65.7
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 66.7
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 68.89999999999999
+            },
+            {
+              "factor_A": 0.008,
+              "factor_B_mpa": 74.5
+            },
+            {
+              "factor_A": 0.02,
+              "factor_B_mpa": 77.9
+            },
+            {
+              "factor_A": 0.06,
+              "factor_B_mpa": 82.69999999999999
+            }
+          ]
+        }
+      ],
+      "interpolation": {
+        "factor_A": "log_linear_between_adjacent_points",
+        "curve_parameter": "linear_between_adjacent_curves_when_permitted"
+      },
+      "extrapolation_allowed": false,
+      "verification_status": "machine_extracted_visual_spot_check_pending_independent_verification"
+    },
+    {
+      "chart_id": "NFN-17",
+      "curve_parameter": "temperature_c",
+      "source_pdf_page": 1305,
+      "source_printed_page": 1253,
+      "curves": [
+        {
+          "key": {
+            "raw": "40",
+            "value": 40.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.0002,
+              "factor_B_mpa": 20.7
+            },
+            {
+              "factor_A": 0.0009300000000000002,
+              "factor_B_mpa": 96.5
+            },
+            {
+              "factor_A": 0.00108,
+              "factor_B_mpa": 110.00000000000001
+            },
+            {
+              "factor_A": 0.00116,
+              "factor_B_mpa": 117.0
+            },
+            {
+              "factor_A": 0.00125,
+              "factor_B_mpa": 124.0
+            },
+            {
+              "factor_A": 0.0014,
+              "factor_B_mpa": 131.0
+            },
+            {
+              "factor_A": 0.0016,
+              "factor_B_mpa": 138.0
+            },
+            {
+              "factor_A": 0.00182,
+              "factor_B_mpa": 145.0
+            },
+            {
+              "factor_A": 0.0020499999999999997,
+              "factor_B_mpa": 152.0
+            },
+            {
+              "factor_A": 0.0024,
+              "factor_B_mpa": 159.0
+            },
+            {
+              "factor_A": 0.0028,
+              "factor_B_mpa": 165.0
+            },
+            {
+              "factor_A": 0.0035,
+              "factor_B_mpa": 172.0
+            },
+            {
+              "factor_A": 0.007,
+              "factor_B_mpa": 190.0
+            },
+            {
+              "factor_A": 0.02,
+              "factor_B_mpa": 206.99999999999997
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 206.99999999999997
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "150",
+            "value": 150.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.00021,
+              "factor_B_mpa": 20.7
+            },
+            {
+              "factor_A": 0.0008500000000000001,
+              "factor_B_mpa": 82.69999999999999
+            },
+            {
+              "factor_A": 0.00095,
+              "factor_B_mpa": 89.60000000000001
+            },
+            {
+              "factor_A": 0.0010500000000000002,
+              "factor_B_mpa": 96.5
+            },
+            {
+              "factor_A": 0.00125,
+              "factor_B_mpa": 103.0
+            },
+            {
+              "factor_A": 0.00142,
+              "factor_B_mpa": 110.00000000000001
+            },
+            {
+              "factor_A": 0.00165,
+              "factor_B_mpa": 117.0
+            },
+            {
+              "factor_A": 0.0019,
+              "factor_B_mpa": 124.0
+            },
+            {
+              "factor_A": 0.0023,
+              "factor_B_mpa": 131.0
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 138.0
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 145.0
+            },
+            {
+              "factor_A": 0.005200000000000001,
+              "factor_B_mpa": 152.0
+            },
+            {
+              "factor_A": 0.01,
+              "factor_B_mpa": 159.0
+            },
+            {
+              "factor_A": 0.04,
+              "factor_B_mpa": 165.0
+            },
+            {
+              "factor_A": 0.08,
+              "factor_B_mpa": 168.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 168.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "260",
+            "value": 260.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.00022000000000000003,
+              "factor_B_mpa": 20.7
+            },
+            {
+              "factor_A": 0.00066,
+              "factor_B_mpa": 62.1
+            },
+            {
+              "factor_A": 0.0008,
+              "factor_B_mpa": 75.8
+            },
+            {
+              "factor_A": 0.0009000000000000001,
+              "factor_B_mpa": 82.69999999999999
+            },
+            {
+              "factor_A": 0.00095,
+              "factor_B_mpa": 86.19999999999999
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 89.60000000000001
+            },
+            {
+              "factor_A": 0.0011200000000000001,
+              "factor_B_mpa": 93.10000000000001
+            },
+            {
+              "factor_A": 0.00125,
+              "factor_B_mpa": 96.5
+            },
+            {
+              "factor_A": 0.00139,
+              "factor_B_mpa": 100.0
+            },
+            {
+              "factor_A": 0.0015500000000000002,
+              "factor_B_mpa": 103.0
+            },
+            {
+              "factor_A": 0.0019,
+              "factor_B_mpa": 110.00000000000001
+            },
+            {
+              "factor_A": 0.0025,
+              "factor_B_mpa": 117.0
+            },
+            {
+              "factor_A": 0.0034,
+              "factor_B_mpa": 124.0
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 131.0
+            },
+            {
+              "factor_A": 0.008,
+              "factor_B_mpa": 138.0
+            },
+            {
+              "factor_A": 0.015,
+              "factor_B_mpa": 145.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 145.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "425 to 650",
+            "minimum": 425.0,
+            "maximum": 650.0,
+            "type": "range"
+          },
+          "points": [
+            {
+              "factor_A": 0.00025,
+              "factor_B_mpa": 20.7
+            },
+            {
+              "factor_A": 0.0008,
+              "factor_B_mpa": 62.1
+            },
+            {
+              "factor_A": 0.0010500000000000002,
+              "factor_B_mpa": 75.8
+            },
+            {
+              "factor_A": 0.00125,
+              "factor_B_mpa": 82.69999999999999
+            },
+            {
+              "factor_A": 0.00135,
+              "factor_B_mpa": 86.19999999999999
+            },
+            {
+              "factor_A": 0.00148,
+              "factor_B_mpa": 89.60000000000001
+            },
+            {
+              "factor_A": 0.00163,
+              "factor_B_mpa": 93.10000000000001
+            },
+            {
+              "factor_A": 0.0018000000000000002,
+              "factor_B_mpa": 96.5
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 100.0
+            },
+            {
+              "factor_A": 0.0022500000000000003,
+              "factor_B_mpa": 103.0
+            },
+            {
+              "factor_A": 0.0028,
+              "factor_B_mpa": 110.00000000000001
+            },
+            {
+              "factor_A": 0.0037,
+              "factor_B_mpa": 117.0
+            },
+            {
+              "factor_A": 0.0054,
+              "factor_B_mpa": 124.0
+            },
+            {
+              "factor_A": 0.0083,
+              "factor_B_mpa": 131.0
+            },
+            {
+              "factor_A": 0.0165,
+              "factor_B_mpa": 138.0
+            },
+            {
+              "factor_A": 0.03,
+              "factor_B_mpa": 141.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 141.0
+            }
+          ]
+        }
+      ],
+      "interpolation": {
+        "factor_A": "log_linear_between_adjacent_points",
+        "curve_parameter": "linear_between_adjacent_curves_when_permitted"
+      },
+      "extrapolation_allowed": false,
+      "verification_status": "machine_extracted_visual_spot_check_pending_independent_verification"
+    },
+    {
+      "chart_id": "NFN-22",
+      "curve_parameter": "temperature_c",
+      "source_pdf_page": 1308,
+      "source_printed_page": 1256,
+      "curves": [
+        {
+          "key": {
+            "raw": "40",
+            "value": 40.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.0002,
+              "factor_B_mpa": 21.0
+            },
+            {
+              "factor_A": 0.0009,
+              "factor_B_mpa": 92.0
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 108.0
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 117.0
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 122.0
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 127.0
+            },
+            {
+              "factor_A": 0.007,
+              "factor_B_mpa": 132.0
+            },
+            {
+              "factor_A": 0.009,
+              "factor_B_mpa": 135.0
+            },
+            {
+              "factor_A": 0.012,
+              "factor_B_mpa": 138.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 138.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "95",
+            "value": 95.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.0002,
+              "factor_B_mpa": 21.0
+            },
+            {
+              "factor_A": 0.0009,
+              "factor_B_mpa": 92.0
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 108.0
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 117.0
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 122.0
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 127.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 127.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "205",
+            "value": 205.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.0002,
+              "factor_B_mpa": 19.0
+            },
+            {
+              "factor_A": 0.00095,
+              "factor_B_mpa": 94.0
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 108.0
+            },
+            {
+              "factor_A": 0.0025,
+              "factor_B_mpa": 112.0
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 114.0
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 117.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 117.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "425",
+            "value": 425.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.0002,
+              "factor_B_mpa": 17.0
+            },
+            {
+              "factor_A": 0.00095,
+              "factor_B_mpa": 86.0
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 97.0
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 101.0
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 102.0
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 103.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 103.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "650",
+            "value": 650.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.00025,
+              "factor_B_mpa": 21.0
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 83.0
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 94.0
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 99.0
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 100.0
+            },
+            {
+              "factor_A": 0.005,
+              "factor_B_mpa": 101.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 101.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "730",
+            "value": 730.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.00025,
+              "factor_B_mpa": 19.0
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 79.0
+            },
+            {
+              "factor_A": 0.002,
+              "factor_B_mpa": 90.0
+            },
+            {
+              "factor_A": 0.003,
+              "factor_B_mpa": 94.0
+            },
+            {
+              "factor_A": 0.004,
+              "factor_B_mpa": 97.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 97.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "760",
+            "value": 760.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.00025,
+              "factor_B_mpa": 19.0
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 78.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 78.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "790",
+            "value": 790.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.00025,
+              "factor_B_mpa": 19.0
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 59.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 59.0
+            }
+          ]
+        },
+        {
+          "key": {
+            "raw": "815",
+            "value": 815.0,
+            "type": "value"
+          },
+          "points": [
+            {
+              "factor_A": 0.00025,
+              "factor_B_mpa": 19.0
+            },
+            {
+              "factor_A": 0.001,
+              "factor_B_mpa": 42.0
+            },
+            {
+              "factor_A": 0.1,
+              "factor_B_mpa": 42.0
+            }
+          ]
+        }
+      ],
+      "interpolation": {
+        "factor_A": "log_linear_between_adjacent_points",
+        "curve_parameter": "linear_between_adjacent_curves_when_permitted"
+      },
+      "extrapolation_allowed": false,
+      "verification_status": "machine_extracted_visual_spot_check_pending_independent_verification"
+    }
+  ]
+}

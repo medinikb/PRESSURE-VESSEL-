@@ -1,0 +1,256 @@
+{
+  "records": [
+    {
+      "original_vesselm_text": "SA-350-LF63",
+      "product_form": "forgings",
+      "material_family": "nickel_2_5, nickel_3_5",
+      "reason_unresolved": "No SA-350 LF63 row was found. SA-350 LF3 Class 1 and Class 2 rows exist, but they were not substituted.",
+      "searches_performed": [
+        "Table 1A search for SA-350",
+        "Product-form filter: forgings",
+        "Grade/type/class expression: LF63"
+      ],
+      "possible_matches": [
+        {
+          "table": "Table 1A",
+          "pdf_page": 116,
+          "printed_code_page": 64,
+          "line_number": 43,
+          "specification": "SA-350",
+          "type_grade": "LF3",
+          "condition": "1",
+          "product_form": "Forgings"
+        },
+        {
+          "table": "Table 1A",
+          "pdf_page": 116,
+          "printed_code_page": 64,
+          "line_number": 44,
+          "specification": "SA-350",
+          "type_grade": "LF3",
+          "condition": "2",
+          "product_form": "Forgings"
+        }
+      ],
+      "replacement_made": false,
+      "engineering_action_required": "Resolve the exact specification, grade, class and product form before enabling automatic lookup.",
+      "blocking_for_automatic_lookup": true
+    },
+    {
+      "original_vesselm_text": "SA-455-II",
+      "product_form": "plate",
+      "material_family": "carbon_steel",
+      "reason_unresolved": "ASME Table 1A lists SA-455 rows without a Grade II or Class II designation. No substitution was made.",
+      "searches_performed": [
+        "Table 1A search for SA-455",
+        "Product-form filter: plate",
+        "Grade/type/class expression: II"
+      ],
+      "possible_matches": [
+        {
+          "table": "Table 1A",
+          "pdf_page": 72,
+          "printed_code_page": 20,
+          "line_number": 29,
+          "specification": "SA-455",
+          "type_grade": "...",
+          "condition": "...",
+          "product_form": "Plate"
+        },
+        {
+          "table": "Table 1A",
+          "pdf_page": 76,
+          "printed_code_page": 24,
+          "line_number": 39,
+          "specification": "SA-455",
+          "type_grade": "...",
+          "condition": "...",
+          "product_form": "Plate"
+        },
+        {
+          "table": "Table 1A",
+          "pdf_page": 76,
+          "printed_code_page": 24,
+          "line_number": 44,
+          "specification": "SA-455",
+          "type_grade": "...",
+          "condition": "...",
+          "product_form": "Plate"
+        }
+      ],
+      "replacement_made": false,
+      "engineering_action_required": "Resolve the exact specification, grade, class and product form before enabling automatic lookup.",
+      "blocking_for_automatic_lookup": true
+    },
+    {
+      "original_vesselm_text": "SB-425",
+      "product_form": "forgings",
+      "material_family": "incoloy",
+      "reason_unresolved": "ASME Table 1B lists SB-425 as bar or rod rather than forgings as stated in the VesselM guide.",
+      "searches_performed": [
+        "Table 1B search for SB-425",
+        "Product-form filter: forgings",
+        "Grade/type/class expression: None"
+      ],
+      "possible_matches": [
+        {
+          "table": "Table 1B",
+          "pdf_page": 312,
+          "printed_code_page": 260,
+          "line_number": 22,
+          "specification": "SB-425",
+          "type_grade": "...",
+          "condition": "Annealed",
+          "product_form": "Bar, rod"
+        },
+        {
+          "table": "Table 1B",
+          "pdf_page": 312,
+          "printed_code_page": 260,
+          "line_number": 23,
+          "specification": "SB-425",
+          "type_grade": "...",
+          "condition": "Annealed",
+          "product_form": "Bar, rod"
+        }
+      ],
+      "replacement_made": false,
+      "engineering_action_required": "Resolve the exact specification, grade, class and product form before enabling automatic lookup.",
+      "blocking_for_automatic_lookup": true
+    },
+    {
+      "original_vesselm_text": "SB-446",
+      "product_form": "forgings",
+      "material_family": "inconel",
+      "reason_unresolved": "ASME Table 1B lists SB-446 as bar or rod rather than forgings as stated in the VesselM guide.",
+      "searches_performed": [
+        "Table 1B search for SB-446",
+        "Product-form filter: forgings",
+        "Grade/type/class expression: None"
+      ],
+      "possible_matches": [
+        {
+          "table": "Table 1B",
+          "pdf_page": 292,
+          "printed_code_page": 240,
+          "line_number": 10,
+          "specification": "SB-446",
+          "type_grade": "2",
+          "condition": "Solution ann.",
+          "product_form": "Bar"
+        },
+        {
+          "table": "Table 1B",
+          "pdf_page": 292,
+          "printed_code_page": 240,
+          "line_number": 11,
+          "specification": "SB-446",
+          "type_grade": "2",
+          "condition": "Solution ann.",
+          "product_form": "Bar"
+        },
+        {
+          "table": "Table 1B",
+          "pdf_page": 292,
+          "printed_code_page": 240,
+          "line_number": 13,
+          "specification": "SB-446",
+          "type_grade": "1",
+          "condition": "Annealed",
+          "product_form": "Bar"
+        },
+        {
+          "table": "Table 1B",
+          "pdf_page": 292,
+          "printed_code_page": 240,
+          "line_number": 19,
+          "specification": "SB-446",
+          "type_grade": "1",
+          "condition": "Annealed",
+          "product_form": "Bar"
+        }
+      ],
+      "replacement_made": false,
+      "engineering_action_required": "Resolve the exact specification, grade, class and product form before enabling automatic lookup.",
+      "blocking_for_automatic_lookup": true
+    },
+    {
+      "original_vesselm_text": "SA-194-8",
+      "product_form": "nuts",
+      "material_family": "nickel_9, stainless_steel",
+      "reason_unresolved": "No SA-194 nut allowable-stress row was located in Table 3.",
+      "searches_performed": [
+        "Table 3 search for SA-194 grade 8"
+      ],
+      "possible_matches": [],
+      "replacement_made": false,
+      "engineering_action_required": "Confirm whether a separate allowable-stress lookup is required for the nut in the intended design calculation.",
+      "blocking_for_automatic_lookup": true
+    },
+    {
+      "original_vesselm_text": "SA-194-4",
+      "product_form": "nuts",
+      "material_family": "carbon_steel, nickel_2_5, nickel_3_5",
+      "reason_unresolved": "No SA-194 nut allowable-stress row was located in Table 3.",
+      "searches_performed": [
+        "Table 3 search for SA-194 grade 4"
+      ],
+      "possible_matches": [],
+      "replacement_made": false,
+      "engineering_action_required": "Confirm whether a separate allowable-stress lookup is required for the nut in the intended design calculation.",
+      "blocking_for_automatic_lookup": true
+    },
+    {
+      "original_vesselm_text": "SA-194-2H",
+      "product_form": "nuts",
+      "material_family": "carbon_half_moly, carbon_steel, one_chrome_half_moly",
+      "reason_unresolved": "No SA-194 nut allowable-stress row was located in Table 3.",
+      "searches_performed": [
+        "Table 3 search for SA-194 grade 2H"
+      ],
+      "possible_matches": [],
+      "replacement_made": false,
+      "engineering_action_required": "Confirm whether a separate allowable-stress lookup is required for the nut in the intended design calculation.",
+      "blocking_for_automatic_lookup": true
+    },
+    {
+      "original_vesselm_text": "SA-194-3",
+      "product_form": "nuts",
+      "material_family": "two_quarter_chrome_one_moly",
+      "reason_unresolved": "No SA-194 nut allowable-stress row was located in Table 3.",
+      "searches_performed": [
+        "Table 3 search for SA-194 grade 3"
+      ],
+      "possible_matches": [],
+      "replacement_made": false,
+      "engineering_action_required": "Confirm whether a separate allowable-stress lookup is required for the nut in the intended design calculation.",
+      "blocking_for_automatic_lookup": true
+    },
+    {
+      "original_vesselm_text": "SA-193-BB",
+      "product_form": "bolting",
+      "material_family": "incoloy, inconel, stainless_steel",
+      "reason_unresolved": "No exact bolt-grade row was located in Table 3.",
+      "searches_performed": [
+        "Table 3 search for SA-193 grade BB"
+      ],
+      "possible_matches": [],
+      "replacement_made": false,
+      "engineering_action_required": "Confirm the original bolting designation and select an approved Table 3 material.",
+      "blocking_for_automatic_lookup": true
+    },
+    {
+      "original_vesselm_text": "SA-194-B",
+      "product_form": "nuts",
+      "material_family": "incoloy, inconel, stainless_steel",
+      "reason_unresolved": "No SA-194 nut allowable-stress row was located in Table 3.",
+      "searches_performed": [
+        "Table 3 search for SA-194 grade B"
+      ],
+      "possible_matches": [],
+      "replacement_made": false,
+      "engineering_action_required": "Confirm whether a separate allowable-stress lookup is required for the nut in the intended design calculation.",
+      "blocking_for_automatic_lookup": true
+    }
+  ]
+}

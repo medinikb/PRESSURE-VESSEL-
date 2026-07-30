@@ -1,0 +1,18 @@
+{
+  "package_version": "0.1.0",
+  "machine_validation_status": "passed_with_review_flags",
+  "independent_engineering_verification_status": "pending",
+  "checks": {
+    "all_output_json_parse": "passed_after_generation",
+    "record_ids_unique": "passed",
+    "temperature_points_sorted": "passed",
+    "blank_cells_not_converted_to_zero": "passed",
+    "mixed_code_editions": "none_detected",
+    "interpolation_in_source_library": "not_used",
+    "unresolved_designations_fail_closed": "passed",
+    "note_text_review": "pending_controlled_source_review"
+  },
+  "review_flags": [],
+  "engineering_release_status": "not_approved_for_final_design",
+  "public_distribution_status": "review_required"
+}

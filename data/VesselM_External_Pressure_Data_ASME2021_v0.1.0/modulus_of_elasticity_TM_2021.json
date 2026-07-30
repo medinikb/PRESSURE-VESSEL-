@@ -1,0 +1,7127 @@
+{
+  "dataset_id": "ASME_II_D_2021_TABLE_TM",
+  "code_edition": "2021",
+  "tables": [
+    {
+      "table_id": "TM-1",
+      "source_pdf_page": 1180,
+      "source_printed_page": 1128,
+      "value_multiplier_mpa": 1000,
+      "curves": [
+        {
+          "curve_id": "TM-1_CARBON_STEELS_WITH_C_0_30",
+          "material_label": "Carbon steels with C ≤ 0.30%",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 216000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 212000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 209000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 185000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 171000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 162000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 151000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 137000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_CARBON_STEELS_WITH_C_0_30",
+          "material_label": "Carbon steels with C > 0.30%",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 215000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 211000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 207000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 149000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 136000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_DUCTILE_CAST_IRON",
+          "material_label": "Ductile cast iron",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 155000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 151000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 147000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 142000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 138000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 134000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_MATERIAL_GROUP_A_NOTE_1",
+          "material_label": "Material Group A [Note (1)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 214000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 210000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 207000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 200000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 190000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 177000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 149000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 135000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_MATERIAL_GROUP_B_NOTE_2",
+          "material_label": "Material Group B [Note (2)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 204000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 200000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 174000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 171000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 163000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 158000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 153000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 147000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 141000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 133000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_MATERIAL_GROUP_C_NOTE_3",
+          "material_label": "Material Group C [Note (3)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 218000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 213000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 210000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 204000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 200000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 190000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 174000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 157000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 150000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 142000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_MATERIAL_GROUP_D_NOTE_4",
+          "material_label": "Material Group D [Note (4)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 225000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 220000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 217000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 210000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 199000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 162000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 155000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 146000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_MATERIAL_GROUP_E_NOTE_5",
+          "material_label": "Material Group E [Note (5)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 228000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 223000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 220000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 213000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 208000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 205000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 174000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 168000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 153000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_MATERIAL_GROUP_F_NOTE_6",
+          "material_label": "Material Group F [Note (6)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 215000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 212000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 208000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 166000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 157000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 145000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 131000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_MATERIAL_GROUP_G_NOTE_7",
+          "material_label": "Material Group G [Note (7)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 209000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 204000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 165000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 156000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 151000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 146000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 140000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_MATERIAL_GROUP_H_NOTE_8",
+          "material_label": "Material Group H [Note (8)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 209000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 200000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 190000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 177000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 174000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_MATERIAL_GROUP_I_NOTE_9",
+          "material_label": "Material Group I [Note (9)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 163000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 157000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 154000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 151000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 148000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 145000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 142000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 139000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 135000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_MATERIAL_GROUP_J_NOTE_10",
+          "material_label": "Material Group J [Note (10)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 214000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 209000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 205000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 168000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 157000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_S13800_NOTE_11",
+          "material_label": "S13800 [Note (11)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 217000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 213000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 209000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 190000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 171000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_S15500_NOTE_12",
+          "material_label": "S15500 [Note (12)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 210000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 177000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 166000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_S45000_NOTE_13",
+          "material_label": "S45000 [Note (13)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 218000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 213000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 210000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 171000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_S17400_NOTE_14",
+          "material_label": "S17400 [Note (14)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 210000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 177000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 166000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_S17700_NOTE_15",
+          "material_label": "S17700 [Note (15)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 218000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 213000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 210000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 171000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-1_S66286_NOTE_16",
+          "material_label": "S66286 [Note (16)]",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 214000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 211000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 208000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 185000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 174000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "TM-2",
+      "source_pdf_page": 1183,
+      "source_printed_page": 1131,
+      "value_multiplier_mpa": 1000,
+      "curves": [
+        {
+          "curve_id": "TM-2_A03560",
+          "material_label": "A03560",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 79000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 76000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 75000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 71000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 68000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 65000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 62000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A95083",
+          "material_label": "A95083",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 79000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 76000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 75000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 71000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 68000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 65000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 62000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A95086",
+          "material_label": "A95086",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 79000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 76000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 75000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 71000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 68000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 65000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 62000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A95456",
+          "material_label": "A95456",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 79000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 76000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 75000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 71000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 68000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 65000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 62000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A24430",
+          "material_label": "A24430",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 77000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 72000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 69000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 66000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 63000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 60000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A91060",
+          "material_label": "A91060",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 77000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 72000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 69000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 66000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 63000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 60000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A91100",
+          "material_label": "A91100",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 77000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 72000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 69000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 66000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 63000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 60000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A93003",
+          "material_label": "A93003",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 77000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 72000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 69000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 66000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 63000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 60000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A93004",
+          "material_label": "A93004",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 77000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 72000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 69000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 66000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 63000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 60000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A96061",
+          "material_label": "A96061",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 77000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 72000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 69000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 66000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 63000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 60000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A96063",
+          "material_label": "A96063",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 77000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 72000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 69000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 66000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 63000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 60000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A92014",
+          "material_label": "A92014",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 81000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 78000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 77000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 73000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 70000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 67000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 64000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A92024",
+          "material_label": "A92024",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 81000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 78000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 77000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 73000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 70000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 67000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 64000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A95052",
+          "material_label": "A95052",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 78000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 76000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 70000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 67000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 65000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 62000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A95154",
+          "material_label": "A95154",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 78000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 76000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 70000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 67000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 65000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 62000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A95254",
+          "material_label": "A95254",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 78000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 76000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 70000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 67000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 65000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 62000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A95454",
+          "material_label": "A95454",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 78000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 76000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 70000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 67000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 65000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 62000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-2_A95652",
+          "material_label": "A95652",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 78000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 76000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 70000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 67000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 65000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 62000.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "TM-3",
+      "source_pdf_page": 1184,
+      "source_printed_page": 1132,
+      "value_multiplier_mpa": 1000,
+      "curves": [
+        {
+          "curve_id": "TM-3_C93700",
+          "material_label": "C93700",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 80000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 79000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 78000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 76000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 74000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 73000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 71000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C83600",
+          "material_label": "C83600",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 102000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 99000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 96000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 94000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 93000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 91000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C92200",
+          "material_label": "C92200",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 102000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 99000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 96000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 94000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 93000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 91000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C28000",
+          "material_label": "C28000",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 99000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C36500",
+          "material_label": "C36500",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 99000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C46400",
+          "material_label": "C46400",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 99000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C65500",
+          "material_label": "C65500",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 99000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C66100",
+          "material_label": "C66100",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 99000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C95200",
+          "material_label": "C95200",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 99000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C95400",
+          "material_label": "C95400",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 99000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C95800",
+          "material_label": "C95800",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 99000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C95820",
+          "material_label": "C95820",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 99000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C44300",
+          "material_label": "C44300",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 116000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 115000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 113000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 104000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C44400",
+          "material_label": "C44400",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 116000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 115000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 113000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 104000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C44500",
+          "material_label": "C44500",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 116000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 115000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 113000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 104000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C64200",
+          "material_label": "C64200",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 116000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 115000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 113000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 104000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C68700",
+          "material_label": "C68700",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 116000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 115000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 113000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 108000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 106000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 104000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C10200",
+          "material_label": "C10200",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C10400",
+          "material_label": "C10400",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C10500",
+          "material_label": "C10500",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C10700",
+          "material_label": "C10700",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C11000",
+          "material_label": "C11000",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C12000",
+          "material_label": "C12000",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C12200",
+          "material_label": "C12200",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C12300",
+          "material_label": "C12300",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C12500",
+          "material_label": "C12500",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C14200",
+          "material_label": "C14200",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C23000",
+          "material_label": "C23000",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C61000",
+          "material_label": "C61000",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C61400",
+          "material_label": "C61400",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C65100",
+          "material_label": "C65100",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C70400",
+          "material_label": "C70400",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 122000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 117000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 114000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 112000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 110000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C19400",
+          "material_label": "C19400",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 128000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 126000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 118000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 116000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 114000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C60800",
+          "material_label": "C60800",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 128000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 126000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 118000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 116000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 114000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C63000",
+          "material_label": "C63000",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 128000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 126000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 118000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 116000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 114000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C70600",
+          "material_label": "C70600",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 131000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 129000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 127000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 119000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 117000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C70620",
+          "material_label": "C70620",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 131000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 129000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 127000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 124000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 121000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 119000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 117000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C97600",
+          "material_label": "C97600",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 139000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 137000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 135000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 131000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 128000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 126000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 123000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C71000",
+          "material_label": "C71000",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 146000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 144000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 142000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 138000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 134000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 132000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 130000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C71500",
+          "material_label": "C71500",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 158000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 156000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 152000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 148000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 145000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 143000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-3_C71520",
+          "material_label": "C71520",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 158000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 156000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 152000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 148000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 145000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 143000.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "TM-4",
+      "source_pdf_page": 1185,
+      "source_printed_page": 1133,
+      "value_multiplier_mpa": 1000,
+      "curves": [
+        {
+          "curve_id": "TM-4_N02200",
+          "material_label": "N02200",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 222000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 216000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 213000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 207000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 199000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N02201",
+          "material_label": "N02201",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 222000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 216000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 213000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 207000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 199000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N04400",
+          "material_label": "N04400",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 185000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 171000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 168000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 166000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 163000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 158000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 155000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 152000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 149000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 146000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 142000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 139000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N04405",
+          "material_label": "N04405",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 185000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 171000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 168000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 166000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 163000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 158000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 155000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 152000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 149000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 146000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 142000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 139000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06002",
+          "material_label": "N06002",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 211000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 163000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 156000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 152000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06007",
+          "material_label": "N06007",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 205000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 200000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 185000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 177000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 166000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 163000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 156000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 152000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 148000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06022",
+          "material_label": "N06022",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 221000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 216000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 212000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 199000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 185000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 168000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": 155000.0
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": 151000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06030",
+          "material_label": "N06030",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 217000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 212000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 208000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 168000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 165000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 156000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": 152000.0
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": 148000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06045",
+          "material_label": "N06045",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 207000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 199000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 157000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 153000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 150000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06059",
+          "material_label": "N06059",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 225000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 220000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 216000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 210000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 205000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 200000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 185000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 171000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 162000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": 158000.0
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": 154000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06230",
+          "material_label": "N06230",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 226000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 221000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 217000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 211000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 200000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 168000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 163000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": 159000.0
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": 154000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06455",
+          "material_label": "N06455",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 220000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 215000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 212000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 205000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 190000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 171000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 163000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 159000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06600",
+          "material_label": "N06600",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 229000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 224000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 220000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 213000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 209000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 174000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 165000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06617",
+          "material_label": "N06617",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 174000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 171000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 156000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": 152000.0
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": 146000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06625",
+          "material_label": "N06625",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 222000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 216000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 213000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 207000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 199000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06686",
+          "material_label": "N06686",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 225000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 220000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 216000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 210000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 205000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 200000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 185000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 171000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 162000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": 158000.0
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": 154000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N06690",
+          "material_label": "N06690",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 225000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 219000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 215000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 208000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 204000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 199000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 185000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 174000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 166000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 162000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N07718",
+          "material_label": "N07718",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 214000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 210000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 199000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 190000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 185000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N07750",
+          "material_label": "N07750",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 229000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 224000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 220000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 213000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 208000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 185000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N08020",
+          "material_label": "N08020",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 207000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 199000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 157000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 153000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 150000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N08031",
+          "material_label": "N08031",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 212000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 207000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 204000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 185000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 168000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 165000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 157000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 153000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": 149000.0
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": 145000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N08330",
+          "material_label": "N08330",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 207000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 199000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 157000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 153000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 150000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N08354",
+          "material_label": "N08354",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 207000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 204000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 177000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 174000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N08800",
+          "material_label": "N08800",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 211000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 156000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 152000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N08801",
+          "material_label": "N08801",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 211000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 156000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 152000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N08810",
+          "material_label": "N08810",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 211000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 160000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 156000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 152000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N08825",
+          "material_label": "N08825",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 207000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 199000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 164000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 161000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 157000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 153000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 150000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N10001",
+          "material_label": "N10001",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 230000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 224000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 221000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 214000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 209000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 204000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 174000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 170000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 166000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N10003",
+          "material_label": "N10003",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 234000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 229000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 225000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 218000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 213000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 210000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 207000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 205000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 199000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 196000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 190000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 173000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N10242",
+          "material_label": "N10242",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 245000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 240000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 236000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 229000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 224000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 221000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 217000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 214000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 211000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 208000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 205000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 202000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 182000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 177000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": 167000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N10276",
+          "material_label": "N10276",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 220000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 215000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 212000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 205000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 193000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 190000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 187000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 171000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 167000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 163000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 159000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N10629",
+          "material_label": "N10629",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 232000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 227000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 223000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 216000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 211000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 208000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 200000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 168000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N10665",
+          "material_label": "N10665",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 232000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 227000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 223000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 216000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 211000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 208000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 200000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 168000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N10675",
+          "material_label": "N10675",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 232000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 227000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 223000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 216000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 211000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 208000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 200000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 197000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 194000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 184000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 180000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 168000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_N12160",
+          "material_label": "N12160",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 226000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 221000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 217000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 211000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 206000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 203000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 200000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 198000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 192000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 189000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 179000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 176000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 168000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 163000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": 159000.0
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": 154000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-4_R20033",
+          "material_label": "R20033",
+          "points": [
+            {
+              "temperature_c": -200,
+              "modulus_mpa": 210000.0
+            },
+            {
+              "temperature_c": -125,
+              "modulus_mpa": 204000.0
+            },
+            {
+              "temperature_c": -75,
+              "modulus_mpa": 201000.0
+            },
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 195000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 191000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 188000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 186000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 183000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 181000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 178000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 175000.0
+            },
+            {
+              "temperature_c": 450,
+              "modulus_mpa": 172000.0
+            },
+            {
+              "temperature_c": 500,
+              "modulus_mpa": 169000.0
+            },
+            {
+              "temperature_c": 550,
+              "modulus_mpa": 166000.0
+            },
+            {
+              "temperature_c": 600,
+              "modulus_mpa": 162000.0
+            },
+            {
+              "temperature_c": 650,
+              "modulus_mpa": 159000.0
+            },
+            {
+              "temperature_c": 700,
+              "modulus_mpa": 155000.0
+            },
+            {
+              "temperature_c": 750,
+              "modulus_mpa": 151000.0
+            },
+            {
+              "temperature_c": 800,
+              "modulus_mpa": 147000.0
+            },
+            {
+              "temperature_c": 850,
+              "modulus_mpa": 142000.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "TM-5",
+      "source_pdf_page": 1186,
+      "source_printed_page": 1134,
+      "value_multiplier_mpa": 1000,
+      "curves": [
+        {
+          "curve_id": "TM-5_1_R50250",
+          "material_label": "1 (R50250)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 107000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 93000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 88000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 84000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 80000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_2_2H_R50400",
+          "material_label": "2, 2H (R50400)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 107000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 93000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 88000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 84000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 80000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_3_R50550",
+          "material_label": "3 (R50550)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 107000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 93000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 88000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 84000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 80000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_7_7H_R52400",
+          "material_label": "7, 7H (R52400)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 107000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 93000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 88000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 84000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 80000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_9_R56320",
+          "material_label": "9 (R56320)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 105000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 96000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 92000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 87000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_11_R52250",
+          "material_label": "11 (R52250)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 107000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 93000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 88000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 84000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 80000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_12_R53400",
+          "material_label": "12 (R53400)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 107000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 93000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 88000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 84000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 80000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_16_16H_R52402",
+          "material_label": "16, 16H (R52402)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 107000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 93000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 88000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 84000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 80000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_17_R52252",
+          "material_label": "17 (R52252)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 107000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 93000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 88000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 84000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 80000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_26_26H_R52404",
+          "material_label": "26, 26H (R52404)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 107000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 93000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 88000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 84000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 80000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_27_R52254",
+          "material_label": "27 (R52254)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 107000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 103000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 97000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 93000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 88000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 84000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 80000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_28_R56323",
+          "material_label": "28 (R56323)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 110000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 105000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 96000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 92000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 87000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": null
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": null
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_38_R54250",
+          "material_label": "38 (R54250)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 105000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 101000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 95000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 89000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 85000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 82000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 79000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 76000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_702_R60702",
+          "material_label": "702 (R60702)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 99000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 92000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 87000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 81000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 76000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 71000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 66000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 60000.0
+            }
+          ]
+        },
+        {
+          "curve_id": "TM-5_705_R60705",
+          "material_label": "705 (R60705)",
+          "points": [
+            {
+              "temperature_c": 25,
+              "modulus_mpa": 94000.0
+            },
+            {
+              "temperature_c": 100,
+              "modulus_mpa": 90000.0
+            },
+            {
+              "temperature_c": 150,
+              "modulus_mpa": 87000.0
+            },
+            {
+              "temperature_c": 200,
+              "modulus_mpa": 84000.0
+            },
+            {
+              "temperature_c": 250,
+              "modulus_mpa": 82000.0
+            },
+            {
+              "temperature_c": 300,
+              "modulus_mpa": 79000.0
+            },
+            {
+              "temperature_c": 350,
+              "modulus_mpa": 76000.0
+            },
+            {
+              "temperature_c": 400,
+              "modulus_mpa": 73000.0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "interpolation": "linear_between_published_temperatures",
+  "extrapolation_allowed": false,
+  "verification_status": "text_layer_extracted_visual_spot_check_pending_independent_verification"
+}

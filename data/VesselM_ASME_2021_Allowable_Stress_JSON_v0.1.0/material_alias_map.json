@@ -1,0 +1,1456 @@
+{
+  "records": [
+    {
+      "original_vesselm_text": "SA-105",
+      "normalized_specification": "SA-105",
+      "normalized_grade": null,
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_105_NA_P0072_L31"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-106-B",
+      "normalized_specification": "SA-106",
+      "normalized_grade": "B",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_106_B_P0068_L16"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-181-60",
+      "normalized_specification": "SA-181",
+      "normalized_grade": "60",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_181_60_P0064_L38"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-181-70",
+      "normalized_specification": "SA-181",
+      "normalized_grade": "70",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_181_70_P0072_L32"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-182-304",
+      "normalized_specification": "SA-182",
+      "normalized_grade": "304",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_182_F304_P0140_L34",
+        "FORGING_FLANGE_SA_182_F304_P0140_L35",
+        "FORGING_FLANGE_SA_182_F304_P0144_L08",
+        "FORGING_FLANGE_SA_182_F304_P0144_L09"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "VesselM type was normalized to the ASME forging prefix F.",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-182-304L",
+      "normalized_specification": "SA-182",
+      "normalized_grade": "304L",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_182_F304L_P0140_L06",
+        "FORGING_FLANGE_SA_182_F304L_P0140_L07",
+        "FORGING_FLANGE_SA_182_F304L_P0140_L11",
+        "FORGING_FLANGE_SA_182_F304L_P0140_L12"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "VesselM type was normalized to the ASME forging prefix F.",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-182-316",
+      "normalized_specification": "SA-182",
+      "normalized_grade": "316",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_182_F316_P0128_L14",
+        "FORGING_FLANGE_SA_182_F316_P0128_L15",
+        "FORGING_FLANGE_SA_182_F316_P0128_L22",
+        "FORGING_FLANGE_SA_182_F316_P0128_L23"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "VesselM type was normalized to the ASME forging prefix F.",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-182-316L",
+      "normalized_specification": "SA-182",
+      "normalized_grade": "316L",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_182_F316L_P0124_L25",
+        "FORGING_FLANGE_SA_182_F316L_P0124_L26",
+        "FORGING_FLANGE_SA_182_F316L_P0124_L30",
+        "FORGING_FLANGE_SA_182_F316L_P0124_L31"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "VesselM type was normalized to the ASME forging prefix F.",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-182-347",
+      "normalized_specification": "SA-182",
+      "normalized_grade": "347",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_182_F347_P0152_L33",
+        "FORGING_FLANGE_SA_182_F347_P0156_L01",
+        "FORGING_FLANGE_SA_182_F347_P0156_L02"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "VesselM type was normalized to the ASME forging prefix F.",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-182-347H",
+      "normalized_specification": "SA-182",
+      "normalized_grade": "347H",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_182_F347H_P0152_L36",
+        "FORGING_FLANGE_SA_182_F347H_P0152_L37",
+        "FORGING_FLANGE_SA_182_F347H_P0156_L23",
+        "FORGING_FLANGE_SA_182_F347H_P0156_L24"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "VesselM type was normalized to the ASME forging prefix F.",
+      "vesselm_material_range_ids": [
+        "MSR_014"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-182-F1",
+      "normalized_specification": "SA-182",
+      "normalized_grade": "F1",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_182_F1_P0084_L29"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_010"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-182-F11",
+      "normalized_specification": "SA-182",
+      "normalized_grade": "F11",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_182_F11_P0092_L16",
+        "FORGING_FLANGE_SA_182_F11_P0092_L27"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_012"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-182-F12",
+      "normalized_specification": "SA-182",
+      "normalized_grade": "F12",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_182_F12_P0088_L31",
+        "FORGING_FLANGE_SA_182_F12_P0092_L10"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_011"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-182-F22",
+      "normalized_specification": "SA-182",
+      "normalized_grade": "F22",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_182_F22_P0092_L36",
+        "FORGING_FLANGE_SA_182_F22_P0096_L10"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_013"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-203-A",
+      "normalized_specification": "SA-203",
+      "normalized_grade": "A",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_203_A_P0116_L21"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_004"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-203-D",
+      "normalized_specification": "SA-203",
+      "normalized_grade": "D",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_203_D_P0116_L42"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_003"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-204-B",
+      "normalized_specification": "SA-204",
+      "normalized_grade": "B",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_204_B_P0084_L30"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_010"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-234-WP1",
+      "normalized_specification": "SA-234",
+      "normalized_grade": "WP1",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_234_WP1_P0084_L10"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_010"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-234-WP11",
+      "normalized_specification": "SA-234",
+      "normalized_grade": "WP11",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_234_WP11_P0092_L18"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_012"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-234-WP12",
+      "normalized_specification": "SA-234",
+      "normalized_grade": "WP12",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_234_WP12_P0088_L33"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_011"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-234-WP22",
+      "normalized_specification": "SA-234",
+      "normalized_grade": "WP22",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_234_WP22_P0092_L38"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_013"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-234-WPB",
+      "normalized_specification": "SA-234",
+      "normalized_grade": "WPB",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_234_WPB_P0068_L18"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-240-304",
+      "normalized_specification": "SA-240",
+      "normalized_grade": "304",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_240_304_P0144_L18",
+        "PLATE_SA_240_304_P0144_L19"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-240-304L",
+      "normalized_specification": "SA-240",
+      "normalized_grade": "304L",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_240_304L_P0140_L15",
+        "PLATE_SA_240_304L_P0140_L16"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-240-316",
+      "normalized_specification": "SA-240",
+      "normalized_grade": "316",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_240_316_P0128_L26",
+        "PLATE_SA_240_316_P0128_L27"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-240-316L",
+      "normalized_specification": "SA-240",
+      "normalized_grade": "316L",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_240_316L_P0124_L34",
+        "PLATE_SA_240_316L_P0124_L35"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-240-347",
+      "normalized_specification": "SA-240",
+      "normalized_grade": "347",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_240_347_P0156_L05",
+        "PLATE_SA_240_347_P0156_L06"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-240-347H",
+      "normalized_specification": "SA-240",
+      "normalized_grade": "347H",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_240_347H_P0156_L27",
+        "PLATE_SA_240_347H_P0156_L28"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_014"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-285-C",
+      "normalized_specification": "SA-285",
+      "normalized_grade": "C",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_285_C_P0064_L04"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_007"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-312-304",
+      "normalized_specification": "SA-312",
+      "normalized_grade": "304",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_312_TP304_P0144_L30",
+        "PIPE_TUBE_SA_312_TP304_P0144_L31",
+        "PIPE_TUBE_SA_312_TP304_P0144_L32",
+        "PIPE_TUBE_SA_312_TP304_P0144_L33"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "VesselM type was normalized to the ASME pipe prefix TP.",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-312-304L",
+      "normalized_specification": "SA-312",
+      "normalized_grade": "304L",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_312_TP304L_P0140_L20",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L21",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L22",
+        "PIPE_TUBE_SA_312_TP304L_P0140_L23"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "VesselM type was normalized to the ASME pipe prefix TP.",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-312-316",
+      "normalized_specification": "SA-312",
+      "normalized_grade": "316",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_312_TP316_P0128_L32",
+        "PIPE_TUBE_SA_312_TP316_P0128_L33",
+        "PIPE_TUBE_SA_312_TP316_P0128_L34",
+        "PIPE_TUBE_SA_312_TP316_P0128_L35"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "VesselM type was normalized to the ASME pipe prefix TP.",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-312-316L",
+      "normalized_specification": "SA-312",
+      "normalized_grade": "316L",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_312_TP316L_P0124_L39",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L40",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L41",
+        "PIPE_TUBE_SA_312_TP316L_P0124_L42"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "VesselM type was normalized to the ASME pipe prefix TP.",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-312-347",
+      "normalized_specification": "SA-312",
+      "normalized_grade": "347",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_312_TP347_P0156_L11",
+        "PIPE_TUBE_SA_312_TP347_P0156_L12",
+        "PIPE_TUBE_SA_312_TP347_P0156_L13",
+        "PIPE_TUBE_SA_312_TP347_P0156_L14"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "VesselM type was normalized to the ASME pipe prefix TP.",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-312-347H",
+      "normalized_specification": "SA-312",
+      "normalized_grade": "347H",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_312_TP347H_P0156_L33",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L34",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L35",
+        "PIPE_TUBE_SA_312_TP347H_P0156_L36"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "VesselM type was normalized to the ASME pipe prefix TP.",
+      "vesselm_material_range_ids": [
+        "MSR_014"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-333-1",
+      "normalized_specification": "SA-333",
+      "normalized_grade": "1",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_333_1_P0064_L05"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_006"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-333-3",
+      "normalized_specification": "SA-333",
+      "normalized_grade": "3",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_333_3_P0116_L37",
+        "PIPE_TUBE_SA_333_3_P0116_L38"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_003",
+        "MSR_004"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-333-6",
+      "normalized_specification": "SA-333",
+      "normalized_grade": "6",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_333_6_P0068_L19",
+        "PIPE_TUBE_SA_333_6_P0068_L20"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_005",
+        "MSR_006"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-333-8",
+      "normalized_specification": "SA-333",
+      "normalized_grade": "8",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_333_8_P0120_L26",
+        "PIPE_TUBE_SA_333_8_P0120_L27",
+        "PIPE_TUBE_SA_333_8_P0120_L28",
+        "PIPE_TUBE_SA_333_8_P0120_L29",
+        "PIPE_TUBE_SA_333_8_P0120_L30"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_002"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-335-P1",
+      "normalized_specification": "SA-335",
+      "normalized_grade": "P1",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_335_P1_P0084_L17"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_010"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-335-P11",
+      "normalized_specification": "SA-335",
+      "normalized_grade": "P11",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_335_P11_P0092_L21"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_012"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-335-P12",
+      "normalized_specification": "SA-335",
+      "normalized_grade": "P12",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_335_P12_P0088_L36"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_011"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-335-P22",
+      "normalized_specification": "SA-335",
+      "normalized_grade": "P22",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_335_P22_P0092_L41"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_013"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-350-LF2",
+      "normalized_specification": "SA-350",
+      "normalized_grade": "LF2",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_350_LF2_P0072_L36",
+        "FORGING_FLANGE_SA_350_LF2_P0072_L37"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_005",
+        "MSR_006"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-350-LF63",
+      "normalized_specification": "SA-350",
+      "normalized_grade": "LF63",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [],
+      "match_method": "incorrect_source_designation_suspected",
+      "match_confidence": "low",
+      "match_status": "incorrect_source_designation_suspected",
+      "reviewer_comment": "No SA-350 LF63 row was found. SA-350 LF3 Class 1 and Class 2 rows exist, but they were not substituted.",
+      "vesselm_material_range_ids": [
+        "MSR_003",
+        "MSR_004"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-353",
+      "normalized_specification": "SA-353",
+      "normalized_grade": null,
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_353_NA_P0120_L36",
+        "PLATE_SA_353_NA_P0120_L37",
+        "PLATE_SA_353_NA_P0120_L38"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_002"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-387-11-2",
+      "normalized_specification": "SA-387",
+      "normalized_grade": "11-2",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_387_11_P0092_L30"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_012"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-387-12-1",
+      "normalized_specification": "SA-387",
+      "normalized_grade": "12-1",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_387_12_P0088_L28"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_011"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-387-22-1",
+      "normalized_specification": "SA-387",
+      "normalized_grade": "22-1",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_387_22_P0092_L44"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_013"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-403-304",
+      "normalized_specification": "SA-403",
+      "normalized_grade": "304",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_403_304_P0144_L45"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-403-304L",
+      "normalized_specification": "SA-403",
+      "normalized_grade": "304L",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_403_304L_P0140_L25"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-403-316",
+      "normalized_specification": "SA-403",
+      "normalized_grade": "316",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_403_316_P0128_L39"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-403-316L",
+      "normalized_specification": "SA-403",
+      "normalized_grade": "316L",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_403_316L_P0124_L44"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-403-347",
+      "normalized_specification": "SA-403",
+      "normalized_grade": "347",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_403_347_P0156_L18"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_001"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-403-347H",
+      "normalized_specification": "SA-403",
+      "normalized_grade": "347H",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_403_347H_P0156_L39"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_014"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-420-WPL3",
+      "normalized_specification": "SA-420",
+      "normalized_grade": "WPL3",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_420_WPL3_P0116_L41"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_003",
+        "MSR_004"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-420-WPL6",
+      "normalized_specification": "SA-420",
+      "normalized_grade": "WPL6",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_420_WPL6_P0068_L26"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_005",
+        "MSR_006"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-420-WPL8",
+      "normalized_specification": "SA-420",
+      "normalized_grade": "WPL8",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SA_420_WPL8_P0120_L39",
+        "FITTING_SA_420_WPL8_P0120_L40"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_002"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-455-II",
+      "normalized_specification": "SA-455",
+      "normalized_grade": "II",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [],
+      "match_method": "incorrect_source_designation_suspected",
+      "match_confidence": "low",
+      "match_status": "incorrect_source_designation_suspected",
+      "reviewer_comment": "ASME Table 1A lists SA-455 rows without a Grade II or Class II designation. No substitution was made.",
+      "vesselm_material_range_ids": [
+        "MSR_008",
+        "MSR_009"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-515-All",
+      "normalized_specification": "SA-515",
+      "normalized_grade": null,
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_515_60_P0068_L02",
+        "PLATE_SA_515_65_P0072_L02",
+        "PLATE_SA_515_70_P0072_L44"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_008",
+        "MSR_009"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-516-All",
+      "normalized_specification": "SA-516",
+      "normalized_grade": null,
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SA_516_55_P0064_L08",
+        "PLATE_SA_516_60_P0068_L03",
+        "PLATE_SA_516_65_P0072_L03",
+        "PLATE_SA_516_70_P0072_L45"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_006",
+        "MSR_008",
+        "MSR_009"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-522-1",
+      "normalized_specification": "SA-522",
+      "normalized_grade": "1",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [
+        "FORGING_FLANGE_SA_522_I_P0120_L41",
+        "FORGING_FLANGE_SA_522_I_P0120_L42"
+      ],
+      "match_method": "normalized_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "normalized_match_multiple_rows",
+      "reviewer_comment": "Numeric grade 1 was normalized to the source Roman numeral I.",
+      "vesselm_material_range_ids": [
+        "MSR_002"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-53-B",
+      "normalized_specification": "SA-53",
+      "normalized_grade": "B",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SA_53_E_B_P0068_L12",
+        "PIPE_TUBE_SA_53_E_B_P0068_L13",
+        "PIPE_TUBE_SA_53_S_B_P0068_L14",
+        "PIPE_TUBE_SA_53_S_B_P0068_L15"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009"
+      ]
+    },
+    {
+      "original_vesselm_text": "SB-366",
+      "normalized_specification": "SB-366",
+      "normalized_grade": null,
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "fittings",
+      "matched_asme_record_ids": [
+        "FITTING_SB_366_NA_P0292_L12",
+        "FITTING_SB_366_NA_P0312_L17"
+      ],
+      "match_method": "context_filtered_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "context_filtered_multiple_rows",
+      "reviewer_comment": "Filtered to N08825 and N06625 because the VesselM guide uses SB-366 for the Incoloy and Inconel material families.",
+      "vesselm_material_range_ids": [
+        "MSR_015",
+        "MSR_016"
+      ]
+    },
+    {
+      "original_vesselm_text": "SB-423",
+      "normalized_specification": "SB-423",
+      "normalized_grade": null,
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SB_423_NA_P0312_L18",
+        "PIPE_TUBE_SB_423_NA_P0312_L19"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_015"
+      ]
+    },
+    {
+      "original_vesselm_text": "SB-424",
+      "normalized_specification": "SB-424",
+      "normalized_grade": null,
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SB_424_NA_P0312_L20",
+        "PLATE_SB_424_NA_P0312_L21"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_015"
+      ]
+    },
+    {
+      "original_vesselm_text": "SB-425",
+      "normalized_specification": "SB-425",
+      "normalized_grade": null,
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [],
+      "match_method": "manual_review_required",
+      "match_confidence": "low",
+      "match_status": "manual_review_required",
+      "reviewer_comment": "ASME Table 1B lists SB-425 as bar or rod rather than forgings as stated in the VesselM guide.",
+      "vesselm_material_range_ids": [
+        "MSR_015"
+      ]
+    },
+    {
+      "original_vesselm_text": "SB-443",
+      "normalized_specification": "SB-443",
+      "normalized_grade": null,
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "plate",
+      "matched_asme_record_ids": [
+        "PLATE_SB_443_2_P0292_L06",
+        "PLATE_SB_443_2_P0292_L07",
+        "PLATE_SB_443_1_P0292_L15",
+        "PLATE_SB_443_1_P0292_L16",
+        "PLATE_SB_443_1_P0292_L17"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_016"
+      ]
+    },
+    {
+      "original_vesselm_text": "SB-444",
+      "normalized_specification": "SB-444",
+      "normalized_grade": null,
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "pipe",
+      "matched_asme_record_ids": [
+        "PIPE_TUBE_SB_444_2_P0292_L08",
+        "PIPE_TUBE_SB_444_2_P0292_L09",
+        "PIPE_TUBE_SB_444_1_P0292_L18"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_016"
+      ]
+    },
+    {
+      "original_vesselm_text": "SB-446",
+      "normalized_specification": "SB-446",
+      "normalized_grade": null,
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "forgings",
+      "matched_asme_record_ids": [],
+      "match_method": "manual_review_required",
+      "match_confidence": "low",
+      "match_status": "manual_review_required",
+      "reviewer_comment": "ASME Table 1B lists SB-446 as bar or rod rather than forgings as stated in the VesselM guide.",
+      "vesselm_material_range_ids": [
+        "MSR_016"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-320-B8 with SA-194-8",
+      "normalized_specification": "SA-320",
+      "normalized_grade": "B8",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "bolting",
+      "matched_asme_record_ids": [
+        "BOLTING_SA_320_B8_P0470_L05",
+        "BOLTING_SA_320_B8_P0470_L08",
+        "BOLTING_SA_320_B8_P0470_L10",
+        "BOLTING_SA_320_B8_P0470_L12",
+        "BOLTING_SA_320_B8_P0470_L14"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_001",
+        "MSR_002"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-320-L7 with SA-194-4",
+      "normalized_specification": "SA-320",
+      "normalized_grade": "L7",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "bolting",
+      "matched_asme_record_ids": [
+        "BOLTING_SA_320_L7_P0462_L33"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_003",
+        "MSR_004",
+        "MSR_005",
+        "MSR_006"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-193-B7 with SA-194-2H",
+      "normalized_specification": "SA-193",
+      "normalized_grade": "B7",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "bolting",
+      "matched_asme_record_ids": [
+        "BOLTING_SA_193_B7_P0462_L28",
+        "BOLTING_SA_193_B7_P0462_L31",
+        "BOLTING_SA_193_B7_P0462_L32"
+      ],
+      "match_method": "exact_match_multiple_rows",
+      "match_confidence": "high",
+      "match_status": "exact_match_multiple_rows",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_007",
+        "MSR_008",
+        "MSR_009",
+        "MSR_010",
+        "MSR_011",
+        "MSR_012"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-193-B5 with SA-194-3",
+      "normalized_specification": "SA-193",
+      "normalized_grade": "B5",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "bolting",
+      "matched_asme_record_ids": [
+        "BOLTING_SA_193_B5_P0466_L06"
+      ],
+      "match_method": "exact_match",
+      "match_confidence": "high",
+      "match_status": "exact_match",
+      "reviewer_comment": "",
+      "vesselm_material_range_ids": [
+        "MSR_013"
+      ]
+    },
+    {
+      "original_vesselm_text": "SA-193-BB with SA-194-B",
+      "normalized_specification": "SA-193",
+      "normalized_grade": "BB",
+      "normalized_type": null,
+      "normalized_class": null,
+      "product_form": "bolting",
+      "matched_asme_record_ids": [],
+      "match_method": "no_match",
+      "match_confidence": "low",
+      "match_status": "no_match",
+      "reviewer_comment": "No exact Table 3 bolt grade was located.",
+      "vesselm_material_range_ids": [
+        "MSR_014",
+        "MSR_015",
+        "MSR_016"
+      ]
+    }
+  ]
+}

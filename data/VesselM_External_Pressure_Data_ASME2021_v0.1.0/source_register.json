@@ -1,0 +1,48 @@
+{
+  "source_id": "ASME_BPVC_II_D_M_2021",
+  "title": "ASME BPVC Section II Part D Properties (Metric)",
+  "edition": "2021",
+  "source_sha256": "1453dd6b5af34c19fa5d1c3371937952ff906c93fa96be2d048e7ae0942317f7",
+  "external_pressure_pages": {
+    "Figure_G": [
+      1189,
+      1190
+    ],
+    "Table_G": [
+      1268,
+      1269
+    ],
+    "selected_material_charts": {
+      "CS-2": 1271,
+      "CS-3": 1272,
+      "HA-1": 1275,
+      "HA-2": 1276,
+      "HA-3": 1276,
+      "HA-4": 1277,
+      "NFN-7": 1297,
+      "NFN-17": 1305,
+      "NFN-22": 1308
+    },
+    "modulus_tables": {
+      "TM-1": [
+        1180,
+        1181,
+        1182
+      ],
+      "TM-2": [
+        1183
+      ],
+      "TM-3": [
+        1184
+      ],
+      "TM-4": [
+        1185
+      ],
+      "TM-5": [
+        1186
+      ]
+    }
+  },
+  "rights_note": "Derived from the user-supplied licensed source. Keep access controlled and do not redistribute publicly.",
+  "verification_status": "machine_extracted_with_visual_spot_checks"
+}

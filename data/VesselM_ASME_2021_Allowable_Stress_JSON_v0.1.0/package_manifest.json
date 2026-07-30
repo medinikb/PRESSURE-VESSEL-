@@ -1,0 +1,123 @@
+{
+  "package_id": "VesselM_ASME_2021_Allowable_Stress_JSON_v0.1.0",
+  "package_version": "0.1.0",
+  "source_pdf_sha256": "1453dd6b5af34c19fa5d1c3371937952ff906c93fa96be2d048e7ae0942317f7",
+  "files": [
+    {
+      "filename": "README.md",
+      "size_bytes": 1784,
+      "sha256": "1dadc3406901d8e15678f4b63436e40a83c6eaebc52c624677f9de2078dac50e"
+    },
+    {
+      "filename": "allowable_stress_bolting.json",
+      "size_bytes": 304656,
+      "sha256": "5b2908b856e945ece67eabd5f81e7ed6f0fdabefd4ab806f50cd765d43d4619e"
+    },
+    {
+      "filename": "allowable_stress_fittings.json",
+      "size_bytes": 509198,
+      "sha256": "ec28538d21730c0f024b7eb3f1322ab5f5e0fd55c53d566ad78585cefe3e46cb"
+    },
+    {
+      "filename": "allowable_stress_forgings_flanges.json",
+      "size_bytes": 1080531,
+      "sha256": "b8f12a7e59131061fb1921423854f940752327a5f42d95744af8a72cfb2a6d9f"
+    },
+    {
+      "filename": "allowable_stress_lookup_rules.json",
+      "size_bytes": 1508,
+      "sha256": "187234a6a358acad04644367ede0d323a6f801799a632428036763a9ed012dae"
+    },
+    {
+      "filename": "allowable_stress_nuts.json",
+      "size_bytes": 151,
+      "sha256": "38d73ee4f788a06c81aef37e5428d70e0b5dae41db55ccc8f92318022a491dcc"
+    },
+    {
+      "filename": "allowable_stress_other_product_forms.json",
+      "size_bytes": 136,
+      "sha256": "61b9dc0f3f56e61ff44a1b2de2d1fb19e5599ce4d51f94a90eeacd6309fc3957"
+    },
+    {
+      "filename": "allowable_stress_pipe_tube.json",
+      "size_bytes": 1440644,
+      "sha256": "b4a3a3e5139a58015a228266570bd077564846812a8ea3e11eb3b1a0bcdf01d6"
+    },
+    {
+      "filename": "allowable_stress_plate.json",
+      "size_bytes": 1065203,
+      "sha256": "c146eb460509833cea51a25beb4ff442b106c3dd7b908286bc676e05344a3500"
+    },
+    {
+      "filename": "bolting_set_map.json",
+      "size_bytes": 3811,
+      "sha256": "cb32bcf99067afa11a64fb0249380b2bdeb35d0d5fd8c973d858e1a166bfd42d"
+    },
+    {
+      "filename": "code_edition_control.json",
+      "size_bytes": 622,
+      "sha256": "bfc75cb16bf1465519a7d1bad0dac468a35ea3e86f54e84def42bf02d9186d59"
+    },
+    {
+      "filename": "conversion_rules.json",
+      "size_bytes": 301,
+      "sha256": "a823110dda6530dc704394503c4b711ef10eed4e368241f84a4fe8f56f77b89a"
+    },
+    {
+      "filename": "coverage_report.json",
+      "size_bytes": 1037,
+      "sha256": "77e9d18b48b9a6924b701de3f37610ac987d4697f667d7b91dcfeecabcf2a8d3"
+    },
+    {
+      "filename": "data_dictionary.json",
+      "size_bytes": 919,
+      "sha256": "fc71f779fb3b56c1e4b7de87328a5d0f07d19745aa94fc840b2b41a07e2433eb"
+    },
+    {
+      "filename": "extraction_log.json",
+      "size_bytes": 37263,
+      "sha256": "97313efd3aa817c783bbacab2a3e6585b22e1d580b08b3c8658d2672fbd6044e"
+    },
+    {
+      "filename": "manifest.json",
+      "size_bytes": 481,
+      "sha256": "35081dc33bdf35d88abfe2369c853e92c9d38d618d101eaeed898868c0634b85"
+    },
+    {
+      "filename": "material_alias_map.json",
+      "size_bytes": 45129,
+      "sha256": "08534e31499b5356bd449aa8fee860207fcea41ab3c084a0c2d1052f0875bc45"
+    },
+    {
+      "filename": "material_notes.json",
+      "size_bytes": 29018,
+      "sha256": "1653ac717e459916212693f4fb1d58b0d01e558f4da408d411ed30c4d5993c3a"
+    },
+    {
+      "filename": "source_register.json",
+      "size_bytes": 1268,
+      "sha256": "766f64c72468e49ed5ca50877c74be27ae275d9be13a67c8be7e68a4dd06eb0a"
+    },
+    {
+      "filename": "test_cases.json",
+      "size_bytes": 1510,
+      "sha256": "d41efbe395af1dfc0936cb6043d5db4a2dc46d54f4e21fca71c0e07dc7f0c2f3"
+    },
+    {
+      "filename": "unresolved_materials.json",
+      "size_bytes": 9203,
+      "sha256": "8ad3f1cc0b678d74f9137c14b37da1f01bd0b5d93b7ef55f2828fd0227b51b58"
+    },
+    {
+      "filename": "validation_report.json",
+      "size_bytes": 701,
+      "sha256": "02843b7e8e4d24cb48be9518e36c8a921ccb93b0fcf1fb03ab9acefcc81c4e6c"
+    }
+  ],
+  "validation": {
+    "all_json_parsed": true,
+    "json_file_count": 22,
+    "record_count": 148,
+    "independent_engineering_verification": "pending"
+  }
+}

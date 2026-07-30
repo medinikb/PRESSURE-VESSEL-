@@ -1,0 +1,32 @@
+{
+  "execution_modes": {
+    "asme_2021_reference_preview": {
+      "allowed": true,
+      "may_return_calculated_values": true,
+      "may_feed_construction_design": false,
+      "required_banner": "ASME 2021 reference-preview data used with independent engineering review required."
+    },
+    "asme_2023_engineering_production": {
+      "allowed": false,
+      "reason": "ASME Section II Part D 2023 external-pressure datasets are not supplied.",
+      "blocking_code": "code_edition_mismatch_requires_engineering_review"
+    }
+  },
+  "dataset_scope": {
+    "figure_G": "complete_2021_table_G",
+    "material_charts": "charts_used_by_current_VesselM_material_library",
+    "modulus_tables": "TM-1_through_TM-5",
+    "chart_assignments": "current_148_record_allowable_stress_library"
+  },
+  "known_gap": {
+    "table_Y_1_temperature_dependent_yield_strength": "not_embedded",
+    "impact": "CS-3 curve selection above the published minimum-temperature basis and Do/t<10 checks require controlled yield-strength-at-temperature input.",
+    "app_action": "require_manual_verified_yield_strength_at_temperature_or_block"
+  },
+  "production_release_requirements": [
+    "matched ASME VIII-1 and II-D editions",
+    "independent numerical verification",
+    "materials engineer approval",
+    "pressure vessel engineer approval"
+  ]
+}

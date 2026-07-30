@@ -1,0 +1,11 @@
+{
+  "source_temperature_unit": "degC",
+  "source_stress_unit": "MPa",
+  "temperature_c_to_f": "degF = degC * 9 / 5 + 32",
+  "stress_mpa_to_ksi": "ksi = MPa / 6.894757293",
+  "source_values_preserved": true,
+  "rounding": {
+    "temperature_f_decimals": 6,
+    "allowable_stress_ksi_decimals": 6
+  }
+}

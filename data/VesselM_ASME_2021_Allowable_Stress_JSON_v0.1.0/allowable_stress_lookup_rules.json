@@ -1,0 +1,44 @@
+{
+  "lookup_id": "VESSELM_ASME_2021_SECTION_VIII_DIV1_ALLOWABLE_STRESS",
+  "fail_closed": true,
+  "lookup_sequence": [
+    "product_form",
+    "specification",
+    "grade_or_type",
+    "class",
+    "heat_treatment_or_condition",
+    "thickness_or_size_range",
+    "seamless_or_welded_condition",
+    "section_viii_division_1_applicability",
+    "design_temperature",
+    "applicable_source_notes"
+  ],
+  "temperature_rule": {
+    "method": "published_not_exceeding_ceiling",
+    "description": "Select the smallest published temperature column that is greater than or equal to the design temperature because the ASME table heading states metal temperature not exceeding.",
+    "interpolation_used": false,
+    "interpolation_permitted": false,
+    "below_40_c_rule": "Use the 40 degC column only when all other material and applicability filters are satisfied.",
+    "above_maximum_rule": "allowable_stress_not_resolved"
+  },
+  "multiple_record_result": "multiple_material_records_require_engineering_selection",
+  "no_record_result": "allowable_stress_not_resolved",
+  "do_not_select_highest_stress": true,
+  "do_not_select_first_row": true,
+  "required_lookup_output": [
+    "selected_record_id",
+    "source_table",
+    "source_row",
+    "code_edition",
+    "source_temperature_column",
+    "temperature_rule_used",
+    "interpolation_used",
+    "allowable_stress",
+    "stress_unit",
+    "note_ids",
+    "library_version",
+    "checksum",
+    "verification_status",
+    "engineering_review_status"
+  ]
+}
