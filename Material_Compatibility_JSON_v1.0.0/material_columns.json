@@ -1,0 +1,138 @@
+{
+  "records": [
+    {
+      "column_index": 1,
+      "material_id": "cast_iron",
+      "display_name": "Cast Iron",
+      "material_group": "metal",
+      "temperature_f": null
+    },
+    {
+      "column_index": 2,
+      "material_id": "cast_steel",
+      "display_name": "Cast Steel",
+      "material_group": "metal",
+      "temperature_f": null
+    },
+    {
+      "column_index": 3,
+      "material_id": "stainless_steel_304",
+      "display_name": "304 Stainless Steel",
+      "material_group": "metal",
+      "temperature_f": null
+    },
+    {
+      "column_index": 4,
+      "material_id": "stainless_steel_316",
+      "display_name": "316 Stainless Steel",
+      "material_group": "metal",
+      "temperature_f": null
+    },
+    {
+      "column_index": 5,
+      "material_id": "alloy_20",
+      "display_name": "Alloy 20",
+      "material_group": "metal",
+      "temperature_f": null
+    },
+    {
+      "column_index": 6,
+      "material_id": "alloy_b",
+      "display_name": "Alloy B",
+      "material_group": "metal",
+      "temperature_f": null
+    },
+    {
+      "column_index": 7,
+      "material_id": "alloy_c",
+      "display_name": "Alloy C",
+      "material_group": "metal",
+      "temperature_f": null
+    },
+    {
+      "column_index": 8,
+      "material_id": "alloy_d",
+      "display_name": "Alloy D",
+      "material_group": "metal",
+      "temperature_f": null
+    },
+    {
+      "column_index": 9,
+      "material_id": "alloy_440_fm",
+      "display_name": "440 FM",
+      "material_group": "metal",
+      "temperature_f": null
+    },
+    {
+      "column_index": 10,
+      "material_id": "polyvinyl_chloride",
+      "display_name": "Polyvinyl Chloride",
+      "material_group": "polymer",
+      "temperature_f": null
+    },
+    {
+      "column_index": 11,
+      "material_id": "halar_ectfe",
+      "display_name": "Halar (ECTFE)",
+      "material_group": "polymer",
+      "temperature_f": null,
+      "trademark": true
+    },
+    {
+      "column_index": 12,
+      "material_id": "methyl_methacrylate",
+      "display_name": "Methyl Methacrylate",
+      "material_group": "polymer",
+      "temperature_f": null
+    },
+    {
+      "column_index": 13,
+      "material_id": "linear_polyethylene_68f",
+      "display_name": "Linear Polyethylene at 68°F",
+      "material_group": "polymer",
+      "temperature_f": 68
+    },
+    {
+      "column_index": 14,
+      "material_id": "linear_polyethylene_140f",
+      "display_name": "Linear Polyethylene at 140°F",
+      "material_group": "polymer",
+      "temperature_f": 140
+    },
+    {
+      "column_index": 15,
+      "material_id": "polypropylene_68f",
+      "display_name": "Polypropylene at 68°F",
+      "material_group": "polymer",
+      "temperature_f": 68
+    },
+    {
+      "column_index": 16,
+      "material_id": "polypropylene_140f",
+      "display_name": "Polypropylene at 140°F",
+      "material_group": "polymer",
+      "temperature_f": 140
+    },
+    {
+      "column_index": 17,
+      "material_id": "fkm",
+      "display_name": "FKM",
+      "material_group": "elastomer",
+      "temperature_f": null
+    },
+    {
+      "column_index": 18,
+      "material_id": "epdm",
+      "display_name": "EPDM",
+      "material_group": "elastomer",
+      "temperature_f": null
+    },
+    {
+      "column_index": 19,
+      "material_id": "peek",
+      "display_name": "PEEK",
+      "material_group": "polymer",
+      "temperature_f": null
+    }
+  ]
+}

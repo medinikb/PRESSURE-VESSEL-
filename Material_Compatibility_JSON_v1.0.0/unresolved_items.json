@@ -1,0 +1,414 @@
+{
+  "undefined_source_code_N": {
+    "count": 8,
+    "reason": "The chart contains N in eight cells, but the legend does not define N. These cells are blocked from automatic acceptance.",
+    "records": [
+      {
+        "chemical_id": "CHEM_041_BARIUM_SULFATE",
+        "chemical": "Barium Sulfate",
+        "material_id": "methyl_methacrylate",
+        "material": "Methyl Methacrylate",
+        "source_page": 2,
+        "raw_symbol": "N"
+      },
+      {
+        "chemical_id": "CHEM_050_BORIC_ACID",
+        "chemical": "Boric Acid",
+        "material_id": "peek",
+        "material": "PEEK",
+        "source_page": 2,
+        "raw_symbol": "N"
+      },
+      {
+        "chemical_id": "CHEM_067_CALCIUM_NITRATE",
+        "chemical": "Calcium Nitrate",
+        "material_id": "methyl_methacrylate",
+        "material": "Methyl Methacrylate",
+        "source_page": 2,
+        "raw_symbol": "N"
+      },
+      {
+        "chemical_id": "CHEM_111_ETHYLENE_GLYCOL",
+        "chemical": "Ethylene Glycol",
+        "material_id": "alloy_d",
+        "material": "Alloy D",
+        "source_page": 3,
+        "raw_symbol": "N"
+      },
+      {
+        "chemical_id": "CHEM_172_NAPHTHALENE",
+        "chemical": "Naphthalene",
+        "material_id": "alloy_b",
+        "material": "Alloy B",
+        "source_page": 5,
+        "raw_symbol": "N"
+      },
+      {
+        "chemical_id": "CHEM_184_OLEUM_15",
+        "chemical": "Oleum (15)",
+        "material_id": "alloy_440_fm",
+        "material": "440 FM",
+        "source_page": 5,
+        "raw_symbol": "N"
+      },
+      {
+        "chemical_id": "CHEM_186_PALMITIC_ACID_UNDER_200F",
+        "chemical": "Palmitic Acid (Under 200°F)",
+        "material_id": "methyl_methacrylate",
+        "material": "Methyl Methacrylate",
+        "source_page": 5,
+        "raw_symbol": "N"
+      },
+      {
+        "chemical_id": "CHEM_256_SULFURIC_ACID_95_100_20",
+        "chemical": "Sulfuric Acid 95-100% (20)",
+        "material_id": "halar_ectfe",
+        "material": "Halar (ECTFE)",
+        "source_page": 7,
+        "raw_symbol": "N"
+      }
+    ]
+  },
+  "source_blank_cells": {
+    "count": 46,
+    "reason": "No symbol is printed in these cells. Blank cells are preserved separately from the chart's em-dash information-lacking code.",
+    "records": [
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "cast_iron",
+        "material": "Cast Iron",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "cast_steel",
+        "material": "Cast Steel",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "stainless_steel_304",
+        "material": "304 Stainless Steel",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "stainless_steel_316",
+        "material": "316 Stainless Steel",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "alloy_20",
+        "material": "Alloy 20",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "alloy_b",
+        "material": "Alloy B",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "alloy_c",
+        "material": "Alloy C",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "alloy_d",
+        "material": "Alloy D",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "alloy_440_fm",
+        "material": "440 FM",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "polyvinyl_chloride",
+        "material": "Polyvinyl Chloride",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "halar_ectfe",
+        "material": "Halar (ECTFE)",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "methyl_methacrylate",
+        "material": "Methyl Methacrylate",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "linear_polyethylene_68f",
+        "material": "Linear Polyethylene at 68°F",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "linear_polyethylene_140f",
+        "material": "Linear Polyethylene at 140°F",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "polypropylene_68f",
+        "material": "Polypropylene at 68°F",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "polypropylene_140f",
+        "material": "Polypropylene at 140°F",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "fkm",
+        "material": "FKM",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "epdm",
+        "material": "EPDM",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_077_CHELANT_CHELATE",
+        "chemical": "Chelant (Chelate)",
+        "material_id": "peek",
+        "material": "PEEK",
+        "source_page": 3
+      },
+      {
+        "chemical_id": "CHEM_135_HYDROCYANIC_ACID",
+        "chemical": "Hydrocyanic Acid",
+        "material_id": "peek",
+        "material": "PEEK",
+        "source_page": 4
+      },
+      {
+        "chemical_id": "CHEM_153_MALEIC_ACID",
+        "chemical": "Maleic Acid",
+        "material_id": "alloy_440_fm",
+        "material": "440 FM",
+        "source_page": 4
+      },
+      {
+        "chemical_id": "CHEM_161_METHYL_ALCOHOL",
+        "chemical": "Methyl Alcohol",
+        "material_id": "alloy_d",
+        "material": "Alloy D",
+        "source_page": 5
+      },
+      {
+        "chemical_id": "CHEM_161_METHYL_ALCOHOL",
+        "chemical": "Methyl Alcohol",
+        "material_id": "halar_ectfe",
+        "material": "Halar (ECTFE)",
+        "source_page": 5
+      },
+      {
+        "chemical_id": "CHEM_207_POTASSIUM_SULFATE",
+        "chemical": "Potassium Sulfate",
+        "material_id": "methyl_methacrylate",
+        "material": "Methyl Methacrylate",
+        "source_page": 6
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "cast_iron",
+        "material": "Cast Iron",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "cast_steel",
+        "material": "Cast Steel",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "stainless_steel_304",
+        "material": "304 Stainless Steel",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "stainless_steel_316",
+        "material": "316 Stainless Steel",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "alloy_20",
+        "material": "Alloy 20",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "alloy_b",
+        "material": "Alloy B",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "alloy_c",
+        "material": "Alloy C",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "alloy_d",
+        "material": "Alloy D",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "alloy_440_fm",
+        "material": "440 FM",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "polyvinyl_chloride",
+        "material": "Polyvinyl Chloride",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "halar_ectfe",
+        "material": "Halar (ECTFE)",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "methyl_methacrylate",
+        "material": "Methyl Methacrylate",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "linear_polyethylene_68f",
+        "material": "Linear Polyethylene at 68°F",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "linear_polyethylene_140f",
+        "material": "Linear Polyethylene at 140°F",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "polypropylene_68f",
+        "material": "Polypropylene at 68°F",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "polypropylene_140f",
+        "material": "Polypropylene at 140°F",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "fkm",
+        "material": "FKM",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "epdm",
+        "material": "EPDM",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_246_SODIUM_BORATE",
+        "chemical": "Sodium Borate",
+        "material_id": "peek",
+        "material": "PEEK",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_257_SULFUROUS_ACID",
+        "chemical": "Sulfurous Acid",
+        "material_id": "alloy_b",
+        "material": "Alloy B",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_258_TANNIC_ACID",
+        "chemical": "Tannic Acid",
+        "material_id": "methyl_methacrylate",
+        "material": "Methyl Methacrylate",
+        "source_page": 7
+      },
+      {
+        "chemical_id": "CHEM_271_XYLENE_OR_XYLOL",
+        "chemical": "Xylene or Xylol",
+        "material_id": "methyl_methacrylate",
+        "material": "Methyl Methacrylate",
+        "source_page": 7
+      }
+    ]
+  },
+  "packing_text": [
+    {
+      "packing_id": "PACK_STD_GARLOCK_5022_AFP",
+      "issue": "The printed minimum plunger-size fraction is not reliably decoded.",
+      "blocking_for_pressure_temperature_lookup": false,
+      "manual_review_required": true
+    },
+    {
+      "packing_id": "PACK_STD_GARLOCK_8922",
+      "issue": "The printed plunger-size fraction range is not reliably decoded.",
+      "blocking_for_pressure_temperature_lookup": false,
+      "manual_review_required": true
+    }
+  ]
+}

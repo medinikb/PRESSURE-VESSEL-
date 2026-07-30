@@ -1,0 +1,84 @@
+{
+  "package_id": "VesselM_Material_Compatibility_JSON_v1.0.0",
+  "package_version": "1.0.0",
+  "created_utc": "2026-07-24T11:38:25.398970+00:00",
+  "source_pdf": "Material selection chart(1).pdf",
+  "source_pdf_sha256": "ac2882bcf42f4601ad995c55ac932cb3b8223c47461edc792221c6c086b2ce7d",
+  "compatibility_records": 274,
+  "material_columns": 19,
+  "compatibility_cells": 5206,
+  "verification_status": "machine_extracted_with_visual_spot_checks",
+  "engineering_review_status": "required",
+  "files": [
+    {
+      "filename": "README.md",
+      "size_bytes": 1668,
+      "sha256": "778b1b7e4aa1f3cb82cf3b3446423542b8f94160fb647bd2edf95d1a2c3c16a0"
+    },
+    {
+      "filename": "chart_notes.json",
+      "size_bytes": 3534,
+      "sha256": "9000453312e41d0df6067cc72a0416065bd17e4a96b86026295e796422e32191"
+    },
+    {
+      "filename": "chemical_aliases.json",
+      "size_bytes": 1807,
+      "sha256": "b84e90f5c500330d29b458c7b62851d8f94710acbdc4dee1e55e4c3e5371b3c6"
+    },
+    {
+      "filename": "chemical_compatibility_matrix.json",
+      "size_bytes": 1332042,
+      "sha256": "8dc748bbb701d8f2f6043e2aa60b0fdf8a08e170459e8538eb5ab4be731f6757"
+    },
+    {
+      "filename": "chemical_index.json",
+      "size_bytes": 18359,
+      "sha256": "3f11aa5a8dd4da5df5c92ee7b41b7d38bfd9be6129e8e1000f556b162ec8c4b1"
+    },
+    {
+      "filename": "compatibility_lookup_rules.json",
+      "size_bytes": 2213,
+      "sha256": "3daac7a44e8f8826066fcb7b7a4b3695dc39e16199ff576517f5aef394fe23b6"
+    },
+    {
+      "filename": "inline_qualifiers.json",
+      "size_bytes": 508,
+      "sha256": "4b67a0f37e5c320ccd838c8da0531ede38286a637f3195a6898d201070e9b4ad"
+    },
+    {
+      "filename": "material_columns.json",
+      "size_bytes": 3419,
+      "sha256": "d4d8f21a02f3a975a4e95a5fe70b171825564e2edc70d32e13d5ba3446a801d4"
+    },
+    {
+      "filename": "packing_notes.json",
+      "size_bytes": 835,
+      "sha256": "30501703afc72d169b29d960905ab7172184ff0e2622eb5dfd79041e52358d78"
+    },
+    {
+      "filename": "packing_selection.json",
+      "size_bytes": 2908,
+      "sha256": "39a255668f4e8d37a3381869f3a3b511cabf79263ec8380bec49502f58be12c2"
+    },
+    {
+      "filename": "rating_codes.json",
+      "size_bytes": 1813,
+      "sha256": "08ca2cd29764195cd635d742b5b0ce0f3a414a1d559e7c5c5232474a4949f6a2"
+    },
+    {
+      "filename": "source_metadata.json",
+      "size_bytes": 1321,
+      "sha256": "a966af723bf06a11f16d72133faaca7655ebced4c41d7f98bdfe719dd33d138f"
+    },
+    {
+      "filename": "unresolved_items.json",
+      "size_bytes": 12353,
+      "sha256": "574ad6a10e0454b8cec597949ba257e001b31aa49161c016dcfc9552b5ebd5a6"
+    },
+    {
+      "filename": "validation_report.json",
+      "size_bytes": 1080,
+      "sha256": "519badfb8442135965e970351f611993b91dcbc41727b6f1e3ef6a2657ab032b"
+    }
+  ]
+}

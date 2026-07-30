@@ -1,0 +1,76 @@
+{
+  "records": [
+    {
+      "packing_id": "PACK_STD_GARLOCK_5022_AFP",
+      "category": "standard",
+      "style": "Garlock 5022 AFP or equal (CO6)",
+      "description": "PTFE, impregnated copper, wire-braided ring",
+      "source_size_text": "(fraction glyph not reliably decoded) through 2 in plungers",
+      "maximum_pressure_psi": 5000,
+      "maximum_temperature_f": 550,
+      "remarks": "Good for most liquids except bromine, chlorine and oxygen compounds.",
+      "data_quality": "size_text_requires_manual_verification"
+    },
+    {
+      "packing_id": "PACK_STD_GARLOCK_8922",
+      "category": "standard",
+      "style": "Garlock 8922 or equal (CO6)",
+      "description": "PTFE, impregnated, braided ring",
+      "source_size_text": "(printed plunger-size fractions not reliably decoded)",
+      "maximum_pressure_psi": 500,
+      "maximum_temperature_f": 550,
+      "remarks": "Good for most liquids except bromine, chlorine and oxygen compounds.",
+      "data_quality": "size_text_requires_manual_verification"
+    },
+    {
+      "packing_id": "PACK_OPT_G8048_G432",
+      "category": "optional",
+      "style": "G8048, G432 or equal",
+      "description": "Nitrile/fabric V-ring (Neo Duck)",
+      "maximum_pressure_psi": 2000,
+      "maximum_temperature_f": 200,
+      "remarks": "Aqueous solutions except aromatics or aqueous solutions of acids or bases.",
+      "data_quality": "transcribed"
+    },
+    {
+      "packing_id": "PACK_OPT_CRANE_CVH_8764",
+      "category": "optional",
+      "style": "Crane CVH or equal (8764)",
+      "description": "PTFE V-ring with PTFE adaptors",
+      "maximum_pressure_psi": 5000,
+      "maximum_temperature_f": 500,
+      "remarks": "All liquids except fluorine and its components.",
+      "data_quality": "transcribed_with_spelling_normalization"
+    },
+    {
+      "packing_id": "PACK_OPT_CRANE_829",
+      "category": "optional",
+      "style": "Crane 829 or equal",
+      "description": "Nitrile/fabric with brass adaptors; other adaptor materials may be available",
+      "maximum_pressure_psi": 7500,
+      "maximum_temperature_f": 250,
+      "remarks": "Mineral oils, petroleum products and water-emulsion solutions.",
+      "data_quality": "transcribed"
+    },
+    {
+      "packing_id": "PACK_SPECIAL_CRANE_C1055",
+      "category": "special",
+      "style": "Crane C1055 or equal",
+      "description": "PTFE yarn, braided ring",
+      "maximum_pressure_psi": 2000,
+      "maximum_temperature_f": 500,
+      "remarks": "Food products.",
+      "data_quality": "transcribed"
+    },
+    {
+      "packing_id": "PACK_SPECIAL_GRAFOIL_235A",
+      "category": "special",
+      "style": "Grafoil 235A or equal",
+      "description": "Graphite, comp-split ring",
+      "maximum_pressure_psi": 4000,
+      "maximum_temperature_f": 1500,
+      "remarks": "Strong corrosives and heat-transfer liquids.",
+      "data_quality": "transcribed"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "source_id": "MILTON_ROY_MATERIALS_BULLETIN_230_1993",
+  "title": "Material Selection Chart",
+  "publisher": "Milton Roy Company, Flow Control Division",
+  "bulletin": "230",
+  "effective_date": "1993-06-15",
+  "source_filename": "Material selection chart(1).pdf",
+  "source_pdf_pages": 8,
+  "source_sha256": "ac2882bcf42f4601ad995c55ac932cb3b8223c47461edc792221c6c086b2ce7d",
+  "chart_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "notes_and_packing_page": 8,
+  "source_scope": "General aid for selecting materials of construction for flow-control equipment handling aggressive fluids.",
+  "source_disclaimer": "The source states that the chart is a general aid and does not constitute a guarantee.",
+  "vesselm_use_scope": "Service-compatibility screening and warning generation only. Do not use this chart as an ASME pressure-vessel material approval, allowable-stress source, corrosion study or final material-selection basis.",
+  "extraction_method": "Coordinate-based extraction from the PDF text layer, with page-image inspection of table headings, special symbols, notes and packing tables.",
+  "extraction_timestamp_utc": "2026-07-24T11:38:25.378094+00:00",
+  "verification_status": "machine_extracted_with_visual_spot_checks",
+  "independent_engineering_verification_status": "pending"
+}

@@ -1,0 +1,38 @@
+{
+  "package_version": "1.0.0",
+  "json_generation_status": "passed",
+  "compatibility_record_count": 274,
+  "material_column_count": 19,
+  "compatibility_cell_count": 5206,
+  "source_symbol_counts": {
+    "A": 2666,
+    "A_with_star": 4,
+    "A_with_degree": 1,
+    "B": 352,
+    "C": 667,
+    "V": 19,
+    "dash_information_lacking": 1443,
+    "undefined_N": 8,
+    "source_blank": 46
+  },
+  "special_rows": [
+    "Chelant (Chelate): engineering instruction",
+    "Sodium Borate: explicit cross-reference to Borax"
+  ],
+  "checks": {
+    "all_records_have_19_material_cells": true,
+    "chemical_ids_unique": true,
+    "all_material_ids_unique": true,
+    "all_source_notes_resolved": true,
+    "source_blank_cells_preserved_as_null": true,
+    "dash_cells_not_converted_to_zero": true,
+    "undefined_N_not_silently_reclassified": true
+  },
+  "open_review_items": {
+    "undefined_N_cells": 8,
+    "source_blank_cells": 46,
+    "packing_size_text_items": 2,
+    "source_spelling_aliases": 9
+  },
+  "engineering_release_status": "screening_library_pending_independent_review"
+}

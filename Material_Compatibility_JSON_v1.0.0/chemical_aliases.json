@@ -1,0 +1,58 @@
+{
+  "records": [
+    {
+      "source_display_name": "Amyl Alchol",
+      "search_alias": "Amyl Alcohol",
+      "status": "suspected_source_spelling_error",
+      "automatic_replacement_allowed": false
+    },
+    {
+      "source_display_name": "Cresote",
+      "search_alias": "Creosote",
+      "status": "suspected_source_spelling_error",
+      "automatic_replacement_allowed": false
+    },
+    {
+      "source_display_name": "Pioric Acid",
+      "search_alias": "Picric Acid",
+      "status": "suspected_source_spelling_error",
+      "automatic_replacement_allowed": false
+    },
+    {
+      "source_display_name": "Potassium Flouride",
+      "search_alias": "Potassium Fluoride",
+      "status": "suspected_source_spelling_error",
+      "automatic_replacement_allowed": false
+    },
+    {
+      "source_display_name": "Sodium Floride",
+      "search_alias": "Sodium Fluoride",
+      "status": "suspected_source_spelling_error",
+      "automatic_replacement_allowed": false
+    },
+    {
+      "source_display_name": "Chloracetic Acid",
+      "search_alias": "Chloroacetic Acid",
+      "status": "normalized_search_alias_requires_review",
+      "automatic_replacement_allowed": false
+    },
+    {
+      "source_display_name": "Mono Chloracetic Acid",
+      "search_alias": "Monochloroacetic Acid",
+      "status": "normalized_search_alias_requires_review",
+      "automatic_replacement_allowed": false
+    },
+    {
+      "source_display_name": "Trichlorethylene",
+      "search_alias": "Trichloroethylene",
+      "status": "suspected_source_spelling_error",
+      "automatic_replacement_allowed": false
+    },
+    {
+      "source_display_name": "Sodium Borate",
+      "search_alias": "Borax (Sodium Borate)",
+      "status": "source_cross_reference",
+      "automatic_replacement_allowed": true
+    }
+  ]
+}

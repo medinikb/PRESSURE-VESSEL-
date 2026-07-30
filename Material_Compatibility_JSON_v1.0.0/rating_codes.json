@@ -1,0 +1,53 @@
+{
+  "records": [
+    {
+      "rating_code": "A",
+      "status": "successful_use_reported",
+      "source_meaning": "Can be and is being successfully used.",
+      "app_action": "preliminary_compatible_with_source_warning",
+      "engineering_review_required": true
+    },
+    {
+      "rating_code": "B",
+      "status": "proceed_with_caution",
+      "source_meaning": "Used under limited conditions where slight corrosion may be permissible, for temporary installation, or where better materials are considered too costly.",
+      "app_action": "caution_engineering_review_required",
+      "engineering_review_required": true
+    },
+    {
+      "rating_code": "C",
+      "status": "should_not_be_used",
+      "source_meaning": "Should not be used.",
+      "app_action": "reject_for_screening",
+      "engineering_review_required": true
+    },
+    {
+      "rating_code": "V",
+      "status": "varies",
+      "source_meaning": "Varies.",
+      "app_action": "conditions_not_resolved_engineering_review_required",
+      "engineering_review_required": true
+    },
+    {
+      "rating_code": null,
+      "status": "information_lacking",
+      "source_meaning": "Information lacking.",
+      "app_action": "compatibility_not_resolved",
+      "engineering_review_required": true
+    },
+    {
+      "rating_code": null,
+      "status": "source_blank",
+      "source_meaning": "No symbol is printed in the source cell.",
+      "app_action": "compatibility_not_resolved",
+      "engineering_review_required": true
+    },
+    {
+      "rating_code": "N",
+      "status": "undefined_source_code",
+      "source_meaning": "The source prints N in this cell, but N is not defined in the chart legend.",
+      "app_action": "compatibility_not_resolved_manual_source_review",
+      "engineering_review_required": true
+    }
+  ]
+}

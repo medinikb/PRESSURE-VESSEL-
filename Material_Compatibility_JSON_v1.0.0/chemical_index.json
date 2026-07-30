@@ -1,0 +1,824 @@
+{
+  "index": {
+    "acetaldehyde": [
+      "CHEM_001_ACETALDEHYDE"
+    ],
+    "acetate_solvents": [
+      "CHEM_002_ACETATE_SOLVENTS"
+    ],
+    "acetic_acid_crude_1": [
+      "CHEM_003_ACETIC_ACID_CRUDE_1"
+    ],
+    "acetic_acid_pure_1": [
+      "CHEM_004_ACETIC_ACID_PURE_1"
+    ],
+    "acetic_acid_10": [
+      "CHEM_005_ACETIC_ACID_10"
+    ],
+    "acetic_acid_80": [
+      "CHEM_006_ACETIC_ACID_80"
+    ],
+    "acetic_anhydride": [
+      "CHEM_007_ACETIC_ANHYDRIDE"
+    ],
+    "acetone": [
+      "CHEM_008_ACETONE"
+    ],
+    "acetylene": [
+      "CHEM_009_ACETYLENE"
+    ],
+    "acrylonitrile": [
+      "CHEM_010_ACRYLONITRILE"
+    ],
+    "allyl_chloride": [
+      "CHEM_011_ALLYL_CHLORIDE"
+    ],
+    "aluminum_chloride_2": [
+      "CHEM_012_ALUMINUM_CHLORIDE_2"
+    ],
+    "aluminum_hydroxide_3": [
+      "CHEM_013_ALUMINUM_HYDROXIDE_3"
+    ],
+    "aluminum_nitrate": [
+      "CHEM_014_ALUMINUM_NITRATE"
+    ],
+    "aluminum_sulfate": [
+      "CHEM_015_ALUMINUM_SULFATE"
+    ],
+    "alums_1_general_see_specific_chemical_23": [
+      "CHEM_016_ALUMS_1_GENERAL_SEE_SPECIFIC_CHEMICAL_23"
+    ],
+    "amines_4": [
+      "CHEM_017_AMINES_4"
+    ],
+    "amines_filming_5": [
+      "CHEM_018_AMINES_FILMING_5"
+    ],
+    "ammonia_anhydrous_liq_1": [
+      "CHEM_019_AMMONIA_ANHYDROUS_LIQ_1"
+    ],
+    "ammonia_solutions": [
+      "CHEM_020_AMMONIA_SOLUTIONS"
+    ],
+    "ammonium_carbonate": [
+      "CHEM_021_AMMONIUM_CARBONATE"
+    ],
+    "ammonium_chloride": [
+      "CHEM_022_AMMONIUM_CHLORIDE"
+    ],
+    "ammonium_hydroxide": [
+      "CHEM_023_AMMONIUM_HYDROXIDE"
+    ],
+    "ammonium_mono_phosphate": [
+      "CHEM_024_AMMONIUM_MONO_PHOSPHATE"
+    ],
+    "ammonium_di_phosphate": [
+      "CHEM_025_AMMONIUM_DI_PHOSPHATE"
+    ],
+    "ammonium_tri_phosphate": [
+      "CHEM_026_AMMONIUM_TRI_PHOSPHATE"
+    ],
+    "ammonium_nitrate": [
+      "CHEM_027_AMMONIUM_NITRATE"
+    ],
+    "ammonium_sulfate": [
+      "CHEM_028_AMMONIUM_SULFATE"
+    ],
+    "ammonium_sulfide": [
+      "CHEM_029_AMMONIUM_SULFIDE"
+    ],
+    "ammonium_thiocyanate": [
+      "CHEM_030_AMMONIUM_THIOCYANATE"
+    ],
+    "amyl_acetate": [
+      "CHEM_031_AMYL_ACETATE"
+    ],
+    "amyl_alchol": [
+      "CHEM_032_AMYL_ALCHOL"
+    ],
+    "amyl_chloride": [
+      "CHEM_033_AMYL_CHLORIDE"
+    ],
+    "aniline": [
+      "CHEM_034_ANILINE"
+    ],
+    "aniline_dyes": [
+      "CHEM_035_ANILINE_DYES"
+    ],
+    "arsenic_acid": [
+      "CHEM_036_ARSENIC_ACID"
+    ],
+    "barium_carbonate": [
+      "CHEM_037_BARIUM_CARBONATE"
+    ],
+    "barium_chloride": [
+      "CHEM_038_BARIUM_CHLORIDE"
+    ],
+    "barium_cyanide": [
+      "CHEM_039_BARIUM_CYANIDE"
+    ],
+    "barium_hydroxide": [
+      "CHEM_040_BARIUM_HYDROXIDE"
+    ],
+    "barium_sulfate": [
+      "CHEM_041_BARIUM_SULFATE"
+    ],
+    "barium_sulfide": [
+      "CHEM_042_BARIUM_SULFIDE"
+    ],
+    "beer": [
+      "CHEM_043_BEER"
+    ],
+    "beet_sugar_liquors": [
+      "CHEM_044_BEET_SUGAR_LIQUORS"
+    ],
+    "benzene_or_benzol": [
+      "CHEM_045_BENZENE_OR_BENZOL"
+    ],
+    "benzaldehyde": [
+      "CHEM_046_BENZALDEHYDE"
+    ],
+    "benzoic_acid": [
+      "CHEM_047_BENZOIC_ACID"
+    ],
+    "black_sulfate_liquor": [
+      "CHEM_048_BLACK_SULFATE_LIQUOR"
+    ],
+    "borax_sodium_borate": [
+      "CHEM_049_BORAX_SODIUM_BORATE"
+    ],
+    "boric_acid": [
+      "CHEM_050_BORIC_ACID"
+    ],
+    "bromic_acid": [
+      "CHEM_051_BROMIC_ACID"
+    ],
+    "bromine": [
+      "CHEM_052_BROMINE"
+    ],
+    "butane": [
+      "CHEM_053_BUTANE"
+    ],
+    "butylene_butene": [
+      "CHEM_054_BUTYLENE_BUTENE"
+    ],
+    "butadiene": [
+      "CHEM_055_BUTADIENE"
+    ],
+    "butyl_acetate": [
+      "CHEM_056_BUTYL_ACETATE"
+    ],
+    "butyl_alcohol": [
+      "CHEM_057_BUTYL_ALCOHOL"
+    ],
+    "butyl_mercaptan": [
+      "CHEM_058_BUTYL_MERCAPTAN"
+    ],
+    "butyric_acid": [
+      "CHEM_059_BUTYRIC_ACID"
+    ],
+    "calcium_acetate": [
+      "CHEM_060_CALCIUM_ACETATE"
+    ],
+    "calcium_bisulfite": [
+      "CHEM_061_CALCIUM_BISULFITE"
+    ],
+    "calcium_carbonate_1": [
+      "CHEM_062_CALCIUM_CARBONATE_1"
+    ],
+    "calcium_chlorate": [
+      "CHEM_063_CALCIUM_CHLORATE"
+    ],
+    "calcium_chloride_6": [
+      "CHEM_064_CALCIUM_CHLORIDE_6"
+    ],
+    "calcium_hydroxide_1_7_9": [
+      "CHEM_065_CALCIUM_HYDROXIDE_1_7_9"
+    ],
+    "calcium_hypochlorite_1_8": [
+      "CHEM_066_CALCIUM_HYPOCHLORITE_1_8"
+    ],
+    "calcium_nitrate": [
+      "CHEM_067_CALCIUM_NITRATE"
+    ],
+    "calcium_sulfate": [
+      "CHEM_068_CALCIUM_SULFATE"
+    ],
+    "cane_sugar_liquors": [
+      "CHEM_069_CANE_SUGAR_LIQUORS"
+    ],
+    "caramel": [
+      "CHEM_070_CARAMEL"
+    ],
+    "carbolic_acid_phenol": [
+      "CHEM_071_CARBOLIC_ACID_PHENOL"
+    ],
+    "carbon_bisulfide": [
+      "CHEM_072_CARBON_BISULFIDE"
+    ],
+    "carbon_dioxide_consult_application_engineering": [
+      "CHEM_073_CARBON_DIOXIDE_CONSULT_APPLICATION_ENGINEERING"
+    ],
+    "carbonic_acid_10": [
+      "CHEM_074_CARBONIC_ACID_10"
+    ],
+    "carbon_tetrachloride": [
+      "CHEM_075_CARBON_TETRACHLORIDE"
+    ],
+    "cellosolve": [
+      "CHEM_076_CELLOSOLVE"
+    ],
+    "chelant_chelate": [
+      "CHEM_077_CHELANT_CHELATE"
+    ],
+    "chloral_hydrate": [
+      "CHEM_078_CHLORAL_HYDRATE"
+    ],
+    "chloracetic_acid": [
+      "CHEM_079_CHLORACETIC_ACID"
+    ],
+    "chlorine_liq_sodium_hypochlorite": [
+      "CHEM_080_CHLORINE_LIQ_SODIUM_HYPOCHLORITE"
+    ],
+    "chlorobenzene_dry": [
+      "CHEM_081_CHLOROBENZENE_DRY"
+    ],
+    "chloroform": [
+      "CHEM_082_CHLOROFORM"
+    ],
+    "chlorosulfonic_acid": [
+      "CHEM_083_CHLOROSULFONIC_ACID"
+    ],
+    "chromic_acid_10": [
+      "CHEM_084_CHROMIC_ACID_10"
+    ],
+    "chromic_acid_50_cold": [
+      "CHEM_085_CHROMIC_ACID_50_COLD"
+    ],
+    "chromic_acid_50_to_140f": [
+      "CHEM_086_CHROMIC_ACID_50_TO_140F"
+    ],
+    "citric_acid": [
+      "CHEM_087_CITRIC_ACID"
+    ],
+    "cobalt_acetate": [
+      "CHEM_088_COBALT_ACETATE"
+    ],
+    "coffee_extracts_hot": [
+      "CHEM_089_COFFEE_EXTRACTS_HOT"
+    ],
+    "copper_acetate": [
+      "CHEM_090_COPPER_ACETATE"
+    ],
+    "copper_chloride_9": [
+      "CHEM_091_COPPER_CHLORIDE_9"
+    ],
+    "copper_cyanide": [
+      "CHEM_092_COPPER_CYANIDE"
+    ],
+    "copper_nitrate": [
+      "CHEM_093_COPPER_NITRATE"
+    ],
+    "copper_sulfate": [
+      "CHEM_094_COPPER_SULFATE"
+    ],
+    "cresote": [
+      "CHEM_095_CRESOTE"
+    ],
+    "cresylic_acid_50": [
+      "CHEM_096_CRESYLIC_ACID_50"
+    ],
+    "cyclohexane": [
+      "CHEM_097_CYCLOHEXANE"
+    ],
+    "detergent": [
+      "CHEM_098_DETERGENT"
+    ],
+    "dichloro_ethane": [
+      "CHEM_099_DICHLORO_ETHANE"
+    ],
+    "diethylamine": [
+      "CHEM_100_DIETHYLAMINE"
+    ],
+    "diethylene_glycol": [
+      "CHEM_101_DIETHYLENE_GLYCOL"
+    ],
+    "dowtherms": [
+      "CHEM_102_DOWTHERMS"
+    ],
+    "dyes": [
+      "CHEM_103_DYES"
+    ],
+    "edta": [
+      "CHEM_104_EDTA"
+    ],
+    "ethers_ethyl": [
+      "CHEM_105_ETHERS_ETHYL"
+    ],
+    "ethyl_acetate": [
+      "CHEM_106_ETHYL_ACETATE"
+    ],
+    "ethyl_alcohol": [
+      "CHEM_107_ETHYL_ALCOHOL"
+    ],
+    "ethyl_butyrate": [
+      "CHEM_108_ETHYL_BUTYRATE"
+    ],
+    "ethyl_chloride": [
+      "CHEM_109_ETHYL_CHLORIDE"
+    ],
+    "ethylene_chloride": [
+      "CHEM_110_ETHYLENE_CHLORIDE"
+    ],
+    "ethylene_glycol": [
+      "CHEM_111_ETHYLENE_GLYCOL"
+    ],
+    "ethyl_mercaptan": [
+      "CHEM_112_ETHYL_MERCAPTAN"
+    ],
+    "ethylene_oxide": [
+      "CHEM_113_ETHYLENE_OXIDE"
+    ],
+    "fatty_acids_1": [
+      "CHEM_114_FATTY_ACIDS_1"
+    ],
+    "ferric_chloride_1_11": [
+      "CHEM_115_FERRIC_CHLORIDE_1_11"
+    ],
+    "ferric_nitrate": [
+      "CHEM_116_FERRIC_NITRATE"
+    ],
+    "ferric_sulfate_1": [
+      "CHEM_117_FERRIC_SULFATE_1"
+    ],
+    "ferrous_chloride_1_11": [
+      "CHEM_118_FERROUS_CHLORIDE_1_11"
+    ],
+    "ferrous_sulfate_1": [
+      "CHEM_119_FERROUS_SULFATE_1"
+    ],
+    "filter_aid_1_general_see_specific_chemical_23": [
+      "CHEM_120_FILTER_AID_1_GENERAL_SEE_SPECIFIC_CHEMICAL_23"
+    ],
+    "fluosilicic_acid": [
+      "CHEM_121_FLUOSILICIC_ACID"
+    ],
+    "formaldehyde": [
+      "CHEM_122_FORMALDEHYDE"
+    ],
+    "formic_acid": [
+      "CHEM_123_FORMIC_ACID"
+    ],
+    "fruit_juices": [
+      "CHEM_124_FRUIT_JUICES"
+    ],
+    "freon": [
+      "CHEM_125_FREON"
+    ],
+    "furfural": [
+      "CHEM_126_FURFURAL"
+    ],
+    "gallic_acid_5": [
+      "CHEM_127_GALLIC_ACID_5"
+    ],
+    "gasoline": [
+      "CHEM_128_GASOLINE"
+    ],
+    "glucose": [
+      "CHEM_129_GLUCOSE"
+    ],
+    "glycerol_glycerin": [
+      "CHEM_130_GLYCEROL_GLYCERIN"
+    ],
+    "heptane_hexane": [
+      "CHEM_131_HEPTANE_HEXANE"
+    ],
+    "hydrazine_12": [
+      "CHEM_132_HYDRAZINE_12"
+    ],
+    "hydrobromic_acid_1": [
+      "CHEM_133_HYDROBROMIC_ACID_1"
+    ],
+    "hydrochloric_acid_1": [
+      "CHEM_134_HYDROCHLORIC_ACID_1"
+    ],
+    "hydrocyanic_acid": [
+      "CHEM_135_HYDROCYANIC_ACID"
+    ],
+    "hydrofluoric_acid_13_22": [
+      "CHEM_136_HYDROFLUORIC_ACID_13_22"
+    ],
+    "hydrogen_peroxide_consult_application_eng": [
+      "CHEM_137_HYDROGEN_PEROXIDE_CONSULT_APPLICATION_ENG"
+    ],
+    "hydrogen_sulfide": [
+      "CHEM_138_HYDROGEN_SULFIDE"
+    ],
+    "hydrofluosilicic_acid_22": [
+      "CHEM_139_HYDROFLUOSILICIC_ACID_22"
+    ],
+    "inks": [
+      "CHEM_140_INKS"
+    ],
+    "iodine_solutions": [
+      "CHEM_141_IODINE_SOLUTIONS"
+    ],
+    "kerosene": [
+      "CHEM_142_KEROSENE"
+    ],
+    "lactic_acid_to_60_to_100f": [
+      "CHEM_143_LACTIC_ACID_TO_60_TO_100F"
+    ],
+    "lactic_acid_over_60_to_100f": [
+      "CHEM_144_LACTIC_ACID_OVER_60_TO_100F"
+    ],
+    "lead_acetate": [
+      "CHEM_145_LEAD_ACETATE"
+    ],
+    "lime_slurries_7_23": [
+      "CHEM_146_LIME_SLURRIES_7_23"
+    ],
+    "linseed_oil": [
+      "CHEM_147_LINSEED_OIL"
+    ],
+    "magnesium_carbonate": [
+      "CHEM_148_MAGNESIUM_CARBONATE"
+    ],
+    "magnesium_chloride": [
+      "CHEM_149_MAGNESIUM_CHLORIDE"
+    ],
+    "magnesium_hydroxide": [
+      "CHEM_150_MAGNESIUM_HYDROXIDE"
+    ],
+    "magnesium_nitrate": [
+      "CHEM_151_MAGNESIUM_NITRATE"
+    ],
+    "magnesium_sulfate": [
+      "CHEM_152_MAGNESIUM_SULFATE"
+    ],
+    "maleic_acid": [
+      "CHEM_153_MALEIC_ACID"
+    ],
+    "malic_acid": [
+      "CHEM_154_MALIC_ACID"
+    ],
+    "melamine_resins": [
+      "CHEM_155_MELAMINE_RESINS"
+    ],
+    "mercuric_chloride_1": [
+      "CHEM_156_MERCURIC_CHLORIDE_1"
+    ],
+    "mercuric_cyanide": [
+      "CHEM_157_MERCURIC_CYANIDE"
+    ],
+    "mercury_14": [
+      "CHEM_158_MERCURY_14"
+    ],
+    "methyl_acetate": [
+      "CHEM_159_METHYL_ACETATE"
+    ],
+    "methyl_acetone": [
+      "CHEM_160_METHYL_ACETONE"
+    ],
+    "methyl_alcohol": [
+      "CHEM_161_METHYL_ALCOHOL"
+    ],
+    "methylamine": [
+      "CHEM_162_METHYLAMINE"
+    ],
+    "methyl_bromide": [
+      "CHEM_163_METHYL_BROMIDE"
+    ],
+    "methyl_cellosolve": [
+      "CHEM_164_METHYL_CELLOSOLVE"
+    ],
+    "methyl_chloride_liq": [
+      "CHEM_165_METHYL_CHLORIDE_LIQ"
+    ],
+    "methyl_ethyl_ketone_mek": [
+      "CHEM_166_METHYL_ETHYL_KETONE_MEK"
+    ],
+    "methylene_chloride": [
+      "CHEM_167_METHYLENE_CHLORIDE"
+    ],
+    "molasses": [
+      "CHEM_168_MOLASSES"
+    ],
+    "mono_chloracetic_acid": [
+      "CHEM_169_MONO_CHLORACETIC_ACID"
+    ],
+    "morpholine": [
+      "CHEM_170_MORPHOLINE"
+    ],
+    "naphtha": [
+      "CHEM_171_NAPHTHA"
+    ],
+    "naphthalene": [
+      "CHEM_172_NAPHTHALENE"
+    ],
+    "nickel_chloride": [
+      "CHEM_173_NICKEL_CHLORIDE"
+    ],
+    "nickel_nitrate": [
+      "CHEM_174_NICKEL_NITRATE"
+    ],
+    "nickel_sulfate": [
+      "CHEM_175_NICKEL_SULFATE"
+    ],
+    "nicotinic_acid": [
+      "CHEM_176_NICOTINIC_ACID"
+    ],
+    "nitric_acid_10": [
+      "CHEM_177_NITRIC_ACID_10"
+    ],
+    "nitric_acid_70_to_100f": [
+      "CHEM_178_NITRIC_ACID_70_TO_100F"
+    ],
+    "nitrobenzene": [
+      "CHEM_179_NITROBENZENE"
+    ],
+    "oils_animal": [
+      "CHEM_180_OILS_ANIMAL"
+    ],
+    "oil_cottonseed": [
+      "CHEM_181_OIL_COTTONSEED"
+    ],
+    "oils_fuel": [
+      "CHEM_182_OILS_FUEL"
+    ],
+    "oleic_acid": [
+      "CHEM_183_OLEIC_ACID"
+    ],
+    "oleum_15": [
+      "CHEM_184_OLEUM_15"
+    ],
+    "oxalic_acid": [
+      "CHEM_185_OXALIC_ACID"
+    ],
+    "palmitic_acid_under_200f": [
+      "CHEM_186_PALMITIC_ACID_UNDER_200F"
+    ],
+    "perchloroethylene_dry": [
+      "CHEM_187_PERCHLOROETHYLENE_DRY"
+    ],
+    "perchloric_acid_10": [
+      "CHEM_188_PERCHLORIC_ACID_10"
+    ],
+    "phenol_carbolic_acid": [
+      "CHEM_189_PHENOL_CARBOLIC_ACID"
+    ],
+    "phosphoric_acid_1": [
+      "CHEM_190_PHOSPHORIC_ACID_1"
+    ],
+    "phosphorus_trichloride": [
+      "CHEM_191_PHOSPHORUS_TRICHLORIDE"
+    ],
+    "pioric_acid": [
+      "CHEM_192_PIORIC_ACID"
+    ],
+    "potassium_bicarbonate": [
+      "CHEM_193_POTASSIUM_BICARBONATE"
+    ],
+    "potassium_bromate": [
+      "CHEM_194_POTASSIUM_BROMATE"
+    ],
+    "potassium_bromide": [
+      "CHEM_195_POTASSIUM_BROMIDE"
+    ],
+    "potassium_carbonate": [
+      "CHEM_196_POTASSIUM_CARBONATE"
+    ],
+    "potassium_chlorate": [
+      "CHEM_197_POTASSIUM_CHLORATE"
+    ],
+    "potassium_chloride": [
+      "CHEM_198_POTASSIUM_CHLORIDE"
+    ],
+    "potassium_chromate": [
+      "CHEM_199_POTASSIUM_CHROMATE"
+    ],
+    "potassium_cyanide": [
+      "CHEM_200_POTASSIUM_CYANIDE"
+    ],
+    "potassium_flouride": [
+      "CHEM_201_POTASSIUM_FLOURIDE"
+    ],
+    "potassium_hydroxide": [
+      "CHEM_202_POTASSIUM_HYDROXIDE"
+    ],
+    "potassium_nitrate": [
+      "CHEM_203_POTASSIUM_NITRATE"
+    ],
+    "potassium_permanganate": [
+      "CHEM_204_POTASSIUM_PERMANGANATE"
+    ],
+    "potassium_mono_phosphate": [
+      "CHEM_205_POTASSIUM_MONO_PHOSPHATE"
+    ],
+    "potassium_di_phosphate": [
+      "CHEM_206_POTASSIUM_DI_PHOSPHATE"
+    ],
+    "potassium_sulfate": [
+      "CHEM_207_POTASSIUM_SULFATE"
+    ],
+    "potassium_sulfide": [
+      "CHEM_208_POTASSIUM_SULFIDE"
+    ],
+    "potassium_sulfite": [
+      "CHEM_209_POTASSIUM_SULFITE"
+    ],
+    "potassium_tetra_borate": [
+      "CHEM_210_POTASSIUM_TETRA_BORATE"
+    ],
+    "propane_liquid": [
+      "CHEM_211_PROPANE_LIQUID"
+    ],
+    "propyl_alcohol": [
+      "CHEM_212_PROPYL_ALCOHOL"
+    ],
+    "propylene_glycol": [
+      "CHEM_213_PROPYLENE_GLYCOL"
+    ],
+    "resins_rosins": [
+      "CHEM_214_RESINS_ROSINS"
+    ],
+    "sea_water": [
+      "CHEM_215_SEA_WATER"
+    ],
+    "silver_nitrate": [
+      "CHEM_216_SILVER_NITRATE"
+    ],
+    "soap_solutions_stearates": [
+      "CHEM_217_SOAP_SOLUTIONS_STEARATES"
+    ],
+    "sodium_acetate": [
+      "CHEM_218_SODIUM_ACETATE"
+    ],
+    "sodium_aluminate_9": [
+      "CHEM_219_SODIUM_ALUMINATE_9"
+    ],
+    "sodium_bicarbonate": [
+      "CHEM_220_SODIUM_BICARBONATE"
+    ],
+    "sodium_bisulfate_to_100f": [
+      "CHEM_221_SODIUM_BISULFATE_TO_100F"
+    ],
+    "sodium_bisulfite_to_100f": [
+      "CHEM_222_SODIUM_BISULFITE_TO_100F"
+    ],
+    "sodium_borate": [
+      "CHEM_223_SODIUM_BORATE",
+      "CHEM_246_SODIUM_BORATE"
+    ],
+    "sodium_carbonate_soda_ash": [
+      "CHEM_224_SODIUM_CARBONATE_SODA_ASH"
+    ],
+    "sodium_chlorate": [
+      "CHEM_225_SODIUM_CHLORATE"
+    ],
+    "sodium_chloride_1": [
+      "CHEM_226_SODIUM_CHLORIDE_1"
+    ],
+    "sodium_chlorite_to_20": [
+      "CHEM_227_SODIUM_CHLORITE_TO_20"
+    ],
+    "sodium_chromate": [
+      "CHEM_228_SODIUM_CHROMATE"
+    ],
+    "sodium_cyanide": [
+      "CHEM_229_SODIUM_CYANIDE"
+    ],
+    "sodium_floride": [
+      "CHEM_230_SODIUM_FLORIDE"
+    ],
+    "sodium_hydroxide_20_to_75f": [
+      "CHEM_231_SODIUM_HYDROXIDE_20_TO_75F"
+    ],
+    "sodium_hydroxide_20_75_to_210f": [
+      "CHEM_232_SODIUM_HYDROXIDE_20_75_TO_210F"
+    ],
+    "sodium_hydroxide_50_to_75f": [
+      "CHEM_233_SODIUM_HYDROXIDE_50_TO_75F"
+    ],
+    "sodium_hydroxide_50_75_to_175f": [
+      "CHEM_234_SODIUM_HYDROXIDE_50_75_TO_175F"
+    ],
+    "sodium_hypochlorite": [
+      "CHEM_235_SODIUM_HYPOCHLORITE"
+    ],
+    "sodium_nitrate_16": [
+      "CHEM_236_SODIUM_NITRATE_16"
+    ],
+    "sodium_perborate": [
+      "CHEM_237_SODIUM_PERBORATE"
+    ],
+    "sodium_peroxide": [
+      "CHEM_238_SODIUM_PEROXIDE"
+    ],
+    "sodium_mono_phosphate_17": [
+      "CHEM_239_SODIUM_MONO_PHOSPHATE_17"
+    ],
+    "sodium_di_or_tri_phosphate_17": [
+      "CHEM_240_SODIUM_DI_OR_TRI_PHOSPHATE_17"
+    ],
+    "sodium_polyphosphate_17_18": [
+      "CHEM_241_SODIUM_POLYPHOSPHATE_17_18"
+    ],
+    "sodium_silicate_9": [
+      "CHEM_242_SODIUM_SILICATE_9"
+    ],
+    "sodium_sulfate": [
+      "CHEM_243_SODIUM_SULFATE"
+    ],
+    "sodium_sulfide": [
+      "CHEM_244_SODIUM_SULFIDE"
+    ],
+    "sodium_sulfite": [
+      "CHEM_245_SODIUM_SULFITE"
+    ],
+    "sodium_thiosulfate_hypo": [
+      "CHEM_247_SODIUM_THIOSULFATE_HYPO"
+    ],
+    "starch": [
+      "CHEM_248_STARCH"
+    ],
+    "stearic_acid": [
+      "CHEM_249_STEARIC_ACID"
+    ],
+    "sugar_solutions": [
+      "CHEM_250_SUGAR_SOLUTIONS"
+    ],
+    "sulfur_molten_1": [
+      "CHEM_251_SULFUR_MOLTEN_1"
+    ],
+    "sulfur_chloride": [
+      "CHEM_252_SULFUR_CHLORIDE"
+    ],
+    "sulfur_dioxide_liq": [
+      "CHEM_253_SULFUR_DIOXIDE_LIQ"
+    ],
+    "sulfuric_acid_0_40_1_20": [
+      "CHEM_254_SULFURIC_ACID_0_40_1_20"
+    ],
+    "sulfuric_acid_40_95_1_20": [
+      "CHEM_255_SULFURIC_ACID_40_95_1_20"
+    ],
+    "sulfuric_acid_95_100_20": [
+      "CHEM_256_SULFURIC_ACID_95_100_20"
+    ],
+    "sulfurous_acid": [
+      "CHEM_257_SULFUROUS_ACID"
+    ],
+    "tannic_acid": [
+      "CHEM_258_TANNIC_ACID"
+    ],
+    "tartaric_acid": [
+      "CHEM_259_TARTARIC_ACID"
+    ],
+    "titanium_dioxide_21": [
+      "CHEM_260_TITANIUM_DIOXIDE_21"
+    ],
+    "toluol_toluene": [
+      "CHEM_261_TOLUOL_TOLUENE"
+    ],
+    "trichlorethylene": [
+      "CHEM_262_TRICHLORETHYLENE"
+    ],
+    "turpentine": [
+      "CHEM_263_TURPENTINE"
+    ],
+    "urea_formaldehyde": [
+      "CHEM_264_UREA_FORMALDEHYDE"
+    ],
+    "varnish_solvents": [
+      "CHEM_265_VARNISH_SOLVENTS"
+    ],
+    "vinegar": [
+      "CHEM_266_VINEGAR"
+    ],
+    "vinyl_acetate": [
+      "CHEM_267_VINYL_ACETATE"
+    ],
+    "water_deionized": [
+      "CHEM_268_WATER_DEIONIZED"
+    ],
+    "water_salt": [
+      "CHEM_269_WATER_SALT"
+    ],
+    "whiskey_and_wines": [
+      "CHEM_270_WHISKEY_AND_WINES"
+    ],
+    "xylene_or_xylol": [
+      "CHEM_271_XYLENE_OR_XYLOL"
+    ],
+    "zinc_chloride": [
+      "CHEM_272_ZINC_CHLORIDE"
+    ],
+    "zinc_hydrosulfite": [
+      "CHEM_273_ZINC_HYDROSULFITE"
+    ],
+    "zinc_sulfate": [
+      "CHEM_274_ZINC_SULFATE"
+    ]
+  }
+}

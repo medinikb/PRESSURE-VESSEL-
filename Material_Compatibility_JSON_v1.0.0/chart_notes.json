@@ -1,0 +1,119 @@
+{
+  "records": [
+    {
+      "note_id": "NOTE_01",
+      "source_note_number": 1,
+      "text": "Use ceramic plunger in packed plunger pump."
+    },
+    {
+      "note_id": "NOTE_02",
+      "source_note_number": 2,
+      "text": "As slurry, use for mother liquor."
+    },
+    {
+      "note_id": "NOTE_03",
+      "source_note_number": 3,
+      "text": "At pH 8.5 or over."
+    },
+    {
+      "note_id": "NOTE_04",
+      "source_note_number": 4,
+      "text": "Includes primary, secondary and tertiary, aliphatic and aromatic amines. Tertiary amines over 120°F require 316 stainless-steel construction."
+    },
+    {
+      "note_id": "NOTE_05",
+      "source_note_number": 5,
+      "text": "Cast iron is satisfactory for neutralized filming amines up to 120°F."
+    },
+    {
+      "note_id": "NOTE_06",
+      "source_note_number": 6,
+      "text": "For approximate neutral solutions. Where pH is adjusted, recommendations are affected accordingly."
+    },
+    {
+      "note_id": "NOTE_07",
+      "source_note_number": 7,
+      "text": "Lime slurry concentrations to 21% solids with slaked lime and to 50% solids with hydrated lime."
+    },
+    {
+      "note_id": "NOTE_08",
+      "source_note_number": 8,
+      "text": "Concentrations to 15% and temperature of 105°F."
+    },
+    {
+      "note_id": "NOTE_09",
+      "source_note_number": 9,
+      "text": "Use continuous flushing connections."
+    },
+    {
+      "note_id": "NOTE_10",
+      "source_note_number": 10,
+      "text": "Carbonated beverages and water solutions of carbon dioxide."
+    },
+    {
+      "note_id": "NOTE_11",
+      "source_note_number": 11,
+      "text": "Solutions in concentrations to 45% and temperature to 120°F."
+    },
+    {
+      "note_id": "NOTE_12",
+      "source_note_number": 12,
+      "text": "Satisfactory below 35% concentration. Above 35%, do not use alloys containing molybdenum; use 304 stainless steel."
+    },
+    {
+      "note_id": "NOTE_13",
+      "source_note_number": 13,
+      "text": "Cast iron satisfactory below 75°F and at concentrations above 80%."
+    },
+    {
+      "note_id": "NOTE_14",
+      "source_note_number": 14,
+      "text": "Inverted valves and special construction are required to obtain valve seating."
+    },
+    {
+      "note_id": "NOTE_15",
+      "source_note_number": 15,
+      "text": "Use Alloy C valve seats and ball valves."
+    },
+    {
+      "note_id": "NOTE_16",
+      "source_note_number": 16,
+      "text": "Use 440 stainless-steel ball valves."
+    },
+    {
+      "note_id": "NOTE_17",
+      "source_note_number": 17,
+      "text": "Use internal flushing."
+    },
+    {
+      "note_id": "NOTE_18",
+      "source_note_number": 18,
+      "text": "Includes water-treatment chemicals such as metaphosphates and phosphates higher than tripolyphosphate, including the examples listed in the source."
+    },
+    {
+      "note_id": "NOTE_19",
+      "source_note_number": 19,
+      "text": "Cold and unaerated."
+    },
+    {
+      "note_id": "NOTE_20",
+      "source_note_number": 20,
+      "text": "Moisture absorbed from air dilutes exposed acid and increases corrosion."
+    },
+    {
+      "note_id": "NOTE_21",
+      "source_note_number": 21,
+      "text": "Use 316 stainless steel if titanium dioxide must remain white."
+    },
+    {
+      "note_id": "NOTE_22",
+      "source_note_number": 22,
+      "text": "Use high-alumina ceramic ball valves."
+    },
+    {
+      "note_id": "NOTE_23",
+      "source_note_number": 23,
+      "text": "Use hard balls and seats if pressure is over 200 psig."
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "lookup_id": "VESSELM_SERVICE_MATERIAL_COMPATIBILITY_SCREEN",
+  "purpose": "Return the source rating for one exact chemical/service row and one material column.",
+  "fail_closed": true,
+  "lookup_sequence": [
+    "exact chemical or approved alias",
+    "exact concentration, temperature and condition wording",
+    "material_id",
+    "material temperature column where explicitly provided",
+    "source note and inline qualifier review"
+  ],
+  "chemical_row_rules": {
+    "do_not_merge_concentrations": true,
+    "do_not_merge_temperature_conditions": true,
+    "do_not_merge_liquid_dry_cold_or_hot_conditions": true,
+    "cross_reference_allowed_only_when_explicit_in_source": true,
+    "fuzzy_match_may_suggest_candidates": true,
+    "fuzzy_match_may_not_make_final_selection": true
+  },
+  "rating_actions": {
+    "A": "preliminary_compatible_with_source_warning",
+    "B": "caution_engineering_review_required",
+    "C": "reject_for_screening",
+    "V": "conditions_not_resolved_engineering_review_required",
+    "information_lacking": "compatibility_not_resolved",
+    "source_blank": "compatibility_not_resolved",
+    "undefined_source_code": "compatibility_not_resolved_manual_source_review"
+  },
+  "temperature_rules": {
+    "linear_polyethylene_and_polypropylene": "Use only the source column matching 68°F or 140°F. Do not interpolate or extrapolate.",
+    "other_materials": "No general material-column temperature is stated. Apply only chemical-row and note conditions explicitly printed in the source."
+  },
+  "prohibited_actions": [
+    "Do not automatically select a vessel plate, pipe, forging, fitting or bolting grade.",
+    "Do not treat an A rating as ASME Code approval.",
+    "Do not calculate corrosion allowance from this chart.",
+    "Do not replace a corrosion or materials-selection study.",
+    "Do not treat a dash, blank, V or undefined N as acceptable.",
+    "Do not hide source notes or qualifiers."
+  ],
+  "required_response_fields": [
+    "chemical_id",
+    "material_id",
+    "raw_symbol",
+    "rating_code",
+    "status",
+    "app_action",
+    "source_note_ids",
+    "qualifier_ids",
+    "source_page",
+    "source_effective_date",
+    "engineering_review_required"
+  ]
+}

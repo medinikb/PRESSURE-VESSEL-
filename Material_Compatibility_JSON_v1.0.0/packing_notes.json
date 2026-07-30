@@ -1,0 +1,24 @@
+{
+  "records": [
+    {
+      "note_id": "PACK_NOTE_01",
+      "source_note_number": 1,
+      "text": "Pressures over 2000 psig require hardened plungers and close-clearance rings. V-ring packing requires metal adapters."
+    },
+    {
+      "note_id": "PACK_NOTE_02",
+      "source_note_number": 2,
+      "text": "When flushing is required, use V-ring packing."
+    },
+    {
+      "note_id": "PACK_NOTE_03",
+      "source_note_number": 3,
+      "text": "Use Neo Duck packing for lime and diatomaceous-earth slurries with ceramic plungers and flush connections."
+    },
+    {
+      "note_id": "PACK_NOTE_04",
+      "source_note_number": 4,
+      "text": "The source states that certain Milroyal D plunger sizes are available only with 25% carbon-filled PTFE packing; the printed fraction glyphs require manual verification."
+    }
+  ]
+}

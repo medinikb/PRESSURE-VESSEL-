@@ -1,0 +1,22 @@
+{
+  "records": [
+    {
+      "qualifier_id": "Q_P4_STAR_UP_TO_28_PERCENT",
+      "source_page": 4,
+      "source_symbol": "*",
+      "meaning": "Up to 28% concentration."
+    },
+    {
+      "qualifier_id": "Q_P4_DEGREE_UP_TO_38_PERCENT",
+      "source_page": 4,
+      "source_symbol": "°",
+      "meaning": "Up to 38% concentration."
+    },
+    {
+      "qualifier_id": "Q_P5_STAR_UP_TO_80_PERCENT",
+      "source_page": 5,
+      "source_symbol": "*",
+      "meaning": "Up to 80% concentration."
+    }
+  ]
+}
