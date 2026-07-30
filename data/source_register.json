@@ -1,0 +1,121 @@
+{
+  "package_version": "0.2.0",
+  "created_date": "2026-07-24",
+  "sources": [
+    {
+      "source_id": "PVMD_3E",
+      "title": "Pressure Vessel Design Manual, Third Edition",
+      "author": "Dennis R. Moss",
+      "publisher": "Gulf Professional Publishing / Elsevier",
+      "publication_year": 2004,
+      "status": "historical_reference",
+      "use_condition": "Verify all code formulas, factors, limits and terminology against the controlled current code edition before engineering use."
+    },
+    {
+      "source_id": "PVMD_3E_PROC_2_1",
+      "parent_source_id": "PVMD_3E",
+      "title": "Procedure 2-1, General Vessel Formulas",
+      "book_pages": [
+        15,
+        16
+      ],
+      "pdf_pages": [
+        28,
+        29
+      ],
+      "scope": [
+        "internal pressure shell formulas",
+        "formed head formulas",
+        "cone formulas",
+        "K and M factors",
+        "applicability limits"
+      ]
+    },
+    {
+      "source_id": "PVMD_3E_PROC_2_3",
+      "parent_source_id": "PVMD_3E",
+      "title": "Procedure 2-3, Calculate MAP, MAWP, and Test Pressures",
+      "book_pages": [
+        28,
+        29
+      ],
+      "pdf_pages": [
+        41,
+        42
+      ],
+      "scope": [
+        "MAP",
+        "MAWP",
+        "shop hydro pressure",
+        "field hydro pressure",
+        "cladding credit"
+      ]
+    },
+    {
+      "source_id": "PVMD_3E_APPENDIX_C",
+      "parent_source_id": "PVMD_3E",
+      "title": "Appendix C, Joint Efficiencies",
+      "book_pages": [
+        445,
+        446
+      ],
+      "pdf_pages": [
+        458,
+        459
+      ],
+      "scope": [
+        "weld joint types",
+        "historical joint efficiency values",
+        "radiography application cases"
+      ]
+    },
+    {
+      "source_id": "PVMD_3E_APPENDIX_D",
+      "parent_source_id": "PVMD_3E",
+      "title": "Appendix D, Properties of Heads",
+      "book_pages": [
+        447
+      ],
+      "pdf_pages": [
+        460
+      ],
+      "scope": [
+        "head dimensions",
+        "head depth",
+        "surface area",
+        "volume",
+        "center of gravity"
+      ]
+    },
+    {
+      "source_id": "PVMD_3E_APPENDIX_H",
+      "parent_source_id": "PVMD_3E",
+      "title": "Appendix H, Material Selection Guide",
+      "book_pages": [
+        464
+      ],
+      "scope": [
+        "temperature band material screening",
+        "component material specification screening"
+      ]
+    },
+    {
+      "source_id": "VESSELM_PHASE1_V0_1_0",
+      "title": "VesselM Phase 1 material-selection JSON package",
+      "status": "dependency",
+      "required_files": [
+        "material_selection_ranges.json",
+        "material_specifications.json",
+        "selection_rules.json",
+        "warning_catalog.json",
+        "test_cases.json",
+        "manifest.json"
+      ]
+    }
+  ],
+  "publication_boundary": {
+    "public_github": "Do not publish scans, copyrighted tables as images, proprietary project documents, licensed stress tables, or confidential design data.",
+    "formula_status": "Formula expressions are transcribed or algebraically structured for a prototype and remain subject to current-code verification.",
+    "allowable_stress_status": "No allowable-stress values are included in this package. A controlled, licensed or user-entered source is required."
+  }
+}

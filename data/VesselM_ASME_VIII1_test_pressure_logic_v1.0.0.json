@@ -1,0 +1,459 @@
+{
+  "metadata": {
+    "library_id": "VESSELM_ASME_VIII1_TEST_PRESSURE_LOGIC",
+    "library_version": "1.0.0",
+    "product": "VesselM",
+    "purpose": "Automated preliminary calculation and governance logic for pressure-vessel hydrostatic and pneumatic test pressure.",
+    "intended_use": [
+      "FEED",
+      "preliminary_engineering",
+      "estimate_basis",
+      "engineering_screening"
+    ],
+    "construction_use_allowed": false,
+    "final_design_use_allowed": false,
+    "engineering_review_required": true,
+    "generated_utc": "2026-07-30T11:46:25.827678+00:00",
+    "canonical_units": {
+      "pressure": "MPa_g",
+      "allowable_stress": "MPa",
+      "yield_strength": "MPa",
+      "temperature": "degC",
+      "elevation": "m",
+      "density": "kg_per_m3",
+      "acceleration": "m_per_s2"
+    },
+    "gravity_m_per_s2": 9.80665
+  },
+  "code_basis": {
+    "primary_code": {
+      "document": "ASME BPVC Section VIII Division 1",
+      "edition": "2023",
+      "references": [
+        "UG-21",
+        "UG-98",
+        "UG-99",
+        "UG-100",
+        "UG-102",
+        "UW-50",
+        "Mandatory Appendix 3, 3-2",
+        "Footnotes 35 and 36"
+      ]
+    },
+    "allowable_stress_source": {
+      "required_document": "ASME BPVC Section II Part D, Subpart 1",
+      "required_edition_rule": "Use the project-controlled edition compatible with the Section VIII Division 1 design basis.",
+      "uploaded_reference_edition": "2021",
+      "design_code_edition": "2023",
+      "current_status": "edition_mismatch",
+      "automatic_production_lookup_allowed": false,
+      "preliminary_manual_values_allowed": true,
+      "manual_value_requirement": "Each allowable stress value shall carry material record ID, specification, grade, class or condition, product form, thickness range, temperature, table, note IDs, code edition and verification status."
+    },
+    "source_control_rule": "Do not silently combine unmatched code editions for production calculations."
+  },
+  "scope": {
+    "automated_methods": [
+      "UG_99_b_standard_hydrostatic",
+      "UG_99_c_calculated_hydrostatic",
+      "UG_100_b_pneumatic",
+      "UG_99_f_vacuum_only_internal_pressure_test"
+    ],
+    "supported_configuration": "single_pressure_chamber_vessel",
+    "manual_review_routes": [
+      "combination_units_or_multiple_pressure_chambers",
+      "common_elements_subject_to_differential_pressure",
+      "combined_hydrostatic_and_pneumatic_test",
+      "cast_iron_special_rules",
+      "ductile_iron_special_rules",
+      "enameled_or_glass_lined_vessels",
+      "special_material_part_overrides",
+      "proof_test_under_UG_101",
+      "vacuum_leak_test_procedure",
+      "test_temperature_MDMT_exemption_or_reduction",
+      "custom_designed_flange_test_waiver",
+      "test_support_or_foundation_not_verified"
+    ]
+  },
+  "input_schema": {
+    "required_common_inputs": {
+      "test_method": {
+        "type": "enum",
+        "allowed": [
+          "UG_99_b_standard_hydrostatic",
+          "UG_99_c_calculated_hydrostatic",
+          "UG_100_b_pneumatic",
+          "UG_99_f_vacuum_only_internal_pressure_test"
+        ]
+      },
+      "code_edition": {
+        "type": "string",
+        "required_value_for_this_library": "2023"
+      },
+      "vessel_configuration": {
+        "type": "enum",
+        "allowed": [
+          "single_pressure_chamber",
+          "multiple_pressure_chambers"
+        ]
+      },
+      "mawp_mpa_g": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "minimum": 0
+      },
+      "mawp_calculated": {
+        "type": "boolean"
+      },
+      "design_pressure_mpa_g": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "minimum": 0
+      },
+      "allow_design_pressure_as_mawp_assumption": {
+        "type": "boolean",
+        "default": false,
+        "code_basis": "Footnote 35 permits MAWP to be assumed equal to design pressure when MAWP calculations are not made."
+      },
+      "design_temperature_degC": {
+        "type": "number"
+      },
+      "test_temperature_degC": {
+        "type": "number"
+      },
+      "mdmt_degC": {
+        "type": [
+          "number",
+          "null"
+        ]
+      },
+      "pressure_boundary_materials": {
+        "type": "array",
+        "minimum_items": 1,
+        "item_fields": {
+          "component_id": "string",
+          "material_record_id": "string",
+          "material_specification": "string",
+          "grade_class_condition": "string",
+          "product_form": "string",
+          "is_bolting": "boolean",
+          "allowable_stress_design_mpa": "number_gt_zero",
+          "allowable_stress_test_mpa": "number_gt_zero",
+          "specified_minimum_yield_at_test_mpa": "number_or_null",
+          "stress_table": "string",
+          "stress_note_ids": "array",
+          "stress_code_edition": "string",
+          "verification_status": "enum_verified_or_unverified"
+        }
+      },
+      "evaluation_points": {
+        "type": "array",
+        "minimum_items": 1,
+        "item_fields": {
+          "point_id": "string",
+          "elevation_m": "number",
+          "component_id": "string",
+          "calculated_test_pressure_basis_mpa_g": "number_or_null",
+          "description": "string"
+        }
+      },
+      "gauge_elevation_m": {
+        "type": "number"
+      },
+      "test_medium_density_kg_per_m3": {
+        "type": "number_gt_zero",
+        "typical_hydro_default": 998.2
+      },
+      "rounding_increment_mpa": {
+        "type": "number_gt_zero",
+        "default": 0.001
+      }
+    },
+    "method_specific_inputs": {
+      "UG_99_c_calculated_hydrostatic": [
+        "top_of_vessel_elevation_m",
+        "calculated_test_pressure_basis_mpa_g_for_every_pressure_element"
+      ],
+      "UG_100_b_pneumatic": [
+        "uw_50_examination_confirmed",
+        "pneumatic_test_risk_assessment_approved",
+        "calculated_test_pressure_basis_mpa_g_for_every_pressure_element"
+      ],
+      "UG_99_f_vacuum_only_internal_pressure_test": [
+        "specified_external_design_pressure_mpa",
+        "selected_test_medium_hydrostatic_or_pneumatic"
+      ]
+    }
+  },
+  "core_definitions": {
+    "stress_ratio_for_material": {
+      "symbol": "SR_i",
+      "formula": "SR_i = S_test_i / S_design_i"
+    },
+    "lowest_stress_ratio": {
+      "symbol": "LSR",
+      "formula": "LSR = min(SR_i for applicable pressure-boundary materials)"
+    },
+    "calculated_test_pressure_basis": {
+      "definition": "Highest permissible internal pressure for each vessel element, calculated from the applicable design equation using nominal thickness with corrosion allowance included and allowable stress at the test temperature.",
+      "reference": "Mandatory Appendix 3, 3-2"
+    },
+    "static_head": {
+      "sign_convention": "Elevation z is positive upward.",
+      "pressure_at_point_formula": "P_point = P_gauge + rho * g * (z_gauge - z_point) / 1000000",
+      "required_gauge_formula": "P_gauge_required_for_point = P_point_required + rho * g * (z_point - z_gauge) / 1000000"
+    },
+    "pressure_basis_selection": {
+      "priority": [
+        "Use calculated MAWP when available.",
+        "When MAWP calculations are not made, design pressure may be assumed equal to MAWP only when the project enables the Footnote 35 assumption.",
+        "Otherwise block the calculation."
+      ]
+    }
+  },
+  "lsr_algorithm": {
+    "step_1_nonbolting_ratios": "Calculate S_test / S_design for every nonbolting pressure-boundary material.",
+    "step_2_preliminary_lsr": "LSR_preliminary = minimum nonbolting stress ratio.",
+    "step_3_bolting_trigger": {
+      "hydrostatic": "include_bolt_i = (1.3 * LSR_preliminary * S_bolt_design_i) > (0.90 * Sy_bolt_test_i)",
+      "pneumatic": "include_bolt_i = (1.1 * LSR_preliminary * S_bolt_design_i) > (0.90 * Sy_bolt_test_i)"
+    },
+    "step_4_final_lsr": "If any bolting trigger is true, include that bolt's ratio S_bolt_test / S_bolt_design in the candidate ratios and recalculate LSR. Otherwise exclude bolting.",
+    "fail_closed_rules": [
+      "Block if a required pressure-boundary material is missing.",
+      "Block if S_design or S_test is zero, negative or unresolved.",
+      "Block if a triggered bolt lacks specified minimum yield strength at test temperature.",
+      "Block if stress units are inconsistent.",
+      "Block production status if stress code edition is not the controlled edition."
+    ]
+  },
+  "calculation_modules": {
+    "UG_99_b_standard_hydrostatic": {
+      "applicability": "Standard hydrostatic test for vessels designed for internal pressure.",
+      "test_factor": 1.3,
+      "formula_at_every_point": "P_required_point = 1.3 * P_basis * LSR",
+      "pressure_basis": "P_basis = calculated MAWP; if MAWP is not calculated and project approval is enabled, P_basis = design pressure under Footnote 35.",
+      "gauge_setpoint_raw": "P_gauge_raw = max over all points [1.3 * P_basis * LSR + rho * g * (z_point - z_gauge) / 1000000]",
+      "point_pressure_check": "P_actual_point = P_gauge_setpoint + rho * g * (z_gauge - z_point) / 1000000; require P_actual_point >= 1.3 * P_basis * LSR",
+      "rounded_setpoint": "P_gauge_setpoint = ceil(P_gauge_raw / rounding_increment) * rounding_increment",
+      "inspection_pressure_minimum": "P_inspection_min_at_same_reference = P_test / 1.3",
+      "calculated_pressure_advisory": {
+        "formula_at_point": "P_advisory_point = 1.3 * P_calculated_test_basis_point",
+        "rule": "ASME does not specify an upper hydrostatic test-pressure limit under UG-99(d). Flag engineering review when actual pressure exceeds the calculated-pressure value because visible permanent distortion can lead to rejection."
+      },
+      "mandatory_checks": [
+        "All fabrication and required pretest examinations completed.",
+        "All test loadings and test support conditions considered.",
+        "Hydrostatic head correction applied.",
+        "Test liquid below its boiling point.",
+        "High-point vents provided.",
+        "Test equipment and temporary closures verified.",
+        "MDMT and brittle-fracture test-temperature requirements verified."
+      ]
+    },
+    "UG_99_c_calculated_hydrostatic": {
+      "applicability": "Calculated-pressure hydrostatic test by agreement between user and Manufacturer.",
+      "test_factor": 1.3,
+      "element_candidate_top_pressure": "P_top_candidate_i = 1.3 * P_calculated_test_basis_i - rho * g * (z_top - z_element_i) / 1000000",
+      "test_pressure_at_top": "P_test_top = min(P_top_candidate_i for all pressure elements)",
+      "gauge_setpoint_raw": "P_gauge_raw = P_test_top + rho * g * (z_top - z_gauge) / 1000000",
+      "rounded_setpoint": "P_gauge_setpoint = ceil(P_gauge_raw / rounding_increment) * rounding_increment",
+      "verification_at_each_element": "P_actual_i = P_test_top + rho * g * (z_top - z_element_i) / 1000000; require P_actual_i <= 1.3 * P_calculated_test_basis_i",
+      "inspection_pressure_minimum": "P_inspection_min_at_same_reference = P_test / 1.3",
+      "mandatory_checks": [
+        "Agreement between user and Manufacturer recorded.",
+        "Calculated test-pressure basis available for every pressure element.",
+        "Nominal thickness includes corrosion allowance for calculated test basis.",
+        "Allowable stress at test temperature used.",
+        "Inspector calculation-request traceability retained."
+      ]
+    },
+    "UG_100_b_pneumatic": {
+      "applicability": "Pneumatic test in lieu of hydrostatic test when the vessel cannot safely be filled with water or cannot tolerate residual test liquid.",
+      "test_factor": 1.1,
+      "formula_at_every_point": "P_required_point = 1.1 * P_basis * LSR",
+      "pressure_basis": "P_basis = calculated MAWP; if MAWP is not calculated and project approval is enabled, P_basis = design pressure under Footnote 35.",
+      "gauge_setpoint_raw": "P_gauge_raw = max over all points [1.1 * P_basis * LSR + rho_gas * g * (z_point - z_gauge) / 1000000]",
+      "rounded_setpoint": "P_gauge_setpoint = ceil(P_gauge_raw / rounding_increment) * rounding_increment",
+      "absolute_upper_limit_at_point": "P_actual_point <= 1.1 * P_calculated_test_basis_point",
+      "feasibility_rule": "If the rounded gauge setpoint causes any point pressure to exceed 1.1 times that point's calculated test-pressure basis, block the pneumatic test calculation.",
+      "pressure_application_sequence": {
+        "initial_stage_max": "Increase gradually to not more than 0.5 * P_test.",
+        "subsequent_steps": "Increase in steps of approximately 0.1 * P_test until P_test is reached.",
+        "inspection_pressure": "Reduce to P_test / 1.1 and hold for inspection."
+      },
+      "mandatory_checks": [
+        "UW-50 examination requirements confirmed.",
+        "Pneumatic-test risk assessment and exclusion zone approved.",
+        "All loadings during test considered.",
+        "Calculated test-pressure basis available for every pressure element.",
+        "MDMT and brittle-fracture test-temperature requirements verified.",
+        "Stored-energy hazard controls confirmed."
+      ]
+    },
+    "UG_99_f_vacuum_only_internal_pressure_test": {
+      "applicability": "Single-wall vessel or individual chamber designed for vacuum only, with MAWP less than or equal to zero.",
+      "minimum_internal_test_pressure": "P_test >= 1.3 * specified_external_design_pressure",
+      "allowed_medium": [
+        "hydrostatic",
+        "pneumatic"
+      ],
+      "alternative_route": "Vacuum test at the lowest specified absolute internal design pressure plus a qualified leak test procedure.",
+      "automation_status": "Internal-pressure option automated; alternative vacuum leak-test route requires manual procedure review."
+    }
+  },
+  "rounding_and_acceptance_logic": {
+    "rounding_method": "round_up",
+    "formula": "P_rounded = ceil(P_raw / increment) * increment",
+    "hydrostatic_rule": "After rounding, re-evaluate pressure at every point and issue calculated-pressure advisory warnings.",
+    "pneumatic_rule": "After rounding, re-evaluate pressure at every point. Do not permit rounding to violate the 1.1 times calculated-test-pressure-basis upper limit.",
+    "acceptance_statuses": [
+      "PASS_PRELIMINARY",
+      "PASS_WITH_WARNINGS",
+      "ENGINEERING_REVIEW_REQUIRED",
+      "BLOCKED"
+    ]
+  },
+  "validation_rules": [
+    {
+      "rule_id": "TP-V001",
+      "condition": "code_edition != 2023",
+      "result": "BLOCKED",
+      "message": "This library is controlled for ASME Section VIII Division 1, 2023."
+    },
+    {
+      "rule_id": "TP-V002",
+      "condition": "vessel_configuration == multiple_pressure_chambers",
+      "result": "ENGINEERING_REVIEW_REQUIRED",
+      "message": "Combination-unit and common-element differential-pressure logic is outside automated scope."
+    },
+    {
+      "rule_id": "TP-V003",
+      "condition": "mawp_mpa_g is null AND NOT allow_design_pressure_as_mawp_assumption",
+      "result": "BLOCKED",
+      "message": "Provide calculated MAWP or explicitly approve the Footnote 35 design-pressure assumption."
+    },
+    {
+      "rule_id": "TP-V004",
+      "condition": "stress_code_edition != controlled_stress_code_edition",
+      "result": "ENGINEERING_REVIEW_REQUIRED",
+      "message": "Allowable-stress edition mismatch. Automatic production use is blocked."
+    },
+    {
+      "rule_id": "TP-V005",
+      "condition": "test_method == UG_100_b_pneumatic AND calculated_test_pressure_basis_missing_for_any_element",
+      "result": "BLOCKED",
+      "message": "Pneumatic upper-limit verification cannot be completed."
+    },
+    {
+      "rule_id": "TP-V006",
+      "condition": "test_method == UG_100_b_pneumatic AND NOT uw_50_examination_confirmed",
+      "result": "BLOCKED",
+      "message": "UW-50 examination confirmation is mandatory."
+    },
+    {
+      "rule_id": "TP-V007",
+      "condition": "test_method == UG_100_b_pneumatic AND NOT pneumatic_test_risk_assessment_approved",
+      "result": "BLOCKED",
+      "message": "Pneumatic test risk controls are not approved."
+    },
+    {
+      "rule_id": "TP-V008",
+      "condition": "test_support_or_foundation_capacity_not_verified",
+      "result": "ENGINEERING_REVIEW_REQUIRED",
+      "message": "Hydrotest operating weight and support condition shall be verified."
+    },
+    {
+      "rule_id": "TP-V009",
+      "condition": "special_construction_rule_applies",
+      "result": "ENGINEERING_REVIEW_REQUIRED",
+      "message": "Route to the applicable material or construction-specific Code rule."
+    }
+  ],
+  "calculation_sequence": [
+    "Validate code edition, vessel configuration, method and special-construction routing.",
+    "Select pressure basis using calculated MAWP or the explicitly approved Footnote 35 design-pressure assumption.",
+    "Resolve and verify allowable stresses at design and test temperatures.",
+    "Calculate material stress ratios and preliminary LSR excluding bolting.",
+    "Apply the method-specific bolting inclusion trigger and calculate final LSR.",
+    "Calculate raw test pressure using the selected UG-99 or UG-100 module.",
+    "Apply static-head correction using gauge and evaluation-point elevations.",
+    "Round upward only after the raw pressure has been determined.",
+    "Recalculate actual pressure at every evaluation point.",
+    "Apply method-specific lower-bound, upper-limit and advisory checks.",
+    "Generate inspection pressure, pressure-step instructions, warnings and audit trace.",
+    "Return preliminary status and require engineering approval before issue for fabrication or testing."
+  ],
+  "output_schema": {
+    "calculation_id": "string",
+    "test_method": "string",
+    "pressure_basis_type": "enum_MAWP_or_design_pressure_assumption",
+    "pressure_basis_mpa_g": "number",
+    "mawp_assumption_used": "boolean",
+    "material_stress_ratios": "array",
+    "bolting_inclusion_checks": "array",
+    "governing_lsr": "number",
+    "governing_material_record_id": "string",
+    "raw_test_pressure_reference_mpa_g": "number",
+    "rounded_test_pressure_reference_mpa_g": "number",
+    "gauge_elevation_m": "number",
+    "point_pressure_results": "array",
+    "inspection_pressure_mpa_g": "number",
+    "pneumatic_pressure_steps_mpa_g": "array_or_null",
+    "warnings": "array",
+    "blocking_errors": "array",
+    "code_references": "array",
+    "stress_dataset_edition": "string",
+    "verification_status": "string",
+    "engineering_review_status": "string",
+    "calculation_timestamp_utc": "string",
+    "library_version": "string"
+  },
+  "reference_pseudocode": {
+    "select_pressure_basis": [
+      "if mawp_calculated and mawp_mpa_g is not null: P_basis = mawp_mpa_g",
+      "else if allow_design_pressure_as_mawp_assumption and design_pressure_mpa_g is not null: P_basis = design_pressure_mpa_g; assumption_used = true",
+      "else: BLOCKED"
+    ],
+    "calculate_lsr": [
+      "nonbolt_ratios = [S_test / S_design for each nonbolt pressure-boundary material]",
+      "LSR_preliminary = min(nonbolt_ratios)",
+      "factor = 1.3 for hydrostatic else 1.1 for pneumatic",
+      "for each bolt: include when factor * LSR_preliminary * S_bolt_design > 0.90 * Sy_bolt_test",
+      "LSR = min(nonbolt_ratios plus included bolt ratios)"
+    ],
+    "standard_test": [
+      "P_required = factor * P_basis * LSR",
+      "P_gauge_raw = max(P_required + rho * g * (z_point - z_gauge) / 1000000 for each point)",
+      "P_gauge = ceil(P_gauge_raw / increment) * increment",
+      "P_actual_point = P_gauge + rho * g * (z_gauge - z_point) / 1000000"
+    ]
+  },
+  "worked_example": {
+    "inputs": {
+      "mawp_mpa_g": 1.0,
+      "allowable_stress_test_mpa": 138.0,
+      "allowable_stress_design_mpa": 120.0,
+      "static_head_ignored_for_example": true
+    },
+    "results": {
+      "lsr": 1.15,
+      "UG_99_b_hydrostatic_test_pressure_mpa_g": 1.495,
+      "UG_99_b_hydrostatic_test_pressure_bar_g": 14.95,
+      "UG_100_b_pneumatic_test_pressure_mpa_g": 1.265,
+      "UG_100_b_pneumatic_test_pressure_bar_g": 12.65
+    }
+  },
+  "governance_notes": [
+    "The test-pressure calculation is only one part of test readiness.",
+    "The app shall not approve pneumatic testing solely from a numerical pressure result.",
+    "The app shall retain all material stress records and the governing LSR for audit.",
+    "The app shall distinguish calculated MAWP from a Footnote 35 design-pressure assumption.",
+    "The app shall fail closed where the pneumatic calculated-pressure upper limit cannot be verified.",
+    "Final test pressure, test temperature, test position, test medium, supports, temporary closures, gaskets, bolting, inspection and safety controls require responsible engineer, Manufacturer and Inspector review as applicable."
+  ]
+}

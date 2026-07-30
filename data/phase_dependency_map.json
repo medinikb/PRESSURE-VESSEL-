@@ -1,0 +1,74 @@
+{
+  "product_id": "VesselM",
+  "package_version": "0.2.0",
+  "dependencies": [
+    {
+      "phase": 2,
+      "depends_on": [
+        "Phase 1 material selection ranges",
+        "Phase 1 warnings",
+        "Phase 1 specifications"
+      ]
+    },
+    {
+      "phase": 3,
+      "depends_on": [
+        "Phase 2 workflows and statuses"
+      ]
+    },
+    {
+      "phase": 4,
+      "depends_on": [
+        "Phase 1 data",
+        "Phase 2 logic",
+        "Phase 3 UI configuration"
+      ]
+    },
+    {
+      "phase": 5,
+      "depends_on": [
+        "Phase 1 source data",
+        "Phase 2 rules",
+        "Phase 3 UI",
+        "Phase 4 MVP scope",
+        "Phase 6 formula tests where enabled"
+      ]
+    },
+    {
+      "phase": 6,
+      "depends_on": [
+        "Phase 1 material identifiers",
+        "controlled allowable stress source",
+        "controlled code basis",
+        "Phase 2 governance logic"
+      ]
+    }
+  ],
+  "data_contracts": [
+    {
+      "producer": "Phase 1",
+      "consumer": "Phase 2",
+      "contract": "material_selection_result"
+    },
+    {
+      "producer": "Phase 2",
+      "consumer": "Phase 3",
+      "contract": "workflow_state_and_messages"
+    },
+    {
+      "producer": "Phase 3",
+      "consumer": "Phase 4",
+      "contract": "screen_and_field_ids"
+    },
+    {
+      "producer": "Phase 4",
+      "consumer": "Phase 5",
+      "contract": "release_requirements"
+    },
+    {
+      "producer": "Phase 6",
+      "consumer": "Phase 4",
+      "contract": "preliminary_design_result"
+    }
+  ]
+}

@@ -1,0 +1,2260 @@
+{
+  "document": {
+    "title": "ASTM/ASME Material Cross-Reference - Piping and Pressure-Vessel Plate",
+    "source_workbook": "ASTM_Piping_and_Vessel_Plate_Material_Guide.xlsx",
+    "schema_version": "1.0.0",
+    "generated_utc": "2026-07-24T16:08:18+00:00",
+    "conversion_purpose": "Reusable JSON data for web application, engineering screening, and source comparison.",
+    "engineering_use_status": "Screening and cross-reference only",
+    "material_record_count": 64,
+    "basis_record_count": 7,
+    "source_record_count": 4,
+    "mandatory_verification": [
+      "Governing ASME BPVC edition",
+      "Exact product form",
+      "Material specification and grade",
+      "Class and heat-treatment condition",
+      "Thickness or size range",
+      "Minimum design metal temperature and impact-test basis",
+      "Allowable stress at design temperature",
+      "Applicable corrosion and damage mechanisms",
+      "Project specifications and statutory requirements"
+    ],
+    "content_checksum_sha256": "97ade1a6a1d8d045e54104247ad36f2ce9d2dbcdf3927fed3542a5a1e2fbb1f0"
+  },
+  "schema": {
+    "record_id": "Stable sequential identifier",
+    "source_excel_row": "Original row number in the source workbook",
+    "basic_material_of_construction": "Generic material family",
+    "chemical_composition_or_grade_family": "Chemical or grade-family descriptor",
+    "plate": {
+      "general_requirements_or_tolerances": "Applicable general plate standard",
+      "material_specification_or_grade": "ASME SA/SB vessel plate designation or engineering-selection statement",
+      "mapping_status": "Direct, conditional, unresolved, or engineering-selection status",
+      "vessel_engineering_note": "Required vessel-specific verification"
+    },
+    "pipe": {
+      "dimensional_standard": "Pipe dimensional standard",
+      "material_standard": "Pipe material standard and grade"
+    },
+    "socket_weld_fittings": {
+      "dimensional_standard": "Socket-weld fitting dimensional standard",
+      "material_standard": "Socket-weld fitting material standard and grade"
+    },
+    "butt_weld_fittings": {
+      "dimensional_standard": "Butt-weld fitting dimensional standard",
+      "material_standard": "Butt-weld fitting material standard and grade"
+    },
+    "flanges": {
+      "dimensional_standard": "Flange dimensional standard",
+      "material_standard": "Flange material standard and grade"
+    },
+    "castings": {
+      "material_standard": "Casting material standard and grade"
+    },
+    "source_temperature_limit": "Temperature range stated in the source guide",
+    "source_notes": "Original note references retained from the workbook"
+  },
+  "material_specification_records": [
+    {
+      "record_id": "MS-001",
+      "source_excel_row": 5,
+      "basic_material_of_construction": "Carbon Steel",
+      "chemical_composition_or_grade_family": "C",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-516 Gr 55/60/65/70; SA-515 Gr 60/65/70; SA-285 Gr C",
+        "mapping_status": "Conditional family mapping",
+        "vessel_engineering_note": "No one-to-one pipe-to-plate conversion. Select the vessel plate grade, class, heat treatment, thickness range and impact-test basis under the governing ASME VIII edition."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M / API 5L",
+        "material_standard": "A53 Gr A/B; A106 Gr A/B/C; A671/A672; API 5L A25/A/B"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A105"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A234 WPB/WPC"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A105"
+      },
+      "castings": {
+        "material_standard": "A216 WCA/WCB/WCC"
+      },
+      "source_temperature_limit": "-20 to 800°F (-30 to 427°C)",
+      "source_notes": "Original notes 1,2,3,4,5,6,10,16,21"
+    },
+    {
+      "record_id": "MS-002",
+      "source_excel_row": 6,
+      "basic_material_of_construction": "Low Temperature Carbon Steel",
+      "chemical_composition_or_grade_family": "C, Si",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-516 Gr 55/60/65/70, normalized and impact tested as required; SA-537 may be considered where higher strength is required",
+        "mapping_status": "Conditional family mapping",
+        "vessel_engineering_note": "MDMT, thickness, normalization, impact-test temperature and weld procedure are controlling variables."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A333 Gr 1 / Gr 6"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A350 LF2 Class 1"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A420 WPL6"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A350 LF2 Class 1"
+      },
+      "castings": {
+        "material_standard": "A352 LCB"
+      },
+      "source_temperature_limit": "-50 to 800°F (-45 to 427°C)",
+      "source_notes": "Original notes 3,4,5,17"
+    },
+    {
+      "record_id": "MS-003",
+      "source_excel_row": 7,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for Low Temperature Service",
+      "chemical_composition_or_grade_family": "3½Ni",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-203 Gr D",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm plate grade, class, heat treatment and impact properties for the selected MDMT."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A333 Gr 3"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A350 LF3 Class 1/2"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A420 WPL3"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A350 LF3"
+      },
+      "castings": {
+        "material_standard": "A352 LC3"
+      },
+      "source_temperature_limit": "-150 to 800°F (-100 to 427°C)",
+      "source_notes": "Original notes 3,4,5,17"
+    },
+    {
+      "record_id": "MS-004",
+      "source_excel_row": 8,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for Low Temperature Service",
+      "chemical_composition_or_grade_family": "¾Cr-¾Ni",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct plate equivalent established in the supplied guides",
+        "mapping_status": "Engineering selection required",
+        "vessel_engineering_note": "Do not infer a vessel plate solely from the pipe chemistry. Select an ASME VIII-listed plate using required strength, toughness and service conditions."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A333 Gr 4"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A350 LF787 Class 2/3"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "No equivalent fitting specification"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A350 LF787"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification"
+      },
+      "source_temperature_limit": "See source Note 11; approximately -150 to 650°F (-100 to 340°C)",
+      "source_notes": "Original notes 3,4,5,17"
+    },
+    {
+      "record_id": "MS-005",
+      "source_excel_row": 9,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for Low Temperature Service",
+      "chemical_composition_or_grade_family": "2½Ni",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-203 Gr A",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm the required nickel grade, heat treatment and impact-test basis."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A333 Gr 7"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "No equivalent forging specification"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "No equivalent fitting specification"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "No equivalent forging specification"
+      },
+      "castings": {
+        "material_standard": "A352 LC2"
+      },
+      "source_temperature_limit": "-100 to 800°F (-73 to 427°C)",
+      "source_notes": "Original notes 3,4,5,17"
+    },
+    {
+      "record_id": "MS-006",
+      "source_excel_row": 10,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for Low Temperature Service",
+      "chemical_composition_or_grade_family": "9Ni",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-353; SA-553 Type I may be evaluated where permitted by the governing code",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Cryogenic material selection requires confirmation of heat treatment, impact toughness, welding consumables and code-listed allowable stress."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A333 Gr 8"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A522 Type 1"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A420 WPL8"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A522 Type 1"
+      },
+      "castings": {
+        "material_standard": "A352 LC9"
+      },
+      "source_temperature_limit": "-320 to 200°F (-195 to 95°C)",
+      "source_notes": "Original notes 3,4,5,11,17"
+    },
+    {
+      "record_id": "MS-007",
+      "source_excel_row": 11,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for Low Temperature Service",
+      "chemical_composition_or_grade_family": "2Ni-1Cu",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct plate equivalent established in the supplied guides",
+        "mapping_status": "Engineering selection required",
+        "vessel_engineering_note": "Select an ASME VIII-listed plate based on MDMT, strength and toughness. Do not assume chemistry alone establishes equivalence."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A333 Gr 9"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A350 LF9"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A420 WPL9"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A350 LF9"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification"
+      },
+      "source_temperature_limit": "-100 to 100°F (-73 to 40°C)",
+      "source_notes": "Original notes 3,4,5,17"
+    },
+    {
+      "record_id": "MS-008",
+      "source_excel_row": 12,
+      "basic_material_of_construction": "High Strength Carbon / Low Alloy Steel",
+      "chemical_composition_or_grade_family": "C, Mn, Cb, V, Ti; API 5L PSL 2",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct vessel-plate equivalent. Select an ASME VIII-listed pressure-vessel plate by required strength, toughness and fabrication route.",
+        "mapping_status": "No direct equivalent",
+        "vessel_engineering_note": "API 5L line-pipe grade shall not be treated as a pressure-vessel plate grade. A separate vessel material selection and design-code check is mandatory."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M / API 5L",
+        "material_standard": "API 5L X42 PSL 2"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A694 F42"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A860 WPHY42"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A694 F42"
+      },
+      "castings": {
+        "material_standard": "A216 WCC"
+      },
+      "source_temperature_limit": "-20 to 400°F (-30 to 204°C)",
+      "source_notes": "Original notes 5,19"
+    },
+    {
+      "record_id": "MS-009",
+      "source_excel_row": 13,
+      "basic_material_of_construction": "High Strength Carbon / Low Alloy Steel",
+      "chemical_composition_or_grade_family": "C, Mn, Cb, V, Ti; API 5L PSL 2",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct vessel-plate equivalent. Select an ASME VIII-listed pressure-vessel plate by required strength, toughness and fabrication route.",
+        "mapping_status": "No direct equivalent",
+        "vessel_engineering_note": "API 5L line-pipe grade shall not be treated as a pressure-vessel plate grade. A separate vessel material selection and design-code check is mandatory."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M / API 5L",
+        "material_standard": "API 5L X46 PSL 2"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A694 F46"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A860 WPHY46"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A694 F46"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification"
+      },
+      "source_temperature_limit": "-20 to 400°F (-30 to 204°C)",
+      "source_notes": null
+    },
+    {
+      "record_id": "MS-010",
+      "source_excel_row": 14,
+      "basic_material_of_construction": "High Strength Carbon / Low Alloy Steel",
+      "chemical_composition_or_grade_family": "C, Mn, Cb, V, Ti; API 5L PSL 2",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct vessel-plate equivalent. Select an ASME VIII-listed pressure-vessel plate by required strength, toughness and fabrication route.",
+        "mapping_status": "No direct equivalent",
+        "vessel_engineering_note": "API 5L line-pipe grade shall not be treated as a pressure-vessel plate grade. A separate vessel material selection and design-code check is mandatory."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M / API 5L",
+        "material_standard": "API 5L X52 PSL 2"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A694 F52"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A860 WPHY52"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A694 F52"
+      },
+      "castings": {
+        "material_standard": "A217 CA15"
+      },
+      "source_temperature_limit": "-20 to 400°F (-30 to 204°C)",
+      "source_notes": "Original notes 5,19"
+    },
+    {
+      "record_id": "MS-011",
+      "source_excel_row": 15,
+      "basic_material_of_construction": "High Strength Carbon / Low Alloy Steel",
+      "chemical_composition_or_grade_family": "C, Mn, Cb, V, Ti; API 5L PSL 2",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct vessel-plate equivalent. Select an ASME VIII-listed pressure-vessel plate by required strength, toughness and fabrication route.",
+        "mapping_status": "No direct equivalent",
+        "vessel_engineering_note": "API 5L line-pipe grade shall not be treated as a pressure-vessel plate grade. A separate vessel material selection and design-code check is mandatory."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M / API 5L",
+        "material_standard": "API 5L X56 PSL 2"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A694 F56"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A860 WPHY60"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A694 F60"
+      },
+      "castings": {
+        "material_standard": "A217 C5"
+      },
+      "source_temperature_limit": "-20 to 400°F (-30 to 204°C)",
+      "source_notes": "Original notes 5,19"
+    },
+    {
+      "record_id": "MS-012",
+      "source_excel_row": 16,
+      "basic_material_of_construction": "High Strength Carbon / Low Alloy Steel",
+      "chemical_composition_or_grade_family": "C, Mn, Cb, V, Ti; API 5L PSL 2",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct vessel-plate equivalent. Select an ASME VIII-listed pressure-vessel plate by required strength, toughness and fabrication route.",
+        "mapping_status": "No direct equivalent",
+        "vessel_engineering_note": "API 5L line-pipe grade shall not be treated as a pressure-vessel plate grade. A separate vessel material selection and design-code check is mandatory."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M / API 5L",
+        "material_standard": "API 5L X60 PSL 2"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A694 F60"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A860 WPHY60"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A694 F60"
+      },
+      "castings": {
+        "material_standard": "A217 C5"
+      },
+      "source_temperature_limit": "-20 to 400°F (-30 to 204°C)",
+      "source_notes": "Original notes 5,19"
+    },
+    {
+      "record_id": "MS-013",
+      "source_excel_row": 17,
+      "basic_material_of_construction": "High Strength Carbon / Low Alloy Steel",
+      "chemical_composition_or_grade_family": "C, Mn, Cb, V, Ti; API 5L PSL 2",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct vessel-plate equivalent. Select an ASME VIII-listed pressure-vessel plate by required strength, toughness and fabrication route.",
+        "mapping_status": "No direct equivalent",
+        "vessel_engineering_note": "API 5L line-pipe grade shall not be treated as a pressure-vessel plate grade. A separate vessel material selection and design-code check is mandatory."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M / API 5L",
+        "material_standard": "API 5L X65 PSL 2"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A694 F65"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A860 WPHY65"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A694 F65"
+      },
+      "castings": {
+        "material_standard": "A217 CA15"
+      },
+      "source_temperature_limit": "-20 to 400°F (-30 to 204°C)",
+      "source_notes": "Original notes 5,19"
+    },
+    {
+      "record_id": "MS-014",
+      "source_excel_row": 18,
+      "basic_material_of_construction": "High Strength Carbon / Low Alloy Steel",
+      "chemical_composition_or_grade_family": "C, Mn, Cb, V, Ti; API 5L PSL 2",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct vessel-plate equivalent. Select an ASME VIII-listed pressure-vessel plate by required strength, toughness and fabrication route.",
+        "mapping_status": "No direct equivalent",
+        "vessel_engineering_note": "API 5L line-pipe grade shall not be treated as a pressure-vessel plate grade. A separate vessel material selection and design-code check is mandatory."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M / API 5L",
+        "material_standard": "API 5L X70 PSL 2"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A694 F70"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A860 WPHY70"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A694 F70"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification"
+      },
+      "source_temperature_limit": "-20 to 400°F (-30 to 204°C)",
+      "source_notes": null
+    },
+    {
+      "record_id": "MS-015",
+      "source_excel_row": 19,
+      "basic_material_of_construction": "High Strength Carbon / Low Alloy Steel",
+      "chemical_composition_or_grade_family": "API 5L PSL 2",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct vessel-plate equivalent established",
+        "mapping_status": "No direct equivalent",
+        "vessel_engineering_note": "Use only after a project-specific vessel plate selection under ASME VIII. Mechanical-property similarity is not material equivalence."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M / API 5L",
+        "material_standard": "API 5L X80 PSL 2"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": null,
+        "material_standard": "No equivalent forging specification"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "MSS-SP-75",
+        "material_standard": "Material same as pipe"
+      },
+      "flanges": {
+        "dimensional_standard": null,
+        "material_standard": "No equivalent forging specification"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification"
+      },
+      "source_temperature_limit": "-20 to 400°F (-30 to 204°C)",
+      "source_notes": null
+    },
+    {
+      "record_id": "MS-016",
+      "source_excel_row": 20,
+      "basic_material_of_construction": "High Strength Carbon / Low Alloy Steel",
+      "chemical_composition_or_grade_family": "API 5L PSL 2",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct vessel-plate equivalent established",
+        "mapping_status": "No direct equivalent",
+        "vessel_engineering_note": "Use only after a project-specific vessel plate selection under ASME VIII. Mechanical-property similarity is not material equivalence."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M / API 5L",
+        "material_standard": "API 5L X90 PSL 2"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": null,
+        "material_standard": "No equivalent forging specification"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "MSS-SP-75",
+        "material_standard": "Material same as pipe"
+      },
+      "flanges": {
+        "dimensional_standard": null,
+        "material_standard": "No equivalent forging specification"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification"
+      },
+      "source_temperature_limit": "-20 to 400°F (-30 to 204°C)",
+      "source_notes": null
+    },
+    {
+      "record_id": "MS-017",
+      "source_excel_row": 21,
+      "basic_material_of_construction": "High Strength Carbon / Low Alloy Steel",
+      "chemical_composition_or_grade_family": "API 5L PSL 2",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct vessel-plate equivalent established",
+        "mapping_status": "No direct equivalent",
+        "vessel_engineering_note": "Use only after a project-specific vessel plate selection under ASME VIII. Mechanical-property similarity is not material equivalence."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M / API 5L",
+        "material_standard": "API 5L X100 PSL 2"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": null,
+        "material_standard": "No equivalent forging specification"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "MSS-SP-75",
+        "material_standard": "Material same as pipe"
+      },
+      "flanges": {
+        "dimensional_standard": null,
+        "material_standard": "No equivalent forging specification"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification"
+      },
+      "source_temperature_limit": "-20 to 400°F (-30 to 204°C)",
+      "source_notes": null
+    },
+    {
+      "record_id": "MS-018",
+      "source_excel_row": 22,
+      "basic_material_of_construction": "High Strength Carbon / Low Alloy Steel",
+      "chemical_composition_or_grade_family": "API 5L PSL 2",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct vessel-plate equivalent established",
+        "mapping_status": "No direct equivalent",
+        "vessel_engineering_note": "Use only after a project-specific vessel plate selection under ASME VIII. Mechanical-property similarity is not material equivalence."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M / API 5L",
+        "material_standard": "API 5L X120 PSL 2"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": null,
+        "material_standard": "No equivalent forging specification"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "MSS-SP-75",
+        "material_standard": "Material same as pipe"
+      },
+      "flanges": {
+        "dimensional_standard": null,
+        "material_standard": "No equivalent forging specification"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification"
+      },
+      "source_temperature_limit": "-20 to 400°F (-30 to 204°C)",
+      "source_notes": null
+    },
+    {
+      "record_id": "MS-019",
+      "source_excel_row": 23,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "C-½Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-204 Gr B",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P1; A691 CM65"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F1"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A234 WP1"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F1"
+      },
+      "castings": {
+        "material_standard": "A217 WC1"
+      },
+      "source_temperature_limit": "-20 to 900°F (-30 to 482°C)",
+      "source_notes": "Original notes 3,4,5,7"
+    },
+    {
+      "record_id": "MS-020",
+      "source_excel_row": 24,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "½Cr-½Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-387 Gr 2, class to be selected",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P2; A691 ½Cr"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F2"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "No equivalent fitting specification"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F2"
+      },
+      "castings": {
+        "material_standard": "A217 WC4"
+      },
+      "source_temperature_limit": "-20 to 900°F (-30 to 482°C)",
+      "source_notes": null
+    },
+    {
+      "record_id": "MS-021",
+      "source_excel_row": 25,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "½Cr-½Mo-Ni-Cu-V-Al",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct plate equivalent established in the supplied guides",
+        "mapping_status": "Engineering selection required",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P36"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F36"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "Special fitting specification"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F36"
+      },
+      "castings": {
+        "material_standard": "A217 WC4"
+      },
+      "source_temperature_limit": "-20 to 900°F (-30 to 482°C)",
+      "source_notes": null
+    },
+    {
+      "record_id": "MS-022",
+      "source_excel_row": 26,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "1Cr-½Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-387 Gr 12, class to be selected",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P12; A691 1Cr"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F12"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A234 WP12"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F12"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification"
+      },
+      "source_temperature_limit": "-20 to 950°F (-30 to 510°C)",
+      "source_notes": "Original notes 3,4,5,7,12"
+    },
+    {
+      "record_id": "MS-023",
+      "source_excel_row": 27,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "1¼Cr-½Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-387 Gr 11, class to be selected",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P11; A691 1¼Cr Class 2"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F11 Class 2"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A234 WP11 Class 2"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F11 Class 2"
+      },
+      "castings": {
+        "material_standard": "A217 WC6"
+      },
+      "source_temperature_limit": "-20 to 900°F (-30 to 482°C)",
+      "source_notes": "Original notes 3,4,5,7,12"
+    },
+    {
+      "record_id": "MS-024",
+      "source_excel_row": 28,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "1½Si-½Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct plate equivalent established in the supplied guides",
+        "mapping_status": "Engineering selection required",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P15"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "No equivalent forging specification"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "No equivalent fitting specification"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "No equivalent forging specification"
+      },
+      "castings": {
+        "material_standard": "A217 CA15"
+      },
+      "source_temperature_limit": "-20 to 950°F (-30 to 510°C)",
+      "source_notes": null
+    },
+    {
+      "record_id": "MS-025",
+      "source_excel_row": 29,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "2¼Cr-1Mo / modified 2¼Cr-1Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-387 Gr 22; SA-387 Gr 23 where listed and permitted by the selected code edition",
+        "mapping_status": "Conditional grade-family match",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P22 / P23; A691 2¼Cr"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F22 Class 1"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A234 WP22 Class 1"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F22 Class 1"
+      },
+      "castings": {
+        "material_standard": "A217 WC9"
+      },
+      "source_temperature_limit": "-20 to 950°F (-30 to 510°C)",
+      "source_notes": "Original notes 3,4,5,7,12"
+    },
+    {
+      "record_id": "MS-026",
+      "source_excel_row": 30,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "3Cr-1Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-387 Gr 21, class to be selected",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P21; A691 3Cr"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F21"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "No equivalent fitting specification"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F21"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification"
+      },
+      "source_temperature_limit": "-20 to 900°F (-30 to 482°C)",
+      "source_notes": "Original notes 3,4,7,12"
+    },
+    {
+      "record_id": "MS-027",
+      "source_excel_row": 31,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "5Cr-½Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-387 Gr 5, class to be selected",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P5; A691 5Cr"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F5"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A234 WP5"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F5"
+      },
+      "castings": {
+        "material_standard": "A217 C5"
+      },
+      "source_temperature_limit": "-20 to 900°F (-30 to 482°C)",
+      "source_notes": "Original notes 3,4,5,7,12"
+    },
+    {
+      "record_id": "MS-028",
+      "source_excel_row": 32,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "9Cr-1Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-387 Gr 9, class to be selected",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P9; A691 9Cr"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F9"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A234 WP9 Class 1"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F9"
+      },
+      "castings": {
+        "material_standard": "A217 C12"
+      },
+      "source_temperature_limit": "-20 to 950°F (-30 to 510°C)",
+      "source_notes": "Original notes 3,4,5,7,12"
+    },
+    {
+      "record_id": "MS-029",
+      "source_excel_row": 33,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "9Cr-1Mo-V",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-387 Gr 91, class and heat treatment to be selected",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P91; A691 91"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F91"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A234 WP91"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F91"
+      },
+      "castings": {
+        "material_standard": "A217 C12A"
+      },
+      "source_temperature_limit": "-20 to 1150°F (-30 to 610°C)",
+      "source_notes": "Original notes 3,4,5,7,12"
+    },
+    {
+      "record_id": "MS-030",
+      "source_excel_row": 34,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "9Cr-2W-½Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "SA-387 Gr 92 where listed and permitted by the selected code edition",
+        "mapping_status": "Conditional grade-family match",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P92"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F92"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "Verify applicable fitting specification"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F92"
+      },
+      "castings": {
+        "material_standard": "No casting specification shown"
+      },
+      "source_temperature_limit": "Not stated in source chart",
+      "source_notes": null
+    },
+    {
+      "record_id": "MS-031",
+      "source_excel_row": 35,
+      "basic_material_of_construction": "Low & Intermediate Alloy Steel for High Temperature Service",
+      "chemical_composition_or_grade_family": "11Cr-½Mo / 9Cr-1Mo-W",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-20/SA-20M",
+        "material_specification_or_grade": "No direct plate mapping confirmed from the supplied guides. Verify the selected ASME II/VIII edition.",
+        "mapping_status": "Engineering selection required",
+        "vessel_engineering_note": "Confirm ASME VIII material listing, allowable stress, class, heat treatment, PWHT, creep range and hydrogen-service requirements. API 941 review is required where applicable."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "A335 P122 / P911"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F122 / F911"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "No fitting spec shown for P122; A234 WP911 shown for P911"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F122 / F911"
+      },
+      "castings": {
+        "material_standard": "No casting specification shown"
+      },
+      "source_temperature_limit": "Not stated in source chart",
+      "source_notes": null
+    },
+    {
+      "record_id": "MS-032",
+      "source_excel_row": 36,
+      "basic_material_of_construction": "Austenitic Stainless Steel",
+      "chemical_composition_or_grade_family": "18Cr-8Ni",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 304",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm corrosion mechanism, product form, solution annealing, sensitization risk, H/L grade requirements, MDMT and ASME VIII allowable stress."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A312 TP 304; A358 304"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F304"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43",
+        "material_standard": "A403 WP304 / CR304"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F304"
+      },
+      "castings": {
+        "material_standard": "A351 CF8"
+      },
+      "source_temperature_limit": "See source Note 13",
+      "source_notes": "Original notes 3,4,5,8,9"
+    },
+    {
+      "record_id": "MS-033",
+      "source_excel_row": 37,
+      "basic_material_of_construction": "Austenitic Stainless Steel",
+      "chemical_composition_or_grade_family": "18Cr-8Ni, low C",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 304L",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm corrosion mechanism, product form, solution annealing, sensitization risk, H/L grade requirements, MDMT and ASME VIII allowable stress."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A312 TP 304L; A358 304L"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F304L"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43",
+        "material_standard": "A403 WP304L / CR304L"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F304L"
+      },
+      "castings": {
+        "material_standard": "A351 CF3"
+      },
+      "source_temperature_limit": "See source Note 13",
+      "source_notes": "Original notes 3,4,5,8,9"
+    },
+    {
+      "record_id": "MS-034",
+      "source_excel_row": 38,
+      "basic_material_of_construction": "Austenitic Stainless Steel",
+      "chemical_composition_or_grade_family": "18Cr-8Ni-3Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 316",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm corrosion mechanism, product form, solution annealing, sensitization risk, H/L grade requirements, MDMT and ASME VIII allowable stress."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A312 TP 316; A358 316"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F316"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43",
+        "material_standard": "A403 WP316 / CR316"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F316"
+      },
+      "castings": {
+        "material_standard": "A351 CF8M"
+      },
+      "source_temperature_limit": "See source Note 13",
+      "source_notes": "Original notes 3,4,5,8,9"
+    },
+    {
+      "record_id": "MS-035",
+      "source_excel_row": 39,
+      "basic_material_of_construction": "Austenitic Stainless Steel",
+      "chemical_composition_or_grade_family": "16Cr-11Ni-3Mo, low C",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 316L",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm corrosion mechanism, product form, solution annealing, sensitization risk, H/L grade requirements, MDMT and ASME VIII allowable stress."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A312 TP 316L; A358 316L"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F316L"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43",
+        "material_standard": "A403 WP316L / CR316L"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F316L"
+      },
+      "castings": {
+        "material_standard": "A351 CF3M"
+      },
+      "source_temperature_limit": "See source Note 13",
+      "source_notes": "Original notes 3,4,5,8,9"
+    },
+    {
+      "record_id": "MS-036",
+      "source_excel_row": 40,
+      "basic_material_of_construction": "Austenitic Stainless Steel",
+      "chemical_composition_or_grade_family": "16Cr-11Ni, Ti stabilized",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 321",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm corrosion mechanism, product form, solution annealing, sensitization risk, H/L grade requirements, MDMT and ASME VIII allowable stress."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A312 TP 321; A358 321"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F321"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43",
+        "material_standard": "A403 WP321"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F321"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification shown"
+      },
+      "source_temperature_limit": "See source Note 13",
+      "source_notes": "Original notes 3,4,5,8,9"
+    },
+    {
+      "record_id": "MS-037",
+      "source_excel_row": 41,
+      "basic_material_of_construction": "Austenitic Stainless Steel",
+      "chemical_composition_or_grade_family": "18Cr-8Ni-3Mo, Ti stabilized",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 316Ti",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm corrosion mechanism, product form, solution annealing, sensitization risk, H/L grade requirements, MDMT and ASME VIII allowable stress."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A312 TP 316Ti; A358 316Ti"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F316Ti"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43",
+        "material_standard": "A403 No equivalent fitting specification shown"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F316Ti"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification shown"
+      },
+      "source_temperature_limit": "See source Note 13",
+      "source_notes": "Original notes 3,4,5,8,9"
+    },
+    {
+      "record_id": "MS-038",
+      "source_excel_row": 42,
+      "basic_material_of_construction": "Austenitic Stainless Steel",
+      "chemical_composition_or_grade_family": "18Cr-11Ni, Nb stabilized",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 347",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm corrosion mechanism, product form, solution annealing, sensitization risk, H/L grade requirements, MDMT and ASME VIII allowable stress."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A312 TP 347; A358 347"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F347"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43",
+        "material_standard": "A403 WP347 / CR347"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F347"
+      },
+      "castings": {
+        "material_standard": "A351 CF8C"
+      },
+      "source_temperature_limit": "See source Note 13",
+      "source_notes": "Original notes 3,4,5,8,9"
+    },
+    {
+      "record_id": "MS-039",
+      "source_excel_row": 43,
+      "basic_material_of_construction": "Austenitic Stainless Steel",
+      "chemical_composition_or_grade_family": "25Cr-20Ni",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 310",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm corrosion mechanism, product form, solution annealing, sensitization risk, H/L grade requirements, MDMT and ASME VIII allowable stress."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A312 TP 310; A358 310"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F310"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43",
+        "material_standard": "A403 WP310 / CR310"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F310"
+      },
+      "castings": {
+        "material_standard": "A351 CK20"
+      },
+      "source_temperature_limit": "See source Note 13",
+      "source_notes": "Original notes 3,4,5,8,9"
+    },
+    {
+      "record_id": "MS-040",
+      "source_excel_row": 44,
+      "basic_material_of_construction": "Austenitic Stainless Steel",
+      "chemical_composition_or_grade_family": "19Cr-11Ni-3½Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 317",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm corrosion mechanism, product form, solution annealing, sensitization risk, H/L grade requirements, MDMT and ASME VIII allowable stress."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A312 TP 317; A358 317"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F317"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43",
+        "material_standard": "A403 WP317 / CR317"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F317"
+      },
+      "castings": {
+        "material_standard": "A351 CG8M"
+      },
+      "source_temperature_limit": "See source Note 13",
+      "source_notes": "Original notes 3,4,5,8,9"
+    },
+    {
+      "record_id": "MS-041",
+      "source_excel_row": 45,
+      "basic_material_of_construction": "Austenitic Stainless Steel",
+      "chemical_composition_or_grade_family": "21Cr-25Ni-6½Mo, low C",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 UNS N08367",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm corrosion mechanism, product form, solution annealing, sensitization risk, H/L grade requirements, MDMT and ASME VIII allowable stress."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A312 UNS N08367; A358 N08367"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F62"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43",
+        "material_standard": "A403 WP6XN / CRWPXN"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F62"
+      },
+      "castings": {
+        "material_standard": "A351 CN3MN"
+      },
+      "source_temperature_limit": "See source Note 13",
+      "source_notes": "Original notes 3,4,5,8,9"
+    },
+    {
+      "record_id": "MS-042",
+      "source_excel_row": 46,
+      "basic_material_of_construction": "Austenitic Stainless Steel",
+      "chemical_composition_or_grade_family": "21Cr-26Ni-4½Mo, low C",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 UNS N08904",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm corrosion mechanism, product form, solution annealing, sensitization risk, H/L grade requirements, MDMT and ASME VIII allowable stress."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A312 UNS N08904; A358 N08904"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F904L"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43",
+        "material_standard": "A403 WP904L / CR904L"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F904L"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification shown"
+      },
+      "source_temperature_limit": "See source Note 13",
+      "source_notes": "Original notes 3,4,5,8,9"
+    },
+    {
+      "record_id": "MS-043",
+      "source_excel_row": 47,
+      "basic_material_of_construction": "Ferritic/Austenitic (Duplex) Stainless Steel",
+      "chemical_composition_or_grade_family": "22Cr-5½Ni-3Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 UNS S31803",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm solution heat treatment, PREN, ferrite balance, intermetallic-phase control, welding procedure, chloride/H2S limits and maximum service temperature."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A790 UNS S31803"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F51"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A815 UNS S31803"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F51"
+      },
+      "castings": {
+        "material_standard": "A890 4A / UNS J92205"
+      },
+      "source_temperature_limit": "-60 to 600°F typical source range; verify specific grade",
+      "source_notes": "Original notes 3,4,5,8,20"
+    },
+    {
+      "record_id": "MS-044",
+      "source_excel_row": 48,
+      "basic_material_of_construction": "Ferritic/Austenitic (Duplex) Stainless Steel",
+      "chemical_composition_or_grade_family": "23Cr-4Ni-N",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 UNS S32304",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm solution heat treatment, PREN, ferrite balance, intermetallic-phase control, welding procedure, chloride/H2S limits and maximum service temperature."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A790 UNS S32304"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F68"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "See source: no equivalent or special fitting specification"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F68"
+      },
+      "castings": {
+        "material_standard": "A890 1B / UNS J93372"
+      },
+      "source_temperature_limit": "-60 to 600°F typical source range; verify specific grade",
+      "source_notes": "Original notes 3,4,5,8,20"
+    },
+    {
+      "record_id": "MS-045",
+      "source_excel_row": 49,
+      "basic_material_of_construction": "Ferritic/Austenitic (Duplex) Stainless Steel",
+      "chemical_composition_or_grade_family": "26Cr-4Ni-Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 UNS S32900",
+        "mapping_status": "Conditional grade-family match",
+        "vessel_engineering_note": "Confirm solution heat treatment, PREN, ferrite balance, intermetallic-phase control, welding procedure, chloride/H2S limits and maximum service temperature."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A790 UNS S32900"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "No equivalent forging specification"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "See source: no equivalent or special fitting specification"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "No equivalent forging specification"
+      },
+      "castings": {
+        "material_standard": "A890 3A / UNS J93371"
+      },
+      "source_temperature_limit": "-60 to 600°F typical source range; verify specific grade",
+      "source_notes": "Original notes 3,4,5,8,20"
+    },
+    {
+      "record_id": "MS-046",
+      "source_excel_row": 50,
+      "basic_material_of_construction": "Ferritic/Austenitic (Duplex) Stainless Steel",
+      "chemical_composition_or_grade_family": "26Cr-3½Ni-1Mo",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 UNS S32950",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm solution heat treatment, PREN, ferrite balance, intermetallic-phase control, welding procedure, chloride/H2S limits and maximum service temperature."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A790 UNS S32950"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F52"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A815 UNS S32950"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F52"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification"
+      },
+      "source_temperature_limit": "-60 to 600°F typical source range; verify specific grade",
+      "source_notes": "Original notes 3,4,5,8,20"
+    },
+    {
+      "record_id": "MS-047",
+      "source_excel_row": 51,
+      "basic_material_of_construction": "Ferritic/Austenitic (Duplex) Stainless Steel",
+      "chemical_composition_or_grade_family": "25Cr-7Ni-4Mo-N",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 UNS S32750",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm solution heat treatment, PREN, ferrite balance, intermetallic-phase control, welding procedure, chloride/H2S limits and maximum service temperature."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A790 UNS S32750"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F53"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A815 UNS S32750"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F53"
+      },
+      "castings": {
+        "material_standard": "A890 5A / UNS J93404"
+      },
+      "source_temperature_limit": "-60 to 600°F typical source range; verify specific grade",
+      "source_notes": "Original notes 3,4,5,8,20"
+    },
+    {
+      "record_id": "MS-048",
+      "source_excel_row": 52,
+      "basic_material_of_construction": "Ferritic/Austenitic (Duplex) Stainless Steel",
+      "chemical_composition_or_grade_family": "25Cr-7Ni-3Mo-N-W-Cu",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 UNS S39274",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm solution heat treatment, PREN, ferrite balance, intermetallic-phase control, welding procedure, chloride/H2S limits and maximum service temperature."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A790 UNS S39274"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F54"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A815 UNS S39274"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F54"
+      },
+      "castings": {
+        "material_standard": "A890 6A / UNS J93380"
+      },
+      "source_temperature_limit": "-60 to 600°F typical source range; verify specific grade",
+      "source_notes": "Original notes 3,4,5,8,20"
+    },
+    {
+      "record_id": "MS-049",
+      "source_excel_row": 53,
+      "basic_material_of_construction": "Ferritic/Austenitic (Duplex) Stainless Steel",
+      "chemical_composition_or_grade_family": "25Cr-7Ni-3Mo-W-Cu",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 UNS S32760",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm solution heat treatment, PREN, ferrite balance, intermetallic-phase control, welding procedure, chloride/H2S limits and maximum service temperature."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A790 UNS S32760"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F55"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A815 UNS S32760"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F55"
+      },
+      "castings": {
+        "material_standard": "A995 6A / CD3MWCuN"
+      },
+      "source_temperature_limit": "-60 to 600°F typical source range; verify specific grade",
+      "source_notes": "Original notes 3,4,5,8,20"
+    },
+    {
+      "record_id": "MS-050",
+      "source_excel_row": 54,
+      "basic_material_of_construction": "Ferritic/Austenitic (Duplex) Stainless Steel",
+      "chemical_composition_or_grade_family": "22Cr-5½Ni-3Mo-N",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 UNS S32205",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm solution heat treatment, PREN, ferrite balance, intermetallic-phase control, welding procedure, chloride/H2S limits and maximum service temperature."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A790 UNS S32205"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F60"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A815 UNS S32205"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F60"
+      },
+      "castings": {
+        "material_standard": "A890 4A / UNS J92205"
+      },
+      "source_temperature_limit": "-60 to 600°F typical source range; verify specific grade",
+      "source_notes": "Original notes 3,4,5,8,20"
+    },
+    {
+      "record_id": "MS-051",
+      "source_excel_row": 55,
+      "basic_material_of_construction": "Ferritic/Austenitic (Duplex) Stainless Steel",
+      "chemical_composition_or_grade_family": "26Cr-6Ni-3½Mo-N-Cu",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 UNS S32550",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm solution heat treatment, PREN, ferrite balance, intermetallic-phase control, welding procedure, chloride/H2S limits and maximum service temperature."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A790 UNS S32550"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F61"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "A815 UNS S32550"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F61"
+      },
+      "castings": {
+        "material_standard": "A890 1C / UNS J93373"
+      },
+      "source_temperature_limit": "-60 to 600°F typical source range; verify specific grade",
+      "source_notes": "Original notes 3,4,5,8,20"
+    },
+    {
+      "record_id": "MS-052",
+      "source_excel_row": 56,
+      "basic_material_of_construction": "Ferritic/Austenitic (Duplex) Stainless Steel",
+      "chemical_composition_or_grade_family": "29Cr-6½Ni-2Mo-N-Cu",
+      "plate": {
+        "general_requirements_or_tolerances": "SA-480/SA-480M",
+        "material_specification_or_grade": "SA-240 UNS S32906",
+        "mapping_status": "Direct grade-family match",
+        "vessel_engineering_note": "Confirm solution heat treatment, PREN, ferrite balance, intermetallic-phase control, welding procedure, chloride/H2S limits and maximum service temperature."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "A790 UNS S32906"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "A182 F65"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9",
+        "material_standard": "See source: no equivalent or special fitting specification"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47",
+        "material_standard": "A182 F65"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification"
+      },
+      "source_temperature_limit": "-60 to 600°F typical source range; verify specific grade",
+      "source_notes": "Original notes 3,4,5,8,20"
+    },
+    {
+      "record_id": "MS-053",
+      "source_excel_row": 57,
+      "basic_material_of_construction": "Titanium",
+      "chemical_composition_or_grade_family": "Unalloyed Ti",
+      "plate": {
+        "general_requirements_or_tolerances": "Material-specific ASTM/ASME general requirements",
+        "material_specification_or_grade": "SB-265, grade selected to match required chemistry and properties",
+        "mapping_status": "Direct product-family match",
+        "vessel_engineering_note": "Confirm the exact UNS, grade, condition, product form, code listing, allowable stress, welding/fabrication controls and corrosion-service limits."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M/B36.10M",
+        "material_standard": "B861/B862"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "B381"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43 as applicable",
+        "material_standard": "B363 WPT1"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47 or Appendix A where applicable",
+        "material_standard": "B381"
+      },
+      "castings": {
+        "material_standard": "B367"
+      },
+      "source_temperature_limit": "-75 to 600°F (-60 to 315°C)",
+      "source_notes": "Original notes vary by row; see source pages 5-6"
+    },
+    {
+      "record_id": "MS-054",
+      "source_excel_row": 58,
+      "basic_material_of_construction": "Incoloy 825",
+      "chemical_composition_or_grade_family": "UNS N08825",
+      "plate": {
+        "general_requirements_or_tolerances": "Material-specific ASTM/ASME general requirements",
+        "material_specification_or_grade": "SB-424 UNS N08825",
+        "mapping_status": "Direct UNS match",
+        "vessel_engineering_note": "Confirm the exact UNS, grade, condition, product form, code listing, allowable stress, welding/fabrication controls and corrosion-service limits."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "B423/B705 UNS N08825"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "B564 UNS N08825"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43 as applicable",
+        "material_standard": "B366 WPNiCMC / CRNiCMC"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47 or Appendix A where applicable",
+        "material_standard": "B564 UNS N08825"
+      },
+      "castings": {
+        "material_standard": "A494 Cu5MCuC"
+      },
+      "source_temperature_limit": "-320 to 1000°F (-195 to 538°C)",
+      "source_notes": "Original notes vary by row; see source pages 5-6"
+    },
+    {
+      "record_id": "MS-055",
+      "source_excel_row": 59,
+      "basic_material_of_construction": "Incoloy 800",
+      "chemical_composition_or_grade_family": "UNS N08800",
+      "plate": {
+        "general_requirements_or_tolerances": "Material-specific ASTM/ASME general requirements",
+        "material_specification_or_grade": "SB-409 UNS N08800",
+        "mapping_status": "Direct UNS match",
+        "vessel_engineering_note": "Confirm the exact UNS, grade, condition, product form, code listing, allowable stress, welding/fabrication controls and corrosion-service limits."
+      },
+      "pipe": {
+        "dimensional_standard": "B407 Table X1.1",
+        "material_standard": "B407 UNS N08800"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "B564 UNS N08800"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43 as applicable",
+        "material_standard": "B366 WPNiC / CRNiC"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47 or Appendix A where applicable",
+        "material_standard": "B564 UNS N08800"
+      },
+      "castings": {
+        "material_standard": "A351 CT15C"
+      },
+      "source_temperature_limit": "-325 to 1500°F (-198 to 816°C)",
+      "source_notes": "Original notes vary by row; see source pages 5-6"
+    },
+    {
+      "record_id": "MS-056",
+      "source_excel_row": 60,
+      "basic_material_of_construction": "Inconel 625",
+      "chemical_composition_or_grade_family": "UNS N06625",
+      "plate": {
+        "general_requirements_or_tolerances": "Material-specific ASTM/ASME general requirements",
+        "material_specification_or_grade": "SB-443 UNS N06625",
+        "mapping_status": "Direct UNS match",
+        "vessel_engineering_note": "Confirm the exact UNS, grade, condition, product form, code listing, allowable stress, welding/fabrication controls and corrosion-service limits."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "B444/B705 UNS N06625"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "B564 UNS N06625"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43 as applicable",
+        "material_standard": "B366 WPNCMC / CRNCMC"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47 or Appendix A where applicable",
+        "material_standard": "B564 UNS N06625"
+      },
+      "castings": {
+        "material_standard": "A494 CW6MC"
+      },
+      "source_temperature_limit": "-325 to 1200°F (-198 to 649°C)",
+      "source_notes": "Original notes vary by row; see source pages 5-6"
+    },
+    {
+      "record_id": "MS-057",
+      "source_excel_row": 61,
+      "basic_material_of_construction": "Inconel 600",
+      "chemical_composition_or_grade_family": "UNS N06600",
+      "plate": {
+        "general_requirements_or_tolerances": "Material-specific ASTM/ASME general requirements",
+        "material_specification_or_grade": "SB-168 UNS N06600",
+        "mapping_status": "Direct UNS match",
+        "vessel_engineering_note": "Confirm the exact UNS, grade, condition, product form, code listing, allowable stress, welding/fabrication controls and corrosion-service limits."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "B167/B517 UNS N06600"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "B564 UNS N06600"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43 as applicable",
+        "material_standard": "B366 WPNCI / CRNCI"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47 or Appendix A where applicable",
+        "material_standard": "B564 UNS N06600"
+      },
+      "castings": {
+        "material_standard": "A494 CY40"
+      },
+      "source_temperature_limit": "-325 to 1200°F (-198 to 649°C)",
+      "source_notes": "Original notes vary by row; see source pages 5-6"
+    },
+    {
+      "record_id": "MS-058",
+      "source_excel_row": 62,
+      "basic_material_of_construction": "Hastelloy C-276",
+      "chemical_composition_or_grade_family": "UNS N10276",
+      "plate": {
+        "general_requirements_or_tolerances": "Material-specific ASTM/ASME general requirements",
+        "material_specification_or_grade": "SB-575 UNS N10276",
+        "mapping_status": "Direct UNS match",
+        "vessel_engineering_note": "Confirm the exact UNS, grade, condition, product form, code listing, allowable stress, welding/fabrication controls and corrosion-service limits."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "B622/B619 UNS N10276"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "B462 UNS N10276"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43 as applicable",
+        "material_standard": "B366 WPHC276 / CRHC276"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47 or Appendix A where applicable",
+        "material_standard": "B462 UNS N10276"
+      },
+      "castings": {
+        "material_standard": "A494 CW12MW"
+      },
+      "source_temperature_limit": "-325 to 1250°F (-198 to 677°C)",
+      "source_notes": "Original notes vary by row; see source pages 5-6"
+    },
+    {
+      "record_id": "MS-059",
+      "source_excel_row": 63,
+      "basic_material_of_construction": "Hastelloy B-2",
+      "chemical_composition_or_grade_family": "UNS N10665",
+      "plate": {
+        "general_requirements_or_tolerances": "Material-specific ASTM/ASME general requirements",
+        "material_specification_or_grade": "SB-333 UNS N10665",
+        "mapping_status": "Direct UNS match",
+        "vessel_engineering_note": "Confirm the exact UNS, grade, condition, product form, code listing, allowable stress, welding/fabrication controls and corrosion-service limits."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "B622/B619 UNS N10665"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "B462 UNS N10665"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43 as applicable",
+        "material_standard": "B366 WPHB-2 / CRHB-2"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47 or Appendix A where applicable",
+        "material_standard": "B462 UNS N10665"
+      },
+      "castings": {
+        "material_standard": "A494 N3M"
+      },
+      "source_temperature_limit": "Not stated in source chart",
+      "source_notes": "Original notes vary by row; see source pages 5-6"
+    },
+    {
+      "record_id": "MS-060",
+      "source_excel_row": 64,
+      "basic_material_of_construction": "Alloy 20",
+      "chemical_composition_or_grade_family": "UNS N08020",
+      "plate": {
+        "general_requirements_or_tolerances": "Material-specific ASTM/ASME general requirements",
+        "material_specification_or_grade": "SB-463 UNS N08020",
+        "mapping_status": "Direct UNS match",
+        "vessel_engineering_note": "Confirm the exact UNS, grade, condition, product form, code listing, allowable stress, welding/fabrication controls and corrosion-service limits."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "B729/B464 UNS N08020"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "B462 UNS N08020"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43 as applicable",
+        "material_standard": "B366 CR20CB"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47 or Appendix A where applicable",
+        "material_standard": "B462 UNS N08020"
+      },
+      "castings": {
+        "material_standard": "A351 CN7M"
+      },
+      "source_temperature_limit": "-325 to 800°F (-198 to 426°C)",
+      "source_notes": "Original notes vary by row; see source pages 5-6"
+    },
+    {
+      "record_id": "MS-061",
+      "source_excel_row": 65,
+      "basic_material_of_construction": "Nickel 200",
+      "chemical_composition_or_grade_family": "UNS N02200",
+      "plate": {
+        "general_requirements_or_tolerances": "Material-specific ASTM/ASME general requirements",
+        "material_specification_or_grade": "SB-162 UNS N02200",
+        "mapping_status": "Direct UNS match",
+        "vessel_engineering_note": "Confirm the exact UNS, grade, condition, product form, code listing, allowable stress, welding/fabrication controls and corrosion-service limits."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.19M",
+        "material_standard": "B161/B725 UNS N02200"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "B564 UNS N02200"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43 as applicable",
+        "material_standard": "B366 WPN / CRN"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47 or Appendix A where applicable",
+        "material_standard": "B564 UNS N02200"
+      },
+      "castings": {
+        "material_standard": "A494, grade to be confirmed"
+      },
+      "source_temperature_limit": "-325 to 1200°F (-198 to 649°C)",
+      "source_notes": "Original notes vary by row; see source pages 5-6"
+    },
+    {
+      "record_id": "MS-062",
+      "source_excel_row": 66,
+      "basic_material_of_construction": "Nickel 201",
+      "chemical_composition_or_grade_family": "UNS N02201",
+      "plate": {
+        "general_requirements_or_tolerances": "Material-specific ASTM/ASME general requirements",
+        "material_specification_or_grade": "SB-162 UNS N02201",
+        "mapping_status": "Direct UNS match",
+        "vessel_engineering_note": "Confirm the exact UNS, grade, condition, product form, code listing, allowable stress, welding/fabrication controls and corrosion-service limits."
+      },
+      "pipe": {
+        "dimensional_standard": "B36.10M",
+        "material_standard": "B161/B725 UNS N02201"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "B160"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43 as applicable",
+        "material_standard": "B366 WPNL / CRNL"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47 or Appendix A where applicable",
+        "material_standard": "B160"
+      },
+      "castings": {
+        "material_standard": "A494 CZ100"
+      },
+      "source_temperature_limit": "-325 to 1200°F (-198 to 649°C)",
+      "source_notes": "Original notes vary by row; see source pages 5-6"
+    },
+    {
+      "record_id": "MS-063",
+      "source_excel_row": 67,
+      "basic_material_of_construction": "Monel 400",
+      "chemical_composition_or_grade_family": "UNS N04400",
+      "plate": {
+        "general_requirements_or_tolerances": "Material-specific ASTM/ASME general requirements",
+        "material_specification_or_grade": "SB-127 UNS N04400",
+        "mapping_status": "Direct UNS match",
+        "vessel_engineering_note": "Confirm the exact UNS, grade, condition, product form, code listing, allowable stress, welding/fabrication controls and corrosion-service limits."
+      },
+      "pipe": {
+        "dimensional_standard": "B165 Table X2.1",
+        "material_standard": "B165/B725 UNS N04400"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "B564 UNS N04400"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43 as applicable",
+        "material_standard": "B366 WPNC / CRNC"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47 or Appendix A where applicable",
+        "material_standard": "B564 UNS N04400"
+      },
+      "castings": {
+        "material_standard": "No equivalent casting specification shown"
+      },
+      "source_temperature_limit": "-325 to 850°F (-198 to 482°C)",
+      "source_notes": "Original notes vary by row; see source pages 5-6"
+    },
+    {
+      "record_id": "MS-064",
+      "source_excel_row": 68,
+      "basic_material_of_construction": "Aluminum",
+      "chemical_composition_or_grade_family": "Al; alloy and temper to be selected",
+      "plate": {
+        "general_requirements_or_tolerances": "Material-specific ASTM/ASME general requirements",
+        "material_specification_or_grade": "SB-209, alloy and temper selected for design",
+        "mapping_status": "Conditional product-family match",
+        "vessel_engineering_note": "Confirm the exact UNS, grade, condition, product form, code listing, allowable stress, welding/fabrication controls and corrosion-service limits."
+      },
+      "pipe": {
+        "dimensional_standard": "ANSI H35.2",
+        "material_standard": "B241/B345"
+      },
+      "socket_weld_fittings": {
+        "dimensional_standard": "B16.11",
+        "material_standard": "B361"
+      },
+      "butt_weld_fittings": {
+        "dimensional_standard": "B16.9 / MSS-SP-43 as applicable",
+        "material_standard": "B361"
+      },
+      "flanges": {
+        "dimensional_standard": "B16.5/B16.47 or Appendix A where applicable",
+        "material_standard": "B247"
+      },
+      "castings": {
+        "material_standard": "B618"
+      },
+      "source_temperature_limit": "-452 to 300°F (source Celsius value appears inconsistent and must be verified)",
+      "source_notes": "Original notes vary by row; see source pages 5-6"
+    }
+  ],
+  "basis_and_limitations": [
+    {
+      "item": "1",
+      "requirement": "Treat Plate as two subcolumns",
+      "why_it_matters": "Unlike pipe, plate generally has no separate B36-type dimensional standard. General requirements and material grade must both be shown.",
+      "minimum_decision_check": "Confirm SA-20/SA-480 or the applicable material-specific specification.",
+      "fail_closed_outcome": "Plate specification unresolved",
+      "responsible_discipline": "Materials / Mechanical"
+    },
+    {
+      "item": "2",
+      "requirement": "Do not convert pipe grade directly to plate grade",
+      "why_it_matters": "Product form, heat treatment, toughness, allowable stress and manufacturing route differ.",
+      "minimum_decision_check": "Verify the exact ASME Section II material record accepted by the governing ASME VIII edition.",
+      "fail_closed_outcome": "No direct equivalent",
+      "responsible_discipline": "Materials / Vessel"
+    },
+    {
+      "item": "3",
+      "requirement": "Check MDMT and thickness",
+      "why_it_matters": "Impact-test exemptions and toughness depend on material, thickness, heat treatment and minimum design metal temperature.",
+      "minimum_decision_check": "Document MDMT, governing thickness and impact-test basis.",
+      "fail_closed_outcome": "Engineering selection required",
+      "responsible_discipline": "Vessel / Materials"
+    },
+    {
+      "item": "4",
+      "requirement": "Check service damage mechanisms",
+      "why_it_matters": "Corrosion, wet H2S, hydrogen attack, chloride SCC, sulfidation, naphthenic acid and caustic service may govern over strength.",
+      "minimum_decision_check": "Complete material selection report and damage-mechanism review.",
+      "fail_closed_outcome": "Material not approved for service",
+      "responsible_discipline": "Corrosion / Process / Inspection"
+    },
+    {
+      "item": "5",
+      "requirement": "Check class and heat treatment",
+      "why_it_matters": "Many SA-387 and other plate specifications include classes and mandatory heat-treatment conditions.",
+      "minimum_decision_check": "Select class, normalized/tempered or Q&T condition and PWHT basis.",
+      "fail_closed_outcome": "Plate class unresolved",
+      "responsible_discipline": "Materials / Welding"
+    },
+    {
+      "item": "6",
+      "requirement": "Confirm allowable stress",
+      "why_it_matters": "Allowable stress is product-form, grade, class, condition, thickness and temperature specific.",
+      "minimum_decision_check": "Perform a fail-closed Section II-D lookup.",
+      "fail_closed_outcome": "Allowable stress not resolved",
+      "responsible_discipline": "Vessel / Materials"
+    },
+    {
+      "item": "7",
+      "requirement": "Use lifecycle and availability logic",
+      "why_it_matters": "A technically suitable grade may still create procurement, fabrication, repair and spare-part risk.",
+      "minimum_decision_check": "Compare CAPEX, fabrication complexity, lead time, inspection and lifecycle cost.",
+      "fail_closed_outcome": "Management decision required",
+      "responsible_discipline": "Project / Procurement / Operations"
+    }
+  ],
+  "source_register": [
+    {
+      "source": "GUIDE FOR ASTM PIPING MATERIAL SPECIFICATION-- METALLIC PIPING.- ASTM Standards.",
+      "relevant_location": "Pages 1-5 tables; page 6 notes",
+      "use_in_dataset": "Original pipe, fitting, flange, casting and temperature cross-reference",
+      "limitations": "Piping-oriented guide; not a pressure-vessel material specification",
+      "verification_status": "Source transcribed and normalized"
+    },
+    {
+      "source": "Vessel_material selection guide.pdf",
+      "relevant_location": "Page 1, Appendix H Material Selection Guide",
+      "use_in_dataset": "Direct plate-family mappings for carbon steel, nickel steels, Cr-Mo steels, stainless steel, Incoloy and Inconel",
+      "limitations": "Legacy handbook table; broad temperature bands; must be checked against current code edition",
+      "verification_status": "Used as mapping basis"
+    },
+    {
+      "source": "ADNOC_Materials Selection Guidelines.pdf",
+      "relevant_location": "Material-selection philosophy, corrosion evaluation and metallic-material standards appendix",
+      "use_in_dataset": "Engineering constraints, corrosion, lifecycle and governance logic",
+      "limitations": "Company guideline, not a substitute for project code/design specification",
+      "verification_status": "Used for limitations and review logic"
+    },
+    {
+      "source": "ASME BPVC Section II and Section VIII, project edition",
+      "relevant_location": "Applicable material tables and construction rules",
+      "use_in_dataset": "Final material acceptance, allowable stress, impact test, heat treatment and design qualification",
+      "limitations": "Exact project edition must be specified",
+      "verification_status": "Mandatory external verification before design use"
+    }
+  ]
+}
