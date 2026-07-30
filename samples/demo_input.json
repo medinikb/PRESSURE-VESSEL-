@@ -1,0 +1,39 @@
+{
+  "material_screening": {
+    "equipment_tag": "21-V-101",
+    "project_number": "VESSELM / DEMO",
+    "minimum_design_temperature": -20,
+    "maximum_design_temperature": 482,
+    "temperature_unit": "degC",
+    "selected_components": [
+      "plate",
+      "pipe",
+      "forgings",
+      "fittings",
+      "bolting"
+    ],
+    "service_flags": [
+      "high_temperature_hydrocarbon"
+    ]
+  },
+  "preliminary_pressure_design": {
+    "controlled_code_edition": "Enter approved edition",
+    "design_pressure": 1.5,
+    "pressure_unit": "MPa",
+    "static_head_pressure": 0.05,
+    "design_temperature": 250,
+    "temperature_unit": "degC",
+    "component_type": "cylindrical_shell",
+    "diameter_basis": "inside",
+    "diameter": 2000,
+    "length_unit": "mm",
+    "allowable_stress_design": 120,
+    "allowable_stress_ambient": 138,
+    "stress_unit": "MPa",
+    "allowable_stress_source_reference": "Synthetic demonstration only",
+    "joint_efficiency": 0.85,
+    "corrosion_allowance": 3,
+    "available_nominal_thickness": 20
+  },
+  "classification": "synthetic_demo_not_for_design"
+}
