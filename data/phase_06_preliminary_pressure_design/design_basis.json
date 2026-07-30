@@ -1,0 +1,37 @@
+{
+  "calculation_basis": "ASME Section VIII Division 1 concepts as presented in a 2004 historical design manual",
+  "controlled_code_edition": null,
+  "engineering_use_authorized": false,
+  "required_before_enablement": [
+    "enter_and_approve_controlled_code_edition",
+    "verify_each_formula_and_applicability_limit",
+    "populate_controlled_allowable_stress_library_or_require_manual_entry",
+    "approve_joint_efficiency_logic",
+    "approve_test_pressure_logic",
+    "complete independent verification test register"
+  ],
+  "calculation_scope": [
+    "internal_pressure_only",
+    "thin_or_code_formula_range_only",
+    "shells",
+    "hemispherical_heads",
+    "ellipsoidal_heads",
+    "torispherical_heads",
+    "optional_cones",
+    "MAP",
+    "MAWP",
+    "hydrotest_screening"
+  ],
+  "excluded_scope": [
+    "external_pressure",
+    "nozzle_reinforcement",
+    "local_loads",
+    "fatigue",
+    "MDMT",
+    "PWHT",
+    "supports",
+    "transportation",
+    "erection",
+    "creep_life"
+  ]
+}

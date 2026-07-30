@@ -1,0 +1,2926 @@
+{
+  "metadata": {
+    "library_name": "Refinery Vessel Preliminary Internals Recommendation Logic",
+    "library_id": "vessel_internals_preliminary_v1",
+    "library_version": "1.0.0",
+    "generated_on": "2026-07-26",
+    "design_stage": "preliminary_design",
+    "industry_scope": [
+      "refinery",
+      "petrochemical",
+      "oil_and_gas",
+      "chemical_process"
+    ],
+    "automation_target_percent": 80,
+    "human_decision_target_percent": 20,
+    "engine_mode": "fail_closed",
+    "engineering_status": "preliminary_only",
+    "final_design_requirement": "process_engineer_and_vendor_verification",
+    "scope_note": "This engine recommends candidate process internals and preliminary arrangement requirements. It does not replace process design, hydraulic sizing, mechanical design, licensor design, specialist vendor design, or code compliance verification."
+  },
+  "automation_model": {
+    "automation_definition": {
+      "automated": [
+        "validate minimum inputs",
+        "derive phase system",
+        "infer vessel service when not explicitly selected",
+        "classify fouling, solids, viscosity, slugging and separation severity",
+        "recommend inlet-device family",
+        "determine whether gas-liquid mist removal is required",
+        "recommend preliminary mist-eliminator family",
+        "recommend liquid-liquid separation arrangement",
+        "recommend vortex breakers",
+        "add dependent supports, hold-downs, drains and access checks",
+        "identify disqualifiers and conflicts",
+        "calculate confidence score",
+        "produce preliminary engineering actions"
+      ],
+      "human_confirmation": [
+        "confirm ambiguous vessel service",
+        "confirm proprietary or licensor-controlled internals",
+        "confirm flare knockout drum demister use",
+        "confirm borderline boot-versus-weir selection",
+        "confirm heating method and duty",
+        "approve project-specific thresholds",
+        "approve final vendor geometry and guaranteed performance"
+      ]
+    },
+    "decision_distribution": {
+      "automatic_preliminary_decisions_percent": 80,
+      "targeted_user_confirmations_percent": 20,
+      "principle": "The user supplies process facts. The engine performs the majority of classification, selection, dependency, conflict and review logic."
+    },
+    "auto_resolution_thresholds": {
+      "auto_recommend_min_confidence": 80,
+      "user_confirmation_min_confidence": 65,
+      "engineering_review_below_confidence": 65,
+      "maximum_service_score_gap_for_ambiguity": 10
+    }
+  },
+  "rule_dsl": {
+    "condition_structure": {
+      "all": "All child conditions must be true.",
+      "any": "At least one child condition must be true.",
+      "none": "No child condition may be true."
+    },
+    "supported_operators": [
+      "eq",
+      "neq",
+      "in",
+      "not_in",
+      "gt",
+      "gte",
+      "lt",
+      "lte",
+      "between",
+      "contains",
+      "contains_any",
+      "exists",
+      "not_exists",
+      "is_true",
+      "is_false"
+    ],
+    "rule_execution_order": [
+      "input_validation",
+      "derived_field_calculation",
+      "hard_disqualifiers",
+      "vessel_service_classification",
+      "service_default_recommendations",
+      "general_internal_rules",
+      "dependent_internal_rules",
+      "conflict_resolution",
+      "confidence_scoring",
+      "human_confirmation_routing",
+      "output_generation"
+    ],
+    "priority_definition": {
+      "1000": "hard safety or scope blocker",
+      "900": "hard disqualifier",
+      "800": "service-classification rule",
+      "700": "mandatory preliminary internal",
+      "600": "conditional recommendation",
+      "500": "variant selection",
+      "400": "dependent support or drainage rule",
+      "300": "advisory or arrangement check"
+    }
+  },
+  "input_schema": {
+    "minimum_user_inputs": [
+      {
+        "field": "orientation",
+        "label": "Vessel orientation",
+        "type": "enum",
+        "allowed_values": [
+          "vertical",
+          "horizontal"
+        ],
+        "required": true
+      },
+      {
+        "field": "phases_present",
+        "label": "Phases expected in the vessel",
+        "type": "array_enum",
+        "allowed_values": [
+          "gas",
+          "hydrocarbon_liquid",
+          "aqueous_liquid",
+          "solids"
+        ],
+        "required": true
+      },
+      {
+        "field": "primary_process_function",
+        "label": "Primary process function",
+        "type": "enum",
+        "allowed_values": [
+          "surge_or_holdup",
+          "flash_or_pressure_reduction",
+          "gas_liquid_separation",
+          "three_phase_separation",
+          "liquid_liquid_separation",
+          "gas_filtration_or_coalescing",
+          "liquid_filtration_or_coalescing",
+          "overhead_accumulation",
+          "compressor_protection",
+          "fuel_gas_liquid_removal",
+          "flare_or_blowdown_liquid_removal"
+        ],
+        "required": true
+      },
+      {
+        "field": "downstream_equipment_type",
+        "label": "Downstream equipment",
+        "type": "enum",
+        "allowed_values": [
+          "pump",
+          "compressor",
+          "burner_or_furnace",
+          "flare_header",
+          "column",
+          "reactor",
+          "heat_exchanger",
+          "storage",
+          "other",
+          "none"
+        ],
+        "required": true
+      },
+      {
+        "field": "gas_flow_present",
+        "label": "Is gas flow present?",
+        "type": "boolean",
+        "required": true
+      },
+      {
+        "field": "liquid_flow_present",
+        "label": "Is liquid flow present?",
+        "type": "boolean",
+        "required": true
+      },
+      {
+        "field": "second_immiscible_liquid_present",
+        "label": "Is a second immiscible liquid phase present?",
+        "type": "boolean",
+        "required": true
+      },
+      {
+        "field": "slugging_expected",
+        "label": "Is slugging expected?",
+        "type": "boolean",
+        "required": true
+      },
+      {
+        "field": "fouling_tendency",
+        "label": "Fouling tendency",
+        "type": "enum",
+        "allowed_values": [
+          "low",
+          "medium",
+          "high",
+          "severe",
+          "unknown"
+        ],
+        "required": true
+      },
+      {
+        "field": "solids_loading_category",
+        "label": "Solids loading",
+        "type": "enum",
+        "allowed_values": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "unknown"
+        ],
+        "required": true
+      },
+      {
+        "field": "required_separation_quality",
+        "label": "Required separation quality",
+        "type": "enum",
+        "allowed_values": [
+          "bulk",
+          "normal",
+          "high",
+          "very_high",
+          "unknown"
+        ],
+        "required": true
+      },
+      {
+        "field": "pump_suction_from_vessel",
+        "label": "Does a pump take suction from the vessel?",
+        "type": "boolean",
+        "required": true
+      }
+    ],
+    "recommended_numeric_inputs": [
+      {
+        "field": "normal_gas_flow_kg_h",
+        "type": "number",
+        "unit": "kg/h",
+        "required_for_final_sizing": true
+      },
+      {
+        "field": "maximum_gas_flow_kg_h",
+        "type": "number",
+        "unit": "kg/h",
+        "required_for_final_sizing": true
+      },
+      {
+        "field": "normal_liquid_flow_kg_h",
+        "type": "number",
+        "unit": "kg/h",
+        "required_for_final_sizing": true
+      },
+      {
+        "field": "maximum_liquid_flow_kg_h",
+        "type": "number",
+        "unit": "kg/h",
+        "required_for_final_sizing": true
+      },
+      {
+        "field": "gas_density_kg_m3",
+        "type": "number",
+        "unit": "kg/m3",
+        "required_for_final_sizing": true
+      },
+      {
+        "field": "light_liquid_density_kg_m3",
+        "type": "number",
+        "unit": "kg/m3",
+        "required_for_final_sizing": true
+      },
+      {
+        "field": "heavy_liquid_density_kg_m3",
+        "type": "number",
+        "unit": "kg/m3",
+        "required_for_final_sizing": "required_for_three_phase_or_liquid_liquid"
+      },
+      {
+        "field": "light_liquid_viscosity_cp",
+        "type": "number",
+        "unit": "cP",
+        "required_for_final_sizing": true
+      },
+      {
+        "field": "heavy_liquid_viscosity_cp",
+        "type": "number",
+        "unit": "cP",
+        "required_for_final_sizing": "required_for_three_phase_or_liquid_liquid"
+      },
+      {
+        "field": "interfacial_tension_mn_m",
+        "type": "number",
+        "unit": "mN/m",
+        "required_for_final_sizing": "required_for_liquid_liquid_coalescing"
+      },
+      {
+        "field": "operating_temperature_c",
+        "type": "number",
+        "unit": "degC",
+        "required_for_final_sizing": true
+      },
+      {
+        "field": "pour_point_c",
+        "type": "number",
+        "unit": "degC",
+        "required_for_final_sizing": false
+      },
+      {
+        "field": "inlet_mixture_density_kg_m3",
+        "type": "number",
+        "unit": "kg/m3",
+        "required_for_final_sizing": false
+      },
+      {
+        "field": "inlet_velocity_m_s",
+        "type": "number",
+        "unit": "m/s",
+        "required_for_final_sizing": false
+      },
+      {
+        "field": "heavy_liquid_fraction_of_total_liquid",
+        "type": "number",
+        "unit": "fraction",
+        "range": [
+          0,
+          1
+        ],
+        "required_for_final_sizing": "recommended_for_boot_selection"
+      },
+      {
+        "field": "allowable_internal_pressure_drop_kpa",
+        "type": "number",
+        "unit": "kPa",
+        "required_for_final_sizing": true
+      },
+      {
+        "field": "target_liquid_droplet_removal_micron",
+        "type": "number",
+        "unit": "micron",
+        "required_for_final_sizing": "required_for_mist_eliminator_guarantee"
+      },
+      {
+        "field": "target_oil_in_water_ppm",
+        "type": "number",
+        "unit": "ppm",
+        "required_for_final_sizing": false
+      },
+      {
+        "field": "target_water_in_oil_ppm",
+        "type": "number",
+        "unit": "ppm",
+        "required_for_final_sizing": false
+      }
+    ],
+    "optional_context_inputs": [
+      {
+        "field": "explicit_vessel_service",
+        "type": "enum",
+        "allowed_values": [
+          "surge_feed_drum",
+          "flash_drum",
+          "two_phase_separator",
+          "three_phase_separator",
+          "reflux_drum",
+          "compressor_suction_scrubber",
+          "fuel_gas_knockout_drum",
+          "filter_separator",
+          "liquid_liquid_coalescer",
+          "flare_knockout_drum"
+        ]
+      },
+      {
+        "field": "upstream_equipment_type",
+        "type": "enum",
+        "allowed_values": [
+          "condenser",
+          "compressor",
+          "pump",
+          "column",
+          "reactor",
+          "pipeline",
+          "heat_exchanger",
+          "other",
+          "unknown"
+        ]
+      },
+      {
+        "field": "downstream_system",
+        "type": "enum",
+        "allowed_values": [
+          "process",
+          "fuel_gas",
+          "flare",
+          "compressor_suction",
+          "pump_suction",
+          "storage",
+          "unknown"
+        ]
+      },
+      {
+        "field": "foaming_tendency",
+        "type": "enum",
+        "allowed_values": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "unknown"
+        ]
+      },
+      {
+        "field": "coking_tendency",
+        "type": "enum",
+        "allowed_values": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "unknown"
+        ]
+      },
+      {
+        "field": "polymerisation_tendency",
+        "type": "enum",
+        "allowed_values": [
+          "none",
+          "low",
+          "medium",
+          "high",
+          "unknown"
+        ]
+      },
+      {
+        "field": "stable_emulsion_expected",
+        "type": "boolean"
+      },
+      {
+        "field": "downstream_liquid_sensitivity",
+        "type": "enum",
+        "allowed_values": [
+          "low",
+          "medium",
+          "high",
+          "critical",
+          "unknown"
+        ]
+      },
+      {
+        "field": "maintenance_access_quality",
+        "type": "enum",
+        "allowed_values": [
+          "good",
+          "restricted",
+          "poor",
+          "unknown"
+        ]
+      },
+      {
+        "field": "removable_internals_required",
+        "type": "boolean"
+      },
+      {
+        "field": "external_heating_available",
+        "type": "boolean"
+      },
+      {
+        "field": "heat_tracing_available",
+        "type": "boolean"
+      }
+    ]
+  },
+  "configurable_thresholds": {
+    "status": "preliminary_heuristics_admin_validation_required",
+    "inlet_momentum_index_pa": {
+      "formula": "inlet_mixture_density_kg_m3 * inlet_velocity_m_s^2",
+      "low_max": 1500,
+      "medium_max": 6000,
+      "high_above": 6000,
+      "note": "Project administrator shall validate these preliminary thresholds before production use."
+    },
+    "liquid_viscosity_cp": {
+      "low_max": 10,
+      "medium_max": 100,
+      "high_above": 100
+    },
+    "heating_margin_c": {
+      "automatic_heating_review_when_operating_minus_pour_point_lte": 15
+    },
+    "heavy_liquid_fraction_for_boot": {
+      "strong_boot_candidate_lte": 0.1,
+      "borderline_boot_candidate_gt": 0.1,
+      "borderline_boot_candidate_lte": 0.2,
+      "weir_or_bucket_candidate_gt": 0.2
+    },
+    "solids_ppm_reference": {
+      "low_max": 50,
+      "medium_max": 500,
+      "high_above": 500,
+      "note": "Used only when a numeric solids concentration is available."
+    },
+    "mist_removal_target_micron": {
+      "very_fine_lte": 5,
+      "fine_gt": 5,
+      "fine_lte": 20,
+      "coarse_gt": 20
+    },
+    "confidence_completeness": {
+      "minimum_numeric_completeness_for_high_confidence_percent": 70,
+      "minimum_numeric_completeness_for_medium_confidence_percent": 40
+    }
+  },
+  "derived_fields": [
+    {
+      "field": "phase_system",
+      "logic": [
+        {
+          "when": {
+            "all": [
+              {
+                "field": "gas_flow_present",
+                "operator": "is_true"
+              },
+              {
+                "field": "liquid_flow_present",
+                "operator": "is_true"
+              },
+              {
+                "field": "second_immiscible_liquid_present",
+                "operator": "is_false"
+              }
+            ]
+          },
+          "value": "gas_liquid"
+        },
+        {
+          "when": {
+            "all": [
+              {
+                "field": "gas_flow_present",
+                "operator": "is_true"
+              },
+              {
+                "field": "liquid_flow_present",
+                "operator": "is_true"
+              },
+              {
+                "field": "second_immiscible_liquid_present",
+                "operator": "is_true"
+              }
+            ]
+          },
+          "value": "gas_two_liquids"
+        },
+        {
+          "when": {
+            "all": [
+              {
+                "field": "gas_flow_present",
+                "operator": "is_false"
+              },
+              {
+                "field": "liquid_flow_present",
+                "operator": "is_true"
+              },
+              {
+                "field": "second_immiscible_liquid_present",
+                "operator": "is_true"
+              }
+            ]
+          },
+          "value": "two_liquids"
+        },
+        {
+          "when": {
+            "all": [
+              {
+                "field": "gas_flow_present",
+                "operator": "is_false"
+              },
+              {
+                "field": "liquid_flow_present",
+                "operator": "is_true"
+              },
+              {
+                "field": "second_immiscible_liquid_present",
+                "operator": "is_false"
+              }
+            ]
+          },
+          "value": "single_liquid"
+        },
+        {
+          "when": {
+            "all": [
+              {
+                "field": "gas_flow_present",
+                "operator": "is_true"
+              },
+              {
+                "field": "liquid_flow_present",
+                "operator": "is_false"
+              }
+            ]
+          },
+          "value": "gas_only"
+        }
+      ],
+      "fallback": "unresolved"
+    },
+    {
+      "field": "inlet_momentum_index_pa",
+      "expression": "inlet_mixture_density_kg_m3 * inlet_velocity_m_s^2",
+      "calculate_when": [
+        "inlet_mixture_density_kg_m3 exists",
+        "inlet_velocity_m_s exists"
+      ]
+    },
+    {
+      "field": "inlet_momentum_category",
+      "logic": [
+        {
+          "when": {
+            "field": "slugging_expected",
+            "operator": "is_true"
+          },
+          "value": "high"
+        },
+        {
+          "when": {
+            "field": "inlet_momentum_index_pa",
+            "operator": "lte",
+            "value_ref": "configurable_thresholds.inlet_momentum_index_pa.low_max"
+          },
+          "value": "low"
+        },
+        {
+          "when": {
+            "field": "inlet_momentum_index_pa",
+            "operator": "between",
+            "value_ref": [
+              "configurable_thresholds.inlet_momentum_index_pa.low_max",
+              "configurable_thresholds.inlet_momentum_index_pa.medium_max"
+            ]
+          },
+          "value": "medium"
+        },
+        {
+          "when": {
+            "field": "inlet_momentum_index_pa",
+            "operator": "gt",
+            "value_ref": "configurable_thresholds.inlet_momentum_index_pa.high_above"
+          },
+          "value": "high"
+        }
+      ],
+      "fallback": "unknown"
+    },
+    {
+      "field": "viscosity_category",
+      "logic": [
+        {
+          "when": {
+            "field": "light_liquid_viscosity_cp",
+            "operator": "lte",
+            "value_ref": "configurable_thresholds.liquid_viscosity_cp.low_max"
+          },
+          "value": "low"
+        },
+        {
+          "when": {
+            "field": "light_liquid_viscosity_cp",
+            "operator": "between",
+            "value_ref": [
+              "configurable_thresholds.liquid_viscosity_cp.low_max",
+              "configurable_thresholds.liquid_viscosity_cp.medium_max"
+            ]
+          },
+          "value": "medium"
+        },
+        {
+          "when": {
+            "field": "light_liquid_viscosity_cp",
+            "operator": "gt",
+            "value_ref": "configurable_thresholds.liquid_viscosity_cp.high_above"
+          },
+          "value": "high"
+        }
+      ],
+      "fallback": "unknown"
+    },
+    {
+      "field": "fouling_risk",
+      "logic": [
+        {
+          "when": {
+            "any": [
+              {
+                "field": "fouling_tendency",
+                "operator": "in",
+                "value": [
+                  "high",
+                  "severe"
+                ]
+              },
+              {
+                "field": "coking_tendency",
+                "operator": "in",
+                "value": [
+                  "medium",
+                  "high"
+                ]
+              },
+              {
+                "field": "polymerisation_tendency",
+                "operator": "in",
+                "value": [
+                  "medium",
+                  "high"
+                ]
+              },
+              {
+                "field": "solids_loading_category",
+                "operator": "in",
+                "value": [
+                  "high"
+                ]
+              }
+            ]
+          },
+          "value": "high"
+        },
+        {
+          "when": {
+            "any": [
+              {
+                "field": "fouling_tendency",
+                "operator": "eq",
+                "value": "medium"
+              },
+              {
+                "field": "solids_loading_category",
+                "operator": "eq",
+                "value": "medium"
+              }
+            ]
+          },
+          "value": "medium"
+        },
+        {
+          "when": {
+            "all": [
+              {
+                "field": "fouling_tendency",
+                "operator": "eq",
+                "value": "low"
+              },
+              {
+                "field": "solids_loading_category",
+                "operator": "in",
+                "value": [
+                  "none",
+                  "low"
+                ]
+              }
+            ]
+          },
+          "value": "low"
+        }
+      ],
+      "fallback": "unknown"
+    },
+    {
+      "field": "heating_review_required",
+      "logic": [
+        {
+          "when": {
+            "all": [
+              {
+                "field": "operating_temperature_c",
+                "operator": "exists"
+              },
+              {
+                "field": "pour_point_c",
+                "operator": "exists"
+              },
+              {
+                "expression": "operating_temperature_c - pour_point_c",
+                "operator": "lte",
+                "value_ref": "configurable_thresholds.heating_margin_c.automatic_heating_review_when_operating_minus_pour_point_lte"
+              }
+            ]
+          },
+          "value": true
+        },
+        {
+          "when": {
+            "all": [
+              {
+                "field": "viscosity_category",
+                "operator": "eq",
+                "value": "high"
+              },
+              {
+                "field": "external_heating_available",
+                "operator": "is_false"
+              },
+              {
+                "field": "heat_tracing_available",
+                "operator": "is_false"
+              }
+            ]
+          },
+          "value": true
+        }
+      ],
+      "fallback": false
+    }
+  ],
+  "internal_catalog": {
+    "families": [
+      {
+        "family_id": "FAM-INLET",
+        "family_name": "Inlet and feed-distribution internals",
+        "variants": [
+          {
+            "internal_id": "INL-001",
+            "name": "Simple inlet pipe extension or elbow",
+            "design_status": "standard_preliminary"
+          },
+          {
+            "internal_id": "INL-002",
+            "name": "Impingement plate or target plate",
+            "design_status": "standard_preliminary"
+          },
+          {
+            "internal_id": "INL-003",
+            "name": "Vane-type inlet device",
+            "design_status": "specialist_vendor_confirmation"
+          },
+          {
+            "internal_id": "INL-004",
+            "name": "Cyclonic inlet device",
+            "design_status": "proprietary_vendor_design"
+          },
+          {
+            "internal_id": "INL-005",
+            "name": "Perforated liquid distributor",
+            "design_status": "process_design_required"
+          },
+          {
+            "internal_id": "INL-006",
+            "name": "Dip pipe",
+            "design_status": "standard_preliminary"
+          }
+        ]
+      },
+      {
+        "family_id": "FAM-FLOW",
+        "family_name": "Flow-conditioning internals",
+        "variants": [
+          {
+            "internal_id": "FLW-001",
+            "name": "Calming baffle",
+            "design_status": "standard_preliminary"
+          },
+          {
+            "internal_id": "FLW-002",
+            "name": "Perforated distribution plate",
+            "design_status": "process_design_required"
+          },
+          {
+            "internal_id": "FLW-003",
+            "name": "Anti-sloshing or surge baffle",
+            "design_status": "mechanical_and_process_review"
+          }
+        ]
+      },
+      {
+        "family_id": "FAM-GL",
+        "family_name": "Gas-liquid separation internals",
+        "variants": [
+          {
+            "internal_id": "GL-001",
+            "name": "Wire-mesh mist eliminator",
+            "design_status": "specialist_vendor_confirmation"
+          },
+          {
+            "internal_id": "GL-002",
+            "name": "Vane-pack mist eliminator",
+            "design_status": "specialist_vendor_confirmation"
+          },
+          {
+            "internal_id": "GL-003",
+            "name": "Cyclone mist eliminator",
+            "design_status": "proprietary_vendor_design"
+          },
+          {
+            "internal_id": "GL-004",
+            "name": "Gas-liquid coalescer element",
+            "design_status": "proprietary_vendor_design"
+          }
+        ]
+      },
+      {
+        "family_id": "FAM-LL",
+        "family_name": "Liquid-liquid and three-phase separation internals",
+        "variants": [
+          {
+            "internal_id": "LL-001",
+            "name": "Interface weir and underflow baffle",
+            "design_status": "process_design_required"
+          },
+          {
+            "internal_id": "LL-002",
+            "name": "Water or heavy-liquid boot",
+            "design_status": "process_design_required"
+          },
+          {
+            "internal_id": "LL-003",
+            "name": "Bucket-and-weir arrangement",
+            "design_status": "process_design_required"
+          },
+          {
+            "internal_id": "LL-004",
+            "name": "Plate-pack liquid-liquid coalescer",
+            "design_status": "specialist_vendor_confirmation"
+          },
+          {
+            "internal_id": "LL-005",
+            "name": "Cartridge liquid-liquid coalescer",
+            "design_status": "proprietary_vendor_design"
+          }
+        ]
+      },
+      {
+        "family_id": "FAM-OUTLET",
+        "family_name": "Liquid-outlet internals",
+        "variants": [
+          {
+            "internal_id": "OUT-001",
+            "name": "Vortex breaker",
+            "design_status": "standard_preliminary"
+          },
+          {
+            "internal_id": "OUT-002",
+            "name": "Overflow standpipe",
+            "design_status": "process_design_required"
+          },
+          {
+            "internal_id": "OUT-003",
+            "name": "Outlet collector or draw-off box",
+            "design_status": "process_design_required"
+          }
+        ]
+      },
+      {
+        "family_id": "FAM-SUPPORT",
+        "family_name": "Internal support, hold-down and drainage",
+        "variants": [
+          {
+            "internal_id": "SUP-001",
+            "name": "Mist-eliminator support grid",
+            "design_status": "mechanical_design_required"
+          },
+          {
+            "internal_id": "SUP-002",
+            "name": "Mist-eliminator hold-down grid",
+            "design_status": "mechanical_design_required"
+          },
+          {
+            "internal_id": "DRN-001",
+            "name": "Drainage trough",
+            "design_status": "process_and_mechanical_design_required"
+          },
+          {
+            "internal_id": "DRN-002",
+            "name": "Internal drain downcomer or seal leg",
+            "design_status": "process_and_mechanical_design_required"
+          },
+          {
+            "internal_id": "SUP-003",
+            "name": "Coalescer support plate or tube sheet",
+            "design_status": "mechanical_and_vendor_design"
+          }
+        ]
+      },
+      {
+        "family_id": "FAM-SOLIDS",
+        "family_name": "Solids-management internals",
+        "variants": [
+          {
+            "internal_id": "SOL-001",
+            "name": "Solids sump or boot",
+            "design_status": "process_and_mechanical_design_required"
+          },
+          {
+            "internal_id": "SOL-002",
+            "name": "Flush or sand-jet header",
+            "design_status": "process_design_required"
+          },
+          {
+            "internal_id": "SOL-003",
+            "name": "Wear or erosion plate",
+            "design_status": "mechanical_design_required"
+          }
+        ]
+      },
+      {
+        "family_id": "FAM-THERMAL",
+        "family_name": "Heating and mixing internals",
+        "variants": [
+          {
+            "internal_id": "THM-001",
+            "name": "Internal heating coil",
+            "design_status": "thermal_and_mechanical_design_required"
+          },
+          {
+            "internal_id": "THM-002",
+            "name": "Steam or gas sparger",
+            "design_status": "process_and_mechanical_design_required"
+          }
+        ]
+      }
+    ]
+  },
+  "input_validation_rules": [
+    {
+      "rule_id": "VAL-001",
+      "priority": 1000,
+      "when": {
+        "field": "orientation",
+        "operator": "not_exists"
+      },
+      "action": "stop",
+      "status": "orientation_not_defined"
+    },
+    {
+      "rule_id": "VAL-002",
+      "priority": 1000,
+      "when": {
+        "field": "phases_present",
+        "operator": "not_exists"
+      },
+      "action": "stop",
+      "status": "phases_not_defined"
+    },
+    {
+      "rule_id": "VAL-003",
+      "priority": 1000,
+      "when": {
+        "field": "primary_process_function",
+        "operator": "not_exists"
+      },
+      "action": "stop",
+      "status": "process_function_not_defined"
+    },
+    {
+      "rule_id": "VAL-004",
+      "priority": 1000,
+      "when": {
+        "all": [
+          {
+            "field": "gas_flow_present",
+            "operator": "is_false"
+          },
+          {
+            "field": "liquid_flow_present",
+            "operator": "is_false"
+          }
+        ]
+      },
+      "action": "stop",
+      "status": "no_process_phase_defined"
+    },
+    {
+      "rule_id": "VAL-005",
+      "priority": 900,
+      "when": {
+        "all": [
+          {
+            "field": "second_immiscible_liquid_present",
+            "operator": "is_true"
+          },
+          {
+            "field": "liquid_flow_present",
+            "operator": "is_false"
+          }
+        ]
+      },
+      "action": "stop",
+      "status": "inconsistent_liquid_phase_inputs"
+    }
+  ],
+  "vessel_service_classification_rules": [
+    {
+      "rule_id": "SVC-001",
+      "priority": 850,
+      "service": "flare_knockout_drum",
+      "score": 100,
+      "when": {
+        "any": [
+          {
+            "field": "explicit_vessel_service",
+            "operator": "eq",
+            "value": "flare_knockout_drum"
+          },
+          {
+            "field": "downstream_system",
+            "operator": "eq",
+            "value": "flare"
+          },
+          {
+            "field": "downstream_equipment_type",
+            "operator": "eq",
+            "value": "flare_header"
+          },
+          {
+            "field": "primary_process_function",
+            "operator": "eq",
+            "value": "flare_or_blowdown_liquid_removal"
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "SVC-002",
+      "priority": 845,
+      "service": "compressor_suction_scrubber",
+      "score": 100,
+      "when": {
+        "any": [
+          {
+            "field": "explicit_vessel_service",
+            "operator": "eq",
+            "value": "compressor_suction_scrubber"
+          },
+          {
+            "all": [
+              {
+                "field": "downstream_equipment_type",
+                "operator": "eq",
+                "value": "compressor"
+              },
+              {
+                "field": "phase_system",
+                "operator": "eq",
+                "value": "gas_liquid"
+              }
+            ]
+          },
+          {
+            "field": "primary_process_function",
+            "operator": "eq",
+            "value": "compressor_protection"
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "SVC-003",
+      "priority": 840,
+      "service": "fuel_gas_knockout_drum",
+      "score": 100,
+      "when": {
+        "any": [
+          {
+            "field": "explicit_vessel_service",
+            "operator": "eq",
+            "value": "fuel_gas_knockout_drum"
+          },
+          {
+            "field": "downstream_system",
+            "operator": "eq",
+            "value": "fuel_gas"
+          },
+          {
+            "field": "primary_process_function",
+            "operator": "eq",
+            "value": "fuel_gas_liquid_removal"
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "SVC-004",
+      "priority": 835,
+      "service": "reflux_drum",
+      "score": 100,
+      "when": {
+        "any": [
+          {
+            "field": "explicit_vessel_service",
+            "operator": "eq",
+            "value": "reflux_drum"
+          },
+          {
+            "field": "primary_process_function",
+            "operator": "eq",
+            "value": "overhead_accumulation"
+          },
+          {
+            "all": [
+              {
+                "field": "upstream_equipment_type",
+                "operator": "eq",
+                "value": "condenser"
+              },
+              {
+                "field": "phase_system",
+                "operator": "in",
+                "value": [
+                  "gas_liquid",
+                  "gas_two_liquids",
+                  "two_liquids"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "SVC-005",
+      "priority": 830,
+      "service": "filter_separator",
+      "score": 100,
+      "when": {
+        "any": [
+          {
+            "field": "explicit_vessel_service",
+            "operator": "eq",
+            "value": "filter_separator"
+          },
+          {
+            "field": "primary_process_function",
+            "operator": "in",
+            "value": [
+              "gas_filtration_or_coalescing",
+              "liquid_filtration_or_coalescing"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "SVC-006",
+      "priority": 825,
+      "service": "liquid_liquid_coalescer",
+      "score": 95,
+      "when": {
+        "any": [
+          {
+            "field": "explicit_vessel_service",
+            "operator": "eq",
+            "value": "liquid_liquid_coalescer"
+          },
+          {
+            "all": [
+              {
+                "field": "phase_system",
+                "operator": "eq",
+                "value": "two_liquids"
+              },
+              {
+                "field": "primary_process_function",
+                "operator": "eq",
+                "value": "liquid_liquid_separation"
+              },
+              {
+                "field": "required_separation_quality",
+                "operator": "in",
+                "value": [
+                  "high",
+                  "very_high"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "SVC-007",
+      "priority": 820,
+      "service": "three_phase_separator",
+      "score": 100,
+      "when": {
+        "any": [
+          {
+            "field": "explicit_vessel_service",
+            "operator": "eq",
+            "value": "three_phase_separator"
+          },
+          {
+            "field": "phase_system",
+            "operator": "eq",
+            "value": "gas_two_liquids"
+          },
+          {
+            "field": "primary_process_function",
+            "operator": "eq",
+            "value": "three_phase_separation"
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "SVC-008",
+      "priority": 815,
+      "service": "two_phase_separator",
+      "score": 90,
+      "when": {
+        "any": [
+          {
+            "field": "explicit_vessel_service",
+            "operator": "eq",
+            "value": "two_phase_separator"
+          },
+          {
+            "all": [
+              {
+                "field": "phase_system",
+                "operator": "eq",
+                "value": "gas_liquid"
+              },
+              {
+                "field": "primary_process_function",
+                "operator": "eq",
+                "value": "gas_liquid_separation"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "SVC-009",
+      "priority": 810,
+      "service": "flash_drum",
+      "score": 90,
+      "when": {
+        "any": [
+          {
+            "field": "explicit_vessel_service",
+            "operator": "eq",
+            "value": "flash_drum"
+          },
+          {
+            "field": "primary_process_function",
+            "operator": "eq",
+            "value": "flash_or_pressure_reduction"
+          }
+        ]
+      }
+    },
+    {
+      "rule_id": "SVC-010",
+      "priority": 805,
+      "service": "surge_feed_drum",
+      "score": 85,
+      "when": {
+        "any": [
+          {
+            "field": "explicit_vessel_service",
+            "operator": "eq",
+            "value": "surge_feed_drum"
+          },
+          {
+            "all": [
+              {
+                "field": "primary_process_function",
+                "operator": "eq",
+                "value": "surge_or_holdup"
+              },
+              {
+                "field": "phase_system",
+                "operator": "in",
+                "value": [
+                  "single_liquid",
+                  "gas_liquid"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "service_default_recommendations": {
+    "surge_feed_drum": {
+      "automatic_recommendations": [
+        {
+          "internal_id": "INL-001",
+          "status": "recommended"
+        },
+        {
+          "internal_id": "OUT-001",
+          "status": "recommended_when_liquid_outlet_exists"
+        }
+      ],
+      "conditional_recommendations": [
+        {
+          "internal_id": "FLW-001",
+          "trigger": "slugging_expected_or_horizontal_orientation"
+        },
+        {
+          "internal_id": "THM-001",
+          "trigger": "heating_review_required"
+        },
+        {
+          "internal_id": "SOL-001",
+          "trigger": "solids_loading_medium_or_high"
+        }
+      ]
+    },
+    "flash_drum": {
+      "automatic_recommendations": [
+        {
+          "internal_id": "INL-002",
+          "status": "recommended"
+        },
+        {
+          "internal_id": "OUT-001",
+          "status": "recommended_when_liquid_outlet_exists"
+        }
+      ],
+      "conditional_recommendations": [
+        {
+          "internal_id": "GL-001",
+          "trigger": "required_separation_quality_normal_or_higher_and_low_fouling"
+        },
+        {
+          "internal_id": "GL-002",
+          "trigger": "medium_or_high_fouling_or_high_liquid_loading"
+        },
+        {
+          "internal_id": "INL-003",
+          "trigger": "medium_inlet_momentum"
+        },
+        {
+          "internal_id": "INL-004",
+          "trigger": "high_inlet_momentum_and_low_or_medium_fouling"
+        }
+      ]
+    },
+    "two_phase_separator": {
+      "automatic_recommendations": [
+        {
+          "family_id": "FAM-INLET",
+          "status": "select_best_variant"
+        },
+        {
+          "family_id": "FAM-GL",
+          "status": "select_best_variant"
+        },
+        {
+          "internal_id": "OUT-001",
+          "status": "recommended"
+        },
+        {
+          "family_id": "FAM-SUPPORT",
+          "status": "add_dependencies"
+        }
+      ],
+      "conditional_recommendations": [
+        {
+          "internal_id": "FLW-001",
+          "trigger": "slugging_expected_or_horizontal_orientation"
+        },
+        {
+          "internal_id": "SOL-001",
+          "trigger": "solids_loading_medium_or_high"
+        }
+      ]
+    },
+    "three_phase_separator": {
+      "automatic_recommendations": [
+        {
+          "family_id": "FAM-INLET",
+          "status": "select_best_variant"
+        },
+        {
+          "family_id": "FAM-GL",
+          "status": "select_best_variant"
+        },
+        {
+          "family_id": "FAM-LL",
+          "status": "select_best_variant"
+        },
+        {
+          "internal_id": "OUT-001",
+          "status": "recommend_for_each_pumped_liquid_outlet"
+        },
+        {
+          "internal_id": "FLW-001",
+          "status": "recommended"
+        },
+        {
+          "family_id": "FAM-SUPPORT",
+          "status": "add_dependencies"
+        }
+      ],
+      "conditional_recommendations": [
+        {
+          "internal_id": "LL-004",
+          "trigger": "high_or_very_high_liquid_liquid_quality_required"
+        },
+        {
+          "internal_id": "SOL-001",
+          "trigger": "solids_loading_medium_or_high"
+        }
+      ]
+    },
+    "reflux_drum": {
+      "automatic_recommendations": [
+        {
+          "internal_id": "INL-005",
+          "status": "recommended"
+        },
+        {
+          "internal_id": "OUT-001",
+          "status": "recommend_for_each_pumped_liquid_outlet"
+        }
+      ],
+      "conditional_recommendations": [
+        {
+          "internal_id": "LL-002",
+          "trigger": "small_heavy_liquid_fraction"
+        },
+        {
+          "internal_id": "LL-001",
+          "trigger": "significant_heavy_liquid_fraction"
+        },
+        {
+          "internal_id": "GL-001",
+          "trigger": "gas_outlet_and_normal_or_higher_separation_quality"
+        },
+        {
+          "internal_id": "FLW-001",
+          "trigger": "horizontal_orientation"
+        }
+      ]
+    },
+    "compressor_suction_scrubber": {
+      "automatic_recommendations": [
+        {
+          "family_id": "FAM-INLET",
+          "status": "select_best_variant"
+        },
+        {
+          "family_id": "FAM-GL",
+          "status": "high_efficiency_variant_required"
+        },
+        {
+          "internal_id": "OUT-001",
+          "status": "recommended"
+        },
+        {
+          "family_id": "FAM-SUPPORT",
+          "status": "add_dependencies"
+        }
+      ],
+      "mandatory_actions": [
+        "verify maximum allowable liquid carryover to compressor",
+        "verify mist-eliminator differential pressure",
+        "verify drain reliability and high-high level protection",
+        "specialist vendor confirmation required"
+      ]
+    },
+    "fuel_gas_knockout_drum": {
+      "automatic_recommendations": [
+        {
+          "family_id": "FAM-INLET",
+          "status": "select_best_variant"
+        },
+        {
+          "internal_id": "OUT-001",
+          "status": "recommended"
+        },
+        {
+          "family_id": "FAM-GL",
+          "status": "recommend_when_burner_or_downstream_liquid_sensitivity_requires"
+        }
+      ],
+      "mandatory_actions": [
+        "verify liquid carryover limit to burners",
+        "verify pressure-drop allowance"
+      ]
+    },
+    "filter_separator": {
+      "automatic_recommendations": [
+        {
+          "internal_id": "INL-005",
+          "status": "recommended"
+        },
+        {
+          "internal_id": "GL-004",
+          "status": "recommended_for_gas_service"
+        },
+        {
+          "internal_id": "LL-005",
+          "status": "recommended_for_liquid_liquid_service"
+        },
+        {
+          "internal_id": "SUP-003",
+          "status": "mandatory_dependency"
+        },
+        {
+          "internal_id": "OUT-001",
+          "status": "recommended_when_liquid_outlet_exists"
+        }
+      ],
+      "mandatory_actions": [
+        "specialist vendor element design required",
+        "define clean and dirty differential pressure",
+        "define element change-out access",
+        "define bypass philosophy"
+      ]
+    },
+    "liquid_liquid_coalescer": {
+      "automatic_recommendations": [
+        {
+          "internal_id": "INL-005",
+          "status": "recommended"
+        },
+        {
+          "family_id": "FAM-LL",
+          "status": "select_coalescer_variant"
+        },
+        {
+          "family_id": "FAM-SUPPORT",
+          "status": "add_dependencies"
+        },
+        {
+          "internal_id": "OUT-001",
+          "status": "recommend_for_each_pumped_liquid_outlet"
+        }
+      ],
+      "mandatory_actions": [
+        "verify density difference",
+        "verify viscosity",
+        "verify interfacial tension",
+        "verify stable emulsion risk",
+        "specialist vendor performance confirmation required"
+      ]
+    },
+    "flare_knockout_drum": {
+      "automatic_recommendations": [
+        {
+          "internal_id": "INL-002",
+          "status": "recommended"
+        },
+        {
+          "internal_id": "OUT-001",
+          "status": "recommended"
+        },
+        {
+          "internal_id": "SOL-003",
+          "status": "recommended_when_high_momentum_or_erosion_risk"
+        }
+      ],
+      "restricted_recommendations": [
+        {
+          "family_id": "FAM-GL",
+          "status": "not_auto_selected",
+          "reason": "Demister use requires dedicated flare-system pressure-drop, fouling, coking, fire-case and maintenance review."
+        }
+      ]
+    }
+  },
+  "general_recommendation_rules": [
+    {
+      "rule_id": "INLET-001",
+      "priority": 700,
+      "description": "Select simple inlet device for low-severity service.",
+      "when": {
+        "all": [
+          {
+            "field": "inlet_momentum_category",
+            "operator": "in",
+            "value": [
+              "low",
+              "unknown"
+            ]
+          },
+          {
+            "field": "slugging_expected",
+            "operator": "is_false"
+          },
+          {
+            "field": "phase_system",
+            "operator": "in",
+            "value": [
+              "single_liquid",
+              "gas_liquid"
+            ]
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "INL-001",
+          "recommendation_status": "auto_recommended_preliminary",
+          "confidence_delta": 10
+        }
+      ]
+    },
+    {
+      "rule_id": "INLET-002",
+      "priority": 710,
+      "description": "Select robust impingement device for dirty, slugging or erosive service.",
+      "when": {
+        "any": [
+          {
+            "field": "slugging_expected",
+            "operator": "is_true"
+          },
+          {
+            "field": "fouling_risk",
+            "operator": "eq",
+            "value": "high"
+          },
+          {
+            "field": "solids_loading_category",
+            "operator": "in",
+            "value": [
+              "medium",
+              "high"
+            ]
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "INL-002",
+          "recommendation_status": "auto_recommended_preliminary",
+          "confidence_delta": 15
+        },
+        {
+          "internal_id": "SOL-003",
+          "recommendation_status": "conditional_on_erosion_review",
+          "confidence_delta": 5
+        }
+      ],
+      "exclude": [
+        "INL-004"
+      ]
+    },
+    {
+      "rule_id": "INLET-003",
+      "priority": 705,
+      "description": "Select vane inlet for moderate momentum and manageable fouling.",
+      "when": {
+        "all": [
+          {
+            "field": "phase_system",
+            "operator": "in",
+            "value": [
+              "gas_liquid",
+              "gas_two_liquids"
+            ]
+          },
+          {
+            "field": "inlet_momentum_category",
+            "operator": "eq",
+            "value": "medium"
+          },
+          {
+            "field": "fouling_risk",
+            "operator": "in",
+            "value": [
+              "low",
+              "medium"
+            ]
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "INL-003",
+          "recommendation_status": "auto_recommended_vendor_confirmation",
+          "confidence_delta": 15
+        }
+      ]
+    },
+    {
+      "rule_id": "INLET-004",
+      "priority": 704,
+      "description": "Select cyclonic inlet candidate for high momentum and compact high-capacity service.",
+      "when": {
+        "all": [
+          {
+            "field": "phase_system",
+            "operator": "in",
+            "value": [
+              "gas_liquid",
+              "gas_two_liquids"
+            ]
+          },
+          {
+            "field": "inlet_momentum_category",
+            "operator": "eq",
+            "value": "high"
+          },
+          {
+            "field": "fouling_risk",
+            "operator": "in",
+            "value": [
+              "low",
+              "medium"
+            ]
+          },
+          {
+            "field": "solids_loading_category",
+            "operator": "in",
+            "value": [
+              "none",
+              "low"
+            ]
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "INL-004",
+          "recommendation_status": "candidate_proprietary_vendor_design",
+          "confidence_delta": 10,
+          "human_confirmation_required": true
+        }
+      ]
+    },
+    {
+      "rule_id": "FLOW-001",
+      "priority": 620,
+      "description": "Recommend calming baffle where interface stability or surge control is important.",
+      "when": {
+        "any": [
+          {
+            "field": "slugging_expected",
+            "operator": "is_true"
+          },
+          {
+            "field": "orientation",
+            "operator": "eq",
+            "value": "horizontal"
+          },
+          {
+            "field": "phase_system",
+            "operator": "in",
+            "value": [
+              "gas_two_liquids",
+              "two_liquids"
+            ]
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "FLW-001",
+          "recommendation_status": "auto_recommended_preliminary",
+          "confidence_delta": 10
+        }
+      ]
+    },
+    {
+      "rule_id": "MIST-001",
+      "priority": 700,
+      "description": "Wire mesh for clean service with normal or high separation requirement.",
+      "when": {
+        "all": [
+          {
+            "field": "phase_system",
+            "operator": "in",
+            "value": [
+              "gas_liquid",
+              "gas_two_liquids"
+            ]
+          },
+          {
+            "field": "required_separation_quality",
+            "operator": "in",
+            "value": [
+              "normal",
+              "high"
+            ]
+          },
+          {
+            "field": "fouling_risk",
+            "operator": "eq",
+            "value": "low"
+          },
+          {
+            "field": "solids_loading_category",
+            "operator": "in",
+            "value": [
+              "none",
+              "low"
+            ]
+          },
+          {
+            "field": "explicit_vessel_service",
+            "operator": "neq",
+            "value": "flare_knockout_drum"
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "GL-001",
+          "recommendation_status": "auto_recommended_vendor_confirmation",
+          "confidence_delta": 15
+        }
+      ]
+    },
+    {
+      "rule_id": "MIST-002",
+      "priority": 710,
+      "description": "Vane pack for higher fouling tolerance, higher liquid loading or easier cleaning.",
+      "when": {
+        "all": [
+          {
+            "field": "phase_system",
+            "operator": "in",
+            "value": [
+              "gas_liquid",
+              "gas_two_liquids"
+            ]
+          },
+          {
+            "any": [
+              {
+                "field": "fouling_risk",
+                "operator": "eq",
+                "value": "medium"
+              },
+              {
+                "field": "solids_loading_category",
+                "operator": "eq",
+                "value": "medium"
+              },
+              {
+                "field": "maintenance_access_quality",
+                "operator": "in",
+                "value": [
+                  "good",
+                  "restricted"
+                ]
+              },
+              {
+                "field": "required_separation_quality",
+                "operator": "eq",
+                "value": "bulk"
+              }
+            ]
+          },
+          {
+            "field": "explicit_vessel_service",
+            "operator": "neq",
+            "value": "flare_knockout_drum"
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "GL-002",
+          "recommendation_status": "auto_recommended_vendor_confirmation",
+          "confidence_delta": 15
+        }
+      ],
+      "exclude": [
+        "GL-001"
+      ]
+    },
+    {
+      "rule_id": "MIST-003",
+      "priority": 690,
+      "description": "Cyclone mist eliminator candidate for very high capacity or very high separation severity.",
+      "when": {
+        "all": [
+          {
+            "field": "phase_system",
+            "operator": "in",
+            "value": [
+              "gas_liquid",
+              "gas_two_liquids"
+            ]
+          },
+          {
+            "field": "required_separation_quality",
+            "operator": "eq",
+            "value": "very_high"
+          },
+          {
+            "field": "fouling_risk",
+            "operator": "in",
+            "value": [
+              "low",
+              "medium"
+            ]
+          },
+          {
+            "field": "allowable_internal_pressure_drop_kpa",
+            "operator": "exists"
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "GL-003",
+          "recommendation_status": "candidate_proprietary_vendor_design",
+          "confidence_delta": 5,
+          "human_confirmation_required": true
+        }
+      ]
+    },
+    {
+      "rule_id": "MIST-004",
+      "priority": 900,
+      "description": "Do not auto-select fine mist devices for severe fouling, coking or polymerising service.",
+      "when": {
+        "any": [
+          {
+            "field": "fouling_tendency",
+            "operator": "eq",
+            "value": "severe"
+          },
+          {
+            "field": "coking_tendency",
+            "operator": "eq",
+            "value": "high"
+          },
+          {
+            "field": "polymerisation_tendency",
+            "operator": "eq",
+            "value": "high"
+          }
+        ]
+      },
+      "exclude": [
+        "GL-001",
+        "GL-003",
+        "GL-004"
+      ],
+      "recommend": [
+        {
+          "internal_id": "GL-002",
+          "recommendation_status": "conditional_specialist_review_only",
+          "confidence_delta": -10,
+          "human_confirmation_required": true
+        }
+      ],
+      "status": "fouling_risk_requires_internal_review"
+    },
+    {
+      "rule_id": "LL-001",
+      "priority": 700,
+      "description": "Water or heavy-liquid boot for a small heavy-liquid fraction.",
+      "when": {
+        "all": [
+          {
+            "field": "phase_system",
+            "operator": "in",
+            "value": [
+              "gas_two_liquids",
+              "two_liquids"
+            ]
+          },
+          {
+            "field": "heavy_liquid_fraction_of_total_liquid",
+            "operator": "lte",
+            "value_ref": "configurable_thresholds.heavy_liquid_fraction_for_boot.strong_boot_candidate_lte"
+          },
+          {
+            "field": "orientation",
+            "operator": "eq",
+            "value": "horizontal"
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "LL-002",
+          "recommendation_status": "auto_recommended_process_confirmation",
+          "confidence_delta": 15
+        }
+      ]
+    },
+    {
+      "rule_id": "LL-002",
+      "priority": 695,
+      "description": "Borderline boot selection requires confirmation.",
+      "when": {
+        "all": [
+          {
+            "field": "phase_system",
+            "operator": "in",
+            "value": [
+              "gas_two_liquids",
+              "two_liquids"
+            ]
+          },
+          {
+            "field": "heavy_liquid_fraction_of_total_liquid",
+            "operator": "gt",
+            "value_ref": "configurable_thresholds.heavy_liquid_fraction_for_boot.borderline_boot_candidate_gt"
+          },
+          {
+            "field": "heavy_liquid_fraction_of_total_liquid",
+            "operator": "lte",
+            "value_ref": "configurable_thresholds.heavy_liquid_fraction_for_boot.borderline_boot_candidate_lte"
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "LL-002",
+          "recommendation_status": "candidate",
+          "confidence_delta": 5,
+          "human_confirmation_required": true
+        },
+        {
+          "internal_id": "LL-001",
+          "recommendation_status": "alternative_candidate",
+          "confidence_delta": 5,
+          "human_confirmation_required": true
+        }
+      ],
+      "status": "boot_or_weir_requires_process_selection"
+    },
+    {
+      "rule_id": "LL-003",
+      "priority": 700,
+      "description": "Interface weir for a significant continuous heavy-liquid flow.",
+      "when": {
+        "all": [
+          {
+            "field": "phase_system",
+            "operator": "in",
+            "value": [
+              "gas_two_liquids",
+              "two_liquids"
+            ]
+          },
+          {
+            "field": "heavy_liquid_fraction_of_total_liquid",
+            "operator": "gt",
+            "value_ref": "configurable_thresholds.heavy_liquid_fraction_for_boot.weir_or_bucket_candidate_gt"
+          },
+          {
+            "field": "required_separation_quality",
+            "operator": "in",
+            "value": [
+              "bulk",
+              "normal",
+              "high"
+            ]
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "LL-001",
+          "recommendation_status": "auto_recommended_process_confirmation",
+          "confidence_delta": 15
+        }
+      ]
+    },
+    {
+      "rule_id": "LL-004",
+      "priority": 680,
+      "description": "Bucket-and-weir candidate for two controlled liquid outlets with significant flows.",
+      "when": {
+        "all": [
+          {
+            "field": "phase_system",
+            "operator": "eq",
+            "value": "gas_two_liquids"
+          },
+          {
+            "field": "orientation",
+            "operator": "eq",
+            "value": "horizontal"
+          },
+          {
+            "field": "required_separation_quality",
+            "operator": "in",
+            "value": [
+              "normal",
+              "high"
+            ]
+          },
+          {
+            "field": "heavy_liquid_fraction_of_total_liquid",
+            "operator": "gt",
+            "value": 0.2
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "LL-003",
+          "recommendation_status": "candidate_process_design",
+          "confidence_delta": 5,
+          "human_confirmation_required": true
+        }
+      ]
+    },
+    {
+      "rule_id": "LL-005",
+      "priority": 680,
+      "description": "Plate-pack coalescer for clean liquid-liquid service requiring improved separation.",
+      "when": {
+        "all": [
+          {
+            "field": "phase_system",
+            "operator": "in",
+            "value": [
+              "gas_two_liquids",
+              "two_liquids"
+            ]
+          },
+          {
+            "field": "required_separation_quality",
+            "operator": "in",
+            "value": [
+              "high",
+              "very_high"
+            ]
+          },
+          {
+            "field": "fouling_risk",
+            "operator": "eq",
+            "value": "low"
+          },
+          {
+            "field": "solids_loading_category",
+            "operator": "in",
+            "value": [
+              "none",
+              "low"
+            ]
+          },
+          {
+            "field": "stable_emulsion_expected",
+            "operator": "is_false"
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "LL-004",
+          "recommendation_status": "auto_recommended_vendor_confirmation",
+          "confidence_delta": 10
+        }
+      ]
+    },
+    {
+      "rule_id": "LL-006",
+      "priority": 900,
+      "description": "Stable emulsion prevents automatic coalescer selection.",
+      "when": {
+        "field": "stable_emulsion_expected",
+        "operator": "is_true"
+      },
+      "exclude": [
+        "LL-004",
+        "LL-005"
+      ],
+      "status": "stable_emulsion_requires_process_testing",
+      "engineering_action": "Laboratory or field testing and specialist coalescer evaluation required."
+    },
+    {
+      "rule_id": "OUT-001",
+      "priority": 700,
+      "description": "Recommend vortex breaker for pump suction or gas-entrainment-sensitive liquid outlet.",
+      "when": {
+        "any": [
+          {
+            "field": "pump_suction_from_vessel",
+            "operator": "is_true"
+          },
+          {
+            "field": "downstream_equipment_type",
+            "operator": "eq",
+            "value": "pump"
+          },
+          {
+            "field": "downstream_liquid_sensitivity",
+            "operator": "in",
+            "value": [
+              "high",
+              "critical"
+            ]
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "OUT-001",
+          "recommendation_status": "auto_recommended_preliminary",
+          "confidence_delta": 15
+        }
+      ]
+    },
+    {
+      "rule_id": "SOL-001",
+      "priority": 610,
+      "description": "Recommend solids sump and flushing for dirty liquid service.",
+      "when": {
+        "any": [
+          {
+            "field": "solids_loading_category",
+            "operator": "eq",
+            "value": "high"
+          },
+          {
+            "all": [
+              {
+                "field": "solids_loading_category",
+                "operator": "eq",
+                "value": "medium"
+              },
+              {
+                "field": "orientation",
+                "operator": "eq",
+                "value": "horizontal"
+              }
+            ]
+          }
+        ]
+      },
+      "recommend": [
+        {
+          "internal_id": "SOL-001",
+          "recommendation_status": "auto_recommended_process_confirmation",
+          "confidence_delta": 10
+        },
+        {
+          "internal_id": "SOL-002",
+          "recommendation_status": "conditional_cleaning_review",
+          "confidence_delta": 5
+        }
+      ]
+    },
+    {
+      "rule_id": "THM-001",
+      "priority": 600,
+      "description": "Recommend heating review when liquid temperature margin above pour point is low.",
+      "when": {
+        "field": "heating_review_required",
+        "operator": "is_true"
+      },
+      "recommend": [
+        {
+          "internal_id": "THM-001",
+          "recommendation_status": "candidate_thermal_design",
+          "confidence_delta": 5,
+          "human_confirmation_required": true
+        }
+      ],
+      "status": "heating_method_and_duty_require_confirmation"
+    }
+  ],
+  "dependent_internal_rules": [
+    {
+      "rule_id": "DEP-001",
+      "priority": 400,
+      "when_selected_any": [
+        "GL-001",
+        "GL-002",
+        "GL-003"
+      ],
+      "automatically_add": [
+        "SUP-001",
+        "SUP-002",
+        "DRN-001",
+        "DRN-002"
+      ],
+      "engineering_checks": [
+        "support differential pressure",
+        "wet and fouled weight",
+        "hold-down uplift",
+        "liquid drainage path",
+        "gas bypass prevention",
+        "removal through manway"
+      ]
+    },
+    {
+      "rule_id": "DEP-002",
+      "priority": 400,
+      "when_selected_any": [
+        "LL-004",
+        "LL-005",
+        "GL-004"
+      ],
+      "automatically_add": [
+        "SUP-003",
+        "INL-005"
+      ],
+      "engineering_checks": [
+        "flow distribution",
+        "support plate differential pressure",
+        "clean and fouled weight",
+        "element removal envelope",
+        "drainability"
+      ]
+    },
+    {
+      "rule_id": "DEP-003",
+      "priority": 400,
+      "when_selected_any": [
+        "LL-001",
+        "LL-002",
+        "LL-003"
+      ],
+      "automatically_add": [
+        "OUT-001"
+      ],
+      "engineering_checks": [
+        "normal liquid levels",
+        "interface level",
+        "weir elevation",
+        "underflow clearance",
+        "separate outlet nozzle elevations",
+        "control-valve operating range"
+      ]
+    },
+    {
+      "rule_id": "DEP-004",
+      "priority": 400,
+      "when_selected_any": [
+        "INL-002",
+        "INL-003",
+        "INL-004",
+        "GL-001",
+        "GL-002",
+        "GL-003",
+        "LL-004",
+        "LL-005"
+      ],
+      "automatically_add_checks": [
+        "internal-removal path",
+        "manway clear opening",
+        "lifting method",
+        "assembly segment size",
+        "inspection access",
+        "welded-versus-removable construction"
+      ]
+    }
+  ],
+  "hard_disqualifier_rules": [
+    {
+      "rule_id": "DQ-001",
+      "priority": 900,
+      "when": {
+        "any": [
+          {
+            "field": "fouling_tendency",
+            "operator": "eq",
+            "value": "severe"
+          },
+          {
+            "field": "coking_tendency",
+            "operator": "eq",
+            "value": "high"
+          },
+          {
+            "field": "polymerisation_tendency",
+            "operator": "eq",
+            "value": "high"
+          }
+        ]
+      },
+      "disqualify": [
+        "GL-001",
+        "GL-003",
+        "GL-004",
+        "LL-005"
+      ],
+      "status": "fine_internal_elements_disqualified_by_fouling_risk"
+    },
+    {
+      "rule_id": "DQ-002",
+      "priority": 900,
+      "when": {
+        "all": [
+          {
+            "field": "explicit_vessel_service",
+            "operator": "eq",
+            "value": "flare_knockout_drum"
+          },
+          {
+            "field": "allowable_internal_pressure_drop_kpa",
+            "operator": "not_exists"
+          }
+        ]
+      },
+      "disqualify_from_auto_selection": [
+        "GL-001",
+        "GL-002",
+        "GL-003"
+      ],
+      "status": "flare_drum_demister_requires_dedicated_review"
+    },
+    {
+      "rule_id": "DQ-003",
+      "priority": 900,
+      "when": {
+        "all": [
+          {
+            "field": "phase_system",
+            "operator": "in",
+            "value": [
+              "gas_two_liquids",
+              "two_liquids"
+            ]
+          },
+          {
+            "field": "heavy_liquid_density_kg_m3",
+            "operator": "not_exists"
+          }
+        ]
+      },
+      "disqualify_from_final_selection": [
+        "LL-001",
+        "LL-002",
+        "LL-003",
+        "LL-004",
+        "LL-005"
+      ],
+      "status": "liquid_liquid_density_data_required"
+    },
+    {
+      "rule_id": "DQ-004",
+      "priority": 900,
+      "when": {
+        "all": [
+          {
+            "field": "required_separation_quality",
+            "operator": "eq",
+            "value": "very_high"
+          },
+          {
+            "field": "target_liquid_droplet_removal_micron",
+            "operator": "not_exists"
+          }
+        ]
+      },
+      "disqualify_from_final_selection": [
+        "GL-001",
+        "GL-002",
+        "GL-003",
+        "GL-004"
+      ],
+      "status": "droplet_removal_target_not_defined"
+    },
+    {
+      "rule_id": "DQ-005",
+      "priority": 900,
+      "when": {
+        "all": [
+          {
+            "field": "stable_emulsion_expected",
+            "operator": "is_true"
+          },
+          {
+            "field": "primary_process_function",
+            "operator": "eq",
+            "value": "liquid_liquid_separation"
+          }
+        ]
+      },
+      "disqualify_from_auto_selection": [
+        "LL-004",
+        "LL-005"
+      ],
+      "status": "coalescer_not_resolved_due_to_stable_emulsion"
+    }
+  ],
+  "conflict_resolution": {
+    "general_policy": [
+      "Higher-priority rules override lower-priority rules.",
+      "A hard disqualifier always overrides a recommendation.",
+      "A service-specific restriction overrides a general recommendation.",
+      "Proprietary vendor equipment may be recommended only as a candidate, never as final selected equipment.",
+      "When two variants in the same family remain, retain both and route to targeted user confirmation.",
+      "Do not automatically choose the higher-performance or higher-cost option.",
+      "Do not automatically choose the first matching record."
+    ],
+    "family_selection_policy": {
+      "FAM-INLET": "Select one primary inlet-device variant, plus erosion protection if required.",
+      "FAM-GL": "Select one primary gas-liquid separation variant unless a staged system is explicitly designed.",
+      "FAM-LL": "One interface-control arrangement may coexist with one coalescing device.",
+      "FAM-OUTLET": "One vortex breaker may be assigned to each qualifying liquid outlet.",
+      "FAM-SUPPORT": "Dependent supports and drains are additive and mandatory when triggered."
+    },
+    "multiple_match_status": "multiple_internal_options_require_process_selection",
+    "no_match_status": "process_internal_not_resolved"
+  },
+  "confidence_scoring": {
+    "base_score": 40,
+    "additions": [
+      {
+        "condition": "explicit_vessel_service is provided and not contradictory",
+        "points": 15
+      },
+      {
+        "condition": "phase system is fully resolved",
+        "points": 10
+      },
+      {
+        "condition": "maximum gas and liquid flows are provided where applicable",
+        "points": 5
+      },
+      {
+        "condition": "densities and viscosities are provided where applicable",
+        "points": 5
+      },
+      {
+        "condition": "required separation quality is not unknown",
+        "points": 10
+      },
+      {
+        "condition": "fouling, solids, coking and polymerisation risks are defined",
+        "points": 10
+      },
+      {
+        "condition": "downstream equipment and sensitivity are defined",
+        "points": 5
+      },
+      {
+        "condition": "inlet momentum category is resolved",
+        "points": 5
+      }
+    ],
+    "deductions": [
+      {
+        "condition": "any mandatory input is unknown",
+        "points": -10
+      },
+      {
+        "condition": "service classifier top two scores differ by 10 points or less",
+        "points": -15
+      },
+      {
+        "condition": "a proprietary internal is the leading recommendation",
+        "points": -10
+      },
+      {
+        "condition": "stable emulsion is expected",
+        "points": -15
+      },
+      {
+        "condition": "severe fouling, coking or polymerisation exists",
+        "points": -20
+      },
+      {
+        "condition": "required separation quality is very high but performance target is missing",
+        "points": -20
+      }
+    ],
+    "decision_bands": [
+      {
+        "min": 80,
+        "max": 100,
+        "status": "auto_recommended_for_preliminary_design",
+        "user_action": "review_summary_only"
+      },
+      {
+        "min": 65,
+        "max": 79,
+        "status": "targeted_user_confirmation_required",
+        "user_action": "answer_one_or_two_specific_questions"
+      },
+      {
+        "min": 0,
+        "max": 64,
+        "status": "engineering_review_required",
+        "user_action": "complete_missing_data_or_select_engineering_review"
+      }
+    ]
+  },
+  "targeted_user_confirmation_rules": [
+    {
+      "confirmation_id": "CONF-001",
+      "trigger": "service classifier top two scores differ by 10 points or less",
+      "question": "Which vessel service is intended?",
+      "response_type": "single_select",
+      "options_source": "top_two_service_candidates"
+    },
+    {
+      "confirmation_id": "CONF-002",
+      "trigger": "INL-004 is the leading inlet recommendation",
+      "question": "Use a proprietary cyclonic inlet candidate?",
+      "response_type": "yes_no",
+      "default": "no"
+    },
+    {
+      "confirmation_id": "CONF-003",
+      "trigger": "GL-003 or GL-004 is the leading gas-liquid recommendation",
+      "question": "Proceed to specialist vendor selection?",
+      "response_type": "yes_no",
+      "default": "yes"
+    },
+    {
+      "confirmation_id": "CONF-004",
+      "trigger": "boot and weir are both valid candidates",
+      "question": "Prefer boot or internal weir arrangement?",
+      "response_type": "single_select",
+      "options": [
+        "heavy_liquid_boot",
+        "interface_weir",
+        "send_for_process_review"
+      ]
+    },
+    {
+      "confirmation_id": "CONF-005",
+      "trigger": "explicit_vessel_service equals flare_knockout_drum and a demister is being considered",
+      "question": "Has flare-system demister review been completed?",
+      "response_type": "yes_no",
+      "default": "no"
+    },
+    {
+      "confirmation_id": "CONF-006",
+      "trigger": "heating_review_required equals true",
+      "question": "Which heating approach is intended?",
+      "response_type": "single_select",
+      "options": [
+        "internal_coil",
+        "external_jacket",
+        "external_recirculation",
+        "heat_tracing_only",
+        "process_review"
+      ]
+    },
+    {
+      "confirmation_id": "CONF-007",
+      "trigger": "stable_emulsion_expected equals true",
+      "question": "Has separation testing been completed?",
+      "response_type": "yes_no",
+      "default": "no"
+    }
+  ],
+  "fail_closed_statuses": {
+    "input_failures": [
+      "orientation_not_defined",
+      "phases_not_defined",
+      "process_function_not_defined",
+      "no_process_phase_defined",
+      "inconsistent_liquid_phase_inputs"
+    ],
+    "selection_failures": [
+      "vessel_service_not_resolved",
+      "multiple_vessel_services_require_selection",
+      "process_internal_not_resolved",
+      "multiple_internal_options_require_process_selection",
+      "droplet_removal_target_not_defined",
+      "liquid_liquid_density_data_required",
+      "coalescer_not_resolved_due_to_stable_emulsion"
+    ],
+    "review_required": [
+      "fouling_risk_requires_internal_review",
+      "proprietary_or_licensor_design_required",
+      "flare_drum_demister_requires_dedicated_review",
+      "heating_method_and_duty_require_confirmation",
+      "internal_support_loads_not_resolved",
+      "internal_arrangement_requires_vendor_confirmation",
+      "separation_performance_not_verified"
+    ]
+  },
+  "output_schema": {
+    "result_id": "uuid",
+    "library_version": "string",
+    "input_completeness_percent": "number",
+    "derived_phase_system": "string",
+    "classified_vessel_service": {
+      "selected_service": "string_or_null",
+      "candidate_services": [
+        {
+          "service": "string",
+          "score": "number",
+          "rule_ids": [
+            "string"
+          ]
+        }
+      ],
+      "selection_status": "string"
+    },
+    "automation_summary": {
+      "automatic_decisions_count": "integer",
+      "user_confirmations_count": "integer",
+      "automation_percent": "number",
+      "confidence_score": "number",
+      "confidence_band": "string"
+    },
+    "recommended_internals": [
+      {
+        "internal_id": "string",
+        "family_id": "string",
+        "name": "string",
+        "recommendation_status": "string",
+        "mandatory_or_conditional": "mandatory|conditional",
+        "selected_by_rule_ids": [
+          "string"
+        ],
+        "reason_codes": [
+          "string"
+        ],
+        "dependent_internals": [
+          "string"
+        ],
+        "required_checks": [
+          "string"
+        ],
+        "vendor_confirmation_required": "boolean",
+        "process_confirmation_required": "boolean",
+        "mechanical_design_required": "boolean",
+        "human_confirmation_required": "boolean"
+      }
+    ],
+    "excluded_internals": [
+      {
+        "internal_id": "string",
+        "excluded_by_rule_ids": [
+          "string"
+        ],
+        "reason": "string"
+      }
+    ],
+    "missing_inputs": [
+      {
+        "field": "string",
+        "severity": "blocking|important|advisory",
+        "reason": "string"
+      }
+    ],
+    "engineering_actions": [
+      "string"
+    ],
+    "warnings": [
+      "string"
+    ],
+    "verification_status": "unverified_preliminary|partially_verified|vendor_verified|engineering_verified",
+    "engineering_review_status": "required|not_yet_required|completed"
+  },
+  "engine_pseudocode": [
+    "1. Validate minimum inputs. Stop on blocking inconsistency.",
+    "2. Calculate derived fields including phase_system, inlet_momentum_category, fouling_risk, viscosity_category and heating_review_required.",
+    "3. Apply hard disqualifiers.",
+    "4. Score all vessel-service classification rules.",
+    "5. Select highest-scoring service only when score separation exceeds the ambiguity threshold.",
+    "6. Load service-default recommendations.",
+    "7. Apply general recommendation rules in priority order.",
+    "8. Remove disqualified internals.",
+    "9. Add dependent supports, hold-downs, drains and access checks.",
+    "10. Resolve family conflicts without choosing the first or highest-performance option automatically.",
+    "11. Calculate confidence score.",
+    "12. Route only unresolved or proprietary decisions to targeted user confirmation.",
+    "13. Return preliminary recommendations, excluded options, missing inputs, warnings and engineering actions."
+  ],
+  "example_case": {
+    "example_input": {
+      "orientation": "horizontal",
+      "phases_present": [
+        "gas",
+        "hydrocarbon_liquid",
+        "aqueous_liquid"
+      ],
+      "primary_process_function": "three_phase_separation",
+      "downstream_equipment_type": "pump",
+      "gas_flow_present": true,
+      "liquid_flow_present": true,
+      "second_immiscible_liquid_present": true,
+      "slugging_expected": false,
+      "fouling_tendency": "low",
+      "solids_loading_category": "low",
+      "required_separation_quality": "high",
+      "pump_suction_from_vessel": true,
+      "explicit_vessel_service": "three_phase_separator",
+      "heavy_liquid_fraction_of_total_liquid": 0.08,
+      "stable_emulsion_expected": false,
+      "maintenance_access_quality": "good",
+      "downstream_liquid_sensitivity": "high"
+    },
+    "example_output_summary": {
+      "classified_vessel_service": "three_phase_separator",
+      "confidence_score": 90,
+      "confidence_band": "auto_recommended_for_preliminary_design",
+      "recommended_internals": [
+        "INL-001 or INL-003 depending on resolved inlet momentum",
+        "GL-001",
+        "LL-002",
+        "FLW-001",
+        "OUT-001 for each pumped liquid outlet",
+        "SUP-001",
+        "SUP-002",
+        "DRN-001",
+        "DRN-002"
+      ],
+      "targeted_user_confirmations": [
+        "Confirm final inlet-device variant if inlet momentum remains unknown."
+      ],
+      "engineering_actions": [
+        "Verify droplet-removal target.",
+        "Verify boot volume, interface control range and drain reliability.",
+        "Vendor-confirm mist eliminator sizing and pressure drop.",
+        "Mechanically design support grids, hold-downs and drains."
+      ]
+    }
+  },
+  "production_readiness_checks": [
+    "Project administrator has approved all configurable thresholds.",
+    "Input units are validated and converted to a single internal unit system.",
+    "Rule priority and conflict handling are unit-tested.",
+    "Every recommendation displays the triggering rule IDs.",
+    "Every proprietary item is marked vendor-design-required.",
+    "No recommendation is treated as final hydraulic or mechanical design.",
+    "Change history, library version and checksum are stored with every result.",
+    "Regression tests cover all ten MVP vessel services.",
+    "Negative tests confirm fail-closed behavior.",
+    "Engineering department has reviewed recommendation wording and warning text."
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "sections": [
+    {
+      "id": "design_basis",
+      "fields": [
+        "controlled_code_edition",
+        "formula_library_version",
+        "allowable_stress_source",
+        "joint_efficiency_source"
+      ]
+    },
+    {
+      "id": "geometry",
+      "fields": [
+        "component_type",
+        "diameter_basis",
+        "dimensions",
+        "head_factor_K_or_M"
+      ]
+    },
+    {
+      "id": "pressure_thickness",
+      "fields": [
+        "formula_id",
+        "raw_inputs",
+        "equation_display",
+        "pressure_thickness",
+        "applicability_checks"
+      ]
+    },
+    {
+      "id": "thickness_additions",
+      "fields": [
+        "corrosion_allowance",
+        "forming_allowance",
+        "other_allowance",
+        "required_new_thickness",
+        "selected_nominal_thickness"
+      ]
+    },
+    {
+      "id": "capacity",
+      "fields": [
+        "MAWP_component",
+        "static_head_adjustment",
+        "MAWP_at_vessel_top",
+        "MAP_component"
+      ]
+    },
+    {
+      "id": "test_pressure",
+      "fields": [
+        "formula_id",
+        "stress_ratio",
+        "calculated_test_pressure",
+        "controlled_basis_status"
+      ]
+    },
+    {
+      "id": "limitations",
+      "fields": [
+        "excluded_loads",
+        "external_pressure_status",
+        "materials_review_status",
+        "code_verification_status"
+      ]
+    }
+  ]
+}

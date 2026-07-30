@@ -1,0 +1,128 @@
+{
+  "absolute_tolerance": 1e-06,
+  "test_cases": [
+    {
+      "id": "FTEST_SH_CIRC_T_ID",
+      "formula_id": "SH_CIRC_T_ID",
+      "inputs": {
+        "P": 150.0,
+        "Ri": 24.0,
+        "S": 15000.0,
+        "E": 0.85
+      },
+      "expected": 0.28436019,
+      "unit_system": "psi_in",
+      "classification": "synthetic_formula_test"
+    },
+    {
+      "id": "FTEST_SH_LONG_T_ID",
+      "formula_id": "SH_LONG_T_ID",
+      "inputs": {
+        "P": 150.0,
+        "Ri": 24.0,
+        "S": 15000.0,
+        "E": 0.85
+      },
+      "expected": 0.14084507,
+      "unit_system": "psi_in",
+      "classification": "synthetic_formula_test"
+    },
+    {
+      "id": "FTEST_HEMI_T_ID",
+      "formula_id": "HEMI_T_ID",
+      "inputs": {
+        "P": 150.0,
+        "Ri": 24.0,
+        "S": 15000.0,
+        "E": 0.85
+      },
+      "expected": 0.141342756,
+      "unit_system": "psi_in",
+      "classification": "synthetic_formula_test"
+    },
+    {
+      "id": "FTEST_ELLIP_2_1_T_ID",
+      "formula_id": "ELLIP_2_1_T_ID",
+      "inputs": {
+        "P": 150.0,
+        "Di": 48.0,
+        "S": 15000.0,
+        "E": 0.85
+      },
+      "expected": 0.282685512,
+      "unit_system": "psi_in",
+      "classification": "synthetic_formula_test"
+    },
+    {
+      "id": "FTEST_TORI_100_6_T_ID",
+      "formula_id": "TORI_100_6_T_ID",
+      "inputs": {
+        "P": 150.0,
+        "Li": 48.0,
+        "S": 15000.0,
+        "E": 0.85
+      },
+      "expected": 0.500353357,
+      "unit_system": "psi_in",
+      "classification": "synthetic_formula_test"
+    },
+    {
+      "id": "FTEST_K",
+      "formula_id": "GF_K_ELLIPSOIDAL",
+      "inputs": {
+        "D": 48.0,
+        "h": 12.0
+      },
+      "expected": 1.002,
+      "classification": "synthetic_formula_test"
+    },
+    {
+      "id": "FTEST_M",
+      "formula_id": "GF_M_TORISPHERICAL",
+      "inputs": {
+        "L": 48.0,
+        "r": 3.0
+      },
+      "expected": 1.75,
+      "classification": "synthetic_formula_test"
+    },
+    {
+      "id": "FTEST_MAWP_SHELL_ID",
+      "formula_id": "MAWP_SHELL_ID",
+      "inputs": {
+        "SDT": 15000.0,
+        "E": 0.85,
+        "t_sc": 0.5,
+        "R_c": 24.125
+      },
+      "expected": 261.003070624,
+      "unit_system": "psi_in",
+      "classification": "synthetic_formula_test"
+    },
+    {
+      "id": "FTEST_MAP_ELLIP_ID",
+      "formula_id": "MAP_ELLIP_2_1_ID",
+      "inputs": {
+        "Sa": 16000.0,
+        "E": 0.85,
+        "t_hn": 0.625,
+        "D_n": 48.0
+      },
+      "expected": 353.246753247,
+      "unit_system": "psi_in",
+      "classification": "synthetic_formula_test"
+    },
+    {
+      "id": "FTEST_SHOP_TEST_RATIO",
+      "formula_id": "SHOP_TEST_FROM_MAWP_STRESS_RATIO",
+      "inputs": {
+        "PW": 250.0,
+        "Sa": 16000.0,
+        "SDT": 15000.0
+      },
+      "expected": 346.666666667,
+      "unit_system": "psi",
+      "classification": "synthetic_formula_test"
+    }
+  ]
+}

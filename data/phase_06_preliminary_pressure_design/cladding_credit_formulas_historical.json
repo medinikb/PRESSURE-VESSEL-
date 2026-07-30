@@ -1,0 +1,33 @@
+{
+  "status": "historical_reference_disabled_by_default",
+  "formulas": [
+    {
+      "id": "CLAD_EFFECTIVE_CORRODED_THICKNESS",
+      "equation": "t_sc_or_t_hc = t_b + (SCD / SBD) * (t_c - CA)",
+      "inputs": [
+        "t_b",
+        "SCD",
+        "SBD",
+        "t_c",
+        "CA"
+      ]
+    },
+    {
+      "id": "CLAD_EFFECTIVE_NEW_THICKNESS",
+      "equation": "t_sn_or_t_hn = t_b + (SCA / SBA) * t_c",
+      "inputs": [
+        "t_b",
+        "SCA",
+        "SBA",
+        "t_c"
+      ]
+    }
+  ],
+  "default_policy": "no_credit_for_cladding_strength",
+  "source": {
+    "source_type": "source_derived",
+    "source_ids": [
+      "PVMD_3E_PROC_2_3"
+    ]
+  }
+}

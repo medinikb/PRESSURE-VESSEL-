@@ -1,0 +1,37 @@
+{
+  "rules": [
+    {
+      "id": "THK_001",
+      "output": "minimum_required_corroded_thickness",
+      "equation": "t_required_corroded = pressure_design_thickness",
+      "source_type": "product_definition"
+    },
+    {
+      "id": "THK_002",
+      "output": "minimum_required_new_thickness",
+      "equation": "t_required_new = t_required_corroded + corrosion_allowance + forming_allowance + other_allowance",
+      "source_type": "model_derived_first_principles"
+    },
+    {
+      "id": "THK_003",
+      "condition": "corrosion_allowance < 0",
+      "action": "block"
+    },
+    {
+      "id": "THK_004",
+      "condition": "credit_for_cladding_not_taken",
+      "action": "do_not_add_cladding_strength_to_effective_thickness"
+    },
+    {
+      "id": "THK_005",
+      "condition": "nominal_thickness_library_available",
+      "action": "select_next_available_thickness_not_less_than_required"
+    },
+    {
+      "id": "THK_006",
+      "condition": "nominal_thickness_library_missing",
+      "action": "report_required_thickness_only_and_do_not_claim_selected_plate"
+    }
+  ],
+  "note": "The source manual defines hot/corroded and new/cold thickness concepts. Additional allowance aggregation is explicit product logic and must be approved."
+}

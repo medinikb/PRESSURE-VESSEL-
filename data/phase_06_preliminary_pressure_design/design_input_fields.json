@@ -1,0 +1,113 @@
+{
+  "fields": [
+    {
+      "id": "controlled_code_edition",
+      "type": "text",
+      "required": true,
+      "blocking_when_blank": true
+    },
+    {
+      "id": "design_pressure",
+      "type": "number",
+      "quantity": "pressure",
+      "required": true,
+      "min_exclusive": 0
+    },
+    {
+      "id": "design_temperature",
+      "type": "number",
+      "quantity": "temperature",
+      "required": true
+    },
+    {
+      "id": "component_type",
+      "type": "select",
+      "required": true,
+      "options_source": "head_type_catalog_or_shell"
+    },
+    {
+      "id": "diameter_basis",
+      "type": "select",
+      "required": true,
+      "options": [
+        "inside",
+        "outside"
+      ]
+    },
+    {
+      "id": "inside_diameter",
+      "type": "number",
+      "quantity": "length",
+      "required_when": "diameter_basis=inside"
+    },
+    {
+      "id": "outside_diameter",
+      "type": "number",
+      "quantity": "length",
+      "required_when": "diameter_basis=outside"
+    },
+    {
+      "id": "allowable_stress_design",
+      "type": "number",
+      "quantity": "stress",
+      "required": true,
+      "min_exclusive": 0
+    },
+    {
+      "id": "allowable_stress_ambient",
+      "type": "number",
+      "quantity": "stress",
+      "required_when": "MAP_or_test_pressure_enabled",
+      "min_exclusive": 0
+    },
+    {
+      "id": "allowable_stress_source_reference",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "joint_efficiency",
+      "type": "number",
+      "required": true,
+      "min_exclusive": 0,
+      "max_inclusive": 1
+    },
+    {
+      "id": "corrosion_allowance",
+      "type": "number",
+      "quantity": "length",
+      "required": true,
+      "min_inclusive": 0
+    },
+    {
+      "id": "available_nominal_thickness",
+      "type": "number",
+      "quantity": "length",
+      "required_when": "MAWP_enabled"
+    },
+    {
+      "id": "head_depth",
+      "type": "number",
+      "quantity": "length",
+      "required_when": "head_type=ellipsoidal_generic"
+    },
+    {
+      "id": "crown_radius",
+      "type": "number",
+      "quantity": "length",
+      "required_when": "head_type starts torispherical"
+    },
+    {
+      "id": "knuckle_radius",
+      "type": "number",
+      "quantity": "length",
+      "required_when": "head_type=torispherical_generic"
+    },
+    {
+      "id": "cone_half_apex_angle",
+      "type": "number",
+      "quantity": "angle_degrees",
+      "required_when": "component_type=cone"
+    }
+  ]
+}

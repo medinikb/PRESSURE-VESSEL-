@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VesselM Allowable Stress Library",
+  "type": "object",
+  "required": [
+    "library_id",
+    "status",
+    "records"
+  ],
+  "properties": {
+    "library_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "material_specification_id",
+          "temperature_stress_points",
+          "stress_unit",
+          "verification_status"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "component": "hemispherical_head",
+  "formulas": [
+    {
+      "id": "HEMI_T_ID",
+      "solve_for": "t",
+      "equation": "t = (P * Ri) / (2 * S * E - 0.2 * P)",
+      "inputs": [
+        "P",
+        "Ri",
+        "S",
+        "E"
+      ]
+    },
+    {
+      "id": "HEMI_T_OD",
+      "solve_for": "t",
+      "equation": "t = (P * Ro) / (2 * S * E + 0.8 * P)",
+      "inputs": [
+        "P",
+        "Ro",
+        "S",
+        "E"
+      ]
+    },
+    {
+      "id": "HEMI_P_ID",
+      "solve_for": "P",
+      "equation": "P = (2 * S * E * t) / (Ri + 0.2 * t)",
+      "inputs": [
+        "S",
+        "E",
+        "t",
+        "Ri"
+      ]
+    },
+    {
+      "id": "HEMI_P_OD",
+      "solve_for": "P",
+      "equation": "P = (2 * S * E * t) / (Ro - 0.8 * t)",
+      "inputs": [
+        "S",
+        "E",
+        "t",
+        "Ro"
+      ]
+    },
+    {
+      "id": "HEMI_STRESS_MEAN",
+      "solve_for": "sigma",
+      "equation": "sigma = (P * Rm) / (2 * t)",
+      "inputs": [
+        "P",
+        "Rm",
+        "t"
+      ]
+    }
+  ],
+  "applicability_rule_ids": [
+    "APP_PRESSURE_MAX_3000_PSI",
+    "APP_SPHERE_THICKNESS_OR_PRESSURE_RATIO"
+  ],
+  "source": {
+    "source_type": "source_derived",
+    "source_ids": [
+      "PVMD_3E_PROC_2_1"
+    ]
+  }
+}

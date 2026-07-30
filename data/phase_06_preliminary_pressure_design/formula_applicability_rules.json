@@ -1,0 +1,46 @@
+{
+  "rules": [
+    {
+      "id": "APP_PRESSURE_MAX_3000_PSI",
+      "condition": "P_psi < 3000",
+      "on_fail": "E_FORMULA_OUTSIDE_SOURCE_PRESSURE_RANGE"
+    },
+    {
+      "id": "APP_SHELL_THICKNESS_OR_PRESSURE_RATIO",
+      "condition": "(t <= 0.5 * Ri) OR (P <= 0.385 * S * E)",
+      "on_fail": "E_SHELL_FORMULA_RANGE"
+    },
+    {
+      "id": "APP_SPHERE_THICKNESS_OR_PRESSURE_RATIO",
+      "condition": "(t <= 0.356 * Ri) OR (P <= 0.665 * S * E)",
+      "on_fail": "E_SPHERE_FORMULA_RANGE"
+    },
+    {
+      "id": "APP_TORI_L_OVER_R_LT_16_66",
+      "condition": "L / r < 16.66",
+      "on_fail": "E_TORISPHERICAL_GEOMETRY_RANGE"
+    },
+    {
+      "id": "APP_HIGH_TENSILE_HEAD_SPECIAL_STRESS_LIMIT",
+      "condition": "if_minimum_specified_tensile_strength_gt_80000_psi_then_special_source_rule_applies",
+      "on_trigger": "W_HISTORICAL_HIGH_TENSILE_HEAD_RULE_VERIFY_CURRENT_CODE"
+    },
+    {
+      "id": "APP_DENOMINATOR_POSITIVE",
+      "condition": "all_formula_denominators > 0",
+      "on_fail": "E_NONPOSITIVE_DENOMINATOR"
+    },
+    {
+      "id": "APP_CONE_ANGLE",
+      "condition": "0 <= alpha_deg < 90",
+      "on_fail": "E_CONE_ANGLE_INVALID"
+    }
+  ],
+  "source": {
+    "source_type": "mixed",
+    "source_ids": [
+      "PVMD_3E_PROC_2_1"
+    ],
+    "note": "Source limits are preserved; generic denominator and angle checks are product validation rules."
+  }
+}

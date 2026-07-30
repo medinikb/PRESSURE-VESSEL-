@@ -1,0 +1,34 @@
+{
+  "formulas": [
+    {
+      "id": "GF_K_ELLIPSOIDAL",
+      "equation": "K = 0.167 * (2 + (D / (2 * h))^2)",
+      "inputs": [
+        "D",
+        "h"
+      ],
+      "output": "K",
+      "source": {
+        "source_type": "source_derived",
+        "source_ids": [
+          "PVMD_3E_PROC_2_1"
+        ]
+      }
+    },
+    {
+      "id": "GF_M_TORISPHERICAL",
+      "equation": "M = 0.25 * (3 + sqrt(L / r))",
+      "inputs": [
+        "L",
+        "r"
+      ],
+      "output": "M",
+      "source": {
+        "source_type": "source_derived",
+        "source_ids": [
+          "PVMD_3E_PROC_2_1"
+        ]
+      }
+    }
+  ]
+}

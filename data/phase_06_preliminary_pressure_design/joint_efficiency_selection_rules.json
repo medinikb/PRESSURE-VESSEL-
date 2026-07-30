@@ -1,0 +1,32 @@
+{
+  "default_mode": "manual_verified_entry",
+  "automatic_historical_lookup_enabled": false,
+  "rules": [
+    {
+      "id": "JE_001",
+      "condition": "manual_entry",
+      "required_fields": [
+        "joint_efficiency",
+        "source_reference",
+        "reviewer"
+      ]
+    },
+    {
+      "id": "JE_002",
+      "condition": "historical_lookup_requested",
+      "result_status": "review_required",
+      "message": "W_HISTORICAL_JOINT_EFFICIENCY"
+    },
+    {
+      "id": "JE_003",
+      "condition": "E <= 0 or E > 1",
+      "result_status": "blocked",
+      "message": "E_JOINT_EFFICIENCY_RANGE"
+    },
+    {
+      "id": "JE_004",
+      "condition": "shell_and_head_have_different_E",
+      "action": "calculate_components_separately"
+    }
+  ]
+}

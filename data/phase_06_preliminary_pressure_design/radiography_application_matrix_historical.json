@@ -1,0 +1,121 @@
+{
+  "status": "historical_reference_disabled_by_default",
+  "assumption": "Longitudinal seams are treated as Type 1 only in the source matrix.",
+  "cases": [
+    {
+      "id": "RAD_CASE_1",
+      "head_construction": "seamless",
+      "shell_construction": "seamless",
+      "values": {
+        "full_cat_A_and_B": {
+          "head": 1.0,
+          "shell": 1.0
+        },
+        "spot_cat_A_only": {
+          "head": 0.85,
+          "shell": 0.85
+        },
+        "spot_special_note_4": {
+          "head": 1.0,
+          "shell": 1.0
+        },
+        "part": {
+          "head": 1.0,
+          "shell": 1.0
+        },
+        "none_cat_A_and_B": {
+          "head": 0.85,
+          "shell": 0.85
+        }
+      }
+    },
+    {
+      "id": "RAD_CASE_2",
+      "head_construction": "seamless",
+      "shell_construction": "welded",
+      "values": {
+        "full_cat_A_and_B": {
+          "head": 1.0,
+          "shell": 1.0
+        },
+        "spot_cat_A_only": {
+          "head": 0.85,
+          "shell": 0.85
+        },
+        "spot_special_note_4": {
+          "head": 1.0,
+          "shell": 0.85
+        },
+        "part": {
+          "head": 1.0,
+          "shell": 1.0
+        },
+        "none_cat_A_and_B": {
+          "head": 0.85,
+          "shell": 0.7
+        }
+      }
+    },
+    {
+      "id": "RAD_CASE_3",
+      "head_construction": "welded",
+      "shell_construction": "seamless",
+      "values": {
+        "full_cat_A_and_B": {
+          "head": 1.0,
+          "shell": 1.0
+        },
+        "spot_cat_A_only": {
+          "head": 0.85,
+          "shell": 0.85
+        },
+        "spot_special_note_4": {
+          "head": 0.85,
+          "shell": 1.0
+        },
+        "part": {
+          "head": 1.0,
+          "shell": 1.0
+        },
+        "none_cat_A_and_B": {
+          "head": 0.7,
+          "shell": 0.85
+        }
+      }
+    },
+    {
+      "id": "RAD_CASE_4",
+      "head_construction": "welded",
+      "shell_construction": "welded",
+      "values": {
+        "full_cat_A_and_B": {
+          "head": 1.0,
+          "shell": 1.0
+        },
+        "spot_cat_A_only": {
+          "head": 0.85,
+          "shell": 0.85
+        },
+        "spot_special_note_4": {
+          "head": null,
+          "shell": null
+        },
+        "part": {
+          "head": 1.0,
+          "shell": 1.0
+        },
+        "none_cat_A_and_B": {
+          "head": 0.7,
+          "shell": 0.7
+        }
+      }
+    }
+  ],
+  "source": {
+    "source_type": "source_derived",
+    "source_ids": [
+      "PVMD_3E_APPENDIX_C"
+    ]
+  },
+  "release_condition": "Replace or verify against the controlled current code edition and approved fabrication basis."
+}

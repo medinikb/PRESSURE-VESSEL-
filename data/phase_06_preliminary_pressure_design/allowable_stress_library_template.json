@@ -1,0 +1,918 @@
+{
+  "library_id": "VESSELM_ALLOWABLE_STRESS_TEMPLATE",
+  "status": "template_only_no_engineering_values",
+  "interpolation_policy": "not_defined_until_controlled_source_is_approved",
+  "records": [
+    {
+      "material_specification_id": "SA-105",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-106-B",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-181-60",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-181-70",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-182-304",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-182-304L",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-182-316",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-182-316L",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-182-347",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-182-347H",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-182-F1",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-182-F11",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-182-F12",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-182-F22",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-203-A",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-203-D",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-204-B",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-234-WP1",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-234-WP11",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-234-WP12",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-234-WP22",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-234-WPB",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-240-304",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-240-304L",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-240-316",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-240-316L",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-240-347",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-240-347H",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-285-C",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-312-304",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-312-304L",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-312-316",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-312-316L",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-312-347",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-312-347H",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-333-1",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-333-3",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-333-6",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-333-8",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-335-P1",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-335-P11",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-335-P12",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-335-P22",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-350-LF2",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-350-LF63",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-353",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-387-11-2",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-387-12-1",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-387-22-1",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-403-304",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-403-304L",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-403-316",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-403-316L",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-403-347",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-403-347H",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-420-WPL3",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-420-WPL6",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-420-WPL8",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-455-II",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-515-All",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-516-All",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-522-1",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SA-53-B",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SB-366",
+      "material_form": [
+        "fittings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SB-423",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SB-424",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SB-425",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SB-443",
+      "material_form": [
+        "plate"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SB-444",
+      "material_form": [
+        "pipe"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    },
+    {
+      "material_specification_id": "SB-446",
+      "material_form": [
+        "forgings"
+      ],
+      "grade_or_class": null,
+      "temperature_stress_points": [],
+      "stress_unit": "MPa",
+      "source_reference": null,
+      "controlled_edition": null,
+      "verification_status": "not_populated",
+      "public_distribution_rights_confirmed": false
+    }
+  ],
+  "blocking_rule": "Preliminary design cannot run unless an allowable stress value and source reference are provided for the calculation temperature."
+}

@@ -1,0 +1,54 @@
+{
+  "rules": [
+    {
+      "id": "DV_001",
+      "condition": "controlled_code_edition_is_blank",
+      "message": "E_CONTROLLED_CODE_BASIS_REQUIRED"
+    },
+    {
+      "id": "DV_002",
+      "condition": "P <= 0",
+      "message": "E_PRESSURE_POSITIVE"
+    },
+    {
+      "id": "DV_003",
+      "condition": "S <= 0",
+      "message": "E_ALLOWABLE_STRESS_POSITIVE"
+    },
+    {
+      "id": "DV_004",
+      "condition": "E <= 0 or E > 1",
+      "message": "E_JOINT_EFFICIENCY_RANGE"
+    },
+    {
+      "id": "DV_005",
+      "condition": "diameter_or_radius <= 0",
+      "message": "E_GEOMETRY_POSITIVE"
+    },
+    {
+      "id": "DV_006",
+      "condition": "CA < 0",
+      "message": "E_CORROSION_ALLOWANCE_NONNEGATIVE"
+    },
+    {
+      "id": "DV_007",
+      "condition": "allowable_stress_source_reference_blank",
+      "message": "E_STRESS_SOURCE_REQUIRED"
+    },
+    {
+      "id": "DV_008",
+      "condition": "selected_formula_disabled",
+      "message": "E_FORMULA_MODULE_DISABLED"
+    },
+    {
+      "id": "DV_009",
+      "condition": "available_thickness <= CA",
+      "message": "E_AVAILABLE_THICKNESS_NOT_ABOVE_CA"
+    },
+    {
+      "id": "DV_010",
+      "condition": "outside_formula_applicability",
+      "message": "E_FORMULA_OUTSIDE_APPLICABILITY"
+    }
+  ]
+}

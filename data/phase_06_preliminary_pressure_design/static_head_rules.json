@@ -1,0 +1,26 @@
+{
+  "rules": [
+    {
+      "id": "HEAD_001",
+      "equation": "P_static = density * gravitational_acceleration * liquid_height",
+      "output_unit_note": "Use consistent SI units to obtain Pa, then convert to design pressure unit.",
+      "source_type": "model_derived_first_principles"
+    },
+    {
+      "id": "HEAD_002",
+      "equation": "P_component = P_top + P_static_between_top_and_component",
+      "source_type": "model_derived_first_principles"
+    },
+    {
+      "id": "HEAD_003",
+      "condition": "density_or_height_not_provided",
+      "action": "use_user_entered_static_head_pressure_or_zero_with_explicit_basis"
+    },
+    {
+      "id": "HEAD_004",
+      "condition": "MAWP_component_to_vessel_top",
+      "action": "adjust_component_pressure_for_static_head_before_selecting_weakest_part"
+    }
+  ],
+  "manual_basis_note": "The source states that MAWP is adjusted for static head; the hydrostatic relation is a first-principles implementation."
+}

@@ -1,0 +1,63 @@
+{
+  "internal_calculation_system": "SI",
+  "consistent_unit_requirement": "Pressure and allowable stress must use the same unit; length and thickness must use the same unit.",
+  "pressure_units": [
+    {
+      "id": "Pa",
+      "to_MPa": 1e-06
+    },
+    {
+      "id": "kPa",
+      "to_MPa": 0.001
+    },
+    {
+      "id": "MPa",
+      "to_MPa": 1.0
+    },
+    {
+      "id": "bar",
+      "to_MPa": 0.1
+    },
+    {
+      "id": "kgf_per_cm2",
+      "to_MPa": 0.0980665
+    },
+    {
+      "id": "psi",
+      "to_MPa": 0.006894757293168
+    }
+  ],
+  "length_units": [
+    {
+      "id": "mm",
+      "to_mm": 1.0
+    },
+    {
+      "id": "cm",
+      "to_mm": 10.0
+    },
+    {
+      "id": "m",
+      "to_mm": 1000.0
+    },
+    {
+      "id": "in",
+      "to_mm": 25.4
+    }
+  ],
+  "temperature_units": [
+    {
+      "id": "degC",
+      "to_degC_expression": "value"
+    },
+    {
+      "id": "degF",
+      "to_degC_expression": "(value - 32) * 5 / 9"
+    }
+  ],
+  "rounding": {
+    "intermediate_digits": 10,
+    "display_digits_default": 3,
+    "do_not_round_before_final_result": true
+  }
+}

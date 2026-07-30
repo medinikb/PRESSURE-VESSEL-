@@ -1,0 +1,15 @@
+{
+  "library_id": "VESSELM_NOMINAL_PLATE_THICKNESS_TEMPLATE",
+  "status": "not_populated",
+  "unit": "mm",
+  "records": [],
+  "record_schema": {
+    "nominal_thickness_mm": "number",
+    "material_family_ids": "array",
+    "product_standard": "string_or_null",
+    "availability_region": "string_or_null",
+    "source_reference": "string",
+    "effective_date": "date_or_null"
+  },
+  "note": "Nominal plate availability is a procurement and product-standard input, not supplied by the source guide."
+}

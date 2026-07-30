@@ -1,0 +1,34 @@
+{
+  "records": [
+    {
+      "head_type": "hemispherical",
+      "depth_expression": "d = 0.5 * D",
+      "surface_area_expression": "A = pi * D^2 / 2",
+      "volume_expression": "V = pi * D^3 / 12",
+      "empty_cg_from_tangent_line_expression": "CG = 0.2878 * D",
+      "full_cg_expression": "CG = 0.375 * D"
+    },
+    {
+      "head_type": "ellipsoidal_2_to_1",
+      "depth_expression": "d = 0.25 * D",
+      "surface_area_expression": "A = 1.084 * D^2",
+      "volume_expression": "V = pi * D^3 / 24",
+      "empty_cg_from_tangent_line_expression": "CG = 0.1439 * D",
+      "full_cg_expression": "CG = 0.1875 * D"
+    },
+    {
+      "head_type": "torispherical_100_6",
+      "depth_expression": "d = 0.162 * D",
+      "surface_area_expression": "A = 0.9286 * D^2",
+      "volume_expression": "V = 0.0847 * D^3",
+      "empty_cg_from_tangent_line_expression": "CG = 0.100 * D"
+    }
+  ],
+  "feature_status": "reference_display_only_not_required_for_pressure_thickness",
+  "source": {
+    "source_type": "source_derived",
+    "source_ids": [
+      "PVMD_3E_APPENDIX_D"
+    ]
+  }
+}

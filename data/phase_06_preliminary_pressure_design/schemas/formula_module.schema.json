@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VesselM Formula Module",
+  "type": "object",
+  "required": [
+    "component",
+    "formulas"
+  ],
+  "properties": {
+    "component": {
+      "type": "string"
+    },
+    "formulas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "solve_for",
+          "equation",
+          "inputs"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "solve_for": {
+            "type": "string"
+          },
+          "equation": {
+            "type": "string"
+          },
+          "inputs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "object"
+    }
+  }
+}

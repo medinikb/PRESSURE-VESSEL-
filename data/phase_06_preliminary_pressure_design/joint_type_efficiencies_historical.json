@@ -1,0 +1,66 @@
+{
+  "status": "historical_reference_disabled_by_default",
+  "joint_types": [
+    {
+      "id": "JT_1",
+      "description": "Single- and double-butt joints",
+      "efficiency": {
+        "full": 1.0,
+        "spot": 0.85,
+        "none": 0.7
+      }
+    },
+    {
+      "id": "JT_2",
+      "description": "Single-butt joint with backing strip",
+      "efficiency": {
+        "full": 0.9,
+        "spot": 0.8,
+        "none": 0.65
+      }
+    },
+    {
+      "id": "JT_3",
+      "description": "Single-butt joint without backing strip",
+      "efficiency": {
+        "full": null,
+        "spot": null,
+        "none": 0.6
+      }
+    },
+    {
+      "id": "JT_4",
+      "description": "Double full fillet lap joint",
+      "efficiency": {
+        "full": null,
+        "spot": null,
+        "none": 0.55
+      }
+    },
+    {
+      "id": "JT_5",
+      "description": "Single full fillet lap joint with plugs",
+      "efficiency": {
+        "full": null,
+        "spot": null,
+        "none": 0.5
+      }
+    },
+    {
+      "id": "JT_6",
+      "description": "Single full fillet lap joint",
+      "efficiency": {
+        "full": null,
+        "spot": null,
+        "none": 0.45
+      }
+    }
+  ],
+  "source": {
+    "source_type": "source_derived",
+    "source_ids": [
+      "PVMD_3E_APPENDIX_C"
+    ]
+  },
+  "release_condition": "Replace or verify against the controlled current code edition."
+}

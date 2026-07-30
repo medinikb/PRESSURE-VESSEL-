@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VesselM Formula Test Cases",
+  "type": "object",
+  "required": [
+    "test_cases"
+  ],
+  "properties": {
+    "test_cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "formula_id",
+          "inputs",
+          "expected"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "component": "torispherical_head",
+  "formulas": [
+    {
+      "id": "TORI_100_6_T_ID",
+      "solve_for": "t",
+      "equation": "t = (0.885 * P * Li) / (S * E - 0.1 * P)",
+      "inputs": [
+        "P",
+        "Li",
+        "S",
+        "E"
+      ]
+    },
+    {
+      "id": "TORI_100_6_T_OD",
+      "solve_for": "t",
+      "equation": "t = (0.885 * P * Lo) / (S * E + 0.8 * P)",
+      "inputs": [
+        "P",
+        "Lo",
+        "S",
+        "E"
+      ]
+    },
+    {
+      "id": "TORI_100_6_P_ID",
+      "solve_for": "P",
+      "equation": "P = (S * E * t) / (0.885 * Li + 0.1 * t)",
+      "inputs": [
+        "S",
+        "E",
+        "t",
+        "Li"
+      ]
+    },
+    {
+      "id": "TORI_100_6_P_OD",
+      "solve_for": "P",
+      "equation": "P = (S * E * t) / (0.885 * Lo - 0.8 * t)",
+      "inputs": [
+        "S",
+        "E",
+        "t",
+        "Lo"
+      ]
+    },
+    {
+      "id": "TORI_GENERIC_T_ID",
+      "solve_for": "t",
+      "equation": "t = (P * Li * M) / (2 * S * E - 0.2 * P)",
+      "inputs": [
+        "P",
+        "Li",
+        "M",
+        "S",
+        "E"
+      ]
+    },
+    {
+      "id": "TORI_GENERIC_T_OD",
+      "solve_for": "t",
+      "equation": "t = (P * Lo * M) / (2 * S * E + P * (M - 0.2))",
+      "inputs": [
+        "P",
+        "Lo",
+        "M",
+        "S",
+        "E"
+      ]
+    },
+    {
+      "id": "TORI_GENERIC_P_ID",
+      "solve_for": "P",
+      "equation": "P = (2 * S * E * t) / (Li * M + 0.2 * t)",
+      "inputs": [
+        "S",
+        "E",
+        "t",
+        "Li",
+        "M"
+      ]
+    },
+    {
+      "id": "TORI_GENERIC_P_OD",
+      "solve_for": "P",
+      "equation": "P = (2 * S * E * t) / (Lo * M - t * (M - 0.2))",
+      "inputs": [
+        "S",
+        "E",
+        "t",
+        "Lo",
+        "M"
+      ]
+    }
+  ],
+  "applicability_rule_ids": [
+    "APP_TORI_L_OVER_R_LT_16_66"
+  ],
+  "special_rule_ids": [
+    "APP_HIGH_TENSILE_HEAD_SPECIAL_STRESS_LIMIT"
+  ],
+  "source": {
+    "source_type": "source_derived",
+    "source_ids": [
+      "PVMD_3E_PROC_2_1"
+    ]
+  }
+}

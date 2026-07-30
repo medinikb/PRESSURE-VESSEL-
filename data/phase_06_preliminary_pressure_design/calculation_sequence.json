@@ -1,0 +1,79 @@
+{
+  "steps": [
+    {
+      "sequence": 10,
+      "id": "validate_design_basis",
+      "action": "confirm_feature_enabled_and_controlled_basis_accepted"
+    },
+    {
+      "sequence": 20,
+      "id": "normalize_units",
+      "action": "convert_pressure_stress_length_and_temperature_to_internal_units"
+    },
+    {
+      "sequence": 30,
+      "id": "resolve_material",
+      "action": "link_selected_plate_material_to_allowable_stress_record_or_manual_value"
+    },
+    {
+      "sequence": 40,
+      "id": "resolve_joint_efficiency",
+      "action": "use_verified_manual_or_controlled_library_value"
+    },
+    {
+      "sequence": 50,
+      "id": "resolve_geometry",
+      "action": "calculate_required_radii_diameters_and_head_factor"
+    },
+    {
+      "sequence": 60,
+      "id": "select_component_formulas",
+      "action": "select_shell_and_head_formula_ids_by_geometry_and_diameter_basis"
+    },
+    {
+      "sequence": 70,
+      "id": "check_applicability",
+      "action": "evaluate_formula_limits_and_denominators"
+    },
+    {
+      "sequence": 80,
+      "id": "calculate_pressure_thickness",
+      "action": "evaluate_each_required_component_formula"
+    },
+    {
+      "sequence": 90,
+      "id": "add_allowances",
+      "action": "calculate_minimum_required_new_thickness"
+    },
+    {
+      "sequence": 100,
+      "id": "select_nominal_thickness",
+      "action": "select_next_available_thickness_if_library_exists"
+    },
+    {
+      "sequence": 110,
+      "id": "calculate_MAWP_MAP",
+      "action": "evaluate_component_pressure capacity using available thickness"
+    },
+    {
+      "sequence": 120,
+      "id": "adjust_static_head",
+      "action": "normalize component values to vessel top"
+    },
+    {
+      "sequence": 130,
+      "id": "determine_governing_component",
+      "action": "select_lowest_adjusted_MAWP_and_highest_required_thickness"
+    },
+    {
+      "sequence": 140,
+      "id": "calculate_test_pressure",
+      "action": "only_if_controlled_test_pressure_rule_enabled"
+    },
+    {
+      "sequence": 150,
+      "id": "generate_checks_and_audit",
+      "action": "store_formula_ids_inputs_intermediate_values_results_and_messages"
+    }
+  ]
+}

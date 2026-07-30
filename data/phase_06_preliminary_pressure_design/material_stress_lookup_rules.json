@@ -1,0 +1,38 @@
+{
+  "rules": [
+    {
+      "id": "STRESS_001",
+      "condition": "exact_temperature_point_exists",
+      "action": "use_exact_value"
+    },
+    {
+      "id": "STRESS_002",
+      "condition": "interpolation_requested",
+      "action": "block_until_interpolation_policy_approved",
+      "message": "E_STRESS_INTERPOLATION_POLICY_MISSING"
+    },
+    {
+      "id": "STRESS_003",
+      "condition": "temperature_above_highest_point",
+      "action": "block",
+      "message": "E_STRESS_TEMPERATURE_OUTSIDE_LIBRARY"
+    },
+    {
+      "id": "STRESS_004",
+      "condition": "temperature_below_lowest_point",
+      "action": "block_unless_controlled_rule_allows",
+      "message": "E_STRESS_TEMPERATURE_OUTSIDE_LIBRARY"
+    },
+    {
+      "id": "STRESS_005",
+      "condition": "source_reference_missing",
+      "action": "block",
+      "message": "E_STRESS_SOURCE_REQUIRED"
+    },
+    {
+      "id": "STRESS_006",
+      "condition": "manual_value_entered",
+      "action": "preserve_value_source_and_actor_in_audit_record"
+    }
+  ]
+}

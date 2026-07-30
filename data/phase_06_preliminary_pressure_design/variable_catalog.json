@@ -1,0 +1,118 @@
+{
+  "variables": [
+    {
+      "id": "P",
+      "name": "internal pressure",
+      "quantity": "pressure"
+    },
+    {
+      "id": "S",
+      "name": "allowable stress",
+      "quantity": "stress"
+    },
+    {
+      "id": "E",
+      "name": "joint efficiency",
+      "quantity": "dimensionless",
+      "valid_range": {
+        "exclusive_min": 0,
+        "inclusive_max": 1
+      }
+    },
+    {
+      "id": "Di",
+      "name": "inside diameter",
+      "quantity": "length"
+    },
+    {
+      "id": "Do",
+      "name": "outside diameter",
+      "quantity": "length"
+    },
+    {
+      "id": "Ri",
+      "name": "inside radius",
+      "quantity": "length"
+    },
+    {
+      "id": "Ro",
+      "name": "outside radius",
+      "quantity": "length"
+    },
+    {
+      "id": "Rm",
+      "name": "mean radius",
+      "quantity": "length"
+    },
+    {
+      "id": "t",
+      "name": "calculated or available thickness",
+      "quantity": "length"
+    },
+    {
+      "id": "CA",
+      "name": "corrosion allowance",
+      "quantity": "length"
+    },
+    {
+      "id": "h",
+      "name": "inside depth of ellipsoidal head",
+      "quantity": "length"
+    },
+    {
+      "id": "L",
+      "name": "crown radius",
+      "quantity": "length"
+    },
+    {
+      "id": "r",
+      "name": "knuckle radius",
+      "quantity": "length"
+    },
+    {
+      "id": "K",
+      "name": "ellipsoidal head factor",
+      "quantity": "dimensionless"
+    },
+    {
+      "id": "M",
+      "name": "torispherical head factor",
+      "quantity": "dimensionless"
+    },
+    {
+      "id": "alpha",
+      "name": "cone half apex angle",
+      "quantity": "angle_degrees"
+    },
+    {
+      "id": "Sa",
+      "name": "allowable stress at ambient temperature",
+      "quantity": "stress"
+    },
+    {
+      "id": "SDT",
+      "name": "allowable stress at design temperature",
+      "quantity": "stress"
+    },
+    {
+      "id": "PM",
+      "name": "maximum allowable pressure new and cold",
+      "quantity": "pressure"
+    },
+    {
+      "id": "PW",
+      "name": "maximum allowable working pressure hot and corroded",
+      "quantity": "pressure"
+    },
+    {
+      "id": "PS",
+      "name": "shop hydro pressure",
+      "quantity": "pressure"
+    },
+    {
+      "id": "PF",
+      "name": "field hydro pressure",
+      "quantity": "pressure"
+    }
+  ]
+}

@@ -1,0 +1,1535 @@
+{
+  "library_id": "refinery_preliminary_vessel_sizing_logic",
+  "library_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "generated_date": "2026-07-26",
+  "release_status": "engineering_prototype_requires_company_validation",
+  "title": "Preliminary Refinery Vessel Sizing Logic: Versions 1, 2 and 3",
+  "purpose": "Convert validated process inputs into a traceable preliminary vessel type, orientation, internal diameter, tangent-to-tangent length or straight-side height, liquid levels, preliminary internals, governing case, warnings and engineering-review actions.",
+  "automation_model": {
+    "target_automation_percent": 80,
+    "target_user_input_and_engineering_judgment_percent": 20,
+    "interpretation": "The 80 percent target applies after the process engineer supplies the minimum process basis. The engine automates calculations, case comparison, geometry iteration, recommendations, traceability and reporting. It does not invent missing process data or replace process, mechanical, safety, operations or vendor approval.",
+    "automated_by_engine": [
+      "unit conversion and input normalization",
+      "service classification",
+      "phase-flow reconciliation",
+      "actual volumetric flow calculation where mass flow and density are available",
+      "maximum governing operating-case selection",
+      "orientation scoring and recommendation",
+      "preliminary internals recommendation",
+      "gas-capacity calculation",
+      "liquid hold-up and control-band calculation",
+      "liquid-liquid settling calculation",
+      "diameter and length candidate generation",
+      "geometry iteration and optimization",
+      "level-band calculation",
+      "constraint checking",
+      "governing-constraint identification",
+      "sensitivity analysis",
+      "warning generation",
+      "confidence scoring",
+      "calculation-register generation",
+      "engineering-review routing"
+    ],
+    "retained_user_or_engineer_responsibilities": [
+      "define process service and separation objective",
+      "provide validated operating and upset cases",
+      "provide phase properties or validated simulator results",
+      "define required separation performance",
+      "define retention, surge, slug and control-response requirements",
+      "identify foaming, fouling, solids and emulsion risks",
+      "approve company design libraries and configurable heuristics",
+      "approve final process design, mechanical design and safety basis",
+      "approve proprietary internals or vendor performance"
+    ]
+  },
+  "scope_boundary": {
+    "included": [
+      "preliminary process sizing",
+      "vertical and horizontal vessel screening",
+      "gas-liquid separation",
+      "liquid surge and hold-up",
+      "liquid-liquid separation",
+      "three-phase separation",
+      "compressor suction scrubber screening",
+      "flare knockout drum screening",
+      "flash-drum geometry using validated phase-equilibrium results",
+      "coalescer-assisted vessel shell screening using approved vendor library data"
+    ],
+    "excluded": [
+      "final process guarantee",
+      "ASME shell and head thickness design",
+      "nozzle reinforcement",
+      "fatigue assessment",
+      "wind and seismic design",
+      "support design",
+      "relief-device sizing",
+      "flare-network hydraulic design",
+      "compressor vendor guarantee",
+      "proprietary internals design without vendor data",
+      "detailed CFD",
+      "stable-emulsion prediction",
+      "reaction-vessel sizing",
+      "distillation-column sizing"
+    ]
+  },
+  "reference_basis": [
+    {
+      "reference_id": "API_RP_12J_9E_2024",
+      "title": "Process Design of Oil and Gas Separators and Scrubbers",
+      "edition": "9th",
+      "date": "2024-09",
+      "application": "Reference architecture for pressure-vessel-based gas-liquid and gas-liquid-liquid separators, vertical scrubbers, knockout drums, horizontal free-water knockout vessels and conventional separation internals.",
+      "implementation_note": "The licensed standard and owner engineering practices shall govern numerical criteria, allowable limits and final acceptance."
+    },
+    {
+      "reference_id": "API_STD_521",
+      "title": "Pressure-Relieving and Depressurizing Systems",
+      "application": "Required reference for flare and vent knockout-drum scenarios, liquid containment, relief and depressuring-system integration.",
+      "implementation_note": "The app must use owner-approved API 521 criteria and credible relief/depressuring scenarios. It shall not create relief cases."
+    },
+    {
+      "reference_id": "ASME_BPVC_VIII_1_2025",
+      "title": "Rules for Construction of Pressure Vessels, Division 1",
+      "application": "Mechanical design, fabrication, inspection, testing and certification boundary.",
+      "implementation_note": "Process sizing output is preliminary geometry only and must be transferred to a separate mechanical-design module."
+    }
+  ],
+  "units_and_numeric_policy": {
+    "internal_unit_system": "SI",
+    "required_base_units": {
+      "length": "m",
+      "area": "m2",
+      "volume": "m3",
+      "time": "s",
+      "mass_flow": "kg_s",
+      "volumetric_flow": "m3_s_at_operating_conditions",
+      "density": "kg_m3",
+      "dynamic_viscosity": "Pa_s",
+      "pressure": "Pa_absolute",
+      "temperature": "K",
+      "surface_or_interfacial_tension": "N_m",
+      "velocity": "m_s"
+    },
+    "numeric_tolerances": {
+      "comparison_relative_tolerance": 1e-06,
+      "solver_convergence_relative_tolerance": 1e-05,
+      "maximum_solver_iterations": 100
+    },
+    "rounding_configuration": {
+      "diameter_increment_m": 0.05,
+      "length_increment_m": 0.1,
+      "level_increment_m": 0.01,
+      "configuration_status": "company_configurable_not_code_requirement"
+    }
+  },
+  "common_input_contract": {
+    "mandatory_user_inputs": [
+      {
+        "path": "project.vessel_tag",
+        "type": "string",
+        "reason": "traceability"
+      },
+      {
+        "path": "project.service_name",
+        "type": "string",
+        "reason": "service identification"
+      },
+      {
+        "path": "process.separation_objective",
+        "type": "enum",
+        "allowed": [
+          "remove_liquid_from_gas",
+          "separate_gas_and_liquid",
+          "separate_light_and_heavy_liquid",
+          "separate_gas_light_liquid_heavy_liquid",
+          "provide_liquid_surge",
+          "protect_compressor",
+          "collect_flare_or_vent_liquid",
+          "flash_and_separate",
+          "coalescer_assisted_separation"
+        ]
+      },
+      {
+        "path": "process.phases_present",
+        "type": "array_enum",
+        "allowed": [
+          "gas",
+          "light_liquid",
+          "heavy_liquid",
+          "solids"
+        ]
+      },
+      {
+        "path": "process.operating_cases",
+        "type": "array",
+        "minimum_items": 1,
+        "reason": "normal, maximum, turndown, startup, upset or other credible cases"
+      },
+      {
+        "path": "process.separation_performance",
+        "type": "object",
+        "reason": "minimum removable droplet size, carryover target or approved service criterion"
+      },
+      {
+        "path": "process.liquid_inventory_requirements",
+        "type": "object",
+        "reason": "retention, control, surge, slug and emergency inventory basis"
+      },
+      {
+        "path": "process.service_risks",
+        "type": "object",
+        "reason": "foaming, fouling, emulsion, solids, wax, coke, salt and corrosion risks"
+      }
+    ],
+    "operating_case_minimum_fields": [
+      "case_id",
+      "case_type",
+      "operating_pressure_abs_Pa",
+      "operating_temperature_K",
+      "phase_flow_basis",
+      "phase_properties"
+    ],
+    "phase_flow_basis_options": [
+      "mass_flow_and_density",
+      "actual_volumetric_flow",
+      "validated_process_simulator_output"
+    ],
+    "conditionally_required_inputs": [
+      {
+        "condition": "gas in process.phases_present",
+        "fields": [
+          "gas_mass_flow_kg_s or gas_actual_flow_m3_s",
+          "gas_density_kg_m3"
+        ]
+      },
+      {
+        "condition": "light_liquid in process.phases_present",
+        "fields": [
+          "light_liquid_mass_flow_kg_s or light_liquid_flow_m3_s",
+          "light_liquid_density_kg_m3",
+          "light_liquid_viscosity_Pa_s"
+        ]
+      },
+      {
+        "condition": "heavy_liquid in process.phases_present",
+        "fields": [
+          "heavy_liquid_mass_flow_kg_s or heavy_liquid_flow_m3_s",
+          "heavy_liquid_density_kg_m3",
+          "heavy_liquid_viscosity_Pa_s",
+          "interfacial_tension_N_m"
+        ]
+      },
+      {
+        "condition": "slug handling is credible",
+        "fields": [
+          "maximum_credible_slug_volume_m3",
+          "slug_arrival_basis"
+        ]
+      },
+      {
+        "condition": "pump suction service",
+        "fields": [
+          "pump_required_minimum_liquid_inventory_m3",
+          "pump_trip_or_control_response_time_s",
+          "minimum_outlet_submergence_m"
+        ]
+      },
+      {
+        "condition": "liquid-liquid separation",
+        "fields": [
+          "continuous_phase",
+          "dispersed_phase",
+          "design_droplet_size_m or approved_performance_library_key"
+        ]
+      }
+    ],
+    "optional_user_inputs": [
+      "orientation_preference",
+      "maximum_available_plot_length_m",
+      "maximum_available_plot_width_m",
+      "maximum_transport_diameter_m",
+      "maximum_transport_length_m",
+      "preferred_head_type",
+      "future_capacity_factor",
+      "owner_standard_id",
+      "licensor_standard_id",
+      "manual_override_reason"
+    ]
+  },
+  "shared_data_libraries": {
+    "required_libraries": [
+      {
+        "library_id": "gas_capacity_factor_library",
+        "purpose": "Approved gas-capacity factor or equivalent performance correlation by service, orientation, pressure, internals, droplet target, foaming and fouling condition.",
+        "selection_policy": "most_specific_record_only",
+        "no_match_response": "gas_capacity_factor_not_resolved",
+        "multiple_match_response": "multiple_gas_capacity_records_require_engineering_selection"
+      },
+      {
+        "library_id": "retention_and_control_time_library",
+        "purpose": "Company-approved suggested retention, control and surge times by refinery service.",
+        "selection_policy": "recommendation_only_unless_project_approved",
+        "no_match_response": "retention_time_basis_not_resolved"
+      },
+      {
+        "library_id": "internals_performance_library",
+        "purpose": "Approved mesh pad, vane pack, inlet device, coalescer and agglomerator capacities, pressure drops, fouling limits and removal performance.",
+        "selection_policy": "vendor_and_model_specific_for_final_selection",
+        "no_match_response": "internals_performance_not_verified"
+      },
+      {
+        "library_id": "geometry_and_clearance_library",
+        "purpose": "Owner-approved minimum clearances, level bands, nozzle submergence, demister clearance and fabrication geometry rules.",
+        "selection_policy": "company_standard"
+      },
+      {
+        "library_id": "service_risk_derating_library",
+        "purpose": "Approved derating factors for foaming, fouling, high liquid loading, motion, uncertain properties and turndown.",
+        "selection_policy": "multiplicative_derating_with_traceability"
+      },
+      {
+        "library_id": "standard_fabrication_size_library",
+        "purpose": "Preferred diameter, length, head and plate-size increments used for candidate selection.",
+        "selection_policy": "lowest_compliant_preferred_size"
+      }
+    ],
+    "prohibited_default_behavior": [
+      "do not hard-code one universal Souders-Brown K factor",
+      "do not invent liquid retention time",
+      "do not invent liquid-liquid droplet size",
+      "do not ignore foaming, fouling, emulsion or solids",
+      "do not substitute normal flow for missing maximum flow",
+      "do not select the first matching library record",
+      "do not select the highest-capacity library record automatically",
+      "do not use vendor internals performance without an approved record"
+    ]
+  },
+  "shared_calculation_functions": {
+    "actual_volumetric_flow": {
+      "expression": "Q_m3_s = mass_flow_kg_s / density_kg_m3",
+      "valid_when": "mass_flow_kg_s >= 0 and density_kg_m3 > 0"
+    },
+    "gas_allowable_velocity_souders_brown": {
+      "expression": "V_allow_m_s = K_m_s * sqrt((rho_liquid_kg_m3 - rho_gas_kg_m3) / rho_gas_kg_m3) * combined_derating_factor",
+      "valid_when": "rho_liquid_kg_m3 > rho_gas_kg_m3 and K_m_s resolved from approved library"
+    },
+    "required_gas_area": {
+      "expression": "A_gas_required_m2 = Q_gas_actual_m3_s / V_allow_m_s",
+      "valid_when": "Q_gas_actual_m3_s >= 0 and V_allow_m_s > 0"
+    },
+    "vertical_diameter_from_area": {
+      "expression": "D_m = sqrt(4 * A_required_m2 / pi)"
+    },
+    "liquid_volume_from_time": {
+      "expression": "V_m3 = Q_liquid_m3_s * time_s"
+    },
+    "horizontal_circular_segment_area": {
+      "expression": "A_segment_m2 = R_m^2 * acos((R_m - h_m) / R_m) - (R_m - h_m) * sqrt(2 * R_m * h_m - h_m^2)",
+      "valid_when": "0 <= h_m <= 2 * R_m"
+    },
+    "horizontal_gas_area": {
+      "expression": "A_gas_m2 = pi * R_m^2 - A_liquid_segment_m2"
+    },
+    "horizontal_segment_volume": {
+      "expression": "V_segment_m3 = A_segment_m2 * straight_shell_length_m"
+    },
+    "stokes_terminal_velocity": {
+      "expression": "V_terminal_m_s = g_m_s2 * droplet_diameter_m^2 * abs(rho_dispersed_kg_m3 - rho_continuous_kg_m3) / (18 * mu_continuous_Pa_s)",
+      "valid_when": "droplet is approximately spherical and droplet Reynolds number is in approved Stokes range"
+    },
+    "droplet_reynolds_number": {
+      "expression": "Re_droplet = rho_continuous_kg_m3 * V_terminal_m_s * droplet_diameter_m / mu_continuous_Pa_s"
+    },
+    "schiller_naumann_drag_coefficient": {
+      "expression": "Cd = 24 / Re_droplet * (1 + 0.15 * Re_droplet^0.687)",
+      "valid_when": "approved for preliminary spherical-droplet iteration and Re_droplet > stokes_limit"
+    },
+    "drag_based_terminal_velocity": {
+      "expression": "V_terminal_m_s = sqrt((4 * g_m_s2 * droplet_diameter_m * abs(rho_dispersed_kg_m3 - rho_continuous_kg_m3)) / (3 * Cd * rho_continuous_kg_m3))"
+    },
+    "settling_area_screen": {
+      "expression": "A_settling_required_m2 = Q_continuous_phase_m3_s / (V_terminal_m_s * settling_derating_factor)"
+    },
+    "capacity_margin": {
+      "expression": "margin_fraction = available_capacity / required_capacity - 1"
+    }
+  },
+  "shared_workflow": [
+    {
+      "step": 1,
+      "id": "validate_and_normalize",
+      "actions": [
+        "validate mandatory fields",
+        "convert all data to SI",
+        "reject gauge pressure where absolute pressure is required",
+        "detect duplicate case ids",
+        "record source and timestamp for each input"
+      ]
+    },
+    {
+      "step": 2,
+      "id": "derive_phase_flows",
+      "actions": [
+        "calculate actual phase volumetric flows",
+        "compare direct and calculated flows where both are supplied",
+        "flag inconsistencies above configured tolerance"
+      ]
+    },
+    {
+      "step": 3,
+      "id": "classify_service",
+      "actions": [
+        "classify two-phase, three-phase, liquid-only or specialist service",
+        "route to applicable version and sizing module"
+      ]
+    },
+    {
+      "step": 4,
+      "id": "resolve_design_criteria",
+      "actions": [
+        "select approved library records",
+        "apply service-risk derating",
+        "identify unresolved criteria",
+        "stop affected calculations if fail-closed condition is triggered"
+      ]
+    },
+    {
+      "step": 5,
+      "id": "screen_orientation_and_internals",
+      "actions": [
+        "score vertical and horizontal orientation",
+        "score applicable internals",
+        "retain at least the two best feasible options for comparison"
+      ]
+    },
+    {
+      "step": 6,
+      "id": "generate_geometry_candidates",
+      "actions": [
+        "generate standard diameter candidates",
+        "solve required length or height for each candidate",
+        "calculate liquid-level bands and internal clearances",
+        "reject infeasible candidates"
+      ]
+    },
+    {
+      "step": 7,
+      "id": "evaluate_all_operating_cases",
+      "actions": [
+        "check every credible case",
+        "identify governing case for each constraint",
+        "retain maximum required geometry"
+      ]
+    },
+    {
+      "step": 8,
+      "id": "optimize_and_rank",
+      "actions": [
+        "rank compliant candidates by safety margin, plot impact, steel-volume proxy, controllability and maintainability",
+        "do not rank by minimum size alone"
+      ]
+    },
+    {
+      "step": 9,
+      "id": "generate_output_and_review_route",
+      "actions": [
+        "produce recommended geometry and alternate",
+        "state governing case and governing constraint",
+        "publish assumptions, data sources, margins and warnings",
+        "assign engineering-review status"
+      ]
+    }
+  ],
+  "orientation_recommendation_engine": {
+    "type": "weighted_scorecard",
+    "status": "company_configurable_heuristic_not_code_requirement",
+    "vertical_rules": [
+      {
+        "rule_id": "V_GAS_DOMINATED",
+        "when": {
+          "path": "derived.maximum_gas_volume_fraction",
+          "operator": ">=",
+          "value": 0.8
+        },
+        "score": 30,
+        "reason": "gas-dominated service normally favors a compact vertical disengagement section"
+      },
+      {
+        "rule_id": "V_LOW_LIQUID_INVENTORY",
+        "when": {
+          "path": "derived.total_required_liquid_inventory_m3",
+          "operator": "<=",
+          "value_path": "configuration.low_inventory_threshold_m3"
+        },
+        "score": 15,
+        "reason": "small liquid inventory reduces vertical shell-height penalty"
+      },
+      {
+        "rule_id": "V_PLOT_AREA_PRIORITY",
+        "when": {
+          "path": "project.plot_area_priority",
+          "operator": "==",
+          "value": "high"
+        },
+        "score": 20,
+        "reason": "vertical orientation reduces footprint"
+      },
+      {
+        "rule_id": "V_COMPRESSOR_PROTECTION",
+        "when": {
+          "path": "process.separation_objective",
+          "operator": "==",
+          "value": "protect_compressor"
+        },
+        "score": 15,
+        "reason": "vertical scrubber is a common preliminary configuration"
+      },
+      {
+        "rule_id": "V_SOLIDS_PENALTY",
+        "when": {
+          "path": "process.service_risks.solids_loading",
+          "operator": "in",
+          "value": [
+            "medium",
+            "high"
+          ]
+        },
+        "score": -20,
+        "reason": "solids handling and cleanout may constrain a conventional vertical configuration"
+      },
+      {
+        "rule_id": "V_LARGE_SLUG_PENALTY",
+        "when": {
+          "path": "derived.slug_to_normal_inventory_ratio",
+          "operator": ">",
+          "value": 0.5
+        },
+        "score": -35,
+        "reason": "large slug volume creates excessive vertical height"
+      }
+    ],
+    "horizontal_rules": [
+      {
+        "rule_id": "H_HIGH_LIQUID_INVENTORY",
+        "when": {
+          "path": "derived.total_required_liquid_inventory_m3",
+          "operator": ">",
+          "value_path": "configuration.low_inventory_threshold_m3"
+        },
+        "score": 20,
+        "reason": "horizontal geometry provides efficient liquid-volume distribution"
+      },
+      {
+        "rule_id": "H_LARGE_SLUG",
+        "when": {
+          "path": "derived.slug_to_normal_inventory_ratio",
+          "operator": ">=",
+          "value": 0.25
+        },
+        "score": 30,
+        "reason": "horizontal vessel usually accommodates large slug volume more efficiently"
+      },
+      {
+        "rule_id": "H_THREE_PHASE",
+        "when": {
+          "path": "derived.phase_count",
+          "operator": "==",
+          "value": 3
+        },
+        "score": 35,
+        "reason": "horizontal orientation provides liquid-liquid interface area and control length"
+      },
+      {
+        "rule_id": "H_LIQUID_LIQUID",
+        "when": {
+          "path": "process.separation_objective",
+          "operator": "==",
+          "value": "separate_light_and_heavy_liquid"
+        },
+        "score": 35,
+        "reason": "settling area and interface stability favor horizontal geometry"
+      },
+      {
+        "rule_id": "H_LENGTH_CONSTRAINT_PENALTY",
+        "when": {
+          "path": "project.maximum_available_plot_length_m",
+          "operator": "<",
+          "value_path": "derived.minimum_horizontal_length_screen_m"
+        },
+        "score": -40,
+        "reason": "plot-length constraint makes horizontal arrangement infeasible"
+      }
+    ],
+    "selection_logic": {
+      "recommend": "highest_feasible_score",
+      "close_score_difference": 10,
+      "close_score_action": "calculate_and_present_both_orientations",
+      "manual_override_allowed": true,
+      "manual_override_requires": "manual_override_reason"
+    }
+  },
+  "internals_recommendation_engine": {
+    "type": "rule_based_shortlist",
+    "status": "preliminary_only",
+    "rules": [
+      {
+        "rule_id": "INLET_HIGH_MOMENTUM",
+        "when": {
+          "path": "derived.inlet_momentum_index",
+          "operator": ">",
+          "value_path": "configuration.high_inlet_momentum_limit"
+        },
+        "recommend": [
+          "cyclonic_inlet_device",
+          "high_efficiency_inlet_device"
+        ],
+        "review": "vendor_or_owner_approval_required"
+      },
+      {
+        "rule_id": "MESH_CLEAN_SERVICE",
+        "when_all": [
+          {
+            "path": "process.service_risks.fouling_tendency",
+            "operator": "in",
+            "value": [
+              "none",
+              "low"
+            ]
+          },
+          {
+            "path": "process.service_risks.solids_loading",
+            "operator": "in",
+            "value": [
+              "none",
+              "low"
+            ]
+          },
+          {
+            "path": "process.service_risks.foaming_tendency",
+            "operator": "in",
+            "value": [
+              "none",
+              "low"
+            ]
+          }
+        ],
+        "recommend": [
+          "mesh_pad"
+        ],
+        "review": "verify_capacity_pressure_drop_and_removal_target_from_library"
+      },
+      {
+        "rule_id": "VANE_FOULING_OR_HIGH_CAPACITY",
+        "when_any": [
+          {
+            "path": "process.service_risks.fouling_tendency",
+            "operator": "in",
+            "value": [
+              "medium",
+              "high"
+            ]
+          },
+          {
+            "path": "derived.required_gas_capacity_intensity",
+            "operator": "==",
+            "value": "high"
+          }
+        ],
+        "recommend": [
+          "vane_pack"
+        ],
+        "review": "verify_vendor_performance_and_drainage"
+      },
+      {
+        "rule_id": "NO_FINE_MIST_DEVICE_FOR_HEAVY_FOULING",
+        "when": {
+          "path": "process.service_risks.fouling_tendency",
+          "operator": "==",
+          "value": "severe"
+        },
+        "reject": [
+          "fine_mesh_pad"
+        ],
+        "recommend": [
+          "open_vane_or_specialist_device"
+        ],
+        "review": "specialist_review_required"
+      },
+      {
+        "rule_id": "LIQUID_LIQUID_COALESCER",
+        "when_all": [
+          {
+            "path": "derived.liquid_liquid_separation_required",
+            "operator": "==",
+            "value": true
+          },
+          {
+            "path": "derived.gravity_settling_margin",
+            "operator": "<",
+            "value": 0
+          }
+        ],
+        "recommend": [
+          "liquid_liquid_coalescer"
+        ],
+        "review": "vendor_test_or_approved_vendor_library_required"
+      },
+      {
+        "rule_id": "VORTEX_BREAKER",
+        "when": {
+          "path": "derived.liquid_outlet_present",
+          "operator": "==",
+          "value": true
+        },
+        "recommend": [
+          "vortex_breaker"
+        ],
+        "review": "confirm_outlet_submergence_and_owner_standard"
+      }
+    ]
+  },
+  "versions": {
+    "version_1": {
+      "version_name": "Core Two-Phase and Surge Sizing",
+      "automation_target_percent": 80,
+      "supported_modules": [
+        "vertical_two_phase_gas_liquid_separator",
+        "horizontal_two_phase_gas_liquid_separator",
+        "liquid_surge_drum"
+      ],
+      "user_inputs_specific_to_version": [
+        "gas and liquid flow for all credible cases",
+        "gas and liquid density",
+        "liquid viscosity",
+        "minimum droplet-removal target or approved gas-capacity library key",
+        "retention, control and surge times",
+        "maximum credible slug volume where applicable",
+        "foaming, fouling and solids indicators",
+        "pump suction requirements where applicable"
+      ],
+      "service_classifier": [
+        {
+          "module": "vertical_two_phase_gas_liquid_separator",
+          "when_all": [
+            {
+              "path": "derived.phase_count",
+              "operator": "==",
+              "value": 2
+            },
+            {
+              "path": "process.phases_present",
+              "operator": "contains",
+              "value": "gas"
+            },
+            {
+              "path": "process.phases_present",
+              "operator": "contains_any",
+              "value": [
+                "light_liquid",
+                "heavy_liquid"
+              ]
+            },
+            {
+              "path": "orientation_recommendation.selected",
+              "operator": "==",
+              "value": "vertical"
+            }
+          ]
+        },
+        {
+          "module": "horizontal_two_phase_gas_liquid_separator",
+          "when_all": [
+            {
+              "path": "derived.phase_count",
+              "operator": "==",
+              "value": 2
+            },
+            {
+              "path": "process.phases_present",
+              "operator": "contains",
+              "value": "gas"
+            },
+            {
+              "path": "process.phases_present",
+              "operator": "contains_any",
+              "value": [
+                "light_liquid",
+                "heavy_liquid"
+              ]
+            },
+            {
+              "path": "orientation_recommendation.selected",
+              "operator": "==",
+              "value": "horizontal"
+            }
+          ]
+        },
+        {
+          "module": "liquid_surge_drum",
+          "when_all": [
+            {
+              "path": "process.separation_objective",
+              "operator": "==",
+              "value": "provide_liquid_surge"
+            },
+            {
+              "path": "process.phases_present",
+              "operator": "not_contains",
+              "value": "gas"
+            }
+          ]
+        }
+      ],
+      "automated_logic": {
+        "two_phase_common": [
+          "resolve governing gas-flow case",
+          "resolve governing liquid-inventory case",
+          "select gas-capacity library record",
+          "apply approved derating factors",
+          "calculate allowable gas velocity",
+          "calculate required effective gas area",
+          "calculate minimum, control, surge, slug and emergency liquid volumes",
+          "calculate inlet, disengagement and mist-eliminator zones",
+          "iterate candidate geometry",
+          "verify gas and liquid constraints for every case",
+          "rank feasible geometry"
+        ],
+        "vertical_separator": {
+          "diameter_logic": [
+            {
+              "constraint": "gas_capacity",
+              "calculation": "D_gas_m = sqrt(4 * A_gas_required_m2 / pi)"
+            },
+            {
+              "constraint": "inlet_device_or_mist_eliminator_diameter",
+              "calculation": "D_internal_m = max(D_gas_m, minimum_inlet_device_diameter_m, minimum_mist_eliminator_diameter_m)"
+            },
+            {
+              "action": "round_up_to_preferred_standard_diameter"
+            }
+          ],
+          "height_logic": [
+            "calculate bottom head and outlet clearance",
+            "calculate minimum operating inventory height",
+            "calculate low-to-normal control-band height",
+            "calculate normal-to-high surge-band height",
+            "calculate high-to-high-high alarm band",
+            "calculate inlet-device zone",
+            "calculate primary disengagement zone",
+            "calculate mist-eliminator thickness and clearances",
+            "calculate top disengagement and outlet clearance",
+            "sum straight-side zones",
+            "round up to preferred straight-side increment"
+          ],
+          "pass_criteria": [
+            "available gas area at maximum liquid level >= required gas area",
+            "each liquid-level band provides required volume",
+            "all internals and nozzle clearances pass",
+            "overall slenderness is within owner-approved screening limits",
+            "transport and plot constraints pass"
+          ]
+        },
+        "horizontal_separator": {
+          "candidate_solver": {
+            "diameter_start_m": "max(minimum_fabrication_diameter_m, diameter_from_gas_area_screen_m)",
+            "diameter_end_m": "configuration.maximum_screening_diameter_m",
+            "diameter_step_m": "rounding_configuration.diameter_increment_m",
+            "for_each_diameter": [
+              "calculate circular segment areas at LLL, NLL, HLL and HHLL",
+              "calculate gas area above HLL and HHLL",
+              "calculate shell length required for each liquid-volume band",
+              "calculate gas-capacity length or effective cross-sectional requirement",
+              "calculate inlet-to-outlet and internals clearance length",
+              "select maximum required length",
+              "round length up",
+              "verify all cases and constraints"
+            ]
+          },
+          "length_logic": {
+            "expression": "L_required_m = max(L_minimum_inventory_m, L_control_m, L_surge_m, L_slug_m, L_gas_capacity_m, L_internal_clearance_m)",
+            "head_volume_policy": "exclude head volume from guaranteed controllable liquid volume unless owner standard explicitly allows credit"
+          },
+          "pass_criteria": [
+            "available gas area above governing liquid level >= required gas area",
+            "all liquid-volume bands pass",
+            "slug volume passes",
+            "internals fit",
+            "orientation score remains feasible",
+            "length and diameter constraints pass"
+          ]
+        },
+        "liquid_surge_drum": {
+          "volume_components": [
+            "minimum_operating_inventory",
+            "control_inventory",
+            "process_surge_inventory",
+            "pump_trip_inventory",
+            "operator_response_inventory",
+            "emergency_inventory_if_defined"
+          ],
+          "calculation": "V_working_required_m3 = sum(applicable inventory components without double counting)",
+          "orientation_logic": "compare vertical and horizontal geometry using inventory, pump submergence, plot area, control range and maintainability",
+          "mandatory_checks": [
+            "minimum pump-suction inventory",
+            "minimum outlet submergence",
+            "NPSH process basis present",
+            "no double counting between surge and response time",
+            "vent or vapor-space requirement identified"
+          ]
+        }
+      },
+      "recommendation_logic": {
+        "automatic_recommendations": [
+          "orientation",
+          "preliminary inlet device",
+          "preliminary mist eliminator type",
+          "preliminary diameter and length",
+          "normal and alarm levels",
+          "governing case",
+          "alternate compliant geometry"
+        ],
+        "recommendation_confidence": {
+          "high": "all required inputs and approved library records are resolved; all margins >= configured target",
+          "medium": "minor non-governing assumptions remain or close orientation scores exist",
+          "low": "key service-risk or performance uncertainty exists; recommendation is screening only"
+        }
+      },
+      "fail_closed_conditions": [
+        "maximum_operating_case_not_defined",
+        "gas_density_not_available",
+        "liquid_density_not_available",
+        "gas_capacity_factor_not_resolved",
+        "retention_time_basis_not_resolved",
+        "slug_volume_not_defined_when_slugging_is_credible",
+        "foaming_derating_not_resolved",
+        "internals_performance_not_verified",
+        "no_feasible_geometry_found"
+      ]
+    },
+    "version_2": {
+      "version_name": "Three-Phase and Liquid-Liquid Sizing",
+      "automation_target_percent": 80,
+      "supported_modules": [
+        "horizontal_three_phase_separator",
+        "liquid_liquid_decanter",
+        "reflux_accumulator_with_water_boot"
+      ],
+      "user_inputs_specific_to_version": [
+        "light- and heavy-liquid flow for all credible cases",
+        "both liquid densities",
+        "both liquid viscosities",
+        "continuous and dispersed phase identity",
+        "interfacial tension",
+        "design droplet size or approved performance library key",
+        "oil and water retention times",
+        "interface operating range",
+        "emulsion and solids tendency",
+        "gas flow and properties where three phases are present",
+        "boot preference only as an optional override"
+      ],
+      "liquid_liquid_physics_engine": {
+        "calculation_sequence": [
+          "identify continuous and dispersed phase for each separation direction",
+          "calculate Stokes terminal velocity as initial estimate",
+          "calculate droplet Reynolds number",
+          "use Stokes result only within owner-approved Stokes range",
+          "otherwise iterate approved drag correlation",
+          "calculate settling or rising distance available",
+          "calculate required separation area and residence volume",
+          "apply emulsion, uncertainty and flow-distribution derating",
+          "repeat for heavy droplets through light phase",
+          "repeat for light droplets through heavy phase",
+          "select governing direction"
+        ],
+        "stokes_acceptance": {
+          "configured_maximum_reynolds_number": 0.2,
+          "status": "company_configurable_screening_limit",
+          "if_exceeded": "use_iterative_drag_correlation_or_specialist_review"
+        },
+        "iterative_drag_solver": {
+          "initial_velocity": "stokes_terminal_velocity",
+          "update_sequence": [
+            "calculate Re",
+            "calculate approved Cd",
+            "calculate new terminal velocity",
+            "repeat until convergence"
+          ],
+          "default_screening_correlation": "schiller_naumann",
+          "restriction": "screening only; reject for non-spherical droplets, stable emulsions, non-Newtonian fluids or conditions outside approved correlation range"
+        },
+        "specialist_review_triggers": [
+          "stable_emulsion",
+          "non_newtonian_continuous_phase",
+          "very_low_density_difference",
+          "very_high_viscosity",
+          "unknown_droplet_size",
+          "surfactant_present",
+          "solids_stabilized_emulsion",
+          "droplet_deformation_expected",
+          "correlation_range_exceeded"
+        ]
+      },
+      "automated_logic": {
+        "horizontal_three_phase_separator": {
+          "independent_constraints": [
+            "gas_capacity",
+            "light_liquid_retention",
+            "heavy_liquid_retention",
+            "light_in_heavy_separation",
+            "heavy_in_light_separation",
+            "interface_control_band",
+            "surge_and_slug_inventory",
+            "weir_or_boot_hydraulics",
+            "internals_clearance"
+          ],
+          "candidate_solver": [
+            "generate horizontal diameter candidates",
+            "select candidate oil and water interface levels",
+            "calculate gas area above high liquid level",
+            "calculate oil and water segment areas",
+            "calculate settling path and available interface area",
+            "calculate length required by each independent constraint",
+            "select maximum length",
+            "verify weir, boot or bucket arrangement",
+            "rank compliant arrangements"
+          ],
+          "recommended_output": [
+            "internal diameter",
+            "tangent-to-tangent length",
+            "oil normal level",
+            "water-oil interface level",
+            "high and high-high levels",
+            "oil and water working volumes",
+            "gas area",
+            "settling margins in both directions",
+            "recommended interface arrangement"
+          ]
+        },
+        "liquid_liquid_decanter": {
+          "independent_constraints": [
+            "heavy-droplet settling through light continuous phase",
+            "light-droplet rising through heavy continuous phase",
+            "light-liquid retention",
+            "heavy-liquid retention",
+            "interface-control stability",
+            "surge",
+            "flow-distribution length"
+          ],
+          "orientation_default": "horizontal_unless_plot_or_process_constraints_make_it_infeasible",
+          "selection_logic": "select geometry satisfying both separation directions and both retention-volume checks"
+        },
+        "reflux_accumulator_with_water_boot": {
+          "boot_selection_scorecard": [
+            {
+              "rule_id": "BOOT_LOW_HEAVY_PHASE_FRACTION",
+              "when": {
+                "path": "derived.heavy_liquid_fraction_of_total_liquid",
+                "operator": "<=",
+                "value": 0.1
+              },
+              "score": 25
+            },
+            {
+              "rule_id": "BOOT_STABLE_LOW_HEAVY_FLOW",
+              "when": {
+                "path": "derived.heavy_liquid_flow_variability",
+                "operator": "==",
+                "value": "low"
+              },
+              "score": 15
+            },
+            {
+              "rule_id": "BOOT_LARGE_INTERFACE_AREA_REQUIRED_PENALTY",
+              "when": {
+                "path": "derived.required_interface_area_m2",
+                "operator": ">",
+                "value_path": "derived.available_boot_interface_area_m2"
+              },
+              "score": -50
+            },
+            {
+              "rule_id": "BOOT_EMULSION_PENALTY",
+              "when": {
+                "path": "process.service_risks.emulsion_tendency",
+                "operator": "in",
+                "value": [
+                  "medium",
+                  "high"
+                ]
+              },
+              "score": -35
+            },
+            {
+              "rule_id": "BOOT_HIGH_WATER_SURGE_PENALTY",
+              "when": {
+                "path": "derived.heavy_liquid_surge_ratio",
+                "operator": ">",
+                "value": 0.5
+              },
+              "score": -35
+            }
+          ],
+          "boot_acceptance": [
+            "boot interface area passes settling requirement",
+            "boot volume passes retention and control requirements",
+            "minimum interface instrument span passes",
+            "outlet submergence passes",
+            "heavy-phase surge passes",
+            "no emulsion specialist trigger is active"
+          ],
+          "alternative_if_boot_fails": [
+            "full_diameter_interface",
+            "bucket_and_weir",
+            "separate_downstream_decanter"
+          ]
+        }
+      },
+      "recommendation_logic": {
+        "automatic_recommendations": [
+          "three-phase versus separate decanter configuration screening",
+          "full-diameter interface versus boot",
+          "preliminary weir or bucket-and-weir arrangement",
+          "preliminary diameter and length",
+          "interface level and operating band",
+          "need for liquid-liquid coalescer",
+          "governing separation direction"
+        ],
+        "commercial_and_operational_screen": [
+          "compare one large three-phase vessel against two simpler vessels",
+          "flag high controllability risk",
+          "flag emulsion risk that may make a smaller vessel false economy",
+          "show plot and steel-volume proxy for alternatives"
+        ]
+      },
+      "fail_closed_conditions": [
+        "continuous_phase_not_identified",
+        "dispersed_phase_not_identified",
+        "liquid_liquid_droplet_size_not_defined",
+        "interfacial_tension_not_available",
+        "liquid_viscosity_not_available",
+        "stokes_law_not_applicable_and_no_approved_drag_model",
+        "stable_emulsion_requires_test_or_vendor_design",
+        "boot_interface_area_inadequate",
+        "interface_control_range_not_resolved",
+        "liquid_liquid_coalescer_performance_not_verified",
+        "no_feasible_three_phase_geometry_found"
+      ]
+    },
+    "version_3": {
+      "version_name": "Specialist Refinery Services and Integration",
+      "automation_target_percent": 80,
+      "supported_modules": [
+        "compressor_suction_scrubber",
+        "flare_knockout_drum",
+        "flash_drum_with_validated_simulator_input",
+        "coalescer_assisted_separator"
+      ],
+      "user_inputs_specific_to_version": [
+        "equipment protection target or relief/depressuring basis",
+        "all credible transient and maximum cases",
+        "validated phase flows and properties",
+        "allowable liquid carryover or droplet-removal target",
+        "maximum credible liquid slug or relief liquid load",
+        "compressor vendor requirements where applicable",
+        "flare-system design basis where applicable",
+        "validated flash calculation results where applicable",
+        "approved vendor coalescer performance data where applicable"
+      ],
+      "automated_logic": {
+        "compressor_suction_scrubber": {
+          "mandatory_inputs": [
+            "compressor_type",
+            "compressor_vendor_or_owner_carryover_limit",
+            "maximum_gas_case",
+            "startup_and_trip_cases",
+            "liquid_loading",
+            "credible_slug_volume",
+            "fouling_and_solids_risk"
+          ],
+          "automated_steps": [
+            "select conservative governing gas and liquid case",
+            "recommend vertical or horizontal scrubber",
+            "select preliminary inlet and mist-removal arrangement",
+            "calculate gas-capacity area",
+            "calculate liquid accumulation between alarms and trips",
+            "calculate slug inventory",
+            "calculate demister drainage and liquid re-entrainment checks from approved library",
+            "verify outlet-zone velocity",
+            "produce compressor-protection margin"
+          ],
+          "orientation_logic": [
+            "favor vertical for gas-dominated service with low liquid inventory",
+            "favor horizontal for large slug, high liquid loading or multiple liquid phases",
+            "calculate both when scores are close"
+          ],
+          "review_gates": [
+            "compressor_vendor_acceptance_required",
+            "anti_surge_and_trip_philosophy_review_required",
+            "instrument_response_review_required",
+            "internals_vendor_performance_required"
+          ]
+        },
+        "flare_knockout_drum": {
+          "mandatory_inputs": [
+            "owner_approved_relief_and_depressuring_scenarios",
+            "scenario_gas_flows_at_drum_conditions",
+            "scenario_liquid_loads",
+            "maximum_credible_liquid_slug",
+            "drain_and_disposal_philosophy",
+            "allowable_liquid_carryover_basis",
+            "flare_header_pressure_and_temperature_basis"
+          ],
+          "automated_steps": [
+            "evaluate each credible relief and depressuring scenario",
+            "calculate gas disengagement requirement",
+            "calculate liquid containment requirement",
+            "calculate drain-down and residual inventory where applicable",
+            "evaluate vertical and horizontal configuration",
+            "identify governing scenario",
+            "flag low-temperature, two-phase, flashing and transient concerns",
+            "produce API-521-review checklist"
+          ],
+          "hard_restrictions": [
+            "do_not_generate_relief_scenarios",
+            "do_not_size_relief_devices",
+            "do_not_size_flare_header",
+            "do_not_assume_liquid_load_is_zero",
+            "do_not_credit_unverified_automatic_drain_capacity"
+          ],
+          "review_gates": [
+            "process_safety_review_required",
+            "relief_system_specialist_review_required",
+            "operations_drain_philosophy_review_required",
+            "mechanical_low_temperature_review_required"
+          ]
+        },
+        "flash_drum_with_validated_simulator_input": {
+          "accepted_input_modes": [
+            "validated_process_simulator_phase_output",
+            "validated_upstream_flash_service_data"
+          ],
+          "rejected_input_mode": "raw_multicomponent_feed_without_validated_thermodynamic_model",
+          "automated_steps": [
+            "import vapor and liquid phase flows and properties",
+            "validate mass balance",
+            "identify controlling flash case",
+            "route to two-phase or three-phase separator engine",
+            "size gas and liquid zones",
+            "recommend internals based on flash severity and fouling",
+            "flag flashing liquid at outlet",
+            "produce sensitivity to pressure and temperature cases"
+          ],
+          "thermodynamic_boundary": "The geometry engine may consume validated phase-equilibrium results. It shall not use a simplified ideal flash for refinery mixtures as a default."
+        },
+        "coalescer_assisted_separator": {
+          "mandatory_inputs": [
+            "approved_vendor_or_owner_coalescer_model_key",
+            "rated_superficial_velocity",
+            "rated_pressure_drop",
+            "rated_droplet_performance",
+            "fluid_compatibility",
+            "fouling_and_solids_limit",
+            "required_turndown"
+          ],
+          "automated_steps": [
+            "select approved coalescer record",
+            "calculate required element frontal area",
+            "calculate element count or module count",
+            "calculate preliminary vessel diameter around element arrangement",
+            "calculate upstream distribution and downstream settling zones",
+            "calculate clean and fouled pressure-drop screen",
+            "verify turndown and drainage",
+            "compare gravity-only and coalescer-assisted vessel size"
+          ],
+          "hard_restrictions": [
+            "no_vendor_record_no_design",
+            "do_not_extrapolate_beyond_vendor_rating",
+            "do_not_ignore_solids_or_fouling",
+            "do_not_claim_guaranteed_separation_without_vendor_acceptance"
+          ]
+        }
+      },
+      "recommendation_logic": {
+        "automatic_recommendations": [
+          "specialist service route",
+          "vertical or horizontal arrangement",
+          "preliminary internals train",
+          "preliminary geometry",
+          "governing transient scenario",
+          "need for separate upstream slug receiver",
+          "gravity-only versus coalescer-assisted comparison",
+          "mandatory specialist and vendor reviews"
+        ],
+        "decision_priority": [
+          "protect rotating equipment",
+          "contain credible relief-system liquid",
+          "avoid false precision where thermodynamics or vendor performance is unresolved",
+          "preserve operability and maintainability",
+          "minimize size only after protection and containment criteria pass"
+        ]
+      },
+      "fail_closed_conditions": [
+        "compressor_carryover_limit_not_defined",
+        "compressor_vendor_requirement_not_available",
+        "credible_slug_case_not_defined",
+        "flare_relief_scenarios_not_approved",
+        "flare_liquid_load_not_resolved",
+        "validated_flash_result_not_available",
+        "flash_mass_balance_failed",
+        "coalescer_vendor_record_not_available",
+        "coalescer_rating_exceeded",
+        "transient_case_requires_dynamic_simulation",
+        "specialist_vendor_design_required"
+      ]
+    }
+  },
+  "candidate_ranking_engine": {
+    "objective": "select the best compliant preliminary configuration, not simply the smallest vessel",
+    "hard_filters": [
+      "all process capacity checks pass",
+      "all liquid inventory checks pass",
+      "all separation checks pass",
+      "all critical internals clearances pass",
+      "all plot and transport hard constraints pass",
+      "no active fail-closed condition"
+    ],
+    "weighted_criteria": [
+      {
+        "criterion": "minimum_process_margin",
+        "weight": 0.25,
+        "direction": "maximize"
+      },
+      {
+        "criterion": "controllability_score",
+        "weight": 0.2,
+        "direction": "maximize"
+      },
+      {
+        "criterion": "maintainability_score",
+        "weight": 0.15,
+        "direction": "maximize"
+      },
+      {
+        "criterion": "steel_volume_proxy",
+        "weight": 0.15,
+        "direction": "minimize"
+      },
+      {
+        "criterion": "plot_area",
+        "weight": 0.1,
+        "direction": "minimize"
+      },
+      {
+        "criterion": "internals_complexity",
+        "weight": 0.1,
+        "direction": "minimize"
+      },
+      {
+        "criterion": "data_uncertainty_exposure",
+        "weight": 0.05,
+        "direction": "minimize"
+      }
+    ],
+    "selection_output": [
+      "recommended_candidate_id",
+      "alternate_candidate_id",
+      "ranking_score",
+      "hard_filter_results",
+      "tradeoff_explanation"
+    ]
+  },
+  "sensitivity_engine": {
+    "automatic_cases": [
+      {
+        "parameter": "gas_flow",
+        "variations": [
+          -0.1,
+          0.1
+        ]
+      },
+      {
+        "parameter": "liquid_flow",
+        "variations": [
+          -0.1,
+          0.1
+        ]
+      },
+      {
+        "parameter": "gas_density",
+        "variations": [
+          -0.05,
+          0.05
+        ]
+      },
+      {
+        "parameter": "liquid_viscosity",
+        "variations": [
+          -0.2,
+          0.2
+        ]
+      },
+      {
+        "parameter": "droplet_size",
+        "variations": [
+          -0.2,
+          0.2
+        ]
+      },
+      {
+        "parameter": "slug_volume",
+        "variations": [
+          0.1
+        ]
+      },
+      {
+        "parameter": "retention_time",
+        "variations": [
+          0.1
+        ]
+      }
+    ],
+    "run_only_when_parameter_applicable": true,
+    "output": [
+      "dimension_sensitivity",
+      "governing_constraint_change",
+      "margin_sensitivity",
+      "high_leverage_input_rank"
+    ]
+  },
+  "confidence_and_review_engine": {
+    "confidence_score_range": [
+      0,
+      100
+    ],
+    "deductions": [
+      {
+        "condition": "recommended_time_used_without_project_approval",
+        "points": 15
+      },
+      {
+        "condition": "droplet_size_is_assumed_or_library_suggested",
+        "points": 20
+      },
+      {
+        "condition": "property_source_not_process_simulator_or_lab",
+        "points": 10
+      },
+      {
+        "condition": "orientation_scores_close",
+        "points": 5
+      },
+      {
+        "condition": "specialist_review_trigger_active",
+        "points": 30
+      },
+      {
+        "condition": "vendor_performance_pending",
+        "points": 25
+      },
+      {
+        "condition": "governing_margin_below_target",
+        "points": 15
+      }
+    ],
+    "status_logic": [
+      {
+        "minimum_score": 85,
+        "status": "preliminary_sizing_ready_for_multidiscipline_review"
+      },
+      {
+        "minimum_score": 70,
+        "status": "preliminary_sizing_with_open_actions"
+      },
+      {
+        "minimum_score": 50,
+        "status": "screening_only_engineering_inputs_required"
+      },
+      {
+        "minimum_score": 0,
+        "status": "not_releasable"
+      }
+    ],
+    "mandatory_review_roles": [
+      "process_engineer",
+      "mechanical_static_equipment_engineer",
+      "operations_representative",
+      "instrumentation_and_control_representative",
+      "process_safety_representative",
+      "cost_engineer_for_option_comparison"
+    ],
+    "conditional_review_roles": [
+      "compressor_vendor",
+      "internals_vendor",
+      "flare_system_specialist",
+      "corrosion_and_materials_engineer",
+      "civil_and_structural_engineer",
+      "transport_and_layout_engineer"
+    ]
+  },
+  "output_contract": {
+    "required_output_fields": [
+      "calculation_id",
+      "calculation_timestamp",
+      "library_version",
+      "input_checksum",
+      "service_classification",
+      "selected_version",
+      "selected_module",
+      "selected_orientation",
+      "recommended_candidate_id",
+      "alternate_candidate_id",
+      "internal_diameter_m",
+      "tangent_to_tangent_length_m",
+      "straight_side_height_m",
+      "estimated_overall_length_or_height_m",
+      "liquid_levels_m",
+      "interface_level_m",
+      "gas_area_required_m2",
+      "gas_area_available_m2",
+      "liquid_inventory_breakdown_m3",
+      "settling_area_required_m2",
+      "settling_area_available_m2",
+      "selected_internals",
+      "governing_case",
+      "governing_constraint",
+      "constraint_margins",
+      "assumptions",
+      "warnings",
+      "sensitivity_results",
+      "confidence_score",
+      "engineering_review_status",
+      "source_records"
+    ],
+    "standard_messages": {
+      "multiple_library_records": "multiple_records_require_engineering_selection",
+      "no_library_record": "design_criterion_not_resolved",
+      "no_geometry": "no_feasible_geometry_found",
+      "specialist": "specialist_vendor_design_required",
+      "not_final": "preliminary_process_sizing_only_not_for_fabrication"
+    }
+  },
+  "audit_and_governance": {
+    "input_provenance_required": true,
+    "formula_versioning_required": true,
+    "library_record_ids_required": true,
+    "manual_override_audit_required": true,
+    "calculation_checksum_required": true,
+    "immutable_calculation_snapshot_required": true,
+    "minimum_audit_fields": [
+      "user_id",
+      "timestamp",
+      "input_source",
+      "original_value",
+      "normalized_value",
+      "formula_id",
+      "library_record_id",
+      "manual_override",
+      "override_reason",
+      "reviewer",
+      "review_status"
+    ],
+    "release_rule": "No result may be marked ready for multidisciplinary review while a fail-closed condition is active. No result may be marked approved for design without the organization's formal process and mechanical approval workflow."
+  }
+}

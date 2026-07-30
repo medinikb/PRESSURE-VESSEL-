@@ -1,0 +1,1905 @@
+{
+  "library_metadata": {
+    "library_id": "api_rp_12j_preliminary_vessel_sizing_rules",
+    "library_version": "1.1.0",
+    "status": "preliminary_process_design_rule_library",
+    "created_date": "2026-07-28",
+    "source_basis": {
+      "document": "API RP 12J",
+      "title": "Process Design of Oil and Gas Separators and Scrubbers",
+      "edition": "Ninth Edition",
+      "publication_date": "2024-09",
+      "usage_note": "This library converts selected API RP 12J process-design logic into an application-oriented preliminary sizing and recommendation framework."
+    },
+    "scope": [
+      "gas-liquid scrubbers",
+      "gas-liquid separators",
+      "gas-oil-water three-phase separators",
+      "horizontal separators",
+      "vertical separators",
+      "preliminary vessel diameter",
+      "preliminary tangent-to-tangent length",
+      "preliminary operating levels",
+      "preliminary internals recommendation",
+      "preliminary nozzle sizing",
+      "engineering review flags"
+    ],
+    "excluded_scope": [
+      "mechanical pressure vessel design",
+      "shell and head thickness design",
+      "material selection",
+      "corrosion allowance selection",
+      "relief system design",
+      "support design",
+      "fatigue analysis",
+      "fabrication design",
+      "final vendor internals design",
+      "guaranteed separator performance"
+    ],
+    "design_philosophy": {
+      "calculation_basis": "evaluate all applicable operating cases and select the governing requirement",
+      "automation_target": "preliminary sizing and internals recommendation",
+      "fail_closed": true,
+      "final_engineering_review_required": true
+    },
+    "revision_summary": [
+      "Added assumption-origin classification and governance.",
+      "Added intention, importance, sizing effect, risk and recommendation for each worked-example assumption.",
+      "Added a synthetic horizontal three-phase separator worked example.",
+      "Added calculation trace, pass/fail checks and UI recommendation messages.",
+      "No final mechanical pressure-vessel design has been added."
+    ]
+  },
+  "enumerations": {
+    "service_type": [
+      "gas_liquid_scrubber",
+      "gas_liquid_separator",
+      "gas_oil_water_separator",
+      "liquid_liquid_separator",
+      "separator_with_solids"
+    ],
+    "vessel_orientation": [
+      "horizontal",
+      "vertical",
+      "engineering_selection_required"
+    ],
+    "operating_case_type": [
+      "design",
+      "normal",
+      "minimum"
+    ],
+    "severity_level": [
+      "none",
+      "low",
+      "moderate",
+      "high",
+      "severe"
+    ],
+    "yes_no_unknown": [
+      "yes",
+      "no",
+      "unknown"
+    ],
+    "mist_eliminator_type": [
+      "none",
+      "knitted_mesh",
+      "vane_pack_no_pockets",
+      "vane_pack_with_pockets",
+      "axial_flow_cyclone",
+      "mesh_agglomerator_plus_cyclone",
+      "technology_supplier_selection"
+    ],
+    "inlet_device_type": [
+      "inlet_vane_diffuser",
+      "inlet_cyclone",
+      "v_baffle",
+      "half_pipe_or_slotted_pipe",
+      "elbow_or_hood",
+      "none",
+      "technology_supplier_selection"
+    ],
+    "three_phase_configuration": [
+      "flooded_weir",
+      "spillover_weir",
+      "elevated_oil_outlet",
+      "bucket_and_weir",
+      "passive_oil_water_interface_control",
+      "center_inlet_dual_outlets",
+      "engineering_selection_required"
+    ]
+  },
+  "required_inputs": {
+    "service_definition": {
+      "service_type": {
+        "type": "string",
+        "enum_ref": "enumerations.service_type",
+        "required": true
+      },
+      "compressor_suction_service": {
+        "type": "boolean",
+        "required": true
+      },
+      "plot_area_restricted": {
+        "type": "boolean",
+        "required": false,
+        "default": false
+      },
+      "motion_or_floating_service": {
+        "type": "boolean",
+        "required": false,
+        "default": false
+      }
+    },
+    "operating_cases": {
+      "type": "array",
+      "required_case_types": [
+        "design",
+        "normal",
+        "minimum"
+      ],
+      "minimum_items": 3,
+      "item_schema": {
+        "case_id": {
+          "type": "string",
+          "required": true
+        },
+        "case_type": {
+          "type": "string",
+          "enum_ref": "enumerations.operating_case_type",
+          "required": true
+        },
+        "pressure_bara": {
+          "type": "number",
+          "unit": "bar(a)",
+          "required": true,
+          "exclusive_minimum": 0
+        },
+        "temperature_c": {
+          "type": "number",
+          "unit": "degC",
+          "required": true
+        },
+        "gas_mass_flow_kg_h": {
+          "type": "number",
+          "unit": "kg/h",
+          "required": true,
+          "minimum": 0
+        },
+        "oil_mass_flow_kg_h": {
+          "type": "number",
+          "unit": "kg/h",
+          "required": true,
+          "minimum": 0
+        },
+        "water_mass_flow_kg_h": {
+          "type": "number",
+          "unit": "kg/h",
+          "required": true,
+          "minimum": 0
+        },
+        "gas_density_kg_m3": {
+          "type": "number",
+          "unit": "kg/m3",
+          "required": true,
+          "exclusive_minimum": 0
+        },
+        "oil_density_kg_m3": {
+          "type": "number",
+          "unit": "kg/m3",
+          "required": true,
+          "exclusive_minimum": 0
+        },
+        "water_density_kg_m3": {
+          "type": "number",
+          "unit": "kg/m3",
+          "required": true,
+          "exclusive_minimum": 0
+        },
+        "gas_viscosity_pa_s": {
+          "type": "number",
+          "unit": "Pa.s",
+          "required": true,
+          "exclusive_minimum": 0
+        },
+        "oil_viscosity_pa_s": {
+          "type": "number",
+          "unit": "Pa.s",
+          "required": true,
+          "exclusive_minimum": 0
+        },
+        "water_viscosity_pa_s": {
+          "type": "number",
+          "unit": "Pa.s",
+          "required": true,
+          "exclusive_minimum": 0
+        },
+        "gas_oil_surface_tension_n_m": {
+          "type": "number",
+          "unit": "N/m",
+          "required": false,
+          "exclusive_minimum": 0
+        },
+        "gas_water_surface_tension_n_m": {
+          "type": "number",
+          "unit": "N/m",
+          "required": false,
+          "exclusive_minimum": 0
+        },
+        "oil_water_interfacial_tension_n_m": {
+          "type": "number",
+          "unit": "N/m",
+          "required": true,
+          "exclusive_minimum": 0
+        }
+      }
+    },
+    "performance_requirements": {
+      "maximum_liquid_carryover": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "required": false
+      },
+      "maximum_gas_carry_under": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "required": false
+      },
+      "maximum_water_in_oil": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "required": false
+      },
+      "maximum_oil_in_water": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "required": false
+      },
+      "required_water_droplet_size_um": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "unit": "micrometre",
+        "required": false
+      },
+      "required_oil_droplet_size_um": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "unit": "micrometre",
+        "required": false
+      },
+      "required_gas_bubble_size_um": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "unit": "micrometre",
+        "required": false
+      },
+      "required_liquid_retention_time_s": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "unit": "s",
+        "required": false
+      },
+      "required_surge_volume_m3": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "unit": "m3",
+        "required": false
+      },
+      "required_slug_volume_m3": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "unit": "m3",
+        "required": false
+      }
+    },
+    "service_characteristics": {
+      "foaming_tendency": {
+        "type": "string",
+        "enum_ref": "enumerations.severity_level",
+        "required": true
+      },
+      "fouling_tendency": {
+        "type": "string",
+        "enum_ref": "enumerations.severity_level",
+        "required": true
+      },
+      "solids_present": {
+        "type": "boolean",
+        "required": true
+      },
+      "wax_or_asphaltenes_present": {
+        "type": "boolean",
+        "required": true
+      },
+      "high_viscosity_liquid": {
+        "type": "boolean",
+        "required": true
+      },
+      "low_interfacial_tension": {
+        "type": "boolean",
+        "required": true
+      },
+      "high_turndown_required": {
+        "type": "boolean",
+        "required": true
+      },
+      "slug_flow_expected": {
+        "type": "boolean",
+        "required": true
+      },
+      "high_liquid_loading": {
+        "type": "boolean",
+        "required": true
+      }
+    },
+    "company_configurable_inputs": {
+      "standard_vessel_ids_m": {
+        "type": "array",
+        "items": "number",
+        "required": true
+      },
+      "standard_tangent_lengths_m": {
+        "type": "array",
+        "items": "number",
+        "required": true
+      },
+      "initial_horizontal_ld_ratio": {
+        "type": "number",
+        "default": 4.0,
+        "minimum": 1.0
+      },
+      "bulk_liquid_velocity_default_m_s": {
+        "type": "number",
+        "default": 0.02,
+        "minimum": 0.015,
+        "maximum": 0.03
+      },
+      "minimum_level_spacing_m": {
+        "type": "number",
+        "default": 0.15
+      },
+      "minimum_level_control_time_s": {
+        "type": "number",
+        "default": 30
+      },
+      "foaming_additional_lah_to_lsh_spacing_m": {
+        "type": "number",
+        "default": 0.25
+      },
+      "gravity_acceleration_m_s2": {
+        "type": "number",
+        "default": 9.80665
+      },
+      "allow_interpolation": {
+        "type": "boolean",
+        "default": false
+      }
+    }
+  },
+  "derived_calculations": {
+    "phase_volumetric_flow": {
+      "gas_flow_m3_s": "(gas_mass_flow_kg_h / gas_density_kg_m3) / 3600",
+      "oil_flow_m3_s": "(oil_mass_flow_kg_h / oil_density_kg_m3) / 3600",
+      "water_flow_m3_s": "(water_mass_flow_kg_h / water_density_kg_m3) / 3600",
+      "liquid_flow_m3_s": "oil_flow_m3_s + water_flow_m3_s",
+      "total_flow_m3_s": "gas_flow_m3_s + oil_flow_m3_s + water_flow_m3_s"
+    },
+    "gas_volume_fraction": {
+      "expression": "gas_flow_m3_s / total_flow_m3_s",
+      "validation": "total_flow_m3_s > 0"
+    },
+    "mixture_density": {
+      "expression": "(gas_mass_flow_kg_h + oil_mass_flow_kg_h + water_mass_flow_kg_h) / (total_flow_m3_s * 3600)",
+      "unit": "kg/m3"
+    },
+    "nozzle_area": {
+      "expression": "pi * nozzle_internal_diameter_m^2 / 4",
+      "unit": "m2"
+    },
+    "mixture_velocity": {
+      "expression": "total_flow_m3_s / nozzle_area_m2",
+      "unit": "m/s"
+    },
+    "inlet_momentum_flux": {
+      "expression": "mixture_density_kg_m3 * mixture_velocity_m_s^2",
+      "unit": "Pa"
+    },
+    "souders_brown_velocity": {
+      "expression": "k_factor_m_s * sqrt((lightest_liquid_density_kg_m3 - gas_density_kg_m3) / gas_density_kg_m3)",
+      "unit": "m/s",
+      "validation": [
+        "lightest_liquid_density_kg_m3 > gas_density_kg_m3",
+        "k_factor_m_s > 0"
+      ]
+    },
+    "required_gas_area": {
+      "expression": "gas_flow_m3_s / allowable_gas_velocity_m_s",
+      "unit": "m2"
+    },
+    "vertical_gas_diameter": {
+      "expression": "sqrt(4 * required_gas_area_m2 / pi)",
+      "unit": "m"
+    },
+    "actual_k_factor": {
+      "expression": "actual_gas_velocity_m_s * sqrt(gas_density_kg_m3 / (lightest_liquid_density_kg_m3 - gas_density_kg_m3))",
+      "unit": "m/s"
+    },
+    "level_control_volume": {
+      "expression": "applicable_liquid_flow_m3_s * minimum_level_control_time_s",
+      "unit": "m3"
+    },
+    "required_level_spacing": {
+      "expression": "max(minimum_level_spacing_m, spacing_required_to_provide_level_control_volume_m)",
+      "unit": "m"
+    },
+    "mist_drainage_liquid_head": {
+      "expression": "mist_eliminator_pressure_drop_pa / ((light_liquid_density_kg_m3 - gas_density_kg_m3) * gravity_acceleration_m_s2)",
+      "unit": "m"
+    },
+    "minimum_lsh_to_mist_bottom_spacing": {
+      "expression": "mist_drainage_liquid_head_m / 0.55",
+      "unit": "m"
+    },
+    "bulk_liquid_axial_velocity": {
+      "expression": "liquid_flow_m3_s / liquid_cross_sectional_area_m2",
+      "unit": "m/s"
+    },
+    "droplet_terminal_velocity": {
+      "expression": "sqrt((4 * gravity_acceleration_m_s2 * droplet_diameter_m * abs(dispersed_density_kg_m3 - continuous_density_kg_m3)) / (3 * drag_coefficient * continuous_density_kg_m3))",
+      "unit": "m/s"
+    },
+    "droplet_reynolds_number": {
+      "expression": "(continuous_density_kg_m3 * terminal_velocity_m_s * droplet_diameter_m) / continuous_viscosity_pa_s",
+      "unit": "dimensionless"
+    },
+    "required_effective_separation_length": {
+      "expression": "(settling_or_rising_distance_m * continuous_phase_axial_velocity_m_s) / droplet_terminal_velocity_m_s",
+      "unit": "m"
+    }
+  },
+  "orientation_selection_rules": {
+    "evaluation_order": [
+      "mandatory_service_rule",
+      "dominant_process_requirement",
+      "plot_and_operability_considerations",
+      "engineering_selection_gate"
+    ],
+    "rules": [
+      {
+        "rule_id": "ORIENT-001",
+        "priority": 100,
+        "when": "service_type == 'gas_oil_water_separator'",
+        "recommendation": "horizontal",
+        "basis": "three-phase and liquid-liquid separation generally benefit from horizontal geometry",
+        "classification": "api_supported_design_principle"
+      },
+      {
+        "rule_id": "ORIENT-002",
+        "priority": 100,
+        "when": "service_type == 'liquid_liquid_separator'",
+        "recommendation": "horizontal",
+        "basis": "large liquid-liquid interface and separation length are normally required",
+        "classification": "api_supported_design_principle"
+      },
+      {
+        "rule_id": "ORIENT-003",
+        "priority": 100,
+        "when": "compressor_suction_service == true",
+        "recommendation": "vertical",
+        "basis": "compressor suction scrubbers are commonly vertical",
+        "classification": "api_supported_design_principle"
+      },
+      {
+        "rule_id": "ORIENT-004",
+        "priority": 80,
+        "when": "slug_flow_expected == true or required_slug_volume_m3 > 0 or required_surge_volume_m3 > 0",
+        "recommendation": "horizontal",
+        "basis": "greater surge and slug-volume accommodation",
+        "classification": "engineering_rule"
+      },
+      {
+        "rule_id": "ORIENT-005",
+        "priority": 70,
+        "when": "foaming_tendency in ['high','severe']",
+        "recommendation": "horizontal",
+        "basis": "larger gas-liquid interfacial area and lower liquid disturbance may be advantageous",
+        "classification": "engineering_rule"
+      },
+      {
+        "rule_id": "ORIENT-006",
+        "priority": 60,
+        "when": "gas_volume_fraction is high and liquid_flow_m3_s is low and plot_area_restricted == true",
+        "recommendation": "vertical",
+        "basis": "gas handling dominates and footprint is constrained",
+        "classification": "company_configurable_rule",
+        "note": "No universal API GVF threshold is defined. Company thresholds must be configured separately."
+      }
+    ],
+    "conflict_resolution": {
+      "method": "highest_priority_then_engineering_review",
+      "on_equal_priority_conflict": "orientation_requires_engineering_selection"
+    }
+  },
+  "inlet_device_library": {
+    "inlet_vane_diffuser": {
+      "preferred_applications": [
+        "general separator service",
+        "vertical vessel",
+        "horizontal vessel",
+        "flow distribution required",
+        "bulk separation required"
+      ],
+      "maximum_inlet_momentum_flux_pa": 10000,
+      "typical_design_inlet_momentum_flux_pa": 8000,
+      "lower_typical_inlet_momentum_flux_pa": 6000,
+      "maximum_velocity_m_s": null,
+      "vendor_confirmation_required": true,
+      "limitations": [
+        "final dimensions are supplier dependent",
+        "fouling and erosion must be reviewed"
+      ]
+    },
+    "inlet_cyclone": {
+      "preferred_applications": [
+        "high gas capacity",
+        "high turndown",
+        "compact vessel",
+        "foaming service"
+      ],
+      "maximum_inlet_momentum_flux_pa": null,
+      "maximum_velocity_m_s": 20,
+      "vendor_confirmation_required": true,
+      "limitations": [
+        "technology supplier specific",
+        "small passages may be unsuitable for severe fouling or solids"
+      ]
+    },
+    "v_baffle": {
+      "preferred_applications": [
+        "simple vertical bulk separator"
+      ],
+      "maximum_inlet_momentum_flux_pa": 1500,
+      "minimum_velocity_m_s": 5,
+      "maximum_velocity_m_s": 18,
+      "vendor_confirmation_required": false,
+      "limitations": [
+        "possible flow maldistribution",
+        "possible foam generation",
+        "not preferred for high performance service"
+      ]
+    },
+    "half_pipe_or_slotted_pipe": {
+      "preferred_applications": [
+        "horizontal vessel",
+        "liquid-dominated service",
+        "bulk separation"
+      ],
+      "maximum_inlet_momentum_flux_pa": 1500,
+      "minimum_velocity_m_s": 5,
+      "maximum_velocity_m_s": 18,
+      "vendor_confirmation_required": false,
+      "limitations": [
+        "erosion review required",
+        "maldistribution review required"
+      ]
+    },
+    "elbow_or_hood": {
+      "preferred_applications": [
+        "low gas volume fraction horizontal separator",
+        "bulk separation only"
+      ],
+      "maximum_inlet_momentum_flux_pa": 750,
+      "minimum_velocity_m_s": 5,
+      "maximum_velocity_m_s": 10,
+      "vendor_confirmation_required": false,
+      "limitations": [
+        "not suitable for stringent carryover requirements"
+      ]
+    },
+    "none": {
+      "preferred_applications": [
+        "exceptional low-severity service only"
+      ],
+      "maximum_inlet_momentum_flux_pa": 750,
+      "minimum_velocity_m_s": 5,
+      "maximum_velocity_m_s": 10,
+      "vendor_confirmation_required": false,
+      "limitations": [
+        "not recommended by default",
+        "increased maldistribution risk",
+        "possible re-entrainment risk"
+      ]
+    }
+  },
+  "inlet_device_selection_rules": [
+    {
+      "rule_id": "INLET-001",
+      "priority": 100,
+      "when": "solids_present == true or fouling_tendency in ['high','severe']",
+      "actions": [
+        "avoid_small_passage_inlet_devices",
+        "derate_inlet_cyclone",
+        "require_fouling_review"
+      ]
+    },
+    {
+      "rule_id": "INLET-002",
+      "priority": 90,
+      "when": "high_turndown_required == true or gas_capacity_requirement == 'very_high'",
+      "recommendation": "inlet_cyclone",
+      "review_flags": [
+        "technology_supplier_confirmation_required"
+      ]
+    },
+    {
+      "rule_id": "INLET-003",
+      "priority": 80,
+      "when": "orientation == 'horizontal' and high_liquid_loading == true and separation_performance_class == 'bulk'",
+      "recommendation": "half_pipe_or_slotted_pipe"
+    },
+    {
+      "rule_id": "INLET-004",
+      "priority": 70,
+      "when": "orientation == 'vertical' and separation_performance_class == 'bulk'",
+      "recommendation": "v_baffle",
+      "review_flags": [
+        "maldistribution_review_required"
+      ]
+    },
+    {
+      "rule_id": "INLET-005",
+      "priority": 60,
+      "when": "default",
+      "recommendation": "inlet_vane_diffuser",
+      "review_flags": [
+        "technology_supplier_confirmation_required"
+      ]
+    }
+  ],
+  "mist_eliminator_library": {
+    "horizontal_vessel_k_factors": {
+      "none": {
+        "vessel_gas_space_k_m_s": 0.07,
+        "internal_k_m_s": null
+      },
+      "knitted_mesh": {
+        "orientation": "vertical_mesh_horizontal_flow",
+        "vessel_gas_space_k_m_s": null,
+        "internal_k_m_s": 0.11
+      },
+      "vane_pack": {
+        "orientation": "vertical_vane_horizontal_flow",
+        "vessel_gas_space_k_m_s": 0.15,
+        "internal_k_m_s": 0.2
+      },
+      "axial_flow_cyclone": {
+        "orientation": "horizontal_axial_flow",
+        "vessel_gas_space_k_range_m_s": [
+          0.15,
+          0.2
+        ],
+        "internal_k_m_s": null,
+        "supplier_specific": true
+      }
+    },
+    "vertical_vessel_k_factors": {
+      "none": {
+        "vessel_gas_space_k_m_s": 0.07,
+        "internal_k_m_s": null
+      },
+      "knitted_mesh": {
+        "orientation": "horizontal_mesh_vertical_flow",
+        "vessel_gas_space_k_m_s": null,
+        "internal_k_m_s": 0.11
+      },
+      "horizontal_vane_vertical_flow": {
+        "vessel_gas_space_initial_k_m_s": 0.11,
+        "internal_k_m_s": 0.13
+      },
+      "vertical_vane_horizontal_flow": {
+        "vessel_gas_space_k_m_s": 0.15,
+        "internal_k_m_s": 0.2
+      },
+      "vertical_axial_flow_multicyclone": {
+        "vessel_gas_space_k_m_s": 0.2,
+        "internal_k_m_s": null,
+        "supplier_specific": true
+      }
+    },
+    "typical_preliminary_dimensions": {
+      "mesh_thickness_m": 0.15,
+      "vane_pack_thickness_range_m": [
+        0.2,
+        0.25
+      ],
+      "cyclone_tube_height_m": 0.5
+    },
+    "performance_characteristics": {
+      "knitted_mesh": {
+        "small_droplet_removal": "high",
+        "gas_capacity": "moderate",
+        "liquid_loading_capacity": "moderate",
+        "solids_tolerance": "low",
+        "fouling_tolerance": "low",
+        "pressure_drop": "low",
+        "turndown": "high"
+      },
+      "vane_pack_no_pockets": {
+        "small_droplet_removal": "moderate",
+        "gas_capacity": "high",
+        "liquid_loading_capacity": "moderate",
+        "solids_tolerance": "moderate",
+        "fouling_tolerance": "moderate",
+        "pressure_drop": "low",
+        "turndown": "moderate"
+      },
+      "vane_pack_with_pockets": {
+        "small_droplet_removal": "moderate",
+        "gas_capacity": "high",
+        "liquid_loading_capacity": "high",
+        "solids_tolerance": "low",
+        "fouling_tolerance": "moderate",
+        "pressure_drop": "low",
+        "turndown": "moderate"
+      },
+      "axial_flow_cyclone": {
+        "small_droplet_removal": "moderate_to_high",
+        "gas_capacity": "very_high",
+        "liquid_loading_capacity": "high",
+        "solids_tolerance": "moderate",
+        "fouling_tolerance": "moderate",
+        "pressure_drop": "moderate",
+        "turndown": "moderate"
+      },
+      "mesh_agglomerator_plus_cyclone": {
+        "small_droplet_removal": "very_high",
+        "gas_capacity": "high",
+        "liquid_loading_capacity": "high",
+        "solids_tolerance": "low_to_moderate",
+        "fouling_tolerance": "low_to_moderate",
+        "pressure_drop": "moderate",
+        "turndown": "high"
+      }
+    }
+  },
+  "mist_eliminator_selection_rules": [
+    {
+      "rule_id": "MIST-001",
+      "priority": 100,
+      "when": "solids_present == true or fouling_tendency in ['high','severe'] or wax_or_asphaltenes_present == true",
+      "actions": [
+        "exclude_or_derate_knitted_mesh",
+        "prefer_open_geometry_vane_or_cyclone",
+        "require_cleanability_review"
+      ]
+    },
+    {
+      "rule_id": "MIST-002",
+      "priority": 90,
+      "when": "high_liquid_loading == true",
+      "recommendation": [
+        "vane_pack_with_pockets",
+        "axial_flow_cyclone"
+      ]
+    },
+    {
+      "rule_id": "MIST-003",
+      "priority": 90,
+      "when": "gas_capacity_requirement == 'very_high'",
+      "recommendation": "axial_flow_cyclone",
+      "review_flags": [
+        "technology_supplier_confirmation_required"
+      ]
+    },
+    {
+      "rule_id": "MIST-004",
+      "priority": 80,
+      "when": "high_viscosity_liquid == true",
+      "actions": [
+        "derate_knitted_mesh",
+        "derate_pocketed_vane",
+        "consider_axial_flow_cyclone"
+      ]
+    },
+    {
+      "rule_id": "MIST-005",
+      "priority": 80,
+      "when": "low_interfacial_tension == true",
+      "actions": [
+        "derate_knitted_mesh",
+        "prefer_vane_pack"
+      ]
+    },
+    {
+      "rule_id": "MIST-006",
+      "priority": 70,
+      "when": "small_droplet_removal_required == true and fouling_tendency in ['none','low'] and high_liquid_loading == false",
+      "recommendation": "knitted_mesh"
+    },
+    {
+      "rule_id": "MIST-007",
+      "priority": 70,
+      "when": "high_efficiency_required == true and gas_capacity_requirement in ['high','very_high']",
+      "recommendation": "mesh_agglomerator_plus_cyclone",
+      "review_flags": [
+        "technology_supplier_confirmation_required"
+      ]
+    }
+  ],
+  "nozzle_sizing_rules": {
+    "inlet_nozzle": {
+      "method": "iterate_standard_nozzle_ids",
+      "checks": [
+        "nozzle_id_m >= inlet_pipe_id_m",
+        "mixture_velocity_m_s <= inlet_device.maximum_velocity_m_s when defined",
+        "inlet_momentum_flux_pa <= inlet_device.maximum_inlet_momentum_flux_pa when defined"
+      ],
+      "selection": "smallest_standard_nozzle_id_that_passes_all_checks"
+    },
+    "gas_outlet_nozzle": {
+      "gravity_mesh_or_vane": {
+        "maximum_momentum_flux_pa": 4500,
+        "maximum_velocity_m_s": 20
+      },
+      "cyclone_demisting": {
+        "maximum_momentum_flux_pa": 9000,
+        "maximum_velocity_m_s": 20
+      },
+      "selection": "smallest_standard_nozzle_id_that_passes_the_more_restrictive_criterion"
+    },
+    "liquid_outlet_nozzle": {
+      "two_phase_hydrocarbon_or_mixed_liquid_max_velocity_m_s": 2,
+      "three_phase_oil_max_velocity_m_s": 2,
+      "three_phase_water_max_velocity_m_s": 1,
+      "pump_suction_max_velocity_m_s": 1,
+      "vortex_breaker_default": true
+    },
+    "solids_outlet_nozzle": {
+      "minimum_nominal_size_dn": 50,
+      "typical_exit_velocity_m_s": 3
+    }
+  },
+  "liquid_level_rules": {
+    "minimum_spacing_m": 0.15,
+    "minimum_control_time_s": 30,
+    "applicable_intervals": [
+      "LSLL_to_LAL",
+      "LAL_to_NLL",
+      "NLL_to_LAH",
+      "LAH_to_LSH_or_LSHH"
+    ],
+    "rule": "spacing_for_each_interval = max(0.15, spacing_required_to_provide_30_seconds_of_applicable_flow)",
+    "basis_record_required": true,
+    "default_flow_basis": "design_flow",
+    "foaming_adjustment": {
+      "condition": "foaming_tendency in ['high','severe']",
+      "minimum_additional_lah_to_lsh_spacing_m": 0.25,
+      "gas_area_calculation_level": "foam_adjusted_liquid_level"
+    }
+  },
+  "three_phase_liquid_section_rules": {
+    "bulk_liquid_axial_velocity_range_m_s": [
+      0.015,
+      0.03
+    ],
+    "default_trial_velocity_m_s": 0.02,
+    "selection_guidance": {
+      "heavy_or_viscous_oil": "use_lower_end_of_range",
+      "less_critical_service": "higher_end_may_be_considered",
+      "default": "0.02_m_s_initial_trial"
+    },
+    "water_droplet_target_guidance_um": {
+      "high_free_water_removal": "<100",
+      "bulk_separation": "350_to_500",
+      "higher_residual_water_acceptable": "1500"
+    },
+    "oil_droplet_target_in_water_um": {
+      "continuous_produced_water_service": 150
+    },
+    "user_defined_outlet_quality_required": true
+  },
+  "droplet_settling_model": {
+    "solver": {
+      "type": "iterative",
+      "convergence_variable": "terminal_velocity_m_s",
+      "default_relative_tolerance": 1e-06,
+      "maximum_iterations": 100
+    },
+    "drag_coefficient_correlations": [
+      {
+        "correlation_id": "CD-LOW-RE",
+        "expression": "24 / reynolds_number",
+        "applicability": "low_Reynolds_number_region",
+        "verification_status": "engineering_verification_required"
+      },
+      {
+        "correlation_id": "CD-INTERMEDIATE",
+        "expression": "(24 / reynolds_number) * (1 + 0.14 * reynolds_number^0.7)",
+        "applicability": "intermediate_Reynolds_number_region",
+        "verification_status": "engineering_verification_required"
+      }
+    ],
+    "fail_closed_conditions": [
+      "reynolds_number_outside_implemented_correlation_range",
+      "non_convergence",
+      "continuous_phase_viscosity_missing",
+      "dispersed_or_continuous_phase_density_missing",
+      "droplet_size_target_missing"
+    ],
+    "applications": [
+      "water_droplets_settling_through_oil",
+      "oil_droplets_rising_through_water",
+      "gas_bubbles_rising_through_liquid",
+      "liquid_droplets_falling_through_gas",
+      "solids_settling_through_liquid"
+    ]
+  },
+  "distribution_baffle_rules": {
+    "recommend_when": [
+      "horizontal vessel",
+      "liquid-liquid separation required",
+      "inlet device does not ensure uniform flow",
+      "effective droplet-settling length must be established"
+    ],
+    "open_area_fraction_range": [
+      0.2,
+      0.4
+    ],
+    "typical_hole_or_slot_spacing_mm": [
+      25,
+      75
+    ],
+    "severe_fouling_or_solids_spacing_mm": [
+      50,
+      75
+    ],
+    "engineering_review_triggers": [
+      "non_standard_configuration",
+      "revamp_service",
+      "performance_critical_service"
+    ],
+    "engineering_review_flag": "CFD_or_flow_distribution_review_required"
+  },
+  "three_phase_configuration_rules": [
+    {
+      "rule_id": "3PH-001",
+      "when": "positive_interface_level_control_available == true",
+      "consider": [
+        "flooded_weir",
+        "elevated_oil_outlet"
+      ]
+    },
+    {
+      "rule_id": "3PH-002",
+      "when": "independent_oil_and_water_compartments_required == true",
+      "consider": [
+        "bucket_and_weir"
+      ]
+    },
+    {
+      "rule_id": "3PH-003",
+      "when": "passive_interface_control_requested == true",
+      "consider": [
+        "bucket_and_weir",
+        "passive_oil_water_interface_control"
+      ],
+      "review_flags": [
+        "operating_density_sensitivity_review_required"
+      ]
+    },
+    {
+      "rule_id": "3PH-004",
+      "when": "high_gas_rate == true and vessel_length_or_inlet_distribution_limiting == true",
+      "consider": [
+        "center_inlet_dual_outlets"
+      ]
+    }
+  ],
+  "vertical_vessel_workflow": {
+    "workflow_id": "VERTICAL-SIZING-001",
+    "steps": [
+      "validate_required_inputs",
+      "calculate_phase_volumetric_flows_for_all_cases",
+      "select_preliminary_inlet_device",
+      "size_inlet_nozzle",
+      "select_preliminary_mist_eliminator",
+      "select_applicable_k_factors",
+      "calculate_required_gas_area_for_all_cases",
+      "calculate_preliminary_vessel_id",
+      "round_up_to_standard_vessel_id",
+      "recalculate_actual_gas_velocity_and_k_factor",
+      "size_liquid_control_volume",
+      "size_surge_and_slug_volume",
+      "establish_LSLL_LAL_NLL_LAH_LSH_levels",
+      "add_inlet_device_elevation_and_clearance",
+      "add_mist_eliminator_clearance_and_thickness",
+      "calculate_mist_drainage_head",
+      "add_gas_outlet_nozzle_clearance",
+      "calculate_preliminary_tangent_to_tangent_height",
+      "recheck_all_design_normal_and_minimum_cases",
+      "select_governing_case",
+      "generate_engineering_review_flags"
+    ],
+    "possible_governing_criteria": [
+      "gas_capacity",
+      "mist_eliminator_area",
+      "liquid_control_area",
+      "surge_volume",
+      "slug_volume",
+      "inlet_device_geometry",
+      "mist_drainage"
+    ]
+  },
+  "horizontal_vessel_workflow": {
+    "workflow_id": "HORIZONTAL-SIZING-001",
+    "search_method": "iterate_standard_diameter_and_tangent_length_combinations",
+    "initialization": {
+      "initial_ld_ratio": 4.0,
+      "note": "Example starting value only. Not a mandatory API ratio."
+    },
+    "steps": [
+      "validate_required_inputs",
+      "select_initial_standard_vessel_diameter",
+      "select_initial_tangent_length_from_initial_ld_ratio",
+      "establish_preliminary_NLL_and_interface_level",
+      "calculate_liquid_cross_sectional_area",
+      "check_bulk_liquid_axial_velocity",
+      "calculate_gas_area_above_LAH_or_foam_adjusted_level",
+      "check_vessel_gas_space_k_factor",
+      "check_gas_entrainment_velocity",
+      "establish_inlet_device_location",
+      "establish_distribution_baffle_location",
+      "establish_mist_eliminator_location",
+      "calculate_maximum_LSH_from_mist_drainage_clearance",
+      "calculate_maximum_LSH_from_inlet_device_clearance",
+      "calculate_effective_separation_lengths",
+      "check_water_droplet_settling",
+      "check_oil_droplet_rising",
+      "check_gas_bubble_disengagement_if_applicable",
+      "check_liquid_retention_volume",
+      "check_surge_and_slug_volume",
+      "check_nozzle_velocity_and_momentum",
+      "increase_diameter_or_length_if_any_check_fails",
+      "repeat_until_all_criteria_pass",
+      "select_smallest_practical_configuration",
+      "generate_engineering_review_flags"
+    ]
+  },
+  "governing_size_selection": {
+    "selection_rule": "select_the_smallest_practical_standard_vessel_configuration_that_passes_all_applicable_checks_for_all_operating_cases",
+    "mandatory_checks": [
+      "inlet_momentum",
+      "inlet_velocity",
+      "gas_capacity",
+      "mist_eliminator_capacity",
+      "liquid_control_volume",
+      "surge_volume",
+      "slug_volume",
+      "bulk_liquid_velocity",
+      "water_in_oil_droplet_settling",
+      "oil_in_water_droplet_rising",
+      "gas_bubble_disengagement",
+      "solids_settling_when_applicable",
+      "internal_spacing",
+      "mist_drainage",
+      "gas_outlet_velocity",
+      "gas_outlet_momentum",
+      "liquid_outlet_velocity",
+      "effective_separation_length"
+    ],
+    "prohibited_shortcuts": [
+      "do_not_select_diameter_from_gas_capacity_only",
+      "do_not_select_first_passing_configuration_without_checking_all_cases",
+      "do_not_assume_vendor_internal_performance_without_confirmation",
+      "do_not_return_precise_size_when_critical_inputs_are_missing"
+    ]
+  },
+  "validation_and_fail_closed_logic": {
+    "critical_input_failures": {
+      "missing_design_case": "required_process_case_missing",
+      "missing_normal_case": "required_process_case_missing",
+      "missing_minimum_case": "required_process_case_missing",
+      "missing_density": "fluid_density_not_resolved",
+      "missing_viscosity": "fluid_viscosity_not_resolved",
+      "missing_interfacial_tension": "interfacial_tension_not_resolved",
+      "missing_performance_requirement": "separation_performance_not_defined",
+      "missing_droplet_target": "droplet_size_target_not_defined"
+    },
+    "selection_failures": {
+      "orientation_conflict": "orientation_requires_engineering_selection",
+      "three_phase_configuration_unresolved": "three_phase_configuration_requires_engineering_selection",
+      "vendor_data_required": "technology_supplier_confirmation_required",
+      "mist_pressure_drop_missing": "mist_eliminator_pressure_drop_not_available"
+    },
+    "calculation_failures": {
+      "no_standard_size_passes": "no_standard_vessel_size_satisfies_all_criteria",
+      "droplet_solver_non_convergence": "droplet_terminal_velocity_not_resolved",
+      "drag_correlation_out_of_range": "drag_coefficient_correlation_not_resolved",
+      "invalid_density_relationship": "phase_density_relationship_invalid"
+    },
+    "design_boundary_flags": {
+      "mechanical_design": "mechanical_design_not_performed",
+      "relief_design": "relief_design_not_performed",
+      "vendor_guarantee": "vendor_performance_not_confirmed"
+    }
+  },
+  "recommended_output_schema": {
+    "design_status": "preliminary_process_design",
+    "code_basis": {
+      "document": "API RP 12J",
+      "edition": "9th Edition",
+      "year": 2024
+    },
+    "input_completeness": {
+      "status": null,
+      "missing_required_fields": [],
+      "warnings": []
+    },
+    "recommended_vessel": {
+      "service": null,
+      "orientation": null,
+      "internal_diameter_m": null,
+      "tangent_to_tangent_length_m": null,
+      "overall_height_or_length_m": null,
+      "ld_ratio": null
+    },
+    "levels": {
+      "lsll_m": null,
+      "lal_m": null,
+      "nil_m": null,
+      "nll_m": null,
+      "lah_m": null,
+      "lsh_m": null,
+      "lshh_m": null
+    },
+    "internals": {
+      "inlet_device": null,
+      "distribution_baffle": null,
+      "mist_eliminator": null,
+      "three_phase_configuration": null,
+      "vortex_breakers": true,
+      "solids_removal_system": null
+    },
+    "nozzles": {
+      "inlet_id_m": null,
+      "gas_outlet_id_m": null,
+      "oil_outlet_id_m": null,
+      "water_outlet_id_m": null,
+      "combined_liquid_outlet_id_m": null,
+      "solids_outlet_id_m": null
+    },
+    "case_results": [],
+    "governing_criteria": [],
+    "passed_checks": [],
+    "failed_checks": [],
+    "assumptions": [],
+    "engineering_review_flags": [],
+    "vendor_confirmation_flags": [],
+    "traceability": {
+      "library_id": "api_rp_12j_preliminary_vessel_sizing_rules",
+      "library_version": "1.0.0",
+      "calculation_timestamp": null,
+      "selected_rule_ids": [],
+      "source_sections": []
+    }
+  },
+  "mandatory_disclaimer": "Preliminary process-sizing recommendation based on API RP 12J. Final vessel geometry, mechanical design, internals performance, nozzle arrangement, pressure drop, relief design and fabrication details require qualified process, mechanical and technology-supplier review.",
+  "assumption_governance": {
+    "purpose": "Prevent hidden defaults and help the user understand why each value exists, how it affects preliminary sizing, and who must confirm it.",
+    "value_origin_types": {
+      "api_requirement_or_recommendation": {
+        "meaning": "A requirement, recommendation, equation, limit or design principle taken from the stated API basis.",
+        "ui_badge": "API basis",
+        "editable": false,
+        "override_requires_reason": true
+      },
+      "api_typical_value": {
+        "meaning": "A typical or initial value shown by the API source. It is not automatically a universal mandatory value.",
+        "ui_badge": "API typical",
+        "editable": true,
+        "override_requires_reason": true
+      },
+      "company_configurable_default": {
+        "meaning": "A controlled organizational default used to start an iteration when the API source does not prescribe one universal value.",
+        "ui_badge": "Company default",
+        "editable": true,
+        "override_requires_reason": true
+      },
+      "project_process_input": {
+        "meaning": "A value supplied by the process design basis, heat and material balance, process simulation, project specification or approved datasheet.",
+        "ui_badge": "Project input",
+        "editable": true,
+        "override_requires_reason": false
+      },
+      "worked_example_assumption": {
+        "meaning": "A synthetic demonstration value used only to show the calculation flow.",
+        "ui_badge": "Example only",
+        "editable": true,
+        "override_requires_reason": false
+      },
+      "vendor_required": {
+        "meaning": "A value that must ultimately be confirmed by the separator internals technology supplier.",
+        "ui_badge": "Vendor confirmation",
+        "editable": true,
+        "override_requires_reason": true
+      },
+      "calculated": {
+        "meaning": "A value produced by a formula or geometry calculation.",
+        "ui_badge": "Calculated",
+        "editable": false,
+        "override_requires_reason": true
+      },
+      "engineering_selection": {
+        "meaning": "A value selected by a qualified engineer after evaluating trade-offs and constraints.",
+        "ui_badge": "Engineering selection",
+        "editable": true,
+        "override_requires_reason": true
+      }
+    },
+    "mandatory_fields_for_every_assumption": [
+      "parameter_id",
+      "value",
+      "unit",
+      "value_origin",
+      "intention",
+      "importance",
+      "sizing_effect",
+      "risk_if_wrong",
+      "recommendation",
+      "verification_owner"
+    ],
+    "application_behavior": {
+      "show_assumption_badge": true,
+      "show_why_this_matters_tooltip": true,
+      "retain_original_default_after_override": true,
+      "record_override_reason": true,
+      "record_user_and_timestamp": true,
+      "block_final_status_when_vendor_required_value_is_unconfirmed": true,
+      "block_final_status_when_critical_process_input_is_missing": true
+    }
+  },
+  "worked_examples": [
+    {
+      "example_id": "EX-H3P-001",
+      "title": "Synthetic horizontal gas-oil-water separator",
+      "status": "demonstration_only_not_engineering_approved",
+      "objective": "Show how process inputs, API-based limits, engineering assumptions and vendor-dependent values interact to produce a preliminary vessel size and internals recommendation.",
+      "source_basis": {
+        "document": "API RP 12J",
+        "edition": "Ninth Edition",
+        "year": 2024,
+        "relevant_sections": [
+          "Section 4.3 Process Design Cases",
+          "Section 5.1 Separator Sizing Specifications",
+          "Section 5.2 Horizontal Two-phase and Three-phase Separator Specifications",
+          "Tables 1, 2, 3, 5 and 6 as applicable",
+          "Annex E Sizing Calculation Examples",
+          "Annex H Droplet Settling"
+        ]
+      },
+      "input_snapshot": {
+        "service_type": "gas_oil_water_separator",
+        "compressor_suction_service": false,
+        "pressure_bara": 10.0,
+        "temperature_c": 50.0,
+        "gas_mass_flow_kg_h": 10000.0,
+        "oil_mass_flow_kg_h": 30000.0,
+        "water_mass_flow_kg_h": 10000.0,
+        "gas_density_kg_m3": 8.0,
+        "oil_density_kg_m3": 800.0,
+        "water_density_kg_m3": 1000.0,
+        "gas_viscosity_pa_s": 1.2e-05,
+        "oil_viscosity_pa_s": 0.005,
+        "water_viscosity_pa_s": 0.001,
+        "oil_water_interfacial_tension_n_m": 0.025,
+        "required_water_droplet_size_um": 350.0,
+        "required_oil_droplet_size_um": 150.0,
+        "required_liquid_retention_time_s": 180.0,
+        "foaming_tendency": "low",
+        "fouling_tendency": "moderate",
+        "solids_present": false,
+        "wax_or_asphaltenes_present": false,
+        "high_turndown_required": false,
+        "slug_flow_expected": false
+      },
+      "assumption_explanations": [
+        {
+          "parameter_id": "service_type",
+          "value": "gas_oil_water_separator",
+          "unit": null,
+          "value_origin": "worked_example_assumption",
+          "intention": "Defines whether the vessel must separate gas, oil and water.",
+          "importance": "It controls orientation logic, liquid-liquid settling checks, level architecture, outlet arrangement and internal configuration.",
+          "sizing_effect": "Three-phase service usually adds interface-control volume and droplet-settling length compared with a two-phase scrubber.",
+          "risk_if_wrong": "The app may omit the water section, interface level and one of the liquid outlets.",
+          "recommendation": "Require the user to select the phase system before any sizing calculation is enabled.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "pressure_bara",
+          "value": 10.0,
+          "unit": "bar(a)",
+          "value_origin": "worked_example_assumption",
+          "intention": "Establishes the operating condition at which gas density and volumetric flow must be evaluated.",
+          "importance": "Gas capacity is based on actual volumetric flow and density at vessel conditions, not standard flow alone.",
+          "sizing_effect": "For the same gas mass flow, higher operating gas density normally reduces actual gas volume and gas-area demand.",
+          "risk_if_wrong": "Using standard-condition gas properties can materially oversize or undersize the gas section.",
+          "recommendation": "Obtain pressure from the approved process design case and calculate properties at that condition.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "temperature_c",
+          "value": 50.0,
+          "unit": "degC",
+          "value_origin": "worked_example_assumption",
+          "intention": "Defines the temperature for density, viscosity and interfacial-property evaluation.",
+          "importance": "Temperature can change gas volume, liquid viscosity, surface tension and droplet-settling performance.",
+          "sizing_effect": "Higher liquid viscosity generally reduces droplet terminal velocity and increases required effective separation length.",
+          "risk_if_wrong": "The geometry may pass with incorrect fluid properties but fail under the real operating case.",
+          "recommendation": "Evaluate design, normal and minimum cases using case-specific properties.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "gas_mass_flow_kg_h",
+          "value": 10000.0,
+          "unit": "kg/h",
+          "value_origin": "worked_example_assumption",
+          "intention": "Quantifies the gas load entering the vessel.",
+          "importance": "Gas load drives required gas-flow area, mist-eliminator area and gas outlet size.",
+          "sizing_effect": "Increasing gas flow normally increases vessel diameter or requires higher-capacity internals.",
+          "risk_if_wrong": "Understated peak gas flow creates liquid carryover and excessive nozzle velocity.",
+          "recommendation": "Use the governing design flow and separately check normal and minimum turndown cases.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "oil_mass_flow_kg_h",
+          "value": 30000.0,
+          "unit": "kg/h",
+          "value_origin": "worked_example_assumption",
+          "intention": "Quantifies the hydrocarbon-liquid load.",
+          "importance": "Oil flow affects liquid velocity, retention volume, oil outlet size and water-droplet settling through oil.",
+          "sizing_effect": "Increasing oil flow generally increases liquid-section area, level volume or vessel length.",
+          "risk_if_wrong": "The vessel may have inadequate residence time or oil outlet capacity.",
+          "recommendation": "Use design flow for sizing and minimum flow for interface-control operability checks.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "water_mass_flow_kg_h",
+          "value": 10000.0,
+          "unit": "kg/h",
+          "value_origin": "worked_example_assumption",
+          "intention": "Quantifies the aqueous-phase load.",
+          "importance": "Water flow affects interface level, water-section area, oil-droplet rising length and water outlet size.",
+          "sizing_effect": "Increasing water flow increases required water volume and may increase vessel diameter or length.",
+          "risk_if_wrong": "Water carryover into oil or oil carryover into water may exceed downstream limits.",
+          "recommendation": "Include normal, maximum water and upset-water cases where applicable.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "gas_density_kg_m3",
+          "value": 8.0,
+          "unit": "kg/m3",
+          "value_origin": "worked_example_assumption",
+          "intention": "Converts gas mass flow to actual volume and enters the Souders-Brown relationship.",
+          "importance": "It strongly influences gas capacity, allowable velocity and nozzle momentum.",
+          "sizing_effect": "Lower gas density usually increases actual gas volume and can increase gas-area demand.",
+          "risk_if_wrong": "Incorrect gas density can dominate the vessel-diameter error.",
+          "recommendation": "Use a validated property package at each operating pressure and temperature.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "oil_density_kg_m3",
+          "value": 800.0,
+          "unit": "kg/m3",
+          "value_origin": "worked_example_assumption",
+          "intention": "Defines the light-liquid density for gas separation and the continuous-phase density for water settling.",
+          "importance": "Density difference affects allowable gas velocity and droplet terminal velocity.",
+          "sizing_effect": "A smaller density difference reduces separation driving force and increases required area or length.",
+          "risk_if_wrong": "The app may overstate separation performance.",
+          "recommendation": "Use the lightest credible hydrocarbon density for gas-capacity screening where required.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "water_density_kg_m3",
+          "value": 1000.0,
+          "unit": "kg/m3",
+          "value_origin": "worked_example_assumption",
+          "intention": "Defines the heavy-phase density.",
+          "importance": "The oil-water density difference is the principal gravity-driving force for liquid-liquid separation.",
+          "sizing_effect": "A smaller oil-water density difference increases settling and rising length.",
+          "risk_if_wrong": "Emulsion-prone or near-density services can be seriously undersized.",
+          "recommendation": "Use the minimum credible density difference across the operating envelope.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "oil_viscosity_pa_s",
+          "value": 0.005,
+          "unit": "Pa.s",
+          "value_origin": "worked_example_assumption",
+          "intention": "Represents resistance to water-droplet movement through the oil phase.",
+          "importance": "Viscosity directly affects droplet Reynolds number and terminal velocity.",
+          "sizing_effect": "Higher oil viscosity reduces water-droplet settling velocity and increases required separation length.",
+          "risk_if_wrong": "Cold, heavy or waxy oil service may be substantially undersized.",
+          "recommendation": "Use the highest credible oil viscosity for water-in-oil separation checks.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "water_viscosity_pa_s",
+          "value": 0.001,
+          "unit": "Pa.s",
+          "value_origin": "worked_example_assumption",
+          "intention": "Represents resistance to oil-droplet rise through the water phase.",
+          "importance": "It affects the required oil-removal length in the water compartment.",
+          "sizing_effect": "Higher water viscosity increases the required effective separation length.",
+          "risk_if_wrong": "The water outlet may contain more oil than expected.",
+          "recommendation": "Use case-specific viscosity and include contaminants where they materially change rheology.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "oil_water_interfacial_tension_n_m",
+          "value": 0.025,
+          "unit": "N/m",
+          "value_origin": "worked_example_assumption",
+          "intention": "Characterizes droplet formation, coalescence tendency and emulsion behavior.",
+          "importance": "Low interfacial tension can make small droplets more stable and reduce practical separation performance.",
+          "sizing_effect": "Lower interfacial tension may require conservative droplet targets, coalescing internals or more separation length.",
+          "risk_if_wrong": "A gravity-only design may be recommended for a stable emulsion that requires special treatment.",
+          "recommendation": "Flag low-interfacial-tension service for process testing or technology-supplier review.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "required_water_droplet_size_um",
+          "value": 350.0,
+          "unit": "micrometre",
+          "value_origin": "worked_example_assumption",
+          "intention": "Defines the smallest water droplet that the oil section is expected to remove.",
+          "importance": "It converts an outlet-quality expectation into a gravity-settling design criterion.",
+          "sizing_effect": "Smaller target droplets have lower terminal velocity and require more effective separation length.",
+          "risk_if_wrong": "Selecting an easy large-droplet target may produce unacceptable water in oil.",
+          "recommendation": "Link the target to a stated outlet-quality requirement and downstream tolerance.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "required_oil_droplet_size_um",
+          "value": 150.0,
+          "unit": "micrometre",
+          "value_origin": "worked_example_assumption",
+          "intention": "Defines the smallest oil droplet expected to rise out of the water phase.",
+          "importance": "It governs the required water-compartment separation length.",
+          "sizing_effect": "Smaller oil droplets increase required effective separation length.",
+          "risk_if_wrong": "The produced-water outlet may fail downstream oil-in-water limits.",
+          "recommendation": "Require the user to state the water outlet quality or select an approved project droplet target.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "required_liquid_retention_time_s",
+          "value": 180.0,
+          "unit": "s",
+          "value_origin": "worked_example_assumption",
+          "intention": "Provides a preliminary liquid inventory check in addition to droplet-settling calculations.",
+          "importance": "Retention time affects controllability, surge tolerance and the time available for disengagement.",
+          "sizing_effect": "Longer retention time increases required liquid volume and usually vessel length or diameter.",
+          "risk_if_wrong": "A universal retention time can overdesign one service and underdesign another.",
+          "recommendation": "Treat retention time as project-specific and do not use it as a substitute for droplet-settling checks.",
+          "verification_owner": "process_engineer"
+        },
+        {
+          "parameter_id": "initial_horizontal_ld_ratio",
+          "value": 4.0,
+          "unit": "dimensionless",
+          "value_origin": "api_typical_value",
+          "intention": "Provides a starting geometry for iterative horizontal-vessel sizing.",
+          "importance": "It balances diameter, length, plot space, internals arrangement and fabrication economics.",
+          "sizing_effect": "A larger ratio tends to reduce diameter but increases footprint and separation travel length.",
+          "risk_if_wrong": "Treating the initial ratio as mandatory can prevent the app from finding a better geometry.",
+          "recommendation": "Use 4.0 only as an initial trial and iterate standard diameter-length combinations.",
+          "verification_owner": "pressure_vessel_process_engineer"
+        },
+        {
+          "parameter_id": "vessel_internal_diameter_m",
+          "value": 1.5,
+          "unit": "m",
+          "value_origin": "engineering_selection",
+          "intention": "Provides gas-flow area, liquid cross-sectional area, level spacing and internal clearances.",
+          "importance": "Diameter is usually the highest-leverage geometry variable because it affects gas and liquid capacity simultaneously.",
+          "sizing_effect": "Increasing diameter lowers gas and liquid velocities and increases level volume, but raises vessel weight and cost.",
+          "risk_if_wrong": "A gas-only diameter may fail liquid separation, while excessive diameter can waste capital.",
+          "recommendation": "Select the smallest standard diameter that passes every applicable criterion.",
+          "verification_owner": "pressure_vessel_process_engineer"
+        },
+        {
+          "parameter_id": "tangent_to_tangent_length_m",
+          "value": 6.0,
+          "unit": "m",
+          "value_origin": "engineering_selection",
+          "intention": "Provides retention volume, droplet travel length and space for inlet, baffle, mist and outlet zones.",
+          "importance": "Length frequently governs three-phase and slug-handling services.",
+          "sizing_effect": "Increasing length increases retention and effective separation distance without increasing diameter.",
+          "risk_if_wrong": "Using total tangent length as effective separation length can overstate separation performance.",
+          "recommendation": "Separate total tangent length from usable effective separation length in the app.",
+          "verification_owner": "pressure_vessel_process_engineer"
+        },
+        {
+          "parameter_id": "effective_separation_length_m",
+          "value": 4.5,
+          "unit": "m",
+          "value_origin": "worked_example_assumption",
+          "intention": "Represents the usable gravity-separation distance after deducting inlet, baffle, weir, mist and outlet zones.",
+          "importance": "Droplet-settling models must compare required length with usable length, not overall vessel length.",
+          "sizing_effect": "A shorter effective length can make an apparently adequate vessel fail liquid-liquid separation.",
+          "risk_if_wrong": "The app may credit space occupied by internals as active separation volume.",
+          "recommendation": "Calculate this value from the selected internal arrangement and nozzle locations.",
+          "verification_owner": "process_engineer_and_vendor"
+        },
+        {
+          "parameter_id": "vessel_gas_space_k_m_s",
+          "value": 0.15,
+          "unit": "m/s",
+          "value_origin": "api_typical_value",
+          "intention": "Converts fluid density difference into allowable gas velocity.",
+          "importance": "It directly controls gas-area demand and therefore can control vessel diameter.",
+          "sizing_effect": "A higher K-factor reduces required gas area, but may reduce separation margin.",
+          "risk_if_wrong": "Using an optimistic K-factor without matching internals can cause liquid carryover.",
+          "recommendation": "Select K from the actual orientation and demisting arrangement and apply service derating where needed.",
+          "verification_owner": "process_engineer_and_vendor"
+        },
+        {
+          "parameter_id": "mist_eliminator_pressure_drop_pa",
+          "value": 1000.0,
+          "unit": "Pa",
+          "value_origin": "worked_example_assumption",
+          "intention": "Estimates the drainage head needed for the mist-eliminator drainpipe.",
+          "importance": "Insufficient drainage head can flood the mist eliminator and sharply reduce performance.",
+          "sizing_effect": "Higher pressure drop increases required LSH-to-mist spacing and may increase vessel height or diameter.",
+          "risk_if_wrong": "The selected mist element may flood at design rate.",
+          "recommendation": "Replace the example value with vendor pressure-drop data before finalizing geometry.",
+          "verification_owner": "technology_supplier"
+        },
+        {
+          "parameter_id": "distribution_baffle_open_area_fraction",
+          "value": 0.3,
+          "unit": "fraction",
+          "value_origin": "api_typical_value",
+          "intention": "Balances flow redistribution against pressure drop through the baffle.",
+          "importance": "Uniform flow protects effective separation length and reduces short-circuiting.",
+          "sizing_effect": "Too little open area raises pressure drop; too much may provide weak redistribution.",
+          "risk_if_wrong": "Poor distribution can invalidate the ideal droplet-settling calculation.",
+          "recommendation": "Use the stated range for preliminary design and obtain detailed hydraulic or CFD review for critical service.",
+          "verification_owner": "process_engineer_and_vendor"
+        },
+        {
+          "parameter_id": "minimum_level_spacing_m",
+          "value": 0.15,
+          "unit": "m",
+          "value_origin": "api_requirement_or_recommendation",
+          "intention": "Provides minimum physical separation between control, alarm and trip levels.",
+          "importance": "It supports reliable instrumentation, operator response and control stability.",
+          "sizing_effect": "Larger required spacing increases liquid inventory and can reduce gas area in a horizontal vessel.",
+          "risk_if_wrong": "Closely spaced levels may cause nuisance alarms, trips or poor control.",
+          "recommendation": "Apply the greater of the minimum physical spacing and the spacing needed for the required control time.",
+          "verification_owner": "process_and_instrumentation_engineer"
+        },
+        {
+          "parameter_id": "minimum_level_control_time_s",
+          "value": 30.0,
+          "unit": "s",
+          "value_origin": "api_requirement_or_recommendation",
+          "intention": "Ensures that each level interval contains sufficient operating volume.",
+          "importance": "Time-based volume prevents a geometrically adequate spacing from being operationally too small.",
+          "sizing_effect": "Higher flow increases required volume and may increase spacing, length or diameter.",
+          "risk_if_wrong": "A vessel can satisfy 150 mm spacing but still have inadequate response time at high flow.",
+          "recommendation": "Check both the distance criterion and the time-volume criterion.",
+          "verification_owner": "process_and_instrumentation_engineer"
+        }
+      ],
+      "decision_trace": [
+        {
+          "step": 1,
+          "decision": "Select horizontal orientation",
+          "logic": "Three-phase gas-oil-water separation requires liquid-liquid interface area, effective settling length and two liquid outlets.",
+          "result": "horizontal",
+          "classification": "api_supported_design_principle"
+        },
+        {
+          "step": 2,
+          "decision": "Select inlet vane diffuser",
+          "logic": "General service with no solids and moderate fouling requires initial bulk separation and flow distribution.",
+          "result": "inlet_vane_diffuser",
+          "classification": "preliminary_recommendation",
+          "review_flag": "technology_supplier_confirmation_required"
+        },
+        {
+          "step": 3,
+          "decision": "Select horizontal-flow vane pack without pockets",
+          "logic": "Moderate fouling favors a more open demister than knitted mesh; the selected K-factor is used only for preliminary gas-area screening.",
+          "result": "vane_pack_no_pockets",
+          "classification": "preliminary_recommendation",
+          "review_flag": "technology_supplier_confirmation_required"
+        },
+        {
+          "step": 4,
+          "decision": "Start with 1.5 m ID and 6.0 m tangent length",
+          "logic": "The 4.0 initial L/D trial provides a practical first geometry for iteration.",
+          "result": {
+            "internal_diameter_m": 1.5,
+            "tangent_to_tangent_length_m": 6.0,
+            "ld_ratio": 4.0
+          },
+          "classification": "engineering_selection"
+        }
+      ],
+      "calculation_trace": {
+        "derived_flows": {
+          "gas_flow_m3_s": 0.347222,
+          "oil_flow_m3_s": 0.010417,
+          "water_flow_m3_s": 0.002778,
+          "total_liquid_flow_m3_s": 0.013194,
+          "total_mixture_flow_m3_s": 0.360417,
+          "gas_volume_fraction": 0.963391,
+          "mixture_density_kg_m3": 38.535645
+        },
+        "gas_capacity": {
+          "selected_k_factor_m_s": 0.15,
+          "allowable_gas_velocity_m_s": 1.492481,
+          "required_gas_area_m2": 0.232648,
+          "equivalent_full_circle_diameter_m": 0.544257,
+          "selected_vessel_total_cross_section_m2": 1.767146,
+          "gas_area_above_LAH_m2": 0.734019,
+          "actual_gas_velocity_m_s": 0.473043,
+          "actual_k_factor_m_s": 0.047543,
+          "status": "pass",
+          "interpretation": "Gas capacity does not govern this selected geometry."
+        },
+        "bulk_liquid_velocity": {
+          "liquid_area_below_NLL_m2": 0.808629,
+          "actual_bulk_liquid_velocity_m_s": 0.016317,
+          "preliminary_range_m_s": [
+            0.015,
+            0.03
+          ],
+          "status": "pass",
+          "interpretation": "The actual velocity is near the conservative lower end of the preliminary range."
+        },
+        "level_control": {
+          "minimum_spacing_m": 0.15,
+          "minimum_control_time_s": 30.0,
+          "minimum_control_volume_m3": 0.395833,
+          "interval_checks": [
+            {
+              "interval": "LSLL_to_LAL",
+              "spacing_m": 0.15,
+              "available_volume_m3": 0.93988,
+              "equivalent_control_time_s": 71.232989,
+              "minimum_required_volume_m3": 0.395833,
+              "status": "pass"
+            },
+            {
+              "interval": "LAL_to_NLL",
+              "spacing_m": 0.15,
+              "available_volume_m3": 0.996575,
+              "equivalent_control_time_s": 75.529895,
+              "minimum_required_volume_m3": 0.395833,
+              "status": "pass"
+            },
+            {
+              "interval": "NLL_to_LAH",
+              "spacing_m": 0.15,
+              "available_volume_m3": 1.010244,
+              "equivalent_control_time_s": 76.565896,
+              "minimum_required_volume_m3": 0.395833,
+              "status": "pass"
+            },
+            {
+              "interval": "LAH_to_LSH",
+              "spacing_m": 0.15,
+              "available_volume_m3": 0.982713,
+              "equivalent_control_time_s": 74.479276,
+              "minimum_required_volume_m3": 0.395833,
+              "status": "pass"
+            }
+          ]
+        },
+        "retention_volume": {
+          "required_retention_time_s": 180.0,
+          "required_volume_m3": 2.375,
+          "available_volume_between_LSLL_and_NLL_m3": 2.58194,
+          "status": "pass",
+          "interpretation": "This is a project-assumption check and does not replace droplet-settling calculations."
+        },
+        "water_droplet_settling_through_oil": {
+          "droplet_size_um": 350.0,
+          "terminal_velocity_m_s": 0.002576557,
+          "reynolds_number": 0.144287,
+          "drag_coefficient": 172.34072,
+          "correlation": "(24/Re)*(1+0.14*Re^0.7)",
+          "iterations": 28,
+          "oil_phase_axial_velocity_m_s": 0.018701,
+          "vertical_travel_distance_m": 0.4,
+          "required_effective_length_m": 2.903182,
+          "available_effective_length_m": 4.5,
+          "status": "pass",
+          "review_flag": "drag_correlation_engineering_verification_required"
+        },
+        "oil_droplet_rising_through_water": {
+          "droplet_size_um": 150.0,
+          "terminal_velocity_m_s": 0.002298913,
+          "reynolds_number": 0.344837,
+          "drag_coefficient": 74.222511,
+          "correlation": "(24/Re)*(1+0.14*Re^0.7)",
+          "iterations": 27,
+          "water_phase_axial_velocity_m_s": 0.01104,
+          "vertical_travel_distance_m": 0.3,
+          "required_effective_length_m": 1.44072,
+          "available_effective_length_m": 4.5,
+          "status": "pass",
+          "review_flag": "drag_correlation_engineering_verification_required"
+        },
+        "inlet_nozzle": {
+          "selected_id_m": 0.203,
+          "mixture_velocity_m_s": 11.135838,
+          "momentum_flux_pa": 4778.685563,
+          "inlet_vane_diffuser_maximum_momentum_flux_pa": 10000,
+          "status": "pass",
+          "review_flag": "technology_supplier_confirmation_required"
+        },
+        "gas_outlet_nozzle": {
+          "selected_id_m": 0.154,
+          "gas_velocity_m_s": 18.6413,
+          "momentum_flux_pa": 2779.984442,
+          "maximum_velocity_m_s": 20,
+          "maximum_momentum_flux_pa": 4500,
+          "status": "pass"
+        },
+        "oil_outlet_nozzle": {
+          "selected_id_m": 0.102,
+          "liquid_velocity_m_s": 1.27479,
+          "maximum_velocity_m_s": 2,
+          "status": "pass",
+          "recommendation": "Provide a vortex breaker and verify pump-suction criteria when applicable."
+        },
+        "water_outlet_nozzle": {
+          "selected_id_m": 0.078,
+          "liquid_velocity_m_s": 0.581324,
+          "maximum_velocity_m_s": 1,
+          "status": "pass",
+          "recommendation": "Provide a vortex breaker and verify self-venting or carry-under risk."
+        },
+        "mist_eliminator_drainage": {
+          "assumed_pressure_drop_pa": 1000.0,
+          "calculated_drainage_head_m": 0.128752,
+          "minimum_required_spacing_m": 0.234095,
+          "available_spacing_m": 0.3,
+          "status": "pass",
+          "review_flag": "replace_assumed_pressure_drop_with_vendor_data"
+        }
+      },
+      "preliminary_recommendation": {
+        "vessel": {
+          "orientation": "horizontal",
+          "internal_diameter_m": 1.5,
+          "tangent_to_tangent_length_m": 6.0,
+          "ld_ratio": 4.0
+        },
+        "levels_m": {
+          "LSLL": 0.4,
+          "LAL": 0.55,
+          "NIL": 0.3,
+          "NLL": 0.7,
+          "LAH": 0.85,
+          "LSH": 1.0
+        },
+        "internals": {
+          "inlet_device": "inlet_vane_diffuser",
+          "distribution_baffle": {
+            "recommended": true,
+            "open_area_fraction": 0.3,
+            "hole_or_slot_spacing_mm": 50.0
+          },
+          "mist_eliminator": "vane_pack_no_pockets",
+          "vortex_breakers": {
+            "oil_outlet": true,
+            "water_outlet": true
+          }
+        },
+        "nozzles": {
+          "inlet_id_m": 0.203,
+          "gas_outlet_id_m": 0.154,
+          "oil_outlet_id_m": 0.102,
+          "water_outlet_id_m": 0.078
+        },
+        "governing_criterion": "liquid_retention_and_effective_separation_length",
+        "non_governing_criterion": "gas_capacity"
+      },
+      "recommendations": [
+        {
+          "severity": "blocking_for_final_design",
+          "message_id": "REC-EX-001",
+          "message": "Replace all synthetic process inputs with approved design, normal and minimum operating cases."
+        },
+        {
+          "severity": "blocking_for_final_design",
+          "message_id": "REC-EX-002",
+          "message": "Confirm inlet-device and mist-eliminator performance, dimensions, pressure drop and drainage with the technology supplier."
+        },
+        {
+          "severity": "review",
+          "message_id": "REC-EX-003",
+          "message": "Confirm the 350 micrometre water-droplet and 150 micrometre oil-droplet targets against required outlet quality."
+        },
+        {
+          "severity": "review",
+          "message_id": "REC-EX-004",
+          "message": "Verify effective separation length after finalizing the baffle, weir, nozzle and mist-eliminator arrangement."
+        },
+        {
+          "severity": "review",
+          "message_id": "REC-EX-005",
+          "message": "Perform sensitivity cases for maximum gas rate, maximum water rate, minimum oil-water density difference and maximum oil viscosity."
+        },
+        {
+          "severity": "information",
+          "message_id": "REC-EX-006",
+          "message": "The selected 1.5 m by 6.0 m geometry is a preliminary process-screening result, not a mechanically designed pressure vessel."
+        }
+      ],
+      "engineering_review_flags": [
+        "technology_supplier_confirmation_required",
+        "drag_correlation_engineering_verification_required",
+        "three_phase_internal_configuration_requires_engineering_selection",
+        "mechanical_design_not_performed",
+        "relief_design_not_performed",
+        "material_selection_not_performed"
+      ]
+    }
+  ],
+  "ui_explanation_and_recommendation_logic": {
+    "result_card_sections": [
+      "What the app received",
+      "What the app assumed",
+      "Why each assumption matters",
+      "What was calculated",
+      "What governs the size",
+      "What passed",
+      "What remains unresolved",
+      "Recommended next engineering action"
+    ],
+    "assumption_card_template": {
+      "parameter": null,
+      "displayed_value": null,
+      "origin_badge": null,
+      "intention": null,
+      "importance": null,
+      "sizing_effect": null,
+      "risk_if_wrong": null,
+      "recommendation": null,
+      "verification_owner": null
+    },
+    "recommendation_priority_order": [
+      "blocking_for_final_design",
+      "review",
+      "information"
+    ],
+    "governing_criterion_message_template": "{criterion} governs because its required value is closest to the available capacity.",
+    "non_governing_criterion_message_template": "{criterion} does not govern, but it remains a mandatory pass check.",
+    "override_message_template": "The user changed {parameter_id} from {original_value} to {new_value}. The original value and justification remain in the audit record."
+  }
+}

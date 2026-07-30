@@ -1,0 +1,852 @@
+{
+  "metadata": {
+    "library_id": "VESSELM_CLADDING_WEIGHT_COST_FEED_LOGIC",
+    "library_version": "1.0.0",
+    "purpose": "Preliminary metallic cladding, weld-overlay and applied-lining weight and cost estimation for FEED.",
+    "estimate_stage": "FEED",
+    "default_currency": "INR",
+    "currency_is_configurable": true,
+    "construction_use_allowed": false,
+    "cladding_strength_credit_default": false,
+    "engineering_review_required": true,
+    "materials_corrosion_review_required": true,
+    "generated_utc": "2026-07-30T05:52:49.232853+00:00"
+  },
+  "code_basis": {
+    "design_code": "ASME BPVC Section VIII Division 1",
+    "edition": "2023",
+    "primary_part": "Part UCL",
+    "references": [
+      "UCL-1",
+      "UCL-2",
+      "UCL-3",
+      "UCL-10",
+      "UCL-11",
+      "UCL-12",
+      "UCL-20",
+      "UCL-23",
+      "UCL-25",
+      "UCL-32",
+      "UCL-33",
+      "UCL-34",
+      "UCL-35",
+      "UCL-36",
+      "UCL-40",
+      "UCL-42",
+      "UCL-46",
+      "UCL-50",
+      "UCL-51",
+      "UCL-52",
+      "UCL-55"
+    ],
+    "module_policy": [
+      "Treat integral cladding, weld metal overlay and applied metallic lining as separate construction routes.",
+      "Applied lining thickness receives no pressure-strength credit.",
+      "The default FEED route gives no pressure-strength credit to cladding or weld overlay.",
+      "Final alloy selection and corrosion allowance require materials engineering approval."
+    ]
+  },
+  "scope": {
+    "included": [
+      "internal or external metallic cladding on carbon-steel vessels",
+      "integrally bonded clad plate",
+      "weld metal overlay",
+      "applied metallic sheet or strip lining",
+      "nozzle, manway, flange-face and weld-restoration cladding",
+      "FEED weight and cost estimation",
+      "low, base and high cost scenarios"
+    ],
+    "excluded": [
+      "rubber, glass, refractory or polymer linings",
+      "final corrosion-rate determination",
+      "final weld procedure and NDE plan",
+      "structural credit under UCL-23",
+      "construction issue estimate"
+    ]
+  },
+  "construction_options": [
+    {
+      "option_id": "integral_roll_bonded_clad_plate",
+      "display_name": "Integral roll-bonded clad plate",
+      "category": "integral_cladding",
+      "best_fit": [
+        "large regular shell courses",
+        "formed heads where suitable clad plate is available",
+        "continuous bonded corrosion barrier"
+      ],
+      "pricing_priority": [
+        "vendor composite plate quote",
+        "recent matching PO",
+        "base plate plus CRA layer plus bonding premium"
+      ],
+      "major_cost_drivers": [
+        "base thickness",
+        "CRA grade",
+        "cladding thickness",
+        "plate size",
+        "bond quality",
+        "forming",
+        "weld restoration",
+        "bond examination",
+        "minimum order quantity"
+      ],
+      "strength_credit_allowed_in_this_module": false
+    },
+    {
+      "option_id": "integral_explosion_bonded_clad_plate",
+      "display_name": "Integral explosion-bonded clad plate",
+      "category": "integral_cladding",
+      "best_fit": [
+        "dissimilar metal combinations",
+        "high-alloy or reactive-metal cladding",
+        "large bonded areas where roll bonding is unavailable"
+      ],
+      "pricing_priority": [
+        "specialist vendor quote",
+        "recent matching PO",
+        "base plate plus CRA layer plus explosion-bonding premium"
+      ],
+      "major_cost_drivers": [
+        "CRA grade",
+        "plate dimensions",
+        "bond area",
+        "bond testing",
+        "forming",
+        "oversize transport",
+        "supplier availability"
+      ],
+      "strength_credit_allowed_in_this_module": false
+    },
+    {
+      "option_id": "weld_overlay_strip_esw_saw",
+      "display_name": "Strip weld overlay, ESW or SAW",
+      "category": "weld_metal_overlay",
+      "best_fit": [
+        "large accessible shell and head surfaces",
+        "shop-applied automatic overlay"
+      ],
+      "major_cost_drivers": [
+        "finished thickness",
+        "layers",
+        "deposition rate",
+        "deposition efficiency",
+        "dilution",
+        "grinding",
+        "NDE",
+        "PWHT sequence",
+        "accessibility"
+      ],
+      "strength_credit_allowed_in_this_module": false
+    },
+    {
+      "option_id": "weld_overlay_wire",
+      "display_name": "Wire weld overlay, GTAW/GMAW/FCAW/PAW",
+      "category": "weld_metal_overlay",
+      "best_fit": [
+        "nozzle bores",
+        "manways",
+        "complex or localized geometry",
+        "repair and restoration"
+      ],
+      "major_cost_drivers": [
+        "process",
+        "position",
+        "layers",
+        "deposition rate",
+        "manual labor",
+        "machining",
+        "dilution control",
+        "repair rate"
+      ],
+      "strength_credit_allowed_in_this_module": false
+    },
+    {
+      "option_id": "applied_sheet_or_strip_lining",
+      "display_name": "Applied metallic sheet or strip lining",
+      "category": "applied_lining",
+      "best_fit": [
+        "non-load-bearing corrosion barrier",
+        "large accessible surfaces",
+        "repairable lining systems"
+      ],
+      "major_cost_drivers": [
+        "lining thickness",
+        "sheet nesting",
+        "seam length",
+        "attachment pattern",
+        "plug or slot welds",
+        "tightness testing",
+        "distortion control",
+        "repair allowance"
+      ],
+      "strength_credit_allowed_in_this_module": false
+    },
+    {
+      "option_id": "localized_clad_components",
+      "display_name": "Localized clad or overlaid components",
+      "category": "local_cladding",
+      "best_fit": [
+        "nozzle bores",
+        "flange faces",
+        "manway covers",
+        "weld restoration",
+        "internal attachment pads"
+      ],
+      "strength_credit_allowed_in_this_module": false
+    },
+    {
+      "option_id": "solid_alloy_benchmark",
+      "display_name": "Solid alloy construction benchmark",
+      "category": "comparison_only",
+      "description": "Not cladding. Use only for FEED economic comparison.",
+      "automatic_selection_allowed": false
+    }
+  ],
+  "candidate_cladding_materials": [
+    {
+      "material_id": "SS_304L",
+      "display_name": "304L stainless steel",
+      "uns": "S30403",
+      "common_product_specification": "SA-240",
+      "typical_density_kg_m3": 7930,
+      "rate_category": "stainless_304L"
+    },
+    {
+      "material_id": "SS_316L",
+      "display_name": "316L stainless steel",
+      "uns": "S31603",
+      "common_product_specification": "SA-240",
+      "typical_density_kg_m3": 8000,
+      "rate_category": "stainless_316L"
+    },
+    {
+      "material_id": "SS_317L",
+      "display_name": "317L stainless steel",
+      "uns": "S31703",
+      "common_product_specification": "SA-240",
+      "typical_density_kg_m3": 8000,
+      "rate_category": "stainless_317L"
+    },
+    {
+      "material_id": "SS_904L",
+      "display_name": "904L stainless steel",
+      "uns": "N08904",
+      "common_product_specification": "SA-240",
+      "typical_density_kg_m3": 8000,
+      "rate_category": "stainless_904L"
+    },
+    {
+      "material_id": "DUPLEX_2205",
+      "display_name": "Duplex stainless steel 2205",
+      "uns": "S32205_or_S31803",
+      "common_product_specification": "SA-240",
+      "typical_density_kg_m3": 7800,
+      "rate_category": "duplex_2205"
+    },
+    {
+      "material_id": "SUPER_DUPLEX_2507",
+      "display_name": "Super duplex stainless steel 2507",
+      "uns": "S32750",
+      "common_product_specification": "SA-240",
+      "typical_density_kg_m3": 7800,
+      "rate_category": "super_duplex_2507"
+    },
+    {
+      "material_id": "ALLOY_20",
+      "display_name": "Alloy 20",
+      "uns": "N08020",
+      "common_product_specification": "SB-463",
+      "typical_density_kg_m3": 8140,
+      "rate_category": "alloy_20"
+    },
+    {
+      "material_id": "ALLOY_625",
+      "display_name": "Nickel alloy 625",
+      "uns": "N06625",
+      "common_product_specification": "SB-443",
+      "typical_density_kg_m3": 8440,
+      "rate_category": "alloy_625"
+    },
+    {
+      "material_id": "ALLOY_825",
+      "display_name": "Nickel alloy 825",
+      "uns": "N08825",
+      "common_product_specification": "SB-424",
+      "typical_density_kg_m3": 8140,
+      "rate_category": "alloy_825"
+    },
+    {
+      "material_id": "ALLOY_C276",
+      "display_name": "Nickel alloy C-276",
+      "uns": "N10276",
+      "common_product_specification": "SB-575",
+      "typical_density_kg_m3": 8890,
+      "rate_category": "alloy_C276"
+    },
+    {
+      "material_id": "MONEL_400",
+      "display_name": "Nickel-copper alloy 400",
+      "uns": "N04400",
+      "common_product_specification": "SB-127",
+      "typical_density_kg_m3": 8800,
+      "rate_category": "monel_400"
+    },
+    {
+      "material_id": "TITANIUM_GR2",
+      "display_name": "Titanium Grade 2",
+      "uns": "R50400",
+      "common_product_specification": "SB-265",
+      "typical_density_kg_m3": 4510,
+      "rate_category": "titanium_gr2"
+    }
+  ],
+  "required_inputs": {
+    "project_cost_basis": [
+      {
+        "field": "currency",
+        "type": "string",
+        "default": "INR"
+      },
+      {
+        "field": "price_basis_date",
+        "type": "date",
+        "required": true
+      },
+      {
+        "field": "project_location",
+        "type": "string",
+        "required": true
+      },
+      {
+        "field": "estimate_mode",
+        "type": "enum",
+        "allowed_values": [
+          "vendor_quote",
+          "recent_PO_rate",
+          "unit_rate_build_up",
+          "parametric_fallback"
+        ],
+        "default": "unit_rate_build_up"
+      },
+      {
+        "field": "contingency_percent",
+        "type": "number",
+        "default_FEED_assumption": 15,
+        "editable": true
+      }
+    ],
+    "construction_material": [
+      {
+        "field": "construction_option_id",
+        "type": "enum",
+        "source": "construction_options.option_id",
+        "required": true
+      },
+      {
+        "field": "base_material_id",
+        "type": "string",
+        "required": true
+      },
+      {
+        "field": "cladding_material_id",
+        "type": "enum",
+        "source": "candidate_cladding_materials.material_id",
+        "required": true
+      },
+      {
+        "field": "cladding_material_density_kg_m3",
+        "type": "number",
+        "default_source": "candidate_cladding_materials.typical_density_kg_m3",
+        "override_allowed": true
+      },
+      {
+        "field": "finished_cladding_thickness_mm",
+        "type": "number",
+        "minimum_exclusive": 0,
+        "required": true
+      },
+      {
+        "field": "cladding_corrosion_allowance_mm",
+        "type": "number",
+        "minimum": 0,
+        "default": 0
+      },
+      {
+        "field": "fabrication_or_machining_loss_mm",
+        "type": "number",
+        "minimum": 0,
+        "default_FEED_assumption": 0.5,
+        "editable": true
+      },
+      {
+        "field": "cladding_location",
+        "type": "enum",
+        "allowed_values": [
+          "internal",
+          "external",
+          "both"
+        ],
+        "default": "internal"
+      },
+      {
+        "field": "coverage_percent",
+        "type": "number",
+        "minimum": 0,
+        "maximum": 100,
+        "default": 100
+      },
+      {
+        "field": "cladding_strength_credit",
+        "type": "boolean",
+        "default": false,
+        "automatic_FEED_use_allowed": false
+      }
+    ],
+    "geometry": [
+      {
+        "field": "shell_inside_diameter_mm",
+        "type": "number",
+        "required_when": "shell_cladding_selected"
+      },
+      {
+        "field": "clad_shell_length_mm",
+        "type": "number",
+        "required_when": "shell_cladding_selected"
+      },
+      {
+        "field": "head_type",
+        "type": "enum",
+        "allowed_values": [
+          "none",
+          "two_to_one_ellipsoidal",
+          "hemispherical",
+          "torispherical",
+          "flat",
+          "user_defined_area"
+        ]
+      },
+      {
+        "field": "number_of_clad_heads",
+        "type": "integer",
+        "minimum": 0,
+        "default": 0
+      },
+      {
+        "field": "head_inside_surface_area_each_m2",
+        "type": "number",
+        "required_when": "torispherical_or_user_defined_area"
+      },
+      {
+        "field": "head_straight_flange_length_mm",
+        "type": "number",
+        "minimum": 0,
+        "default": 0
+      },
+      {
+        "field": "additional_clad_area_m2",
+        "type": "number",
+        "minimum": 0,
+        "default": 0
+      },
+      {
+        "field": "excluded_area_m2",
+        "type": "number",
+        "minimum": 0,
+        "default": 0
+      }
+    ],
+    "local_details": [
+      {
+        "field": "nozzle_cladding_items",
+        "type": "array",
+        "item_fields": [
+          "quantity",
+          "inside_diameter_mm",
+          "clad_length_mm",
+          "finished_thickness_mm",
+          "material_id",
+          "density_kg_m3",
+          "flange_face_area_each_m2",
+          "cover_area_each_m2"
+        ]
+      },
+      {
+        "field": "weld_seam_restoration_length_m",
+        "type": "number",
+        "minimum": 0,
+        "default": 0
+      },
+      {
+        "field": "restoration_strip_width_mm",
+        "type": "number",
+        "minimum": 0,
+        "default_FEED_assumption": 50
+      },
+      {
+        "field": "internal_attachment_clad_area_m2",
+        "type": "number",
+        "minimum": 0,
+        "default": 0
+      }
+    ],
+    "integral_clad_rates": [
+      "composite_clad_plate_rate_per_kg",
+      "base_plate_rate_per_kg",
+      "CRA_plate_rate_per_kg",
+      "bonding_premium_per_m2",
+      "plate_nesting_and_trim_factor",
+      "forming_premium_percent",
+      "bond_examination_cost_per_m2"
+    ],
+    "weld_overlay_rates": [
+      "weld_consumable_rate_per_kg",
+      "deposition_efficiency",
+      "deposition_rate_kg_per_machine_hour",
+      "machine_rate_per_hour",
+      "direct_labor_rate_per_hour",
+      "labor_hours_per_machine_hour",
+      "overlay_overdeposit_factor",
+      "surface_preparation_cost_per_m2",
+      "grinding_or_machining_cost_per_m2",
+      "repair_percent"
+    ],
+    "applied_lining_rates": [
+      "lining_sheet_rate_per_kg",
+      "lining_nesting_factor",
+      "lining_installation_labor_hours_per_m2",
+      "direct_labor_rate_per_hour",
+      "attachment_weld_length_m",
+      "attachment_weld_cost_per_m",
+      "tightness_test_cost_lump_sum",
+      "vent_telltale_detail_cost_lump_sum"
+    ],
+    "common_cost_inputs": [
+      "weld_restoration_cost_per_m",
+      "PMI_cost_lump_sum",
+      "PT_cost_lump_sum",
+      "ferrite_or_chemistry_test_cost_lump_sum",
+      "PWHT_cladding_impact_cost_lump_sum",
+      "engineering_and_procedure_qualification_cost_lump_sum",
+      "freight_percent",
+      "vendor_overhead_and_profit_percent"
+    ]
+  },
+  "recommended_FEED_defaults": {
+    "plate_nesting_and_trim_factor": 1.08,
+    "forming_premium_percent": 12,
+    "overlay_overdeposit_factor": 1.2,
+    "labor_hours_per_machine_hour": 1.25,
+    "weld_overlay_repair_percent": 5,
+    "lining_nesting_factor": 1.12,
+    "freight_percent": 3,
+    "vendor_overhead_and_profit_percent": 12,
+    "contingency_percent": 15,
+    "note": "These are editable estimating assumptions, not Code requirements or supplier quotations."
+  },
+  "geometry_weight_formulas": {
+    "shell_area_m2": "pi * shell_inside_diameter_m * clad_shell_length_m",
+    "two_to_one_ellipsoidal_head": {
+      "variables": {
+        "a": "inside_diameter_m / 2",
+        "c": "inside_diameter_m / 4",
+        "e": "sqrt(1 - (c*c)/(a*a))"
+      },
+      "area_formula": "pi * a^2 * (1 + ((c*c)/(a*a*e)) * atanh(e))"
+    },
+    "hemispherical_head_area_m2": "2 * pi * inside_radius_m^2",
+    "flat_head_area_m2": "pi * inside_diameter_m^2 / 4",
+    "straight_flange_area_m2": "pi * inside_diameter_m * straight_flange_length_m",
+    "torispherical_head_area_m2": "use_app_geometry_engine_or_user_input",
+    "nozzle_bore_area_each_m2": "pi * nozzle_inside_diameter_m * clad_length_m",
+    "gross_clad_area_m2": "(shell_area + total_head_area + additional_clad_area + nozzle_area + internal_attachment_area) * coverage_percent / 100 - excluded_area",
+    "finished_cladding_mass_kg": "gross_clad_area_m2 * ((finished_cladding_thickness_mm + cladding_corrosion_allowance_mm) / 1000) * density_kg_m3",
+    "integral_clad_procurement_mass_kg": "finished_cladding_mass_kg * plate_nesting_and_trim_factor",
+    "weld_overlay_deposited_mass_kg": "gross_clad_area_m2 * ((finished_thickness_mm + cladding_corrosion_allowance_mm + fabrication_or_machining_loss_mm) / 1000) * density_kg_m3 * overlay_overdeposit_factor",
+    "weld_overlay_consumable_mass_kg": "weld_overlay_deposited_mass_kg / deposition_efficiency",
+    "weld_overlay_machine_hours": "weld_overlay_deposited_mass_kg / deposition_rate_kg_per_machine_hour",
+    "weld_overlay_labor_hours": "weld_overlay_machine_hours * labor_hours_per_machine_hour",
+    "applied_lining_purchase_mass_kg": "finished_cladding_mass_kg * lining_nesting_factor",
+    "reported_added_vessel_weight": {
+      "integral_cladding": "finished_cladding_mass_kg + local_restoration_finished_mass_kg",
+      "weld_overlay": "finished_cladding_mass_kg + local_restoration_finished_mass_kg",
+      "applied_lining": "finished_cladding_mass_kg + attachment_weld_mass_kg"
+    }
+  },
+  "cost_formulas": {
+    "integral_clad_plate": {
+      "vendor_rate_mode": {
+        "composite_plate_weight_kg": "base_plate_purchase_mass_kg + integral_clad_procurement_mass_kg",
+        "purchase_cost": "composite_plate_weight_kg * composite_clad_plate_rate_per_kg"
+      },
+      "build_up_mode": {
+        "base_plate_cost": "base_plate_purchase_mass_kg * base_plate_rate_per_kg",
+        "CRA_layer_cost": "integral_clad_procurement_mass_kg * CRA_plate_rate_per_kg",
+        "bonding_cost": "gross_clad_area_m2 * bonding_premium_per_m2",
+        "forming_cost": "(base_plate_cost + CRA_layer_cost + bonding_cost) * forming_premium_percent / 100",
+        "bond_examination_cost": "gross_clad_area_m2 * bond_examination_cost_per_m2",
+        "subtotal": "base_plate_cost + CRA_layer_cost + bonding_cost + forming_cost + bond_examination_cost"
+      }
+    },
+    "weld_overlay": {
+      "consumable_cost": "weld_overlay_consumable_mass_kg * weld_consumable_rate_per_kg",
+      "machine_cost": "weld_overlay_machine_hours * machine_rate_per_hour",
+      "labor_cost": "weld_overlay_labor_hours * direct_labor_rate_per_hour",
+      "surface_preparation_cost": "gross_clad_area_m2 * surface_preparation_cost_per_m2",
+      "grinding_cost": "gross_clad_area_m2 * grinding_or_machining_cost_per_m2",
+      "repair_cost": "(consumable_cost + machine_cost + labor_cost) * repair_percent / 100",
+      "subtotal": "consumable_cost + machine_cost + labor_cost + surface_preparation_cost + grinding_cost + repair_cost"
+    },
+    "applied_lining": {
+      "sheet_cost": "applied_lining_purchase_mass_kg * lining_sheet_rate_per_kg",
+      "installation_labor_cost": "gross_clad_area_m2 * lining_installation_labor_hours_per_m2 * direct_labor_rate_per_hour",
+      "attachment_weld_cost": "attachment_weld_length_m * attachment_weld_cost_per_m",
+      "subtotal": "sheet_cost + installation_labor_cost + attachment_weld_cost + tightness_test_cost_lump_sum + vent_telltale_detail_cost_lump_sum"
+    },
+    "common": {
+      "weld_restoration_cost": "weld_seam_restoration_length_m * weld_restoration_cost_per_m",
+      "QA_NDE_cost": "PMI_cost_lump_sum + PT_cost_lump_sum + ferrite_or_chemistry_test_cost_lump_sum",
+      "technical_cost": "PWHT_cladding_impact_cost_lump_sum + engineering_and_procedure_qualification_cost_lump_sum",
+      "direct_cost": "selected_option_subtotal + weld_restoration_cost + QA_NDE_cost + technical_cost",
+      "freight_cost": "direct_cost * freight_percent / 100 unless included",
+      "vendor_overhead_profit": "(direct_cost + freight_cost) * vendor_overhead_and_profit_percent / 100",
+      "pre_contingency_cost": "direct_cost + freight_cost + vendor_overhead_profit",
+      "contingency": "pre_contingency_cost * contingency_percent / 100",
+      "FEED_total_cost_excluding_tax": "pre_contingency_cost + contingency"
+    }
+  },
+  "rate_library_contract": {
+    "rule": "Keep current market rates in a separate controlled cost-rate library, not in this engineering logic file.",
+    "required_fields": [
+      "rate_id",
+      "rate_category",
+      "unit",
+      "currency",
+      "rate_value",
+      "price_basis_date",
+      "location",
+      "quantity_basis",
+      "thickness_or_size_basis",
+      "source_type",
+      "source_reference",
+      "freight_included",
+      "tax_included",
+      "valid_until",
+      "confidence",
+      "approved_by",
+      "checksum"
+    ],
+    "source_priority": [
+      "current_budgetary_vendor_quote",
+      "recent_purchase_order",
+      "approved_contract_rate",
+      "indexed_historical_rate",
+      "engineering_assumption"
+    ],
+    "stale_rate_warning_months": 6,
+    "date_escalation_formula": "escalated_rate = source_rate * current_cost_index / source_cost_index",
+    "currency_conversion_formula": "converted_rate = source_rate * approved_exchange_rate",
+    "location_adjustment_formula": "location_adjusted_rate = converted_or_escalated_rate * location_factor"
+  },
+  "automation_rules": {
+    "default_strength_route": "base_carbon_steel_only",
+    "recommendations": [
+      {
+        "condition": "large_regular_area_and_matching_composite_plate_quote_available",
+        "recommend": "integral_roll_bonded_clad_plate"
+      },
+      {
+        "condition": "high_alloy_or_reactive_metal_and_specialist_bonding_available",
+        "recommend": "integral_explosion_bonded_clad_plate"
+      },
+      {
+        "condition": "large_accessible_surface_and_shop_automatic_overlay_available",
+        "recommend": "weld_overlay_strip_esw_saw"
+      },
+      {
+        "condition": "localized_or_complex_geometry",
+        "recommend": "weld_overlay_wire"
+      },
+      {
+        "condition": "applied_lining_specified_by_materials_engineer",
+        "recommend": "applied_sheet_or_strip_lining"
+      }
+    ],
+    "selection_is_advisory_only": true,
+    "pricing_priority": [
+      "vendor_quote",
+      "recent_PO_rate",
+      "unit_rate_build_up",
+      "parametric_fallback"
+    ],
+    "preferred_output": "rank technically eligible options by total FEED cost, added weight, estimate confidence and major risks"
+  },
+  "validation_rules": [
+    {
+      "rule_id": "CLAD_001",
+      "condition": "cladding_strength_credit == true",
+      "result": "blocked",
+      "error_code": "controlled_UCL_23_strength_credit_module_required"
+    },
+    {
+      "rule_id": "CLAD_002",
+      "condition": "cladding_material_not_approved_for_service",
+      "result": "blocked",
+      "error_code": "materials_selection_not_approved"
+    },
+    {
+      "rule_id": "CLAD_003",
+      "condition": "gross_clad_area_m2 <= 0",
+      "result": "blocked",
+      "error_code": "invalid_cladding_area"
+    },
+    {
+      "rule_id": "CLAD_004",
+      "condition": "finished_cladding_thickness_mm <= 0",
+      "result": "blocked",
+      "error_code": "invalid_cladding_thickness"
+    },
+    {
+      "rule_id": "CLAD_005",
+      "condition": "required_rate_missing",
+      "result": "blocked_or_parametric_fallback",
+      "error_code": "cost_rate_not_resolved"
+    },
+    {
+      "rule_id": "CLAD_006",
+      "condition": "rate_age_months > 6",
+      "result": "warning",
+      "error_code": "stale_cost_rate"
+    },
+    {
+      "rule_id": "CLAD_007",
+      "condition": "PWHT_required_and_compatibility_not_reviewed",
+      "result": "warning",
+      "error_code": "PWHT_cladding_compatibility_review_required"
+    },
+    {
+      "rule_id": "CLAD_008",
+      "condition": "applied_lining_selected_and_tightness_test_scope_missing",
+      "result": "blocked",
+      "error_code": "lining_tightness_test_scope_not_resolved"
+    },
+    {
+      "rule_id": "CLAD_009",
+      "condition": "nozzle_and_weld_restoration_scope_missing",
+      "result": "warning",
+      "error_code": "local_cladding_scope_incomplete"
+    }
+  ],
+  "output_contract": {
+    "required_outputs": [
+      "selected_option",
+      "cladding_material",
+      "finished_thickness_mm",
+      "gross_clad_area_m2",
+      "finished_cladding_weight_kg",
+      "procurement_or_consumable_weight_kg",
+      "local_cladding_weight_kg",
+      "total_added_vessel_weight_kg",
+      "material_cost",
+      "bonding_or_deposition_cost",
+      "forming_or_installation_cost",
+      "weld_restoration_cost",
+      "QA_NDE_cost",
+      "PWHT_and_technical_cost",
+      "freight_cost",
+      "vendor_overhead_profit",
+      "contingency",
+      "FEED_total_cost_excluding_tax",
+      "cost_per_m2",
+      "cost_per_kg_finished_cladding",
+      "price_basis_date",
+      "rate_sources",
+      "estimate_confidence",
+      "warnings"
+    ],
+    "derived_outputs": {
+      "cost_per_m2": "FEED_total_cost_excluding_tax / gross_clad_area_m2",
+      "cost_per_kg_finished_cladding": "FEED_total_cost_excluding_tax / total_added_vessel_weight_kg",
+      "weight_percent_of_empty_vessel": "100 * total_added_vessel_weight_kg / base_vessel_empty_weight_kg"
+    },
+    "confidence_logic": [
+      {
+        "condition": "current matching vendor quote",
+        "confidence": "high_for_FEED"
+      },
+      {
+        "condition": "recent comparable PO with normalization",
+        "confidence": "medium_to_high_for_FEED"
+      },
+      {
+        "condition": "complete unit-rate build-up",
+        "confidence": "medium_for_FEED"
+      },
+      {
+        "condition": "parametric fallback or stale rates",
+        "confidence": "low_for_FEED"
+      }
+    ]
+  },
+  "minimum_cost_scope_checklist": [
+    "CRA material or consumables",
+    "base plate differential",
+    "bonding or deposition",
+    "nesting and scrap",
+    "head forming",
+    "surface preparation",
+    "weld seam restoration",
+    "nozzle and flange-face cladding",
+    "manway and cover cladding",
+    "grinding or machining",
+    "PMI",
+    "PT",
+    "bond examination",
+    "ferrite or chemistry verification",
+    "procedure qualification",
+    "PWHT impact",
+    "tightness testing",
+    "repair allowance",
+    "freight",
+    "vendor overhead and profit",
+    "contingency",
+    "tax treatment"
+  ],
+  "example_input_template": {
+    "project_cost_basis": {
+      "currency": "INR",
+      "price_basis_date": "2026-07-30",
+      "project_location": "India",
+      "estimate_mode": "unit_rate_build_up",
+      "contingency_percent": 15
+    },
+    "construction_material": {
+      "construction_option_id": "integral_roll_bonded_clad_plate",
+      "base_material_id": "SA-516-Gr-70",
+      "cladding_material_id": "SS_316L",
+      "cladding_material_density_kg_m3": 8000,
+      "finished_cladding_thickness_mm": 3,
+      "cladding_corrosion_allowance_mm": 0,
+      "fabrication_or_machining_loss_mm": 0.5,
+      "cladding_location": "internal",
+      "coverage_percent": 100,
+      "cladding_strength_credit": false
+    },
+    "geometry": {
+      "shell_inside_diameter_mm": 2500,
+      "clad_shell_length_mm": 8000,
+      "head_type": "two_to_one_ellipsoidal",
+      "number_of_clad_heads": 2,
+      "head_straight_flange_length_mm": 50,
+      "additional_clad_area_m2": 2,
+      "excluded_area_m2": 0
+    },
+    "rates": {
+      "status": "populate_from_current_vendor_quote_recent_PO_or_project_rate_library"
+    }
+  },
+  "file_integrity": {
+    "algorithm": "SHA-256",
+    "canonicalization": "UTF-8 JSON, sorted keys, compact separators, file_integrity excluded",
+    "sha256": "eba40c5fced84f4deecb78a221af37691db31f8bf1616b086d59f10ef787e383"
+  }
+}

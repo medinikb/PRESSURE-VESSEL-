@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "project": {
+    "project_id": "DEMO-001",
+    "vessel_tag": "V-101",
+    "service_name": "Hydrocarbon Gas-Liquid Separator",
+    "unit": "Refinery Unit",
+    "plot_area_priority": "medium",
+    "maximum_available_plot_length_m": null,
+    "maximum_available_plot_width_m": null,
+    "orientation_preference": "auto"
+  },
+  "process": {
+    "separation_objective": "separate_gas_and_liquid",
+    "phases_present": [
+      "gas",
+      "light_liquid"
+    ],
+    "operating_cases": [
+      {
+        "case_id": "normal",
+        "case_type": "normal",
+        "operating_pressure_abs_Pa": 600000,
+        "operating_temperature_K": 323.15,
+        "phase_flow_basis": "mass_flow_and_density",
+        "phase_properties": {
+          "gas": {
+            "mass_flow_kg_s": 2.0,
+            "density_kg_m3": 5.0,
+            "dynamic_viscosity_Pa_s": 1.2e-05
+          },
+          "light_liquid": {
+            "mass_flow_kg_s": 1.5,
+            "density_kg_m3": 720.0,
+            "dynamic_viscosity_Pa_s": 0.0015
+          }
+        }
+      },
+      {
+        "case_id": "maximum_continuous",
+        "case_type": "maximum_continuous",
+        "operating_pressure_abs_Pa": 580000,
+        "operating_temperature_K": 328.15,
+        "phase_flow_basis": "mass_flow_and_density",
+        "phase_properties": {
+          "gas": {
+            "mass_flow_kg_s": 2.6,
+            "density_kg_m3": 4.7,
+            "dynamic_viscosity_Pa_s": 1.25e-05
+          },
+          "light_liquid": {
+            "mass_flow_kg_s": 2.0,
+            "density_kg_m3": 710.0,
+            "dynamic_viscosity_Pa_s": 0.0014
+          }
+        }
+      }
+    ],
+    "separation_performance": {
+      "gas_liquid_droplet_removal_target_m": 0.0001,
+      "maximum_liquid_carryover_basis": "owner_standard",
+      "approved_gas_capacity_library_key": "TO_BE_SELECTED_BY_ENGINE"
+    },
+    "liquid_inventory_requirements": {
+      "minimum_operating_time_s": 60,
+      "control_time_s": 180,
+      "surge_time_s": 300,
+      "maximum_credible_slug_volume_m3": 0.0,
+      "emergency_inventory_m3": 0.0
+    },
+    "service_risks": {
+      "foaming_tendency": "low",
+      "fouling_tendency": "low",
+      "emulsion_tendency": "none",
+      "solids_loading": "none",
+      "wax_tendency": "none",
+      "coke_tendency": "none",
+      "salt_tendency": "none"
+    }
+  },
+  "configuration": {
+    "owner_standard_id": "OWNER_STANDARD_TO_BE_LINKED",
+    "licensor_standard_id": null,
+    "future_capacity_factor": 1.0,
+    "manual_override_reason": null
+  }
+}

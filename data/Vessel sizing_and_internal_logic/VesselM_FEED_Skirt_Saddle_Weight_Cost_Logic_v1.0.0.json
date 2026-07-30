@@ -1,0 +1,1230 @@
+{
+  "metadata": {
+    "library_id": "VESSELM_FEED_SUPPORT_WEIGHT_COST_LOGIC",
+    "library_version": "1.0.0",
+    "product": "VesselM",
+    "generated_utc": "2026-07-30T06:44:31.569017+00:00",
+    "purpose": "Automated FEED-level selection, preliminary sizing, installed-weight estimation, procurement-quantity estimation, and cost estimation for vertical-vessel skirts and horizontal-vessel saddles.",
+    "intended_use": "FEED_and_preliminary_cost_estimation",
+    "construction_use_allowed": false,
+    "final_design_use_allowed": false,
+    "engineering_review_required": true,
+    "calculation_philosophy": "Use governing empty, operating, hydrotest, wind, seismic, and thermal load cases to create preliminary support geometry. Calculate net steel weight from geometry, iterate support self-weight, and then calculate procurement quantities and FEED cost.",
+    "expression_language": "javascript_like",
+    "default_currency": "INR"
+  },
+  "code_basis": {
+    "primary_document": {
+      "document": "ASME BPVC Section VIII Division 1",
+      "edition": "2023",
+      "references": [
+        "U-2",
+        "UG-22",
+        "UG-23",
+        "UG-54",
+        "Nonmandatory Appendix G"
+      ],
+      "source_role": "Defines applicable vessel loadings and recognizes vessel supports. It does not provide a complete universal skirt or saddle design method."
+    },
+    "support_methods": {
+      "skirt": {
+        "basis": "Thin circular-shell membrane stress plus conservative FEED buckling and base-ring screening.",
+        "status": "FEED_estimation_method_not_code_complete"
+      },
+      "saddle": {
+        "basis": "Statics, geometry-based steel take-off, bearing screening, and configurable local-shell heuristic.",
+        "status": "FEED_estimation_method_not_a_complete_Zick_or_local_stress_analysis"
+      }
+    },
+    "source_control_rule": "All material allowables, wind and seismic loads, concrete bearing limits, anchor-bolt allowables, and cost rates shall come from a controlled project data source."
+  },
+  "scope": {
+    "automated_supports": [
+      {
+        "support_type": "skirt",
+        "vessel_orientation": "vertical",
+        "automation_level": "FEED_weight_and_cost_fully_automated_when_required_inputs_are_available"
+      },
+      {
+        "support_type": "two_saddles",
+        "vessel_orientation": "horizontal",
+        "automation_level": "FEED_weight_and_cost_fully_automated_when_required_inputs_are_available"
+      }
+    ],
+    "excluded_from_automatic_final_approval": [
+      "detailed_shell_to_skirt_junction_stress",
+      "detailed_skirt_opening_stress",
+      "final_anchor_bolt_and_concrete_foundation_design",
+      "fatigue",
+      "creep",
+      "fire_case",
+      "transport_and_lifting_support design",
+      "complete_horizontal_vessel_local_stress_analysis",
+      "complete_saddle_shell_stress_analysis",
+      "nozzle_and_piping_local_stress",
+      "soil_structure_interaction",
+      "detailed weld design",
+      "fabrication drawing approval"
+    ]
+  },
+  "canonical_units": {
+    "length": "mm",
+    "area": "mm2",
+    "volume": "mm3",
+    "mass": "kg",
+    "force": "N",
+    "moment": "N_mm",
+    "stress": "MPa",
+    "density": "kg_per_mm3",
+    "surface_area": "m2",
+    "cost": "project_currency"
+  },
+  "constants": {
+    "pi": 3.141592653589793,
+    "gravity_m_per_s2": 9.80665,
+    "carbon_steel_density_kg_per_mm3": 7.85e-06,
+    "stainless_steel_density_kg_per_mm3": 8e-06,
+    "water_density_kg_per_m3": 1000.0,
+    "default_poisson_ratio": 0.3,
+    "default_steel_modulus_mpa": 200000.0
+  },
+  "formula_helpers": {
+    "supported_functions": [
+      "abs",
+      "ceil",
+      "floor",
+      "max",
+      "min",
+      "sqrt",
+      "sin",
+      "cos",
+      "tan",
+      "round",
+      "sum"
+    ],
+    "custom_functions": {
+      "deg_to_rad": "degrees * pi / 180",
+      "round_up": "ceil(value / increment) * increment",
+      "round_up_to_series": "Return the first ascending candidate value greater than or equal to the required value.",
+      "round_up_to_multiple": "ceil(value / multiple) * multiple",
+      "safe_divide": "Return null and raise an error when denominator is zero or nonpositive.",
+      "clamp": "min(max(value, minimum), maximum)"
+    }
+  },
+  "input_schema": {
+    "project": {
+      "currency": {
+        "type": "string",
+        "default": "INR"
+      },
+      "estimate_date": {
+        "type": "date",
+        "required": true
+      },
+      "fabrication_location": {
+        "type": "string",
+        "required": true
+      },
+      "support_design_margin_factor": {
+        "type": "number",
+        "default": 1.15,
+        "minimum": 1.0,
+        "maximum": 1.5
+      },
+      "maximum_target_utilization": {
+        "type": "number",
+        "default": 0.8,
+        "minimum": 0.5,
+        "maximum": 1.0
+      },
+      "maximum_self_weight_iterations": {
+        "type": "integer",
+        "default": 6
+      },
+      "self_weight_convergence_tolerance": {
+        "type": "number",
+        "default": 0.02
+      }
+    },
+    "vessel": {
+      "orientation": {
+        "type": "enum",
+        "allowed": [
+          "vertical",
+          "horizontal"
+        ],
+        "required": true
+      },
+      "outer_diameter_mm": {
+        "type": "number",
+        "required": true,
+        "exclusive_minimum": 0
+      },
+      "inside_diameter_mm": {
+        "type": "number",
+        "required": false
+      },
+      "shell_nominal_thickness_mm": {
+        "type": "number",
+        "required": true,
+        "exclusive_minimum": 0
+      },
+      "tangent_to_tangent_length_mm": {
+        "type": "number",
+        "required_when": "orientation == 'horizontal'"
+      },
+      "total_height_mm": {
+        "type": "number",
+        "required_when": "orientation == 'vertical'"
+      },
+      "internal_volume_m3": {
+        "type": "number",
+        "required": true,
+        "minimum": 0
+      },
+      "fixed_mass_excluding_support_kg": {
+        "type": "number",
+        "required": true,
+        "description": "Pressure parts, nozzles, internals, lining, insulation, platforms, ladders, and permanent attachments included in the applicable load case."
+      },
+      "fixed_mass_cg_x_mm": {
+        "type": "number",
+        "required_when": "orientation == 'horizontal'",
+        "description": "Measured from the left tangent line."
+      },
+      "fixed_mass_cg_z_mm": {
+        "type": "number",
+        "required_when": "orientation == 'vertical'",
+        "description": "Measured from support datum."
+      },
+      "additional_mass_items": {
+        "type": "array",
+        "default": [],
+        "item_schema": {
+          "item_id": "string",
+          "mass_kg": "number",
+          "cg_x_mm": "number_or_null",
+          "cg_z_mm": "number_or_null",
+          "include_empty": "boolean",
+          "include_operating": "boolean",
+          "include_hydrotest": "boolean"
+        }
+      }
+    },
+    "contents": {
+      "operating_liquid_density_kg_per_m3": {
+        "type": "number",
+        "required": true,
+        "minimum": 0
+      },
+      "operating_fill_fraction": {
+        "type": "number",
+        "required": true,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "operating_liquid_cg_x_mm": {
+        "type": "number",
+        "required_when": "orientation == 'horizontal'"
+      },
+      "operating_liquid_cg_z_mm": {
+        "type": "number",
+        "required_when": "orientation == 'vertical'"
+      },
+      "hydrotest_fill_fraction": {
+        "type": "number",
+        "default": 1.0,
+        "minimum": 0,
+        "maximum": 1
+      },
+      "hydrotest_water_density_kg_per_m3": {
+        "type": "number",
+        "default": 1000.0
+      },
+      "hydrotest_water_cg_x_mm": {
+        "type": "number",
+        "required_when": "orientation == 'horizontal'"
+      },
+      "hydrotest_water_cg_z_mm": {
+        "type": "number",
+        "required_when": "orientation == 'vertical'"
+      }
+    },
+    "loads": {
+      "wind": {
+        "empty_shear_n": {
+          "type": "number",
+          "required": true
+        },
+        "empty_moment_n_mm": {
+          "type": "number",
+          "required": true
+        },
+        "operating_shear_n": {
+          "type": "number",
+          "required": true
+        },
+        "operating_moment_n_mm": {
+          "type": "number",
+          "required": true
+        },
+        "hydrotest_shear_n": {
+          "type": "number",
+          "required": true
+        },
+        "hydrotest_moment_n_mm": {
+          "type": "number",
+          "required": true
+        }
+      },
+      "seismic": {
+        "empty_shear_n": {
+          "type": "number",
+          "required": true
+        },
+        "empty_moment_n_mm": {
+          "type": "number",
+          "required": true
+        },
+        "operating_shear_n": {
+          "type": "number",
+          "required": true
+        },
+        "operating_moment_n_mm": {
+          "type": "number",
+          "required": true
+        },
+        "hydrotest_shear_n": {
+          "type": "number",
+          "required": true
+        },
+        "hydrotest_moment_n_mm": {
+          "type": "number",
+          "required": true
+        }
+      },
+      "additional_horizontal_force_n": {
+        "type": "number",
+        "default": 0
+      },
+      "additional_overturning_moment_n_mm": {
+        "type": "number",
+        "default": 0
+      },
+      "horizontal_force_direction_note": {
+        "type": "string",
+        "default": "Use the governing resultant direction."
+      }
+    },
+    "materials": {
+      "support_material_id": {
+        "type": "string",
+        "required": true
+      },
+      "support_density_kg_per_mm3": {
+        "type": "number",
+        "default": 7.85e-06
+      },
+      "support_yield_strength_mpa": {
+        "type": "number",
+        "required": true
+      },
+      "support_allowable_stress_mpa": {
+        "type": "number",
+        "required": true
+      },
+      "support_modulus_mpa": {
+        "type": "number",
+        "default": 200000.0
+      },
+      "support_corrosion_allowance_mm": {
+        "type": "number",
+        "default": 0.0,
+        "minimum": 0
+      },
+      "project_thickness_deduction_mm": {
+        "type": "number",
+        "default": 0.0,
+        "minimum": 0
+      },
+      "shell_allowable_stress_mpa": {
+        "type": "number",
+        "required": true
+      },
+      "concrete_allowable_bearing_mpa": {
+        "type": "number",
+        "required": true,
+        "exclusive_minimum": 0
+      },
+      "anchor_bolt_allowable_tension_mpa": {
+        "type": "number",
+        "required_when": "orientation == 'vertical'"
+      }
+    },
+    "commercial": {
+      "material_rate_per_kg": {
+        "type": "number",
+        "required": true,
+        "minimum": 0
+      },
+      "fabrication_rate_per_kg": {
+        "type": "number",
+        "required": true,
+        "minimum": 0
+      },
+      "coating_rate_per_m2": {
+        "type": "number",
+        "required": true,
+        "minimum": 0
+      },
+      "nde_rate_per_m": {
+        "type": "number",
+        "required": true,
+        "minimum": 0
+      },
+      "anchor_bolt_unit_cost": {
+        "type": "number",
+        "default": 0
+      },
+      "sliding_bearing_unit_cost": {
+        "type": "number",
+        "default": 0
+      },
+      "engineering_and_qa_percent": {
+        "type": "number",
+        "default": 5.0
+      },
+      "vendor_overhead_and_profit_percent": {
+        "type": "number",
+        "default": 10.0
+      },
+      "freight_percent": {
+        "type": "number",
+        "default": 3.0
+      },
+      "tax_percent": {
+        "type": "number",
+        "default": 0.0
+      }
+    },
+    "configuration": {
+      "commercial_plate_thicknesses_mm": {
+        "type": "array",
+        "default": [
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          25,
+          28,
+          30,
+          32,
+          36,
+          40,
+          45,
+          50,
+          55,
+          60,
+          65,
+          70,
+          75,
+          80
+        ]
+      },
+      "anchor_bolt_diameters_mm": {
+        "type": "array",
+        "default": [
+          20,
+          24,
+          27,
+          30,
+          36,
+          42,
+          48,
+          56,
+          64,
+          72
+        ]
+      },
+      "anchor_count_candidates": {
+        "type": "array",
+        "default": [
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48
+        ]
+      }
+    }
+  },
+  "support_type_router": {
+    "rules": [
+      {
+        "priority": 1,
+        "condition": "vessel.orientation == 'vertical'",
+        "result": "skirt"
+      },
+      {
+        "priority": 2,
+        "condition": "vessel.orientation == 'horizontal'",
+        "result": "two_saddles"
+      }
+    ],
+    "no_match_result": "unsupported_orientation"
+  },
+  "shared_load_engine": {
+    "step_order": [
+      "calculate_contents_masses",
+      "calculate_case_masses_excluding_support",
+      "add_current_support_mass",
+      "convert_mass_to_weight",
+      "build_six_governing_load_cases",
+      "identify_governing_vertical_load",
+      "identify_governing_shear",
+      "identify_governing_moment"
+    ],
+    "formulas": {
+      "operating_liquid_mass_kg": "vessel.internal_volume_m3 * contents.operating_fill_fraction * contents.operating_liquid_density_kg_per_m3",
+      "hydrotest_water_mass_kg": "vessel.internal_volume_m3 * contents.hydrotest_fill_fraction * contents.hydrotest_water_density_kg_per_m3",
+      "empty_mass_excluding_support_kg": "vessel.fixed_mass_excluding_support_kg + sum(additional_mass_items.mass_kg where include_empty == true)",
+      "operating_mass_excluding_support_kg": "vessel.fixed_mass_excluding_support_kg + operating_liquid_mass_kg + sum(additional_mass_items.mass_kg where include_operating == true)",
+      "hydrotest_mass_excluding_support_kg": "vessel.fixed_mass_excluding_support_kg + hydrotest_water_mass_kg + sum(additional_mass_items.mass_kg where include_hydrotest == true)",
+      "case_mass_with_support_kg": "case_mass_excluding_support_kg + current_support_installed_mass_kg",
+      "case_vertical_weight_n": "case_mass_with_support_kg * gravity_m_per_s2"
+    },
+    "load_cases": [
+      {
+        "load_case_id": "EMPTY_WIND",
+        "mass_basis": "empty",
+        "shear_expression": "loads.wind.empty_shear_n + loads.additional_horizontal_force_n",
+        "moment_expression": "loads.wind.empty_moment_n_mm + loads.additional_overturning_moment_n_mm"
+      },
+      {
+        "load_case_id": "EMPTY_SEISMIC",
+        "mass_basis": "empty",
+        "shear_expression": "loads.seismic.empty_shear_n + loads.additional_horizontal_force_n",
+        "moment_expression": "loads.seismic.empty_moment_n_mm + loads.additional_overturning_moment_n_mm"
+      },
+      {
+        "load_case_id": "OPERATING_WIND",
+        "mass_basis": "operating",
+        "shear_expression": "loads.wind.operating_shear_n + loads.additional_horizontal_force_n",
+        "moment_expression": "loads.wind.operating_moment_n_mm + loads.additional_overturning_moment_n_mm"
+      },
+      {
+        "load_case_id": "OPERATING_SEISMIC",
+        "mass_basis": "operating",
+        "shear_expression": "loads.seismic.operating_shear_n + loads.additional_horizontal_force_n",
+        "moment_expression": "loads.seismic.operating_moment_n_mm + loads.additional_overturning_moment_n_mm"
+      },
+      {
+        "load_case_id": "HYDROTEST_WIND",
+        "mass_basis": "hydrotest",
+        "shear_expression": "loads.wind.hydrotest_shear_n + loads.additional_horizontal_force_n",
+        "moment_expression": "loads.wind.hydrotest_moment_n_mm + loads.additional_overturning_moment_n_mm"
+      },
+      {
+        "load_case_id": "HYDROTEST_SEISMIC",
+        "mass_basis": "hydrotest",
+        "shear_expression": "loads.seismic.hydrotest_shear_n + loads.additional_horizontal_force_n",
+        "moment_expression": "loads.seismic.hydrotest_moment_n_mm + loads.additional_overturning_moment_n_mm"
+      }
+    ],
+    "governing_result_rules": {
+      "maximum_vertical_weight": "max(load_cases.vertical_weight_n)",
+      "maximum_shear": "max(abs(load_cases.shear_n))",
+      "maximum_moment": "max(abs(load_cases.moment_n_mm))"
+    }
+  },
+  "skirt_module": {
+    "activation_condition": "selected_support_type == 'skirt'",
+    "required_inputs": [
+      "vessel.outer_diameter_mm",
+      "vessel.total_height_mm",
+      "vessel.shell_nominal_thickness_mm",
+      "materials.support_allowable_stress_mpa",
+      "materials.support_yield_strength_mpa",
+      "materials.support_modulus_mpa",
+      "materials.concrete_allowable_bearing_mpa",
+      "materials.anchor_bolt_allowable_tension_mpa",
+      "all shared load inputs"
+    ],
+    "defaults": {
+      "skirt_height_rule": "max(1500, 0.35 * vessel.outer_diameter_mm)",
+      "skirt_outer_diameter_mm": "vessel.outer_diameter_mm",
+      "minimum_skirt_thickness_mm": 8,
+      "minimum_base_ring_thickness_mm": 20,
+      "minimum_base_ring_inside_projection_mm": 50,
+      "minimum_base_ring_outside_projection_mm": 150,
+      "base_ring_projection_rounding_mm": 25,
+      "anchor_max_circumferential_spacing_mm": 750,
+      "anchor_active_fraction_in_tension": 0.5,
+      "anchor_couple_arm_factor": 0.75,
+      "minimum_chair_height_mm": 250,
+      "minimum_chair_width_mm": 200,
+      "miscellaneous_installed_weight_fraction": 0.05,
+      "rolled_plate_nesting_efficiency": 0.95,
+      "small_plate_nesting_efficiency": 0.85,
+      "buckling_knockdown_coefficient": 0.15,
+      "automatic_access_opening": {
+        "enabled": true,
+        "condition": "skirt_height_mm >= 1500",
+        "opening_width_mm": 600,
+        "opening_height_mm": 800,
+        "frame_strip_width_mm": 150
+      }
+    },
+    "derived_allowables": {
+      "feed_tensile_allowable_mpa": "min(materials.support_allowable_stress_mpa, 0.60 * materials.support_yield_strength_mpa)",
+      "target_allowable_mpa": "feed_tensile_allowable_mpa * project.maximum_target_utilization",
+      "buckling_allowable_mpa": "min(feed_tensile_allowable_mpa, defaults.buckling_knockdown_coefficient * materials.support_modulus_mpa * (t_effective_mm / skirt_mean_diameter_mm) * min(1, sqrt(skirt_mean_diameter_mm / skirt_height_mm)))"
+    },
+    "thickness_iteration": {
+      "candidate_source": "configuration.commercial_plate_thicknesses_mm",
+      "candidate_filter": "candidate >= defaults.minimum_skirt_thickness_mm",
+      "effective_thickness_expression": "candidate_thickness_mm - materials.support_corrosion_allowance_mm - materials.project_thickness_deduction_mm",
+      "geometry_expressions": {
+        "skirt_mean_diameter_mm": "skirt_outer_diameter_mm - candidate_thickness_mm",
+        "cross_section_area_mm2": "pi * skirt_mean_diameter_mm * t_effective_mm",
+        "section_modulus_mm3": "pi * skirt_mean_diameter_mm^2 * t_effective_mm / 4"
+      },
+      "per_load_case_expressions": {
+        "axial_compression_mpa": "vertical_weight_n / cross_section_area_mm2",
+        "bending_mpa": "4 * abs(moment_n_mm) / (pi * skirt_mean_diameter_mm^2 * t_effective_mm)",
+        "average_shear_mpa": "abs(shear_n) / cross_section_area_mm2",
+        "maximum_compressive_stress_mpa": "axial_compression_mpa + bending_mpa",
+        "maximum_tensile_stress_mpa": "max(0, bending_mpa - axial_compression_mpa)",
+        "compressive_equivalent_mpa": "sqrt(maximum_compressive_stress_mpa^2 + 3 * average_shear_mpa^2)",
+        "tensile_equivalent_mpa": "sqrt(maximum_tensile_stress_mpa^2 + 3 * average_shear_mpa^2)",
+        "tensile_utilization": "tensile_equivalent_mpa / feed_tensile_allowable_mpa",
+        "compressive_material_utilization": "compressive_equivalent_mpa / feed_tensile_allowable_mpa",
+        "buckling_utilization": "maximum_compressive_stress_mpa / buckling_allowable_mpa"
+      },
+      "acceptance_rule": "For every load case: tensile_utilization <= project.maximum_target_utilization AND compressive_material_utilization <= project.maximum_target_utilization AND buckling_utilization <= project.maximum_target_utilization.",
+      "selection_rule": "Select the first ascending candidate that passes all load cases.",
+      "no_passing_candidate_result": "skirt_thickness_not_resolved"
+    },
+    "overturning_and_anchor_logic": {
+      "expressions": {
+        "overturning_index": "governing_moment_n_mm / max(1, governing_vertical_weight_n * vessel.outer_diameter_mm / 2)",
+        "uplift_expected": "overturning_index > 0.25",
+        "total_uplift_n": "max(0, governing_moment_n_mm / (defaults.anchor_couple_arm_factor * vessel.outer_diameter_mm) - 0.5 * governing_vertical_weight_n)",
+        "total_compression_n": "governing_vertical_weight_n + total_uplift_n",
+        "initial_anchor_count": "round_up_to_multiple(max(8, ceil(pi * vessel.outer_diameter_mm / defaults.anchor_max_circumferential_spacing_mm)), 4)"
+      },
+      "anchor_selection": {
+        "count_candidates": "configuration.anchor_count_candidates filtered where count >= initial_anchor_count",
+        "diameter_candidates": "configuration.anchor_bolt_diameters_mm",
+        "effective_tensile_area_mm2": "pi / 4 * (0.85 * anchor_diameter_mm)^2",
+        "allowable_tension_per_bolt_n": "effective_tensile_area_mm2 * materials.anchor_bolt_allowable_tension_mpa * project.maximum_target_utilization",
+        "required_tension_per_active_bolt_n": "total_uplift_n / max(1, anchor_count * defaults.anchor_active_fraction_in_tension)",
+        "selection_rule": "Select the lowest anchor count and smallest diameter combination for which required_tension_per_active_bolt_n <= allowable_tension_per_bolt_n and circumferential spacing <= defaults.anchor_max_circumferential_spacing_mm.",
+        "no_passing_candidate_result": "anchor_configuration_not_resolved"
+      }
+    },
+    "base_ring_logic": {
+      "expressions": {
+        "effective_bearing_fraction": "1.0 if total_uplift_n == 0 else clamp(1.0 - 0.5 * overturning_index, 0.35, 0.75)",
+        "required_total_radial_width_mm": "project.support_design_margin_factor * total_compression_n / (pi * vessel.outer_diameter_mm * effective_bearing_fraction * materials.concrete_allowable_bearing_mpa)",
+        "inside_projection_mm": "round_up(max(defaults.minimum_base_ring_inside_projection_mm, 0.015 * vessel.outer_diameter_mm), defaults.base_ring_projection_rounding_mm)",
+        "outside_projection_mm": "round_up(max(defaults.minimum_base_ring_outside_projection_mm, 0.04 * vessel.outer_diameter_mm, required_total_radial_width_mm - inside_projection_mm), defaults.base_ring_projection_rounding_mm)",
+        "ring_outer_diameter_mm": "vessel.outer_diameter_mm + 2 * outside_projection_mm",
+        "ring_inner_diameter_mm": "max(0, vessel.outer_diameter_mm - 2 * inside_projection_mm)",
+        "base_ring_plan_area_mm2": "pi / 4 * (ring_outer_diameter_mm^2 - ring_inner_diameter_mm^2)",
+        "actual_bearing_pressure_mpa": "total_compression_n / (base_ring_plan_area_mm2 * effective_bearing_fraction)",
+        "cantilever_projection_mm": "max(inside_projection_mm, outside_projection_mm)",
+        "required_base_ring_thickness_mm": "cantilever_projection_mm * sqrt(3 * actual_bearing_pressure_mpa / feed_tensile_allowable_mpa) * project.support_design_margin_factor",
+        "selected_base_ring_thickness_mm": "round_up_to_series(configuration.commercial_plate_thicknesses_mm, max(defaults.minimum_base_ring_thickness_mm, 1.25 * selected_skirt_thickness_mm, required_base_ring_thickness_mm))"
+      },
+      "review_triggers": [
+        {
+          "condition": "outside_projection_mm > 500",
+          "warning": "base_ring_projection_above_FEED_range"
+        },
+        {
+          "condition": "actual_bearing_pressure_mpa > materials.concrete_allowable_bearing_mpa",
+          "blocking_error": "base_ring_bearing_not_resolved"
+        }
+      ]
+    },
+    "anchor_chair_geometry": {
+      "expressions": {
+        "chair_height_mm": "round_up(max(defaults.minimum_chair_height_mm, 0.08 * vessel.outer_diameter_mm), 25)",
+        "chair_width_mm": "round_up(max(defaults.minimum_chair_width_mm, 8 * selected_anchor_diameter_mm), 25)",
+        "chair_top_plate_length_mm": "chair_width_mm + 100",
+        "chair_top_plate_width_mm": "chair_width_mm",
+        "chair_top_plate_thickness_mm": "round_up_to_series(configuration.commercial_plate_thicknesses_mm, max(20, selected_base_ring_thickness_mm))",
+        "chair_gusset_thickness_mm": "round_up_to_series(configuration.commercial_plate_thicknesses_mm, max(12, 0.75 * selected_skirt_thickness_mm))",
+        "single_top_plate_mass_kg": "chair_top_plate_length_mm * chair_top_plate_width_mm * chair_top_plate_thickness_mm * materials.support_density_kg_per_mm3",
+        "single_gusset_mass_kg": "0.5 * chair_height_mm * chair_width_mm * chair_gusset_thickness_mm * materials.support_density_kg_per_mm3",
+        "total_chair_mass_kg": "selected_anchor_count * (single_top_plate_mass_kg + 2 * single_gusset_mass_kg)"
+      }
+    },
+    "access_opening_logic": {
+      "activation": "defaults.automatic_access_opening.enabled AND defaults.automatic_access_opening.condition AND no user-defined skirt opening exists",
+      "expressions": {
+        "opening_removed_mass_kg": "opening_width_mm * opening_height_mm * selected_skirt_thickness_mm * materials.support_density_kg_per_mm3",
+        "frame_total_length_mm": "2 * (opening_width_mm + opening_height_mm) + 8 * frame_strip_width_mm",
+        "frame_thickness_mm": "max(12, selected_skirt_thickness_mm)",
+        "frame_mass_kg": "frame_total_length_mm * frame_strip_width_mm * frame_thickness_mm * materials.support_density_kg_per_mm3"
+      }
+    },
+    "optional_top_ring_logic": {
+      "automatic_condition": "maximum_skirt_utilization > 0.65 OR selected_skirt_thickness_mm > vessel.shell_nominal_thickness_mm",
+      "expressions": {
+        "top_ring_radial_width_mm": "round_up(max(100, 0.03 * vessel.outer_diameter_mm), 25)",
+        "top_ring_thickness_mm": "round_up_to_series(configuration.commercial_plate_thicknesses_mm, max(selected_skirt_thickness_mm, vessel.shell_nominal_thickness_mm))",
+        "top_ring_outer_diameter_mm": "vessel.outer_diameter_mm + 2 * top_ring_radial_width_mm",
+        "top_ring_inner_diameter_mm": "vessel.outer_diameter_mm",
+        "top_ring_mass_kg": "pi / 4 * (top_ring_outer_diameter_mm^2 - top_ring_inner_diameter_mm^2) * top_ring_thickness_mm * materials.support_density_kg_per_mm3"
+      }
+    },
+    "weight_takeoff": {
+      "component_formulas": {
+        "skirt_shell_gross_mass_kg": "pi * skirt_mean_diameter_mm * skirt_height_mm * selected_skirt_thickness_mm * materials.support_density_kg_per_mm3",
+        "skirt_shell_net_mass_kg": "skirt_shell_gross_mass_kg - opening_removed_mass_kg",
+        "base_ring_mass_kg": "base_ring_plan_area_mm2 * selected_base_ring_thickness_mm * materials.support_density_kg_per_mm3",
+        "anchor_chair_mass_kg": "total_chair_mass_kg",
+        "opening_frame_mass_kg": "frame_mass_kg",
+        "top_ring_mass_kg": "top_ring_mass_kg if optional_top_ring_logic is active else 0",
+        "subtotal_installed_mass_kg": "sum(all listed component masses)",
+        "miscellaneous_mass_kg": "subtotal_installed_mass_kg * defaults.miscellaneous_installed_weight_fraction",
+        "installed_support_mass_kg": "subtotal_installed_mass_kg + miscellaneous_mass_kg"
+      },
+      "procurement_formulas": {
+        "rolled_components_purchase_mass_kg": "(skirt_shell_gross_mass_kg + base_ring_mass_kg + top_ring_mass_kg) / defaults.rolled_plate_nesting_efficiency",
+        "small_components_purchase_mass_kg": "(anchor_chair_mass_kg + opening_frame_mass_kg + miscellaneous_mass_kg) / defaults.small_plate_nesting_efficiency",
+        "total_purchase_mass_kg": "rolled_components_purchase_mass_kg + small_components_purchase_mass_kg"
+      }
+    },
+    "paint_and_weld_estimation": {
+      "paint_area_expressions": {
+        "skirt_shell_area_m2": "2 * pi * skirt_mean_diameter_mm * skirt_height_mm / 1000000",
+        "base_ring_area_m2": "2 * base_ring_plan_area_mm2 / 1000000 + pi * (ring_outer_diameter_mm + ring_inner_diameter_mm) * selected_base_ring_thickness_mm / 1000000",
+        "chair_area_m2": "total_chair_mass_kg / 7850 * 45",
+        "top_ring_area_m2": "2 * (pi / 4 * (top_ring_outer_diameter_mm^2 - top_ring_inner_diameter_mm^2)) / 1000000",
+        "total_paint_area_m2": "sum(active paint areas)"
+      },
+      "weld_length_expressions": {
+        "top_circumferential_weld_m": "pi * vessel.outer_diameter_mm / 1000",
+        "base_circumferential_weld_m": "pi * vessel.outer_diameter_mm / 1000",
+        "skirt_vertical_seam_m": "skirt_height_mm / 1000 * max(1, ceil(pi * vessel.outer_diameter_mm / 3000))",
+        "chair_weld_m": "selected_anchor_count * (2 * chair_height_mm + 3 * chair_width_mm) / 1000",
+        "opening_frame_weld_m": "2 * frame_total_length_mm / 1000",
+        "estimated_total_weld_length_m": "sum(active weld lengths)"
+      }
+    }
+  },
+  "saddle_module": {
+    "activation_condition": "selected_support_type == 'two_saddles'",
+    "required_inputs": [
+      "vessel.outer_diameter_mm",
+      "vessel.shell_nominal_thickness_mm",
+      "vessel.tangent_to_tangent_length_mm",
+      "materials.shell_allowable_stress_mpa",
+      "materials.support_allowable_stress_mpa",
+      "materials.concrete_allowable_bearing_mpa",
+      "all shared load inputs",
+      "horizontal vessel CG inputs"
+    ],
+    "defaults": {
+      "saddle_count": 2,
+      "wrap_angle_deg": 120,
+      "wear_plate_extra_angle_deg": 10,
+      "wear_plate_extra_axial_width_mm": 100,
+      "minimum_wear_plate_thickness_mm": 10,
+      "minimum_cap_plate_thickness_mm": 12,
+      "minimum_web_thickness_mm": 10,
+      "minimum_base_plate_thickness_mm": 20,
+      "minimum_saddle_height_mm": 300,
+      "maximum_saddle_height_default_mm": 1200,
+      "web_count_per_saddle": 2,
+      "gusset_count_per_saddle": 4,
+      "fixed_saddle_anchor_steel_fraction": 0.05,
+      "sliding_saddle_attachment_fraction": 0.02,
+      "miscellaneous_installed_weight_fraction": 0.1,
+      "rolled_plate_nesting_efficiency": 0.9,
+      "small_plate_nesting_efficiency": 0.85,
+      "sliding_plate_thickness_mm": 3,
+      "sliding_plate_density_kg_per_mm3": 8e-06,
+      "sliding_friction_coefficient": 0.1,
+      "local_shell_target_index": 0.75,
+      "local_shell_blocking_index": 1.0
+    },
+    "saddle_location_logic": {
+      "preferred_input": "User-defined left and right saddle center positions measured from the left tangent line.",
+      "fallback_expressions": {
+        "distance_from_each_tangent_mm": "round_up(min(0.20 * vessel.tangent_to_tangent_length_mm, 0.50 * vessel.outer_diameter_mm), 50)",
+        "left_saddle_x_mm": "distance_from_each_tangent_mm",
+        "right_saddle_x_mm": "vessel.tangent_to_tangent_length_mm - distance_from_each_tangent_mm",
+        "saddle_spacing_mm": "right_saddle_x_mm - left_saddle_x_mm"
+      },
+      "validation": [
+        "left_saddle_x_mm >= 0",
+        "right_saddle_x_mm <= vessel.tangent_to_tangent_length_mm",
+        "saddle_spacing_mm > 0",
+        "distance_from_each_tangent_mm <= 0.25 * vessel.tangent_to_tangent_length_mm"
+      ]
+    },
+    "cg_and_reaction_engine": {
+      "case_cg_formula": "sum(item_mass_kg * item_cg_x_mm for active items including contents and support self-weight) / total_case_mass_kg",
+      "per_load_case_reactions": {
+        "left_reaction_n": "vertical_weight_n * (right_saddle_x_mm - case_cg_x_mm) / saddle_spacing_mm",
+        "right_reaction_n": "vertical_weight_n - left_reaction_n",
+        "left_horizontal_shear_n": "abs(shear_n) / 2",
+        "right_horizontal_shear_n": "abs(shear_n) / 2"
+      },
+      "validation": {
+        "negative_reaction_result": "saddle_uplift_requires_engineering_review",
+        "reaction_equilibrium_check": "abs(left_reaction_n + right_reaction_n - vertical_weight_n) / vertical_weight_n <= 0.001"
+      },
+      "governing_values": {
+        "maximum_left_reaction_n": "max(load_cases.left_reaction_n)",
+        "maximum_right_reaction_n": "max(load_cases.right_reaction_n)",
+        "maximum_saddle_reaction_n": "max(maximum_left_reaction_n, maximum_right_reaction_n)"
+      }
+    },
+    "saddle_width_logic": {
+      "reaction_based_minimums": [
+        {
+          "condition": "maximum_saddle_reaction_n <= 250000",
+          "width_mm": "max(300, 0.15 * vessel.outer_diameter_mm)"
+        },
+        {
+          "condition": "maximum_saddle_reaction_n > 250000 AND maximum_saddle_reaction_n <= 750000",
+          "width_mm": "max(400, 0.20 * vessel.outer_diameter_mm)"
+        },
+        {
+          "condition": "maximum_saddle_reaction_n > 750000 AND maximum_saddle_reaction_n <= 1500000",
+          "width_mm": "max(500, 0.25 * vessel.outer_diameter_mm)"
+        },
+        {
+          "condition": "maximum_saddle_reaction_n > 1500000",
+          "width_mm": "max(600, 0.30 * vessel.outer_diameter_mm)"
+        }
+      ],
+      "local_shell_heuristic": {
+        "index_expression": "maximum_saddle_reaction_n / (saddle_axial_width_mm * vessel.shell_nominal_thickness_mm * materials.shell_allowable_stress_mpa)",
+        "iteration_rule": "Increase saddle_axial_width_mm in 50 mm steps until local_shell_index <= defaults.local_shell_target_index or saddle_axial_width_mm reaches 0.40 * vessel.outer_diameter_mm.",
+        "blocking_rule": "If local_shell_index > defaults.local_shell_blocking_index after iteration, return saddle_local_shell_screen_failed.",
+        "note": "This is a FEED sizing heuristic. It does not replace complete local shell stress analysis."
+      },
+      "selected_width_expression": "round_up(reaction_based_width_or_iterated_width, 50)"
+    },
+    "geometry_logic": {
+      "expressions": {
+        "wrap_angle_rad": "deg_to_rad(defaults.wrap_angle_deg)",
+        "wear_wrap_angle_rad": "deg_to_rad(defaults.wrap_angle_deg + defaults.wear_plate_extra_angle_deg)",
+        "vessel_radius_mm": "vessel.outer_diameter_mm / 2",
+        "saddle_height_mm": "round_up(clamp(0.25 * vessel.outer_diameter_mm, defaults.minimum_saddle_height_mm, defaults.maximum_saddle_height_default_mm), 50)",
+        "wear_plate_axial_width_mm": "saddle_axial_width_mm + defaults.wear_plate_extra_axial_width_mm",
+        "wear_plate_thickness_mm": "round_up_to_series(configuration.commercial_plate_thicknesses_mm, max(defaults.minimum_wear_plate_thickness_mm, vessel.shell_nominal_thickness_mm))",
+        "cap_plate_thickness_mm": "round_up_to_series(configuration.commercial_plate_thicknesses_mm, max(defaults.minimum_cap_plate_thickness_mm, 0.60 * vessel.shell_nominal_thickness_mm))",
+        "contact_arc_length_mm": "wrap_angle_rad * vessel_radius_mm",
+        "wear_arc_length_mm": "wear_wrap_angle_rad * vessel_radius_mm",
+        "top_web_width_mm": "0.60 * vessel.outer_diameter_mm",
+        "base_transverse_width_mm": "round_up(max(0.90 * vessel.outer_diameter_mm, top_web_width_mm + 200), 50)",
+        "base_axial_length_initial_mm": "saddle_axial_width_mm + 200",
+        "required_base_area_mm2": "project.support_design_margin_factor * maximum_saddle_reaction_n / materials.concrete_allowable_bearing_mpa",
+        "base_axial_length_mm": "round_up(max(base_axial_length_initial_mm, required_base_area_mm2 / base_transverse_width_mm), 50)",
+        "actual_bearing_pressure_mpa": "maximum_saddle_reaction_n / (base_transverse_width_mm * base_axial_length_mm)",
+        "web_effective_height_mm": "saddle_height_mm",
+        "required_web_thickness_mm": "project.support_design_margin_factor * 1.5 * maximum_saddle_reaction_n / (defaults.web_count_per_saddle * web_effective_height_mm * materials.support_allowable_stress_mpa)",
+        "web_thickness_mm": "round_up_to_series(configuration.commercial_plate_thicknesses_mm, max(defaults.minimum_web_thickness_mm, required_web_thickness_mm))",
+        "base_plate_cantilever_projection_mm": "100",
+        "required_base_plate_thickness_mm": "base_plate_cantilever_projection_mm * sqrt(3 * actual_bearing_pressure_mpa / materials.support_allowable_stress_mpa) * project.support_design_margin_factor",
+        "base_plate_thickness_mm": "round_up_to_series(configuration.commercial_plate_thicknesses_mm, max(defaults.minimum_base_plate_thickness_mm, 1.25 * web_thickness_mm, required_base_plate_thickness_mm))",
+        "gusset_thickness_mm": "round_up_to_series(configuration.commercial_plate_thicknesses_mm, max(8, 0.75 * web_thickness_mm))",
+        "gusset_depth_mm": "0.30 * base_axial_length_mm"
+      }
+    },
+    "weight_takeoff": {
+      "single_saddle_component_formulas": {
+        "wear_plate_mass_kg": "wear_arc_length_mm * wear_plate_axial_width_mm * wear_plate_thickness_mm * materials.support_density_kg_per_mm3",
+        "cap_plate_mass_kg": "contact_arc_length_mm * saddle_axial_width_mm * cap_plate_thickness_mm * materials.support_density_kg_per_mm3",
+        "single_web_area_mm2": "0.5 * (top_web_width_mm + base_transverse_width_mm) * web_effective_height_mm",
+        "webs_mass_kg": "defaults.web_count_per_saddle * single_web_area_mm2 * web_thickness_mm * materials.support_density_kg_per_mm3",
+        "base_plate_mass_kg": "base_transverse_width_mm * base_axial_length_mm * base_plate_thickness_mm * materials.support_density_kg_per_mm3",
+        "single_gusset_mass_kg": "0.5 * saddle_height_mm * gusset_depth_mm * gusset_thickness_mm * materials.support_density_kg_per_mm3",
+        "gussets_mass_kg": "defaults.gusset_count_per_saddle * single_gusset_mass_kg",
+        "single_saddle_structural_subtotal_kg": "wear_plate_mass_kg + cap_plate_mass_kg + webs_mass_kg + base_plate_mass_kg + gussets_mass_kg"
+      },
+      "fixed_saddle": {
+        "anchor_attachment_mass_kg": "single_saddle_structural_subtotal_kg * defaults.fixed_saddle_anchor_steel_fraction",
+        "installed_mass_kg": "single_saddle_structural_subtotal_kg + anchor_attachment_mass_kg"
+      },
+      "sliding_saddle": {
+        "attachment_mass_kg": "single_saddle_structural_subtotal_kg * defaults.sliding_saddle_attachment_fraction",
+        "sliding_plate_mass_kg": "base_transverse_width_mm * base_axial_length_mm * defaults.sliding_plate_thickness_mm * defaults.sliding_plate_density_kg_per_mm3",
+        "installed_mass_kg": "single_saddle_structural_subtotal_kg + attachment_mass_kg + sliding_plate_mass_kg"
+      },
+      "total": {
+        "subtotal_installed_mass_kg": "fixed_saddle.installed_mass_kg + sliding_saddle.installed_mass_kg",
+        "miscellaneous_mass_kg": "subtotal_installed_mass_kg * defaults.miscellaneous_installed_weight_fraction",
+        "installed_support_mass_kg": "subtotal_installed_mass_kg + miscellaneous_mass_kg"
+      },
+      "procurement": {
+        "rolled_components_purchase_mass_kg": "2 * (wear_plate_mass_kg + cap_plate_mass_kg + base_plate_mass_kg) / defaults.rolled_plate_nesting_efficiency",
+        "small_components_purchase_mass_kg": "(2 * (webs_mass_kg + gussets_mass_kg) + fixed_saddle.anchor_attachment_mass_kg + sliding_saddle.attachment_mass_kg + miscellaneous_mass_kg) / defaults.small_plate_nesting_efficiency",
+        "sliding_plate_purchase_mass_kg": "sliding_saddle.sliding_plate_mass_kg",
+        "total_purchase_mass_kg": "rolled_components_purchase_mass_kg + small_components_purchase_mass_kg + sliding_plate_purchase_mass_kg"
+      }
+    },
+    "thermal_and_anchor_screening": {
+      "expressions": {
+        "sliding_saddle_friction_force_n": "defaults.sliding_friction_coefficient * maximum_right_reaction_n",
+        "fixed_saddle_horizontal_design_force_n": "maximum_shear_n + sliding_saddle_friction_force_n"
+      },
+      "review_triggers": [
+        {
+          "condition": "fixed_saddle_horizontal_design_force_n > 0.20 * maximum_saddle_reaction_n",
+          "warning": "high_horizontal_to_vertical_reaction_ratio"
+        },
+        {
+          "condition": "maximum_saddle_reaction_n > 1500000",
+          "warning": "large_saddle_reaction_requires_detailed_review"
+        },
+        {
+          "condition": "vessel.outer_diameter_mm / vessel.shell_nominal_thickness_mm > 500",
+          "warning": "thin_shell_high_D_over_t_requires_detailed_local_stress_analysis"
+        }
+      ]
+    },
+    "paint_and_weld_estimation": {
+      "paint_area_expressions": {
+        "wear_and_cap_area_m2": "2 * 2 * (wear_arc_length_mm * wear_plate_axial_width_mm + contact_arc_length_mm * saddle_axial_width_mm) / 1000000",
+        "web_area_m2": "2 * defaults.web_count_per_saddle * 2 * single_web_area_mm2 / 1000000",
+        "base_plate_area_m2": "2 * 2 * base_transverse_width_mm * base_axial_length_mm / 1000000",
+        "gusset_area_m2": "2 * defaults.gusset_count_per_saddle * 2 * (0.5 * saddle_height_mm * gusset_depth_mm) / 1000000",
+        "total_paint_area_m2": "wear_and_cap_area_m2 + web_area_m2 + base_plate_area_m2 + gusset_area_m2"
+      },
+      "weld_length_expressions": {
+        "cap_and_wear_weld_m": "2 * 2 * contact_arc_length_mm / 1000",
+        "web_weld_m": "2 * defaults.web_count_per_saddle * (2 * web_effective_height_mm + top_web_width_mm + base_transverse_width_mm) / 1000",
+        "base_weld_m": "2 * 2 * base_transverse_width_mm / 1000",
+        "gusset_weld_m": "2 * defaults.gusset_count_per_saddle * (saddle_height_mm + gusset_depth_mm) / 1000",
+        "estimated_total_weld_length_m": "cap_and_wear_weld_m + web_weld_m + base_weld_m + gusset_weld_m"
+      }
+    }
+  },
+  "self_weight_iteration": {
+    "initial_support_mass_kg": 0,
+    "algorithm": [
+      "Set current_support_installed_mass_kg = 0.",
+      "Build empty, operating, and hydrotest masses and the six environmental load cases.",
+      "Route to the skirt or saddle module.",
+      "Generate preliminary geometry and calculate new_support_installed_mass_kg.",
+      "Rebuild all masses and reactions using the new support mass.",
+      "Repeat until relative mass change is not greater than project.self_weight_convergence_tolerance.",
+      "Stop after project.maximum_self_weight_iterations."
+    ],
+    "convergence_expression": "abs(new_support_installed_mass_kg - current_support_installed_mass_kg) / max(1, current_support_installed_mass_kg)",
+    "converged_condition": "iteration_number > 1 AND convergence_expression <= project.self_weight_convergence_tolerance",
+    "nonconvergence_result": "support_self_weight_iteration_not_converged"
+  },
+  "cost_engine": {
+    "cost_basis": {
+      "material_quantity": "procurement_mass_not_installed_mass",
+      "fabrication_quantity": "installed_mass",
+      "coating_quantity": "calculated_paint_area",
+      "nde_quantity": "estimated_weld_length",
+      "rate_traceability_required": true
+    },
+    "support_complexity_factors": {
+      "skirt": 1.0,
+      "two_saddles": 1.2
+    },
+    "formulas": {
+      "material_cost": "total_purchase_mass_kg * commercial.material_rate_per_kg",
+      "fabrication_cost": "installed_support_mass_kg * commercial.fabrication_rate_per_kg * support_complexity_factor",
+      "coating_cost": "total_paint_area_m2 * commercial.coating_rate_per_m2",
+      "nde_cost": "estimated_total_weld_length_m * commercial.nde_rate_per_m",
+      "anchor_bolt_cost": "selected_anchor_count * commercial.anchor_bolt_unit_cost if support_type == 'skirt' else 0",
+      "sliding_bearing_cost": "commercial.sliding_bearing_unit_cost if support_type == 'two_saddles' else 0",
+      "direct_cost": "material_cost + fabrication_cost + coating_cost + nde_cost + anchor_bolt_cost + sliding_bearing_cost",
+      "engineering_and_qa_cost": "direct_cost * commercial.engineering_and_qa_percent / 100",
+      "vendor_overhead_and_profit_cost": "(direct_cost + engineering_and_qa_cost) * commercial.vendor_overhead_and_profit_percent / 100",
+      "freight_cost": "(direct_cost + engineering_and_qa_cost + vendor_overhead_and_profit_cost) * commercial.freight_percent / 100",
+      "subtotal_before_uncertainty": "direct_cost + engineering_and_qa_cost + vendor_overhead_and_profit_cost + freight_cost",
+      "uncertainty_percent": "data_quality_engine.uncertainty_percent",
+      "uncertainty_cost": "subtotal_before_uncertainty * uncertainty_percent / 100",
+      "tax_cost": "(subtotal_before_uncertainty + uncertainty_cost) * commercial.tax_percent / 100",
+      "total_FEED_cost": "subtotal_before_uncertainty + uncertainty_cost + tax_cost"
+    }
+  },
+  "data_quality_engine": {
+    "score_items": [
+      {
+        "item": "confirmed_vessel_geometry",
+        "points": 15
+      },
+      {
+        "item": "calculated_fixed_operating_and_hydrotest_masses",
+        "points": 15
+      },
+      {
+        "item": "confirmed_center_of_gravity",
+        "points": 10
+      },
+      {
+        "item": "project_wind_and_seismic_loads",
+        "points": 20
+      },
+      {
+        "item": "support_elevation_or_saddle_location",
+        "points": 10
+      },
+      {
+        "item": "controlled_material_allowables",
+        "points": 10
+      },
+      {
+        "item": "current_cost_rates_with_effective_date",
+        "points": 10
+      },
+      {
+        "item": "preliminary_geometry_generated_without_blocking_warnings",
+        "points": 10
+      }
+    ],
+    "classification": [
+      {
+        "minimum_score": 85,
+        "estimate_confidence": "developed_FEED",
+        "uncertainty_percent": 20
+      },
+      {
+        "minimum_score": 70,
+        "estimate_confidence": "preliminary_FEED",
+        "uncertainty_percent": 25
+      },
+      {
+        "minimum_score": 0,
+        "estimate_confidence": "screening_only",
+        "uncertainty_percent": 35
+      }
+    ],
+    "default_usage_penalty": {
+      "points_per_major_default": 3,
+      "maximum_penalty": 20
+    }
+  },
+  "validation_rules": [
+    {
+      "rule_id": "SUP_001",
+      "condition": "vessel.outer_diameter_mm > 0 AND vessel.shell_nominal_thickness_mm > 0",
+      "failure_code": "invalid_vessel_geometry"
+    },
+    {
+      "rule_id": "SUP_002",
+      "condition": "materials.support_allowable_stress_mpa > 0 AND materials.support_yield_strength_mpa > 0",
+      "failure_code": "support_material_properties_missing"
+    },
+    {
+      "rule_id": "SUP_003",
+      "condition": "materials.support_allowable_stress_mpa <= materials.support_yield_strength_mpa",
+      "failure_code": "support_allowable_exceeds_yield"
+    },
+    {
+      "rule_id": "SUP_004",
+      "condition": "materials.concrete_allowable_bearing_mpa > 0",
+      "failure_code": "concrete_bearing_limit_missing"
+    },
+    {
+      "rule_id": "SUP_005",
+      "condition": "all six load cases are defined",
+      "failure_code": "environmental_load_cases_incomplete"
+    },
+    {
+      "rule_id": "SUP_006",
+      "condition": "support self-weight converges",
+      "failure_code": "support_self_weight_iteration_not_converged"
+    },
+    {
+      "rule_id": "SUP_007",
+      "condition": "selected support thickness exists in controlled commercial thickness series",
+      "failure_code": "commercial_thickness_not_available"
+    },
+    {
+      "rule_id": "SUP_008",
+      "condition": "commercial rates include effective date and fabrication location",
+      "failure_code": "cost_rate_traceability_incomplete"
+    },
+    {
+      "rule_id": "SUP_009",
+      "condition": "installed_support_mass_kg is not increased by procurement wastage",
+      "failure_code": "procurement_wastage_incorrectly_added_to_installed_weight"
+    },
+    {
+      "rule_id": "SUP_010",
+      "condition": "result is marked FEED only and engineering review required",
+      "failure_code": "final_design_claim_prohibited"
+    }
+  ],
+  "error_catalog": {
+    "unsupported_orientation": {
+      "severity": "blocking",
+      "message": "Only vertical skirt support and horizontal two-saddle support are enabled."
+    },
+    "invalid_vessel_geometry": {
+      "severity": "blocking",
+      "message": "Enter positive vessel diameter and shell thickness."
+    },
+    "support_material_properties_missing": {
+      "severity": "blocking",
+      "message": "Controlled support material allowable stress, yield strength, and modulus are required."
+    },
+    "support_allowable_exceeds_yield": {
+      "severity": "blocking",
+      "message": "Support allowable stress cannot exceed yield strength."
+    },
+    "environmental_load_cases_incomplete": {
+      "severity": "blocking",
+      "message": "Empty, operating, and hydrotest wind and seismic loads are required."
+    },
+    "skirt_thickness_not_resolved": {
+      "severity": "blocking",
+      "message": "No candidate skirt thickness passes the FEED material and buckling screens."
+    },
+    "anchor_configuration_not_resolved": {
+      "severity": "blocking",
+      "message": "No available anchor count and diameter combination passes the FEED uplift screen."
+    },
+    "base_ring_bearing_not_resolved": {
+      "severity": "blocking",
+      "message": "The generated base-ring area does not satisfy the project concrete bearing limit."
+    },
+    "base_ring_projection_above_FEED_range": {
+      "severity": "review",
+      "message": "The required base-ring projection is outside the default FEED range."
+    },
+    "saddle_uplift_requires_engineering_review": {
+      "severity": "blocking",
+      "message": "A saddle reaction became negative. Restraint and uplift design require engineering review."
+    },
+    "saddle_local_shell_screen_failed": {
+      "severity": "blocking",
+      "message": "The saddle local-shell FEED heuristic remains above its blocking limit."
+    },
+    "large_saddle_reaction_requires_detailed_review": {
+      "severity": "review",
+      "message": "The governing saddle reaction exceeds 1,500 kN."
+    },
+    "thin_shell_high_D_over_t_requires_detailed_local_stress_analysis": {
+      "severity": "review",
+      "message": "The vessel shell has a high diameter-to-thickness ratio."
+    },
+    "support_self_weight_iteration_not_converged": {
+      "severity": "blocking",
+      "message": "Support self-weight did not converge within the permitted iterations."
+    },
+    "cost_rate_traceability_incomplete": {
+      "severity": "blocking",
+      "message": "Cost rates require source, location, currency, and effective date."
+    },
+    "procurement_wastage_incorrectly_added_to_installed_weight": {
+      "severity": "blocking",
+      "message": "Procurement wastage affects cost quantity only and shall not be added to installed vessel weight."
+    },
+    "final_design_claim_prohibited": {
+      "severity": "blocking",
+      "message": "This result is a FEED estimate and cannot be represented as final support design approval."
+    }
+  },
+  "output_schema": {
+    "metadata": {
+      "calculation_id": "string",
+      "library_version": "string",
+      "timestamp_utc": "datetime",
+      "currency": "string"
+    },
+    "support_selection": {
+      "support_type": "skirt_or_two_saddles",
+      "selection_reason": "string"
+    },
+    "load_summary": {
+      "empty_mass_kg": "number",
+      "operating_mass_kg": "number",
+      "hydrotest_mass_kg": "number",
+      "governing_vertical_weight_n": "number",
+      "governing_shear_n": "number",
+      "governing_moment_n_mm": "number",
+      "governing_load_case_ids": "array"
+    },
+    "preliminary_geometry": {
+      "selected_dimensions": "object",
+      "selected_plate_thicknesses_mm": "object",
+      "anchor_or_sliding_details": "object"
+    },
+    "engineering_results": {
+      "maximum_utilization": "number",
+      "governing_check": "string",
+      "load_case_results": "array",
+      "self_weight_iterations": "integer",
+      "converged": "boolean"
+    },
+    "weight_results": {
+      "component_installed_weights_kg": "object",
+      "installed_support_weight_kg": "number",
+      "procurement_weight_kg": "number",
+      "weight_added_to_empty_operating_and_hydrotest_cases_kg": "number"
+    },
+    "quantity_results": {
+      "paint_area_m2": "number",
+      "estimated_weld_length_m": "number",
+      "anchor_bolt_count": "number_or_null",
+      "sliding_bearing_count": "number_or_null"
+    },
+    "cost_breakdown": {
+      "material_cost": "number",
+      "fabrication_cost": "number",
+      "coating_cost": "number",
+      "nde_cost": "number",
+      "anchor_or_sliding_cost": "number",
+      "engineering_and_qa_cost": "number",
+      "vendor_overhead_and_profit_cost": "number",
+      "freight_cost": "number",
+      "uncertainty_cost": "number",
+      "tax_cost": "number",
+      "total_FEED_cost": "number"
+    },
+    "confidence": {
+      "data_quality_score": "number",
+      "estimate_confidence": "string",
+      "uncertainty_percent": "number"
+    },
+    "governance": {
+      "engineering_review_required": true,
+      "construction_use_allowed": false,
+      "warnings": "array",
+      "blocking_errors": "array",
+      "assumptions_used": "array",
+      "source_records": "array"
+    }
+  },
+  "implementation_sequence": [
+    "Validate all inputs and units.",
+    "Route vertical vessels to the skirt module and horizontal vessels to the two-saddle module.",
+    "Calculate empty, operating, and hydrotest masses excluding support.",
+    "Generate six environmental load cases.",
+    "Start self-weight iteration with zero support mass.",
+    "Generate support geometry from the governing load cases.",
+    "Calculate installed and procurement weights separately.",
+    "Repeat the mass and reaction calculation until support mass converges.",
+    "Calculate paint area and weld length.",
+    "Apply current controlled commercial rates.",
+    "Calculate data quality, uncertainty, and total FEED cost.",
+    "Return engineering warnings and retain engineering-review status."
+  ]
+}

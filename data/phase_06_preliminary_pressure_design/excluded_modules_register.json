@@ -1,0 +1,32 @@
+{
+  "modules": [
+    {
+      "id": "external_pressure",
+      "reason": "Requires iterative chart-based design and stiffener logic not included in Phase 6."
+    },
+    {
+      "id": "flat_heads",
+      "reason": "Not included in the initial formed-head scope."
+    },
+    {
+      "id": "nozzle_reinforcement",
+      "reason": "Requires opening geometry, reinforcement areas and weld details."
+    },
+    {
+      "id": "MDMT",
+      "reason": "Requires current code exemption curves, thickness and material toughness logic."
+    },
+    {
+      "id": "PWHT",
+      "reason": "Requires current code, material group, thickness and service rules."
+    },
+    {
+      "id": "wind_seismic_supports",
+      "reason": "Requires site criteria, load combinations and structural calculations."
+    },
+    {
+      "id": "fatigue",
+      "reason": "Requires cycle definition and design-by-analysis methods."
+    }
+  ]
+}

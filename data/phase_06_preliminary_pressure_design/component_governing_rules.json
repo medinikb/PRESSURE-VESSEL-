@@ -1,0 +1,34 @@
+{
+  "rules": [
+    {
+      "id": "GOV_001",
+      "scope": "shell_thickness",
+      "action": "calculate_longitudinal_and_circumferential_requirements_and_take_greater"
+    },
+    {
+      "id": "GOV_002",
+      "scope": "head_thickness",
+      "action": "calculate_selected_head_geometry_requirement"
+    },
+    {
+      "id": "GOV_003",
+      "scope": "vessel_required_thickness",
+      "action": "report_each_component_separately; do_not_apply_one_thickness_to_all_components_without_user_decision"
+    },
+    {
+      "id": "GOV_004",
+      "scope": "MAWP",
+      "action": "take_least_static_head_adjusted_value_of_all_enabled_essential_parts"
+    },
+    {
+      "id": "GOV_005",
+      "scope": "MAP",
+      "action": "take_least_new_and_cold_value_of_all_enabled_essential_parts"
+    },
+    {
+      "id": "GOV_006",
+      "scope": "formula_basis",
+      "action": "do_not_mix_inside_and_outside_basis_with_inconsistent_geometry"
+    }
+  ]
+}

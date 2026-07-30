@@ -1,0 +1,59 @@
+{
+  "formulas": [
+    {
+      "id": "MAWP_SHELL_ID",
+      "equation": "PW = (SDT * E * t_sc) / (R_c + 0.6 * t_sc)",
+      "component": "shell",
+      "basis": "inside_radius_hot_corroded"
+    },
+    {
+      "id": "MAWP_SHELL_OD",
+      "equation": "PW = (SDT * E * t_sc) / (R_o - 0.4 * t_sc)",
+      "component": "shell",
+      "basis": "outside_radius_hot_corroded"
+    },
+    {
+      "id": "MAWP_ELLIP_2_1_ID",
+      "equation": "PW = (2 * SDT * E * t_hc) / (D_c + 0.2 * t_hc)",
+      "component": "ellipsoidal_2_to_1_head",
+      "basis": "inside_diameter_hot_corroded"
+    },
+    {
+      "id": "MAWP_ELLIP_2_1_OD",
+      "equation": "PW = (2 * SDT * E * t_hc) / (D_o - 1.8 * t_hc)",
+      "component": "ellipsoidal_2_to_1_head",
+      "basis": "outside_diameter_hot_corroded"
+    },
+    {
+      "id": "MAP_SHELL_ID",
+      "equation": "PM = (Sa * E * t_sn) / (R_n + 0.6 * t_sn)",
+      "component": "shell",
+      "basis": "inside_radius_new_cold"
+    },
+    {
+      "id": "MAP_SHELL_OD",
+      "equation": "PM = (Sa * E * t_sn) / (R_o - 0.4 * t_sn)",
+      "component": "shell",
+      "basis": "outside_radius_new_cold"
+    },
+    {
+      "id": "MAP_ELLIP_2_1_ID",
+      "equation": "PM = (2 * Sa * E * t_hn) / (D_n + 0.2 * t_hn)",
+      "component": "ellipsoidal_2_to_1_head",
+      "basis": "inside_diameter_new_cold"
+    },
+    {
+      "id": "MAP_ELLIP_2_1_OD",
+      "equation": "PM = (2 * Sa * E * t_hn) / (D_o - 1.8 * t_hn)",
+      "component": "ellipsoidal_2_to_1_head",
+      "basis": "outside_diameter_new_cold"
+    }
+  ],
+  "vessel_governing_rule": "The vessel value is the least adjusted value among essential pressure-retaining parts.",
+  "source": {
+    "source_type": "source_derived",
+    "source_ids": [
+      "PVMD_3E_PROC_2_3"
+    ]
+  }
+}

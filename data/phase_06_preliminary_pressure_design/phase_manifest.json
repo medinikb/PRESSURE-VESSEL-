@@ -1,0 +1,191 @@
+{
+  "phase": 6,
+  "name": "Preliminary Pressure Design",
+  "version": "0.2.0",
+  "status": "historical_formula_transcription_draft",
+  "objective": "Provide modular internal-pressure shell and formed-head calculations, MAP, MAWP and test-pressure screening.",
+  "default_feature_state": "disabled_until_controlled_code_verification",
+  "source_ids": [
+    "PVMD_3E_PROC_2_1",
+    "PVMD_3E_PROC_2_3",
+    "PVMD_3E_APPENDIX_C",
+    "PVMD_3E_APPENDIX_D"
+  ],
+  "files": [
+    {
+      "path": "allowable_stress_library_template.json",
+      "sha256": "ecdd86b91b6de03ec48aacb2075d4f4cb174e5ef3498d4d563e365c626033d98",
+      "replaceable_independently": true
+    },
+    {
+      "path": "calculation_sequence.json",
+      "sha256": "3b22860adbf65d7881529c15bd5ab264d9a5ac058ac8bd6ddeaca0d2b7e20288",
+      "replaceable_independently": true
+    },
+    {
+      "path": "cladding_credit_formulas_historical.json",
+      "sha256": "9844958a73c5b49a48dca7394588e161d676b0b13307c5034994e26577bb59ec",
+      "replaceable_independently": true
+    },
+    {
+      "path": "component_governing_rules.json",
+      "sha256": "6c1c0a5c318b57c0861d55f68dcd0f1ad66f41d53edcda70cd0c03ff1489908c",
+      "replaceable_independently": true
+    },
+    {
+      "path": "conical_section_formulas.json",
+      "sha256": "590752ac7132f2f2936209891cbf30cf722211dc7580e9b79e47bba97afd6d24",
+      "replaceable_independently": true
+    },
+    {
+      "path": "corrosion_and_thickness_addition_rules.json",
+      "sha256": "5d0193fb3a46347d664a5c6678539cf7662ed9e36990f6e436696fa1aa5b5981",
+      "replaceable_independently": true
+    },
+    {
+      "path": "design_basis.json",
+      "sha256": "db968d3974cdacfbe2f095378f7e52b138104c7d7041be5d29089a22eb7a3282",
+      "replaceable_independently": true
+    },
+    {
+      "path": "design_input_fields.json",
+      "sha256": "08212b123c9c1bee919988ce8748f59db81e9cee906d86580d68117e3b5b5664",
+      "replaceable_independently": true
+    },
+    {
+      "path": "design_validation_rules.json",
+      "sha256": "3d9154962a75ffae6040e4759e16d24a69d1fc8b3ba884c34d3f467f7150b328",
+      "replaceable_independently": true
+    },
+    {
+      "path": "design_warning_catalog.json",
+      "sha256": "c301fec0712869c49a6d2ee7a2c9665e9e0d0d425d93df3b1308a2d24fad6b72",
+      "replaceable_independently": true
+    },
+    {
+      "path": "ellipsoidal_head_formulas.json",
+      "sha256": "b813dc753f486dcd828195cbf3886271b9b6fc5500d5db636a5bcc0a592564b1",
+      "replaceable_independently": true
+    },
+    {
+      "path": "excluded_modules_register.json",
+      "sha256": "f192c52d0a539ee1c6f9e85d6f82699aca2acaf4fe555fe23db82ba3d0916882",
+      "replaceable_independently": true
+    },
+    {
+      "path": "formula_applicability_rules.json",
+      "sha256": "d48338137fe8d97198af4765782a418b5bde2c5d0ef504b0ec4fdd6f6142bb89",
+      "replaceable_independently": true
+    },
+    {
+      "path": "formula_index.json",
+      "sha256": "a3f3992bdf871661c2d5d2ccda8463d5e76454a0f0a4e8898ab1078d87f30eba",
+      "replaceable_independently": true
+    },
+    {
+      "path": "formula_test_cases.json",
+      "sha256": "744b563fd01b8ea5dfbabbae064f34f37a7795343ef3e46bcc58a13718a382fb",
+      "replaceable_independently": true
+    },
+    {
+      "path": "geometry_factor_formulas.json",
+      "sha256": "8d1332a17d0baa6a9a5f55d02f035caff66279ef91b490bd095f1b6c50a7b636",
+      "replaceable_independently": true
+    },
+    {
+      "path": "head_geometry_reference.json",
+      "sha256": "053552265f24311f59bae1a17ada60c9d92f73366b11bcaf844d2ba8ba249bde",
+      "replaceable_independently": true
+    },
+    {
+      "path": "head_type_catalog.json",
+      "sha256": "20f3a1a1e7dc0a5cb6fb975ecb7a4074e56874f304add8308ba6df96a4bf9fba",
+      "replaceable_independently": true
+    },
+    {
+      "path": "hemispherical_head_formulas.json",
+      "sha256": "309415133bf91351e33ca55b5815d17b9da903636e9a9d54a058ddefb971e371",
+      "replaceable_independently": true
+    },
+    {
+      "path": "joint_efficiency_selection_rules.json",
+      "sha256": "36cbabf9d09ebcbecf3ebe12cfcdbc55959ddfe0e187ac7d11746f67c77f7f2a",
+      "replaceable_independently": true
+    },
+    {
+      "path": "joint_type_efficiencies_historical.json",
+      "sha256": "2d8e1b3ee8ae4f90d57e82f420a3090b693a8eaa93a4147a85a09c6d8e2fd18e",
+      "replaceable_independently": true
+    },
+    {
+      "path": "map_mawp_formulas.json",
+      "sha256": "2f49d9394d4b76e80b14d2df7f73342f8a133a563db9ffa264cf25c82964b39e",
+      "replaceable_independently": true
+    },
+    {
+      "path": "material_stress_lookup_rules.json",
+      "sha256": "2b51a3d284d0220a3fb1b928af1a35d80391dec430fce4694d51c67f626ca0b7",
+      "replaceable_independently": true
+    },
+    {
+      "path": "nominal_plate_thickness_library_template.json",
+      "sha256": "87c4a69e7209461ced84e8bd4dc59d9651ddc9818b5cda43df73f4b4072811ef",
+      "replaceable_independently": true
+    },
+    {
+      "path": "preliminary_design_report_sections.json",
+      "sha256": "0e39d16677b7016b66507689733ec242e7cfd7b1fce606fb1287b69c13609937",
+      "replaceable_independently": true
+    },
+    {
+      "path": "radiography_application_matrix_historical.json",
+      "sha256": "92896db283993a375ee1f8f66f77149b7998ec12e0da98e8ffa5b18f682251c4",
+      "replaceable_independently": true
+    },
+    {
+      "path": "schemas/allowable_stress_library.schema.json",
+      "sha256": "f9dd1e01fa1a5f8daad3bc92e6654799fdd4ab9d971612e63c8d5bc9bec1884b",
+      "replaceable_independently": true
+    },
+    {
+      "path": "schemas/formula_module.schema.json",
+      "sha256": "901dbb1be791e87608a37aa1530c90c7a9a4036e30660f85319e05054a04fb7f",
+      "replaceable_independently": true
+    },
+    {
+      "path": "schemas/formula_test_cases.schema.json",
+      "sha256": "bd912caa18583c69a22abd6edc76bb045a07815f55b16bc5b11159ab3b72877f",
+      "replaceable_independently": true
+    },
+    {
+      "path": "shell_internal_pressure_formulas.json",
+      "sha256": "a6a4adc69cd7fb8d2496cf4a28e42a0ef9aeaddedef175120c8a0fdfe5722fd0",
+      "replaceable_independently": true
+    },
+    {
+      "path": "static_head_rules.json",
+      "sha256": "4282f16c1348af0019c2d350b6019a7c0b9f1a706928c96b5e9cbeb3ce8bb645",
+      "replaceable_independently": true
+    },
+    {
+      "path": "test_pressure_formulas_historical.json",
+      "sha256": "89574936e7dfe5e3f0da467989502cd00424b9a3f105cf44bbf0dcec40038daf",
+      "replaceable_independently": true
+    },
+    {
+      "path": "torispherical_head_formulas.json",
+      "sha256": "2d13b1bb0a45708ff341d35eceef480d283a29c189e2b25498be5e3c8108e3af",
+      "replaceable_independently": true
+    },
+    {
+      "path": "unit_systems.json",
+      "sha256": "d4678cc325af352af6a7a2eee6328a6113f81d5f270dbd030d117e62881f7746",
+      "replaceable_independently": true
+    },
+    {
+      "path": "variable_catalog.json",
+      "sha256": "3987c20925f22eb1cb24db3e6ca6594b5e1e72e454ef752d54a4121597bde741",
+      "replaceable_independently": true
+    }
+  ]
+}

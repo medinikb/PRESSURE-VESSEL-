@@ -1,0 +1,58 @@
+{
+  "head_types": [
+    {
+      "id": "hemispherical",
+      "label": "Hemispherical",
+      "required_geometry": [
+        "inside_radius_or_outside_radius"
+      ]
+    },
+    {
+      "id": "ellipsoidal_2_to_1",
+      "label": "2:1 Semi-Ellipsoidal",
+      "required_geometry": [
+        "inside_diameter_or_outside_diameter"
+      ],
+      "default_head_depth_expression": "h = Di / 4"
+    },
+    {
+      "id": "ellipsoidal_generic",
+      "label": "Ellipsoidal, Generic",
+      "required_geometry": [
+        "diameter",
+        "head_depth"
+      ],
+      "requires_factor": "K"
+    },
+    {
+      "id": "torispherical_100_6",
+      "label": "100%-6% Torispherical",
+      "required_geometry": [
+        "crown_radius"
+      ],
+      "geometry_definition": {
+        "crown_radius_ratio_to_inside_diameter": 1.0,
+        "knuckle_radius_ratio_to_inside_diameter": 0.06
+      }
+    },
+    {
+      "id": "torispherical_generic",
+      "label": "Torispherical, Generic",
+      "required_geometry": [
+        "crown_radius",
+        "knuckle_radius"
+      ],
+      "requires_factor": "M",
+      "source_limit": "L/r < 16.66"
+    },
+    {
+      "id": "cone",
+      "label": "Conical Section",
+      "required_geometry": [
+        "diameter",
+        "cone_half_apex_angle"
+      ],
+      "feature_status": "optional_not_in_initial_MVP"
+    }
+  ]
+}

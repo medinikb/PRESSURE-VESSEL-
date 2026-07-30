@@ -1,0 +1,50 @@
+{
+  "modules": [
+    {
+      "id": "shell",
+      "file": "shell_internal_pressure_formulas.json",
+      "default_enabled": false
+    },
+    {
+      "id": "hemispherical_head",
+      "file": "hemispherical_head_formulas.json",
+      "default_enabled": false
+    },
+    {
+      "id": "ellipsoidal_head",
+      "file": "ellipsoidal_head_formulas.json",
+      "default_enabled": false
+    },
+    {
+      "id": "torispherical_head",
+      "file": "torispherical_head_formulas.json",
+      "default_enabled": false
+    },
+    {
+      "id": "cone",
+      "file": "conical_section_formulas.json",
+      "default_enabled": false
+    },
+    {
+      "id": "geometry_factors",
+      "file": "geometry_factor_formulas.json",
+      "default_enabled": false
+    },
+    {
+      "id": "MAP_MAWP",
+      "file": "map_mawp_formulas.json",
+      "default_enabled": false
+    },
+    {
+      "id": "test_pressure",
+      "file": "test_pressure_formulas_historical.json",
+      "default_enabled": false
+    },
+    {
+      "id": "cladding_credit",
+      "file": "cladding_credit_formulas_historical.json",
+      "default_enabled": false
+    }
+  ],
+  "enablement_policy": "Each module must be independently verified and approved."
+}

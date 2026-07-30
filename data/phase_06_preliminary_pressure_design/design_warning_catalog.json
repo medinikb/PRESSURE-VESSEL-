@@ -1,0 +1,64 @@
+{
+  "messages": [
+    {
+      "code": "E_CONTROLLED_CODE_BASIS_REQUIRED",
+      "severity": "blocking",
+      "message": "Enter the controlled code edition and verify the enabled formula set before calculation."
+    },
+    {
+      "code": "E_STRESS_SOURCE_REQUIRED",
+      "severity": "blocking",
+      "message": "An allowable-stress value without a controlled source reference cannot be used."
+    },
+    {
+      "code": "E_STRESS_INTERPOLATION_POLICY_MISSING",
+      "severity": "blocking",
+      "message": "No approved allowable-stress interpolation policy is configured."
+    },
+    {
+      "code": "E_FORMULA_OUTSIDE_APPLICABILITY",
+      "severity": "blocking",
+      "message": "The selected formula is outside its configured range of applicability."
+    },
+    {
+      "code": "E_NONPOSITIVE_DENOMINATOR",
+      "severity": "blocking",
+      "message": "A formula denominator is zero or negative. Do not calculate a result."
+    },
+    {
+      "code": "W_HISTORICAL_JOINT_EFFICIENCY",
+      "severity": "review",
+      "message": "The displayed joint-efficiency value is from a historical reference and requires controlled-code verification."
+    },
+    {
+      "code": "W_HISTORICAL_TEST_PRESSURE",
+      "severity": "review",
+      "message": "The displayed test-pressure formula is from a historical reference and requires controlled-code and project verification."
+    },
+    {
+      "code": "W_HISTORICAL_HIGH_TENSILE_HEAD_RULE_VERIFY_CURRENT_CODE",
+      "severity": "review",
+      "message": "A special historical rule is indicated for certain high-tensile-strength formed heads. Verify the current code requirement."
+    },
+    {
+      "code": "W_NOMINAL_THICKNESS_LIBRARY_MISSING",
+      "severity": "review",
+      "message": "Required thickness is calculated, but no controlled nominal plate thickness library is available for selection."
+    },
+    {
+      "code": "W_EXTERNAL_PRESSURE_NOT_CHECKED",
+      "severity": "review",
+      "message": "External pressure and vacuum stability are outside this module."
+    },
+    {
+      "code": "W_OTHER_LOADS_NOT_CHECKED",
+      "severity": "review",
+      "message": "Nozzle loads, weight, wind, seismic, thermal, support and local loads are not included."
+    },
+    {
+      "code": "W_AGITATOR_MIXER_REVIEW",
+      "severity": "review",
+      "message": "An agitator or mixer is selected. Confirm top-head or shell loading, nozzle reinforcement, shaft clearance, baffles, support arrangement, vibration and vendor data before final mechanical design."
+    }
+  ]
+}
