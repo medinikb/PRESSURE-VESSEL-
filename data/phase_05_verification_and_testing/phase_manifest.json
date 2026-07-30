@@ -1,0 +1,69 @@
+{
+  "phase": 5,
+  "name": "Verification and Testing",
+  "version": "0.2.0",
+  "status": "test_design_draft",
+  "objective": "Provide repeatable evidence that data, rules, UI states, formulas and reports behave as specified.",
+  "files": [
+    {
+      "path": "decision_logic_test_cases.json",
+      "sha256": "cb0d021bf4e807baecb114bb173e08214e3c172847df71e4d75598786487f588",
+      "replaceable_independently": true
+    },
+    {
+      "path": "defect_severity_catalog.json",
+      "sha256": "ba3e4395a7a71fb2d32204181b0cec62ed9a8e213df5d7593723d50cb650b821",
+      "replaceable_independently": true
+    },
+    {
+      "path": "known_limitations.json",
+      "sha256": "8c742155ca0e045657ddd7ccc5c14ed3e502ee6b0476fbaa739fd6d2b73ae249",
+      "replaceable_independently": true
+    },
+    {
+      "path": "negative_test_cases.json",
+      "sha256": "f1f4f15276796bfd819dbaef022d0baacdc182a9032c5983167b9b7413cf22d6",
+      "replaceable_independently": true
+    },
+    {
+      "path": "release_gates.json",
+      "sha256": "50563640e9573595c0dfbb49edd41959abf0f595080bc84cd3eec9cb1d64d231",
+      "replaceable_independently": true
+    },
+    {
+      "path": "report_export_test_cases.json",
+      "sha256": "71477f7a9f1e7125ab867575f7a6caff2669b4f2ada93c35dcc070aa6985cd03",
+      "replaceable_independently": true
+    },
+    {
+      "path": "temperature_boundary_test_cases.json",
+      "sha256": "a70bd8fb45cc84dc87ace7ce57837fe8e5f99f2b0fc97c71f81773090f759881",
+      "replaceable_independently": true
+    },
+    {
+      "path": "test_evidence_schema.json",
+      "sha256": "395900d53e2fab56f7c53968eda248840f814b1c039040f6bae9d9cb5ede752c",
+      "replaceable_independently": true
+    },
+    {
+      "path": "test_strategy.json",
+      "sha256": "52040ad24608ced3bbb4baf054a79673f04e4885034e3e6b072d6255e628808d",
+      "replaceable_independently": true
+    },
+    {
+      "path": "traceability_matrix.json",
+      "sha256": "3f07828c61b7188f9443b0aea72d2368a3e602428cbf9ade656806b1772f4a7b",
+      "replaceable_independently": true
+    },
+    {
+      "path": "unit_conversion_test_cases.json",
+      "sha256": "5e05f896f1399a8feccab5516f084da4e38671afbfb006f8d91930a41e453451",
+      "replaceable_independently": true
+    },
+    {
+      "path": "user_acceptance_scenarios.json",
+      "sha256": "cca4e5d8e0821fa46e1b62e090b65d250067caa7ea2a99bc209155a0ff7f4fe3",
+      "replaceable_independently": true
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VesselM Test Evidence",
+  "type": "object",
+  "required": [
+    "test_case_id",
+    "executed_at",
+    "executor",
+    "app_version",
+    "result"
+  ],
+  "properties": {
+    "test_case_id": {
+      "type": "string"
+    },
+    "executed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "executor": {
+      "type": "string"
+    },
+    "app_version": {
+      "type": "string"
+    },
+    "library_versions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "input": {
+      "type": "object"
+    },
+    "expected": {},
+    "actual": {},
+    "result": {
+      "enum": [
+        "pass",
+        "fail",
+        "blocked",
+        "not_run"
+      ]
+    },
+    "evidence_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "remarks": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

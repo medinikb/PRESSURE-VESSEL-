@@ -1,0 +1,34 @@
+{
+  "limitations": [
+    {
+      "id": "LIM_001",
+      "area": "source",
+      "description": "The primary manual is a 2004 historical reference and not a controlled current code edition."
+    },
+    {
+      "id": "LIM_002",
+      "area": "materials",
+      "description": "Temperature screening alone does not establish corrosion, hydrogen, sour, chloride, caustic, amine, ammonia, welding or toughness suitability."
+    },
+    {
+      "id": "LIM_003",
+      "area": "allowable_stress",
+      "description": "No allowable stress values are supplied; the design module requires controlled user or organization data."
+    },
+    {
+      "id": "LIM_004",
+      "area": "design",
+      "description": "External pressure, nozzle reinforcement, local loads, fatigue, MDMT and supports are excluded."
+    },
+    {
+      "id": "LIM_005",
+      "area": "records",
+      "description": "A static GitHub Pages app is not a controlled enterprise approval or records system."
+    },
+    {
+      "id": "LIM_006",
+      "area": "source_ambiguity",
+      "description": "At least one material guide entry is ambiguous and must remain blocked until verified."
+    }
+  ]
+}

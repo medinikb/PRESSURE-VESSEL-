@@ -1,0 +1,55 @@
+{
+  "field_sets": [
+    {
+      "id": "core_traceability",
+      "locked": true,
+      "fields": [
+        "calculation_id",
+        "project_number",
+        "equipment_tag",
+        "app_version",
+        "created_at",
+        "result_status"
+      ]
+    },
+    {
+      "id": "material_screening",
+      "locked": false,
+      "fields": [
+        "minimum_design_temperature",
+        "maximum_design_temperature",
+        "material_family",
+        "plate_specifications",
+        "pipe_specifications",
+        "forging_specifications",
+        "fitting_specifications",
+        "bolting_set"
+      ]
+    },
+    {
+      "id": "preliminary_design",
+      "locked": false,
+      "feature_flag": "preliminary_pressure_design",
+      "fields": [
+        "component_type",
+        "formula_id",
+        "pressure_thickness",
+        "corrosion_allowance",
+        "required_nominal_thickness",
+        "mawp",
+        "map",
+        "test_pressure"
+      ]
+    },
+    {
+      "id": "engineering_outcome",
+      "locked": true,
+      "fields": [
+        "blocking_messages",
+        "review_messages",
+        "engineering_notes",
+        "override_status"
+      ]
+    }
+  ]
+}

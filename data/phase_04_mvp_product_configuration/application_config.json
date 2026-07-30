@@ -1,0 +1,24 @@
+{
+  "app_id": "vesselm",
+  "app_version": "0.2.0",
+  "deployment_target": "GitHub Pages",
+  "architecture": "static_client_side",
+  "backend_required": false,
+  "database_required": false,
+  "supported_browsers": [
+    "Chrome",
+    "Edge",
+    "Firefox"
+  ],
+  "default_unit_system": "SI",
+  "available_unit_systems": [
+    "SI",
+    "US_customary"
+  ],
+  "default_theme": "system",
+  "calculation_id_format": "VM-{YYYYMMDD}-{random6}",
+  "data_loading": {
+    "mode": "local_json",
+    "fail_closed_on_missing_required_library": true
+  }
+}

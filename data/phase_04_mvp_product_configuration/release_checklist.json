@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "id": "REL_001",
+      "description": "Phase 1 source transcription independently checked",
+      "blocking": true
+    },
+    {
+      "id": "REL_002",
+      "description": "All required JSON files load and validate",
+      "blocking": true
+    },
+    {
+      "id": "REL_003",
+      "description": "Boundary and conversion tests pass",
+      "blocking": true
+    },
+    {
+      "id": "REL_004",
+      "description": "Source ambiguity remains visibly blocked",
+      "blocking": true
+    },
+    {
+      "id": "REL_005",
+      "description": "Public repository contains no copyrighted source scans or confidential project data",
+      "blocking": true
+    },
+    {
+      "id": "REL_006",
+      "description": "Print report contains calculation and library versions",
+      "blocking": true
+    },
+    {
+      "id": "REL_007",
+      "description": "Preliminary pressure design feature remains disabled until controlled-code verification",
+      "blocking": true
+    },
+    {
+      "id": "REL_008",
+      "description": "At least five engineering users complete UAT",
+      "blocking": false
+    },
+    {
+      "id": "REL_009",
+      "description": "Known limitations are visible on screen and report",
+      "blocking": true
+    }
+  ]
+}

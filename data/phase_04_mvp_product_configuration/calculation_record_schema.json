@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VesselM Calculation Record",
+  "type": "object",
+  "required": [
+    "calculation_id",
+    "created_at",
+    "app_version",
+    "inputs",
+    "material_selection",
+    "messages",
+    "library_versions"
+  ],
+  "properties": {
+    "calculation_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "app_version": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "object"
+    },
+    "material_selection": {
+      "type": "object"
+    },
+    "preliminary_design": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "messages": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "override": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "library_versions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "audit_events": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": false
+}

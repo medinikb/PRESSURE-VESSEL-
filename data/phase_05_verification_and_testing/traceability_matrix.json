@@ -1,0 +1,53 @@
+{
+  "links": [
+    {
+      "requirement": "Material range boundary handling",
+      "source": "Phase 1 material_selection_ranges",
+      "tests": [
+        "temperature_boundary_test_cases.json"
+      ]
+    },
+    {
+      "requirement": "Temperature unit equivalence",
+      "source": "Phase 2 normalize_units",
+      "tests": [
+        "CONV_001",
+        "CONV_002",
+        "CONV_003"
+      ]
+    },
+    {
+      "requirement": "No silent service suitability claim",
+      "source": "Phase 2 service_review_rules",
+      "tests": [
+        "LOGIC_004",
+        "UAT_002"
+      ]
+    },
+    {
+      "requirement": "System result preserved after override",
+      "source": "Phase 2 override_workflow",
+      "tests": [
+        "LOGIC_006",
+        "UAT_005",
+        "REP_004"
+      ]
+    },
+    {
+      "requirement": "Preliminary design formulas controlled",
+      "source": "Phase 6 formula files",
+      "tests": [
+        "phase_06_preliminary_pressure_design/formula_test_cases.json"
+      ]
+    },
+    {
+      "requirement": "Version traceability",
+      "source": "Phase 4 report_configuration",
+      "tests": [
+        "REP_001",
+        "REP_002",
+        "UAT_004"
+      ]
+    }
+  ]
+}

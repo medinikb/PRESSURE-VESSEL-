@@ -1,0 +1,69 @@
+{
+  "phase": 4,
+  "name": "Minimum Viable Product Configuration",
+  "version": "0.2.0",
+  "status": "release_definition_draft",
+  "objective": "Define the smallest useful and governable GitHub Pages product before advanced vessel design modules are added.",
+  "files": [
+    {
+      "path": "application_config.json",
+      "sha256": "ac017c6bcdd18608872b08bc24626e07a4c521152fa6e11a856f494e219497b7",
+      "replaceable_independently": true
+    },
+    {
+      "path": "calculation_record_schema.json",
+      "sha256": "f8e73f9236d30edef601b7838709ae59d4444c78f10856e9ad18a88b6976c729",
+      "replaceable_independently": true
+    },
+    {
+      "path": "error_handling.json",
+      "sha256": "9217c750e00ce9f43e47b768f7fd1936ecad6edad2ce501c80380d7548b3ecd4",
+      "replaceable_independently": true
+    },
+    {
+      "path": "example_cases.json",
+      "sha256": "e538466118af5325bc456f89e9940686df1f6506f255797bcc3edb2f3a46339d",
+      "replaceable_independently": true
+    },
+    {
+      "path": "export_field_sets.json",
+      "sha256": "18fbc3c3dbfbd4451a17ab73208728f5311a07662349826d3e886a91b79fda3d",
+      "replaceable_independently": true
+    },
+    {
+      "path": "feature_flags.json",
+      "sha256": "ce5aa3a09ead7f49724697e925e0f71f3699c81e24553591a53c4d0a9904a0d9",
+      "replaceable_independently": true
+    },
+    {
+      "path": "library_load_order.json",
+      "sha256": "5b89c48868db0d16e986be895688f7f7a58572a8bc62b874ce5c58cc1a604125",
+      "replaceable_independently": true
+    },
+    {
+      "path": "local_storage_policy.json",
+      "sha256": "ace2e110472a89e2ee72d4458c16ce26cc2b868f0504e95da0d8fea629bd8cd1",
+      "replaceable_independently": true
+    },
+    {
+      "path": "product_scope.json",
+      "sha256": "250a97183e0b3b4d023a17f2cd6a57e8aed48426089a803b8f8d0145933bfeaf",
+      "replaceable_independently": true
+    },
+    {
+      "path": "release_checklist.json",
+      "sha256": "e723ddb5820a4f3938552bf9b23db2490515c851fe84964a06cabccca2b9202a",
+      "replaceable_independently": true
+    },
+    {
+      "path": "report_configuration.json",
+      "sha256": "3c41318093ca840f79884eeb5045cd0c383624dcb6d5cf08ec8067ccf292352d",
+      "replaceable_independently": true
+    },
+    {
+      "path": "workflow_states.json",
+      "sha256": "75020ada7acd227249677010bcd55fab61661ba69689ff4aa73d1c2171af14a0",
+      "replaceable_independently": true
+    }
+  ]
+}

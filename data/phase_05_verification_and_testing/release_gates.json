@@ -1,0 +1,33 @@
+{
+  "gates": [
+    {
+      "id": "GATE_DATA",
+      "pass_condition": "100_percent_required_JSON_valid_and_no_broken_references"
+    },
+    {
+      "id": "GATE_SOURCE",
+      "pass_condition": "all_source_transcriptions_independently_checked_or_explicitly_blocked"
+    },
+    {
+      "id": "GATE_LOGIC",
+      "pass_condition": "all_blocking_and_boundary_tests_pass"
+    },
+    {
+      "id": "GATE_FORMULA",
+      "pass_condition": "all_enabled_formulas_match_independent_calculation_and_controlled_code"
+    },
+    {
+      "id": "GATE_REPORT",
+      "pass_condition": "all_traceability_and_print_tests_pass"
+    },
+    {
+      "id": "GATE_UAT",
+      "pass_condition": "no_open_critical_or_major_UAT_defects"
+    },
+    {
+      "id": "GATE_PUBLICATION",
+      "pass_condition": "repository_content_review_confirms_no_restricted_material"
+    }
+  ],
+  "minimum_pass_rate_for_nonblocking_tests_percent": 95
+}

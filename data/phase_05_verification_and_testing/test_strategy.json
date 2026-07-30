@@ -1,0 +1,35 @@
+{
+  "levels": [
+    {
+      "id": "data_validation",
+      "purpose": "Validate JSON syntax, schemas, identifiers, references and checksums."
+    },
+    {
+      "id": "unit_logic",
+      "purpose": "Test one conversion, rule or formula at a time."
+    },
+    {
+      "id": "integration",
+      "purpose": "Test Phase 1 data through Phase 2 rules and Phase 3 result configuration."
+    },
+    {
+      "id": "regression",
+      "purpose": "Confirm controlled source records and expected outputs do not change unintentionally."
+    },
+    {
+      "id": "user_acceptance",
+      "purpose": "Confirm engineering usability, traceability and interpretation."
+    },
+    {
+      "id": "print_export",
+      "purpose": "Confirm exported records preserve values, warnings and versions."
+    }
+  ],
+  "principles": [
+    "fail_closed",
+    "boundary_first",
+    "preserve_raw_input",
+    "compare_against_independent_hand_calculation",
+    "record_evidence"
+  ]
+}

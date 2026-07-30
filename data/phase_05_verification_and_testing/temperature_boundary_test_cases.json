@@ -1,0 +1,501 @@
+{
+  "base_unit": "degF",
+  "test_cases": [
+    {
+      "id": "P5_MSR_001_MIN",
+      "temperature_f": -425,
+      "expected_record_ids": [
+        "MSR_001"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_001_BELOW_MIN",
+      "temperature_f": -425.01,
+      "record_id_under_test": "MSR_001",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_001_MAX",
+      "temperature_f": -321,
+      "expected_record_ids": [
+        "MSR_001"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_001_ABOVE_MAX",
+      "temperature_f": -320.99,
+      "record_id_under_test": "MSR_001",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_002_MIN",
+      "temperature_f": -320,
+      "expected_record_ids": [
+        "MSR_002"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_002_BELOW_MIN",
+      "temperature_f": -320.01,
+      "record_id_under_test": "MSR_002",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_002_MAX",
+      "temperature_f": -151,
+      "expected_record_ids": [
+        "MSR_002"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_002_ABOVE_MAX",
+      "temperature_f": -150.99,
+      "record_id_under_test": "MSR_002",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_003_MIN",
+      "temperature_f": -150,
+      "expected_record_ids": [
+        "MSR_003"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_003_BELOW_MIN",
+      "temperature_f": -150.01,
+      "record_id_under_test": "MSR_003",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_003_MAX",
+      "temperature_f": -76,
+      "expected_record_ids": [
+        "MSR_003"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_003_ABOVE_MAX",
+      "temperature_f": -75.99,
+      "record_id_under_test": "MSR_003",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_004_MIN",
+      "temperature_f": -75,
+      "expected_record_ids": [
+        "MSR_004"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_004_BELOW_MIN",
+      "temperature_f": -75.01,
+      "record_id_under_test": "MSR_004",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_004_MAX",
+      "temperature_f": -51,
+      "expected_record_ids": [
+        "MSR_004"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_004_ABOVE_MAX",
+      "temperature_f": -50.99,
+      "record_id_under_test": "MSR_004",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_005_MIN",
+      "temperature_f": -50,
+      "expected_record_ids": [
+        "MSR_005"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_005_BELOW_MIN",
+      "temperature_f": -50.01,
+      "record_id_under_test": "MSR_005",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_005_MAX",
+      "temperature_f": -21,
+      "expected_record_ids": [
+        "MSR_005"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_005_ABOVE_MAX",
+      "temperature_f": -20.99,
+      "record_id_under_test": "MSR_005",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_006_MIN",
+      "temperature_f": -20,
+      "expected_record_ids": [
+        "MSR_006"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_006_BELOW_MIN",
+      "temperature_f": -20.01,
+      "record_id_under_test": "MSR_006",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_006_MAX",
+      "temperature_f": 4,
+      "expected_record_ids": [
+        "MSR_006"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_006_ABOVE_MAX",
+      "temperature_f": 4.01,
+      "record_id_under_test": "MSR_006",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_007_MIN",
+      "temperature_f": 5,
+      "expected_record_ids": [
+        "MSR_007"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_007_BELOW_MIN",
+      "temperature_f": 4.99,
+      "record_id_under_test": "MSR_007",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_007_MAX",
+      "temperature_f": 32,
+      "expected_record_ids": [
+        "MSR_007"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_007_ABOVE_MAX",
+      "temperature_f": 32.01,
+      "record_id_under_test": "MSR_007",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_008_MIN",
+      "temperature_f": 33,
+      "expected_record_ids": [
+        "MSR_008"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_008_BELOW_MIN",
+      "temperature_f": 32.99,
+      "record_id_under_test": "MSR_008",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_008_MAX",
+      "temperature_f": 60,
+      "expected_record_ids": [
+        "MSR_008"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_008_ABOVE_MAX",
+      "temperature_f": 60.01,
+      "record_id_under_test": "MSR_008",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_009_MIN",
+      "temperature_f": 61,
+      "expected_record_ids": [
+        "MSR_009"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_009_BELOW_MIN",
+      "temperature_f": 60.99,
+      "record_id_under_test": "MSR_009",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_009_MAX",
+      "temperature_f": 775,
+      "expected_record_ids": [
+        "MSR_009"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_009_ABOVE_MAX",
+      "temperature_f": 775.01,
+      "record_id_under_test": "MSR_009",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_010_MIN",
+      "temperature_f": 776,
+      "expected_record_ids": [
+        "MSR_010"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_010_BELOW_MIN",
+      "temperature_f": 775.99,
+      "record_id_under_test": "MSR_010",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_010_MAX",
+      "temperature_f": 875,
+      "expected_record_ids": [
+        "MSR_010"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_010_ABOVE_MAX",
+      "temperature_f": 875.01,
+      "record_id_under_test": "MSR_010",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_011_MIN",
+      "temperature_f": 876,
+      "expected_record_ids": [
+        "MSR_011"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_011_BELOW_MIN",
+      "temperature_f": 875.99,
+      "record_id_under_test": "MSR_011",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_011_MAX",
+      "temperature_f": 1000,
+      "expected_record_ids": [
+        "MSR_011"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_011_ABOVE_MAX",
+      "temperature_f": 1000.01,
+      "record_id_under_test": "MSR_011",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_012_MIN",
+      "temperature_f": 876,
+      "expected_record_ids": [
+        "MSR_012"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_012_BELOW_MIN",
+      "temperature_f": 875.99,
+      "record_id_under_test": "MSR_012",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_012_MAX",
+      "temperature_f": 1000,
+      "expected_record_ids": [
+        "MSR_012"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_012_ABOVE_MAX",
+      "temperature_f": 1000.01,
+      "record_id_under_test": "MSR_012",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_013_MIN",
+      "temperature_f": 1001,
+      "expected_record_ids": [
+        "MSR_013"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_013_BELOW_MIN",
+      "temperature_f": 1000.99,
+      "record_id_under_test": "MSR_013",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_013_MAX",
+      "temperature_f": 1100,
+      "expected_record_ids": [
+        "MSR_013"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_013_ABOVE_MAX",
+      "temperature_f": 1100.01,
+      "record_id_under_test": "MSR_013",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_014_MIN",
+      "temperature_f": 1101,
+      "expected_record_ids": [
+        "MSR_014"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_014_BELOW_MIN",
+      "temperature_f": 1100.99,
+      "record_id_under_test": "MSR_014",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_014_MAX",
+      "temperature_f": 1500,
+      "expected_record_ids": [
+        "MSR_014"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_014_ABOVE_MAX",
+      "temperature_f": 1500.01,
+      "record_id_under_test": "MSR_014",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_015_MIN",
+      "temperature_f": 1101,
+      "expected_record_ids": [
+        "MSR_015"
+      ],
+      "boundary": "minimum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_015_BELOW_MIN",
+      "temperature_f": 1100.99,
+      "record_id_under_test": "MSR_015",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_015_MAX",
+      "temperature_f": 1500,
+      "expected_record_ids": [
+        "MSR_015"
+      ],
+      "boundary": "maximum",
+      "expected_match": true
+    },
+    {
+      "id": "P5_MSR_015_ABOVE_MAX",
+      "temperature_f": 1500.01,
+      "record_id_under_test": "MSR_015",
+      "boundary": "above_maximum",
+      "expected_record_match": false
+    },
+    {
+      "id": "P5_MSR_016_MIN",
+      "temperature_f": 1500,
+      "expected_record_ids": [
+        "MSR_016"
+      ],
+      "boundary": "minimum",
+      "expected_match": false
+    },
+    {
+      "id": "P5_MSR_016_BELOW_MIN",
+      "temperature_f": 1499.99,
+      "record_id_under_test": "MSR_016",
+      "boundary": "below_minimum",
+      "expected_record_match": false
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "test_cases": [
+    {
+      "id": "NEG_001",
+      "field": "design_pressure",
+      "value": -1,
+      "expected": "blocked"
+    },
+    {
+      "id": "NEG_002",
+      "field": "joint_efficiency",
+      "value": 1.1,
+      "expected": "blocked"
+    },
+    {
+      "id": "NEG_003",
+      "field": "joint_efficiency",
+      "value": 0,
+      "expected": "blocked"
+    },
+    {
+      "id": "NEG_004",
+      "field": "allowable_stress_design",
+      "value": 0,
+      "expected": "blocked"
+    },
+    {
+      "id": "NEG_005",
+      "field": "inside_diameter",
+      "value": 0,
+      "expected": "blocked"
+    },
+    {
+      "id": "NEG_006",
+      "field": "corrosion_allowance",
+      "value": -0.1,
+      "expected": "blocked"
+    },
+    {
+      "id": "NEG_007",
+      "field": "head_depth",
+      "value": 0,
+      "expected": "blocked"
+    },
+    {
+      "id": "NEG_008",
+      "field": "cone_half_apex_angle",
+      "value": 90,
+      "expected": "blocked"
+    },
+    {
+      "id": "NEG_009",
+      "field": "formula_denominator",
+      "value": 0,
+      "expected": "blocked_nonfinite"
+    },
+    {
+      "id": "NEG_010",
+      "field": "library_checksum",
+      "value": "mismatch",
+      "expected": "calculation_disabled"
+    },
+    {
+      "id": "NEG_011",
+      "field": "temperature_unit",
+      "value": "Kelvin_typo",
+      "expected": "blocked"
+    },
+    {
+      "id": "NEG_012",
+      "field": "selected_components",
+      "value": [],
+      "expected": "blocked"
+    }
+  ]
+}

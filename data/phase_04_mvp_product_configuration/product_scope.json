@@ -1,0 +1,32 @@
+{
+  "product_name": "VesselM",
+  "release_name": "Material Selection and Preliminary Pressure Design Screening",
+  "included": [
+    "single_vessel_manual_input",
+    "temperature_based_material_screening",
+    "component_material_matrix",
+    "warning_and_exclusion_engine",
+    "user_override_record",
+    "preliminary_internal_pressure_shell_and_formed_head_calculation",
+    "MAP_MAWP_and_test_pressure_screening",
+    "scenario_comparison",
+    "audit_report",
+    "JSON_export",
+    "print_to_PDF",
+    "light_and_dark_mode"
+  ],
+  "excluded": [
+    "external_pressure_design",
+    "nozzle_reinforcement",
+    "local_loads",
+    "fatigue_analysis",
+    "wind_and_seismic_support_design",
+    "MDMT_exemption_calculation",
+    "PWHT_determination",
+    "creep_life",
+    "fitness_for_service",
+    "batch_upload",
+    "login_and_database",
+    "engineering_approval_workflow_backend"
+  ]
+}

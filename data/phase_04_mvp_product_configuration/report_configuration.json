@@ -1,0 +1,71 @@
+{
+  "report_id": "VESSELM_AUDIT_REPORT_V1",
+  "title": "Vessel Material Selection and Preliminary Design Report",
+  "sections": [
+    {
+      "id": "executive_summary",
+      "order": 10,
+      "mandatory": true
+    },
+    {
+      "id": "calculation_identity",
+      "order": 20,
+      "mandatory": true
+    },
+    {
+      "id": "source_and_code_basis",
+      "order": 30,
+      "mandatory": true
+    },
+    {
+      "id": "design_inputs",
+      "order": 40,
+      "mandatory": true
+    },
+    {
+      "id": "material_selection",
+      "order": 50,
+      "mandatory": true
+    },
+    {
+      "id": "component_material_matrix",
+      "order": 60,
+      "mandatory": true
+    },
+    {
+      "id": "preliminary_design_results",
+      "order": 70,
+      "mandatory_when_feature": "preliminary_pressure_design"
+    },
+    {
+      "id": "calculation_flow",
+      "order": 80,
+      "mandatory_when_feature": "preliminary_pressure_design"
+    },
+    {
+      "id": "checks_and_warnings",
+      "order": 90,
+      "mandatory": true
+    },
+    {
+      "id": "override_record",
+      "order": 100,
+      "conditional": "override_exists"
+    },
+    {
+      "id": "limitations",
+      "order": 110,
+      "mandatory": true
+    },
+    {
+      "id": "prepared_checked_approved",
+      "order": 120,
+      "mandatory": true
+    },
+    {
+      "id": "version_register",
+      "order": 130,
+      "mandatory": true
+    }
+  ]
+}

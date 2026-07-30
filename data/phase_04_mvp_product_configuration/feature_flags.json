@@ -1,0 +1,54 @@
+{
+  "flags": [
+    {
+      "id": "material_selection",
+      "default": true,
+      "release_gate": "phase1_data_verified"
+    },
+    {
+      "id": "service_warning_engine",
+      "default": true,
+      "release_gate": "phase2_rules_validated"
+    },
+    {
+      "id": "preliminary_pressure_design",
+      "default": false,
+      "release_gate": "phase6_formulas_verified_against_controlled_code"
+    },
+    {
+      "id": "map_mawp",
+      "default": false,
+      "release_gate": "phase6_formulas_verified_against_controlled_code"
+    },
+    {
+      "id": "hydrotest_screening",
+      "default": false,
+      "release_gate": "controlled_test_pressure_basis_approved"
+    },
+    {
+      "id": "scenario_lab",
+      "default": true,
+      "release_gate": "scenario_comparison_tested"
+    },
+    {
+      "id": "user_override",
+      "default": true,
+      "release_gate": "override_audit_record_tested"
+    },
+    {
+      "id": "excel_export",
+      "default": false,
+      "release_gate": "future_release"
+    },
+    {
+      "id": "json_export",
+      "default": true,
+      "release_gate": "export_schema_validated"
+    },
+    {
+      "id": "print_pdf",
+      "default": true,
+      "release_gate": "print_regression_passed"
+    }
+  ]
+}

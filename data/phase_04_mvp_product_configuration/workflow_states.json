@@ -1,0 +1,60 @@
+{
+  "states": [
+    {
+      "id": "awaiting_input",
+      "allowed_actions": [
+        "load_example",
+        "edit_inputs"
+      ]
+    },
+    {
+      "id": "input_in_progress",
+      "allowed_actions": [
+        "edit_inputs",
+        "reset",
+        "run_selection"
+      ]
+    },
+    {
+      "id": "input_blocked",
+      "allowed_actions": [
+        "edit_inputs",
+        "reset"
+      ]
+    },
+    {
+      "id": "selection_complete",
+      "allowed_actions": [
+        "run_design",
+        "open_scenario_lab",
+        "show_report",
+        "export_json"
+      ]
+    },
+    {
+      "id": "design_complete",
+      "allowed_actions": [
+        "open_scenario_lab",
+        "show_report",
+        "export_json",
+        "print_pdf"
+      ]
+    },
+    {
+      "id": "override_pending",
+      "allowed_actions": [
+        "edit_override",
+        "show_report"
+      ]
+    },
+    {
+      "id": "report_ready",
+      "allowed_actions": [
+        "print_pdf",
+        "export_json",
+        "return_to_inputs"
+      ]
+    }
+  ],
+  "initial_state": "awaiting_input"
+}

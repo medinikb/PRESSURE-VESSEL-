@@ -1,0 +1,21 @@
+{
+  "default": "session_only",
+  "allowed_modes": [
+    "none",
+    "session_only",
+    "local_device"
+  ],
+  "store_by_default": [
+    "theme_preference",
+    "last_unit_system"
+  ],
+  "do_not_store_by_default": [
+    "project_number",
+    "equipment_tag",
+    "process_conditions",
+    "prepared_by",
+    "override_approval"
+  ],
+  "user_warning": "Local browser storage is not a controlled engineering record system.",
+  "enterprise_note": "Approved records should be exported and stored in the organization's controlled document system."
+}

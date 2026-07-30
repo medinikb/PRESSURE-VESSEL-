@@ -1,0 +1,116 @@
+{
+  "test_cases": [
+    {
+      "id": "LOGIC_001",
+      "description": "No temperature",
+      "input": {
+        "equipment_tag": "V-1",
+        "selected_components": [
+          "plate"
+        ]
+      },
+      "expected_status": "blocked_input",
+      "expected_message": "E_TEMP_REQUIRED"
+    },
+    {
+      "id": "LOGIC_002",
+      "description": "Temperature outside low end",
+      "input": {
+        "equipment_tag": "V-2",
+        "minimum_design_temperature": -500,
+        "maximum_design_temperature": -500,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate"
+        ]
+      },
+      "expected_status": "outside_guide"
+    },
+    {
+      "id": "LOGIC_003",
+      "description": "Alternative high temperature routes",
+      "input": {
+        "equipment_tag": "V-3",
+        "minimum_design_temperature": 900,
+        "maximum_design_temperature": 900,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate"
+        ]
+      },
+      "expected_status": "multiple_options_review"
+    },
+    {
+      "id": "LOGIC_004",
+      "description": "Service warning does not change source route",
+      "input": {
+        "equipment_tag": "V-4",
+        "minimum_design_temperature": 500,
+        "maximum_design_temperature": 500,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate"
+        ],
+        "service_flags": [
+          "chlorides"
+        ]
+      },
+      "expected_message": "W_SERVICE_CHLORIDE",
+      "expected_material_source_unchanged": true
+    },
+    {
+      "id": "LOGIC_005",
+      "description": "Ambiguous source is blocking",
+      "input": {
+        "equipment_tag": "V-5",
+        "minimum_design_temperature": -30,
+        "maximum_design_temperature": -30,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate"
+        ]
+      },
+      "expected_status": "source_verification_required"
+    },
+    {
+      "id": "LOGIC_006",
+      "description": "Override preserves system result",
+      "input": {
+        "equipment_tag": "V-6",
+        "minimum_design_temperature": 500,
+        "maximum_design_temperature": 500,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate"
+        ],
+        "override": {
+          "enabled": true,
+          "reason_code": "PROJECT_SPECIFICATION",
+          "comment": "Synthetic test",
+          "responsible_person": "Test User",
+          "responsible_role": "Engineer",
+          "override_date": "2026-07-24"
+        }
+      },
+      "expected_audit_events": [
+        "system_result_generated",
+        "override_created"
+      ]
+    },
+    {
+      "id": "LOGIC_007",
+      "description": "Cross-reference candidates across the complete temperature envelope",
+      "input": {
+        "equipment_tag": "V-7",
+        "minimum_design_temperature": 50,
+        "maximum_design_temperature": 900,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate"
+        ]
+      },
+      "expected_status": "guide_candidates_review",
+      "expected_message": "W_GUIDE_CANDIDATES_REVIEW"
+    }
+  ]
+}

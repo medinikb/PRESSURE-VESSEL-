@@ -1,0 +1,28 @@
+{
+  "severities": [
+    {
+      "id": "critical",
+      "definition": "Can produce or present an unsafe or materially incorrect engineering result.",
+      "release_blocking": true,
+      "target_resolution": "before_any_release"
+    },
+    {
+      "id": "major",
+      "definition": "Breaks a core workflow, traceability or report output.",
+      "release_blocking": true,
+      "target_resolution": "before_release"
+    },
+    {
+      "id": "moderate",
+      "definition": "Affects usability or a non-governing result without changing engineering meaning.",
+      "release_blocking": false,
+      "target_resolution": "planned_release"
+    },
+    {
+      "id": "minor",
+      "definition": "Cosmetic or wording issue with no engineering impact.",
+      "release_blocking": false,
+      "target_resolution": "backlog_allowed"
+    }
+  ]
+}

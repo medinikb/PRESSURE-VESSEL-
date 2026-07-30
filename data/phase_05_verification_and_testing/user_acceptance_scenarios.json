@@ -1,0 +1,53 @@
+{
+  "scenarios": [
+    {
+      "id": "UAT_001",
+      "role": "pressure_vessel_engineer",
+      "task": "Screen one vessel across a minimum and maximum temperature envelope and explain the result.",
+      "success_criteria": [
+        "result traceable",
+        "warnings understood",
+        "no hidden assumptions"
+      ]
+    },
+    {
+      "id": "UAT_002",
+      "role": "materials_corrosion_engineer",
+      "task": "Review a sour-service case and confirm the app does not automatically claim service suitability.",
+      "success_criteria": [
+        "service warning visible",
+        "temperature result preserved",
+        "review action clear"
+      ]
+    },
+    {
+      "id": "UAT_003",
+      "role": "estimation_engineer",
+      "task": "Generate a material route and preliminary thickness for budgetary screening.",
+      "success_criteria": [
+        "input basis clear",
+        "calculation steps visible",
+        "limitations visible"
+      ]
+    },
+    {
+      "id": "UAT_004",
+      "role": "engineering_reviewer",
+      "task": "Identify which source and data-library versions produced the report.",
+      "success_criteria": [
+        "version register complete",
+        "source IDs visible"
+      ]
+    },
+    {
+      "id": "UAT_005",
+      "role": "project_engineer",
+      "task": "Record a project specification override without losing the original system recommendation.",
+      "success_criteria": [
+        "original result retained",
+        "override fields complete",
+        "pending approval status visible"
+      ]
+    }
+  ]
+}

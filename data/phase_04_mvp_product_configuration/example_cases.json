@@ -1,0 +1,60 @@
+{
+  "cases": [
+    {
+      "id": "EX_MATERIAL_CARBON_STEEL",
+      "label": "Intermediate Temperature Carbon Steel",
+      "inputs": {
+        "equipment_tag": "V-EX-001",
+        "maximum_design_temperature": 500,
+        "minimum_design_temperature": 50,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate",
+          "pipe",
+          "forgings",
+          "fittings",
+          "bolting"
+        ]
+      },
+      "data_classification": "synthetic_demo"
+    },
+    {
+      "id": "EX_CRYOGENIC",
+      "label": "Cryogenic Material Screening",
+      "inputs": {
+        "equipment_tag": "V-EX-002",
+        "maximum_design_temperature": -200,
+        "minimum_design_temperature": -250,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate",
+          "pipe",
+          "forgings",
+          "fittings",
+          "bolting"
+        ],
+        "service_flags": [
+          "cryogenic"
+        ]
+      },
+      "data_classification": "synthetic_demo"
+    },
+    {
+      "id": "EX_HIGH_TEMP_OPTIONS",
+      "label": "High Temperature Multiple Options",
+      "inputs": {
+        "equipment_tag": "V-EX-003",
+        "maximum_design_temperature": 900,
+        "temperature_unit": "degF",
+        "selected_components": [
+          "plate",
+          "pipe",
+          "forgings",
+          "fittings",
+          "bolting"
+        ]
+      },
+      "data_classification": "synthetic_demo"
+    }
+  ]
+}

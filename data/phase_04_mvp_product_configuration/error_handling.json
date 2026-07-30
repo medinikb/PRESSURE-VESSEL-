@@ -1,0 +1,35 @@
+{
+  "error_classes": [
+    {
+      "id": "data_library_missing",
+      "severity": "blocking",
+      "user_action": "reload_or_replace_library"
+    },
+    {
+      "id": "data_library_checksum_mismatch",
+      "severity": "blocking",
+      "user_action": "use_controlled_package"
+    },
+    {
+      "id": "invalid_input",
+      "severity": "blocking",
+      "user_action": "correct_highlighted_fields"
+    },
+    {
+      "id": "formula_not_applicable",
+      "severity": "blocking",
+      "user_action": "refer_to_detailed_engineering"
+    },
+    {
+      "id": "calculation_nonfinite",
+      "severity": "blocking",
+      "user_action": "check_denominator_and_units"
+    },
+    {
+      "id": "export_failed",
+      "severity": "review",
+      "user_action": "retry_or_export_json"
+    }
+  ],
+  "technical_error_visibility": "show_user_summary_and_log_diagnostic_details_separately"
+}

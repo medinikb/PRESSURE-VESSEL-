@@ -1,0 +1,68 @@
+{
+  "tolerance": 1e-09,
+  "test_cases": [
+    {
+      "id": "CONV_001",
+      "input": {
+        "value": 32,
+        "from": "degF",
+        "to": "degC"
+      },
+      "expected": 0
+    },
+    {
+      "id": "CONV_002",
+      "input": {
+        "value": 212,
+        "from": "degF",
+        "to": "degC"
+      },
+      "expected": 100
+    },
+    {
+      "id": "CONV_003",
+      "input": {
+        "value": -40,
+        "from": "degF",
+        "to": "degC"
+      },
+      "expected": -40
+    },
+    {
+      "id": "CONV_004",
+      "input": {
+        "value": 1,
+        "from": "MPa",
+        "to": "psi"
+      },
+      "expected": 145.0377377
+    },
+    {
+      "id": "CONV_005",
+      "input": {
+        "value": 1,
+        "from": "bar",
+        "to": "MPa"
+      },
+      "expected": 0.1
+    },
+    {
+      "id": "CONV_006",
+      "input": {
+        "value": 1,
+        "from": "kgf_per_cm2",
+        "to": "MPa"
+      },
+      "expected": 0.0980665
+    },
+    {
+      "id": "CONV_007",
+      "input": {
+        "value": 1,
+        "from": "in",
+        "to": "mm"
+      },
+      "expected": 25.4
+    }
+  ]
+}

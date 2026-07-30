@@ -1,0 +1,44 @@
+{
+  "test_cases": [
+    {
+      "id": "REP_001",
+      "check": "report_contains_calculation_id",
+      "expected": true
+    },
+    {
+      "id": "REP_002",
+      "check": "report_contains_app_and_library_versions",
+      "expected": true
+    },
+    {
+      "id": "REP_003",
+      "check": "report_preserves_raw_and_converted_units",
+      "expected": true
+    },
+    {
+      "id": "REP_004",
+      "check": "report_distinguishes_system_result_and_override",
+      "expected": true
+    },
+    {
+      "id": "REP_005",
+      "check": "report_prints_blocking_warnings_on_first_page",
+      "expected": true
+    },
+    {
+      "id": "REP_006",
+      "check": "report_does_not_clip_component_matrix",
+      "expected": true
+    },
+    {
+      "id": "REP_007",
+      "check": "JSON_export_validates_against_calculation_record_schema",
+      "expected": true
+    },
+    {
+      "id": "REP_008",
+      "check": "disabled_formula_module_not_shown_as_calculated",
+      "expected": true
+    }
+  ]
+}

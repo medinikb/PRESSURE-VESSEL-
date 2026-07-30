@@ -1,0 +1,51 @@
+{
+  "load_order": [
+    {
+      "sequence": 10,
+      "library": "phase1/manifest.json",
+      "required": true
+    },
+    {
+      "sequence": 20,
+      "library": "phase1/material_selection_ranges.json",
+      "required": true
+    },
+    {
+      "sequence": 30,
+      "library": "phase1/material_specifications.json",
+      "required": true
+    },
+    {
+      "sequence": 40,
+      "library": "phase1/warning_catalog.json",
+      "required": true
+    },
+    {
+      "sequence": 50,
+      "library": "phase2/result_status_catalog.json",
+      "required": true
+    },
+    {
+      "sequence": 60,
+      "library": "phase2/service_review_rules.json",
+      "required": true
+    },
+    {
+      "sequence": 70,
+      "library": "phase3/screen_definitions.json",
+      "required": true
+    },
+    {
+      "sequence": 80,
+      "library": "phase6/formula_index.json",
+      "required_when_feature": "preliminary_pressure_design"
+    },
+    {
+      "sequence": 90,
+      "library": "phase6/allowable_stress_library_template.json",
+      "required_when_feature": "preliminary_pressure_design"
+    }
+  ],
+  "checksum_validation": true,
+  "on_required_library_failure": "disable_calculation_and_show_blocking_message"
+}
